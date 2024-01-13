@@ -1,0 +1,244 @@
+{
+  "infinity_scroll": false,
+  "checkboxes_for_categories": false,
+  "main menu": {
+    "categories parent": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": "innerText",
+      "by": "XPATH",
+
+      "selector": "//nav[@class,'site-navigation']//li[contains(@class,'navmenu-item-parent')][{x}]//details//summary",
+      "use_mouse": false,
+      "action": "loop",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "variables in selector": "x",
+      "formula for locator": "range(1,6)"
+    },
+    "categories sub menu": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+
+      "attribute": "{'innerText':'href'}",
+      "by": "XPATH",
+      "selector": "//nav[@class,'site-navigation']//li[contains(@class,'navmenu-item-parent')][{x}]//div[contains(@class,'navmenu-submenu')]//li//a",
+      "use_mouse": false,
+      "action": "click()",
+      "logic for action[AND|OR|XOR|VALUE|null]": null
+
+    },
+    "a": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": null,
+      "by": "XPATH",
+      "selector": "//ul[@class='pagination']//a[@class='page-link']",
+      "action": "click()"
+    }
+  },
+
+  "store": {
+    "store categories dept-1": {
+      "description": "Список главных категероий магазина",
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": {
+        "innerText": "href"
+      },
+      "by": "XPATH",
+      "selector": "//nav[@class='site-navigation'],//ul[contains(@class,'navmenu-depth-1')]/li",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    },
+    "store categories dept-2": {
+      "description": "Список подкатегероий магазина",
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": {
+        "innerText": "href"
+      },
+      "by": "XPATH",
+      "selector": "//nav[@class='site-navigation'],//ul[contains(@class,'navmenu-depth-1')]/li//ul[contains(@class,'navmenu-depth-2')]/li",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    },
+    "store categories dept-3": {
+      "description": "Список подкатегероий магазина",
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": {
+        "innerText": "href"
+      },
+      "by": "XPATH",
+      "selector": "//nav[@class='site-navigation'],//ul[contains(@class,'navmenu-depth-1')]/li//ul[contains(@class,'navmenu-depth-2')]/li//ul[contains(@class,'navmenu-depth-3')]/li",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    }
+  },
+
+  "product": {
+    "link_to_product_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": "href",
+      "by": "XPATH",
+      "selector": "//div[@class = 'product-thumb']/a",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    },
+    "stock available": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": "innerText",
+      "by": "XPATH",
+      "selector": "//div[conatins(@class , 'stockMsg')]",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    },
+
+    "product_name_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": "innerHTML",
+      "by": "css selector",
+      "selector": "h1.d-inline-block",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    },
+    "summary_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": "innerHTML",
+      "by": "css selector",
+      "selector": "h1.d-inline-block",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    },
+    "description_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": "innerHTML",
+      "by": "css selector",
+      "selector": ".row.product-params.pt-2.pb-2.pt-sm-5.pb-sm-5",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    },
+
+    "price_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": "innerHTML",
+      "by": "ID",
+      "selector": "basicPrice",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    },
+
+    "brand_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": "innerHTML",
+      "by": "css selector",
+      "selector": "text*='éöøï'",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    },
+
+    "sku_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": "innerText",
+      "by": "XPATH",
+      "selector": "//div[contains(@class,'main-details')]//span[contains(@class,'sku-copy')]",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    },
+    "brand_sku_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": "innerHTML",
+      "by": "css selector",
+      "selector": "span.sku-copy",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    },
+
+    "main_image_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": "href",
+      "by": "ID",
+      "selector": "mainpic",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    },
+
+    "li_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": "innerHTML",
+      "by": "tag name",
+      "selector": "li",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    }
+  },
+  "product_fields_locators": {
+
+  },
+  "laptop_description_fields_selectors": {
+    "screen": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": "innerHTML",
+      "by": "css selector",
+      "selector": "text*='âåãì îñê'",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    },
+    "CPUTYPE": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": "innerHTML",
+      "by": "css selector",
+      "selector": "text*='CPUTYPE'",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    },
+    "cpu": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": "innerHTML",
+      "by": "css selector",
+      "selector": "text='îòáã'",
+      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      "action": null
+    }
+  },
+  "stock_locator": {
+    "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+    "attribute": "innerHTML",
+    "by": "css selector",
+    "selector": ".stockMsg",
+    "logic for action[AND|OR|XOR|VALUE|null]": null,
+    "action": null
+
+  },
+  "login": {
+
+    "open_login_dialog_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": null,
+      "by": "XPATH",
+      "selector": "//a[contains(@data-modal,'User')]",
+      "action": "click()"
+    },
+
+    "email": "sales@aluf.co.il",
+    "email_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": null,
+      "by": "ID",
+      "selector": "Email",
+      "action": "send_keys('sales@aluf.co.il')"
+
+    },
+    "password": "9643766",
+    "password_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": null,
+      "by": "ID",
+      "selector": "Password",
+      "action": "send_keys('9643766')"
+
+    },
+    "loginbutton_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      "attribute": null,
+      "by": "css selector",
+      "selector": ".btn.btn-primary.btn-lg.w-50.float-left.mr-2",
+      "action": "click()"
+
+    }
+  }
+}

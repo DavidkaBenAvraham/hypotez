@@ -1,0 +1,91 @@
+{ "PC MONITORS": {
+   "COMPUTER MONITORS": {
+     "template": {"consumer electronics root":"PC MONITORS" }
+    },
+   "17": {
+     "template": {
+       "9252":"17",
+       "PC MONITORS":"COMPUTER MONITORS",
+       "4001":"17"
+      }
+    },
+   "21 - 22": {
+     "template": {
+       "9253":"21 - 22",
+       "PC MONITORS":"COMPUTER MONITORS",
+       "4002":"21 - 22"
+      }
+    },
+   "22 - 24": {
+     "template": {
+       "9254":"22 - 24",
+       "PC MONITORS":"COMPUTER MONITORS",
+       "4003":"22 - 24"
+      }
+    },
+   "24 - 27": {
+     "template": {
+       "9255":"26 - 28",
+       "PC MONITORS":"COMPUTER MONITORS",
+       "4004":"26 - 28"
+      }
+    },
+   "26 - 28": {
+     "template": {
+       "9255":"26 - 28",
+       "PC MONITORS":"COMPUTER MONITORS",
+       "4004":"26 - 28"
+      }
+    },
+   "27 - 29": {
+     "template": {
+       "9256":"29",
+       "PC MONITORS":"COMPUTER MONITORS",
+       "4005":"29"
+      }
+    },
+   "31 - 33": {
+     "template": {
+       "9257":"31",
+       "9258":"34",
+       "PC MONITORS":"COMPUTER MONITORS",
+       "4006":"31"
+      }
+    },
+   "34 - 38": {
+     "template": {
+       "9258":"34",
+       "PC MONITORS":"COMPUTER MONITORS",
+       "4007":"34"
+      }
+    },
+   "40 - 42": {
+     "template": {
+       "9259":"40",
+       "PC MONITORS":"COMPUTER MONITORS",
+       "4008":"40"
+      }
+    },
+   "43": {
+     "template": {
+       "9260":"43",
+       "PC MONITORS":"COMPUTER MONITORS",
+       "4009":"43"
+      }
+    },
+   "48": {
+     "template": {
+       "9262":"48",
+       "PC MONITORS":"COMPUTER MONITORS",
+       "4011":"48"
+      }
+    },
+   "50": {
+     "template": {
+       "9261":"50",
+       "PC MONITORS":"COMPUTER MONITORS",
+       "4010":"50"
+      }
+    }
+  }
+}

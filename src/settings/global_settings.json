@@ -1,0 +1,65 @@
+{
+  "venv": "venv",
+  "mode": "debug",
+  "@note debug": [ "debug", "prod" ],
+  "languages": [ "en", "he", "ru" ],
+  "scenario_language": [ "en" ],
+  "threads": false,
+  "@note threads": "многопоточность программы",
+  "async_run": true,
+  "@note async_run": "флаг разрешения асинхронности на уровне всего кода.",
+
+  "program_paths": {
+    "export": "export",
+    "export_images": "export_images",
+    "logs": "log",
+    "binaries": "binaries",
+    "temp": "tmp"
+  },
+
+  "beeper_and_log_decorator": {
+    "silent": true,
+    "onoff_log_decorator": true,
+    "@note": "Бипер запускается асинхронно, поэтому jupyter notepad выдает ошибку, что Ipython не хочет так работать. В случае, когда я занимаюсь отладкой через jupyter я отключаю бипер. ",
+    "@note 2": "  -= Есть ошибка импорта gs в logger_decorator.py. значение onoff_log_decorator я не использую=- "
+  },
+
+  "default_webdriver": "firefox",
+  "default_aliexpress_api_title": "katia",
+  "default_prestashop_api_title": "emil-design.com",
+  "default_openai_api_title": "hypotez",
+  "default_prestashop_db_title": "emil-design.com",
+  "default_ftp_title": "emil-design.com",
+  "default_smtp_title": "davidka",
+  "default_prestashop_api_domain": "emil-design.com",
+  "list_prestashop_api_domains": [ "emil-design.com", "sergey.mymaster.co.il", "dev.e-cat.co.il" ],
+
+  "supplier_prefix": [
+    "aliexpress",
+    "hb",
+    "kualastyle",
+    "amazon",
+    "bangood",
+    "kualastyle",
+    "ksp",
+    "morlevi"
+  ],
+  "list_excluded_suppliers": [
+    "ebay",
+    "amazon",
+    "aliexpress",
+    "grandadvance",
+    "bangood",
+    "cdata",
+    "gearbest",
+    "grandadvance",
+    "cdata",
+    "maxsanei_hashmal",
+    "macy_s",
+    "neimanmarcus",
+    "victorinox",
+    "visualdg",
+    "wallashop",
+    "wallmart"
+  ]
+}

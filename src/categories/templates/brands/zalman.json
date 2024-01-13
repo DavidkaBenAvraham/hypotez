@@ -1,0 +1,9 @@
+{
+ "zalman": {
+   "HEADPHONES": {
+     "9254":"HEADPHONES",
+     "3193":"ZALMAN",
+     "template": {"consumer electronics root":"HEADPHONES" }
+    }
+  }
+}

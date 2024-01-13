@@ -1,0 +1,41 @@
+{
+  "scenarios": {
+    "hand towel": {
+      "url": "https://inyahomezuojin.aliexpress.com/store/group/Chenille-Hand-towel/1102203277_40000002608903.html?spm=a2g0o.store_pc_groupList.0.0.2db07115rLUtsc",
+      "condition": "new",
+      "presta_categories": {
+        "default_category": { "11241": "Hand Towels" },
+        "addtinal categories root": [ "" ]
+      },
+      "price_rule": 1
+    },
+    "Bath Towel": {
+      "url": "https://inyahomezuojin.aliexpress.com/store/group/Bath-Towel/1102203277_40000002166291.html?spm=a2g0o.store_pc_allProduct.0.0.23683d74DKfzKT",
+      "condition": "new",
+      "presta_categories": {
+        "default_category": { "11242": "Bath Towels" },
+        "addtinal categories root": [ "" ]
+      },
+      "price_rule": 1
+    },
+    "Beah Towel": {
+      "url": "https://inyahomezuojin.aliexpress.com/store/group/Beach-Towel/1102203277_40000002166292.html?spm=a2g0o.store_pc_groupList.0.0.26b0a563wu5HR1",
+      "condition": "new",
+      "presta_categories": {
+        "default_category": { "11243": "beach Towels" },
+        "addtinal categories root": [ "" ]
+      },
+      "price_rule": 1
+    },
+    "Sport Towel": {
+      "url": "https://inyahomezuojin.aliexpress.com/store/group/Sport-Towel/1102203277_40000002228057.html",
+      "condition": "new",
+      "presta_categories": {
+        "default_category": { "11244": "Sport Towels" },
+        "addtinal categories root": [ "" ]
+      },
+      "price_rule": 1
+    }
+
+  }
+}

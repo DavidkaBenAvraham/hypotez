@@ -1,0 +1,11 @@
+{
+  "11042 HOME ACCESSORIES": {
+    "ROOT": {
+      "template": { "11036 SPACE HOME AND INTERIOR": "11042 HOME ACCESSORIES" }
+    },
+    "11208 Decorative pillows and cushion covers": {
+      "template": { "11042 HOME ACCESSORIES": "ROOT" },
+      "11208": "Decorative pillows and cushion covers"
+    }
+  }
+}

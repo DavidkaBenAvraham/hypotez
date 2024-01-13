@@ -1,0 +1,81 @@
+{
+  "3229 DESKTOP COMPUTER HARDWARE": {
+    "ROOT": {
+      "3198": "CONSUMER ELECTRONICS",
+      "3202": "Computers, Consoles, Gaming Devices",
+      "3229": "desktop computer hardware"
+    },
+
+    "MOTHERBOARDS": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "3449": "Motherboards"
+    },
+
+    "CPU": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "4767": "CPU"
+    },
+    "RAM": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "4768": "RAM"
+    },
+    "VIDEOCARDS": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "9002": "VIDEOCARDS"
+    },
+    "PSU": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "4769": "PSU"
+    },
+    "COMPUTER CASES": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "4770": "computer cases"
+    },
+
+    "COMPUTER STORAGE": {
+      "7498": "Storage",
+      "template": { "desktop_hardware": "DESKTOP COMPUTER HARDWARE" }
+
+    },
+    "KEYBOARD AND MICE": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "7499": "KeyBoard and mice"
+    },
+    "NETWORK": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "3449": "Motherboards"
+    },
+    "UPS": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "3449": "Motherboards"
+    },
+    "SOUND": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "7503": "Sound"
+    },
+    "PC MONITORS": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "7504": "PC MONITORS"
+    },
+    "GAMING ACCESSORIES": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "7505": "GAMING ACCESSORIES"
+    },
+    "PRINTERS AND SCANNERS": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "7506": "PRINTERS AND SCANNERS"
+    },
+    "NAS": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "11145": "NAS"
+    },
+    "COOLING": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "9252": "COOLING"
+    },
+    "UNSORTED": {
+      "template": { "3229 DESKTOP COMPUTER HARDWARE": "ROOT" },
+      "9578": "UNSORTED"
+    }
+  }
+}

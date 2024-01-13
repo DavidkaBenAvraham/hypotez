@@ -1,0 +1,551 @@
+{
+  "infinity_scroll": false,
+
+  "============== ЛОГИН ==========================": [ "ЛОГИН Aliexpress" ],
+
+  "login": {
+    "login_url": "https://login.aliexpress.com",
+
+
+    "close banner": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "text",
+      "by": "XPATH",
+      "selector": "//div[contains(text(), 'אפשר')]",
+      "action": "send_keys(Key.RETURN)",
+      "use_mouse": false
+    },
+
+    "open_login": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+      "by": "XPATH",
+      "selector": "//div[@class = 'account-main']//span[. = 'Sign in'] | //div[@class = 'account-main']//span[. = 'Se connecter'] | //div[@class = 'account-main']//span[. = 'כניסה'] ",
+      "action": "click()",
+      "use_mouse": false
+    },
+
+
+    "email_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+      "by": "XPATH",
+      "selector": "//input[@id='fm-login-id']",
+      "action": "send_keys('one.last.bit@gmail.com')",
+      "use_mouse": false
+    },
+
+    "password_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+      "by": "XPATH",
+      "selector": "//input[@id='fm-login-password']",
+      "action": "send_keys('7p3ato9kijsosw7')",
+      "use_mouse": false
+    },
+
+    "loginbutton_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+      "by": "XPATH",
+      "selector": "//button[@type='submit']",
+      "action": "click()",
+      "use_mouse": false
+    },
+
+    "coockies_accept": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+      "by": "XPATH",
+      "selector": "//button[contains(@data-role,'gdpr-accept')]",
+      "action": "click()",
+      "use_mouse": false
+    }
+
+  },
+  "currency_language_shipto_locators": {
+
+    "currency_language_shipto_block_opener_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+      "by": "XPATH",
+      "selector": "//div[@data-role = 'region-pannel']/a",
+      "action": "click()",
+      "use_mouse": false
+    },
+
+    "shipto_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": [ null, null, null ],
+      "by": [ "XPATH", "XPATH", "xpath" ],
+      "selector": [
+        "//a[contains(@class,'address-select-trigger') and contains(@data-role,'country')]",
+        "//div[@class = 'filter-list-container']",
+        "//li[contains(@data-code,'il')]"
+      ],
+      "action": [ "click()", "click()", "click()" ],
+      "use_mouse": false
+    },
+    "language_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": [ null, null, null ],
+      "by": [ "XPATH", "XPATH", "xpath" ],
+      "selector": [
+        "//span[contains( @data-role , 'language-input')]",
+        "//input[contains(@data-role,'language-search')]",
+        "//a[contains(@data-scenario_language,'en_US')]"
+      ],
+      "action": [ "click()", "click()", "click()" ],
+      "use_mouse": false
+    },
+    "currency_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": [ null, null, null ],
+      "by": [ "XPATH", "XPATH", "xpath" ],
+      "selector": [
+        "//div[contains(@class , 'switcher-currency-c language-selector')]",
+        "//span[contains(@class , 'select-item')]",
+        "//a[contains(@data-currency , 'ILS')]"
+      ],
+      "action": [ "click()", "click()", "click()" ],
+      "use_mouse": false
+    },
+    "save_button_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+      "by": "XPATH",
+      "selector": "//div[contains(@class , 'switcher-btn')]",
+      "action": "click()",
+      "use_mouse": false
+    }
+  },
+
+
+
+  "body_locator": {
+    "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+    "by": "tag name",
+    "selector": "body",
+    "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+  },
+  "goto_global_site": {
+    "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "href",
+    "by": "XPATH",
+    "selector": "//a[@data-role = 'goto-globalsite']",
+    "action": "click()"
+  },
+
+
+
+  "pagination": {
+    "ul": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+      "by": "XPATH",
+      "selector": "//ul[@class='pagination']",
+      "action": "click()"
+    },
+    "->": {
+      "attribute":null,
+      "by":  "xpath" ,
+      "selector":
+        "//*[@class = 'ui-pagination-navi util-left']/a[@class='ui-pagination-next']",
+      "action": "click()" ,
+      "use_mouse": false
+    }
+  },
+
+  "main_categories_locator_HTMLBLOCK": {
+    "DESCRITION": "корневые категории алиэкспресс (Оранжевые)",
+    "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "href",
+    "by": "XPATH",
+    "selector": "//*[@class='item util-clearfix']//h3//a",
+    "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+  },
+  "main_items_block_locator": {
+    "DESCRIPTION": " блок подкатегорий",
+    "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerHTML",
+    "by": "XPATH",
+    "selector": "//*[@class='sub-item-cont-wrapper']//ul",
+    "inner level a": {
+      "DESCRIPTION": " элемент <a> из которого я вытаскиваю значения {'text':'href'} в словарь",
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": { "text": "href" },
+      "by": "tag name",
+      "selector": "a"
+    },
+
+    "block_sub_items": {
+      "DESCRIPTION": " блок подкатегорий следующего вхождения",
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerHTML",
+      "by": "XPATH",
+      "selector": "//ul[contains(@class,'SearchSideFilter_SearchCategories__category')]//ul",
+      "inner level a": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": { "text": "href" },
+        "by": "tag name",
+        "selector": "a"
+      }
+    }
+  },
+  "cookies_accept": {
+    "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+    "by": "XPATH",
+    "selector": "//*button[@class ='btn-accept']",
+    "action": "click()"
+  },
+
+
+  "============== STORE ==========================": null,
+  "store": {
+
+    "all_store_categories_HTMLBLOCK": {
+      "description": " блок катагероий магазина",
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerHTML",
+      "by": "XPATH",
+      "selector": "//ul[@class='groups-list groups-default']",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+    },
+
+
+    "store main categories": {
+      "description": "Список катагероий магазина",
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": {
+        "innerText":
+        "href"
+      },
+      "by": "XPATH",
+      "selector": "//li[@class='group-item']//a",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+    },
+
+    "banners": {
+      "description": "baner images",
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerHTML",
+      "by": "XPATH",
+      "selector": "//a[contains(@style, 'background-image')]",
+      "action": "[value_of_css_property('background-image'),value_of_css_property('data-href')]"
+    },
+
+
+    "data_from_store_ajax_file": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "text",
+      "by": "XPATH",
+      "selector": "//body",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+    },
+
+    "categories_sub_blocks": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerHTML",
+      "by": "XPATH",
+      "selector": "//ul[@class='groups-list groups-default']",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+    },
+
+
+    "sub_block_main_item": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerHTML",
+      "by": "XPATH",
+      "selector": "//*[@class='group-item']",
+      "inner level a": {
+        "DESCRIPTION": " элемент <a> из которого я вытаскиваю значения {'text':'href'} в словарь",
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": { "text": "href" },
+        "by": "XPATH",
+        "selector": "//*[@class='group-item']/a",
+        "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+      }
+    },
+
+    "sub_blok_sub_items": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerHTML",
+      "by": "XPATH",
+      "selector": "//li[@class='sub-group-item']",
+      "inner level a": {
+        "DESCRIPTION": " элемент <a> из которого я вытаскиваю значения {'text':'href'} в словарь",
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": { "text": "href" },
+        "by": "XPATH",
+        "selector": "//*[@class='sub-group-item']/a",
+        "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+      }
+    },
+
+
+    "rollover_banners_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerHTML",
+      "by": "XPATH",
+      "selector": "//*[contains(@style, 'cubic-bezier')]//a",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+    },
+
+    "product_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "inneHTML",
+      "by": "XPATH",
+      "selector": "//*[contains(@ae_button_type ,'productList_click')]",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+    }
+
+  },
+
+  "============== PRODUCT ==========================": null,
+  "product": {
+
+    "on category page": {
+      "link_to_product_locator": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "href",
+        "by": "XPATH",
+        "selector": "//div[@class ='detail']//h3//a",
+        "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+      },
+      "price_locator": {
+
+      }
+
+    },
+
+
+
+    "link_to_product_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "href",
+      "by": "XPATH",
+      "selector": "//div[@class ='detail']//h3//a",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+    },
+
+
+    "shop_info_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+      "by": "XPATH",
+      "selector": "//div[contains(@class , 'HeaderPDP_ShopInfo__wrapper')]",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+    },
+
+
+    "product_block_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerHTML",
+      "by": "XPATH",
+      "selector": "//div[@class = 'product-info']",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+    },
+
+    "sku_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+      "by": null,
+      "selector": null,
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+    },
+    "product_name_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+      "by": "XPATH",
+      "selector": "//h1[contains(@class, 'product-title-text')]",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+    },
+
+    "reviews_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+      "by": "XPATH",
+      "selector": "//div[contains(@class, 'product-reviewer')]",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+    },
+
+    "price_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+      "by": "XPATH",
+      "selector": "//div[contains(@class, 'product-price-current')]//span",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+    },
+    "uniform-banner-box-price": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+      "by": "XPATH",
+      "selector": "//span[contains(@class, 'uniform-banner-box-price')]",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null,
+      "about": "цена может быть спятана баннером"
+    },
+    "shipping_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerHTML",
+      "by": "XPATH",
+      "selector": "//div[contains(@class ,'dynamic-shipping-line')][1],//span[1]//strong[1]",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+
+    },
+    "shipping_price_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+      "by": "XPATH",
+      "selector": "//div[contains(@class ,'dynamic-shipping')][1]/span",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+    },
+    "dynamic_shipping_block": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerHTML",
+      "by": "XPATH",
+      "selector": "//div[contains(@class ,'comet-modal-body')]/div",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null,
+
+      "product_shippihg_locator_button": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+        "by": "XPATH",
+        "selector": "//button[contains(@class ,'product-dynamic-shipping-moreOptions')]",
+        "action": "click()"
+      },
+
+      "dynamic_shipping_titleLayout": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+        "by": "XPATH",
+        "selector": "//div[contains(@class,'dynamic-shipping-titleLayout')]/span/span/strong",
+        "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+      },
+      "dynamic_shipping_from_to": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+        "by": "XPATH",
+        "selector": "//div[contains(@class ,'comet-modal-body')]/div/div[contains(@class,'dynamic-shipping')]/div[contains(@class,'dynamic-shipping-contentLayout')][1]/span/span",
+        "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+      },
+      "dynamic_shipping_estimated": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+        "by": "XPATH",
+        "selector": "//div[contains(@class ,'comet-modal-body')]/div/div[contains(@class,'dynamic-shipping')]/div[contains(@class,'dynamic-shipping-contentLayout')][2]/span/span",
+        "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+      },
+      "dynamic_tracking_available": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+        "by": "XPATH",
+        "selector": "//div[contains(@class ,'comet-modal-body')]/div/div[contains(@class,'dynamic-shipping')]/div[contains(@class,'dynamic-shipping-additionLayout')]/span",
+        "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+      },
+      "close": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+        "by": "XPATH",
+        "selector": "//button[@class='comet-modal-close']",
+        "action": "click()"
+      }
+    },
+
+    "combinations": {
+      "name": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+        "by": "XPATH",
+        "selector": "//div[@class='sku-title']",
+        "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+      },
+      "value": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+        "by": "XPATH",
+        "selector": "//div[@class='sku-title']/span[@class='sku-title-value']",
+        "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+      },
+      "switcher": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+        "by": "XPATH",
+        "selector": "//li[contains(@class,'sku-property-item')]//img",
+        "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+      }
+    },
+
+    "images_thumb_50x50": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+      "by": "XPATH",
+      "selector": "//div[contains(@class, 'Product_GalleryBarItem_')]/",
+      "action": "click()"
+    },
+    "main_image_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+      "by": "XPATH",
+      "selector": "//img[@class='magnifier-image'] | //img[@id='poster']",
+      "action": "screenshot()"
+    },
+    "summary_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+      "by": "XPATH",
+      "selector": "//h1[@class='product-title-text']",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+    },
+
+
+    "-combinations": " ==================== COMBINATIONS =========================================",
+
+    "product_combinations_container_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+      "by": "XPATH",
+      "selector": "//div[contains(@class='Product_Sku__container')]",
+      "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null,
+      "about": "опции товара, такие как цвет, размер и т.п. они на али находятся в маленьких квадратиках. могут содержать картинки или тексты",
+
+      "product_combinations_title": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+        "by": "XPATH",
+        "selector": "//div[@class='Product_SkuItem__title']//span",
+        "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+      },
+
+      "product_combinations_values": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": { "alt": "src" },
+        "by": "XPATH",
+        "selector": "//div[@class='Product_SkuValueBaseItem']//img",
+        "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null,
+        "about": "квадратики с разными типами товара"
+      },
+      "product_combinations_value_title": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+        "by": "XPATH",
+        "selector": "//span[contains(@class,'sku-title-value')]",
+        "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+      },
+
+      "text_attribute_locator": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerHTML",
+        "by": "XPATH",
+        "selector": "//ul[@class='sku-property-list']//li//span",
+        "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+      },
+      "image_attribute_locator": {
+        "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": null,
+        "by": "XPATH",
+        "selector": "//*[@class='sku-property-image']//img",
+        "logic for action[AND|OR|XOR|VALUE|null]":null,"action": null
+      }
+
+    },
+
+
+    "qty_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+      "by": "XPATH",
+      "selector": "//div[@class='product-quantity-tip']//span"
+    },
+
+
+    "byer_protection_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": "innerText",
+      "by": "XPATH",
+      "selector": "//div[@class='buyer-pretection-content']"
+    },
+
+
+    "description_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": [ null, "innerHTML" ],
+      "by": [ "XPATH", "XPATH" ],
+      "selector": [
+        "//span[@class = 'tab-inner-text' and contains(text(), 'DESCRIPTION')]",
+        " //div[@id = 'product-description']"
+      ],
+      "action": [ "click()", null ]
+    },
+
+
+    "specification_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": [ null, "innerHTML" ],
+      "by": [ "XPATH", "XPATH" ],
+      "selector": [
+        "//span[@class = 'tab-inner-text' and contains(text(), 'SPECIFICATION')]",
+        "//div[@class = 'product-specs']"
+      ],
+      "action": [ "click()", null ]
+    },
+
+    "product_specification": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": [ null, "innerHTML" ],
+      "by": [ "css selector", "xpath" ],
+      "selector": [
+        ".detail-extend-tab .tab-item:nth-child(3) .tab-inner-text",
+        "//ul[contains(@class,'product-specs-list')]"
+      ],
+      "action": [ "click()", null ]
+
+    },
+
+    "customer_reviews_locator": {
+      "logic for attribue[AND|OR|XOR|VALUE|null]":null,"attribute": [ null, "innerHTML" ],
+      "by": [ "XPATH", "XPATH" ],
+      "selector": [
+        "//span[@class = 'tab-inner-text' and contains(text(), 'CUSTOMER REVIEWS')]",
+        "//iframe[@class = 'product-evaluation']"
+      ],
+      "action": [ "click()", null ]
+    }
+
+  }
+}

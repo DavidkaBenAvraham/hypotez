@@ -1,0 +1,44 @@
+{
+  "Tools & Instruments Specialty Store": {
+    "store_id": 911117145,
+    "status": "ready for scrapping",
+    "description": "BOSCH - DEWALT инструменты",
+    "about": "BOSCH - DEWALT инструменты ",
+    "url": "https://bosch-tool-authorization-shop.aliexpress.com/store/911117145",
+    "shop categories page": "",
+    "shop categories json file": "",
+
+    "scenarios": {
+      "BOSCH Electric drills": {
+        "url": "https://bosch-tool-authorization-shop.aliexpress.com/store/group/Electric-drill/911117145_10000000770193.html?spm=a2g0o.store_pc_home.pcShopHead_6000360181746.1_1_7",
+        "active": true, "condition":"new","presta_categories": {
+          "4292": "Home Improvement & Tools",
+          "4305": "Electric drill"
+        },
+        "checkbox": false,
+
+        "price_rule": 1
+      },
+      "BOSCH Electric screwdrivers": {
+        "url": "https://bosch-tool-authorization-shop.aliexpress.com/store/group/Electric-drill/911117145_10000000770193.html?spm=a2g0o.store_pc_home.pcShopHead_6000360181746.1_1_7",
+        "active": true, "condition":"new","presta_categories": {
+          "4292": "Home Improvement & Tools",
+          "4305": "Electric screwdrivers"
+        },
+        "checkbox": false,
+
+        "price_rule": 1
+      },
+      "DEWALT Electric screwdrivers": {
+        "url": "https://bosch-tool-authorization-shop.aliexpress.com/store/group/Electric-drill/911117145_10000000770193.html?spm=a2g0o.store_pc_home.pcShopHead_6000360181746.1_1_7",
+        "active": true, "condition":"new","presta_categories": {
+          "4292": "Home Improvement & Tools",
+          "4305": "Electric screwdrivers"
+        },
+        "checkbox": false,
+        "price_rule": 1
+      }
+
+    }
+  }
+}

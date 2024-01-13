@@ -1,0 +1,39 @@
+{
+ "headphones": {
+   "BT": {
+     "3198":"CONSUMER ELECTRONICS",
+     "3436":"Speakers & Audio",
+     "3454":"Headphones",
+     "4206":"BT HEADPHONES",
+
+     "3437":"TV & Audio",
+     "3997":"Headphones in TV & Audio",
+     "4218":"BT in TV & Audio"
+
+    },
+   "True Wireless": {
+     "3198":"CONSUMER ELECTRONICS",
+     "3436":"Speakers & Audio",
+     "3454":"Headphones",
+     "4207":"True Wireless HEADPHONES",
+
+     "3437":"TV & Audio",
+     "3997":"Headphones in TV & Audio",
+     "4219":"True wireless in TV & Audio"
+
+    },
+
+   "BT In-ear Bud": {
+     "3460":"In-ear Bud",
+     "template": {"headphones":"BT" }
+    },
+   "BT Overear": {
+     "3480":"Overear",
+     "template": {"headphones":"BT" }
+    },
+   "True Wireless In-ear Bud": {
+     "4214":"In-ear Bud Headphones",
+     "template": {"headphones":"True Wireless" }
+    }
+  }
+}

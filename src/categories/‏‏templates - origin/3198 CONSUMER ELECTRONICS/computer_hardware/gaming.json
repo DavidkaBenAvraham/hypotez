@@ -1,0 +1,16 @@
+{
+ "gaming": {
+   "CONSOLES": {
+     "3198":"CONSUMER ELECTRONICS",
+     "3202":"computer,smartphone,gaming console,smart device",
+     "3228":"Gaming",
+     "9460":"Gaming Consoles"
+    },
+   "VIRTUAL RELITY GLASSES": {
+     "3198":"CONSUMER ELECTRONICS",
+     "3202":"computer,smartphone,gaming console,smart device",
+     "3228":"Gaming Consoles",
+     "9461":"virtual reality glasses"
+    }
+  }
+}

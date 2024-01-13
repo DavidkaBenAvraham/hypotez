@@ -1,0 +1,33 @@
+{
+ "9002 VIDEOCARDS": {
+   "SAPPHIRE": {
+     "9003":"SAPPHIRE",
+     "template": {"desktop_hardware":"VIDEOCARDS" }
+    },
+   "ZOTAC": {
+     "9004":"ZOTAC",
+     "template": {"desktop_hardware":"VIDEOCARDS" }
+    },
+
+   "ASUS": {
+     "9006":"ASUS",
+     "template": {"desktop_hardware":"VIDEOCARDS" }
+    },
+   "UNIKA": {
+     "9007":"UNIKA",
+     "template": {"desktop_hardware":"VIDEOCARDS" }
+    },
+   "XFX": {
+     "9008":"XFX",
+     "template": {"desktop_hardware":"VIDEOCARDS" }
+    }
+  },
+ "AMD": {
+   "9022":"AMD",
+   "template": {"desktop_hardware":"VIDEOCARDS" }
+  },
+ "NVIDIA": {
+   "9023":"NVIDIA",
+   "template": {"desktop_hardware":"VIDEOCARDS" }
+  }
+}

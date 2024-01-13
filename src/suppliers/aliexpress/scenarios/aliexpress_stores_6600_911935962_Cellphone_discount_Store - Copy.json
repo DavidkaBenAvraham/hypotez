@@ -1,0 +1,155 @@
+{
+  "store": {
+    "store_id": 1393322,
+    "supplier_id": 6600,
+    "get store banners": true,
+    "description": "Cellphone_discount_Store",
+    "about": " ",
+    "url": "https://www.aliexpress.com/store/shop categories page/911935962.html?",
+    "shop categories page": "",
+    "shop categories json file": ""
+  },
+  "scenarios": {
+    "ULEFONE PHONES": {
+      "url": "https://www.aliexpress.com/store/group/Ulefone/911935962_10000001349583.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "ulefone": "SMARTPHONES" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "BLACKVIEW PHONES": {
+      "url": "https://www.aliexpress.com/store/group/Blackview-phone/911935962_10000001238425.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "blackview": "SMARTPHONES" }
+      },
+      "product combinations": [ "color" ]
+    },
+
+    "UMIDIGI PHONES": {
+      "url": "https://www.aliexpress.com/store/group/UMIDIGI-Phone/911935962_40000002808780.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "umidigi": "SMARTPHONES" }
+      },
+      "product combinations": [ "color" ]
+    },
+
+    "REALME PHONES": {
+      "url": "https://www.aliexpress.com/store/group/Realme/911935962_10000001306642.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "SMARTPHONES" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "XIAOMI PHONES": {
+      "url": "https://www.aliexpress.com/store/group/Xiaomi-Phone/911935962_10000001286560.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "xiaomi": "SMARTPHONES" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "XIAOMI SMARTBAND": {
+      "url": "https://www.aliexpress.com/store/group/Xiaomi-Band/911935962_10000001927060.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "xiaomi": "SMARTBANDS" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "DOGEE PHONES": {
+      "url": "https://www.aliexpress.com/store/group/realme-8-Series/5777771_40000002128647.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "dogee": "SMARTPHONES" }
+      },
+      "product combinations": [ "color" ]
+    },
+
+    "REALME C33": {
+      "url": "https://www.aliexpress.com/store/group/realme-C33/5777771_40000002839851.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME C33" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "REALME C35": {
+      "url": "https://www.aliexpress.com/store/group/realme-C35/5777771_40000002128740.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME C35" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "REALME C31": {
+      "url": "https://www.aliexpress.com/store/group/realme-C31/5777771_40000002551249.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME C31" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "REALME C21Y": {
+      "url": "https://www.aliexpress.com/store/group/realme-C21Y/5777771_40000002078674.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME C21Y" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "REALME NARZO 50i PRIME": {
+      "url": "https://www.aliexpress.com/store/group/Narzo-50i-Prime/5777771_40000002021662.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME NARZO 50i PRIME" }
+      },
+      "product combinations": [ "color" ]
+    },
+
+    "REALME NARZO 50A": {
+      "url": "https://www.aliexpress.com/store/group/narzo-50A/5777771_10000002097092.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME NARZO 50A" }
+      },
+      "product combinations": [ "color" ]
+
+    },
+    "REALME Buds Air 3": {
+      "url": "https://www.aliexpress.com/store/group/realme-Buds-Air-3-New/5777771_40000001780559.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME Buds Air 3" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME Buds Q2s": {
+      "url": "https://www.aliexpress.com/store/group/realme-BudsQ2s/5777771_10000000243186.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME Buds Q2s" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "SMART CAMERA": {
+      "url": "https://www.aliexpress.com/store/group/realme-Smart-Camera-New/5777771_10000000237252.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "SMARTCAMERA" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "Realme WATCH 3 PRO": {
+      "url": "https://www.aliexpress.com/store/group/realme-Smart-Camera-New/5777771_10000000237252.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "Realme WATCH 3 PRO" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    }
+  }
+}

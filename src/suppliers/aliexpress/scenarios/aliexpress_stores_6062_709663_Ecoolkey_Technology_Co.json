@@ -1,0 +1,226 @@
+{
+  "store": {
+    "store_id": 709663,
+    "supplier_id": 6388,
+    "description": "Ecoolkey Technology Co.,Ltd",
+    "about": " ",
+    "category ID on site": "",
+    
+    "url": "https://www.aliexpress.com/store/709663",
+    "shop categories page": "",
+    "shop categories json file": "https://www.aliexpress.com/store/productGroupsAjax.htm?storeId=709663&shopVersion=3.0&callback=jsonp_910331321",
+    "get store banners": true
+  },
+  "scenarios": {
+    "original HTC": {
+      "category ID on site": 255795980,
+      "brand": "HTC",
+      "url": "https://www.aliexpress.com/store/group/original-HTC/709663_255795980.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "htc": "SMARTPHONES"
+        }
+      },
+      "product combinations": [
+        "color"
+      ]
+    },
+    "original Nokia": {
+      "category ID on site": "255795981",
+      
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/original-Nokia/709663_255795981.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "original Motorolla": {
+      "category ID on site": 511180050,
+      "brand": "Motorolla",
+      "url": "https://www.aliexpress.com/store/group/original-Motorola/709663_511180050.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "motorolla": "SMARTPHONES"
+        }
+      },
+      "product combinations": [
+        "color"
+      ]
+    },
+    "original Sony": {
+      "category ID on site": 511180050,
+      "brand": "Sony",
+      "url": "https://www.aliexpress.com/store/group/original-Motorola/709663_511180050.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "sony": "SMARTPHONES"
+        }
+      },
+      "product combinations": [
+        "color"
+      ]
+    },
+    "original Blackberry": {
+      "category ID on site": 255799875,
+      "brand": "Blackberry",
+      "url": "https://www.aliexpress.com/store/group/original-blackberry/709663_255799875.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "blackberry": "SMARTPHONES"
+        }
+      },
+      "product combinations": [
+        "color"
+      ]
+    },
+    "original LG": {
+      "category ID on site": 255805005,
+      "brand": "LG",
+      "url": "https://www.aliexpress.com/store/group/original-LG/709663_255805005.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "lg": "SMARTPHONES"
+        }
+      },
+      "product combinations": [
+        "color"
+      ]
+    },
+    "original Samsung": {
+      "category ID on site": 255805005,
+      "brand": "Samsung",
+      "url": "https://www.aliexpress.com/store/group/original-LG/709663_255805005.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "samsung": "SMARTPHONES"
+        }
+      },
+      "product combinations": [
+        "color"
+      ]
+    },
+    "--> Onda & Cube": {
+      "category ID on site": "254649815",
+      
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Onda-Cube/709663_254649815.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "-->Teclast & Chuwi": {
+      "category ID on site": "502370013",
+      
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Teclast-Chuwi/709663_502370013.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "mini speaker": {
+      "category ID on site": "254842779",
+      
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/mini-speaker/709663_254842779.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "original sony": {
+      "category ID on site": "509313595",
+      "brand": "SONY",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/original-sony/709663_509313595.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "origina Samsung": {
+      "category ID on site": "508922709",
+      "brand": "SAMSUNG",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/origina-Samsung/709663_508922709.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "original iphone": {
+      "category ID on site": "255803026",
+      "brand": "APPLE",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/original-iphone/709663_255803026.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "original google": {
+      "category ID on site": "515274428",
+      "brand": "GOOGLE",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/original-google/709663_515274428.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "leather case for...": {
+      "category ID on site": "254653739",
+      
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/leather-case-for-phone/709663_254653739.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Realme": {
+      "category ID on site": "517871100",
+      "brand": "REALME",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Realme/709663_517871100.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Original Oneplus": {
+      "category ID on site": "517601466",
+      "brand": "ONEPLUS",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Original-Oneplus/709663_517601466.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "watch mobile phone": {
+      "category ID on site": "254776043",
+      
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/watch-mobile-phone/709663_254776043.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Honor phones": {
+      "category ID on site": "518803929",
+      "brand": "HONOR",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Honor-phones/709663_518803929.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "CAR DVR GPS": {
+      "category ID on site": "254653732",
+      
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/CAR-DVR-GPS/709663_254653732.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "BlackShark": {
+      "category ID on site": "517867236",
+      
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/BlackShark/709663_517867236.html",
+      "condition": "",
+      "presta_categories": ""
+    }
+  }
+}

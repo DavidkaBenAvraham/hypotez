@@ -1,0 +1,10 @@
+{
+ "blackberry": {
+   "SMARTPHONES": {
+     "6375":"BLACKBERRY",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "3097":"BLACKBERRY",
+     "6374":"SMARTPHONES"
+    }
+  }
+}

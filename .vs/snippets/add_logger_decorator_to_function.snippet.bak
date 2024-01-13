@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Python Def Snippet</Title>
+			<Shortcut>def</Shortcut>
+			<Description>Python function with logs_and_errors_decorator</Description>
+			<Author>YourName</Author>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>function_name</ID>
+					<ToolTip>Enter the function name</ToolTip>
+					<Default>func</Default>
+				</Literal>
+				<Literal>
+					<ID>arguments</ID>
+					<ToolTip>Enter the function arguments</ToolTip>
+					<Default>arg</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="python">
+				<![CDATA[
+@logs_and_errors_decorator(default_return=False)
+def $function_name$($arguments$):
+	"""! @~russian
+	@brief
+	@details
+	"""
+	pass
+	$selected$$end$
+        ]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

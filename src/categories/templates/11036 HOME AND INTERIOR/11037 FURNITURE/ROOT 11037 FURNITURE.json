@@ -1,0 +1,19 @@
+{
+  "11037 FURNITURE": {
+    "ROOT": {
+      "template": { "11036 SPACE HOME AND INTERIOR": "11037 FURNITURE" }
+    },
+    "LIVING SPACE FURNITURE": {
+      "template": {
+        "11037 FURNITURE": "ROOT"
+      },
+      "11044": "LIVING SPACE FURNITURE"
+    },
+    "WORK SPACE FURNITURE": {
+      "template": {
+        "11037 FURNITURE": "ROOT"
+      },
+      "11045": "WORK SPACE FURNITURE"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+	"11206 ART DEKO": {
+		"ROOT": {
+			"template": { "11036 SPACE HOME AND INTERIOR": "11206 ART DEKO" }
+		},
+		"11209 MURANO GLASS": {
+			"template": { "11206 ART DEKO": "ROOT" },
+			"11209": "MURANO GLASS"
+		}
+	}
+}

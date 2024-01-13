@@ -1,0 +1,82 @@
+{
+ "desktop_hardware": {
+   "UNSORTED": {
+     "3198":"CONSUMER ELECTRONICS",
+     "3202":"Computers, Consoles, Gaming Devices",
+     "3229":"desktop computer hardware",
+     "9578":"unsorted"
+    },
+   "DESKTOP COMPUTER HARDWARE": {
+     "3198":"CONSUMER ELECTRONICS",
+     "3202":"Computers, Consoles, Gaming Devices",
+     "3229":"desktop computer hardware"
+    },
+   "MOTHERBOARDS": {
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" },
+     "3449":"Motherboards"
+    },
+
+   "CPU": {
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" },
+     "4767":"CPU"
+    },
+   "RAM": {
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" },
+     "4768":"RAM"
+    },
+   "VIDEOCARDS": {
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" },
+     "9002":"VIDEOCARDS"
+    },
+   "PSU": {
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" },
+     "4769":"PSU"
+    },
+   "COMPUTER CASES": {
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" },
+     "4770":"computer cases"
+    },
+
+   "COMPUTER STORAGE": {
+     "7498":"Storage",
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" }
+
+    },
+   "KEYBOARD AND MICE": {
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" },
+     "7499":"KeyBoard and mice"
+    },
+   "NETWORK": {
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" },
+     "3449":"Motherboards"
+    },
+   "UPS": {
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" },
+     "3449":"Motherboards"
+    },
+   "SOUND": {
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" },
+     "7503":"Sound"
+    },
+   "PC MONITORS": {
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" },
+     "7504":"PC MONITORS"
+    },
+   "GAMING ACCESSORIES": {
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" },
+     "7505":"GAMING ACCESSORIES"
+    },
+   "PRINTERS AND SCANNERS": {
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" },
+     "7506":"PRINTERS AND SCANNERS"
+    },
+   "NAS": {
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" },
+     "7507":"NAS"
+    },
+   "COOLING": {
+     "template": {"desktop_hardware":"DESKTOP COMPUTER HARDWARE" },
+     "9252":"COOLING"
+    }
+  }
+}

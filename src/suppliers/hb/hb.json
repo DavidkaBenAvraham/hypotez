@@ -1,0 +1,22 @@
+{
+  "supplier": "HB Dead Sea Cosmetics",
+  "supplier_id": "11267",
+  "supplier_prefix": "hb",
+  "start_url": "https://hbdeadsea.co.il/",
+  "price_rule": "+0",
+  "use_mouse": false,
+  "if_login": false,
+  "login_url": "https://amazon.com",
+  "lang": "EN",
+  "check categories on site": false,
+  "parsing via api": false,
+  "collect_products_from_categorypage": false,
+  "scenario_files": [
+    "11247 facial care.json"
+  ],
+  "excluded": [
+    
+  ],
+  "last_runned_scenario": ""
+}
+

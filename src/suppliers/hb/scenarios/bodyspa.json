@@ -1,0 +1,96 @@
+{
+  "body-spa-products": {
+    "children": {},
+    "url": "https://hbdeadsea.co.il/product-category/bodyspa/body-spa-products/",
+    "name": "מוצרי גוף וספא",
+    "condition": [
+      "new"
+    ],
+    "presta_categories": {
+      "default_category": {
+        "11111": "presta_category"
+      },
+      "addtinal categories root": [
+        ""
+      ]
+    }
+  },
+  "feet-hand-treatment": {
+    "children": {},
+    "url": "https://hbdeadsea.co.il/product-category/bodyspa/feet-hand-treatment/",
+    "name": "טיפוח כפות ידיים ורגליים",
+    "condition": [
+      "new"
+    ],
+    "presta_categories": {
+      "default_category": {
+        "11111": "presta_category"
+      },
+      "addtinal categories root": [
+        ""
+      ]
+    }
+  },
+  "shower-soaps": {
+    "children": {},
+    "url": "https://hbdeadsea.co.il/product-category/bodyspa/shower-soaps/",
+    "name": "תחליבי רחצה",
+    "condition": [
+      "new"
+    ],
+    "presta_categories": {
+      "default_category": {
+        "11111": "presta_category"
+      },
+      "addtinal categories root": [
+        ""
+      ]
+    }
+  },
+  "perfume": {
+    "children": {},
+    "url": "https://hbdeadsea.co.il/product-category/bodyspa/perfume/",
+    "name": "בישום",
+    "condition": [
+      "new"
+    ],
+    "presta_categories": {
+      "default_category": {
+        "11111": "presta_category"
+      },
+      "addtinal categories root": [
+        ""
+      ]
+    }
+  },
+  "multi-purpose-cream": {
+    "children": {},
+    "url": "https://hbdeadsea.co.il/product-category/bodyspa/multi-purpose-cream/",
+    "name": "קרמים רב שימושיים",
+    "condition": [
+      "new"
+    ],
+    "presta_categories": {
+      "default_category": {
+        "11111": "presta_category"
+      },
+      "addtinal categories root": [
+        ""
+      ]
+    }
+  },
+  "children": {},
+  "url": "https://hbdeadsea.co.il/product-category/bodyspa/",
+  "name": "גוף וספא",
+  "condition": [
+    "new"
+  ],
+  "presta_categories": {
+    "default_category": {
+      "11111": "presta_category"
+    },
+    "addtinal categories root": [
+      ""
+    ]
+  }
+}

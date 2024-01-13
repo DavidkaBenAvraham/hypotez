@@ -1,0 +1,118 @@
+{
+ "laptops": {
+   "LAPTOPS": {
+     "template": {
+       "consumer electronics root":"LAPTOPS"
+
+      }
+    },
+
+   "BY CPU": {
+     "4148":"Laptops by cpu",
+     "template": {"laptops":"LAPTOPS" }
+    },
+
+   "INTEL": {
+     "9720":"intel",
+     "template": {"laptops":"BY CPU" }
+    },
+   "AMD": {
+     "9721":"AMD",
+     "template": {"laptops":"BY CPU" }
+    },
+   "AMD ATHLON SERIES": {
+     "9881":"AMD ATHLON SERIES",
+     "template": {"laptops":"AMD" }
+    },
+   "AMD RYZEN SERIES": {
+     "9870":"AMD RYZEN",
+     "template": {"laptops":"AMD" }
+    },
+   "AMD A SERIES": {
+     "9869":"AMD A",
+     "template": {"laptops":"AMD" }
+    },
+   "APPLE M": {
+     "4152":"APPLE M",
+     "template": {"laptops":"BY CPU" }
+    },
+   "INTEL CELERON": {
+     "9722":"INTEL CELERON",
+     "template": {"laptops":"INTEL" }
+    },
+   "INTEL I3": {
+     "9723":"INTEL I3",
+     "template": {"laptops":"INTEL" }
+    },
+   "INTEL I5": {
+     "9724":"INTEL I5",
+     "template": {"laptops":"INTEL" }
+    },
+   "INTEL I7": {
+     "9725":"INTEL I7",
+     "template": {"laptops":"INTEL" }
+    },
+   "INTEL I9": {
+     "9726":"INTEL I9",
+     "template": {"laptops":"INTEL" }
+    },
+   "INTEL XEON": {
+     "9868":"INTEL XEON",
+     "template": {"laptops":"INTEL" }
+    },
+   "AMD ATHLON": {
+     "9727":"AMD ATHLON",
+     "template": {"laptops":"AMD ATHLON SERIES" }
+    },
+   "AMD A6": {
+     "9728":"AMD A6",
+     "template": {"laptops":"AMD A SERIES" }
+    },
+   "AMD RYZEN 3": {
+     "9729":"AMD RYZEN 3",
+     "template": {"laptops":"AMD RYZEN SERIES" }
+    },
+   "AMD RYZEN 5": {
+     "9730":"AMD RYZEN 5",
+     "template": {"laptops":"AMD RYZEN SERIES" }
+    },
+   "AMD RYZEN 7": {
+     "9731":"AMD RYZEN 7",
+     "template": {"laptops":"AMD RYZEN SERIES" }
+    },
+   "AMD RYZEN 9": {
+     "9732":"AMD RYZEN 9",
+     "template": {"laptops":"AMD RYZEN SERIES" }
+    },
+
+   "BY SCREEN SIZE": {
+     "4125":"Laptops by ss",
+     "template": {"laptops":"LAPTOPS" }
+    },
+
+   "11": {
+     "4126":"11",
+     "template": {"laptops":"BY SCREEN SIZE" }
+    },
+   "13": {
+     "4127":"13",
+     "template": {"laptops":"BY SCREEN SIZE" }
+    },
+   "14": {
+     "4128":"14",
+     "template": {"laptops":"BY SCREEN SIZE" }
+    },
+   "15": {
+     "4129":"15",
+     "template": {"laptops":"BY SCREEN SIZE" }
+    },
+   "17": {
+     "4130":"17",
+     "template": {"laptops":"BY SCREEN SIZE" }
+    },
+   "18": {
+     "4131":"18",
+     "template": {"laptops":"BY SCREEN SIZE" }
+    }
+  }
+}

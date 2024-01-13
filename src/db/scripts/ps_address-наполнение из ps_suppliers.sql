@@ -1,0 +1,2 @@
+insert into `ps_address` (`id_supplier`,`id_country`,`alias`,`lastname`,`firstname`,`address1`,`address2`,`city`,`date_add`,`date_upd`)
+select `id_supplier`,29,'supplier','supplier','supplier','supplier','supplier' ,'supplier','2022-11-21 21:24:25.000','2022-11-21 21:24:25.000' from `ps_supplier`

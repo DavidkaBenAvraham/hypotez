@@ -1,0 +1,541 @@
+{
+  "store": {
+    "name": "",
+    "store_id": 2343184,
+    "supplier_id": 4788,
+    "description": "",
+    "about": " ",
+    "category ID on site":"","brand": "BASEUS",
+    "url": "https://baseus.aliexpress.com/store/2343184",
+    "shop categories page": "",
+    "shop categories json file": "https://baseus.aliexpress.com/store/productGroupsAjax.htm?storeId=2343184&shopVersion=3.0&callback=",
+    "get store banners": true
+  },
+  "scenarios": {
+    "For iPhone 14 Series": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/For-iPhone-14-Series/2343184_40000002567195.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Charger Zone": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Charger-Zone/2343184_511350253.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Wireless Charger": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Wireless-Charger/2343184_511590492.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "GaN Charger": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/GaN-Charger/2343184_517614456.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Desktop Charger &...": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Desktop-Charger-Power-Strip/2343184_40000000452452.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Car Charger": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Car-Charger/2343184_40000002211497.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "USB Charger": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/USB-Charger/2343184_512999283.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Fast Charger": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Fast-Charger/2343184_515812986.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Power Bank": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Power-Bank/2343184_515807725.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "22.5W For Phone": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/22-5W-For-Phone/2343184_515816770.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "30W For Phone": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/30W-For-Phone/2343184_40000001452657.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "65W For Notebook": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/65W-For-Notebook/2343184_517503614.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "100W For Notebook": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/100W-For-Notebook/2343184_40000000591716.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "With Cables": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/With-Cables/2343184_40000000407150.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Wireless Charging": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Wireless-Charging/2343184_517614471.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Music Zone": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Music-Zone/2343184_509737110.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "TWS Earphone": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/TWS-Earphone/2343184_510253772.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "ANC Earphone": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/ANC-Earphone/2343184_40000001346220.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Headphones": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Headphones/2343184_515811219.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Wired Earphones": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Wired-Earphones/2343184_510465673.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Bluetooth Adapter": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Bluetooth-Adapter/2343184_40000001452661.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Audio Splitter": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Audio-Splitter/2343184_517951945.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Speaker": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Speaker/2343184_40000003012726.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Car Accessories": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Car-Accessories/2343184_512993292.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Car Phone Holder": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Car-Phone-Holder/2343184_40000001794197.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Car FM Transmitter": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Car-FM-Transmitter/2343184_515811075.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Car Jump Starter": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Car-Jump-Starter/2343184_517980967.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Car Inverter": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Car-Inverter/2343184_40000002156310.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Car Cleaning": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Car-Cleaning/2343184_517633736.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Car Inflator Pump": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Car-Inflator-Pump/2343184_40000002473652.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Car Air Fresher": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Car-Air-Fresher/2343184_40000001816992.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Car Interior": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Car-Interior/2343184_515811077.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Car Trash Can": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Car-Trash-Can/2343184_40000001741123.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Car Parking Card": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Car-Parking-Card/2343184_512993304.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "USB Hub & Type-C Hub": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/USB-Hub-Type-C-Hub/2343184_515816826.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "USB 3.0 Hub": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/USB-3-0-Hub/2343184_40000003269286.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "4K60Hz USB C Hub": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/4K60Hz-USB-C-Hub/2343184_40000003265566.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "4K30Hz USB C Hub": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/4K30Hz-USB-C-Hub/2343184_40000003263276.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "USB Cables": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/USB-Cables/2343184_511419654.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "100W Type C Cable": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/100W-Type-C-Cable/2343184_516445253.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "For iPhone Cable": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/For-iPhone-Cable/2343184_517951895.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "USB Type C Cable": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/USB-Type-C-Cable/2343184_511415530.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Micro USB Cable": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Micro-USB-Cable/2343184_511130580.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "All in One USB Cable": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/All-in-One-USB-Cable/2343184_511229753.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Elbow Cable for Game": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Elbow-Cable-for-Game/2343184_517629880.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Cable Organizer": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Cable-Organizer/2343184_512324978.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "OTG Adapter": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/OTG-Adapter/2343184_515816952.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Computer & Office": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Computer-Office/2343184_509663105.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Type-C Hub for Tablet": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Type-C-Hub-for-Tablet/2343184_517217837.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Card Reader": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Card-Reader/2343184_517610065.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Ethernet Cable": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Ethernet-Cable/2343184_40000003263250.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Ethernet Adapter": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Ethernet-Adapter/2343184_40000003255384.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Laptop Stand": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Laptop-Stand/2343184_40000001307770.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Stylus Pen": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Stylus-Pen/2343184_40000002571063.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Audio & Video Cable": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Audio-Video-Cable/2343184_517951952.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Home Appliance": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Home-Appliance/2343184_515820972.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Home Cleaner": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Home-Cleaner/2343184_10000002509338.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Lighting Supplies": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Lighting-Supplies/2343184_516923643.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Countdown Timer": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Countdown-Timer/2343184_516681707.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Household Appliance": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Household-Appliance/2343184_516906296.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Remote Control Series": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Remote-Control-Series/2343184_516454767.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Pet Accessories": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Pet-Accessories/2343184_40000002015151.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Phone Protector": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Phone-Protector/2343184_509673128.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Screen Protectors": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Screen-Protectors/2343184_10000002581082.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Phone case": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Phone-case/2343184_515811265.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Other Protectors": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Other-Protectors/2343184_515811036.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Phone Holder": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Phone-Holder/2343184_517633114.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Magnetic Phone Holder": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Magnetic-Phone-Holder/2343184_517984573.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Desktop phone holder": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Desktop-phone-holder/2343184_40000000532856.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Bike Phone Holder": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Bike-Phone-Holder/2343184_517633647.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Suction Cup Mount": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Suction-Cup-Mount/2343184_517980876.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Finger Ring Holder": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Finger-Ring-Holder/2343184_517633648.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Fast Delivery Zone": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Fast-Delivery-Zone/2343184_517951898.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Russia Aliexpress...": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Russia-Aliexpress-Plus/2343184_518235923.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Korea 3-5 Days...": {
+      "category ID on site":"","brand": "BASEUS",
+      "active": true,
+      "url": "https://baseus.aliexpress.com/store/group/Korea-3-5-Days-Delivery/2343184_10000002418824.html",
+      "condition": "",
+      "presta_categories": ""
+    }
+  }
+}

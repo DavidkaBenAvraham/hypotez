@@ -1,0 +1,16 @@
+{
+ "doogee": {
+   "SMARTPHONES": {
+     "6189":"DOOGEE",
+     "template": {"consumer electronics root":"SMARTPHONES"},
+       "6155":"DOGEE",
+       "6156":"SMARTPHONES"
+      },
+   "SMARTWATCHES": {
+     "6189":"DOOGEE",
+     "template": {"wearable":"WATCHES" },
+     "6155":"DOGEE",
+     "6156":"SMARTPHONES"
+    }
+  }
+}

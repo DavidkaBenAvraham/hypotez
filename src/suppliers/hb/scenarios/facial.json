@@ -1,0 +1,114 @@
+{
+  "serums": {
+    "children": {},
+    "url": "https://hbdeadsea.co.il/product-category/facial/serums/",
+    "name": "סרומים לפנים",
+    "condition": [
+      "new"
+    ],
+    "presta_categories": {
+      "default_category": {
+        "11111": "presta_category"
+      },
+      "addtinal categories root": [
+        ""
+      ]
+    }
+  },
+  "face-masks": {
+    "#": {
+      "children": {},
+      "url": "https://hbdeadsea.co.il/product-category/facial/face-masks/#",
+      "name": "מסכות פנים",
+      "condition": [
+        "new"
+      ],
+      "presta_categories": {
+        "default_category": {
+          "11111": "presta_category"
+        },
+        "addtinal categories root": [
+          ""
+        ]
+      }
+    }
+  },
+  "children": {},
+  "url": "https://hbdeadsea.co.il/product-category/facial/",
+  "name": "טיפוח הפנים",
+  "condition": [
+    "new"
+  ],
+  "presta_categories": {
+    "default_category": {
+      "11111": "presta_category"
+    },
+    "addtinal categories root": [
+      ""
+    ]
+  },
+  "facial-cleaning-products": {
+    "children": {},
+    "url": "https://hbdeadsea.co.il/product-category/facial/facial-cleaning-products/",
+    "name": "מוצרי ניקוי פנים",
+    "condition": [
+      "new"
+    ],
+    "presta_categories": {
+      "default_category": {
+        "11111": "presta_category"
+      },
+      "addtinal categories root": [
+        ""
+      ]
+    }
+  },
+  "mineral-peptide": {
+    "children": {},
+    "url": "https://hbdeadsea.co.il/product-category/facial/mineral-peptide/",
+    "name": "סדרת מינרל פפטיד",
+    "condition": [
+      "new"
+    ],
+    "presta_categories": {
+      "default_category": {
+        "11111": "presta_category"
+      },
+      "addtinal categories root": [
+        ""
+      ]
+    }
+  },
+  "multi-active-series": {
+    "children": {},
+    "url": "https://hbdeadsea.co.il/product-category/facial/multi-active-series/",
+    "name": "סדרת מולטי אקטיב חומצה היאלורונית",
+    "condition": [
+      "new"
+    ],
+    "presta_categories": {
+      "default_category": {
+        "11111": "presta_category"
+      },
+      "addtinal categories root": [
+        ""
+      ]
+    }
+  },
+  "moisture-face": {
+    "children": {},
+    "url": "https://hbdeadsea.co.il/product-category/facial/moisture-face/",
+    "name": "לחויות לפנים",
+    "condition": [
+      "new"
+    ],
+    "presta_categories": {
+      "default_category": {
+        "11111": "presta_category"
+      },
+      "addtinal categories root": [
+        ""
+      ]
+    }
+  }
+}

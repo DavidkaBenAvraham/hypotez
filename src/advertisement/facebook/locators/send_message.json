@@ -1,0 +1,11 @@
+{
+  "button_add_image": {
+    "attribute": "text",
+    "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+    "by": "XPATH",
+    "selector": "//span[contains(text(), 'Фото/видео')]",
+    "logic for action[AND|OR|XOR|VALUE|null]": null,
+    "use_mouse": true,
+    "action": "click()"
+  }
+}

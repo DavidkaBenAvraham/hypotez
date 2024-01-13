@@ -1,0 +1,39 @@
+{
+ "power parts": {
+   "ENERGY": {"3082":"ENERGY" },
+   "POWER PARTS": {
+     "7935":"Power parts",
+     "template": {"power parts":"ENERGY" }
+    },
+   "BREAKERS": {
+     "template": {"power parts":"POWER PARTS" }
+    },
+   "AC CONTACTOR": {
+     "7939":"AC Contactors",
+     "template": {"power parts":"POWER PARTS" }
+    },
+   "POWER DRIVER": {
+     "7938":"Power Drivers",
+     "template": {"power parts":"POWER PARTS" }
+    },
+   "MCB BREAKER": {
+     "7936":"Air Breaker switch",
+     "template": {"power parts":"BREAKERS" }
+    },
+   "RC SNUBBER": {
+     "7937":"RC Snubber",
+     "template": {"power parts":"ENERGY" }
+    },
+   "ELECTRIC ENERGY METER": {
+     "7942":"Electric Energy Meter in TEST AND MEASURING",
+     "7940":"Electric Energy Meter in energy",
+     "7941":"Electric Energy Meter in automation",
+     "template": {"power parts":"ENERGY" }
+    },
+   "SOLID STATE RELAY": {
+     "7944":"Solid State Relay in energy",
+     "7943":"Solid State Relay in automation",
+     "template": {"power parts":"ENERGY" }
+    }
+  }
+}

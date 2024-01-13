@@ -1,0 +1,11 @@
+{
+  "product_links": {
+    "attribute": "href",
+    "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+    "by": "XPATH",
+    "selector": "//a[contains(@class,'image-link')]",
+    "logic for action[AND|OR|XOR|VALUE|null]": null,
+    "use_mouse": false,
+    "action": null
+  }
+}

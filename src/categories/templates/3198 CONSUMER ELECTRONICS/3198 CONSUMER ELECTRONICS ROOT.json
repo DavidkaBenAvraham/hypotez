@@ -1,0 +1,70 @@
+{
+ "3198 CONSUMER ELECTRONICS": {
+   "3198 CONSUMER ELECTRONICS": {
+     "3198":"CONSUMER ELECTRONICS"
+    },
+
+   "LAPTOPS": {
+     "3225":"LAPTOPS",
+     "3202":"Computers, Consoles, Gaming Devices",
+     "template": {"3198 CONSUMER ELECTRONICS":"3198 CONSUMER ELECTRONICS" }
+    },
+
+   "SMART WATCHES": {
+     "6472":"Smartwatches",
+     "3433":"Computers, Consoles, Gaming Devices",
+     "template": {"3198 CONSUMER ELECTRONICS":"3198 CONSUMER ELECTRONICS" }
+    },
+
+   "TV AND AUDIO": {
+     "3437":"TV AND AUDIO"
+    },
+
+   "TABLETS": {
+     "9449":"Tablets and Readers in SMARTDEVICES",
+     "3227":"Tablets in Computers, Consoles, Gaming",
+     "3433":"Cell Phones, Smart Devices",
+     "3202":"Computers, Consoles, Gaming Devices",
+     "template": {"3198 CONSUMER ELECTRONICS":"3198 CONSUMER ELECTRONICS" }
+    },
+   "AIO": {
+     "3371":"AIO",
+     "3202":"Computers, Consoles, Gaming Devices",
+     "template": {"3198 CONSUMER ELECTRONICS":"3198 CONSUMER ELECTRONICS" }
+    },
+   "HEADPHONES": {
+     "3454":"HEADPHONES",
+     "3436":"3436 SPEAKERS & AUDIO",
+     "3198":"CONSUMER ELECTRONICS",
+     "3437":"TV AND AUDIO",
+     "3997":"HEADPHONES"
+
+    },
+
+   "PC MONITORS": {
+     "3448":"PC Monitors in Computers, Consoles, Gaming-0",
+     "3202":"Computers, Consoles, Gaming",
+     "3198":"CONSUMER ELECTRONICS",
+     "3437":"TV AND AUDIO",
+     "4000":"PC Monitors in TV AND AUDIO"
+
+    },
+
+   "BATTERIES & POWER": {
+     "3343":"Batteries & Power Supplies",
+     "3198":"CONSUMER ELECTRONICS",
+     "3342":"BATTERIES AND POWER SUPPLY 3342"
+    },
+
+   "SMARTPHONES": {
+     "6471":"SMARTPHONES BY BRAND",
+     "3198":"CONSUMER ELECTRONICS",
+     "3433":"computer,smartphone,gaming console,smart device"
+    },
+   "DESKTOP COMPUTERS": {
+     "3224":"DESKTOP COMPUTERS",
+     "3202":"Computers, Consoles, Gaming Devices",
+     "template": {"3198 CONSUMER ELECTRONICS":"3198 CONSUMER ELECTRONICS" }
+    }
+  }
+}

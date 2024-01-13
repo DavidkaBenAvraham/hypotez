@@ -1,0 +1,591 @@
+{
+ "asus": {
+   "SMATRPHONES": {
+     "3400":"ASUS",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "2258":"ASUS",
+     "2284":"SMARTPHONES"
+    },
+
+
+   "INTEL MB": {
+     "7333":"ASUS",
+     "template": {"motherboards":"INTEL" },
+     "2258":"ASUS",
+     "6478":"Motherboards",
+     "7479":"INTEL"
+    },
+   "AMD MB": {
+     "7333":"ASUS",
+     "template": {"motherboards":"AMD" },
+     "2258":"ASUS",
+     "6478":"Motherboards",
+     "7478":"AMD"
+    },
+
+   "BUNDLE MB CPU": {
+     "motherboards":"BUNDLE MB CPU",
+     "2258":"ASUS",
+     "6478":"Motherboards",
+     "7351":"ASUS BUNDLE MB CPU MEMORY"
+    },
+   "BUNDLE MB CPU AMD": {
+     "asus":"AMD MB",
+     "7353":"MB CPU AMD"
+    },
+   "BUNDLE MB CPU INTEL": {
+     "asus":"INTEL MB",
+     "7352":"MB CPU INTEL"
+    },
+   "INTEL Z390": {
+     "template": {
+       "7342":"INTEL Z390",
+       "asus":"INTEL MB"
+      }
+    },
+   "INTEL Z490": {
+     "template": {
+       "7338":"INTEL Z490",
+       "asus":"INTEL MB"
+      }
+    },
+   "INTEL B560": {
+     "template": {
+       "7336":"Intel B560",
+       "asus":"INTEL MB"
+      }
+    },
+   "INTEL Z590": {
+     "template": {
+       "7341":"INTEL Z590",
+       "asus":"INTEL MB"
+      }
+    },
+   "INTEL Z690": {
+     "template": {
+       "7340":"INTEL Z690",
+       "asus":"INTEL MB"
+      }
+    },
+
+
+
+
+   "AMD B450": {
+     "template": {
+       "7339":"AMD B450",
+       "asus":"AMD MB"
+      }
+    },
+   "AMD B550": {
+     "template": {
+       "7345":"AMD B550",
+       "asus":"AMD MB"
+      }
+    },
+   "AMD X570": {
+     "template": {
+       "7476":"AMD X570",
+       "asus":"AMD MB"
+      }
+    },
+
+
+
+
+
+
+   "ZENFONE": {
+     "4826":"ASUS Zenphone",
+     "asus":"SMATRPHONES",
+     "4824":"ASUS Zenphone"
+    },
+   "ROGFONE": {
+     "4830":"ASUS ROGFONE",
+     "asus":"SMATRPHONES",
+     "4825":"ASUS ROGFONE"
+    },
+
+   "ZENFONE 8": {
+     "template": {
+       "4828":"ZENFONE 8",
+       "asus":"ZENFONE 8",
+       "4817":"ZENFONE 8"
+      }
+    },
+   "ZENFONE 8 FLIP": {
+     "template": {
+       "4829":"ZENFONE 8 FLIP",
+       "asus":"ZENFONE 8",
+       "4818":"ZENFONE 8 FLIP"
+      }
+    },
+   "ZENFONE 9": {
+     "template": {
+       "4827":"ZENFONE 9",
+       "asus":"ZENFONE",
+       "4816":"ZENFONE 9"
+      }
+    },
+   "ROGFONE 5": {
+     "template": {
+       "4820":"ROGFONE 5",
+       "asus":"ROGFONE",
+       "4832":"ROGFONE 5"
+      }
+    },
+   "ROGFONE 5S": {
+     "template": {
+       "4833":"ROGFONE 5S",
+       "asus":"ROGFONE 5",
+       "4832":"ROGFONE 5S"
+      }
+    },
+   "ROGFONE 5 PRO": {
+     "template": {
+       "4822":"ROGFONE 5 PRO",
+       "asus":"ROGFONE 5",
+       "4834":"ROGFONE 5 PRO"
+      }
+    },
+   "ROGFONE 6": {
+     "template": {
+       "4819":"ROGFONE 6",
+       "asus":"ROGFONE",
+       "4831":"ROGFONE 6"
+      }
+    },
+   "ROGFONE 6 PRO": {
+     "template": {
+       "6315":"ROGFONE 6 PRO",
+       "asus":"ROGFONE 6",
+       "6317":"ROGFONE 6 PRO"
+      }
+    },
+   "ROGFONE 6D": {
+     "template": {
+       "10405":"ROGFONE 6D",
+       "asus":"ROGFONE 6",
+       "10404":"ROGFONE 6D"
+      }
+    },
+   "ROGFONE 6D ULTIMATE": {
+     "template": {
+       "104107":"ROGFONE 6D ULTIMATE",
+       "asus":"ROGFONE 6",
+       "10406":"ROGFONE 6D ULTIMATE"
+      }
+    },
+
+   "ROGFONE 6 DIABOLO": {
+     "template": {
+       "104109":"ROGFONE 6 DIABOLO",
+       "asus":"ROGFONE 6",
+       "10408":"ROGFONE 6 DIABOLO"
+      }
+    },
+
+   "ROGFONE 6 PRO BATMAN EDITION": {
+     "template": {
+       "6316":"ROGFONE 6 PRO BATMAN EDITION",
+       "asus":"ROGFONE 6",
+       "6318":"ROGFONE 6 PRO BATMAN EDITION"
+      }
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   "LAPTOPS": {
+     "6482":"asus",
+     "5453":"Laptops by brand",
+     "template": {"laptops":"LAPTOPS" },
+     "2258":"asus brand axis",
+     "2287":"Laptops"
+    },
+   "LAPTOPS AMD": {
+     "4150":"AMD",
+     "4148":"Laptops by CPU",
+     "9794":"AMD",
+     "9756":"asus BY CPU",
+     "template": {"asus":"LAPTOPS" },
+     "9734":"asus by cpu",
+     "9738":"asus AMD"
+    },
+   "LAPTOPS INTEL": {
+     "9720":"Intel",
+     "4148":"Laptops by CPU",
+     "9793":"Intel",
+     "9756":"asus BY CPU",
+     "template": {"asus":"LAPTOPS" },
+     "9734":"asus by cpu",
+     "9737":"asus Intel"
+    },
+   "LAPTOPS INTEL CELERON": {
+     "9795":"INTEL CELERON",
+     "template": {
+       "asus":"LAPTOPS INTEL",
+       "laptops":"INTEL CELERON"
+      },
+     "9739":"LAPTOPS INTEL CELERON"
+    },
+   "LAPTOPS INTEL I3": {
+     "9723":"INTEL I3",
+     "9796":"LAPTOPS INTEL i3",
+     "template": {
+       "asus":"LAPTOPS INTEL",
+       "laptops":"INTEL I3"
+      },
+     "9740":"LAPTOPS INTEL i3"
+    },
+   "LAPTOPS INTEL I5": {
+     "9797":"LAPTOPS INTEL i5",
+     "template": {
+       "asus":"LAPTOPS INTEL",
+       "laptops":"INTEL I5"
+      },
+     "9741":"LAPTOPS INTEL i5"
+    },
+   "LAPTOPS INTEL I7": {
+     "9798":"LAPTOPS INTEL i7",
+     "template": {
+       "asus":"LAPTOPS INTEL",
+       "laptops":"INTEL I7"
+      },
+     "9742":"LAPTOPS INTEL i7"
+    },
+   "LAPTOPS INTEL I9": {
+     "9799":"LAPTOPS INTEL i9",
+     "template": {
+       "asus":"LAPTOPS INTEL",
+       "laptops":"INTEL I9"
+      },
+     "9743":"LAPTOPS INTEL i9"
+    },
+   "LAPTOPS AMD ATHLON": {
+     "9800":"LAPTOPS AMD Athlon",
+     "template": {
+       "asus":"LAPTOPS AMD",
+       "laptops":"AMD ATHLON"
+      },
+     "9744":"LAPTOPS AMD Athlon"
+    },
+   "LAPTOPS AMD A6": {
+     "9801":"LAPTOPS AMD A6",
+     "template": {
+       "asus":"LAPTOPS AMD",
+       "laptops":"AMD ATHLON"
+      },
+     "9745":"LAPTOPS AMD A6"
+    },
+   "LAPTOPS AMD RYZEN 3": {
+     "9802":"LAPTOPS AMD RYZEN 3",
+     "template": {
+       "asus":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 3"
+      },
+     "9746":"LAPTOPS AMD RYZEN 3"
+    },
+   "LAPTOPS AMD RYZEN 5": {
+     "9803":"LAPTOPS AMD RYZEN 5",
+     "template": {
+       "asus":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 5"
+      },
+     "9747":"LAPTOPS AMD RYZEN 5"
+    },
+   "LAPTOPS AMD RYZEN 7": {
+     "9804":"LAPTOPS AMD RYZEN 7",
+     "template": {
+       "asus":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 7"
+      },
+     "9748":"LAPTOPS AMD RYZEN 7"
+    },
+   "LAPTOPS AMD RYZEN 9": {
+     "9805":"LAPTOPS AMD RYZEN 9",
+     "template": {
+       "asus":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 9"
+      },
+     "9749":"LAPTOPS AMD RYZEN 9"
+    },
+
+   "LAPTOPS BY SCREEN SIZE": {
+     "9758":"ASUS by screen size",
+     "template": {
+       "laptops":"BY SCREEN SIZE",
+       "asus":"LAPTOPS"
+      },
+     "9735":"by ss"
+    },
+   "11": {
+     "4126":"11'' Laptops by screen size",
+     "9759":"11'' ASUS by screen size",
+     "template": {"asus":"LAPTOPS BY SCREEN SIZE" },
+     "9750":"11'' ASUS by screen size"
+    },
+   "13": {
+     "4127":"13'' Laptops by screen size",
+     "9760":"13'' ASUS by screen size",
+     "template": {"asus":"LAPTOPS BY SCREEN SIZE" },
+     "9751":"13'' Laptops by screen size"
+    },
+   "14": {
+     "4128":"14'' Laptops by screen size",
+     "9761":"14'' ASUS by screen size",
+     "template": {"asus":"LAPTOPS BY SCREEN SIZE" },
+     "9752":"14'' ASUS by screen size"
+    },
+   "15": {
+     "4129":"15'' Laptops by screen size",
+     "9762":"15'' ASUS by screen size",
+     "template": {"asus":"LAPTOPS BY SCREEN SIZE" },
+     "9753":"15'' ASUS by screen size"
+    },
+   "17": {
+     "4130":"17'' Laptops by screen size",
+     "9763":"17'' ASUS by screen size",
+     "template": {"asus":"LAPTOPS BY SCREEN SIZE" },
+     "9754":"17'' ASUS by screen size"
+    },
+   "18": {
+     "4131":"18'' Laptops by screen size",
+     "9764":"18'' ASUS by screen size",
+     "template": {"asus":"LAPTOPS BY SCREEN SIZE" },
+     "9755":"18'' ASUS by screen size"
+    },
+
+   "VIDEOCARDS": {
+     "REM":"------------------------- VIDEO --------------------------",
+     "9006":"ASUS",
+     "9024":"BRANDS",
+     "template": {"desktop_hardware":"VIDEOCARDS" },
+     "2258":"ASUS",
+     "10617":"VIDEOCARDS"
+    },
+   "VIDEOCARDS NVIDIA": {
+     "9023":"NVIDIA IN VIDEOCARDS",
+     "10523":"NVIDIA IN VIDEOCARDS - LIST",
+     "10572":"NVIDIA IN ASUS",
+     "template": {"asus":"VIDEOCARDS" },
+     "10622":"NVIDIA"
+    },
+   "VIDEOCARDS AMD": {
+     "10555":"AMD IN VIDEOCARDS - LIST",
+     "9022":"AMD IN VIDEOCARDS",
+     "10605":"AMD BY ASUS",
+     "template": {"ASUS":"VIDEOCARDS" },
+     "10655":"AMD"
+    },
+   "NVIDIA GT VIDEOCARDS": {
+     "10491":"GT IN VIDEOCARDS",
+     "10573":"GT IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"VIDEOCARDS NVIDIA" },
+     "10623":"GT"
+    },
+   "NVIDIA GTX VIDEOCARDS": {
+     "10458":"GTX IN VIDEOCARDS",
+     "10574":"GTX IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"VIDEOCARDS NVIDIA" },
+     "10624":"GTX"
+    },
+   "NVIDIA RTX VIDEOCARDS": {
+     "10459":"RTX IN VIDEOCARDS",
+     "10575":"RTX IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"VIDEOCARDS NVIDIA" },
+     "10625":"RTX"
+    },
+   "NVIDIA QUARDO VIDEOCARDS": {
+     "10460":"QUARDO IN VIDEOCARDS",
+     "10576":"QUARDO IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"VIDEOCARDS NVIDIA" },
+     "10626":"QUARDO"
+    },
+   "NVIDIA AMPHERE VIDEOCARDS": {
+     "10461":"AMPHERE IN VIDEOCARDS",
+     "10577":"AMPHERE IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"VIDEOCARDS NVIDIA" },
+     "10627":"AMPHERE"
+    },
+   "RTX 3060 TI": {
+     "10462":"RTX 3060 TI IN VIDEOCARDS",
+     "10578":"RTX 3060 TI IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10529":"RTX 3060 TI"
+    },
+
+   "RTX 2060": {
+     "10463":"RTX 2060 IN VIDEOCARDS",
+     "10579":"RTX 2060 IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10530":"RTX 2060"
+    },
+   "GTX 1660 SUPER": {
+     "10464":"RTX 1660 SUPER IN VIDEOCARDS",
+     "10580":"RTX 1660 SUPER IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10531":"RTX 1660 SUPER"
+    },
+   "RTX 3080": {
+     "10465":"RTX 3080 IN VIDEOCARDS",
+     "10581":"RTX 3080 IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10532":"RTX 3080"
+    },
+   "RTX 3070": {
+     "10466":"RTX 3070 IN VIDEOCARDS",
+     "10582":"RTX 3070 IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10533":"RTX 3070"
+    },
+   "RTX 3060": {
+     "10467":"RTX 3070 IN VIDEOCARDS",
+     "10583":"RTX 3070 IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10534":"RTX 3070"
+    },
+   "RTX 3080 TI": {
+     "10468":"RTX 3080 TI IN VIDEOCARDS",
+     "10584":"RTX 3080 TI IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10535":"RTX 3080 TI"
+    },
+   "RTX 2060 SUPER": {
+     "10469":"RTX 2060 SUPER IN VIDEOCARDS",
+     "10585":"RTX 2060 SUPER IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10536":"RTX 2060 SUPER"
+    },
+   "RTX 3090 TI": {
+     "9094":"RTX 3090 TI IN VIDEOCARDS",
+     "10586":"RTX 2060 SUPER IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10537":"RTX 3090 TI"
+    },
+   "RTX 3090": {
+     "9095":"RTX 3090  IN VIDEOCARDS",
+     "10587":"RTX 3090 IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10538":"RTX 3090"
+    },
+   "RTX 3070 TI": {
+     "9096":"RTX 3070 TI  IN VIDEOCARDS",
+     "10588":"RTX 3070 TI SUPER IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10539":"RTX 3070 TI"
+    },
+   "RTX 3050": {
+     "9097":"RTX 3050 IN VIDEOCARDS",
+     "10589":"RTX 3050 SUPER IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10540":"RTX 3050"
+    },
+   "GTX 1660": {
+     "9098":"GTX 1660 IN VIDEOCARDS",
+     "10590":"GTX 1660 SUPER IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA GTX VIDEOCARDS" },
+     "10541":"GTX 1660"
+    },
+   "GTX 1660 TI": {
+     "9099":"GTX 1660 TI IN VIDEOCARDS",
+     "10591":"GTX 1660 TI SUPER IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA GTX VIDEOCARDS" },
+     "10542":"GTX 1660 TI"
+    },
+   "GTX 1650": {
+     "9100":"GTX 1650 IN VIDEOCARDS",
+     "10592":"GTX 1650 SUPER IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA GTX VIDEOCARDS" },
+     "10543":"GTX 1650"
+    },
+   "GTX 1050 TI": {
+     "9101":"GTX 1050 TI IN VIDEOCARDS",
+     "10593":"GTX 1050 TI SUPER IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA GTX VIDEOCARDS" },
+     "10544":"GTX 1050 TI"
+    },
+   "GT 1030": {
+     "9102":"GT 1030 IN VIDEOCARDS",
+     "10594":"GT 1030  IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA GT VIDEOCARDS" },
+     "10545":"GT 1030"
+    },
+   "GT 710": {
+     "9103":"GT 710 IN VIDEOCARDS",
+     "10595":"GT 710  IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA GT VIDEOCARDS" },
+     "10546":"GT 710"
+    },
+   "GT 730": {
+     "9104":"GT 730 IN VIDEOCARDS",
+     "10596":"GT 730  IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA GT VIDEOCARDS" },
+     "10547":"GT 730"
+    },
+   "AMPERE A4000": {
+     "9105":"AMPERE A4000 IN VIDEOCARDS",
+     "10597":"AMPERE A4000  IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA AMPERE VIDEOCARDS" },
+     "10548":"AMPERE A4000"
+    },
+   "RTX AMPERE 2000": {
+     "9106":"RTX AMPERE 2000 IN VIDEOCARDS",
+     "10598":"RTX AMPERE 2000  IN VIDEOCARDS BY ASUS",
+     "template": {
+       "ASUS": [
+         "NVIDIA AMPERE VIDEOCARDS",
+         "NVIDIA RTX VIDEOCARDS"
+        ]
+      },
+     "10549":"RTX AMPERE 2000"
+    },
+   "QUADRO T1000": {
+     "9107":"QUADRO T1000 IN VIDEOCARDS",
+     "10599":"QUADRO T1000  IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NIDIA QUADRO VIDEOCARDS" },
+     "10550":"QUADRO T1000"
+    },
+   "RTX 4090": {
+     "9108":"RTX 4090 IN VIDEOCARDS",
+     "10600":"RTX 4090  IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10551":"RTX 4090"
+    },
+   "RTX 4080": {
+     "9109":"RTX 4080 IN VIDEOCARDS",
+     "10601":"RTX 4080  IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10552":"RTX 4080"
+    },
+   "QUADRO RTX AMPERE 4500": {
+     "9110":"RTX 4500 IN VIDEOCARDS",
+     "10602":"RTX 4500  IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10553":"RTX 4500"
+    },
+   "RTX 4070": {
+     "10566":"RTX 4070 IN VIDEOCARDS",
+     "10603":"RTX 4070  IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10570":"RTX 4070"
+    },
+   "RTX 4070 TI": {
+     "10567":"RTX 4070 IN VIDEOCARDS",
+     "10604":"RTX 4070  IN VIDEOCARDS BY ASUS",
+     "template": {"ASUS":"NVIDIA RTX VIDEOCARDS" },
+     "10571":"RTX 4070"
+
+    }
+  }
+}

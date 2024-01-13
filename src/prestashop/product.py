@@ -1,0 +1,262 @@
+"""! @brief @ru_brief класс товара в `Prestashop`
+
+ @section libs imports:
+  - sys 
+  - os 
+  - attr 
+  - pathlib 
+  - typing 
+  - gs 
+  - helpers 
+  - gs 
+  - prestashop.prestashop 
+  - .images_exec 
+  
+Author(s):
+  - Created by Davidka on 09.11.2023 .
+"""
+# -*- coding: utf-8 -*-
+#! /usr/share/projects/hypotez/venv/scripts python
+import sys
+import os
+
+
+from attr import attr, attrs
+from pathlib import Path
+from typing import Union
+
+# ----------------------------------
+from src.settings import gs
+from src.helpers import  logger, logs_and_errors_decorator, jprint, pprint
+from src.io_interface import j_loads, j_dumps
+
+from src.prestashop.prestashop import  PrestaAPIV1, PrestaAPIV2, PrestaAPIV3, \
+    PrestaAPIV1Error, PrestaAPIV2Error, PrestaAPIV3Error
+from .images_exec import upload_image
+# --------------------------------
+
+
+
+
+
+class Product():
+    """ Класс товара из модуля prestashop
+   Непосредственно выполняет все операции через API
+   ------------------------------------
+   Methods:
+    check(product_reference: str): Проверка наличия товара в бд
+        по product_reference (SKU, MKT)
+        Вернет словарь товара, если товар есть, иначе False
+    search(filter: str, value: str): Расширенный поиск в БД по фильтрам
+    get(id_product): Возвращает информацию о товаре по ID
+    """
+
+    
+    def __init__(self,*args,**kwards):
+        
+        pass
+
+    @staticmethod
+    def check_prod_presence(product_reference: str) -> Union[dict, False]:
+        """! Проверка наличия товара в БД 
+        -----------------
+        @param reference `str`  `product_reference` - термин из престашоп = `product_id` 
+        
+        @returns   product `dict` - словарь товарам иначе `False`
+        @returns    False `bool` - if Product NOT in the DB, else Product
+        """
+        product_filter = {'filter[reference]': product_reference}
+        response = PrestaAPIV1.search('products', product_filter)
+    
+        if isinstance(response, list) and len(response) > 0:
+            return response[0]
+        else:
+            return False
+
+    @staticmethod
+    def search(filter: str, value: str) -> Union[dict, False]:
+        """ Расширенный поиск в БД
+        -----------------
+        Attrs:
+            filter`str`  :  фильтр поиска
+                Значения `reference` `id_category` , `id_supplier` etc
+            value `str`  :  искомое значение
+        @returns
+            product - словарь товарам иначе False
+            False - if Product NOT in the DB, else Product
+        """
+        product_filter = {f'filter[{filter}]': value}
+
+        #return PrestaAPIV1.search('products', product_filter)
+
+        return  PrestaAPIV3.search('products', product_filter)
+
+        if isinstance(response, list) and len(response) > 0:
+            return response[0]
+        else:
+            return False
+
+
+    @staticmethod
+    def get(id_product: Union[int,str]) -> dict:
+        """ Тестовая функция, по сути повтор check, но работает непосредстевенно 
+       с id_product 
+       
+       """
+        #dic_product_type_PrestaAPIV1 = PrestaAPIV1.get(f'products/{id_product}')
+        #dic_product_type_PrestaAPIV2 = PrestaAPIV2.get(f'products/{id_product}')
+
+        return  PrestaAPIV3.read('products', id_product, display = 'full')
+
+        if isinstance(response, list) and len(response) > 0:
+            return response[0]
+        else:
+            return False
+    
+
+    @staticmethod
+    def get_list_products(api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') ->dict:
+        """
+        Полный список товаров. Осторожно!
+
+       """
+        return   PrestaAPIV1.get('products')
+        if isinstance(response, list) and len(response) > 0:
+            return response[0]
+        else:
+            return False
+        
+
+
+    @staticmethod
+    def add(product_dict: dict, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> dict:
+        """ Добавление нового товара в БД PRESTASHOP через API
+        -----------------
+       @param
+        product_dict (dict): - Заполненный словарь товара / поля класса Product
+        api_method `str`  :  Какая API будет задействована:
+                'V1' - prestapyt
+                'V2' - prestashop_api
+       @returns
+        product:dict - Заполненный словарь добавленного товара в случае успеха, иначе сообщение об ошибке
+        """
+
+        if api_method == 'V3':
+            try:
+                response = PrestaAPIV3.create('products', product_dict)
+                return response
+            except Exception as ex:
+                print('---------------------------------------------------------------')
+                pprint(e)
+                print('---------------------------------------------------------------')
+                return False
+        elif api_method == 'V2':
+            try:
+                response = PrestaAPIV2.add('products', product_dict)['product']
+                return response
+            except Exception as ex:
+                print('---------------------------------------------------------------')
+                pprint(e)
+                print('---------------------------------------------------------------')
+                return False
+        else:
+            try:
+                response = PrestaAPIV1.add('products', product_dict)['product']
+                return response
+
+            except Exception as ex:
+                print('---------------------------------------------------------------')
+                pprint(e)
+                print('---------------------------------------------------------------')
+                return False
+
+
+    @staticmethod
+    def update(id_product: int, product_dict: dict, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3')-> dict:
+        """ Изменение данных о существующем товаре
+        @param
+            product:dict - Заполненный словарь товара / поля класса Product
+        @returns
+            product - изменненый товар в случае успеха иначе сообщение об ошибке от prestashop 
+        """
+        resourse = f'products/{id_product}'
+        if api_method == 'V3':
+            return   PrestaAPIV3.write(resourse, product_dict)
+        elif api_method == 'V2':
+            return   PrestaAPIV2.add(resourse, product_dict)['product']
+        else:
+            return   PrestaAPIV1.add(resourse, product_dict)
+
+        if isinstance(response, list) and len(response) > 0:
+            return response[0]
+        else:
+            return False
+
+        #product = PrestaAPIV1.get('products', id_product)
+        #PrestaAPIV1.edit('products', id_product, product_dict)
+        pass
+
+    #@staticmethod
+    #def update_categories(id_product: int, category_ids: list, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3')-> Union[dict, PrestaAPIError]:
+    #    """ Изменение данных о существующем товаре
+    #    @param
+    #        product:dict - Заполненный словарь товара / поля класса Product
+    #    @returns
+    #        product - изменненый товар в случае успеха иначе сообщение об ошибке от prestashop 
+    #    """
+    #    product = PrestaAPIV1.get('products', id_product)
+    #    product['product']['associations']['categories'] = \
+    #        {'categories': [{'id': cat_id} for cat_id in category_ids]}
+    #    PrestaAPIV1.edit('products', id_product, product)
+    #    pass
+
+
+    def get_schema(self, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> Union[dict, False]:
+        """JSON схема товара
+
+        @returns
+            Union[dict,bool]: JSON или False
+        """
+        params = \
+            {
+            'display': 'full',  # или 'basic' в зависимости от того, какую информацию вы хотите получить
+            }
+        response = PrestaAPIV1.get(params)
+        if response.status != 200:
+            logger.error(f'''Ошибка при выполнении запроса: {response}''')
+            return False
+
+        return response.json
+
+
+    @staticmethod
+    def upload_image(id_product: int, image_url: str, target_file_name: str = 'default.png') -> Union[int, bool]:
+        """
+        Загружаю картинку, получаю или id_image или False
+        @param
+            image_url `str`  :  source url
+            target_file_name `str`  :  имя файла для prestashop. Если на указано (`default.png`) - 
+            будет заменено на `default_<RANDOMSEQUENCE>.png`
+        Returns
+            id_image `int`  :  id_image from src.prestashop db if success else False
+
+        """
+
+        resource = fr'products/{id_product}'
+        #response: dict = upload_image(resource = resource , image_url = image_url)
+        #return response['prestashop']['image']['id']
+        return upload_image(resource = resource , image_url = image_url)
+        return response
+
+    @staticmethod
+    def delete(id_product: Union[int,str], api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> dict:
+        """ Удаляю товер из бд """
+
+        #return PrestaProd.delete_product(f'products/{id_product}')
+        return  PrestaAPIV1.delete(f'products/{id_product}')
+
+        if isinstance(response, list) and len(response) > 0:
+            return response[0]
+        else:
+            return False
+

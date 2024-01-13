@@ -1,0 +1,185 @@
+{
+  "store": {
+    "store_id": 5777771,
+    "supplier_id": 4546,
+    "description": "realme Official Store",
+    "about": " ",
+    "category ID on site":"","brand": "REALME",
+    "url": "https://www.aliexpress.com/store/5777771",
+    "shop categories page": "",
+    "shop categories json file": "https://www.aliexpress.com/store/productGroupsAjax.htm?storeId=5777771&shopVersion=3.0&callback=",
+    "get store banners": true
+  },
+  "scenarios": {
+    "REALME GT 2 PRO": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-GT-2-Pro/5777771_40000002128649.html?spm=a2g0o.store_pc_groupList.0.0.2e8412bah0UM12",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME GT 2 PRO" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME GT Master Edition": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-GT-2-Pro/5777771_40000002128649.html?spm=a2g0o.store_pc_groupList.0.0.2e8412bah0UM12",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME GT Master Edition" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME GT Neo3": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-GT-Neo-3/5777771_40000002078615.html?spm=a2g0o.store_pc_groupList.0.0.200612baOrhwys",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME GT Neo3" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME GT Neo3T": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-GT-Neo-3T/5777771_40000002082489.html?spm=a2g0o.store_pc_groupList.0.0.1c4270f1OYzpVw",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME GT Neo3T" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME 9": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-9/5777771_40000001615249.html?spm=a2g0o.store_pc_groupList.0.0.200612baOrhwys",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME 9" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME 9i": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-9i/5777771_40000000442883.html?spm=a2g0o.store_pc_groupList.0.0.200612baOrhwys",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME 9i" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME 9 5G": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-9-5G/5777771_40000002839831.html?spm=a2g0o.store_pc_groupList.0.0.200612baOrhwys",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME 9 5G" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME 9 PRO": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-9-pro/5777771_40000000749637.html?spm=a2g0o.store_pc_groupList.0.0.200612baOrhwys",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME 9 PRO" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME 9 PRO PLUS": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-9-pro-plus/5777771_40000000791477.html?spm=a2g0o.store_pc_groupList.0.0.200612baOrhwys",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME 9 PRO PLUS" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME 8 Series": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-8-Series/5777771_40000002128647.html?spm=a2g0o.store_pc_groupList.0.0.527f3326IfyzAN",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME 8 Series" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME C33": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-C33/5777771_40000002839851.html?spm=a2g0o.store_pc_groupList.0.0.36094f82ngl89x",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME C33" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME C25S": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-C25S/5777771_40000002128738.html?spm=a2g0o.store_pc_groupList.0.0.36094f82ngl89x",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME C25S" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME C35": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-C35/5777771_40000002128740.html?spm=a2g0o.store_pc_groupList.0.0.36094f82ngl89x",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME C35" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME C31": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-C31/5777771_40000002551249.html?spm=a2g0o.store_pc_groupList.0.0.36094f82ngl89x",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME C31" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME C21Y": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-C21Y/5777771_40000002078674.html?spm=a2g0o.store_pc_groupList.0.0.36094f82ngl89x",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME C21Y" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME C30": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-C30/5777771_40000002559204.html?spm=a2g0o.store_pc_groupList.0.0.36094f82ngl89x",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME C30" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME NARZO 50i PRIME": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/Narzo-50i-Prime/5777771_40000002021662.html?spm=a2g0o.store_pc_groupList.0.0.36094f82ngl89x",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME NARZO 50i PRIME" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+
+    "REALME NARZO 50a": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/narzo-50A/5777771_10000002097092.html?spm=a2g0o.store_pc_groupList.0.0.36094f82ngl89x",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME NARZO 50a" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+
+    "REALME Buds Air 3": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-Buds-Air-3-New/5777771_40000001780559.html?spm=a2g0o.store_pc_groupList.0.0.72f55acazBTQ5B",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME Buds Air 3" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "REALME Buds Q2s": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-BudsQ2s/5777771_10000000243186.html?spm=a2g0o.store_pc_groupList.0.0.72f55acazBTQ5B",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "REALME Buds Q2s" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    },
+    "SMART CAMERA": {
+      "category ID on site":"","brand": "REALME","url": "https://www.aliexpress.com/store/group/realme-Smart-Camera-New/5777771_10000000237252.html?spm=a2g0o.store_pc_groupList.0.0.433617f0BDupYs",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "realme": "SMART CAMERA" }
+      },
+      "product combinations": [ "bundle", "color" ]
+    }
+  }
+}

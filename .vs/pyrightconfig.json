@@ -1,0 +1,14 @@
+{
+  "executionEnvironments": [
+    {
+      "name": "Python",
+      "pythonPath": "${config:python.pythonPath}",
+      "lib": ["./src"],
+      "analysisDependencies": [
+        "numpy",
+        "pandas"
+        // ...
+      ]
+    }
+  ]
+}

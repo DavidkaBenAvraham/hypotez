@@ -1,0 +1,275 @@
+{
+ "apple": {
+   "SMARTPHONES": {
+     "3418":"APPLE",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "2243":"APPLE",
+     "2681":"iPhone"
+    },
+   "iPhone 1ST GENERATION": {
+     "9671":"iPhone (1st gen)",
+     "template": {"apple":"SMARTPHONES" },
+     "9670":"iPhone (1st gen)"
+    },
+   "iPhone 3G": {
+     "9674":"iPhone 3G",
+     "template": {"apple":"SMARTPHONES" },
+     "9672":"iPhone 3G"
+    },
+   "iPhone 3GS": {
+     "9675":"iPhone 3GS",
+     "template": {"apple":"iPhone 3G" },
+     "9673":"iPhone 3GS"
+    },
+   "iPhone 4": {
+     "9678":"iPhone 4",
+     "template": {"apple":"SMARTPHONES" },
+     "9676":"iPhone 4"
+    },
+   "iPhone 4S": {
+     "9683":"iPhone 4S",
+     "template": {"apple":"iPhone 4" },
+     "9676":"iPhone 4S"
+    },
+   "iPhone 5": {
+     "9684":"iPhone 5",
+     "template": {"apple":"SMARTPHONES" },
+     "9676":"iPhone 5"
+    },
+   "iPhone 5C": {
+     "9686":"iPhone 5C",
+     "template": {"apple":"iPhone 5" },
+     "9681":"iPhone 5C"
+    },
+   "iPhone 5S": {
+     "9685":"iPhone 5S",
+     "template": {"apple":"iPhone 5" },
+     "9682":"iPhone 5S"
+    },
+   "iPhone 6": {
+     "6398":"iPhone 6",
+     "template": {"apple":"SMARTPHONES" },
+     "6395":"iPhone 6"
+    },
+   "iPhone 6 Plus": {
+     "6418":"iPhone 6 Plus",
+     "template": {"apple":"iPhone 6" },
+     "6412":"iPhone 6 Plus"
+    },
+   "iPhone 6S": {
+     "6418":"iPhone 6S",
+     "template": {"apple":"iPhone 6" },
+     "6412":"iPhone 6S"
+    },
+   "iPhone 6S Plus": {
+     "6418":"iPhone 6S Plus",
+     "template": {"apple":"iPhone 6" },
+     "6424":"iPhone 6S Plus"
+    },
+   "iPhone 7": {
+     "6426":"iPhone 7",
+     "template": {"apple":"SMARTPHONES" },
+     "6413":"iPhone 7"
+    },
+   "iPhone 7 Plus": {
+     "6420":"iPhone 7 Plus",
+     "template": {"apple":"iPhone 7" },
+     "6414":"iPhone 7 Plus"
+    },
+   "iPhone 8": {
+     "6421":"iPhone 8",
+     "template": {"apple":"SMARTPHONES" },
+     "6413":"iPhone 8"
+    },
+   "iPhone 8 Plus": {
+     "6422":"iPhone 8 Plus",
+     "template": {"apple":"iPhone 8" },
+     "6416":"iPhone 8 Plus"
+    },
+   "iPhone 11": {
+     "6398":"iPhone 11",
+     "template": {"apple":"SMARTPHONES" },
+     "6395":"iPhone 11"
+    },
+   "iPhone 11 PRO": {
+     "6399":"iPhone 11 PRO",
+     "template": {"apple":"iPhone 11" },
+     "6396":"iPhone 11 PRO"
+    },
+   "iPhone 11 PRO MAX": {
+     "6400":"iPhone 11 PRO MAX",
+     "template": {"apple":"iPhone 11" },
+     "6397":"iPhone 11 PRO MAX"
+    },
+   "iPhone 12": {
+     "3749":"iPhone 12",
+     "template": {"apple":"SMARTPHONES" },
+     "3421":"iPhone 12"
+    },
+   "iPhone 12 MINI": {
+     "3746":"iPhone 12 MINI",
+     "template": {"apple":"iPhone 12" },
+     "3420":"iPhone 12 MINI"
+    },
+   "iPhone 12 PRO": {
+     "6392":"iPhone 12 PRO",
+     "template": {"apple":"iPhone 12" },
+     "6391":"iPhone 12 PRO"
+    },
+   "iPhone 12 PRO MAX": {
+     "6394":"iPhone 12 PRO MAX",
+     "template": {"apple":"iPhone 12" },
+     "6393":"iPhone 12 PRO MAX"
+    },
+   "iPhone 13": {
+     "6390":"iPhone 13",
+     "template": {"apple":"SMARTPHONES" },
+     "6389":"iPhone 13"
+    },
+   "iPhone 13 MINI": {
+     "3748":"iPhone 13 MINI",
+     "template": {"apple":"iPhone 13" },
+     "3422":"iPhone 13 MINI"
+    },
+   "iPhone 13 PRO": {
+     "3749":"iPhone 13 PRO",
+     "template": {"apple":"iPhone 13" },
+     "3423":"iPhone 13 PRO"
+    },
+   "iPhone 13 PRO MAX": {
+     "3750":"iPhone 13 PRO MAX",
+     "template": {"apple":"iPhone 13" },
+     "3424":"iPhone 13 PRO MAX"
+    },
+   "iPhone 14": {
+     "6198":"iPhone 14",
+     "template": {"apple":"SMARTPHONES" },
+     "6300":"iPhone 14"
+    },
+   "iPhone 14 PLUS": {
+     "6199":"iPhone 14 PLUS",
+     "template": {"apple":"iPhone 14" },
+     "6195":"iPhone 14 PLUS"
+    },
+   "iPhone 14 PRO": {
+     "6200":"iPhone 14 PRO",
+     "template": {"apple":"iPhone 14" },
+     "6196":"iPhone 14 PRO"
+    },
+   "iPhone 14 PRO MAX": {
+     "6301":"iPhone 14 PRO MAX",
+     "template": {"apple":"iPhone 14" },
+     "6197":"iPhone 14 PRO MAX"
+    },
+   "iPhone X": {
+     "6198":"iPhone X",
+     "template": {"apple":"SMARTPHONES" },
+     "6405":"iPhone X"
+    },
+   "iPhone XR": {
+     "6301":"iPhone XR",
+     "template": {"apple":"iPhone X" },
+     "6408":"iPhone XR"
+    },
+   "iPhone XS": {
+     "6401":"iPhone XS",
+     "template": {"apple":"iPhone X" },
+     "6403":"iPhone XS"
+    },
+   "iPhone XS MAX": {
+     "6402":"iPhone XS MAX",
+     "template": {"apple":"iPhone X" },
+     "6404":"iPhone XS MAX"
+    },
+   "iPhone SE": {
+     "6427":"iPhone SE",
+     "template": {"apple":"SMARTPHONES" },
+     "7537":"iPhone SE"
+    },
+   "iPhone SE 2020": {
+     "3745":"iPhone SE 2020",
+     "template": {"apple":"iPhone SE" },
+     "6410":"iPhone SE 2020"
+    },
+   "iPhone SE 2022": {
+     "6409":"iPhone SE 2022",
+     "template": {"apple":"iPhone SE" },
+     "3419":"iPhone SE 2022"
+    },
+   "iMac 24": {
+     "3425":"IMac 24 inch",
+     "template": {"aio":"24" },
+     "2243":"APPLE brand axis",
+     "2696":"IMac",
+     "2697":"IMac 24 inch"
+    },
+
+   "iMac 27": {
+     "3425":"IMac 27 inch",
+     "template": {"aio":"27" },
+     "2243":"APPLE brand axis",
+     "2696":"IMac",
+     "2698":"IMac 27 inch"
+    },
+   "ipods in-ear-bud": {
+     "3459":"in-ear-bud",
+     "template":"speakers_audio_headphones['In-ear Bud']",
+
+     "2243":"APPLE",
+     "2093":"Ipods",
+     "2095":"APPLE Ipods In-ear Buds"
+    },
+   "ipods Overear": {
+     "3456":"Overear",
+     "template": {"headphones":"BT Overear" },
+
+     "2243":"APPLE",
+     "2093":"Ipods",
+     "2096":"Over-ear"
+    },
+   "ipods Ear-clip": {
+     "3455":"Ear-clip",
+     "template": {"headphones":"BT In-ear Bud" },
+
+     "2243":"APPLE",
+     "2093":"Ipods",
+     "2094":"Ear-clip"
+    },
+   "iPad": {
+     "9457":"iPad",
+     "template": {"consumer electronics root":"TABLETS" },
+     "2243":"apple",
+     "2686":"iPad"
+    },
+   "MACBOOK": {
+     "6559":"apple",
+     "template": {"laptops":"APPLE M" },
+     "2243":"apple",
+     "2691":"MACBOOK"
+    },
+   "MACBOOK 13 I5": {
+     "9477":"MACBOOK 13 i5",
+     "6559":"apple",
+     "template": {"laptops":"INTEL" },
+     "2243":"apple",
+     "2691":"Macbook",
+     "9371":"MACBOOK 13 i5"
+    },
+   "MACBOOK 13 I7": {
+     "9478":"MACBOOK 13 i5",
+     "6559":"apple",
+     "template": {"laptops":"INTEL" },
+     "2243":"apple",
+     "2691":"Macbook",
+     "9470":"MACBOOK 13 i7"
+    },
+   "WATCHES": {
+     "9465":"Aplle Watches",
+     "6559":"apple",
+     "template": {"wearable":"WATCHES" },
+     "2243":"apple",
+     "2677":"Aplle smart",
+     "7347":"Aplle Watches"
+    }
+  }
+}

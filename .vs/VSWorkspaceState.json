@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\helpers",
+    "\\src\\product",
+    "\\src\\suppliers",
+    "\\src\\suppliers\\aliexpress",
+    "\\src\\suppliers\\ebay",
+    "\\src\\suppliers\\hb",
+    "\\src\\tools",
+    "\\src\\webdriver"
+  ],
+  "SelectedNode": "\\src\\product\\product_fields.py",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,22 @@
+{
+ "tablets": {
+
+   "TABLETS": {
+     "template": {
+       "consumer electronics root":"TABLETS"
+      }
+    },
+   "WINDOWS TABLETS": {
+     "9456":"WINDOWS",
+     "template": {"tablets":"TABLETS" }
+    },
+   "ANDROID TABLETS": {
+     "9455":"ANDROID",
+     "template": {"tablets":"TABLETS" }
+    },
+   "APPLE TABLETS": {
+     "9457":"iOS",
+     "template": {"tablets":"TABLETS" }
+    }
+  }
+}

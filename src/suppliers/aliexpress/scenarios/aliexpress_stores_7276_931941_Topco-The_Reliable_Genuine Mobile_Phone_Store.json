@@ -1,0 +1,193 @@
+{
+  "store": {
+    "store_id": 931941,
+    "supplier_id": 7276,
+
+    "description": "Topco-The Reliable Genuine Mobile Phone Store",
+    "about": " ",
+    "category ID on site":"",
+    "url": "https://www.aliexpress.com/store/931941",
+    "shop categories page": "",
+    "shop categories json file": "https://www.aliexpress.com/store/productGroupsAjax.htm?storeId=931941&shopVersion=3.0&callback=jsonp_910331321",
+    "get store banners": true
+  },
+  "scenarios": {
+    "GALAXY A Series": {
+      "category ID on site":"","brand": "SAMSUNG","url": "https://www.aliexpress.com/store/group/Galaxy-A-Series/931941_40000002909697.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "samsung": "GALAXY A" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "GALAXY S10": {
+      "category ID on site":"","brand": "SAMSUNG",
+      "url": "https://www.aliexpress.com/store/group/Galaxy-S10-Series/931941_40000003036720.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "samsung": "GALAXY S10" }
+      },
+      "product combinations": [ "color" ]
+    },
+
+    "Galaxy Note 20": {
+      "category ID on site":"","brand": "SAMSUNG",
+      "url": "https://www.aliexpress.com/store/group/Galaxy-Note20-Series/931941_40000003067557.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "samsung": "GALAXY NOTE 20" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "Galaxy Note 9": {
+      "category ID on site":"","brand": "SAMSUNG",
+      "url": "https://www.aliexpress.com/store/group/Galaxy-Note9/931941_40000003067559.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "samsung": "GALAXY NOTE 9" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "Galaxy S21": {
+      "category ID on site":"","brand": "SAMSUNG",
+      "url": "https://www.aliexpress.com/store/group/Galaxy-S21-Series/931941_40000003032803.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "samsung": "GALAXY S21" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "Galaxy S22": {
+      "category ID on site":"","brand": "SAMSUNG",
+      "url": "https://www.aliexpress.com/store/group/Galaxy-S22-Series/931941_40000002901753.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "samsung": "GALAXY S22" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "Galaxy S8": {
+      "category ID on site":"","brand": "SAMSUNG",
+      "url": "https://www.aliexpress.com/store/group/Galaxy-S8-S9-Series/931941_40000002909693.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "samsung": "GALAXY S8" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "GALAXY NOTE 10": {
+      "category ID on site":"","brand": "SAMSUNG",
+      "url": "https://www.aliexpress.com/store/group/Galaxy-Note-10-Series/931941_40000002909695.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "samsung": "GALAXY NOTE 10" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "iPad": {
+      "category ID on site":"","brand": "APPLE",
+      "url": "https://www.aliexpress.com/store/group/iPad/931941_40000000949014.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "apple": "iPad" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "iPhone 6 7": {
+      "category ID on site":"","brand": "APPLE",
+      "url": "https://www.aliexpress.com/store/group/iPhone-6-7-8-SE-Series/931941_40000001056352.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "apple": "iPhone 6" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "iPhone 11": {
+      "category ID on site":"","brand": "APPLE",
+      "url": "https://www.aliexpress.com/store/group/iPhone-11-Series/931941_40000000999273.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "apple": "iPhone 11" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "iPhone 12": {
+      "category ID on site":"","brand": "APPLE",
+      "url": "https://www.aliexpress.com/store/group/iPhone-12-Series/931941_40000001072005.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "apple": "iPhone 11" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "iPhone 13": {
+      "category ID on site":"","brand": "APPLE",
+      "url": "https://www.aliexpress.com/store/group/iPhone-13-Series/931941_40000003067549.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "apple": "iPhone 13" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "iPhone X": {
+      "category ID on site":"","brand": "APPLE",
+      "url": "https://www.aliexpress.com/store/group/iPhone-X-XR-Xs-Series/931941_40000001072006.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "apple": "iPhone X" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "Sony Xperia 10": {
+      "category ID on site":"","brand": "SONY","url": "https://www.aliexpress.com/store/group/Xperia-10-iii/931941_40000002909705.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "sony": "XPERIA 10" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "Sony Xperia 1 III": {
+      "category ID on site":"","brand": "SONY",
+      "url": "https://www.aliexpress.com/store/group/Xperia-10-iii/931941_40000002909705.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "sony": "XPERIA 1 III" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "Sony Xperia 1": {
+      "category ID on site":"","brand": "SONY",
+      "url": "https://www.aliexpress.com/store/group/Xperia-1-Xperia-5/931941_40000003067564.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "sony": "XPERIA 1" }
+      },
+      "product combinations": [ "color" ]
+    },
+    "Sony Xperia 1 II": {
+      "category ID on site":"","brand": "SONY",
+      "url": "https://www.aliexpress.com/store/group/Xperia-1-ii-Xperia-5-ii/931941_40000003032809.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "sony": "XPERIA 1 II" }
+      },
+      "product combinations": [ "color" ]
+    }
+  }
+}

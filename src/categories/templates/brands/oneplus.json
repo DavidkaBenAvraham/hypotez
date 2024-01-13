@@ -1,0 +1,91 @@
+{
+ "oneplus": {
+   "SMARTPHONES": {
+     "6338":"ONEPLUS",
+     "6471":"SMARTPHONES BY BRAND",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "2252":"OPPO",
+     "2554":"SMARTPHONES"
+    },
+   "ONEPLUS 9": {
+     "6339":"ONEPLUS 9",
+     "template": {"oneplus":"SMARTPHONES" },
+     "2559":"ONEPLUS 9"
+    },
+   "ONEPLUS NORD": {
+     "6340":"ONEPLUS NORD",
+     "template": {"oneplus":"SMARTPHONES" },
+     "7566":"ONEPLUS NORD"
+    },
+   "ONEPLUS 8": {
+     "6341":"ONEPLUS 8",
+     "template": {"oneplus":"SMARTPHONES" },
+     "7567":"ONEPLUS 8"
+    },
+   "ONEPLUS 10": {
+     "6342":"ONEPLUS 10",
+     "template": {"oneplus":"SMARTPHONES" },
+     "7568":"ONEPLUS 10"
+    },
+   "ONEPLUS 9 PRO": {
+     "6343":"ONEPLUS 9 PRO",
+     "template": {"oneplus":"ONEPLUS 9" },
+     "2560":"ONEPLUS 9 PRO"
+    },
+   "ONEPLUS 9 PRO 5G": {
+     "6344":"ONEPLUS 9 PRO 5G",
+     "template": {"oneplus":"ONEPLUS 9" },
+     "6349":"ONEPLUS 9 PRO 5G"
+    },
+   "ONEPLUS NORD 2": {
+     "6351":"ONEPLUS NORD 2",
+     "template": {"oneplus":"ONEPLUS NORD" },
+     "2555":"ONEPLUS NORD 2"
+    },
+   "ONEPLUS NORD CE": {
+     "6352":"ONEPLUS NORD CE",
+     "template": {"oneplus":"ONEPLUS NORD" },
+     "2556":"ONEPLUS NORD CE"
+    },
+   "ONEPLUS NORD N20 SE": {
+     "6353":"ONEPLUS NORD N20 SE",
+     "template": {"oneplus":"ONEPLUS NORD" },
+     "6345":"ONEPLUS NORD N20 SE"
+    },
+   "ONEPLUS NORD CE 2 5G": {
+     "6354":"ONEPLUS NORD CE 2 5G",
+     "template": {"oneplus":"ONEPLUS NORD" },
+     "6346":"ONEPLUS NORD CE 2 5G"
+    },
+   "ONEPLUS NORD CE 2 LITE 5G": {
+     "6355":"ONEPLUS NORD CE 2 LITE 5G",
+     "template": {"oneplus":"ONEPLUS NORD" },
+     "6347":"ONEPLUS NORD CE 2 LITE 5G"
+    },
+   "ONEPLUS NORD 2T 5G": {
+     "6356":"ONEPLUS NORD 2T 5G",
+     "template": {"oneplus":"ONEPLUS NORD" },
+     "6348":"ONEPLUS NORD 2T 5G"
+    },
+   "ONEPLUS 8 PRO": {
+     "9240":"ONEPLUS 8 PRO",
+     "template": {"oneplus":"ONEPLUS 8" },
+     "2557":"ONEPLUS 8 PRO"
+    },
+   "ONEPLUS 8T": {
+     "9241":"ONEPLUS 8T",
+     "template": {"oneplus":"ONEPLUS 8" },
+     "2558":"ONEPLUS 8T"
+    },
+   "ONEPLUS 10 PRO 5G": {
+     "10191":"ONEPLUS PRO 5G",
+     "template": {"oneplus":"ONEPLUS 10" },
+     "6350":"ONEPLUS 10 PRO 5G"
+    },
+   "ONEPLUS 10T": {
+     "10193":"ONEPLUS 10T",
+     "template": {"oneplus":"ONEPLUS 10" },
+     "10192":"ONEPLUS 10T"
+    }
+  }
+}

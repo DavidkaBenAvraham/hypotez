@@ -1,0 +1,314 @@
+{
+
+ "batteries and power": {
+   "BATTERIES": {
+     "7711":"Batteries",
+     "template": {"consumer electronics root":"BATTERIES & POWER" },
+     "7675":"Batteries"
+    },
+   "BATTERIES CELLS": {
+     "7712":"BATTERIES CELLS",
+     "template": {"batteries and power":"BATTERIES" },
+     "7729":"BATTERIES CELLS"
+    },
+   "4S-12V LiFePO4": {
+     "7757":"4S-12V LiFePO4",
+     "template": {"batteries and power":"BATTERIES" },
+     "7746":"4S-12V LiFePO4"
+    },
+   "LiFePo4 Battery Pack": {
+     "7785":"LiFePo4 Battery Pack",
+     "template": {"batteries and power":"BATTERIES" },
+     "7792":"LiFePo4 Battery Pack"
+    },
+   "Copper connector": {
+     "7713":"Copper connector",
+     "template": {"batteries and power":"BATTERIES" },
+     "7730":"Copper connector"
+    },
+   "18650": {
+     "7799":"18650",
+     "template": {"batteries and power":"BATTERIES" },
+     "7800":"18650"
+    },
+   "16340": {
+     "7821":"16340",
+     "template": {"batteries and power":"BATTERIES" },
+     "7806":"16340"
+    },
+   "18500": {
+     "7831":"18500",
+     "template": {"batteries and power":"BATTERIES" },
+     "7808":"18500"
+    },
+   "21700": {
+     "7832":"21700",
+     "template": {"batteries and power":"BATTERIES" },
+     "7811":"21700"
+    },
+   "26700": {
+     "7832":"26700",
+     "template": {"batteries and power":"BATTERIES" },
+     "7815":"26700"
+    },
+   "32700": {
+     "7835":"32700",
+     "template": {"batteries and power":"BATTERIES" },
+     "7838":"32700"
+    },
+   "E-BIKE BATTERY": {
+     "7843":"E-BIKE BATTERY",
+     "template": {"batteries and power":"BATTERIES" },
+     "7844":"E-BIKE BATTERY"
+    },
+   "18650 E-BIKE BATTERY": {
+     "7854":"18650 E-bike-battery",
+     "template": {"batteries and power":"E-BIKE BATTERY" },
+     "7867":"18650 E-bike-battery"
+    },
+   "21700 E-bike-battery": {
+     "7860":"21700 E-bike-battery",
+     "template": {"batteries and power":"E-BIKE BATTERY" },
+     "7873":"21700 E-bike-battery"
+    },
+   "3.2V 15Ah LiFePo4": {
+     "7714":"3.2V 15Ah LiFePo4",
+     "template": {"batteries and power":"BATTERIES CELLS" },
+     "7731":"3.2V 15Ah LiFePo4"
+    },
+   "3.2V 22Ah LiFePO4": {
+     "7715":"3.2V 22Ah LiFePO4",
+     "template": {"batteries and power":"BATTERIES CELLS" },
+     "7732":"3.2V 22Ah LiFePO4"
+    },
+   "3.2V 30Ah LiFePO4": {
+     "7716":"3.2V 30Ah LiFePO4",
+     "template": {"batteries and power":"BATTERIES CELLS" },
+     "7733":"3.2V 30Ah LiFePO4"
+    },
+   "3.2V 50Ah LiFePO4": {
+     "7717":"3.2V 50Ah LiFePO4",
+     "template": {"batteries and power":"BATTERIES CELLS" },
+     "7734":"3.2V 50Ah LiFePO4"
+    },
+   "3.2V 90Ah LiFePO4": {
+     "7718":"3.2V 90Ah LiFePO4",
+     "template": {"batteries and power":"BATTERIES CELLS" },
+     "7735":"3.2V 90Ah LiFePO4"
+    },
+   "3.2V 105Ah LiFePO4": {
+     "7719":"3.2V 105Ah LiFePO4",
+     "template": {"batteries and power":"BATTERIES CELLS" },
+     "7736":"3.2V 105Ah LiFePO4"
+    },
+   "3.2V 180Ah LiFePO4": {
+     "7720":"3.2V 180Ah LiFePO4",
+     "template": {"batteries and power":"BATTERIES CELLS" },
+     "7737":"3.2V 180Ah LiFePO4"
+    },
+   "3.2V 200Ah LiFePO4": {
+     "7721":"3.2V 200Ah LiFePO4",
+     "template": {"batteries and power":"BATTERIES CELLS" },
+     "7738":"3.2V 200Ah LiFePO4"
+    },
+   "3.2V 280Ah LiFePO4": {
+     "7722":"3.2V 280Ah LiFePO4",
+     "template": {"batteries and power":"BATTERIES CELLS" },
+     "7739":"3.2V 280Ah LiFePO4"
+    },
+
+   "3.2V 310Ah LiFePO4": {
+     "7723":"3.2V 310Ah LiFePO4",
+     "template": {"batteries and power":"BATTERIES CELLS" },
+     "7740":"3.2V 310Ah LiFePO4"
+    },
+   "3.2V 320Ah LiFePO4": {
+     "7724":"3.2V 320Ah LiFePO4",
+     "template": {"batteries and power":"BATTERIES CELLS" },
+     "7741":"3.2V 320Ah LiFePO4"
+    },
+
+   "12.8V 50Ah 60Ah": {
+     "7758":"12.8V 50Ah 60Ah",
+     "template": {"batteries and power":"4S-12V LiFePO4" },
+     "7747":"12.8V 50Ah 60Ah"
+    },
+   "12.8V 90Ah 100Ah": {
+     "7759":"12.8V 90Ah 100Ah",
+     "template": {"batteries and power":"4S-12V LiFePO4" },
+     "7748":"12.8V 90Ah 100Ah"
+    },
+   "12.8V 120Ah LiFePO4": {
+     "7760":"12.8V 120Ah LiFePO4",
+     "template": {"batteries and power":"4S-12V LiFePO4" },
+     "7749":"12.8V 120Ah LiFePO4"
+    },
+   "12.8V 150Ah LiFePO4": {
+     "7761":"12.8V 150Ah LiFePO4",
+     "template": {"batteries and power":"4S-12V LiFePO4" },
+     "7750":"12.8V 150Ah LiFePO4"
+    },
+   "12.8V 180Ah LiFePO4": {
+     "7762":"12.8V 50Ah 60Ah",
+     "template": {"batteries and power":"4S-12V LiFePO4" },
+     "7751":"12.8V 50Ah 60Ah"
+    },
+   "12.8V 200Ah LiFePO4": {
+     "7762":"12.8V 200Ah LiFePO4",
+     "template": {"batteries and power":"4S-12V LiFePO4" },
+     "7752":"12.8V 200Ah LiFePO4"
+    },
+   "12.8V 280Ah LiFePO4": {
+     "7764":"12.8V 280Ah LiFePO4",
+     "template": {"batteries and power":"4S-12V LiFePO4" },
+     "7753":"12.8V 280Ah LiFePO4"
+    },
+   "12.8V 300Ah LiFePO4": {
+     "7765":"12.8V 300Ah LiFePO4",
+     "template": {"batteries and power":"4S-12V LiFePO4" },
+     "7754":"12.8V 300Ah LiFePO4"
+    },
+   "12.8V 60Ah 80Ah": {
+     "7766":"12.8V 60Ah 80Ah",
+     "template": {"batteries and power":"4S-12V LiFePO4" },
+     "7755":"12.8V 60Ah 80Ah"
+    },
+   "12.8V Battery": {
+     "7767":"12.8V Battery",
+     "template": {"batteries and power":"4S-12V LiFePO4" },
+     "7756":"12.8V Battery"
+    },
+
+   "POWER STATION": {
+     "7782":"Power Station",
+     "template": {"consumer electronics root":"BATTERIES & POWER" },
+     "7708":"Power Station"
+    },
+   "12.8V 100Ah-120Ah Power": {
+     "7213":"12.8V 100Ah-120Ah Power",
+     "template": {"batteries and power":"POWER STATION" },
+     "7783":"12.8V 100Ah-120Ah Power"
+    },
+   "12V-24V Battery With PVC": {
+     "7786":"12V-24V Battery With",
+     "template": {"batteries and power":"LiFePo4 Battery Pack" },
+     "7793":"12V-24V Battery With PVC"
+    },
+   "4S-12V LiFePo4": {
+     "7787":"4S-12V LiFePo4",
+     "template": {"batteries and power":"LiFePo4 Battery Pack" },
+     "7794":"4S-12V LiFePo4"
+    },
+   "8S-24V LiFePo4": {
+     "7788":"8S-24V LiFePo4",
+     "template": {"batteries and power":"LiFePo4 Battery Pack" },
+     "7795":"8S-24V LiFePo4"
+    },
+   "16S-48V LiFePO4": {
+     "7789":"16S-48V LiFePO4",
+     "template": {"batteries and power":"LiFePo4 Battery Pack" },
+     "7796":"16S-48V LiFePO4"
+    },
+   "LiFePo4 Charger": {
+     "7790":"LiFePo4 Charger",
+     "template": {"batteries and power":"LiFePo4 Battery Pack" },
+     "7797":"LiFePo4 Charger"
+    },
+   "LiFePo4 BMS": {
+     "7791":"LiFePo4 BMS",
+     "template": {"batteries and power":"LiFePo4 Battery Pack" },
+     "7798":"LiFePo4 BMS"
+    },
+   "Ni-MH": {
+     "7742":"Ni-MH",
+     "template": {"batteries and power":"BATTERIES" },
+     "7725":"Ni-MH"
+    },
+   "Ni-MH 1.2 AA": {
+     "7742":"1.2V AA",
+     "template": {"batteries and power":"Ni-MH" },
+     "7726":"1.2V AA"
+    },
+   "Ni-MH 1.2 AAA": {
+     "7744":"1.2V AA",
+     "template": {"batteries and power":"Ni-MH" },
+     "7727":"1.2V AAA"
+    },
+   "Ni-MH 1.2 USB AA": {
+     "7745":"1.2V USB AA",
+     "template": {"batteries and power":"Ni-MH" },
+     "7728":"1.2V USB AA"
+    },
+   "Hai long Battery": {
+     "7845":"Hai long Battery",
+     "template": {"batteries and power":"E-BIKE BATTERY" },
+     "7849":"Hai long Battery"
+    },
+   "Little Frog Battery": {
+     "7846":"Little Frog Battery",
+     "template": {"batteries and power":"E-BIKE BATTERY" },
+     "7850":"Little Frog Battery"
+    },
+
+   "Silver Fish Battery": {
+     "7847":"Silver Fish Battery",
+     "template": {"batteries and power":"E-BIKE BATTERY" },
+     "7851":"Silver Fish Battery"
+    },
+   "Hai Ba Battery": {
+     "7848":"Hai Ba Battery",
+     "template": {"batteries and power":"E-BIKE BATTERY" },
+     "7852":"Hai Ba Battery"
+    },
+   "18650 12V-24V E-bike-battery": {
+     "7855":"12V-24V E-bike-battery",
+     "template": {"batteries and power":"18650 E-BIKE BATTERY" },
+     "7868":"12V-24V E-bike-battery"
+    },
+   "18650 36V E-bike-battery": {
+     "7856":"36V E-bike-battery",
+     "template": {"batteries and power":"18650 E-BIKE BATTERY" },
+     "7869":"36V E-bike-battery"
+    },
+   "18650 48V E-bike-battery": {
+     "7857":"18650 48V E-bike-battery",
+     "template": {"batteries and power":"18650 E-BIKE BATTERY" },
+     "7870":"18650 48V E-bike-battery"
+    },
+   "18650 60V E-bike-battery": {
+     "7858":"18650 60V E-bike-battery",
+     "template": {"batteries and power":"18650 E-BIKE BATTERY" },
+     "7871":"18650 60V E-bike-battery"
+    },
+   "18650 72V E-bike-battery": {
+     "7859":"18650 72V E-bike-battery",
+     "template": {"batteries and power":"18650 E-BIKE BATTERY" },
+     "7872":"18650 72V E-bike-battery"
+    },
+   "7.4V-8.4v Battery": {
+     "7890":"7.4V-8.4v Battery",
+     "template": {"batteries and power":"BATTERIES" },
+     "7927":"7.4V-8.4v Battery"
+    },
+   "12-12.6V Battery": {
+     "7891":"12-12.6V Battery",
+     "template": {"batteries and power":"BATTERIES" },
+     "7928":"12-12.6V Battery"
+    },
+   "14.4V battery": {
+     "7892":"14.4V battery",
+     "template": {"batteries and power":"BATTERIES" },
+     "7929":"14.4V battery"
+    },
+   "36V-72V Li-ion BMS": {
+     "7893":"36V-72V Li-ion BMS",
+     "template": {"batteries and power":"BATTERIES" },
+     "7930":"36V-72V Li-ion BMS"
+    },
+   "Li-Polymer 3.7V": {
+     "7894":"Li-Polymer 3.7V",
+     "template": {"batteries and power":"BATTERIES" },
+     "7931":"Li-Polymer 3.7V"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "TestFramework": "unittest",
+  "Interpreter": "Global|VisualStudio|venv (Python 3.11)"
+}

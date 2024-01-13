@@ -1,0 +1,149 @@
+{
+  "store": {
+    "description": "Controllers and smart devices",
+    "store_id": 807891,
+    "category ID on site":"","brand": "KINKONY",
+    "url": "https://aliexpress.com/store/807891",
+    "shop categories page": "",
+    "shop categories json file": "https://www.aliexpress.com/store/productGroupsAjax.htm?storeId=807891&shopVersion=3.0&callback=",
+    "get store banners": true
+  },
+  "scenarios": {
+    "RELAY CONTROLLER": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/Relay-Controller/807891_515636284.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "automation": "RELAY CONTROLLER" }
+      },
+      "product combinations": null
+    },
+    "ESP32 HOME AUTOMATION": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/ESP32-home-automation/807891_10000003589575.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "automation": "ESP32 HOME AUTOMATION" }
+      },
+      "product combinations": null
+    },
+    "EXTEND RELAY MODULE": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/Extend-Relay-Module/807891_40000002997645.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "automation": "EXTEND RELAY MODULE" }
+      },
+      "product combinations": null
+    },
+    "LOGICAL CONTROLLER": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/Extend-Relay-Module/807891_40000002997645.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "automation": "LOGICAL CONTROLLER" }
+      },
+      "product combinations": null
+    },
+    "DIMMER CONTROLLER": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/Dimmer-Controller/807891_518885573.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "automation": "DIMMER CONTROLLER" }
+      },
+      "product combinations": null
+    },
+    "WIRELESS CONTROLLER": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/Wireless-Controller/807891_515350760.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "automation": "WIRELESS CONTROLLER" }
+      },
+      "product combinations": null
+    },
+    "HOME AUTOMATION": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/Switch-Panel/807891_515640074.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "automation": "HOME AUTOMATION" }
+      },
+      "product combinations": null
+    },
+    "ELECTRONIC DIY KIT": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/Electronic-DIY-Kit/807891_40000003059523.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "ELECTRONIC DIY KIT" }
+      },
+      "product combinations": null
+    },
+    "SMART DISTRIBUTION BOX": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/Smart-Distribution-Box/807891_515988479.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "automation": "SMART DISTRIBUTION BOX" }
+      },
+      "product combinations": null
+    },
+    "MCB BREAKER": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/MCB-Breaker/807891_515350791.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "power parts": "MCB BREAKER" }
+      },
+      "product combinations": null
+    },
+    "RC SNUBBER": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/RC-snubber/807891_10000001260101.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "power parts": "RC SNUBBER" }
+      },
+      "product combinations": null
+    },
+    "POWER DRIVER": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/Power-driver/807891_10000001186915.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "power parts": "POWER DRIVER" }
+      },
+      "product combinations": null
+    },
+    "AC CONTACTOR": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/AC-Contactor/807891_515636333.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "power parts": "AC CONTACTOR" }
+      },
+      "product combinations": null
+    },
+    "ELECTRIC ENERGY METER": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/Electric-energy-meter/807891_10000001194875.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "power parts": "ELECTRIC ENERGY METER" }
+      },
+      "product combinations": null
+    },
+    "SOLID STATE RELAY": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/Solid-State-Relay/807891_515632354.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "power parts": "SOLID STATE RELAY" }
+      },
+      "product combinations": null
+    },
+    "WIRE SENSOR": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/Wire-Sensor/807891_515027675.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "automation": "WIRE SENSOR" }
+      },
+      "product combinations": null
+    },
+    "Solutions": {
+      "category ID on site":"","brand": "KINKONY","url": "https://kincony.aliexpress.com/store/group/Solutions/807891_516199812.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "automation": "HOME AUTOMATION" }
+      },
+      "product combinations": null
+    }
+  }
+}

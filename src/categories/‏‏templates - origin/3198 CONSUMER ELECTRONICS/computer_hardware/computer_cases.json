@@ -1,0 +1,109 @@
+{
+ "computer cases": {
+   "FULL TOWER": {
+     "7585":"Full tower",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "MID TOWER": {
+     "7586":"MID TOWER",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "MINI TOWER": {
+     "7587":"Mini Tower",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "GAMING MID TOWER": {
+     "7588":"Gaming MID TOWER",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "GAMING FULL TOWER": {
+     "7652":"Gaming Full Tower",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+
+   "ITX": {
+     "7590":"ITX",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "MINI ITX": {
+     "7591":"MINI ITX",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "CFF (Сompact Form Factor)": {
+     "7592":"CFF (Сompact Form Factor)",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "LFF (Low Profile Form Factor)": {
+     "7593":"LFF (Low Profile Form Factor)",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "SFF (Small Form Factor)": {
+     "7594":"SFF (Small Form Factor)",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "TFF (Thin Form Factor)": {
+     "7595":"SFF (Small Form Factor)",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "FLEX ATX": {
+     "7596":"FlexATX",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "Mini PCI": {
+     "7597":"Mini PCI",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "ATX": {
+     "7598":"ATX",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "1U": {
+     "7599":"1U",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "2U": {
+     "7600":"2U",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "3U": {
+     "7601":"3U",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "4U": {
+     "7602":"4U",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "5U": {
+     "7603":"5U",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "6U": {
+     "7604":"6U",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "7U": {
+     "7605":"7U",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "8U": {
+     "7606":"8U",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "9U": {
+     "7607":"9U",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "10U": {
+     "7608":"10U",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "11U": {
+     "7609":"1U",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    },
+   "12U": {
+     "7653":"12U",
+     "template": {"desktop_hardware":"COMPUTER CASES" }
+    }
+  }
+}

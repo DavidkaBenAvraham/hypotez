@@ -1,0 +1,286 @@
+{
+  "store": {
+    "store_id": 4247007,
+    "supplier_id": 2857,
+    "category ID on site":"","brand": "KEYSTUDIO",
+    "url": "https://keyestudio-stem.aliexpress.com/store/4247007",
+    "shop categories page": "https://www.aliexpress.com/store/all-wholesale-products/4247007.html",
+    "shop categories json file": "https://keyestudio-stem.aliexpress.com/store/productGroupsAjax.htm?storeId=4247007&shopVersion=3.0&callback=",
+    "get store banners": true
+  },
+  "scenarios": {
+    "RASPBERRY Pi Kit": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Kit/4247007_40000000488227.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "RASPBERRY PI KIT" },
+        "6378": "Keyestudio"
+      }
+    },
+
+    "RASPBERRY Pi SHIELD": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/SHIELD/4247007_40000000514152.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+
+        "template": { "diy and little robots": "RASPBERRY PI SHIELD" },
+        "6378": "Keyestudio"
+      }
+    },
+
+    "RASPBERRY Pi Robot": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Robot/4247007_40000000492143.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "2723": "RASPBERRY Pi Robot",
+        "template": { "diy and little robots": "RASPBERRY PI" },
+        "6378": "Keyestudio"
+      }
+    },
+
+    "RASPBERRY Pi Cameras": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Camera/4247007_40000001744483.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "2724": "RASPBERRY Pi Cameras",
+        "template": { "diy and little robots": "RASPBERRY PI" },
+        "6378": "Keyestudio"
+      }
+    },
+
+    "RASPBERRY Pi Screens": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Screen/4247007_40000001736985.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "2725": "RASPBERRY Pi Screens",
+        "template": { "diy and little robots": "RASPBERRY PI" },
+        "6378": "Keyestudio"
+      }
+
+    },
+
+    "RASPBERRY Pi Cases": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Case/4247007_40000000504117.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "2726": "RASPBERRY Pi Cases",
+        "template": { "diy and little robots": "RASPBERRY PI" },
+        "6378": "Keyestudio"
+      }
+
+    },
+
+    "RASPBERRY Pi Accessories": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Accessories/4247007_40000001736986.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "3204": "RASPBERRY Pi Accessories",
+        "template": { "diy and little robots": "RASPBERRY PI" },
+        "6378": "Keyestudio"
+      }
+
+    },
+
+    "RASPBERRY Pi PICO Boards": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Board/4247007_40000001662207.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+
+        "template": { "diy and little robots": "RASPBERRY PI PICO Boards" },
+        "6378": "Keyestudio"
+      }
+
+    },
+
+    "RASPBERRY Pi PICO SHIELD": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Board/4247007_40000001662207.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "RASPBERRY PI PICO SHIELD" },
+        "6378": "Keyestudio"
+      }
+
+    },
+
+    "RASPBERRY Pi PICO KIT": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Board/4247007_40000001662207.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+
+        "template": { "diy and little robots": "RASPBERRY PI KIT" },
+        "6378": "Keyestudio"
+      }
+
+    },
+
+    "BBC Micro:bit V2.2 Boards": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/V2-2-Board/4247007_40000001744496.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+
+        "template": { "diy and little robots": "BBC Micro:bit v2.2 Boards" },
+        "6378": "Keyestudio"
+      }
+    },
+
+    "BBC Micro:bit SHIELD": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Kit/4247007_40000000504084.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "BBC Micro:bit SHIELD" },
+        "6378": "Keyestudio"
+      }
+    },
+
+    "BBC Micro:bit KIT": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/SHIELD/4247007_40000000500359.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "BBC Micro:bit KIT" },
+        "6378": "Keyestudio"
+      }
+    },
+
+
+    "BBC Micro:bit Robots": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Robot/4247007_40000000495017.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "BBC Micro:bit Robots" },
+        "6378": "Keyestudio"
+      }
+    },
+
+    "BBC Micro:bit Modules": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Module/4247007_40000000514074.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "BBC Micro:bit Modules" },
+        "6378": "Keyestudio"
+      }
+    },
+
+
+    "Micro:bit Acessories": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Module/4247007_40000000514074.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "BBC Micro:bit Accessories" },
+        "6378": "Keyestudio"
+      }
+    },
+    "ARDUINO Boards": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Board/4247007_40000000504110.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "ARDUINO Boards" },
+        "6378": "Keyestudio"
+      }
+
+    },
+
+    "ARDUINO SHIELD": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/SHIELD/4247007_40000001529668.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "ARDUINO SHIELD" },
+        "6378": "Keyestudio"
+      }
+    },
+
+    "ARDUINO KIT": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/SHIELD/4247007_40000001529668.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "ARDUINO KIT" },
+        "6378": "Keyestudio"
+
+      }
+    },
+
+    "ARDUINO Robots": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/SHIELD/4247007_40000001529668.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "ARDUINO Robots" },
+        "6378": "Keyestudio"
+      }
+    },
+
+    "ARDUINO Accessories": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Accessories/4247007_40000000491113.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "ARDUINO Accessories" },
+        "6378": "Keyestudio"
+      }
+    },
+
+    "ESP 32": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/ESP32/4247007_40000001795896.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "ESP 32" },
+        "6378": "Keyestudio"
+      }
+    },
+    "ESP 01": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/ESP01/4247007_40000001752006.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "ESP 01" },
+        "6378": "Keyestudio"
+      }
+    },
+    "ESP 8266": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/ESP8266/4247007_40000001748205.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "ESP 8266" },
+        "6378": "Keyestudio"
+      }
+    },
+
+    "Keyestudio EASY Plug": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Easy-Plug/4247007_10000002116054.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "3209": "Keyestudio EASY Plug",
+        "template": { "diy and little robots": "Keyestudio EASY Plug" },
+        "6378": "Keyestudio"
+      }
+
+    },
+
+    "Keyestudio Kidbits": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/Kidsbits/4247007_10000001340205.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "diy and little robots": "Keyestudio Kidbits" },
+        "6378": "Keyestudio"
+      }
+
+    },
+
+    "3D Machine & Printer KIT": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/3D-Machine-Printer-kit/4247007_40000001542996.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "3377": "3D Machine, Printer KIT",
+        "template": { "diy and little robots": "diy and little robots" },
+        "6378": "Keyestudio"
+      }
+    },
+
+    "CNC SHIELD": {
+      "category ID on site":"","brand": "KEYSTUDIO","url": "https://keyestudio-stem.aliexpress.com/store/group/CNC-Series/4247007_40000001537885.html?spm=a2g0o.store_pc_allProduct.0.0.637a7e32xFmcUz",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "3377": "CNC SHIELD",
+        "template": { "diy and little robots": "diy and little robots" },
+        "6378": "Keyestudio"
+      }
+
+    }
+  }
+}

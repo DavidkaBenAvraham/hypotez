@@ -1,0 +1,435 @@
+{
+  "store": {
+    "description": "liitokala Official Store",
+    "about": "ВСЯКИЕ АККУМУЛЯТОРЫ",
+    "store_id": 217753,
+    "supplier_id": 2921,
+    "category ID on site":"","brand": "LIITOKALA",
+    "url": "https://liitokalahongkong.aliexpress.com/store/217753",
+    "shop categories page": "https://liitokalahongkong.aliexpress.com/store/all-wholesale-products/217753.html",
+    "shop categories json file": "https://liitokalahongkong.aliexpress.com/store/productGroupsAjax.htm?storeId=217753&shopVersion=3.0&callback=jsonp_1656146849073_35687",
+    "get store banners": true
+  },
+
+  "scenarios": {
+    "Power Station 12.8V 100Ah-120Ah Power": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/Power-Station/217753_40000002637054.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "POWER STATION" }
+      }
+    },
+    "Power Station": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/Power-Station/217753_40000002637054.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "POWER STATION" }
+      }
+    },
+
+    "Ni-MH 1.2 AA": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/1-2V-AA-Battery/217753_40000002989722.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "Ni-MH 1.2 AA" }
+      }
+    },
+    "Ni-MH 1.2 AAA": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/1-2V-AAA-Battery/217753_40000002989723.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "Ni-MH 1.2 AAA" }
+      }
+    },
+
+    "Ni-MH 1.2 USB AA": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/USB-AA-1-2V-Battery/217753_40000003099625.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "Ni-MH 1.2 USB AA" }
+      }
+    },
+    "Copper connector": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/Copper-connector/217753_40000000309783.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "Copper connector" }
+      }
+    },
+    "3.2V 15Ah LiFePo4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/3-2V-15Ah-LiFePo4-battery/217753_517543258.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "3.2V 15Ah LiFePo4" }
+      }
+    },
+
+    "3.2V 22Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/3-2V-22Ah-LiFePO4-Battery/217753_40000001342265.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "3.2V 22Ah LiFePO4" }
+      }
+    },
+    "3.2V 30Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/3-2V-30Ah-LiFePO4-Battery/217753_10000000766603.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "3.2V 30Ah LiFePO4" }
+      }
+    },
+    "3.2V 50Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/3-2V-50Ah-LiFePO4-Battery/217753_10000001625574.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "3.2V 50Ah LiFePO4" }
+      }
+    },
+    "3.2V 90Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/3-2V-90Ah-LiFePO4-Battery/217753_40000002249836.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "3.2V 90Ah LiFePO4" }
+      }
+    },
+    "3.2V 105Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/3-2V-105Ah-LiFePO4-Battery/217753_10000000744612.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "3.2V 105Ah LiFePO4" }
+      }
+    },
+    "3.2V 180Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/3-2V-180Ah-LiFePO4-Battery/217753_10000001810241.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "3.2V 180Ah LiFePO4" }
+      }
+    },
+    "3.2V 200Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/3-2V-180Ah-LiFePO4-Battery/217753_10000001810241.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "3.2V 200Ah LiFePO4" }
+      }
+    },
+    "3.2V 280Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/3-2V-280Ah-LiFePO4-Battery/217753_10000001964551.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "3.2V 280Ah LiFePO4" }
+      }
+    },
+    "3.2V 310Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/3-2V-310Ah-LiFePO4-Battery/217753_10000001964552.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "3.2V 310Ah LiFePO4" }
+      }
+    },
+    "3.2V 320Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/3-2V-320Ah-LiFePO4-Battery/217753_10000001948758.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "3.2V 320Ah LiFePO4" }
+      }
+    },
+    "12.8V 50Ah 60Ah": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/12-8V-50Ah-60Ah-LiFePO4-Battery/217753_10000003435079.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "12.8V 50Ah 60Ah" }
+      }
+    },
+
+    "12.8V 90Ah 100Ah": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/12-8V-90Ah-100Ah-LiFePO4-Battery/217753_10000003427088.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "12.8V 90Ah 100Ah" }
+      }
+    },
+
+    "12.8V 120Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/12-8V-120Ah-LiFePO4-Battery/217753_10000003435080.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "12.8V 120Ah LiFePO4" }
+      }
+    },
+
+    "12.8V 150Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/12-8V-150Ah-LiFePO4-Battery/217753_10000003443069.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "12.8V 150Ah LiFePO4" }
+      }
+    },
+    "12.8V 180Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/12-8V-180Ah-LiFePO4-Battery/217753_10000003542024.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "12.8V 180Ah LiFePO4" }
+      }
+    },
+    "12.8V 200Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/12-8V-200Ah-LiFePO4-Battery/217753_10000003443070.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "12.8V 200Ah LiFePO4" }
+      }
+    },
+    "12.8V 280Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/12-8V-280Ah-LiFePO4-Battery/217753_10000003427089.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "12.8V 280Ah LiFePO4" }
+      }
+    },
+    "12.8V 300Ah LiFePO4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/12-8V-300Ah-LiFePO4-Battery/217753_10000003427090.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "12.8V 280Ah LiFePO4" }
+      }
+    },
+    "12.8V 60Ah 80Ah": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/12-8V-60Ah-80Ah-LiFePO4-Battery/217753_40000000348565.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "12.8V 60Ah 80Ah" }
+      }
+    },
+    "12.8V Battery": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/12-8V-Battery/217753_40000001732803.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "12.8V Battery" }
+      }
+    },
+    "12V-24V Battery With PVC": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/12V-24V-Battery-With-PVC/217753_10000002572376.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "12V-24V Battery With PVC" }
+      }
+    },
+    "4S-12V LiFePo4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/4S-12V-LiFePo4-Battery/217753_10000000893648.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "4S-12V LiFePo4" }
+      }
+    },
+    "8S-24V LiFePo4": {
+      "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/8S-24V-LiFePo4-Battery/217753_10000002576298.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "batteries and power": "8S-24V LiFePo4" }
+      },
+
+      "16S-48V LiFePO4": {
+        "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/16S-48V-LiFePO4-Battery/217753_40000001105817.html",
+        "active": true,
+        "condition":"new","presta_categories": {
+          "template": { "batteries and power": "16S-48V LiFePO4" }
+        }
+      },
+      "LiFePo4 Charger": {
+        "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/LiFePo4-Charger/217753_10000000610777.html",
+        "active": true,
+        "condition":"new","presta_categories": {
+          "template": { "batteries and power": "LiFePo4 Charger" }
+        }
+      },
+      "LiFePo4 BMS": {
+        "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/LiFePo4-BMS/217753_10000000618527.html",
+        "active": true,
+        "condition":"new","presta_categories": {
+          "template": { "batteries and power": "LiFePo4 BMS" }
+        }
+      },
+      "18650 2500mAh HE4 25R": {
+        "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/18650-2500mAh-HE4-25R/217753_10000000720568.html",
+        "active": true,
+        "condition":"new","presta_categories": {
+          "7816": "18650 2500mAh HE4 25R",
+          "template": { "batteries and power": "18650" },
+          "7801": "18650 2500mAh HE4 25R"
+        }
+      },
+
+      "18650 LiitoKala": {
+        "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/LiitoKala-18650-Battery/217753_512837154.html",
+        "active": true,
+        "condition":"new","presta_categories": {
+          "7841": "18650 LiitoKala",
+          "template": { "batteries and power": "18650" },
+          "7842": "18650 LiitoKala"
+        }
+      },
+      "18650 2600mAh VC5A-26F-M26": {
+        "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/18650-2600mAh-VC5A-26F-M26/217753_10000000795558.html",
+        "active": true,
+        "condition":"new","presta_categories": {
+          "7817": "18650 2600mAh VC5A-26F-M26",
+          "template": { "batteries and power": "18650" },
+          "7802": "18650 2600mAh VC5A-26F-M26"
+        }
+      },
+      "18650 3000mAh HG2-30Q": {
+        "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/18650-3000mAh-HG2-30Q/217753_10000000779985.html",
+        "active": true,
+        "condition":"new","presta_categories": {
+          "7818": "18650 3000mAh HG2-30Q",
+          "template": { "batteries and power": "18650" },
+          "7803": "18650 3000mAh HG2-30Q"
+        }
+      },
+      "18650 3400mAh NCR-18650B": {
+        "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/18650-3400mAh-NCR18650B/217753_10000000779986.html",
+        "active": true,
+        "condition":"new","presta_categories": {
+          "7819": "18650 3400mAh NCR-18650B",
+          "template": { "batteries and power": "18650" },
+          "7804": "18650 3400mAh NCR-18650B"
+        }
+      },
+      "18650 3500mAh 35E-35A": {
+        "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/18650-3500mAh-35E-35A/217753_10000000791667.html",
+        "active": true,
+        "condition":"new","presta_categories": {
+          "7820": "18650 3500mAh 35E-35A",
+          "template": { "batteries and power": "18650" },
+          "7805": "18650 3500mAh 35E-35A"
+        }
+      },
+      "Hai long Battery": {
+        "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/Hai-long-Battery/217753_10000001178904.html",
+        "active": true,
+        "condition":"new","presta_categories": {
+          "template": { "batteries and power": "Hai long Battery" }
+        }
+      },
+      "Little Frog Battery": {
+        "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/Little-Frog-Battery/217753_10000001186861.html",
+        "active": true,
+        "condition":"new","presta_categories": {
+          "template": { "batteries and power": "Little Frog Battery" }
+        },
+        "Silver Fish Battery": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/Silver-Fish-Battery/217753_10000001252790.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "batteries and power": "Silver Fish Battery" }
+          }
+        },
+        "Hai Ba Battery": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/Hai-Ba-Battery/217753_40000001631971.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "batteries and power": "Hai Ba Battery" }
+          }
+        },
+        "18650 12V-24V E-bike-battery": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/12V-24V-E-bike-battery/217753_514991534.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "batteries and power": "18650 12V-24V E-bike-battery" }
+          }
+        },
+        "18650 36V E-bike-battery": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/36V-E-bike-battery/217753_514991535.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "batteries and power": "18650 36V E-bike-battery" }
+          }
+        },
+        "18650 48V E-bike-battery": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/48V-E-bike-battery/217753_514690568.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "batteries and power": "18650 48V E-bike-battery" }
+          }
+        },
+        "18650 60V E-bike-battery": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/60V-E-bike-battery/217753_517414968.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "batteries and power": "18650 60V E-bike-battery" }
+          }
+        },
+        "18650 72V E-bike-battery": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/72V-E-bike-battery/217753_517779764.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "batteries and power": "18650 72V E-bike-battery" }
+          }
+        },
+        "2S 8.4V Charger": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/2S-8-4V-Charger/217753_517611406.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "chargers": "2S 8.4V Charger" }
+          }
+        },
+        "3S 12.6V Charger": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/3S-12-6V-Charger/217753_517611407.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "chargers": "3S 12.6V Charger" }
+          }
+        },
+        "4S 16.8V Charger": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/4S-16-8V-Charger/217753_517620196.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "chargers": "4S 16.8V Charger" }
+          }
+        },
+        "6S 25.2V Charger": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/6S-25-2V-Charger/217753_517620197.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "chargers": "6S 25.2V Charger" }
+          }
+        },
+        "7S 29.4V Charger": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/7S-29-4V-Charger/217753_517620200.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "chargers": "7S 29.4V Charger" }
+          }
+        },
+        "10S 36V 42V Charger": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/10S-36V-42V-Charger/217753_517611410.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "chargers": "10S 36V 42V Charger" }
+          }
+        },
+        "13S 48V 54.6V Charger": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/13S-48V-54-6V-Charger/217753_517620202.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "chargers": "13S 48V 54.6V Charger" }
+          }
+        },
+        "16S 60V 67.2V Charger": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/16S-60V-67-2V-Charger/217753_517628440.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "chargers": "16S 60V 67.2V Charger" }
+          }
+        },
+        "20S 72V 84V Charger": {
+          "category ID on site":"","brand": "LIITOKALA","url": "https://liitokalahongkong.aliexpress.com/store/group/20S-72V-84V-Charger/217753_40000001132546.html",
+          "active": true,
+          "condition":"new","presta_categories": {
+            "template": { "chargers": "20S 72V 84V Charger" }
+          }
+        }
+      }
+    }
+  }
+}

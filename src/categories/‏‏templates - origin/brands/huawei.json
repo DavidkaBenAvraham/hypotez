@@ -1,0 +1,177 @@
+{
+ "huawei": {
+   "SMARTPHONES": {
+     "7061":"HUAWEI",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "2250":"HUAWEI",
+     "6156":"SMARTPHONES"
+    },
+   "WEARABLE": {
+     "6765":"Wearable",
+     "template":"wearable['WEARABLE']",
+     "2250":"HUAWEI",
+     "7546":"WEARABLE"
+    },
+   "LAPTOPS": {
+     "6482":"asus",
+     "5453":"Laptops by brand",
+     "template": {"laptops":"LAPTOPS" },
+     "2258":"asus brand axis",
+     "2287":"Laptops"
+    },
+   "LAPTOPS AMD": {
+     "4150":"AMD",
+     "4148":"Laptops by CPU",
+     "9794":"AMD",
+     "9756":"asus BY CPU",
+     "template": {"huawei":"LAPTOPS" },
+     "9734":"asus by cpu",
+     "9738":"asus AMD"
+    },
+   "LAPTOPS INTEL": {
+     "9720":"Intel",
+     "4148":"Laptops by CPU",
+     "9793":"Intel",
+     "9756":"asus BY CPU",
+     "template": {"asus":"LAPTOPS" },
+     "9734":"asus by cpu",
+     "9737":"asus Intel"
+    },
+   "LAPTOPS INTEL CELERON": {
+     "9795":"INTEL CELERON",
+     "template": {
+       "asus":"LAPTOPS INTEL",
+       "laptops":"INTEL CELERON"
+      },
+     "9739":"LAPTOPS INTEL CELERON"
+    },
+   "LAPTOPS INTEL I3": {
+     "9723":"INTEL I3",
+     "9796":"LAPTOPS INTEL i3",
+     "template": {
+       "asus":"LAPTOPS INTEL",
+       "laptops":"INTEL I3"
+      },
+     "9740":"LAPTOPS INTEL i3"
+    },
+   "LAPTOPS INTEL I5": {
+     "9797":"LAPTOPS INTEL i5",
+     "template": {
+       "asus":"LAPTOPS INTEL",
+       "laptops":"INTEL I5"
+      },
+     "9741":"LAPTOPS INTEL i5"
+    },
+   "LAPTOPS INTEL I7": {
+     "9798":"LAPTOPS INTEL i7",
+     "template": {
+       "asus":"LAPTOPS INTEL",
+       "laptops":"INTEL I7"
+      },
+     "9742":"LAPTOPS INTEL i7"
+    },
+   "LAPTOPS INTEL I9": {
+     "9799":"LAPTOPS INTEL i9",
+     "template": {
+       "asus":"LAPTOPS INTEL",
+       "laptops":"INTEL I9"
+      },
+     "9743":"LAPTOPS INTEL i9"
+    },
+   "LAPTOPS AMD ATHLON": {
+     "9800":"LAPTOPS AMD Athlon",
+     "template": {
+       "asus":"LAPTOPS AMD",
+       "laptops":"AMD ATHLON"
+      },
+     "9744":"LAPTOPS AMD Athlon"
+    },
+   "LAPTOPS AMD A6": {
+     "9801":"LAPTOPS AMD A6",
+     "template": {
+       "asus":"LAPTOPS AMD",
+       "laptops":"AMD ATHLON"
+      },
+     "9745":"LAPTOPS AMD A6"
+    },
+   "LAPTOPS AMD RYZEN 3": {
+     "9802":"LAPTOPS AMD RYZEN 3",
+     "template": {
+       "asus":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 3"
+      },
+     "9746":"LAPTOPS AMD RYZEN 3"
+    },
+   "LAPTOPS AMD RYZEN 5": {
+     "9803":"LAPTOPS AMD RYZEN 5",
+     "template": {
+       "asus":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 5"
+      },
+     "9747":"LAPTOPS AMD RYZEN 5"
+    },
+   "LAPTOPS AMD RYZEN 7": {
+     "9804":"LAPTOPS AMD RYZEN 7",
+     "template": {
+       "asus":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 7"
+      },
+     "9748":"LAPTOPS AMD RYZEN 7"
+    },
+   "LAPTOPS AMD RYZEN 9": {
+     "9805":"LAPTOPS AMD RYZEN 9",
+     "template": {
+       "asus":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 9"
+      },
+     "9749":"LAPTOPS AMD RYZEN 9"
+    },
+
+   "LAPTOPS BY SCREEN SIZE": {
+     "9758":"ASUS by screen size",
+     "template": {
+       "laptops":"BY SCREEN SIZE",
+       "asus":"LAPTOPS"
+      },
+     "9735":"by ss"
+    },
+   "11": {
+     "4126":"11'' Laptops by screen size",
+     "9759":"11'' ASUS by screen size",
+     "template": {"asus":"LAPTOPS BY SCREEN SIZE" },
+     "9750":"11'' ASUS by screen size"
+    },
+   "13": {
+     "4127":"13'' Laptops by screen size",
+     "9760":"13'' ASUS by screen size",
+     "template": {"asus":"LAPTOPS BY SCREEN SIZE" },
+     "9751":"13'' Laptops by screen size"
+    },
+   "14": {
+     "4128":"14'' Laptops by screen size",
+     "9761":"14'' ASUS by screen size",
+     "template": {"asus":"LAPTOPS BY SCREEN SIZE" },
+     "9752":"14'' ASUS by screen size"
+    },
+   "15": {
+     "4129":"15'' Laptops by screen size",
+     "9762":"15'' ASUS by screen size",
+     "template": {"asus":"LAPTOPS BY SCREEN SIZE" },
+     "9753":"15'' ASUS by screen size"
+    },
+   "17": {
+     "4130":"17'' Laptops by screen size",
+     "9763":"17'' ASUS by screen size",
+     "template": {"asus":"LAPTOPS BY SCREEN SIZE" },
+     "9754":"17'' ASUS by screen size"
+    },
+   "18": {
+     "4131":"18'' Laptops by screen size",
+     "9764":"18'' ASUS by screen size",
+     "template": {"asus":"LAPTOPS BY SCREEN SIZE" },
+     "9755":"18'' ASUS by screen size"
+    }
+  }
+}
+
+

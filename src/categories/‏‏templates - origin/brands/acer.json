@@ -1,0 +1,164 @@
+{
+ "acer": {
+   "LAPTOPS": {
+     "6557":"acer",
+     "5453":"Laptops by brand",
+     "template": {"laptops":"LAPTOPS" },
+     "2263":"acer brand axis",
+     "2387":"Laptops"
+    },
+
+   "LAPTOPS AMD": {
+     "4150":"AMD",
+     "4148":"Laptops by CPU",
+     "9696":"AMD",
+     "9709":"acer BY CPU",
+     "template": {"acer":"LAPTOPS" },
+     "9687":"acer by cpu",
+     "9654":"acer AMD"
+    },
+   "LAPTOPS INTEL": {
+     "9720":"Intel",
+     "4148":"Laptops by CPU",
+     "9695":"Intel",
+     "9709":"acer BY CPU",
+     "template": {"acer":"LAPTOPS" },
+     "9687":"acer by cpu",
+     "9653":"acer INTEL"
+    },
+   "LAPTOPS INTEL CELERON": {
+     "9697":"INTEL CELERON",
+     "template": {
+       "acer":"LAPTOPS INTEL",
+       "laptops":"INTEL CELERON"
+      },
+     "9655":"LAPTOPS INTEL CELERON"
+    },
+   "LAPTOPS INTEL I3": {
+     "9723":"INTEL I3",
+     "9698":"LAPTOPS INTEL i3",
+     "template": {
+       "acer":"LAPTOPS INTEL",
+       "laptops":"INTEL I3"
+      },
+     "9656":"LAPTOPS INTEL i3"
+    },
+   "LAPTOPS INTEL I5": {
+     "9699":"LAPTOPS INTEL i5",
+     "template": {
+       "acer":"LAPTOPS INTEL",
+       "laptops":"INTEL I5"
+      },
+     "9657":"LAPTOPS INTEL i5"
+    },
+   "LAPTOPS INTEL I7": {
+     "9700":"LAPTOPS INTEL i7",
+     "template": {
+       "acer":"LAPTOPS INTEL",
+       "laptops":"INTEL I7"
+      },
+     "9658":"LAPTOPS INTEL i7"
+    },
+   "LAPTOPS INTEL I9": {
+     "9701":"LAPTOPS INTEL i9",
+     "template": {
+       "acer":"LAPTOPS INTEL",
+       "laptops":"INTEL I9"
+      },
+     "9659":"LAPTOPS INTEL i9"
+    },
+   "LAPTOPS AMD ATHLON": {
+     "9702":"LAPTOPS AMD Athlon",
+     "template": {
+       "acer":"LAPTOPS AMD",
+       "laptops":"AMD ATHLON"
+      },
+     "9660":"LAPTOPS AMD Athlon"
+    },
+   "LAPTOPS AMD A6": {
+     "9703":"LAPTOPS AMD A6",
+     "template": {
+       "acer":"LAPTOPS AMD",
+       "laptops":"AMD ATHLON"
+      },
+     "9661":"LAPTOPS AMD A6"
+    },
+   "LAPTOPS AMD RYZEN 3": {
+     "9704":"LAPTOPS AMD RYZEN 3",
+     "template": {
+       "acer":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 3"
+      },
+     "9662":"LAPTOPS AMD RYZEN 3"
+    },
+   "LAPTOPS AMD RYZEN 5": {
+     "9705":"LAPTOPS AMD RYZEN 5",
+     "template": {
+       "acer":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 5"
+      },
+     "9663":"LAPTOPS AMD RYZEN 5"
+    },
+   "LAPTOPS AMD RYZEN 7": {
+     "9706":"LAPTOPS AMD RYZEN 7",
+     "template": {
+       "acer":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 7"
+      },
+     "9664":"LAPTOPS AMD RYZEN 7"
+    },
+   "LAPTOPS AMD RYZEN 9": {
+     "9707":"LAPTOPS AMD RYZEN 9",
+     "template": {
+       "acer":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 9"
+      },
+     "9665":"LAPTOPS AMD RYZEN 9"
+    },
+
+   "LAPTOPS BY SCREEN SIZE": {
+     "9710":"acer by screen size",
+     "template": {
+       "laptops":"BY SCREEN SIZE",
+       "acer":"LAPTOPS"
+      },
+     "9688":"by ss"
+    },
+   "11": {
+     "4126":"11'' Laptops by screen size",
+     "9711":"11'' acer by screen size",
+     "template": {"acer":"LAPTOPS BY SCREEN SIZE" },
+     "9689":"11'' acer by screen size"
+    },
+   "13": {
+     "4127":"13'' Laptops by screen size",
+     "9712":"13'' acer by screen size",
+     "template": {"acer":"LAPTOPS BY SCREEN SIZE" },
+     "9690":"13'' Laptops by screen size"
+    },
+   "14": {
+     "4128":"14'' Laptops by screen size",
+     "9713":"14'' acer by screen size",
+     "template": {"acer":"LAPTOPS BY SCREEN SIZE" },
+     "9691":"14'' acer by screen size"
+    },
+   "15": {
+     "4129":"15'' Laptops by screen size",
+     "9714":"15'' acer by screen size",
+     "template": {"acer":"LAPTOPS BY SCREEN SIZE" },
+     "9692":"15'' acer by screen size"
+    },
+   "17": {
+     "4130":"17'' Laptops by screen size",
+     "9715":"17'' acer by screen size",
+     "template": {"acer":"LAPTOPS BY SCREEN SIZE" },
+     "9693":"17'' acer by screen size"
+    },
+   "18": {
+     "4131":"18'' Laptops by screen size",
+     "9716":"18'' acer by screen size",
+     "template": {"acer":"LAPTOPS BY SCREEN SIZE" },
+     "9694":"18'' acer by screen size"
+    }
+  }
+}

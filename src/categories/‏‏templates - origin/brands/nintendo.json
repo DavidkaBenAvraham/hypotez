@@ -1,0 +1,37 @@
+{
+ "nintendo": {
+   "Nintendo Switch OLED": {
+     "2312":"Nintendo Switch OLED",
+     "3391":"Nintendo",
+     "3395":"Nintendo Switch",
+     "template": {"gaming":"CONSOLES" },
+     "2262":"NINTENDO brand axis",
+     "3407":"Gaming Consoles"
+    },
+   "Nintendo Switch": {
+     "2311":"Nintendo Switch",
+     "3391":"Nintendo",
+     "3395":"Nintendo Switch",
+     "template": {"gaming":"CONSOLES" },
+     "2262":"NINTENDO brand axis",
+     "3407":"Gaming Consoles"
+    },
+   "Nintendo Switch Lite": {
+     "2314":"Nintendo Switch Lite",
+     "3391":"Nintendo",
+     "3395":"Nintendo Switch",
+     "template": {"gaming":"CONSOLES" },
+     "2262":"NINTENDO brand axis",
+     "3407":"Gaming Consoles"
+    },
+   "Nintendo Classic": {
+     "2315":"Nintendo Classic",
+     "3391":"Nintendo",
+     "3399":"Nintendo Classic",
+     "template": {"gaming":"CONSOLES" },
+     "2262":"NINTENDO brand axis",
+     "3407":"Gaming Consoles"
+
+    }
+  }
+}

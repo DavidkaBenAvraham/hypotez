@@ -1,0 +1,263 @@
+{
+ "hp": {
+   "LAPTOPS": {
+     "6556":"hp",
+     "template": {"laptops":"LAPTOPS" },
+     "2267":"hp brand axis",
+     "2641":"Laptops"
+    },
+
+   "LAPTOPS INTEL": {
+     "9720":"Intel",
+     "9774":"HP INTEL",
+     "template": {
+       "hp":"LAPTOPS",
+       "laptops":"INTEL"
+      },
+     "9638":"LAPTOPS INTEL"
+    },
+
+   "LAPTOPS INTEL CELERON": {
+     "9722":"INTEL CELERON",
+     "9776":"HP INTEL CELERON",
+     "template": {
+       "hp":"LAPTOPS INTEL",
+       "laptops":"INTEL CELERON"
+      },
+     "9640":"LAPTOPS INTEL CELERON"
+    },
+
+   "LAPTOPS INTEL I3": {
+     "9723":"INTEL I3",
+     "9777":"HP INTEL I3",
+     "template": {
+       "hp":"LAPTOPS INTEL",
+       "laptops":"INTEL I3"
+      },
+     "9641":"LAPTOPS INTEL i3"
+    },
+   "LAPTOPS INTEL I5": {
+     "9724":"INTEL I5",
+     "9778":"HP INTEL I5",
+     "template": {
+       "hp":"LAPTOPS INTEL",
+       "laptops":"INTEL I5"
+      },
+     "9642":"LAPTOPS INTEL i5"
+    },
+   "LAPTOPS INTEL I7": {
+     "9725":"INTEL I7",
+     "9779":"HP INTEL I7",
+     "template": {
+       "hp":"LAPTOPS INTEL",
+       "laptops":"INTEL I7"
+      },
+     "9643":"LAPTOPS INTEL i7"
+    },
+   "LAPTOPS INTEL I9": {
+     "9726":"LAPTOPS I9",
+     "9780":" HP INTEL I9",
+     "template": {
+       "hp":"LAPTOPS INTEL",
+       "laptops":"INTEL I9"
+      },
+     "9644":"LAPTOPS INTEL i9"
+    },
+   "LAPTOPS AMD": {
+     "9721":"LAPTOPS AMD",
+     "9775":"HP LAPTOPS AMD",
+     "template": {
+       "hp":"LAPTOPS",
+       "laptops":"AMD ATHLON"
+      },
+     "9639":"LAPTOPS AMD"
+    },
+
+   "LAPTOPS AMD ATHLON SERIES": {
+     "9881":"AMD ATHLON SERIES",
+     "9859":"hp AMD ATHLON SERIES",
+     "template": {
+       "hp":"LAPTOPS AMD"
+      },
+     "9855":"LAPTOPS AMD Athlon"
+    },
+
+   "LAPTOPS AMD RYZEN SERIES": {
+     "9870":"AMD RYZEN SERIES",
+     "9858":"hp AMD RYZEN SERIES",
+     "template": {
+       "hp":"LAPTOPS AMD"
+      },
+     "9854":"LAPTOPS AMD RYZEN SERIES"
+    },
+   "LAPTOPS A SERIES": {
+     "9869":"AMD A SERIES",
+     "9857":"hp A SERIES",
+     "template": {
+       "hp":"LAPTOPS AMD"
+      },
+     "9853":"LAPTOPS A SERIES"
+    },
+
+   "LAPTOPS AMD A6": {
+     "9728":"AMD A6",
+     "template": {
+       "hp":"LAPTOPS AMD"
+      },
+     "9646":"LAPTOPS AMD A6"
+    },
+
+   "LAPTOPS AMD RYZEN 3": {
+     "template": {
+       "hp":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 3"
+      },
+     "9647":"LAPTOPS AMD RYZEN 3"
+    },
+   "LAPTOPS AMD RYZEN 5": {
+     "template": {
+       "hp":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 5"
+      },
+     "9648":"LAPTOPS AMD RYZEN 5"
+    },
+   "LAPTOPS AMD RYZEN 7": {
+     "template": {
+       "hp":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 7"
+      },
+     "9649":"LAPTOPS AMD RYZEN 7"
+    },
+   "LAPTOPS AMD RYZEN 9": {
+     "template": {
+       "hp":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 9"
+      },
+     "9650":"LAPTOPS AMD RYZEN 9"
+    },
+   "11": {
+     "4126":"11'' Laptops by screen size",
+     "9787":"11'' HP by screen size",
+     "template": {"hp":"LAPTOPS BY SCREEN SIZE" },
+     "9766":"11'' HP by screen size"
+    },
+   "13": {
+     "4127":"13'' Laptops by screen size",
+     "9788":"13'' HP by screen size",
+     "template": {"hp":"LAPTOPS BY SCREEN SIZE" },
+     "9767":"13'' Laptops by screen size"
+    },
+   "14": {
+     "4128":"14'' Laptops by screen size",
+     "9789":"14'' HP by screen size",
+     "template": {"hp":"LAPTOPS BY SCREEN SIZE" },
+     "9768":"14'' HP by screen size"
+    },
+   "15": {
+     "4129":"15'' Laptops by screen size",
+     "9790":"15'' HP by screen size",
+     "template": {"hp":"LAPTOPS BY SCREEN SIZE" },
+     "9769":"15'' HP by screen size"
+    },
+   "17": {
+     "4130":"17'' Laptops by screen size",
+     "9791":"17'' HP by screen size",
+     "template": {"hp":"LAPTOPS BY SCREEN SIZE" },
+     "9770":"17'' HP by screen size"
+    },
+   "18": {
+     "4131":"18'' Laptops by screen size",
+     "9792":"18'' HP by screen size",
+     "template": {"hp":"LAPTOPS BY SCREEN SIZE" },
+     "9771":"18'' HP by screen size"
+    },
+
+
+
+   "DESKTOPS": {
+     "7570":"HP",
+     "template": {"desktops":"DESKTOPS BY BRANDS" },
+     "2267":"HP",
+     "6433":"DESKTOPS"
+    },
+   "DESKTOPS INTEL": {
+     "template": {"hp": ["DESKTOPS" ] },
+     "10326":"INTEL"
+    },
+   "DESKTOPS INTEL CELERON": {
+     "template": {"hp": ["DESKTOPS INTEL" ] },
+     "10327":"CELERON"
+    },
+   "DESKTOPS INTEL PENTIUM": {
+     "template": {"hp": ["DESKTOPS INTEL" ] },
+     "10328":"PENTIUM"
+    },
+   "DESKTOPS INTEL I3": {
+     "template": {"hp": ["DESKTOPS INTEL" ] },
+     "10329":"I3"
+    },
+   "DESKTOPS INTEL I5": {
+     "template": {"hp": ["DESKTOPS INTEL" ] },
+     "10330":"I5"
+    },
+   "DESKTOPS INTEL I7": {
+     "template": {"hp": ["DESKTOPS INTEL" ] },
+     "10331":"I7"
+    },
+   "DESKTOPS INTEL I9": {
+     "template": {"hp": ["DESKTOPS INTEL" ] },
+     "10332":"I9"
+    },
+   "DESKTOPS INTEL M": {
+     "template": {"hp": ["DESKTOPS INTEL" ] },
+     "10333":"M"
+    },
+   "DESKTOPS INTEL XEON": {
+     "template": {"hp": ["DESKTOPS INTEL" ] },
+     "10334":"XEON"
+    },
+   "DESKTOPS AMD": {
+     "template": {"hp": ["DESKTOPS" ] },
+     "10335":"AMD"
+    },
+   "DESKTOPS AMD ATHLON": {
+     "template": {"hp": ["DESKTOPS AMD" ] },
+     "10336":"ATHLON"
+    },
+   "DESKTOPS AMD A SERIES": {
+     "template": {"hp": ["DESKTOPS AMD" ] },
+     "10337":"A SERIES"
+    },
+
+   "DESKTOPS AMD A4": {
+     "template": {"hp": ["DESKTOPS AMD A SERIES" ] },
+     "10338":"A4"
+    },
+   "DESKTOPS AMD A6": {
+     "template": {"hp": ["DESKTOPS AMD A SERIES" ] },
+     "10339":"A6"
+    },
+   "DESKTOPS AMD RYZEN": {
+     "template": {"hp": ["DESKTOPS AMD" ] },
+     "10340":"RYZEN"
+    },
+   "DESKTOPS AMD RYZEN 3": {
+     "template": {"hp": ["DESKTOPS AMD RYZEN" ] },
+     "10341":"RYZEN 3"
+    },
+   "DESKTOPS AMD RYZEN 5": {
+     "template": {"hp": ["DESKTOPS AMD RYZEN" ] },
+     "10342":"RYZEN 5"
+    },
+   "DESKTOPS AMD RYZEN 7": {
+     "template": {"hp": ["DESKTOPS AMD RYZEN" ] },
+     "10343":"RYZEN 7"
+    },
+   "DESKTOPS AMD RYZEN 9": {
+     "template": {"hp": ["DESKTOPS AMD RYZEN" ] },
+     "10344":"RYZEN 9"
+    }
+  
+
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "autodoxygen.language": "english",
+    "autodoxygen.author": "Davidka",
+    "markdownlint.ignore": [
+        
+    ],
+    "docwriter.style": "Doxygen",
+    "docwriter.progress.trackMethods": false
+}

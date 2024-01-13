@@ -1,0 +1,40 @@
+{
+  "11036 SPACE HOME AND INTERIOR": {
+    "ROOT": {
+      "11036": "HOME AND INTERIOR"
+    },
+
+    "11037 FURNITURE": {
+      "template": { "11036 SPACE HOME AND INTERIOR": "ROOT" },
+      "11037": "FURNITURE"
+    },
+    "11039 CARPETS": {
+      "template": { "11036 SPACE HOME AND INTERIOR": "ROOT" },
+      "11039": "FURNITURE"
+    },
+    "11040 MATRESSESS": {
+      "template": { "11036 SPACE HOME AND INTERIOR": "ROOT" },
+      "11040": "MATRESSESS"
+    },
+    "11041 TEXTILE": {
+      "template": { "11036 SPACE HOME AND INTERIOR": "ROOT" },
+      "11041": "TEXTILE"
+    },
+    "11042 HOME ACCESSORIES": {
+      "template": { "11036 SPACE HOME AND INTERIOR": "ROOT" },
+      "11042": "HOME ACCESSORIES"
+    },
+    "11206 ART DEKO": {
+      "template": { "11036 SPACE HOME AND INTERIOR": "ROOT" },
+      "11206": "ART DEKO"
+    },
+    "11208 Light and Electrical": {
+      "template": { "11036 SPACE HOME AND INTERIOR": "ROOT" },
+      "11208": "Light and Electrical"
+    },
+    "11223 Home appliances": {
+      "template": { "11036 SPACE HOME AND INTERIOR": "ROOT" },
+      "11223": "Home appliances"
+    }
+  }
+}

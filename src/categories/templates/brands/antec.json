@@ -1,0 +1,187 @@
+{
+ "antec": {
+   "FULL TOWER": {
+     "7611":"ANTEC",
+     "template": {"computer cases":"FULL TOWER" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "4030":"FULL TOWER"
+    },
+   "MID TOWER": {
+     "7612":"ANTEC",
+     "template": {"computer cases":"MID TOWER" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "4031":"MID TOWER"
+    },
+   "MINI TOWER": {
+     "7613":"ANTEC",
+     "template": {"computer cases":"MINI TOWER" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "4032":"MINI TOWER"
+    },
+
+   "GAMING MID TOWER": {
+     "7614":"ANTEC",
+     "template": {"computer cases":"GAMING MID TOWER" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "4033":"GAMING MID TOWER"
+    },
+   "GAMING FULL TOWER": {
+     "7615":"ANTEC",
+     "template": {"computer cases":"GAMING FULL TOWER" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "4034":"GAMING FULL TOWER"
+    },
+   "ITX": {
+     "7616":"ANTEC",
+     "template": {"computer cases":"ITX" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "4035":"ITX"
+    },
+   "MINI ITX": {
+     "7617":"ANTEC",
+     "template": {"computer cases":"MINI ITX" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "4036":"MINI ITX"
+    },
+   "CFF (Сompact Form Factor)": {
+     "7618":"ANTEC",
+     "template": {"computer cases":"CFF (Сompact Form Factor)" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "4037":"CFF (Сompact Form Factor)"
+    },
+   "LFF (Low Profile Form Factor)": {
+     "7619":"ANTEC",
+     "template": {"computer cases":"LFF (Low Profile Form Factor)" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "4038":"LFF (Low Profile Form Factor)"
+    },
+   "SFF (Small Form Factor)": {
+     "7620":"ANTEC",
+     "template": {"computer cases":"SFF (Small Form Factor)" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7636":"SFF (Small Form Factor)"
+    },
+   "TFF (Thin Form Factor)": {
+     "7621":"ANTEC",
+     "template": {"computer cases":"TFF (Thin Form Factor)" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7637":"TFF (Thin Form Factor)"
+    },
+   "FLEX ATX": {
+     "7622":"ANTEC",
+     "template": {"computer cases":"FLEX ATX" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7638":"FLEX ATX"
+    },
+   "MINI PCI": {
+     "7623":"ANTEC",
+     "template": {"computer cases":"MINI PCI" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7639":"MINI PCI"
+    },
+   "ATX": {
+     "7624":"ANTEC",
+     "template": {"computer cases":"ATX" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7640":"ATX"
+    },
+   "1U": {
+     "7625":"ANTEC",
+     "template": {"computer cases":"1U" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7641":"1U"
+    },
+   "2U": {
+     "7626":"ANTEC",
+     "template": {"computer cases":"2U" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7642":"2U"
+    },
+   "3U": {
+     "7627":"ANTEC",
+     "template": {"computer cases":"3U" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7643":"3U"
+    },
+   "4U": {
+     "7628":"ANTEC",
+     "template": {"computer cases":"4U" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7644":"4U"
+    },
+   "5U": {
+     "7629":"ANTEC",
+     "template": {"computer cases":"5U" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7645":"5U"
+    },
+   "6U": {
+     "7630":"ANTEC",
+     "template": {"computer cases":"6U" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7646":"6U"
+    },
+   "7U": {
+     "7631":"ANTEC",
+     "template": {"computer cases":"7U" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7647":"7U"
+    },
+   "8U": {
+     "7632":"ANTEC",
+     "template": {"computer cases":"8U" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7648":"8U"
+    },
+   "9U": {
+     "7633":"ANTEC",
+     "template": {"computer cases":"9U" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7649":"9U"
+    },
+   "10U": {
+     "7634":"ANTEC",
+     "template": {"computer cases":"10U" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7650":"10U"
+    },
+   "11U": {
+     "7635":"ANTEC",
+     "template": {"computer cases":"11U" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7651":"11U"
+    },
+   "12U": {
+     "7655":"ANTEC",
+     "template": {"computer cases":"12U" },
+     "4012":"ANTEC",
+     "4013":"computer cases",
+     "7657":"12U"
+    }
+  }
+}

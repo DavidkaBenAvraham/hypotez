@@ -1,0 +1,31 @@
+{
+ "computer cooling": {
+   "CHAISES COOLING": {
+     "10351":"CHAISES COOLING",
+     "template": {"desktop_hardware":"COOLING" }
+    },
+
+   "AIR CHAISES COOLING": {
+     "10349":"AIR COOLING",
+     "template": {"computer cooling":"CHAISES COOLING" }
+    },
+   "LIQUID CHAISES COOLING": {
+     "10350":"LIQUID COOLING",
+     "template": {"computer cooling":"CHAISES COOLING" }
+    },
+   "CPU COOLING": {
+     "10352":"CHAISES COOLING",
+     "template": {"desktop_hardware":"COOLING" }
+    },
+
+   "AIR CPU COOLING": {
+     "10349":"AIR COOLING",
+     "template": {"computer cooling":"CPU COOLING" }
+    },
+   "LIQUID CPU COOLING": {
+     "10350":"LIQUID COOLING",
+     "template": {"computer cooling":"CPU COOLING" }
+    }
+  }
+    
+}

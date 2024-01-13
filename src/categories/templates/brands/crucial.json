@@ -1,0 +1,152 @@
+{
+ "crucial": {
+   "MEMORY": {
+     "3815":"MEMORY",
+     "template": {"memory plates":"MEMORY" }
+
+    },
+   "DIMM": {
+     "3816":"DIMM",
+     "template": {"memory plates":"DIMM" }
+    },
+   "SODIMM": {
+     "3817":"SODIMM",
+     "template": {"memory plates":"SODIMM" }
+    },
+   "DIMM DDR 3": {
+     "9386":"DIMM DDR 3",
+     "template": {
+       "memory plates":"DIMM DDR 3"
+      }
+
+    },
+   "DIMM DDR 3 2G": {
+     "9387":"DIMM DDR 3 2G",
+     "template": {
+       "memory plates":"DIMM DDR 3 2G"
+      },
+     "9336":"DIMM DDR 3 2G"
+    },
+   "DIMM DDR 3 4G": {
+     "9388":"DIMM DDR 4G",
+     "template": {
+       "memory plates":"DIMM DDR 3 4G"
+      }
+    },
+   "DIMM DDR 3 8GB": {
+     "9389":"DIMM DDR 8GB",
+     "template": {
+       "memory plates":"DIMM DDR 3 8GB"
+      }
+    },
+   "DIMM DDR 3 16GB": {
+     "9390":"DIMM DDR 16GB",
+     "template": {
+       "memory plates":"DIMM DDR 3 16GB"
+      }
+    },
+   "DIMM DDR 3 32GB": {
+     "9391":"DIMM DDR 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 3 32GB"
+      }
+    },
+   "DIMM DDR 3 64GB": {
+     "9392":"DIMM DDR 64GB",
+     "template": {
+       "memory plates":"DIMM DDR 3 64GB"
+      }
+    },
+   "DIMM DDR 4": {
+     "9393":"DIMM DDR 4",
+     "template": {
+       "memory plates":"DIMM DDR 4"
+      }
+    },
+   "DIMM DDR 4 4GB": {
+     "9394":"DIMM DDR 4 4GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 4GB"
+      }
+
+    },
+   "DIMM DDR 4 8GB": {
+     "9367":"DIMM DDR 4 8GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 8GB"
+      }
+    },
+   "DIMM DDR 4 16GB": {
+     "9396":"DIMM DDR 4 8GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 16GB"
+      }
+    },
+   "DIMM DDR 4 32GB": {
+     "9397":"DIMM DDR 4 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 32GB"
+      }
+    },
+   "DIMM DDR 4 64GB": {
+     "9398":"DIMM DDR 4 64GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 64GB"
+      }
+    },
+   "DIMM DDR 4 128GB": {
+     "9411":"DIMM DDR 4 128GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 128GB"
+      }
+    },
+   "DIMM DDR 5": {
+     "9399":"DIMM DDR 5",
+     "template": {
+       "memory plates":"DIMM DDR 5"
+      }
+    },
+   "DIMM DDR 5 4GB": {
+     "9400":"DIMM DDR 5 4GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 4GB"
+      }
+    },
+   "DIMM DDR 5 8GB": {
+     "9401":"DIMM DDR 5 8GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 8GB"
+      }
+    },
+   "DIMM DDR 5 16GB": {
+     "9402":"DIMM DDR 5 16GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 16GB"
+      }
+    },
+   "DIMM DDR 5 32GB": {
+     "9403":"DIMM DDR 5 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 32GB"
+      }
+    },
+   "DIMM DDR 5 64GB": {
+     "9404":"DIMM DDR 5 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 32GB"
+      }
+    },
+   "DIMM DDR 5 128GB": {
+     "9412":"DIMM DDR 5 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 32GB"
+      }
+    },
+   "DIMM DDR 5 256GB": {
+     "9413":"DIMM DDR 5 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 32GB"
+      }
+    }
+  }
+}

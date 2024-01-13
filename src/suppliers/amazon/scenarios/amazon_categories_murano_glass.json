@@ -1,0 +1,13 @@
+{
+  "scenarios": {
+    "Murano Glass": {
+      "url": "https://amzn.to/3OhRz2g",
+      "condition": "new",
+      "presta_categories": {
+        "default_category": { "11209": "MURANO GLASS" },
+        "addtinal categories root": [ "" ]
+      },
+      "price_rule": 1
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+ "msi": {
+
+   "HEADPHONES BT In-ear Bud": {
+     "7670":"msi",
+     "7669":"msi",
+     "template": {"headphones":"BT In-ear Bud" },
+     "3634":"brand:  MSI",
+     "3635":"Headphones",
+     "3645":"In-ear Bud"
+    },
+   "HEADPHONES Overear": {
+     "7670":"msi",
+     "7669":"msi",
+     "template": {"headphones":"BT Overear" },
+     "3634":"brand:  MSI",
+     "3635":"Headphones",
+     "3647":"Overear"
+    },
+   "MB INTEL": {
+     "9532":"Intel",
+     "9490":"MSI",
+     "template": {"motherboards":"INTEL" },
+     "3634":"MSI",
+     "3650":"Motherboards",
+     "9491":"Intel Motherboards"
+    },
+   "MB AMD": {
+     "9533":"AMD",
+     "9490":"MSI",
+     "template": {"motherboards":"AMD" },
+     "3634":"MSI",
+     "3650":"Motherboards",
+     "9492":"AMD Motherboards"
+    },
+   "INTEL 1200": {
+     "9500":"INTEL 1200",
+     "template": {"msi":"MB INTEL" }
+    },
+   "INTEL 1700": {
+     "9501":"INTEL 1700",
+     "template": {"msi":"MB INTEL" }
+    },
+   "AMD AM4": {
+     "template": {"msi":"MB AMD" }
+    },
+   "INTEL 1200 H510": {
+     "9514":"INTEL 1200 H510",
+     "template": {"msi":"INTEL 1200" }
+    },
+   "INTEL 1200 B460": {
+     "9518":"INTEL 1200 B460",
+     "template": {"msi":"INTEL 1200" }
+    },
+   "INTEL 1200 B560": {
+     "9515":"INTEL 1200 B560",
+     "template": {"msi":"INTEL 1200" }
+    },
+   "INTEL 1200 Z590": {
+     "9515":"INTEL 1200 Z590",
+     "template": {"msi":"INTEL 1200" }
+    },
+   "INTEL 1700 Z690": {
+     "9512":"INTEL 1700 Z690",
+     "template": {"msi":"INTEL 1700" }
+    },
+   "INTEL 1700 B660": {
+     "9511":"INTEL 1700 B660",
+     "template": {"msi":"INTEL 1700" }
+    },
+   "INTEL 1700 H670": {
+     "9513":"INTEL 1700 H670",
+     "template": {"msi":"INTEL 1700" }
+    },
+   "INTEL 1700 H610": {
+     "9513":"INTEL 1700 H610",
+     "template": {"msi":"INTEL 1700" }
+    },
+   "AMD AM4 B550": {
+     "template": {
+       "9524":"B550",
+       "9504":"AM4",
+       "msi":"MB AMD"
+
+      }
+    },
+   "AMD AM4 A520": {
+     "template": {
+       "9521":"A520",
+       "9504":"AM4",
+       "msi":"MB AMD"
+
+      }
+    }
+  }
+}

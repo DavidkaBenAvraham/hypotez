@@ -1,0 +1,92 @@
+{
+ "desktops": {
+   "DESKTOPS BY BRANDS": {
+     "6595":"Desktops by Brands",
+     "template": {"consumer electronics root":"DESKTOP COMPUTERS" }
+    },
+   "MINI PC": {
+     "10184":"Mini PC",
+     "template": {"consumer electronics root":"DESKTOP COMPUTERS" }
+    },
+   "DESKTOPS BY CPU": {
+     "10222":"Desktops by CPU",
+     "template": {"consumer electronics root":"DESKTOP COMPUTERS" }
+    },
+   "INTEL": {
+     "10226":"Intel",
+     "template": {"desktops":"DESKTOPS BY CPU" }
+    },
+   "INTEL CELERON": {
+     "10227":"CELERON",
+     "template": {"desktops":"INTEL" }
+    },
+   "INTEL PENTIUM": {
+     "10228":"PENTIUM",
+     "template": {"desktops":"INTEL" }
+    },
+   "INTEL I3": {
+     "10229":"I3",
+     "template": {"desktops":"INTEL" }
+    },
+   "INTEL I5": {
+     "10230":"I5",
+     "template": {"desktops":"INTEL" }
+    },
+   "I7": {
+     "10232":"I7",
+     "template": {"desktops":"INTEL" }
+    },
+   "INTEL I9": {
+     "10231":"I9",
+     "template": {"desktops":"INTEL" }
+    },
+   "INTEL CORE M": {
+     "10233":"CORE M",
+     "template": {"desktops":"INTEL" }
+    },
+   "INTEL XEON": {
+     "10233":"XEON",
+     "template": {"desktops":"INTEL" }
+    },
+   "AMD": {
+     "10234":"AMD",
+     "template": {"desktops":"DESKTOPS BY CPU" }
+    },
+   "AMD ATHLON": {
+     "10234":"AMD",
+     "template": {"desktops":"AMD" }
+    },
+   "AMD A SERIES": {
+     "10237":"A SERIES",
+     "template": {"desktops":"AMD" }
+    },
+   "AMD A4": {
+     "10238":"AMD A4",
+     "template": {"desktops":"AMD A SERIES" }
+    },
+   "AMD A6": {
+     "10239":"AMD A4",
+     "template": {"desktops":"AMD A SERIES" }
+    },
+   "AMD RYZEN": {
+     "10240":"AMD RYZEN",
+     "template": {"desktops":"AMD" }
+    },
+   "AMD RYZEN 3": {
+     "10241":"AMD RYZEN 3",
+     "template": {"desktops":"AMD  RYZEN" }
+    },
+   "AMD RYZEN 5": {
+     "10242":"AMD RYZEN 5",
+     "template": {"desktops":"AMD  RYZEN" }
+    },
+   "AMD RYZEN 7": {
+     "10243":"AMD RYZEN 7",
+     "template": {"desktops":"AMD  RYZEN" }
+    },
+   "AMD RYZEN 9": {
+     "10244":"AMD RYZEN 9",
+     "template": {"desktops":"AMD  RYZEN" }
+    }
+  }
+}

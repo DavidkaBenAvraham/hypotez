@@ -1,0 +1,150 @@
+{
+
+  "store": {
+    "store_id": 911383159,
+    "supplier_id": 4811,
+    "description": "POCO Direct store",
+    "about": " ",
+    "category ID on site":"","brand": "POCO",
+    "url": "https://www.aliexpress.com/store/911383159",
+    "shop categories page": "",
+    "shop categories json file": "https://www.aliexpress.com/store/productGroupsAjax.htm?storeId=911383159&shopVersion=3.0&callback=jsonp_910331321",
+    "get store banners": true
+  },
+  "scenarios": {
+    "POCO C40": {
+      "category ID on site":"","brand": "POCO","url": "https://www.aliexpress.com/store/group/POCO-C40/911383159_40000002593799.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "poco": "POCO C40" }
+      },
+      "checkbox": false,
+
+      "price_rule": 1
+    },
+
+    "POCO F3 5G": {
+      "category ID on site":"","brand": "POCO","url": "https://www.aliexpress.com/store/group/POCO-F3/911383159_10000000822121.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "poco": "POCO F3 5G" }
+      },
+      "checkbox": false,
+
+      "price_rule": 1
+    },
+
+    "POCO F4 GT": {
+      "category ID on site":"","brand": "POCO","url": "https://www.aliexpress.com/store/group/POCO-F4-GT/911383159_40000002077963.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "poco": "POCO F4 GT" }
+      },
+      "checkbox": false,
+
+      "price_rule": 1
+    },
+
+    "POCO M3 Pro 5G": {
+      "category ID on site":"","brand": "POCO","url": "https://www.aliexpress.com/store/group/POCO-M3-Pro/911383159_10000001318890.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "poco": "POCO F4 GT" }
+      },
+      "checkbox": false,
+
+      "price_rule": 1
+    },
+    "POCO M3": {
+      "category ID on site":"","brand": "POCO","url": "https://www.aliexpress.com/store/group/POCO-M3/911383159_10000000036044.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "poco": "POCO M3" }
+      },
+      "checkbox": false,
+
+      "price_rule": 1
+    },
+    "POCO M4 Pro 4G": {
+      "category ID on site":"","brand": "POCO","url": "https://www.aliexpress.com/store/group/POCO-M4-Pro-4G/911383159_40000000804606.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "poco": "POCO M4 Pro 4G" }
+      },
+      "checkbox": false,
+
+      "price_rule": 1
+    },
+    "POCO M4 Pro 5G": {
+      "category ID on site":"","brand": "POCO","url": "https://www.aliexpress.com/store/group/POCO-M4-Pro-5G/911383159_30000000054303.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "poco": "POCO M4 Pro 5G" }
+      },
+      "checkbox": false,
+
+      "price_rule": 1
+    },
+    "POCO M5": {
+      "category ID on site":"","brand": "POCO","url": "https://www.aliexpress.com/store/group/POCO-M5/911383159_40000002482230.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "poco": "POCO M5" }
+      },
+      "checkbox": false,
+
+      "price_rule": 1
+    },
+    "POCO M5S": {
+      "category ID on site":"","brand": "POCO","url": "https://www.aliexpress.com/store/group/POCO-M5S/911383159_40000002723435.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "poco": "POCO M5s" }
+      },
+      "checkbox": false,
+
+      "price_rule": 1
+    },
+
+    "POCO X3 NFC": {
+      "category ID on site":"","brand": "POCO","url": "https://www.aliexpress.com/store/group/POCO-X3/911383159_10000000045989.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "poco": "POCO X3" }
+      },
+      "checkbox": false,
+
+      "price_rule": 1
+    },
+    "POCO X3 PRO": {
+      "category ID on site":"","brand": "POCO","url": "https://www.aliexpress.com/store/group/POCO-X3-Pro/911383159_10000000754763.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "poco": "POCO X3 PRO" }
+      },
+      "checkbox": false,
+
+      "price_rule": 1
+    },
+    "POCO X3 GT": {
+      "category ID on site":"","brand": "POCO","url": "https://www.aliexpress.com/store/group/POCO-X3-GT/911383159_30000000046118.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "poco": "POCO X3 GT" }
+      },
+      "checkbox": false,
+
+      "price_rule": 1
+    },
+    "POCO X4 Pro 5G": {
+      "category ID on site":"","brand": "POCO","url": "https://www.aliexpress.com/store/group/POCO-X4-Pro-5G/911383159_40000000703669.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "poco": "POCO X4 Pro 5G" }
+      },
+      "checkbox": false,
+
+      "price_rule": 1
+    }
+  }
+}

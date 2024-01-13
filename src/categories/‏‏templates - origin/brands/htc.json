@@ -1,0 +1,10 @@
+{
+ "htc": {
+   "SMARTPHONES": {
+     "6368":"HTC",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "3118":"HTC",
+     "6367":"SMARTPHONES"
+    }
+  }
+}

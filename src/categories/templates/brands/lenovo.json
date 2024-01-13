@@ -1,0 +1,308 @@
+{
+ "lenovo": {
+   "IdeaCentre 24": {
+     "3673":"IdeaCentre AIO 24 inch",
+     "template": {"aio":"24" },
+     "2261":"LENOVO brand axis",
+     "3603":"AIO",
+     "7681":"24 inch"
+
+
+    },
+   "IdeaCentre 27": {
+     "3625":"IdeaCentre AIO 27 inch",
+     "template": {"aio":"27" },
+     "2261":"LENOVO brand axis",
+     "3603":"AIO",
+     "7682":"27 inch"
+    },
+   "YOGA 27": {
+     "3982":"YOGA 27",
+     "template": {"aio":"27" },
+     "2261":"LENOVO brand axis",
+     "3603":"AIO",
+     "3613":"YOGA 27"
+    },
+
+
+
+
+
+
+   "PC MONITORS": {
+     "10043":"LENOVO",
+     "10041":"BY BRAND",
+     "template": {"PC MONITORS":"COMPUTER MONITORS" },
+     "2261":"LENOVO",
+     "2571":"PC MONITORS"
+    },
+   "PC MONITORS 14 - 15": {
+     "10152":"MONITORS 14 - 15",
+     "template": {"lenovo":"PC MONITORS" },
+     "10180":"MONITORS 14 - 15"
+    },
+   "PC MONITORS 17": {
+     "10141":"MONITORS 17",
+     "template": {"lenovo":"PC MONITORS" },
+     "10055":"MONITORS 17"
+    },
+   "PC MONITORS 21 - 22": {
+     "10142":"MONITORS 21 - 22",
+     "template": {"lenovo":"PC MONITORS" },
+     "10056":"MONITORS 21 - 22"
+    },
+   "PC MONITORS 23 - 24": {
+     "10143":"MONITORS 23 - 24",
+     "template": {"lenovo":"PC MONITORS" },
+     "10057":"MONITORS 23 - 24"
+    },
+   "PC MONITORS 26 - 28": {
+     "10144":"MONITORS 26 - 28",
+     "template": {"lenovo":"PC MONITORS" },
+     "10058":"MONITORS 26 - 28"
+    },
+   "PC MONITORS 29 - 31": {
+     "10145":"MONITORS 29 - 31",
+     "template": {"lenovo":"PC MONITORS" },
+     "10059":"MONITORS 29 - 31"
+    },
+   "PC MONITORS 32 - 34": {
+     "10146":"MONITORS 32 - 34",
+     "template": {"lenovo":"PC MONITORS" },
+     "10060":"MONITORS 32 - 34"
+    },
+   "PC MONITORS 36 - 40": {
+     "10147":"MONITORS 36 - 40",
+     "template": {"lenovo":"PC MONITORS" },
+     "10061":"MONITORS 36 - 40"
+    },
+   "PC MONITORS 40 - 42": {
+     "10148":"MONITORS 40 - 42",
+     "template": {"lenovo":"PC MONITORS" },
+     "10062":"MONITORS 40 - 42"
+    },
+   "PC MONITORS 44 - 46": {
+     "10149":"MONITORS 44 - 46",
+     "template": {"lenovo":"PC MONITORS" },
+     "10063":"MONITORS 44 - 46"
+    },
+   "PC MONITORS 48 - 50": {
+     "10150":"MONITORS 48 - 50",
+     "template": {"lenovo":"PC MONITORS" },
+     "10064":"MONITORS 48 - 50"
+    },
+   "PC MONITORS 52 - 54": {
+     "10151":"MONITORS 52 - 54",
+     "template": {"lenovo":"PC MONITORS" },
+     "10065":"MONITORS 52 - 54"
+    },
+
+
+
+
+
+   "LAPTOPS": {
+     "6558":"Lenovo",
+     "5453":"Laptops by brand",
+     "template": {"laptops":"LAPTOPS" },
+     "2261":"LENOVO brand axis",
+     "2569":"Laptops"
+    },
+
+
+   "LAPTOPS INTEL": {
+     "9720":"Intel",
+     "4148":"Laptops by CPU",
+     "10425":"Intel",
+     "10424":"Lenovo BY CPU",
+     "template": {"lenovo":"INTEL" },
+     "9621":"LAPTOPS INTEL"
+    },
+
+   "LAPTOPS INTEL CELERON": {
+     "10427":"INTEL CELERON",
+     "template": {
+       "lenovo":"LAPTOPS INTEL",
+       "laptops":"INTEL CELERON"
+      },
+     "9625":"LAPTOPS INTEL CELERON"
+    },
+   "LAPTOPS INTEL I3": {
+     "10428":"INTEL I3",
+     "template": {
+       "lenovo":"LAPTOPS INTEL",
+       "laptops":"INTEL I3"
+      },
+     "9627":"LAPTOPS INTEL i3"
+    },
+   "LAPTOPS INTEL I5": {
+     "10429":"INTEL i5",
+     "template": {
+       "lenovo":"LAPTOPS INTEL",
+       "laptops":"INTEL I5"
+      },
+     "9628":"LAPTOPS INTEL i5"
+    },
+   "LAPTOPS INTEL I7": {
+     "10430":"INTEL i7",
+     "template": {
+       "lenovo":"LAPTOPS INTEL",
+       "laptops":"INTEL I7"
+      },
+     "9629":"LAPTOPS INTEL i7"
+    },
+   "LAPTOPS INTEL I9": {
+     "10431":"INTEL i9",
+     "template": {
+       "lenovo":"LAPTOPS INTEL",
+       "laptops":"INTEL I9"
+      },
+     "9630":"LAPTOPS INTEL i9"
+    },
+   "LAPTOPS AMD": {
+     "10426":"AMD",
+     "template": {"lenovo":"LAPTOPS" },
+     "9622":"LAPTOPS AMD"
+    },
+   "LAPTOPS AMD ATHLON": {
+     "10432":"AMD ATHLON",
+     "template": {
+       "lenovo":"LAPTOPS AMD",
+       "laptops":"AMD ATHLON"
+      },
+     "9631":"LAPTOPS AMD Athlon"
+    },
+   "LAPTOPS AMD A6": {
+     "10433":"AMD A6",
+     "10439":"AMD A SERIES",
+     "template": {
+       "lenovo":"LAPTOPS AMD",
+       "laptops":"AMD ATHLON"
+      },
+     "9632":"LAPTOPS AMD A6"
+    },
+   "LAPTOPS AMD RYZEN 3": {
+     "10434":"AMD RYZEN 3",
+     "10440":"AMD RYZEN SERIES",
+     "template": {
+       "lenovo":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 3"
+      },
+     "9633":"LAPTOPS AMD RYZEN 3"
+    },
+   "LAPTOPS AMD RYZEN 5": {
+     "10435":"AMD RYZEN 5",
+     "10440":"AMD RYZEN SERIES",
+     "template": {
+       "lenovo":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 5"
+      },
+     "9634":"LAPTOPS AMD RYZEN 5"
+    },
+   "LAPTOPS AMD RYZEN 7": {
+     "10436":"AMD RYZEN 7",
+     "10440":"AMD RYZEN SERIES",
+     "template": {
+       "lenovo":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 7"
+      },
+     "9635":"LAPTOPS AMD RYZEN 7"
+    },
+   "LAPTOPS AMD RYZEN 9": {
+     "10437":"AMD RYZEN 9",
+     "10440":"AMD RYZEN SERIES",
+     "template": {
+       "lenovo":"LAPTOPS AMD",
+       "laptops":"AMD RYZEN 9"
+      },
+     "9636":"LAPTOPS AMD RYZEN 9"
+    },
+
+
+   "DESKTOPS": {
+     "10224":"LENOVO",
+     "template": {"desktops":"DESKTOPS BY BRANDS" },
+     "2261":"LENOVO",
+     "10305":"DESKTOPS"
+    },
+   "DESKTOPS INTEL": {
+     "template": {"lenovo": ["DESKTOPS" ] },
+     "10306":"INTEL"
+    },
+   "DESKTOPS INTEL CELERON": {
+     "template": {"lenovo": ["DESKTOPS INTEL" ] },
+     "10307":"CELERON"
+    },
+   "DESKTOPS INTEL PENTIUM": {
+     "template": {"lenovo": ["DESKTOPS INTEL" ] },
+     "10308":"PENTIUM"
+    },
+   "DESKTOPS INTEL I3": {
+     "template": {"lenovo": ["DESKTOPS INTEL" ] },
+     "10309":"I3"
+    },
+   "DESKTOPS INTEL I5": {
+     "template": {"lenovo": ["DESKTOPS INTEL" ] },
+     "10310":"I5"
+    },
+   "DESKTOPS INTEL I7": {
+     "template": {"lenovo": ["DESKTOPS INTEL" ] },
+     "10311":"I7"
+    },
+   "DESKTOPS INTEL I9": {
+     "template": {"lenovo": ["DESKTOPS INTEL" ] },
+     "10312":"I9"
+    },
+   "DESKTOPS INTEL M": {
+     "template": {"lenovo": ["DESKTOPS INTEL" ] },
+     "10313":"M"
+    },
+   "DESKTOPS INTEL XEON": {
+     "template": {"lenovo": ["DESKTOPS INTEL" ] },
+     "10314":"XEON"
+    },
+   "DESKTOPS AMD": {
+     "template": {"lenovo": ["DESKTOPS" ] },
+     "10315":"AMD"
+    },
+   "DESKTOPS AMD ATHLON": {
+     "template": {"lenovo": ["DESKTOPS AMD" ] },
+     "10316":"ATHLON"
+    },
+   "DESKTOPS AMD A SERIES": {
+     "template": {"lenovo": ["DESKTOPS AMD" ] },
+     "10317":"A SERIES"
+    },
+
+   "DESKTOPS AMD A4": {
+     "template": {"lenovo": ["DESKTOPS AMD A SERIES" ] },
+     "10318":"A4"
+    },
+   "DESKTOPS AMD A6": {
+     "template": {"lenovo": ["DESKTOPS AMD A SERIES" ] },
+     "10319":"A6"
+    },
+   "DESKTOPS AMD RYZEN": {
+     "template": {"lenovo": ["DESKTOPS AMD" ] },
+     "10320":"RYZEN"
+    },
+   "DESKTOPS AMD RYZEN 3": {
+     "template": {"lenovo": ["DESKTOPS AMD RYZEN" ] },
+     "10321":"RYZEN 3"
+    },
+   "DESKTOPS AMD RYZEN 5": {
+     "template": {"lenovo": ["DESKTOPS AMD RYZEN" ] },
+     "10322":"RYZEN 5"
+    },
+   "DESKTOPS AMD RYZEN 7": {
+     "template": {"lenovo": ["DESKTOPS AMD RYZEN" ] },
+     "10323":"RYZEN 7"
+    },
+   "DESKTOPS AMD RYZEN 9": {
+     "template": {"lenovo": ["DESKTOPS AMD RYZEN" ] },
+     "10324":"RYZEN 8"
+    }
+
+
+  }
+}

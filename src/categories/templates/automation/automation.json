@@ -1,0 +1,56 @@
+{
+ "automation": {
+   "AUTOMATION ROOT": {
+     "3210":"automation"
+    },
+   "CONTROLLERS": {
+     "template": {"automation":"AUTOMATION ROOT" }
+    },
+   "SMART CONTROLLERS": {
+     "7903":"Smart controllers",
+     "template": {"automation":"CONTROLLERS" }
+    },
+   "RELAY CONTROLLER": {
+     "7904":"Relay Controller",
+     "template": {"automation":"SMART CONTROLLERS" }
+    },
+   "ESP32 HOME AUTOMATION": {
+     "7905":"ESP32 home automation",
+     "template": {"automation":"SMART CONTROLLERS" }
+    },
+   "EXTEND RELAY MODULE": {
+     "7906":"Extend Relay Module",
+     "template": {"automation":"SMART CONTROLLERS" }
+    },
+   "LOGICAL CONTROLLER": {
+     "7907":"Logical Controller",
+     "template": {"automation":"SMART CONTROLLERS" }
+    },
+   "DIMMER CONTROLLER": {
+     "7908":"Dimmer Controller",
+     "template": {"automation":"SMART CONTROLLERS" }
+    },
+   "WIRELESS CONTROLLER": {
+     "7909":"Wireless Controller",
+     "template": {"automation":"SMART CONTROLLERS" }
+    },
+
+   "SWITCH PANEL": {
+     "template": {"automation":"AUTOMATION ROOT" }
+    },
+   "HOME AUTOMATION": {
+     "7933":"Home Automation Controllers",
+     "template": {"automation":"SWITCH PANEL" }
+    },
+   "SMART DISTRIBUTION BOX": {
+     "7934":"Home Automation Controllers",
+     "template": {"automation":"AUTOMATION ROOT" }
+    },
+   "WIRE SENSOR": {
+     "7947":"Wired Sensor in measuring",
+     "7945":"Wired Sensor in automation",
+     "7946":"Wired Sensor in energy",
+     "template": {"automation":"AUTOMATION ROOT" }
+    }
+  }
+}

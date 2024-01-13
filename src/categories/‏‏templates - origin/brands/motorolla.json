@@ -1,0 +1,10 @@
+{
+ "motorolla": {
+   "SMARTPHONES": {
+     "6370":"MOTOROLLA",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "3140":"MOTOROLLA",
+     "6369":"SMARTPHONES"
+    }
+  }
+}

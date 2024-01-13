@@ -1,0 +1,156 @@
+{
+  "store": {
+    "store_id": 1102076450,
+    "supplier_id": 7489,
+    "description": "Motherboards etc.",
+    "about": " ",
+    "category ID on site": "",
+    "brand": "GIGABYTE",
+    "url": "https://gigabyteofficial.aliexpress.com/store/1102076450",
+    "shop categories page": "",
+    "shop categories json file": "https://gigabyteofficial.aliexpress.com/store/productGroupsAjax.htm?storeId=1102076450&shopVersion=3.0&callback=jsonp_910331321",
+    "get store banners": true
+  },
+  "scenarios": {
+    "Intel B660": {
+      "category ID on site": "",
+      "brand": "GIGABYTE",
+      "url": "https://gigabyteofficial.aliexpress.com/store/group/Intel-B660-chipset/1102076450_40000002153571.html?spm=a2g0o.store_pc_groupList.0.0.38373d466FWT2V",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "Intel B660" }
+
+      },
+      "product combinations": null
+    },
+    "Intel Z690": {
+      "category ID on site": "",
+      "brand": "GIGABYTE",
+      "url": "https://gigabyteofficial.aliexpress.com/store/group/Intel-Z690-chipset/1102076450_40000002626940.html?spm=a2g0o.store_pc_groupList.0.0.38373d466FWT2V",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "Intel Z690" }
+      },
+      "product combinations": null
+    },
+
+    "Intel H510": {
+      "category ID on site": "",
+      "brand": "GIGABYTE",
+      "url": "https://gigabyteofficial.aliexpress.com/store/group/Intel-H510-chipset/1102076450_40000002767798.html?spm=a2g0o.store_pc_groupList.0.0.38373d466FWT2V",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "Intel H510" }
+      },
+      "product combinations": null
+    },
+    "Intel B560": {
+      "category ID on site": "",
+      "brand": "GIGABYTE",
+      "url": "https://gigabyteofficial.aliexpress.com/store/group/Intel-B560-chipset/1102076450_40000002157539.html?spm=a2g0o.store_pc_groupList.0.0.38373d466FWT2V",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "Intel B560" }
+      },
+      "product combinations": null
+    },
+
+
+    "AMD B650 chipset": {
+      "category ID on site": "",
+      "brand": "GIGABYTE",
+      "url": "https://gigabyteofficial.aliexpress.com/store/group/AMD-B650-chipset/1102076450_40000002767900.html?spm=a2g0o.store_pc_groupList.0.0.54e14128rB4err",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "AMD B650" }
+      },
+      "product combinations": null
+    },
+
+    "AMD X670 chipset": {
+      "category ID on site": "",
+      "brand": "GIGABYTE",
+      "url": "https://gigabyteofficial.aliexpress.com/store/group/AMD-X670-chipset/1102076450_40000002594049.html?spm=a2g0o.store_pc_groupList.0.0.54e14128rB4err",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "AMD X670" }
+      },
+      "product combinations": null
+    },
+
+    "AMD B450 chipset": {
+      "category ID on site": "",
+      "brand": "GIGABYTE",
+      "url": "https://gigabyteofficial.aliexpress.com/store/group/AMD-B450-chipset/1102076450_40000002759970.html?spm=a2g0o.store_pc_groupList.0.0.54e14128rB4err",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "LGA 2011" }
+      },
+      "product combinations": null
+    },
+    "AMD X570 chipset": {
+      "category ID on site": "",
+      "brand": "GIGABYTE",
+      "url": "https://gigabyteofficial.aliexpress.com/store/group/AMD-X570-chipset/1102076450_40000002660703.html?spm=a2g0o.store_pc_groupList.0.0.54e14128rB4err",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "LGA 2011" }
+      },
+      "product combinations": null
+    },
+    "AMD A520 chipset": {
+      "category ID on site": "",
+      "brand": "GIGABYTE",
+      "url": "https://gigabyteofficial.aliexpress.com/store/group/AMD-A520-chipset/1102076450_40000002660704.html?spm=a2g0o.store_pc_groupList.0.0.54e14128rB4err",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "LGA 2011" }
+      },
+      "product combinations": null
+    },
+    "AMD A320 chipset": {
+      "category ID on site": "",
+      "brand": "GIGABYTE",
+      "url": "https://gigabyteofficial.aliexpress.com/store/group/AMD-A320-chipset/1102076450_40000002157548.html?spm=a2g0o.store_pc_groupList.0.0.54e14128rB4err",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "LGA 2011" }
+      },
+      "product combinations": null
+    },
+    "AMD B550 chipset": {
+      "category ID on site": "",
+      "brand": "GIGABYTE",
+      "url": "https://gigabyteofficial.aliexpress.com/store/group/AMD-B550-chipset/1102076450_40000002771961.html?spm=a2g0o.store_pc_groupList.0.0.54e14128rB4err",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "LGA 2011" }
+      },
+      "product combinations": null
+    },
+
+
+    "AMD Radeon RX 6500XT": {
+      "category ID on site": "",
+      "brand": "GIGABYTE",
+      "url": "https://gigabyteofficial.aliexpress.com/store/group/Radeon-RX-6500XT/1102076450_40000002759974.html?spm=a2g0o.store_pc_groupList.0.0.16a87716MROCS2",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "videocards": "AMD Radeon RX 6500XT" }
+      },
+      "product combinations": null
+    }
+  }
+}

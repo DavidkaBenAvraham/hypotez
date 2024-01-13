@@ -1,0 +1,163 @@
+{
+ "realme": {
+   "SMARTPHONES": {
+     "4790":"REALME",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "3161":"REALME",
+     "6051":"SMARTPHONES"
+    },
+   "HEADHPONES BT": {
+     "4790":"REALME",
+     "template": {"headphones":"BT In-ear Bud" },
+     "3161":"REALME",
+     "7305":"Headphones/buds"
+    },
+   "SMART CAMERA": {
+     "7777":"SMART CAMERA",
+     "template": {"smarthome":"SMARTCAMERA" },
+     "3161":"REALME",
+     "7314":"Smart Cameras"
+    },
+   "SMARTWATCHES": {
+     "6472":"Smartwatches",
+     "template": {"wearable":"WATCHES" },
+     "3161":"REALME",
+     "7547":"Smart Watches"
+    },
+   "REALME C SERIES": {
+     "6217":"C SERIES",
+     "template": {"realme":"SMARTPHONES" },
+     "6055":"C SERIES"
+
+    },
+   "REALME GT SERIES": {
+     "6214":"GT SERIES",
+     "template": {"realme":"SMARTPHONES" },
+     "6052":"GT SERIES"
+
+    },
+   "REALME NARZO SERIES": {
+     "6218":"NARZO SERIES",
+     "template": {"realme":"SMARTPHONES" },
+     "6056":"NARZO SERIES"
+
+    },
+   "REALME 8 Series": {
+     "6216":"8 SERIES",
+     "template": {"realme":"SMARTPHONES" },
+     "6054":"8 SERIES"
+    },
+   "REALME 9 SERIES": {
+     "6215":"9 SERIES",
+     "template": {"realme":"SMARTPHONES" },
+     "6053":"9 SERIES"
+    },
+   "REALME 8": {
+     "7539":"REALME 8",
+     "template": {"realme":"REALME 8 SERIES" },
+     "7538":"REALME 8"
+    },
+
+   "REALME 9": {
+     "6230":"REALME 9",
+     "template": {"realme":"REALME 9 SERIES" },
+     "6068":"REALME 9"
+    },
+   "REALME 9i": {
+     "7298":"REALME 9i",
+     "template": {"realme":"REALME 9 SERIES" },
+     "7295":"REALME 9i"
+    },
+   "REALME 9 5G": {
+     "7302":"REALME 9 5G",
+     "template": {"realme":"REALME 9 SERIES" },
+     "7296":"REALME 9 5G"
+    },
+   "REALME 9 PRO": {
+     "6231":"REALME 9 PRO",
+     "template": {"realme":"REALME 9 SERIES" },
+     "6069":"REALME 9 PRO"
+    },
+   "REALME 9 PRO PLUS": {
+     "6232":"REALME 9 PRO PLUS",
+     "6231":"REALME 9 PRO",
+     "template": {"realme":"REALME 9 SERIES" },
+     "6069":"REALME 9 PRO",
+     "6070":"REALME 9 PRO PLUS"
+
+    },
+   "REALME C33": {
+     "7297":"REALME C33",
+     "template": {"realme":"REALME C SERIES" },
+     "7294":"REALME C33"
+    },
+   "REALME C25S": {
+     "7528":"REALME C25S",
+     "template": {"realme":"REALME C SERIES" },
+     "6060":"REALME C25S"
+    },
+   "REALME C35": {
+     "6222":"REALME C35",
+     "template": {"realme":"REALME C SERIES" },
+     "6059":"REALME C35"
+    },
+   "REALME C31": {
+     "6220":"REALME C31",
+     "template": {"realme":"REALME C SERIES" },
+     "6058":"REALME C31"
+    },
+   "REALME C21Y": {
+     "6223":"REALME C21Y",
+     "template": {"realme":"REALME C SERIES" },
+     "6061":"REALME C21Y"
+    },
+   "REALME C30": {
+     "6219":"REALME C30",
+     "template": {"realme":"REALME C SERIES" },
+     "6057":"REALME C30"
+    },
+   "REALME GT 2 PRO": {
+     "6207":"REALME GT 2 PRO",
+     "template": {"realme":"REALME GT SERIES" },
+     "4758":"REALME GT 2 PRO"
+    },
+   "REALME GT Master Edition": {
+     "6228":"GT Master Edition",
+     "template": {"realme":"REALME GT SERIES" },
+     "6066":"GT Master Edition"
+    },
+   "REALME GT Neo3T": {
+     "6226":"REALME GT Neo3T",
+     "template": {"realme":"REALME GT SERIES" },
+     "6064":"REALME GT Neo3T"
+    },
+   "REALME GT Neo3": {
+     "6225":"REALME GT Neo3",
+     "template": {"realme":"REALME GT SERIES" },
+     "6063":"REALME GT Neo3"
+    },
+   "REALME NARZO 50i PRIME": {
+     "7303":"REALME NARZO 50i PRIME",
+     "template": {"realme":"REALME NARZO SERIES" },
+     "7300":"REALME NARZO 50i PRIME"
+    },
+   "REALME NARZO 50a": {
+     "7304":"REALME NARZO 50a",
+     "template": {"realme":"REALME NARZO SERIES" },
+     "7301":"REALME NARZO 50a"
+    },
+
+   "REALME Buds Air 3": {
+     "template": {"realme":"HEADHPONES BT" },
+     "7306":"Buds Air3"
+    },
+   "REALME Buds Q2s": {
+     "template": {"realme":"HEADHPONES BT" },
+     "7307":"Buds Buds Q2s"
+    },
+   "Realme WATCH 3 PRO": {
+     "template": {"realme":"SMARTWATCHES" },
+     "7548":"Realme WATCH 3 PRO"
+    }
+  }
+}

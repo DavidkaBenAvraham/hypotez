@@ -1,0 +1,47 @@
+{
+ "jbl": {
+   "True Wireless Earbuds": {
+     "7664":"JBL",
+     "7660":"JBL",
+     "template": {"headphones":"BT In-ear Bud" },
+
+     "2264":"JBL",
+     "2614":"Headphones",
+     "4204":"True Wireless",
+     "2615":"In-ear Bud"
+    },
+   "BT Over-ear Headphones": {
+     "7664":"JBL",
+     "7660":"JBL",
+     "template": {"headphones":"BT Overear" },
+
+     "2264":"JBL",
+     "2614":"Headphones",
+     "3979":"Over-ear Headphones"
+    },
+   "JBL Tune 225TWS True Wireless Earbuds": {
+     "4195":"JBL Tune 225TWS True Wireless Earbuds",
+     "template": {"jbl":"True Wireless Earbuds" }
+    },
+   "JBL 200BT True Wireless In-ear Bud Headphones": {
+     "4195":"JBL 200BT True Wireless In-ear Bud Headphones",
+     "template": {"jbl":"True Wireless Earbuds" }
+    },
+   "JBL 125BT In-ear Bud Headphones": {
+     "4197":"JBL 125BT In-ear Bud Headphones",
+     "template": {"jbl":"True Wireless Earbuds" }
+    },
+   "JBL 650BTNC Over-ear Headphones": {
+     "3484":"JBL 650BTNC Over-ear Headphones",
+     "template": {"jbl":"BT Over-ear Headphones" }
+    },
+   "In-ear Bud, JBL C100SI Headphones": {
+     "4197":"In-ear Bud, JBL C100SI Headphones",
+     "template": {"jbl":"BT Over-ear Headphones" }
+    },
+   "In-ear Bud, JBL 115BT Neckband Headphones": {
+     "3484":"In-ear Bud, JBL 125BT Neckband Headphones",
+     "template": {"jbl":"In-ear Bud, JBL 115BT Neckband Headphones" }
+    }
+    }
+  }

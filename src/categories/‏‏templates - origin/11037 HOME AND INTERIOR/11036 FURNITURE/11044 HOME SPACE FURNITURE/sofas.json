@@ -1,0 +1,24 @@
+{
+ "sofas": {
+   "Sofa chairs": {
+     "11191":"Sofa chairs",
+     "template": {"furniture":"Living Space Furniture" }
+    },
+   "Two-seater sofas": {
+     "11192":"Two-seater sofas",
+     "template": {"furniture":"Living Space Furniture" }
+    },
+   "Three-seater sofas": {
+     "11193":"Three-seater sofas",
+     "template": {"furniture":"Living Space Furniture" }
+    },
+   "Corner sofas": {
+     "11194":"Corner sofas",
+     "template": {"furniture":"Living Space Furniture" }
+    },
+   "Sofa beds": {
+     "11195":"Sofa beds",
+     "template": {"furniture":"Living Space Furniture" }
+    }
+  }
+}

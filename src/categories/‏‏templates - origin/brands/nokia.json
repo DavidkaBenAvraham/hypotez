@@ -1,0 +1,111 @@
+{
+ "nokia": {
+   "SMARTPHONES": {
+     "6321":"NOKIA",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "2321":"NOKIA",
+     "2322":"SMARTPHONES"
+    },
+   "NOKIA 110 4G": {
+     "6322":"Nokia 110 4G",
+     "template": {"nokia":"SMARTPHONES" },
+     "2323":"Nokia 110 4G"
+
+    },
+   "NOKIA 105 4G": {
+     "6323":"Nokia 105 4G",
+     "template": {"nokia":"SMARTPHONES" },
+     "2324":"Nokia 105 4G"
+
+    },
+   "NOKIA XR20": {
+     "6324":"NOKIA XR20",
+     "template": {"nokia":"SMARTPHONES" },
+     "2325":"NOKIA XR20"
+    },
+   "NOKIA G10": {
+     "6325":"NOKIA G10",
+     "template": {"nokia":"SMARTPHONES" },
+     "2326":"NOKIA G10"
+
+    },
+   "NOKIA 800 TOUGH": {
+     "6326":"Nokia 800 Tough",
+     "template": {"nokia":"SMARTPHONES" },
+     "2327":"Nokia 800 Tough"
+    },
+   "NOKIA 215 4G": {
+     "6327":"NOKIA 215 4G",
+     "template": {"nokia":"SMARTPHONES" },
+     "2328":"NOKIA 215 4G"
+    },
+   "NOKIA 5310": {
+     "6328":"NOKIA 5310",
+     "template": {"nokia":"SMARTPHONES" },
+     "2329":"NOKIA 5310"
+    },
+   "NOKIA 225 4G": {
+     "6329":"NOKIA 225 4G",
+     "template": {"nokia":"SMARTPHONES" },
+     "2330":"NOKIA 225 4G"
+    },
+   "NOKIA 110": {
+     "6330":"NOKIA 110",
+     "template": {"nokia":"SMARTPHONES" },
+     "2331":"NOKIA 110"
+    },
+   "NOKIA 220 4G": {
+     "6331":"NOKIA 220 4G",
+     "template": {"nokia":"SMARTPHONES" },
+     "2332":"NOKIA 220 4G"
+    },
+   "Nokia 230": {
+     "6332":"Nokia 230",
+
+     "3198":"CONSUMER ELECTRONICS",
+     "3433":"Smartphones smart devices",
+     "6471":"Smartphones",
+     "6321":"Nokia",
+
+     "2321":"NOKIA",
+     "2322":"Smartphones",
+     "2333":"Nokia 230"
+    },
+   "Nokia 105": {
+     "6333":"Nokia 105",
+
+     "3198":"CONSUMER ELECTRONICS",
+     "3433":"Smartphones smart devices",
+     "6471":"Smartphones",
+     "6321":"Nokia",
+
+     "2321":"NOKIA",
+     "2322":"Smartphones",
+     "2334":"Nokia 105"
+    },
+   "NOKIA G11": {
+     "6334":"NOKIA G11",
+
+     "3198":"CONSUMER ELECTRONICS",
+     "3433":"Smartphones smart devices",
+     "6471":"Smartphones",
+     "6321":"Nokia",
+
+     "2321":"NOKIA",
+     "2322":"Smartphones",
+     "6336":"NOKIA G11"
+    },
+   "NOKIA G21": {
+     "6335":"NOKIA G21",
+
+     "3198":"CONSUMER ELECTRONICS",
+     "3433":"Smartphones smart devices",
+     "6471":"Smartphones",
+     "6321":"Nokia",
+
+     "2321":"NOKIA",
+     "2322":"Smartphones",
+     "6337":"NOKIA G21"
+    }
+  }
+} 

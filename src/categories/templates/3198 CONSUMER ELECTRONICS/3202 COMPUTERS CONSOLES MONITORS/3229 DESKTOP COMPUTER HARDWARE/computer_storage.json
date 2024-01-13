@@ -1,0 +1,231 @@
+{
+ "storage": {
+
+   "STORAGE": {
+     "7498":"DATA STORAGE",
+     "template": {"desktop_hardware":"STORAGE" }
+    },
+
+   "INTERNAL SSD": {
+     "10667":"INTERNAL SSD",
+     "template": {"storage":"COMPUTER STORAGE" }
+    },
+   "SSD SATA 3": {
+     "10752":"SSD SATA 3",
+     "template": {"storage":"INTERNAL SSD" }
+    },
+   "SSD SATA 3 64GB": {
+     "10680":"SSD SATA 3 64GB",
+     "template": {"storage":"SSD SATA 3" }
+    },
+   "SSD SATA 3 128GB": {
+     "10681":"SSD SATA 3 128GB",
+     "template": {"storage":"SSD SATA 3" }
+    },
+   "SSD SATA 3 256GB": {
+     "10682":"SSD SATA 3 256GB",
+     "template": {"storage":"SSD SATA 3" }
+    },
+   "SSD SATA 3 512GB": {
+     "10683":"SSD SATA 3 512GB",
+     "template": {"storage":"SSD SATA 3" }
+    },
+   "SSD SATA 3 1TB": {
+     "10684":"SSD SATA 3 1TB",
+     "template": {"storage":"SSD SATA 3" }
+    },
+   "SSD SATA 3 2TB": {
+     "10685":"SSD SATA 3 2TB",
+     "template": {"storage":"SSD SATA 3" }
+    },
+   "SSD SATA 3 4TB": {
+     "10686":"SSD SATA 3 4TB",
+     "template": {"storage":"SSD SATA 3" }
+    },
+   "SSD SATA 3 6TB": {
+     "10687":"SSD SATA 3 6TB",
+     "template": {"storage":"SSD SATA 3" }
+    },
+   "SSD SATA 3 8TB": {
+     "10688":"SSD SATA 3 8TB",
+     "template": {"storage":"SSD SATA 3" }
+    },
+
+   "SSD M2": {
+     "10753":"SSD M2",
+     "template": {"storage":"INTERNAL SSD" }
+    },
+   "SSD M2 32GB": {
+     "10709":"SSD M2 32GB",
+     "template": {"storage":"SSD M2" }
+    },
+   "SSD M2 64GB": {
+     "10710":"SSD M2 64GB",
+     "template": {"storage":"SSD M2" }
+    },
+   "SSD M2 128GB": {
+     "10711":"SSD M2 128GB",
+     "template": {"storage":"SSD M2" }
+    },
+   "SSD M2 256GB": {
+     "10712":"SSD M2 256GB",
+     "template": {"storage":"SSD M2" }
+    },
+   "SSD M2 512GB": {
+     "10713":"SSD M2 512GB",
+     "template": {"storage":"SSD M2" }
+    },
+   "SSD NVME PCIE": {
+     "10754":"SSD NVME PCIE",
+     "template": {"storage":"INTERNAL SSD" }
+    },
+   "SSD NVME PCIE 128GB": {
+     "10696":"SSD NVME PCIE 128GB",
+     "template": {"storage":"SSD NVME PCIE" }
+    },
+   "SSD NVME PCIE 256GB": {
+     "10697":"SSD NVME PCIE 256GB",
+     "template": {"storage":"SSD NVME PCIE" }
+    },
+   "SSD NVME PCIE 512GB": {
+     "10698":"SSD NVME PCIE 512GB",
+     "template": {"storage":"SSD NVME PCIE" }
+    },
+   "SSD NVME PCIE 1TB": {
+     "10699":"SSD NVME PCIE 1TB",
+     "template": {"storage":"SSD NVME PCIE" }
+    },
+   "SSD NVME PCIE 2TB": {
+     "10700":"SSD NVME PCIE 2TB",
+     "template": {"storage":"SSD NVME PCIE" }
+    },
+   "SSD NVME PCIE 4TB": {
+     "10701":"SSD NVME PCIE 4TB",
+     "template": {"storage":"SSD NVME PCIE" }
+    },
+   "SSD NVME PCIE 6TB": {
+     "10702":"SSD NVME PCIE 6TB",
+     "template": {"storage":"SSD NVME PCIE" }
+    },
+   "SSD NVME GEN4": {
+     "10755":"SSD NVME GEN4",
+     "template": {"storage":"INTERNAL SSD" }
+    },
+   "SSD NVME GEN4 256GB": {
+     "10682":"SSD NVME GEN4 256GB",
+     "template": {"storage":"SSD NVME GEN4" }
+    },
+   "SSD NVME GEN4 512GB": {
+     "10683":"SSD NVME GEN4 512GB",
+     "template": {"storage":"SSD NVME GEN4" }
+    },
+   "SSD NVME GEN4 1TB": {
+     "10684":"SSD NVME GEN4 1TB",
+     "template": {"storage":"SSD NVME GEN4" }
+    },
+   "SSD NVME GEN4 2TB": {
+     "10685":"SSD NVME GEN4 2TB",
+     "template": {"storage":"SSD NVME GEN4" }
+    },
+   "SSD NVME GEN4 4TB": {
+     "10686":"SSD NVME GEN4 4TB",
+     "template": {"storage":"SSD NVME GEN4" }
+    },
+   "SSD NVME GEN4 6TB": {
+     "10687":"SSD NVME GEN4 6TB",
+     "template": {"storage":"SSD NVME GEN4" }
+    },
+   "SSD NVME GEN4 8TB": {
+     "10688":"SSD NVME GEN4 8TB",
+     "template": {"storage":"SSD NVME GEN4" }
+    },
+   "SSD NVME GEN4 10TB": {
+     "10689":"SSD NVME GEN4 10TB",
+     "template": {"storage":"SSD NVME GEN4" }
+    },
+   "SSD NVME GEN4 12TB": {
+     "10690":"SSD NVME GEN4 12TB",
+     "template": {"storage":"SSD NVME GEN4" }
+    },
+   "SSD NVME GEN4 16TB": {
+     "10691":"SSD NVME GEN4 16TB",
+     "template": {"storage":"SSD NVME GEN4" }
+    },
+   "INTERNAL HDD": {
+     "10669":"INTERNAL HDD",
+     "template": {"desktop_hardware":"COMPUTER STORAGE" }
+    },
+   "INTERNAL HDD 3.5": {
+     "10673":"INTERNAL HDD 3.5",
+     "template": {"storage":"INTERNAL HDD" }
+    },
+   "INTERNAL HDD 3.5 128GB": {
+     "10726":"INTERNAL HDD 3.5 128GB",
+     "template": {"storage":"INTERNAL HDD 3.5" }
+    },
+   "INTERNAL HDD 3.5 256GB": {
+     "10727":"INTERNAL HDD 3.5 256GB",
+     "template": {"storage":"INTERNAL HDD 3.5" }
+    },
+   "INTERNAL HDD 3.5 512GB": {
+     "10728":"INTERNAL HDD 3.5 512GB",
+     "template": {"storage":"INTERNAL HDD 3.5" }
+    },
+   "INTERNAL HDD 3.5 1TB": {
+     "10729":"INTERNAL HDD 3.5 1TB",
+     "template": {"storage":"INTERNAL HDD 3.5" }
+    },
+   "INTERNAL HDD 3.5 2TB": {
+     "10730":"INTERNAL HDD 3.5 2TB",
+     "template": {"storage":"INTERNAL HDD 3.5" }
+    },
+   "INTERNAL HDD 3.5 4TB": {
+     "10731":"INTERNAL HDD 3.5 4TB",
+     "template": {"storage":"INTERNAL HDD 3.5" }
+    },
+   "INTERNAL HDD 3.5 6TB": {
+     "10732":"INTERNAL HDD 3.5 6TB",
+     "template": {"storage":"INTERNAL HDD 3.5" }
+    },
+   "INTERNAL HDD 3.5 8TB": {
+     "10733":"INTERNAL HDD 3.5 28TBTB",
+     "template": {"storage":"INTERNAL HDD 3.5" }
+    },
+   "INTERNAL HDD 3.5 10TB": {
+     "10734":"INTERNAL HDD 3.5 10TB",
+     "template": {"storage":"INTERNAL HDD 3.5" }
+    },
+   "INTERNAL HDD 3.5 12TB": {
+     "10735":"INTERNAL HDD 3.5 12TB",
+     "template": {"storage":"INTERNAL HDD 3.5" }
+    },
+   "INTERNAL HDD 3.5 16TB": {
+     "10736":"INTERNAL HDD 3.5 16TB",
+     "template": {"storage":"INTERNAL HDD 3.5" }
+    },
+   "INTERNAL HDD 2.5": {
+     "10674":"INTERNAL HDD 2.5",
+     "template": {"storage":"INTERNAL HDD" }
+    },
+   "INTERNAL HDD 2.5 128GB": {
+     "10741":"INTERNAL HDD 2.5 128GB",
+     "template": {"storage":"INTERNAL HDD 2.5" }
+    },
+   "INTERNAL HDD 2.5 256GB": {
+     "10742":"INTERNAL HDD 2.5 256GB",
+     "template": {"storage":"INTERNAL HDD 2.5" }
+    },
+   "INTERNAL HDD 2.5 512GB": {
+     "10743":"INTERNAL HDD 2.5 512GB",
+     "template": {"storage":"INTERNAL HDD 2.5" }
+    },
+   "INTERNAL HDD 2.5 1TB": {
+     "10744":"INTERNAL HDD 2.5 1TB",
+     "template": {"storage":"INTERNAL HDD 2.5" }
+    },
+   "INTERNAL HDD 2.5 2TB": {
+     "10745":"INTERNAL HDD 2.5 2TB",
+     "template": {"storage":"INTERNAL HDD 2.5" }
+    }
+  }
+}

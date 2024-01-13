@@ -1,0 +1,22 @@
+{
+ "razer": {
+
+   "HEADPHONES BT In-ear Bud": {
+     "7673":"razer",
+     "7672":"razer",
+     "template": {"headphones":"BT In-ear Bud" },
+     "2270":"brand:  Razer",
+     "2489":"Headphones",
+     "4304":"In-ear Bud"
+    },
+   "HEADPHONES Overear": {
+     "7673":"razer",
+     "7672":"razer",
+     "template": {"headphones":"BT Overear" },
+     "2270":"brand:  Razer",
+     "2489":"Headphones",
+     "4306":"Overear"
+    }
+  }
+}
+

@@ -1,0 +1,276 @@
+{
+ "dell": {
+   "LAPTOPS": {
+     "6557":"dell",
+     "5453":"Laptops by brand",
+     "template": {"laptops":"LAPTOPS" },
+     "2263":"dell brand axis",
+     "2387":"Laptops"
+    },
+
+
+   "LAPTOPS INTEL": {
+     "9720":"Intel",
+     "4148":"Laptops by CPU",
+     "9695":"Intel",
+     "9709":"DELL BY CPU",
+     "template": {
+       "dell":"LAPTOPS",
+       "laptops":"INTEL"
+      },
+     "9687":"dell by cpu",
+     "9653":"dell INTEL"
+    },
+   "LAPTOPS INTEL CELERON": {
+     "9722":"LAPTOPS INTEL CELERON",
+     "9697":"DELL INTEL CELERON",
+     "template": {
+       "dell":"LAPTOPS INTEL"
+      },
+     "9655":"LAPTOPS INTEL CELERON"
+    },
+   "LAPTOPS INTEL I3": {
+     "9723":"INTEL I3",
+     "9698":"LAPTOPS INTEL i3",
+     "template": {
+       "dell":"LAPTOPS INTEL"
+      },
+     "9656":"LAPTOPS INTEL i3"
+    },
+   "LAPTOPS INTEL I5": {
+     "9724":"INTEL I5",
+     "9699":"LAPTOPS INTEL i5",
+     "template": {
+       "dell":"LAPTOPS INTEL"
+      },
+     "9657":"LAPTOPS INTEL i5"
+    },
+   "LAPTOPS INTEL I7": {
+     "9725":"INTEL I7",
+     "9700":"DELL LAPTOPS INTEL i7",
+     "template": {
+       "dell":"LAPTOPS INTEL",
+       "laptops":"INTEL I7"
+      },
+     "9658":"LAPTOPS INTEL i7"
+    },
+   "LAPTOPS INTEL I9": {
+     "9726":"INTEL I9",
+     "9701":"DELL LAPTOPS INTEL i9",
+     "template": {
+       "dell":"LAPTOPS INTEL",
+       "laptops":"INTEL I9"
+      },
+     "9659":"LAPTOPS INTEL i9"
+    },
+   "LAPTOPS INTEL XEON": {
+     "9868":"INTEL XEON",
+     "9848":"DELL LAPTOPS XEON",
+     "template": {
+       "dell":"LAPTOPS INTEL",
+       "laptops":"INTEL XEON"
+      },
+     "9806":"LAPTOPS INTEL XEON"
+    },
+
+   "LAPTOPS AMD": {
+     "4150":"AMD",
+     "4148":"Laptops by CPU",
+     "9696":"AMD",
+     "9709":"DELL BY CPU",
+     "template": {"dell":"LAPTOPS" },
+     "9687":"dell by cpu",
+     "9654":"dell AMD"
+    },
+   "LAPTOPS AMD ATHLON SERIES": {
+     "9851":"AMD ATHLON SERIES",
+     "template": {
+       "dell":"LAPTOPS AMD",
+       "laptops":"AMD ATHLON SERIES"
+      },
+     "9847":"AMD ATHLON SERIES"
+    },
+   "LAPTOPS AMD RYZEN SERIES": {
+     "9702":"LAPTOPS AMD Athlon",
+     "template": {
+       "dell":"LAPTOPS AMD",
+       "laptops":"LAPTOPS AMD RYZEN SERIES"
+      },
+     "9846":"LAPTOPS AMD RYZEN SERIES"
+    },
+   "LAPTOPS AMD A6": {
+     "9703":"LAPTOPS AMD A6",
+     "template": {
+       "dell":"LAPTOPS AMD A SERIES",
+       "laptops":"LAPTOPS AMD A SERIES"
+      },
+     "9845":"LAPTOPS AMD A"
+    },
+
+
+   "LAPTOPS AMD RYZEN 3": {
+     "9729":"AMD Ryzen 3",
+     "9704":"DELL LAPTOPS AMD RYZEN 3",
+     "template": {
+       "dell":"LAPTOPS AMD RYZEN SERIES",
+       "laptops":"AMD RYZEN 3"
+      },
+     "9662":"LAPTOPS AMD RYZEN 3"
+    },
+   "LAPTOPS AMD RYZEN 5": {
+     "9730":"AMD Ryzen 5",
+     "9705":"LAPTOPS AMD RYZEN 5",
+     "template": {
+       "dell":"LAPTOPS AMD RYZEN SERIES",
+       "laptops":"AMD RYZEN 5"
+      },
+     "9663":"LAPTOPS AMD RYZEN 5"
+    },
+   "LAPTOPS AMD RYZEN 7": {
+     "9731":"AMD Ryzen 7",
+     "9706":"LAPTOPS AMD RYZEN 7",
+     "template": {
+       "dell":"LAPTOPS AMD RYZEN SERIES",
+       "laptops":"AMD RYZEN 7"
+      },
+     "9664":"LAPTOPS AMD RYZEN 7"
+    },
+   "LAPTOPS AMD RYZEN 9": {
+     "9732":"AMD Ryzen 9",
+     "9707":"LAPTOPS AMD RYZEN 9",
+     "template": {
+       "dell":"LAPTOPS AMD RYZEN SERIES",
+       "laptops":"AMD RYZEN 9"
+      },
+     "9665":"LAPTOPS AMD RYZEN 9"
+    },
+
+   "LAPTOPS BY SCREEN SIZE": {
+     "9710":"DELL by screen size",
+     "template": {
+       "laptops":"BY SCREEN SIZE",
+       "dell":"LAPTOPS"
+      },
+     "9688":"by ss"
+    },
+   "11": {
+     "4126":"11'' Laptops by screen size",
+     "9711":"11'' DELL by screen size",
+     "template": {"dell":"LAPTOPS BY SCREEN SIZE" },
+     "9689":"11'' DELL by screen size"
+    },
+   "13": {
+     "4127":"13'' Laptops by screen size",
+     "9712":"13'' DELL by screen size",
+     "template": {"dell":"LAPTOPS BY SCREEN SIZE" },
+     "9690":"13'' Laptops by screen size"
+    },
+   "14": {
+     "4128":"14'' Laptops by screen size",
+     "9713":"14'' DELL by screen size",
+     "template": {"dell":"LAPTOPS BY SCREEN SIZE" },
+     "9691":"14'' DELL by screen size"
+    },
+   "15": {
+     "4129":"15'' Laptops by screen size",
+     "9714":"15'' DELL by screen size",
+     "template": {"dell":"LAPTOPS BY SCREEN SIZE" },
+     "9692":"15'' DELL by screen size"
+    },
+   "17": {
+     "4130":"17'' Laptops by screen size",
+     "9715":"17'' DELL by screen size",
+     "template": {"dell":"LAPTOPS BY SCREEN SIZE" },
+     "9693":"17'' DELL by screen size"
+    },
+   "18": {
+     "4131":"18'' Laptops by screen size",
+     "9716":"18'' DELL by screen size",
+     "template": {"dell":"LAPTOPS BY SCREEN SIZE" },
+     "9694":"18'' DELL by screen size"
+    },
+
+   "DESKTOPS": {
+     "10223":"DELL",
+     "template": {"desktops":"DESKTOPS BY BRANDS" },
+     "2263":"DELL"
+    },
+   "DESKTOPS INTEL": {
+     "template": {"dell": ["DESKTOPS" ] },
+     "10264":"INTEL"
+    },
+   "DESKTOPS INTEL CELERON": {
+     "template": {"dell": ["DESKTOPS INTEL" ] },
+     "10265":"CELERON"
+    },
+   "DESKTOPS INTEL PENTIUM": {
+     "template": {"dell": ["DESKTOPS INTEL" ] },
+     "10266":"PENTIUM"
+    },
+   "DESKTOPS INTEL I3": {
+     "template": {"dell": ["DESKTOPS INTEL" ] },
+     "10267":"I3"
+    },
+   "DESKTOPS INTEL I5": {
+     "template": {"dell": ["DESKTOPS INTEL" ] },
+     "10268":"I5"
+    },
+   "DESKTOPS INTEL I7": {
+     "template": {"dell": ["DESKTOPS INTEL" ] },
+     "10269":"I7"
+    },
+   "DESKTOPS INTEL I9": {
+     "template": {"dell": ["DESKTOPS INTEL" ] },
+     "10270":"I9"
+    },
+   "DESKTOPS INTEL M": {
+     "template": {"dell": ["DESKTOPS INTEL" ] },
+     "10271":"M"
+    },
+   "DESKTOPS INTEL XEON": {
+     "template": {"dell": ["DESKTOPS INTEL" ] },
+     "10272":"XEON"
+    },
+   "DESKTOPS AMD": {
+     "template": {"dell": ["DESKTOPS" ] },
+     "10273":"AMD"
+    },
+   "DESKTOPS AMD ATHLON": {
+     "template": {"dell": ["DESKTOPS AMD" ] },
+     "10274":"ATHLON"
+    },
+   "DESKTOPS AMD A SERIES": {
+     "template": {"dell": ["DESKTOPS AMD" ] },
+     "10275":"A SERIES"
+    },
+
+   "DESKTOPS AMD A4": {
+     "template": {"dell": ["DESKTOPS AMD A SERIES" ] },
+     "10276":"A4"
+    },
+   "DESKTOPS AMD A6": {
+     "template": {"dell": ["DESKTOPS AMD A SERIES" ] },
+     "10277":"A6"
+    },
+   "DESKTOPS AMD RYZEN": {
+     "template": {"dell": ["DESKTOPS AMD" ] },
+     "10278":"RYZEN"
+    },
+   "DESKTOPS AMD RYZEN 3": {
+     "template": {"dell": ["DESKTOPS AMD RYZEN" ] },
+     "10279":"RYZEN 3"
+    },
+   "DESKTOPS AMD RYZEN 5": {
+     "template": {"dell": ["DESKTOPS AMD RYZEN" ] },
+     "10280":"RYZEN 5"
+    },
+   "DESKTOPS AMD RYZEN 7": {
+     "template": {"dell": ["DESKTOPS AMD RYZEN" ] },
+     "10281":"RYZEN 7"
+    },
+   "DESKTOPS AMD RYZEN 9": {
+     "template": {"dell": ["DESKTOPS AMD RYZEN" ] },
+     "10282":"RYZEN 9"
+    }
+  }
+}

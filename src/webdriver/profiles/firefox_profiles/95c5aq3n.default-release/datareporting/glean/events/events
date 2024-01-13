@@ -1,0 +1,4 @@
+{"timestamp":0,"category":"fog.validation","name":"validate_early_event"}
+{"timestamp":279,"category":"webcompatreporting","name":"reason_dropdown","extra":{"setting":"disabled"}}
+{"timestamp":1194,"category":"nimbus_events","name":"enroll_failed","extra":{"reason":"feature-conflict","experiment":"relay-integration-into-firefox-118-release-for-all-fxa-and-autofill-users"}}
+{"timestamp":1215,"category":"nimbus_events","name":"validation_failed","extra":{"experiment":"next-generation-accessibility-engine-powering-screen-readers","reason":"invalid-feature","feature":"accessibilityCache"}}

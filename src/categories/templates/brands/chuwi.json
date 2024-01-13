@@ -1,0 +1,9 @@
+{
+ "chuwi": {
+   "LAPTOPS": {},
+   "GAMING LAPTOPS": {},
+   "TABLETS": {"template": {"tablets" :"TABLETS"} },
+   "WINDOWS TABLETS": {},
+   "ANDROID TABLETS": {}
+  }
+}

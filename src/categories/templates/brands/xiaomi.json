@@ -1,0 +1,24 @@
+{
+ "xiaomi": {
+   "SMARTPHONES": {
+     "6428":"XIAOMI",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "2250":"XIAOMI",
+     "2443":"Smartphones"
+
+    },
+   "SMARTBANDS": {
+     "6428":"XIAOMI",
+     "template": {"fitness":"SMARTBANDS" },
+     "2250":"XIAOMI",
+     "7545":"Bands"
+    },
+   "HEADPHONES": {
+     "9093":"XIAOMI",
+     "template": {"headphones":"BT" },
+     "2250":"XIAOMI",
+     "2479":"Headphones"
+
+    }
+  }
+}

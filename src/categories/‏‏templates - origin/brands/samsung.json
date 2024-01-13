@@ -1,0 +1,509 @@
+{
+ "samsung": {
+   "SMARTPHONES": {
+     "6273":"SAMSUNG",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "2245":"SAMSUNG",
+     "2492":"SMARTPHONES"
+    },
+   "WATCHES": {
+     "7555":"SAMSUNG",
+     "template": {"wearable":"WATCHES" },
+     "2245":"SAMSUNG",
+     "2524":"SMARTWATCHES"
+    },
+   "GALAXY A": {
+     "6274":"GALAXY A",
+     "template": {"samsung":"SMARTPHONES" },
+     "2493":"GALAXY A"
+    },
+   "GALAXY S": {
+     "6283":"GALAXY S",
+     "template": {"samsung":"SMARTPHONES" },
+     "2502":"GALAXY S"
+    },
+   "GALAXY M": {
+     "6292":"GALAXY M",
+     "template": {"samsung":"SMARTPHONES" },
+     "2511":"GALAXY M"
+    },
+   "GALAXY Z": {
+     "6295":"GALAXY Z",
+     "template": {"samsung":"SMARTPHONES" },
+     "2514":"GALAXY Z"
+    },
+   "GALAXY NOTE": {
+     "6298":"GALAXY NOTE",
+     "template": {"samsung":"SMARTPHONES" },
+     "2517":"GALAXY NOTE"
+    },
+   "GALAXY A03 Core": {
+     "6276":"GALAXY A03 Core",
+     "template": {"samsung":"GALAXY A" },
+     "2495":"GALAXY A03 Core"
+    },
+
+
+   "GALAXY A03s": {
+     "6278":"GALAXY A03s",
+     "template": {"samsung":"GALAXY A" },
+     "2497":"GALAXY A03s"
+    },
+   "GALAXY A04": {
+     "10189":"GALAXY A04",
+     "template": {"samsung":"GALAXY A" },
+     "10190":"GALAXY A04"
+    },
+   "GALAXY A12": {
+     "6282":"GALAXY A12",
+     "template": {"samsung":"GALAXY A" },
+     "2501":"GALAXY A12"
+    },
+
+   "GALAXY A13": {
+     "6303":"GALAXY A13",
+     "template": {"samsung":"GALAXY A" },
+     "6302":"GALAXY A13"
+    },
+   "GALAXY A22 5G": {
+     "6275":"GALAXY A22 5G",
+     "template": {"samsung":"GALAXY A" },
+     "2494":"GALAXY A22 5G"
+    },
+
+   "GALAXY A32": {
+     "6279":"GALAXY A32",
+     "template": {"samsung":"GALAXY A" },
+     "2498":"GALAXY A32"
+    },
+   "GALAXY A33": {
+     "6311":"GALAXY A33",
+     "template": {"samsung":"GALAXY A" },
+     "6308":"GALAXY A33"
+    },
+
+   "GALAXY A52": {
+     "6281":"GALAXY A52",
+     "template": {"samsung":"GALAXY A" },
+     "2500":"GALAXY A52"
+    },
+   "GALAXY A52s": {
+     "6277":"GALAXY A52s",
+     "template": {"samsung":"GALAXY A" },
+     "2496":"GALAXY A52s"
+    },
+   "GALAXY A53": {
+     "6313":"GALAXY A53",
+     "template": {"samsung":"GALAXY A" },
+     "6310":"GALAXY A53"
+    },
+   "GALAXY A72": {
+     "6280":"GALAXY A72",
+     "template": {"samsung":"GALAXY A" },
+     "2499":"GALAXY A72"
+    },
+   "GALAXY A73": {
+     "6312":"GALAXY A73",
+     "template": {"samsung":"GALAXY A" },
+     "6309":"GALAXY A73"
+    },
+
+   "GALAXY S22": {
+     "6286":"GALAXY S22",
+     "template": {"samsung":"GALAXY S" },
+     "2505":"GALAXY S22"
+    },
+
+   "GALAXY S7": {
+     "7202":"GALAXY S7",
+     "template": {"samsung":"GALAXY S" },
+     "7199":"GALAXY S7"
+    },
+   "GALAXY S8": {
+     "7203":"GALAXY S8",
+     "template": {"samsung":"GALAXY S" },
+     "7200":"GALAXY S8"
+    },
+   "GALAXY S9": {
+     "7204":"GALAXY S9",
+     "template": {"samsung":"GALAXY S" },
+     "7201":"GALAXY S9"
+    },
+   "GALAXY S10": {
+     "7244":"GALAXY S10",
+     "template": {"samsung":"GALAXY S" },
+     "7243":"GALAXY S10"
+    },
+   "GALAXY S20": {
+     "7246":"GALAXY S20",
+     "template": {"samsung":"GALAXY S" },
+     "7245":"GALAXY S20"
+    },
+   "GALAXY S20 FE": {
+     "6287":"GALAXY S20 FE",
+     "7246":"GALAXY S20",
+     "template": {"samsung":"GALAXY S" },
+     "7245":"GALAXY S20",
+     "2506":"GALAXY S20 FE"
+    },
+   "GALAXY S21": {
+     "6288":"GALAXY S21",
+     "template": {"samsung":"GALAXY S" },
+     "2507":"GALAXY S21"
+    },
+
+
+   "GALAXY S21 FE 5G": {
+     "6282":"GALAXY S21 FE 5G",
+     "6288":"GALAXY S21",
+     "template": {"samsung":"GALAXY S" },
+     "2507":"GALAXY S21",
+     "2503":"GALAXY S21 FE 5G"
+    },
+   "GALAXY S21 Plus": {
+     "6289":"GALAXY S21 Plus",
+     "6288":"GALAXY S21",
+     "template": {"samsung":"GALAXY S" },
+     "2507":"GALAXY S21",
+     "2508":"GALAXY S21 Plus"
+    },
+   "GALAXY S21 ULTRA": {
+     "6290":"GALAXY S21 ULTRA",
+     "6288":"GALAXY S21",
+     "template": {"samsung":"GALAXY S" },
+     "2507":"GALAXY S21",
+     "2509":"GALAXY S21 ULTRA"
+    },
+   "GALAXY S22+": {
+     "6285":"GALAXY S22+",
+     "6286":"GALAXY S22",
+     "template": {"samsung":"GALAXY S" },
+     "2505":"GALAXY S22",
+     "2504":"GALAXY S22+"
+    },
+   "GALAXY S22 Ultra": {
+     "6287":"GALAXY S22 Ultra",
+     "6286":"GALAXY S22",
+     "template": {"samsung":"GALAXY S" },
+     "2505":"GALAXY S22",
+     "2506":"GALAXY S22 Ultra"
+    },
+
+
+   "GALAXY M12": {
+     "6293":"GALAXY M12",
+     "template": {"samsung":"GALAXY M" },
+     "2512":"GALAXY M12"
+    },
+   "GALAXY M52 5G": {
+     "6294":"GALAXY M52 5G",
+     "template": {"samsung":"GALAXY M" },
+     "2513":"GALAXY M52 5G"
+    },
+   "GALAXY NOTE 8": {
+     "6299":"GALAXY NOTE 8",
+     "template": {"samsung":"GALAXY NOTE" },
+     "7247":"GALAXY NOTE 8"
+    },
+   "GALAXY NOTE 9": {
+     "7250":"GALAXY NOTE 9",
+     "template": {"samsung":"GALAXY NOTE" },
+     "7249":"GALAXY NOTE 9"
+    },
+   "GALAXY NOTE 10": {
+     "7252":"GALAXY NOTE 10",
+     "template": {"samsung":"GALAXY NOTE" },
+     "7251":"GALAXY NOTE 10"
+    },
+   "GALAXY NOTE 20": {
+     "9026":"GALAXY NOTE 20",
+     "template": {"samsung":"GALAXY NOTE" },
+     "9025":"GALAXY NOTE 20"
+    },
+   "GALAXY NOTE 20 Ultra": {
+     "7248":"GALAXY NOTE 20 Ultra",
+     "template": {"samsung":"GALAXY NOTE" },
+     "2518":"GALAXY NOTE 20 Ultra"
+    },
+
+   "GALAXY Z Flip 3": {
+     "6294":"GALAXY Z Flip 3",
+     "template": {"samsung":"GALAXY Z" },
+     "2515":"GALAXY Z Flip 3"
+    },
+   "GALAXY Z Fold 3": {
+     "6297":"GALAXY Z Fold 3",
+     "template": {"samsung":"GALAXY Z" },
+     "2516":"GALAXY Z Fold 3"
+    },
+   "GALAXY Z Flip 4": {
+     "6306":"GALAXY Z Flip 4",
+     "template": {"samsung":"GALAXY Z" },
+     "6304":"GALAXY Z Flip 4"
+    },
+   "GALAXY Z Fold 4": {
+     "6307":"GALAXY Z Fold 4",
+     "template": {"samsung":"GALAXY Z" },
+     "6305":"GALAXY Z Fold 4"
+    },
+
+
+
+   "PC MONITORS": {
+     "10042":"SAMSUNG",
+     "10041":"BY BRAND",
+     "template": {"PC MONITORS":"COMPUTER MONITORS" },
+     "2245":"SAMSUNG",
+     "2529":"PC MONITORS SAMSUNG"
+    },
+   "PC MONITORS 14 - 15": {
+     "10898":"MONITORS 14 - 15 IN MONITORS LIST",
+     "10181":"MONITORS 14 - 15",
+     "template": {"samsung":"PC MONITORS" },
+     "10182":"MONITORS 14 - 15"
+    },
+   "PC MONITORS 17": {
+     "9252":"MONITORS 17 IN MONITORS LIST",
+     "10044":"MONITORS 17",
+     "template": {"samsung":"PC MONITORS" },
+     "7916":"MONITORS 17"
+    },
+   "PC MONITORS 21 - 22": {
+     "9253":"MONITORS 21 - 22 IN MONITORS LIST",
+     "10045":"MONITORS 21 - 22",
+     "template": {"samsung":"PC MONITORS" },
+     "7917":"MONITORS 21 - 22"
+    },
+   "PC MONITORS 23 - 24": {
+     "9254":"MONITORS 23 - 24 IN MONITORS LIST",
+     "10046":"MONITORS 23 - 24",
+     "template": {"samsung":"PC MONITORS" },
+     "7918":"MONITORS 22 - 24"
+    },
+   "PC MONITORS 26 - 28": {
+     "9255":"MONITORS 26 - 28 IN MONITORS LIST",
+     "10047":"MONITORS 26 - 28",
+     "template": {"samsung":"PC MONITORS" },
+     "7919":"MONITORS 26 - 28"
+    },
+   "PC MONITORS 29 - 31": {
+     "9256":"MONITORS 29 - 31 IN MONITORS LIST",
+     "10048":"MONITORS 29 - 31",
+     "template": {"samsung":"PC MONITORS" },
+     "7919":"MONITORS 29 - 31"
+    },
+   "PC MONITORS 32 - 34": {
+     "9257":"MONITORS 32 - 34 IN MONITORS LIST",
+     "10049":"MONITORS 32 - 34",
+     "template": {"samsung":"PC MONITORS" },
+     "7921":"MONITORS 32 - 34"
+    },
+   "PC MONITORS 36 - 40": {
+     "9258":"MONITORS 36 - 40 IN MONITORS LIST",
+     "10050":"MONITORS 36 - 40",
+     "template": {"samsung":"PC MONITORS" },
+     "7922":"MONITORS 36 - 40"
+    },
+   "PC MONITORS 40 - 42": {
+     "9259":"MONITORS 40 - 42 IN MONITORS LIST",
+     "10051":"MONITORS 40 - 42",
+     "template": {"samsung":"PC MONITORS" },
+     "7923":"MONITORS 40 - 42"
+    },
+   "PC MONITORS 44 - 46": {
+     "9260":"MONITORS 44 - 46 IN MONITORS LIST",
+     "10052":"MONITORS 44 - 46",
+     "template": {"samsung":"PC MONITORS" },
+     "7924":"MONITORS 44 - 46"
+    },
+   "PC MONITORS 48 - 50": {
+     "9261":"MONITORS 48 - 50 IN MONITORS LIST",
+     "10053":"MONITORS 48 - 50",
+     "template": {"samsung":"PC MONITORS" },
+     "7925":"MONITORS 48 - 50"
+    },
+   "PC MONITORS 52 - 54": {
+     "9262":"MONITORS 52 - 54 IN MONITORS LIST",
+     "10054":"MONITORS 52 - 54",
+     "template": {"samsung":"PC MONITORS" },
+     "7926":"MONITORS 52 - 54"
+    },
+
+
+
+   "INTERNAL SSD": {
+     "template": {"storage":"INTERNAL SSD" },
+     "2245":"SAMSUNG",
+     "10827":"STORAGE",
+     "10828":"INTERNAL SSD"
+    },
+   "SSD SATA 3": {
+     "template": {"samsung":"INTERNAL SSD" },
+     "10834":"SSD SATA 3"
+    },
+   "SSD SATA 3 64GB": {
+
+     "template": {"samsung":"SSD SATA 3" },
+     "10841":"SSD SATA 3 64GB"
+    },
+   "SSD SATA 3 128GB": {
+
+     "template": {"samsung":"SSD SATA 3" },
+     "10842":"SSD SATA 3 128GB"
+    },
+   "SSD SATA 3 256GB": {
+
+     "template": {"samsung":"SSD SATA 3" },
+     "10843":"SSD SATA 3 256GB"
+    },
+   "SSD SATA 3 512GB": {
+     "template": {"samsung":"SSD SATA 3" },
+     "10844":"SSD SATA 3 512GB"
+    },
+   "SSD SATA 3 1TB": {
+
+     "template": {"samsung":"SSD SATA 3" },
+     "10845":"SSD SATA 3 1TB"
+    },
+   "SSD SATA 3 2TB": {
+
+     "template": {"samsung":"SSD SATA 3" },
+     "10846":"SSD SATA 3 2TB"
+    },
+   "SSD SATA 3 4TB": {
+
+     "template": {"samsung":"SSD SATA 3" },
+     "10847":"SSD SATA 3 4TB"
+    },
+   "SSD SATA 3 6TB": {
+
+     "template": {"samsung":"SSD SATA 3" },
+     "10848":"SSD SATA 3 6TB"
+    },
+   "SSD SATA 3 8TB": {
+
+     "template": {"samsung":"SSD SATA 3" },
+     "10849":"SSD SATA 3 8TB"
+    },
+
+   "SSD M2": {
+
+     "template": {"samsung":"INTERNAL SSD" },
+     "10835":"SSD M2"
+    },
+   "SSD M2 32GB": {
+
+     "template": {"samsung":"SSD M2" },
+     "10855":"SSD M2 32GB"
+    },
+   "SSD M2 64GB": {
+
+     "template": {"samsung":"SSD M2" },
+     "10856":"SSD M2 64GB"
+    },
+   "SSD M2 128GB": {
+
+     "template": {"samsung":"SSD M2" },
+     "10857":"SSD M2 128GB"
+    },
+   "SSD M2 256GB": {
+     "template": {"samsung":"SSD M2" },
+     "10857":"SSD M2 256GB"
+    },
+   "SSD M2 512GB": {
+     "template": {"samsung":"SSD M2" },
+     "10858":"SSD M2 512GB"
+    },
+
+   "SSD NVME PCIE": {
+     "template": {"samsung":"INTERNAL SSD" },
+     "10836":"SSD NVME PCIE"
+    },
+
+   "SSD NVME PCIE 128GB": {
+     "template": {"samsung":"SSD NVME PCIE" },
+     "10872":"SSD NVME PCIE 128GB"
+    },
+
+   "SSD NVME PCIE 256GB": {
+     "template": {"samsung":"SSD NVME PCIE" },
+     "10873":"SSD NVME PCIE 256GB"
+    },
+   "SSD NVME PCIE 512GB": {
+     "template": {"samsung":"SSD NVME PCIE" },
+     "10874":"SSD NVME PCIE 512GB"
+    },
+   "SSD NVME PCIE 1TB": {
+     "template": {"samsung":"SSD NVME PCIE" },
+     "10875":"SSD NVME PCIE 1TB"
+    },
+   "SSD NVME PCIE 2TB": {
+     "template": {"samsung":"SSD NVME PCIE" },
+     "10876":"SSD NVME PCIE 2TB"
+    },
+   "SSD NVME PCIE 4TB": {
+     "template": {"samsung":"SSD NVME PCIE" },
+     "10877":"SSD NVME PCIE 4TB"
+    },
+
+   "SSD NVME PCIE 6TB": {
+     "template": {"samsung":"SSD NVME PCIE" },
+     "10878":"SSD NVME PCIE 6TB"
+    },
+
+   "SSD NVME GEN4": {
+     "template": {"samsung":"INTERNAL SSD" },
+     "10837":"SSD NVME GEN4"
+    },
+
+   "SSD NVME GEN4 256GB": {
+     "template": {"samsung":"SSD NVME GEN4" },
+     "10888":"SSD NVME GEN4 256GB"
+    },
+
+   "SSD NVME GEN4 512GB": {
+     "template": {"samsung":"SSD NVME GEN4" },
+     "10889":"SSD NVME GEN4 512GB"
+    },
+
+   "SSD NVME GEN4 1TB": {
+     "template": {"samsung":"SSD NVME GEN4" },
+     "10890":"SSD NVME GEN4 1TB"
+    },
+
+   "SSD NVME GEN4 2TB": {
+     "template": {"samsung":"SSD NVME GEN4" },
+     "10891":"SSD NVME GEN4 2TB"
+    },
+
+   "SSD NVME GEN4 4TB": {
+     "template": {"samsung":"SSD NVME GEN4" },
+     "10892":"SSD NVME GEN4 4TB"
+    },
+
+   "SSD NVME GEN4 6TB": {
+     "template": {"samsung":"SSD NVME GEN4" },
+     "10893":"SSD NVME GEN4 6TB"
+    },
+
+   "SSD NVME GEN4 8TB": {
+     "template": {"samsung":"SSD NVME GEN4" },
+     "10894":"SSD NVME GEN4 8TB"
+    },
+
+   "SSD NVME GEN4 10TB": {
+     "template": {"samsung":"SSD NVME GEN4" },
+     "10895":"SSD NVME GEN4 10TB"
+    },
+
+   "SSD NVME GEN4 12TB": {
+     "template": {"samsung":"SSD NVME GEN4" },
+     "10896":"SSD NVME GEN4 12TB"
+    },
+
+   "SSD NVME GEN4 16TB": {
+     "template": {"samsung":"SSD NVME GEN4" },
+     "10897":"SSD NVME GEN4 16TB"
+    }
+  }
+}

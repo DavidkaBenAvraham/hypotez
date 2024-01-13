@@ -1,0 +1,23 @@
+{
+ "aio": {
+   "AIO": {
+     "template": {
+       "consumer electronics root":"AIO"
+      }
+    },
+
+   "24": {
+     "3500":"24 inch",
+     "template": {
+       "aio":"AIO"
+      }
+    },
+
+   "27": {
+     "3501":"27 inch",
+     "template": {
+       "aio":"AIO"
+      }
+    }
+  }
+}

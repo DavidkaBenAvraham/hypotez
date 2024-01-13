@@ -1,0 +1,14 @@
+{
+  "scenarios": {
+    "feet-hand-treatment": {
+      "url": "https://hbdeadsea.co.il/product-category/bodyspa/feet-hand-treatment/",
+      "condition": "new",
+      "presta_categories": {
+        "default_category": { "11259": "feet-hand-treatment" },
+        "addtinal categories root": [ "" ]
+      },
+      "price_rule": 1
+    }
+  
+  }
+}

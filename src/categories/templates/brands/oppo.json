@@ -1,0 +1,80 @@
+{
+ "oppo": {
+   "SMARTPHONES": {
+     "6191":"OPPO",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "2260":"OPPO",
+     "2297":"SMARTPHONES"
+    },
+   "OPPO A": {
+     "9245":"OPPO A",
+     "template": {"oppo":"SMARTPHONES" },
+     "9242":"OPPO A"
+    },
+   "OPPO A74": {
+     "6267":"OPPO A74",
+     "template": {"oppo":"OPPO A" },
+     "2298":"OPPO A74"
+    },
+   "OPPO A93": {
+     "6268":"OPPO A93",
+     "template": {"oppo":"OPPO A" },
+     "2299":"OPPO A93"
+    },
+   "OPPO A94": {
+     "6269":"OPPO A94",
+     "template": {"oppo":"OPPO A" },
+     "2300":"OPPO A94"
+    },
+   "OPPO A96": {
+     "6364":"OPPO A96",
+     "template": {"oppo":"OPPO A" },
+     "6359":"OPPO A96"
+    },
+   "OPPO RENO": {
+     "9246":"OPPO RENO",
+     "template": {"oppo":"SMARTPHONES" },
+     "9243":"OPPO RENO"
+    },
+   "OPPO RENO 5": {
+     "6270":"OPPO RENO 5",
+     "template": {"oppo":"OPPO RENO" },
+     "2301":"OPPO RENO 5"
+    },
+   "OPPO RENO 5 PRO": {
+     "6271":"OPPO RENO 5 PRO",
+     "template": {"oppo":"OPPO RENO" },
+     "2302":"OPPO RENO 5 PRO"
+    },
+   "OPPO RENO 6": {
+     "6272":"OPPO RENO 6",
+     "template": {"oppo":"OPPO RENO" },
+     "2303":"OPPO RENO 6"
+    },
+   "OPPO RENO 7": {
+     "6363":"OPPO RENO 7",
+     "template": {"oppo":"OPPO RENO" },
+     "6358":"OPPO RENO 7"
+    },
+   "OPPO RENO 7Z": {
+     "6362":"OPPO RENO 7Z",
+     "template": {"oppo":"OPPO RENO" },
+     "6357":"OPPO RENO 7Z"
+    },
+   "OPPO FIND": {
+     "9248":"OPPO FIND",
+     "template": {"oppo":"SMARTPHONES" },
+     "9244":"OPPO FIND"
+    },
+   "OPPO FIND X5": {
+     "6365":"OPPO FIND X5",
+     "template": {"oppo":"OPPO FIND" },
+     "6360":"OPPO FIND X5"
+    },
+   "OPPO FIND X5 PRO": {
+     "6366":"OPPO FIND X5 PRO",
+     "template": {"oppo":"OPPO FIND" },
+     "6361":"OPPO FIND X5 PRO"
+    }
+  }
+}

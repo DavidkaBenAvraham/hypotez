@@ -1,0 +1,184 @@
+{
+  "store": {
+    "name": "",
+    "store_id": 911943321,
+    "supplier_id": 3027,
+    "description": "Cellphone_discount_Store",
+    "about": " ",
+    "category ID on site":"","brand": "ASUS",
+    "url": "https://www.aliexpress.com/store/911943321",
+    "shop categories page": "",
+    "shop categories json file": "https://www.aliexpress.com/store/productGroupsAjax.htm?storeId=911943321&shopVersion=3.0&callback=",
+    "get store banners": true
+  },
+  "scenarios": {
+    "Asus Motherboard + CPU amd": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/AMD/911943321_10000002189118.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "7371": "Asus Motherboard + CPU AMD",
+        "template": {
+          "asus": "BUNDLE MB CPU AMD"
+        }
+      },
+      "product combinations": null
+    },
+    "Asus Motherboard + CPU INTEL": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/INTEL/911943321_10000002173109.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "7378": "Asus Motherboard + CPU INTEL",
+        "template": {
+          "asus": "BUNDLE MB CPU INTEL"
+        }
+      },
+      "product combinations": null
+    },
+    "Asus ROG AMD B550": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/AMD-B550/911943321_10000001143334.html?spm=a2g0o.store_pc_groupList.0.0.59e2620c0eOX3n",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": {
+          "asus": "AMD B550"
+        }
+      },
+      "product combinations": null
+    },
+    "INTEL B560": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/AMD-B560/911943321_10000001143335.html?spm=a2g0o.store_pc_groupList.0.0.59e2620c0eOX3n",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": {
+          "asus": "INTEL B560"
+        }
+      },
+      "product combinations": null
+    },
+    "Asus ROG AMD X570": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/AMD-X570/911943321_10000001261120.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": {
+          "asus": "AMD X570"
+        }
+      },
+      "product combinations": null
+    },
+    "Asus ROG INTEL Z490": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/INTEL-Z490/911943321_10000001257302.html?spm=a2g0o.store_pc_groupList.0.0.61de620ck3WfjH",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": {
+          "asus": "INTEL Z490"
+        }
+      },
+      "product combinations": null
+    },
+    "Asus ROG AMD AMD B450": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/AMD-B450/911943321_10000001070181.html?spm=a2g0o.store_pc_groupList.0.0.61de620ck3WfjH",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": {
+          "asus": "INTEL B450"
+        }
+      },
+      "product combinations": null
+    },
+    "Asus ROG INTEL Z690": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/INTEL-Z690/911943321_10000003396495.html?spm=a2g0o.store_pc_groupList.0.0.61de620ck3WfjH",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": {
+          "asus": "INTEL Z690"
+        }
+      },
+      "product combinations": null
+    },
+    "Asus ROG INTEL Z590": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/INTEL-Z590/911943321_10000001104326.html?spm=a2g0o.store_pc_groupList.0.0.61de620ck3WfjH",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": {
+          "asus": "INTEL Z590"
+        }
+      },
+      "product combinations": null
+    },
+    "Asus ROG INTEL Z390": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/INTEL-Z390/911943321_10000001104327.html?spm=a2g0o.store_pc_groupList.0.0.61de620ck3WfjH",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": {
+          "asus": "INTEL Z390"
+        }
+      },
+      "product combinations": null
+    },
+    "Asus TUF AMD X570": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/AMD-X570/911943321_10000001155136.html?spm=a2g0o.store_pc_groupList.0.0.61de620ck3WfjH",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": {
+          "asus": "AMD X570"
+        }
+      },
+      "product combinations": null
+    },
+    "Asus TUF AMD B550 - здесь у продавца не сортироваано": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/AMD-B550/911943321_10000001257303.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": {
+          "asus": "AMD B550"
+        }
+      },
+      "product combinations": null
+    },
+    "Asus TUF AMD Z490": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/INTEL-Z490/911943321_10000001058438.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "asus": "INTEL Z490" }
+      },
+      "product combinations": null
+    },
+    "Asus TUF AMD B450": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/INTEL-Z490/911943321_10000001058438.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "asus": "AMD B450" }
+      },
+      "product combinations": null
+    },
+    "Asus INTEL Z390": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/INTEL-Z390/911943321_10000001104329.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": { "asus": "INTEL Z390" }
+      },
+      "product combinations": null
+    },
+
+    "Asus AMD Motherboards": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/AMD/911943321_10000002189118.html?spm=a2g0o.store_pc_groupList.0.0.37204440sSMn2g",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": {
+          "asus": "AMD MB"
+        }
+      },
+      "product combinations": null
+    },
+    "Asus INTEL Motherboards": {
+      "category ID on site":"","brand": "ASUS","url": "https://www.aliexpress.com/store/group/INTEL/911943321_10000002173109.html?spm=a2g0o.store_pc_groupList.0.0.37204440sSMn2g",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": {
+          "asus": "INTEL MB"
+        }
+
+      },
+      "product combinations": null
+    }
+  }
+}

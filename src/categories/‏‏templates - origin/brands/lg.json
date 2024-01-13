@@ -1,0 +1,99 @@
+{
+ "lg": {
+   "SMARTPHONES": {
+     "6377":"LG",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "2253":"LG",
+     "6376":"SMARTPHONES"
+    },
+   "LG V50": {
+     "7271":"LG V50",
+     "template": {"lg":"SMARTPHONES" },
+     "7267":"LG V50"
+    },
+   "LG V60": {
+     "7272":"LG V60",
+     "template": {"lg":"SMARTPHONES" },
+     "7268":"LG V60"
+    },
+   "LG VELVET": {
+     "7273":"LG VELVET",
+     "template": {"lg":"SMARTPHONES" },
+     "7269":"LG VELVET"
+    },
+   "LG WING": {
+     "7274":"LG WING",
+     "template": {"lg":"SMARTPHONES" },
+     "7270":"LG WING"
+    },
+
+   "PC MONITORS": {
+     "10153":"LG",
+     "10041":"BY BRAND",
+     "template": {"PC MONITORS":"COMPUTER MONITORS" },
+     "2253":"LG",
+     "1020":"PC MONITORS"
+    },
+   "PC MONITORS 14 - 15": {
+     "10165":"MONITORS 14 - 15",
+     "template": {"lg":"PC MONITORS" },
+     "10183":"MONITORS 14 - 15"
+    },
+   "PC MONITORS 17": {
+     "10154":"MONITORS 17",
+     "template": {"lg":"PC MONITORS" },
+     "3520":"MONITORS 17"
+    },
+   "PC MONITORS 21 - 22": {
+     "10155":"MONITORS 21 - 22",
+     "template": {"lg":"PC MONITORS" },
+     "3522":"MONITORS 21 - 22"
+    },
+   "PC MONITORS 23 - 24": {
+     "10156":"MONITORS 23 - 24",
+     "template": {"lg":"PC MONITORS" },
+     "3523":"MONITORS 23 - 24"
+    },
+   "PC MONITORS 26 - 28": {
+     "10157":"MONITORS 26 - 28",
+     "template": {"lg":"PC MONITORS" },
+     "3524":"MONITORS 26 - 28"
+    },
+   "PC MONITORS 29 - 31": {
+     "10158":"MONITORS 29 - 31",
+     "template": {"lg":"PC MONITORS" },
+     "3525":"MONITORS 29 - 31"
+    },
+   "PC MONITORS 32 - 34": {
+     "10159":"MONITORS 32 - 34",
+     "template": {"lg":"PC MONITORS" },
+     "3526":"MONITORS 32 - 34"
+    },
+   "PC MONITORS 36 - 40": {
+     "10160":"MONITORS 36 - 40",
+     "template": {"lg":"PC MONITORS" },
+     "3527":"MONITORS 36 - 40"
+    },
+   "PC MONITORS 40 - 42": {
+     "10161":"MONITORS 40 - 42",
+     "template": {"lg":"PC MONITORS" },
+     "3528":"MONITORS 40 - 42"
+    },
+   "PC MONITORS 44 - 46": {
+     "10162":"MONITORS 44 - 46",
+     "template": {"lg":"PC MONITORS" },
+     "3529":"MONITORS 44 - 46"
+    },
+   "PC MONITORS 48 - 50": {
+     "10163":"MONITORS 48 - 50",
+     "template": {"lg":"PC MONITORS" },
+     "3530":"MONITORS 48 - 50"
+    },
+   "PC MONITORS 52 - 54": {
+     "10164":"MONITORS 52 - 54",
+     "template": {"lg":"PC MONITORS" },
+     "3601":"MONITORS 52 - 54"
+    }
+
+  }
+}

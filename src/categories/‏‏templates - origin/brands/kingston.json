@@ -1,0 +1,326 @@
+{
+ "kingston": {
+   "MEMORY": {
+     "3805":"MEMORY",
+     "template": {"memory plates":"MEMORY" }
+
+    },
+   "DIMM": {
+     "3806":"DIMM",
+     "template": {"memory plates":"DIMM" }
+    },
+   "SODIMM": {
+     "3807":"SODIMM",
+     "template": {"memory plates":"SODIMM" }
+    },
+   "DIMM DDR 3": {
+     "3918":"DIMM DDR 3",
+     "template": {
+       "memory plates":"DIMM DDR 3"
+      }
+
+    },
+   "DIMM DDR 3 2G": {
+     "3919":"DIMM DDR 3 2G",
+     "template": {
+       "memory plates":"DIMM DDR 3 2G"
+      },
+     "9336":"DIMM DDR 3 2G"
+    },
+   "DIMM DDR 3 4G": {
+     "3920":"DIMM DDR 3",
+     "template": {
+       "memory plates":"DIMM DDR 3 4G"
+      }
+    },
+   "DIMM DDR 3 8GB": {
+     "3921":"DIMM DDR 8GB",
+     "template": {
+       "memory plates":"DIMM DDR 3 8GB"
+      }
+    },
+   "DIMM DDR 3 16GB": {
+     "3922":"DIMM DDR 16GB",
+     "template": {
+       "memory plates":"DIMM DDR 3 16GB"
+      }
+    },
+   "DIMM DDR 3 32GB": {
+     "3923":"DIMM DDR 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 3 32GB"
+      }
+    },
+   "DIMM DDR 3 64GB": {
+     "3924":"DIMM DDR 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 3 64GB"
+      }
+    },
+   "DIMM DDR 4": {
+     "3925":"DIMM DDR 4",
+     "template": {
+       "memory plates":"DIMM DDR 4"
+      }
+    },
+   "DIMM DDR 4 4GB": {
+     "3890":"DIMM DDR 4 4GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 4GB"
+      }
+
+    },
+   "DIMM DDR 4 8GB": {
+     "3885":"DIMM DDR 4 8GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 8GB"
+      }
+    },
+   "DIMM DDR 4 16GB": {
+     "3886":"DIMM DDR 4 8GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 16GB"
+      }
+    },
+   "DIMM DDR 4 32GB": {
+     "3887":"DIMM DDR 4 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 32GB"
+      }
+    },
+   "DIMM DDR 4 64GB": {
+     "3930":"DIMM DDR 4 64GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 64GB"
+      }
+    },
+   "DIMM DDR 4 128GB": {
+     "3930":"DIMM DDR 4 128GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 128GB"
+      }
+    },
+   "DIMM DDR 5": {
+     "3931":"DIMM DDR 5",
+     "template": {
+       "memory plates":"DIMM DDR 5"
+      }
+    },
+   "DIMM DDR 5 4GB": {
+     "3932":"DIMM DDR 5 4GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 4GB"
+      }
+    },
+   "DIMM DDR 5 8GB": {
+     "3933":"DIMM DDR 5 8GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 8GB"
+      }
+    },
+   "DIMM DDR 5 16GB": {
+     "3934":"DIMM DDR 5 16GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 16GB"
+      }
+    },
+   "DIMM DDR 5 32GB": {
+     "3935":"DIMM DDR 5 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 32GB"
+      }
+    },
+   "DIMM DDR 5 64GB": {
+     "9342":"DIMM DDR 5 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 32GB"
+      }
+    },
+   "DIMM DDR 5 128GB": {
+     "9354":"DIMM DDR 5 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 32GB"
+      }
+    },
+   "DIMM DDR 5 256GB": {
+     "9355":"DIMM DDR 5 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 32GB"
+      }
+    },
+   "INTERNAL SSD": {
+     "template": {"storage":"INTERNAL SSD" },
+     "3804":"KINGSTON",
+     "10756":"STORAGE",
+     "10757":"INTERNAL SSD"
+    },
+   "SSD SATA 3": {
+     "template": {"kingston":"INTERNAL SSD" },
+     "10763":"SSD SATA 3"
+    },
+   "SSD SATA 3 64GB": {
+
+     "template": {"kingston":"SSD SATA 3" },
+     "10770":"SSD SATA 3 64GB"
+    },
+   "SSD SATA 3 128GB": {
+
+     "template": {"kingston":"SSD SATA 3" },
+     "10771":"SSD SATA 3 128GB"
+    },
+   "SSD SATA 3 256GB": {
+
+     "template": {"kingston":"SSD SATA 3" },
+     "10772":"SSD SATA 3 256GB"
+    },
+   "SSD SATA 3 512GB": {
+     "template": {"kingston":"SSD SATA 3" },
+     "10773":"SSD SATA 3 512GB"
+    },
+   "SSD SATA 3 1TB": {
+
+     "template": {"kingston":"SSD SATA 3" },
+     "10774":"SSD SATA 3 1TB"
+    },
+   "SSD SATA 3 2TB": {
+
+     "template": {"kingston":"SSD SATA 3" },
+     "10775":"SSD SATA 3 2TB"
+    },
+   "SSD SATA 3 4TB": {
+
+     "template": {"kingston":"SSD SATA 3" },
+     "10776":"SSD SATA 3 4TB"
+    },
+   "SSD SATA 3 6TB": {
+
+     "template": {"kingston":"SSD SATA 3" },
+     "10776":"SSD SATA 3 6TB"
+    },
+   "SSD SATA 3 8TB": {
+
+     "template": {"kingston":"SSD SATA 3" },
+     "10777":"SSD SATA 3 8TB"
+    },
+
+   "SSD M2": {
+
+     "template": {"kingston":"INTERNAL SSD" },
+     "10764":"SSD M2"
+    },
+   "SSD M2 32GB": {
+
+     "template": {"kingston":"SSD M2" },
+     "10784":"SSD M2 32GB"
+    },
+   "SSD M2 64GB": {
+
+     "template": {"kingston":"SSD M2" },
+     "10785":"SSD M2 64GB"
+    },
+   "SSD M2 128GB": {
+
+     "template": {"kingston":"SSD M2" },
+     "10786":"SSD M2 128GB"
+    },
+   "SSD M2 256GB": {
+     "template": {"kingston":"SSD M2" },
+     "10787":"SSD M2 256GB"
+    },
+   "SSD M2 512GB": {
+     "template": {"kingston":"SSD M2" },
+     "10788":"SSD M2 512GB"
+    },
+
+   "SSD NVME PCIE": {
+     "template": {"kingston":"INTERNAL SSD" },
+     "10765":"SSD NVME PCIE"
+    },
+
+   "SSD NVME PCIE 128GB": {
+     "template": {"kingston":"SSD NVME PCIE" },
+     "10801":"SSD NVME PCIE 128GB"
+    },
+
+   "SSD NVME PCIE 256GB": {
+     "template": {"kingston":"SSD NVME PCIE" },
+     "10802":"SSD NVME PCIE 256GB"
+    },
+   "SSD NVME PCIE 512GB": {
+     "template": {"kingston":"SSD NVME PCIE" },
+     "10803":"SSD NVME PCIE 512GB"
+    },
+   "SSD NVME PCIE 1TB": {
+     "template": {"kingston":"SSD NVME PCIE" },
+     "10804":"SSD NVME PCIE 1TB"
+    },
+   "SSD NVME PCIE 2TB": {
+     "template": {"kingston":"SSD NVME PCIE" },
+     "10805":"SSD NVME PCIE 2TB"
+    },
+   "SSD NVME PCIE 4TB": {
+     "template": {"kingston":"SSD NVME PCIE" },
+     "10806":"SSD NVME PCIE 4TB"
+    },
+
+   "SSD NVME PCIE 6TB": {
+     "template": {"kingston":"SSD NVME PCIE" },
+     "10807":"SSD NVME PCIE 6TB"
+    },
+
+   "SSD NVME GEN4": {
+     "template": {"kingston":"INTERNAL SSD" },
+     "10766":"SSD NVME GEN4"
+    },
+
+   "SSD NVME GEN4 256GB": {
+     "template": {"kingston":"SSD NVME GEN4" },
+     "10817":"SSD NVME GEN4 256GB"
+    },
+
+   "SSD NVME GEN4 512GB": {
+     "template": {"kingston":"SSD NVME GEN4" },
+     "10818":"SSD NVME GEN4 512GB"
+    },
+
+   "SSD NVME GEN4 1TB": {
+     "template": {"kingston":"SSD NVME GEN4" },
+     "10819":"SSD NVME GEN4 1TB"
+    },
+
+   "SSD NVME GEN4 2TB": {
+     "template": {"kingston":"SSD NVME GEN4" },
+     "10820":"SSD NVME GEN4 2TB"
+    },
+
+   "SSD NVME GEN4 4TB": {
+     "template": {"kingston":"SSD NVME GEN4" },
+     "10821":"SSD NVME GEN4 4TB"
+    },
+
+   "SSD NVME GEN4 6TB": {
+     "template": {"kingston":"SSD NVME GEN4" },
+     "10822":"SSD NVME GEN4 6TB"
+    },
+
+   "SSD NVME GEN4 8TB": {
+     "template": {"kingston":"SSD NVME GEN4" },
+     "10823":"SSD NVME GEN4 8TB"
+    },
+
+   "SSD NVME GEN4 10TB": {
+     "template": {"kingston":"SSD NVME GEN4" },
+     "10824":"SSD NVME GEN4 10TB"
+    },
+
+   "SSD NVME GEN4 12TB": {
+     "template": {"kingston":"SSD NVME GEN4" },
+     "10824":"SSD NVME GEN4 12TB"
+    },
+
+   "SSD NVME GEN4 16TB": {
+     "template": {"kingston":"SSD NVME GEN4" },
+     "10825":"SSD NVME GEN4 16TB"
+    }
+  }
+}

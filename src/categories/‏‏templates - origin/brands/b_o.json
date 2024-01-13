@@ -1,0 +1,18 @@
+{
+ "b & o": {
+   "In-ear Bud Headphones": {
+     "3455":"B&O In-ear Bud Headphones",
+     "template": {"headphones":"BT In-ear Bud" },
+     "3471":"brand axis: B&O",
+     "3462":"Headphones",
+     "3463":"Earbuds"
+    },
+   "Overear Headphones": {
+     "3456":"B&O Overear Headphones",
+     "template": {"headphones":"BT Overear" },
+     "3471":"brand axis: B&O",
+     "3462":"Headphones",
+     "3463":"Earbuds"
+    }
+  }
+}

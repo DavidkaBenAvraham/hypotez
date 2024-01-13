@@ -1,0 +1,13 @@
+{
+ "computer accessories": {
+   "KEYBOARDS AND MICE": {
+     "7499":"keyboards and mice",
+     "3229":"DESKTOP COMPUTER HARDWARE",
+     "3198":"CONSUMER ELECTRONICS"
+    },
+   "WIRED KB": {
+     "9581":"WIRED KB",
+     "template": {"computer accessories":"KEYBOARDS AND MICE" }
+    }
+  }
+}

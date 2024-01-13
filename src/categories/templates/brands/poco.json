@@ -1,0 +1,159 @@
+{
+ "poco": {
+   "SMATRPHONES": {
+     "4771":"POCO",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "4753":"POCO",
+     "4754":"Smartphones"
+    },
+   "HEADPHONES BUDS": {
+     "7667":"POCO",
+     "7666":"POCO",
+     "template": {"headphones":"BT In-ear Bud" },
+     "4753":"POCO",
+     "7529":"Headphones"
+    },
+   "POCO C SERIES": {
+     "6204":"C Series",
+     "template": {"poco":"SMATRPHONES" },
+     "7284":"C Series"
+    },
+   "POCO M SERIES": {
+     "6203":"M Series",
+     "template": {"poco":"SMATRPHONES" },
+     "7283":"M Series"
+    },
+   "POCO F SERIES": {
+     "6202":"F Series",
+     "template": {"poco":"SMATRPHONES" },
+     "7282":"F Series"
+    },
+   "POCO X SERIES": {
+     "6205":"X Series",
+     "template": {"poco":"SMATRPHONES" },
+     "7285":"X Series"
+    },
+   "POCO C40": {
+     "7280":"POCO C40",
+     "template": {"poco":"POCO C SERIES" },
+     "4766":"POCO C40"
+    },
+
+   "POCO F3": {
+     "7706":"POCO F3",
+     "template": {"poco":"POCO F SERIES" },
+     "7704":"POCO F3"
+    },
+
+   "POCO F3 5G": {
+     "6207":"POCO F3 5G",
+     "template": {"poco":"POCO F3" },
+     "4758":"POCO F3 5G"
+    },
+
+   "POCO F4": {
+     "7707":"POCO F4",
+     "template": {"poco":"POCO F SERIES" },
+     "7705":"POCO F4"
+    },
+   "POCO F4 5G": {
+     "7291":"POCO F4 5G",
+     "template": {"poco":"POCO F4" },
+     "7286":"POCO F4 5G"
+    },
+
+
+   "POCO F4 GT": {
+     "6206":"POCO F4 GT",
+     "template": {"poco":"POCO F4" },
+     "4755":"POCO F4 GT"
+    },
+   "POCO M3": {
+     "6212":"POCO M3",
+     "template": {"poco":"POCO M SERIES" },
+     "4763":"POCO M3"
+    },
+   "POCO M3 Pro 5G": {
+     "6210":"POCO M3 Pro 5G",
+     "template": {"poco":"POCO M3" },
+     "4759":"POCO M3 Pro 5G"
+    },
+   "POCO M3 5G": {
+     "6210":"POCO M3 5G",
+     "template": {"poco":"POCO M3" },
+     "4759":"POCO M3 5G"
+    },
+   "POCO M4": {
+     "7703":"POCO M4",
+     "template": {"poco":"POCO M SERIES" },
+     "7702":"POCO M4"
+    },
+   "POCO M4 Pro 4G": {
+     "6209":"POCO M4 Pro 4G",
+     "template": {"poco":"POCO M4" },
+     "4757":"POCO M4 Pro 4G"
+    },
+
+   "POCO M4 Pro 5G": {
+     "6211":"POCO M4 Pro 5G",
+     "template": {"poco":"POCO M4" },
+     "4760":"POCO M4 Pro 5G"
+    },
+   "POCO M4 5G": {
+     "7317":"POCO M4 5G",
+     "template": {"poco":"POCO M4" },
+     "7316":"POCO M4 5G"
+    },
+   "POCO M5": {
+     "7293":"POCO M5",
+     "template": {"poco":"POCO M SERIES" },
+     "7278":"POCO M5"
+    },
+   "POCO M5s": {
+     "7292":"POCO M5s",
+     "template": {"poco":"POCO M5" },
+     "7279":"POCO M5s"
+    },
+
+   "POCO X3": {
+     "7698":"POCO X3",
+     "template": {"poco":"POCO X SERIES" },
+     "7696":"POCO X3"
+    },
+   "POCO X4": {
+     "7699":"POCO X4",
+     "template": {"poco":"POCO X SERIES" },
+     "7697":"POCO X4"
+    },
+   "POCO X3 PRO": {
+     "7689":"POCO X3 PRO",
+     "template": {"poco":"POCO X3" },
+     "4761":"POCO X3 PRO"
+    },
+   "POCO X3 GT": {
+     "7288":"POCO X3 GT",
+     "template": {"poco":"POCO X3" },
+     "4762":"POCO X3 GT"
+    },
+   "POCO X3 NFC": {
+     "7289":"POCO X3 NFC",
+     "template": {"poco":"POCO X3" },
+     "4764":"POCO X3 NFC"
+    },
+   "POCO X4 Pro 5G": {
+     "7281":"POCO X4 Pro 5G",
+     "template": {"poco":"POCO X4" },
+     "4756":"POCO X4 Pro 5G"
+    },
+   "POCO X4 GT": {
+     "6207":"POCO X4 GT",
+     "template": {"poco":"POCO X4" },
+     "4758":"POCO X4 GT"
+    },
+   "POCO BUDS PRO": {
+     "7531":"POCO BUDS PRO",
+     "template": {"poco":"HEADPHONES BUDS" },
+     "7530":"POCO BUDS PRO"
+    }
+  }
+}

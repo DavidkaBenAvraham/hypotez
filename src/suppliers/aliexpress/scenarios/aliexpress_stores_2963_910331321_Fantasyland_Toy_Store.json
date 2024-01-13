@@ -1,0 +1,48 @@
+{
+  "store": {
+    "name": "Fantasyland Toy Store",
+    "status": "skip scrapping",
+    "store_id": 910331321,
+    "supplier_id": 2963,
+    "description": "Technology Small Production Experiment Constructor",
+    "about": "деревянные электронные игрушки",
+    "category ID on site":"","brand": "Fantasyland Toy Store",
+    "url": "https://www.aliexpress.com/store/910331321",
+    "shop categories page": "",
+    "shop categories json file": "https://www.aliexpress.com/store/productGroupsAjax.htm?storeId=910331321&shopVersion=3.0&callback=jsonp_910331321",
+    "get store banners": true
+  },
+  "scenarios": {
+    "ARDUINO KIT && Electronic KIT": {
+      "category ID on site":"","brand": "Fantasyland Toy Store",
+      "url": "https://www.aliexpress.com/store/group/Arduno-kit-Electronic-Kit/910331321_10000001157695.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "diy and little robots": "ARDUINO KIT" }
+      },
+      "product combinations": "set"
+    },
+    "Science KIT": {
+      "category ID on site":"","brand": "Fantasyland Toy Store","url": "https://www.aliexpress.com/store/group/Science-kit/910331321_10000001748209.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": {
+          "diy and little robots": "Electronic wooden science toys"
+
+        }
+      },
+      "product combinations": "set"
+    },
+    "Baby wooden puzzle": {
+      "category ID on site":"","brand": "Fantasyland Toy Store","url": "https://www.aliexpress.com/store/group/Baby-toy-wooden-puzzle/910331321_10000003179520.html",
+      "active": true,
+      "condition":"new","presta_categories": {
+        "template": {
+          "puzzles": "Baby wooden puzzles"
+        }
+      },
+      "product combinations": "picture"
+    }
+  }
+}

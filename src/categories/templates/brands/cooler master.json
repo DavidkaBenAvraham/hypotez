@@ -1,0 +1,198 @@
+{
+ "cooler master": {
+   "FULL TOWER": {
+     "7982":"COOLER MASTER",
+     "template": {"computer cases":"FULL TOWER" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "4030":"FULL TOWER"
+    },
+   "MID TOWER": {
+     "7983":"COOLER MASTER",
+     "template": {"computer cases":"MID TOWER" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "4031":"MID TOWER"
+    },
+   "MINI TOWER": {
+     "7984":"COOLER MASTER",
+     "template": {"computer cases":"MINI TOWER" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "4032":"MINI TOWER"
+    },
+
+   "GAMING MID TOWER": {
+     "7985":"COOLER MASTER",
+     "template": {"computer cases":"GAMING MID TOWER" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "4033":"GAMING MID TOWER"
+    },
+   "GAMING FULL TOWER": {
+     "7986":"COOLER MASTER",
+     "template": {"computer cases":"GAMING FULL TOWER" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "4034":"GAMING FULL TOWER"
+    },
+   "ITX": {
+     "7987":"COOLER MASTER",
+     "template": {"computer cases":"ITX" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "4035":"ITX"
+    },
+   "MINI ITX": {
+     "7988":"COOLER MASTER",
+     "template": {"computer cases":"MINI ITX" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "4036":"MINI ITX"
+    },
+   "CFF (Сompact Form Factor)": {
+     "7989":"COOLER MASTER",
+     "template": {"computer cases":"CFF (Сompact Form Factor)" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "4037":"CFF (Сompact Form Factor)"
+    },
+   "LFF (Low Profile Form Factor)": {
+     "7990":"COOLER MASTER",
+     "template": {"computer cases":"LFF (Low Profile Form Factor)" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "4038":"LFF (Low Profile Form Factor)"
+    },
+   "SFF (Small Form Factor)": {
+     "7991":"COOLER MASTER",
+     "template": {"computer cases":"SFF (Small Form Factor)" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7636":"SFF (Small Form Factor)"
+    },
+   "TFF (Thin Form Factor)": {
+     "7992":"COOLER MASTER",
+     "template": {"computer cases":"TFF (Thin Form Factor)" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7637":"TFF (Thin Form Factor)"
+    },
+   "FLEX ATX": {
+     "7993":"COOLER MASTER",
+     "template": {"computer cases":"FLEX ATX" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7638":"FLEX ATX"
+    },
+   "MINI PCI": {
+     "7994":"COOLER MASTER",
+     "template": {"computer cases":"MINI PCI" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7639":"MINI PCI"
+    },
+   "ATX": {
+     "7995":"COOLER MASTER",
+     "template": {"computer cases":"ATX" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7640":"ATX"
+    },
+   "1U": {
+     "7996":"COOLER MASTER",
+     "template": {"computer cases":"1U" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7641":"1U"
+    },
+   "2U": {
+     "7997":"COOLER MASTER",
+     "template": {"computer cases":"2U" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7642":"2U"
+    },
+   "3U": {
+     "7998":"COOLER MASTER",
+     "template": {"computer cases":"3U" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7643":"3U"
+    },
+   "4U": {
+     "7999":"COOLER MASTER",
+     "template": {"computer cases":"4U" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7644":"4U"
+    },
+   "5U": {
+     "8000":"COOLER MASTER",
+     "template": {"computer cases":"5U" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7645":"5U"
+    },
+   "6U": {
+     "8001":"COOLER MASTER",
+     "template": {"computer cases":"6U" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7646":"6U"
+    },
+   "7U": {
+     "8002":"COOLER MASTER",
+     "template": {"computer cases":"7U" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7647":"7U"
+    },
+   "8U": {
+     "8003":"COOLER MASTER",
+     "template": {"computer cases":"8U" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7648":"8U"
+    },
+   "9U": {
+     "8004":"COOLER MASTER",
+     "template": {"computer cases":"9U" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7649":"9U"
+    },
+   "10U": {
+     "8005":"COOLER MASTER",
+     "template": {"computer cases":"10U" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7650":"10U"
+    },
+   "11U": {
+     "8006":"COOLER MASTER",
+     "template": {"computer cases":"11U" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7651":"11U"
+    },
+   "12U": {
+     "8007":"COOLER MASTER",
+     "template": {"computer cases":"12U" },
+     "3106":"COOLER MASTER",
+     "7981":"computer cases",
+     "7657":"12U"
+    },
+   "HEADPHONES": {
+     "9256":"HEADPHONES",
+     "3106":"COOLER MASTER",
+     "template": {"consumer electronics root":"HEADPHONES" },
+
+     "KEYBAORDS AND MICES": {
+       "9256":"HEADPHONES",
+       "3106":"COOLER MASTER",
+       "template": {"computer accessories":"KEYBOARDS AND MICE" }
+      }
+    }
+  }
+}

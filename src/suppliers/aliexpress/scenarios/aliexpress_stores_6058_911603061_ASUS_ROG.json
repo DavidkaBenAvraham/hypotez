@@ -1,0 +1,377 @@
+{
+  "store": {
+    "name": "",
+    "store_id": 911603061,
+    "supplier_id": 6600,
+    "description": "",
+    "about": " ",
+    "category ID on site": "",
+    "brand": "ASUS",
+    "url": "https://www.aliexpress.com/store/911603061",
+    "shop categories page": "",
+    "shop categories json file": "https://www.aliexpress.com/store/productGroupsAjax.htm?storeId=911603061&shopVersion=3.0&callback=",
+    "get store banners": true
+  },
+  "scenarios": {
+    "ASUS ROG Phone 6": {
+      "category ID on site": 40000001951314,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/ASUS-ROG-Phone-6/911603061_40000001951314.html",
+      "condition": "",
+      "presta_categories": {
+        "template": {
+          "asus": "ROGFONE 6"
+        }
+      }
+    },
+    "ASUS ROG Phone 5S": {
+      "category ID on site": 10000003200432,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/ASUS-ROG-Phone-5S/911603061_10000003200432.html",
+      "condition": "",
+      "presta_categories": {
+        "template": {
+          "asus": "ROGFONE 5S"
+        }
+      }
+    },
+    "ASUS ROG Phone 5": {
+      "category ID on site": 10000003834130,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/ASUS-ROG-Phone-5/911603061_10000003834130.html",
+      "condition": "",
+      "presta_categories": {
+        "template": {
+          "asus": "ROGFONE 5"
+        }
+      }
+    },
+    "ASUS Zenfone 9": {
+      "category ID on site": 40000002213638,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/ASUS-Zenfone-9/911603061_40000002213638.html",
+      "condition": "",
+      "presta_categories": {
+        "template": {
+          "asus": "ZENPHONE 9"
+        }
+      }
+    },
+    "ROG Phone 6 Series": {
+      "category ID on site": 40000003161013,
+      "brand": "ASUS",
+      "active": false,
+      "url": "https://www.aliexpress.com/store/group/ROG-Phone-6-Series/911603061_40000003161013.html",
+      "condition": "",
+      "presta_categories": {
+        "template": {
+          "asus": "ROGFONE 6"
+        }
+      }
+    },
+    "ROG Phone 6D": {
+      "category ID on site": 40000003062884,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/ROG-Phone-6D/911603061_40000003062884.html",
+      "condition": "",
+      "presta_categories": {
+        "template": {
+          "asus": "ROGFONE 6D"
+        }
+      }
+    },
+    "ROG Phone 6": {
+      "category ID on site": 40000003183752,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/ROG-Phone-6/911603061_40000003183752.html",
+      "condition": "",
+      "presta_categories": {
+        "template": {
+          "asus": "ROGFONE 6"
+        }
+      }
+    },
+    "ROG Phone 6D Ultimate": {
+      "category ID on site": 40000003183753,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/ROG-Phone-6D-Ultimate/911603061_40000003183753.html",
+      "condition": "",
+      "presta_categories": {
+        "template": {
+          "asus": "ROGFONE 6D ULTIMATE"
+        }
+      }
+    },
+    "ROG Phone 6 Diablo...": {
+      "category ID on site": 40000003161017,
+      "brand": "",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/ROG-Phone-6-Diablo-Immortal-Edition/911603061_40000003161017.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "ROG Phone 6 BATMAN...": {
+      "category ID on site": 40000002902159,
+      "brand": "",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/ROG-Phone-6-BATMAN-Edition-only-10-Stocks/911603061_40000002902159.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "ship from Mexico": {
+      "category ID on site": 40000003020274,
+      "brand": "ASUS",
+      "active": false,
+      "url": "https://www.aliexpress.com/store/group/ship-from-Mexico/911603061_40000003020274.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "ROG Phone 5S 12GB...": {
+      "category ID on site": 40000003028266,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/ROG-Phone-5S-12GB-128GB/911603061_40000003028266.html",
+      "condition": "",
+      "presta_categories": {
+        "template": {
+          "asus": "ROGFONE 5S"
+        }
+      }
+    },
+    "ROG Phone 6 12GB...": {
+      "category ID on site": 40000003024231,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/ROG-Phone-6-12GB-128GB/911603061_40000003024231.html",
+      "condition": "",
+      "presta_categories": {
+        "template": {
+          "asus": "ROGFONE 6"
+        }
+      }
+    },
+    "ASUS Zenfone 8": {
+      "category ID on site": 40000002384422,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/ASUS-Zenfone-8/911603061_40000002384422.html",
+      "condition": "",
+      "presta_categories": {
+        "template": {
+          "asus": "ZENPHONE 8"
+        }
+      }
+    },
+    "Limited Edition": {
+      "category ID on site": 10000003838160,
+      "brand": "ASUS",
+      "active": false,
+      "url": "https://www.aliexpress.com/store/group/Limited-Edition/911603061_10000003838160.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "ROG Phone 6 16GB...": {
+      "category ID on site": 40000003039249,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/ROG-Phone-6-16GB-512GB/911603061_40000003039249.html",
+      "condition": "",
+      "presta_categories": {
+        "template": {
+          "asus": "ROGFONE 6"
+        }
+      }
+    },
+    "ROG Phone 6D 16GB...": {
+      "category ID on site": 40000003043003,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/ROG-Phone-6D-16GB-512GB-Ultimate/911603061_40000003043003.html",
+      "condition": "",
+      "presta_categories": {
+        "template": {
+          "asus": "ROGFONE 6D"
+        }
+      }
+    },
+    "ASUS Zenfone 8 Flip": {
+      "category ID on site": 40000001981784,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/ASUS-Zenfone-8-Flip/911603061_40000001981784.html",
+      "condition": "",
+      "presta_categories": {
+        "template": {
+          "asus": "ZENPHONE 8 FLIP"
+        }
+      }
+    },
+    "Qualcomm Snapdragon": {
+      "category ID on site": 40000002076969,
+      "brand": "ASUS",
+      "active": false,
+      "url": "https://www.aliexpress.com/store/group/Qualcomm-Snapdragon/911603061_40000002076969.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "MediaTek Dimensity...": {
+      "category ID on site": 40000002837132,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/MediaTek-Dimensity-9000-Plus/911603061_40000002837132.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Snapdragon 8 Plus...": {
+      "category ID on site": 40000001981797,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/Snapdragon-8-Plus-Gen-1/911603061_40000001981797.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Snapdragon 888 Plus": {
+      "category ID on site": 40000002171944,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/Snapdragon-888-Plus/911603061_40000002171944.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Snapdragon 888": {
+      "category ID on site": 40000002042213,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/Snapdragon-888/911603061_40000002042213.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Phone Accessories": {
+      "category ID on site": 10000000381569,
+      "brand": "ASUS",
+      "active": false,
+      "url": "https://www.aliexpress.com/store/group/Phone-Accessories/911603061_10000000381569.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "AeroActive Cooler": {
+      "category ID on site": 10000000389386,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/AeroActive-Cooler/911603061_10000000389386.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "TWS Earphone": {
+      "category ID on site": 10000000887221,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/TWS-Earphone/911603061_10000000887221.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Gaming Headphones": {
+      "category ID on site": 40000003043026,
+      "brand": "ASUS",
+      "active": false,
+      "url": "https://www.aliexpress.com/store/group/Gaming-Headphones/911603061_40000003043026.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Gamepad": {
+      "category ID on site": 10000001090881,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/Gamepad/911603061_10000001090881.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Keyboards": {
+      "category ID on site": 40000002690324,
+      "brand": "ASUS",
+      "active": false,
+      "url": "https://www.aliexpress.com/store/group/Keyboards/911603061_40000002690324.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Mice": {
+      "category ID on site": 40000002657148,
+      "brand": "ASUS",
+      "active": false,
+      "url": "https://www.aliexpress.com/store/group/Mice/911603061_40000002657148.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Protection Case &...": {
+      "category ID on site": 10000000328436,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/Protection-Case-Film/911603061_10000000328436.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Other": {
+      "category ID on site": 10000000548088,
+      "brand": "ASUS",
+      "active": false,
+      "url": "https://www.aliexpress.com/store/group/Other/911603061_10000000548088.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Extra Shipping Fee": {
+      "category ID on site": 10000000578580,
+      "brand": "ASUS",
+      "active": true,
+      "url": "https://www.aliexpress.com/store/group/Extra-Shipping-Fee/911603061_10000000578580.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u0438\u0437 \u0420\u043e\u0441\u0441\u0438\u0438": {
+      "category ID on site": 40000003601967,
+      "brand": "",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430-\u0438\u0437-\u0420\u043e\u0441\u0441\u0438\u0438/911603061_40000003601967.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "ROG Phone 6D 12GB...": {
+      "category ID on site": 40000003357866,
+      "brand": "",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/ROG-Phone-6D-12GB-256GB/911603061_40000003357866.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "ASUS ROG Gaming...": {
+      "category ID on site": 40000003416226,
+      "brand": "",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/ASUS-ROG-Gaming-Headphones/911603061_40000003416226.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "ASUS ROG Mouse": {
+      "category ID on site": 40000003424062,
+      "brand": "",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/ASUS-ROG-Mouse/911603061_40000003424062.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "ASUS ROG Keyboard": {
+      "category ID on site": 40000003416224,
+      "brand": "",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/ASUS-ROG-Keyboard/911603061_40000003416224.html",
+      "condition": "",
+      "presta_categories": ""
+    }
+  }
+}

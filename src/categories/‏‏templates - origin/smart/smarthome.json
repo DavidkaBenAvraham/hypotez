@@ -1,0 +1,13 @@
+{
+ "smarthome": {
+   "SMARTHOME": {
+     "3198":"CONSUMER ELECTRONICS",
+     "3433":"computer,smartphone,gaming console,smart device",
+     "6474":"SMARTHOME"
+    },
+   "SMARTCAMERA": {
+     "template": {"smarthome":"SMARTHOME" },
+     "9583":"Smart Cameras"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+ "fitbit": {
+   "WATCHES": {
+     "9463":"FITBIT",
+     "template": {"wearable":"WATCHES" },
+     "9464":"FITBIT",
+     "9466":"SMARTWATCHES"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+ "logitech": {
+   "HEADPHONES": {
+     "9252":"HEADPHONES",
+     "3133":"LOGITECH",
+     "template": {"consumer electronics root":"HEADPHONES" }
+    }
+  }
+}

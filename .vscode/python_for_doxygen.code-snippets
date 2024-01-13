@@ -1,0 +1,228 @@
+{
+	// Place your kitkat workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	
+	"New class": {
+		"prefix": "class",
+		"body": [
+			"@attrs",
+			"class ${1:ClassName}(${2}):",
+			"\t\"\"\"${4:_docstr_}",
+			"\t${5:Attrs:\n}",
+			"\t",
+			"\t${6:Returns:}\t\"\"\"\n",
+			"\tdef __init__(self,*attrs,**kwards):",
+			"\t\tpass"
+		],
+		"description": "Create a new function"
+	},
+	"New function 2 args -> bool": {
+		"prefix": "def",
+		"body": [
+			"def ${1:function_}${2:name}(${3:arg1}, ${4:arg2}) -> ${5:bool}:",
+			"\t\"\"\"${6:_docstr_}",
+			"\tAttrs:\n",
+			"\t${7}:\n",
+			"\t$Returns:\n",
+			"\t\tTrue if succes, else False\t\"\"\"",
+			"\tpass"
+		],
+		"description": "Create a new function"
+	},
+	"New function 1 arg -> bool": {
+			"prefix": "def",
+			"body": [
+				"def ${1:function}_${2:name}(${3:arg1}) -> ${4:bool}:",
+				"\t\"\"\"${5:_docstr_}",
+				"\tAttrs:\n",
+				"\t\t${6}",
+				"\t${7:Returns:\n}\t\"\"\"",
+				"\tpass"
+			],
+			"description": "Create a new function with one argument"
+		},
+			"New function w/o ars -> bool": {
+				"prefix": "def",
+				"body": [
+					"def ${1:function}_${2:name}() -> ${4:bool}:",
+					"\t\"\"\"${5:_docstr_}",
+					"\t${7:Returns:\n}\t\"\"\"",
+					"\tpass"
+				],
+				"description": "Create a new function w/o arguments"
+			},
+	"logger.debug": {
+		"prefix": "logger.debug",
+		"body": [
+			"logger.debug(f\"\"\" ${1: debug message} \"\"\",${2:ex})"
+		]
+	},
+
+	"logger.info": {
+		"prefix": "logger.info",
+		"body": [
+			"logger.info(f\"\"\" ${1: info message} \"\"\")"
+		]
+	},
+	"logger.success": {
+		"prefix": "logger.success",
+		"body": [
+			"logger.success(f\"\"\" ${1: info message} \"\"\")"
+		]
+	},
+	"exception":{
+		"prefix": "except",
+		"body": [
+			"except Exception as ex:",
+			"\tlogger.error(f\"\"\" ${1: exception message} \"\"\",ex)",
+			"\treturn False"
+		]
+	},
+
+
+	"brief englsh":{
+		"scope":"python, markdown",
+		"prefix":"@en_brief",
+		"body":["@en_brief "],
+		"description" : " doxygen en @brief "
+	},
+	"brief russian":{
+		"scope":"python, markdown",
+		"prefix":"@ru_brief",
+		"body":["@ru_brief "],
+		"description" : " doxygen ru @brief "
+	},
+
+	"details englsh":{
+		"scope":"python, markdown",
+		"prefix":"@en_details",
+		"body":["@en_details "],
+		"description" : " doxygen en @details"
+	},
+	"details russian":{
+		"scope":"python, markdown",
+		"prefix":"@ru_details",
+		"body":["@ru_details "],
+		"description" : " doxygen ru @details "
+	},
+	"warning englsh":{
+		"scope":"python, markdown",
+		"prefix":"@en_warning",
+		"body":["@en_warning "],
+		"description" : " doxygen en @warning"
+	},
+	"warning russian":{
+		"scope":"python, markdown",
+		"prefix":"@ru_warning",
+		"body":["@ru_warning "],
+		"description" : " doxygen ru @warning"
+	},
+	"code englsh":{
+		"scope":"python, markdown",
+		"prefix":"@en_code",
+		"body":["@en_code ",
+				"''' '''"
+				" ",
+				"@en_endcode"],
+		"description" : " doxygen en @code"
+	},
+	"code russian":{
+		"scope":"python, markdown",
+		"prefix":"@ru_code",
+		"body":["@ru_code ",
+		"''' '''",
+		" ",
+		"@ru_endcode"],
+		"description" : " doxygen ru @code"
+	},
+	"class englsh":{
+		"scope":"python, markdown",
+		"prefix":"@en_class",
+		"body":["@en_class ",
+				"@en_description "]
+		"description" : " doxygen en @class"
+	},
+	"class russian":{
+		"scope":"python, markdown",
+		"prefix":"@ru_class",
+		"body":["@ru_class ",
+		"@ru_description ",
+		" "],
+		"description" : " doxygen ru @class"
+	},
+	"fn englsh":{
+		"scope":"python, markdown",
+		"prefix":"@en_fn",
+		"body":["@en_fn ",
+				"@en_description "]
+		"description" : " doxygen en @fn"
+	},
+	"fn russian":{
+		"scope":"python, markdown",
+		"prefix":"@ru_fn",
+		"body":["@ru_fn ",
+		"@ru_description ",
+		" "],
+		"description" : " doxygen ru @fn"
+	},
+	"var englsh":{
+		"scope":"python, markdown",
+		"prefix":"@en_var",
+		"body":["@en_var ",
+				"@en_description"
+				" "],
+		"description" : " doxygen en @var"
+	},
+	"var russian":{
+		"scope":"python, markdown",
+		"prefix":"@ru_var",
+		"body":["@ru_var ",
+		"@ru_description"
+		" "],
+		"description" : " doxygen ru @var"
+	},
+	"todo englsh":{
+		"scope":"python, markdown",
+		"prefix":"@en_todo",
+		"body":["@en_todo "],
+		"description" : " doxygen en @todo"
+	},
+	"todo russian":{
+		"scope":"python, markdown",
+		"prefix":"@ru_todo",
+		"body":["@ru_todo "],
+		"description" : " doxygen ru @todo"
+	},
+	"def group english":{
+		"scope":"python, markdown",
+		"prefix":"@en_defgroup",
+		"body":["@en_defgroup $1",
+		 "@{",
+		"",
+		"@}"],
+		"description" : " doxygen en @addgroup"
+	},
+	"def group russin":{
+		"scope":"python, markdown",
+		"prefix":"@ru_defgroup",
+		"body":["@ru_defgroup $1",
+		 "@{",
+		"",
+		"@}"],
+		"description" : " doxygen ru @addgroup"
+	}
+}

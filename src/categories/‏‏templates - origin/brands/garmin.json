@@ -1,0 +1,10 @@
+{
+ "garmin": {
+   "WATCHES": {
+     "9462":"GARMIN",
+     "template": {"wearable":"WATCHES" },
+     "2269":"GARMIN",
+     "2354":"SMARTWATCHES"
+    }
+  }
+}

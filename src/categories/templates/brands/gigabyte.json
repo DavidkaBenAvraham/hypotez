@@ -1,0 +1,589 @@
+{
+ "gigabyte": {
+
+   "MB INTEL": {
+     "8091":"Intel",
+     "8133":"Gigabyte",
+     "template": {"motherboards":"INTEL" },
+     "2271":"Gigabyte",
+     "3543":"Motherboards",
+     "8010":"Intel Motherboards"
+    },
+   "MB AMD": {
+     "8092":"AMD",
+     "8133":"Gigabyte",
+     "template": {"motherboards":"AMD" },
+     "2271":"Gigabyte",
+     "3543":"Motherboards",
+     "8011":"AMD Motherboards"
+    },
+   "Intel B560": {
+     "template": {
+       "gigabyte":"MB INTEL",
+       "motherboards":"Intel B560"
+      }
+    },
+
+   "Intel B660": {
+     "template": {
+       "gigabyte":"MB INTEL",
+       "motherboards":"Intel B660"
+      }
+    },
+   "Intel Z690": {
+     "template": {
+       "gigabyte":"MB INTEL",
+       "motherboards":"Intel Z690"
+      }
+    },
+   "Intel H470": {
+     "template": {
+       "gigabyte":"MB INTEL",
+       "motherboards":"Intel H470"
+      }
+    },
+   "Intel H410": {
+     "template": {
+       "gigabyte":"MB INTEL",
+       "motherboards":"Intel H410"
+      }
+    },
+   "Intel H610": {
+     "template": {
+       "gigabyte":"MB INTEL",
+       "motherboards":"Intel H610"
+      }
+    },
+
+   "Intel X299": {
+     "template": {
+       "gigabyte":"MB INTEL",
+       "motherboards":"Intel X299"
+      }
+    },
+   "AMD A520": {
+     "template": {
+       "gigabyte":"MB AMD",
+       "motherboards":"AMD A520"
+      }
+    },
+   "AMD B550": {
+     "template": {
+       "gigabyte":"MB AMD",
+       "motherboards":"AMD B550"
+      }
+    },
+   "AMD X399": {
+     "template": {
+       "gigabyte":"MB AMD",
+       "motherboards":"AMD X399"
+      }
+    },
+
+   "AMD X570": {
+     "template": {
+       "gigabyte":"AMD",
+       "motherboards":"AMD X570"
+      }
+    },
+   "AMD WRX80": {
+     "template": {
+       "gigabyte":"AMD",
+       "motherboards":"AMD X570"
+      }
+    },
+
+   "LAPTOPS": {
+      
+     "9882":"gigabyte",
+     "5453":"Laptops by brand",
+     "template": {"laptops":"LAPTOPS" },
+     "2271":"gigabyte brand axis",
+     "9883":"Laptops"
+    },
+
+
+   "LAPTOPS INTEL": {
+     "9911":"Intel",
+     "9910":"Gigabyte by CPU",
+     "template": {
+       "gigabyte":"LAPTOPS",
+       "laptops":"INTEL"
+      },
+     "9884":"gigabyte BY CPU",
+     "9887":"Intel"
+    },
+   "LAPTOPS INTEL CELERON": {
+     "9722":"INTEL CELERON",
+     "9913":"GIGABYTE INTEL CELERON",
+     "template": {
+       "gigabyte":"LAPTOPS INTEL"
+      },
+     "9889":"LAPTOPS INTEL CELERON"
+    },
+   "LAPTOPS INTEL I3": {
+     "9723":"INTEL I3",
+     "9914":"GIGABYTE LAPTOPS INTEL i3",
+     "template": {
+       "gigabyte":"LAPTOPS INTEL"
+      },
+     "9890":"LAPTOPS INTEL i3"
+    },
+   "LAPTOPS INTEL I5": {
+     "9724":"INTEL I5",
+     "9699":"GIGABYTE LAPTOPS INTEL i5",
+     "template": {
+       "gigabyte":"LAPTOPS INTEL",
+       "laptops":"INTEL I5"
+      },
+     "9891":"LAPTOPS INTEL i5"
+    },
+   "LAPTOPS INTEL I7": {
+     "9725":"INTEL I7",
+     "9700":"GIGABYTE LAPTOPS LAPTOPS INTEL i7",
+     "template": {
+       "gigabyte":"LAPTOPS INTEL",
+       "laptops":"INTEL I7"
+      },
+     "9892":"LAPTOPS INTEL i7"
+    },
+   "LAPTOPS INTEL I9": {
+     "9726":"LAPTOPS I9",
+     "9701":"LAPTOPS INTEL i9",
+     "template": {
+       "gigabyte":"LAPTOPS INTEL",
+       "laptops":"INTEL I9"
+      },
+     "9893":"LAPTOPS INTEL i9"
+    },
+
+   "LAPTOPS AMD": {
+     "4150":"AMD",
+     "4148":"Laptops by CPU",
+     "9912":"AMD",
+     "9709":"gigabyte BY CPU",
+     "template": {"gigabyte":"LAPTOPS" },
+     "9884":"gigabyte by cpu",
+     "9888":"gigabyte AMD"
+    },
+   "LAPTOPS AMD ATHLON SERIES": {
+     "9881":"AMD ATHLON SERIES",
+     "9927":"GIGIABYTE AMD ATHLON SERIES",
+     "template": {
+       "gigabyte":"LAPTOPS AMD",
+       "laptops":"AMD ATHLON SERIES"
+      },
+     "9847":"AMD ATHLON SERIES"
+    },
+
+   "LAPTOPS AMD RYZEN SERIES": {
+     "9870":"AMD RYZEN SERIES",
+     "9926":"LAPTOPS AMD Athlon",
+     "template": {
+       "gigabyte":"LAPTOPS AMD",
+       "laptops":"LAPTOPS AMD RYZEN SERIES"
+      },
+     "9846":"LAPTOPS AMD RYZEN SERIES"
+    },
+   "LAPTOPS AMD A SERIES": {
+     "9702":"LAPTOPS AMD Athlon",
+     "template": {
+       "gigabyte":"LAPTOPS AMD A SERIES",
+       "laptops":"LAPTOPS AMD A SERIES"
+      },
+     "9845":"LAPTOPS AMD A"
+    },
+
+   "LAPTOPS AMD A6": {
+     "9728":"AMD A6",
+     "9895":"GIGABYTE LAPTOPS AMD A6",
+     "template": {
+       "gigabyte":"LAPTOPS AMD ATHLON SERIES"
+      },
+     "9661":"LAPTOPS AMD A6"
+    },
+   "LAPTOPS AMD RYZEN 3": {
+     "9704":"LAPTOPS AMD RYZEN 3",
+     "template": {
+       "gigabyte":"LAPTOPS AMD RYZEN SERIES",
+       "laptops":"AMD RYZEN 3"
+      },
+     "9662":"LAPTOPS AMD RYZEN 3"
+    },
+   "LAPTOPS AMD RYZEN 5": {
+     "9705":"LAPTOPS AMD RYZEN 5",
+     "template": {
+       "gigabyte":"LAPTOPS AMD RYZEN SERIES",
+       "laptops":"AMD RYZEN 5"
+      },
+     "9663":"LAPTOPS AMD RYZEN 5"
+    },
+   "LAPTOPS AMD RYZEN 7": {
+     "9706":"LAPTOPS AMD RYZEN 7",
+     "template": {
+       "gigabyte":"LAPTOPS AMD RYZEN SERIES",
+       "laptops":"AMD RYZEN 7"
+      },
+     "9664":"LAPTOPS AMD RYZEN 7"
+    },
+   "LAPTOPS AMD RYZEN 9": {
+     "9707":"LAPTOPS AMD RYZEN 9",
+     "template": {
+       "gigabyte":"LAPTOPS AMD RYZEN SERIES",
+       "laptops":"AMD RYZEN 9"
+      },
+     "9665":"LAPTOPS AMD RYZEN 9"
+    },
+
+   "LAPTOPS BY SCREEN SIZE": {
+     "9710":"gigabyte by screen size",
+     "template": {
+       "laptops":"BY SCREEN SIZE",
+       "gigabyte":"LAPTOPS"
+      },
+     "9688":"by ss"
+    },
+   "11": {
+     "4126":"11'' Laptops by screen size",
+     "9711":"11'' gigabyte by screen size",
+     "template": {"gigabyte":"LAPTOPS BY SCREEN SIZE" },
+     "9689":"11'' gigabyte by screen size"
+    },
+   "13": {
+     "4127":"13'' Laptops by screen size",
+     "9712":"13'' gigabyte by screen size",
+     "template": {"gigabyte":"LAPTOPS BY SCREEN SIZE" },
+     "9690":"13'' Laptops by screen size"
+    },
+   "14": {
+     "4128":"14'' Laptops by screen size",
+     "9713":"14'' gigabyte by screen size",
+     "template": {"gigabyte":"LAPTOPS BY SCREEN SIZE" },
+     "9691":"14'' gigabyte by screen size"
+    },
+   "15": {
+     "4129":"15'' Laptops by screen size",
+     "9714":"15'' gigabyte by screen size",
+     "template": {"gigabyte":"LAPTOPS BY SCREEN SIZE" },
+     "9692":"15'' gigabyte by screen size"
+    },
+   "17": {
+     "4130":"17'' Laptops by screen size",
+     "9715":"17'' gigabyte by screen size",
+     "template": {"gigabyte":"LAPTOPS BY SCREEN SIZE" },
+     "9693":"17'' gigabyte by screen size"
+    },
+   "18": {
+     "4131":"18'' Laptops by screen size",
+     "9716":"18'' gigabyte by screen size",
+     "template": {"gigabyte":"LAPTOPS BY SCREEN SIZE" },
+     "9694":"18'' gigabyte by screen size"
+    },
+
+
+   "DESKTOPS": {
+     "10325":"GIGABYTE",
+     "template": {"desktops":"DESKTOPS BY BRANDS" },
+     "2271":"GIGABYTE",
+     "10302":"DESKTOPS"
+    },
+   "DESKTOPS INTEL": {
+     "template": {"gigabyte": ["DESKTOPS" ] },
+     "10326":"INTEL"
+    },
+   "DESKTOPS INTEL CELERON": {
+     "template": {"gigabyte": ["DESKTOPS INTEL" ] },
+     "10327":"CELERON"
+    },
+   "DESKTOPS INTEL PENTIUM": {
+     "template": {"gigabyte": ["DESKTOPS INTEL" ] },
+     "10328":"PENTIUM"
+    },
+   "DESKTOPS INTEL I3": {
+     "template": {"gigabyte": ["DESKTOPS INTEL" ] },
+     "10329":"I3"
+    },
+   "DESKTOPS INTEL I5": {
+     "template": {"gigabyte": ["DESKTOPS INTEL" ] },
+     "10330":"I5"
+    },
+   "DESKTOPS INTEL I7": {
+     "template": {"gigabyte": ["DESKTOPS INTEL" ] },
+     "10331":"I7"
+    },
+   "DESKTOPS INTEL I9": {
+     "template": {"gigabyte": ["DESKTOPS INTEL" ] },
+     "10332":"I9"
+    },
+   "DESKTOPS INTEL M": {
+     "template": {"gigabyte": ["DESKTOPS INTEL" ] },
+     "10333":"M"
+    },
+   "DESKTOPS INTEL XEON": {
+     "template": {"gigabyte": ["DESKTOPS INTEL" ] },
+     "10334":"XEON"
+    },
+   "DESKTOPS AMD": {
+     "template": {"gigabyte": ["DESKTOPS" ] },
+     "10335":"AMD"
+    },
+   "DESKTOPS AMD ATHLON": {
+     "template": {"gigabyte": ["DESKTOPS AMD" ] },
+     "10336":"ATHLON"
+    },
+   "DESKTOPS AMD A SERIES": {
+     "template": {"gigabyte": ["DESKTOPS AMD" ] },
+     "10337":"A SERIES"
+    },
+
+   "DESKTOPS AMD A4": {
+     "template": {"gigabyte": ["DESKTOPS AMD A SERIES" ] },
+     "10338":"A4"
+    },
+   "DESKTOPS AMD A6": {
+     "template": {"gigabyte": ["DESKTOPS AMD A SERIES" ] },
+     "10339":"A6"
+    },
+   "DESKTOPS AMD RYZEN": {
+     "template": {"gigabyte": ["DESKTOPS AMD" ] },
+     "10340":"RYZEN"
+    },
+   "DESKTOPS AMD RYZEN 3": {
+     "template": {"gigabyte": ["DESKTOPS AMD RYZEN" ] },
+     "10341":"RYZEN 3"
+    },
+   "DESKTOPS AMD RYZEN 5": {
+     "template": {"gigabyte": ["DESKTOPS AMD RYZEN" ] },
+     "10342":"RYZEN 5"
+    },
+   "DESKTOPS AMD RYZEN 7": {
+     "template": {"gigabyte": ["DESKTOPS AMD RYZEN" ] },
+     "10343":"RYZEN 7"
+    },
+   "DESKTOPS AMD RYZEN 9": {
+     "template": {"gigabyte": ["DESKTOPS AMD RYZEN" ] },
+     "10344":"RYZEN 8"
+    },
+
+   "VIDEOCARDS": {
+     
+     "9005":"GIGABYTE",
+     "9024":"BRANDS",
+     "template": {"desktop_hardware":"VIDEOCARDS" },
+     "2271":"GIGABYTE",
+     "10462":"VIDEOCARDS"
+    },
+   "VIDEOCARDS NVIDIA": {
+     "9023":"NVIDIA IN VIDEOCARDS",
+     "10523":"NVIDIA IN VIDEOCARDS - LIST",
+     "10492":"NVIDIA IN GIGABYTE",
+     "template": {"gigabyte":"VIDEOCARDS" },
+     "10463":"NVIDIA"
+    },
+   "VIDEOCARDS AMD": {
+     "10555":"AMD IN VIDEOCARDS - LIST",
+     "9022":"AMD IN VIDEOCARDS",
+     "10554":"AMD BY GIGABYTE",
+     "template": {"gigabyte":"VIDEOCARDS" },
+     "10464":"AMD"
+    },
+   "NVIDIA GT VIDEOCARDS": {
+     "10491":"GT IN VIDEOCARDS",
+     "10493":"GT IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"VIDEOCARDS NVIDIA" },
+     "10524":"GT"
+    },
+   "NVIDIA GTX VIDEOCARDS": {
+     "10458":"GTX IN VIDEOCARDS",
+     "10493":"GTX IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"VIDEOCARDS NVIDIA" },
+     "10525":"GTX"
+    },
+   "NVIDIA RTX VIDEOCARDS": {
+     "10459":"RTX IN VIDEOCARDS",
+     "10495":"RTX IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"VIDEOCARDS NVIDIA" },
+     "10526":"RTX"
+    },
+   "NVIDIA QUARDO VIDEOCARDS": {
+     "10460":"QUARDO IN VIDEOCARDS",
+     "10496":"QUARDO IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"VIDEOCARDS NVIDIA" },
+     "10527":"QUARDO"
+    },
+   "NVIDIA AMPHERE VIDEOCARDS": {
+     "10461":"QUARDO IN VIDEOCARDS",
+     "10497":"QUARDO IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"VIDEOCARDS NVIDIA" },
+     "10528":"AMPHERE"
+    },
+   "RTX 3060 TI": {
+     "10462":"RTX 3060 TI IN VIDEOCARDS",
+     "10498":"RTX 3060 TI IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10529":"RTX 3060 TI"
+    },
+
+   "RTX 2060": {
+     "10463":"RTX 2060 IN VIDEOCARDS",
+     "10499":"RTX 2060 IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10530":"RTX 2060"
+    },
+   "GTX 1660 SUPER": {
+     "10464":"RTX 1660 SUPER IN VIDEOCARDS",
+     "10500":"RTX 1660 SUPER IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10531":"RTX 1660 SUPER"
+    },
+   "RTX 3080": {
+     "10465":"RTX 3080 IN VIDEOCARDS",
+     "10501":"RTX 3080 IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10532":"RTX 3080"
+    },
+   "RTX 3070": {
+     "10466":"RTX 3070 IN VIDEOCARDS",
+     "10502":"RTX 3070 IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10533":"RTX 3070"
+    },
+   "RTX 3060": {
+     "10467":"RTX 3070 IN VIDEOCARDS",
+     "10503":"RTX 3070 IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10534":"RTX 3070"
+    },
+   "RTX 3080 TI": {
+     "10468":"RTX 3080 TI IN VIDEOCARDS",
+     "10504":"RTX 3080 TI IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10535":"RTX 3080 TI"
+    },
+   "RTX 2060 SUPER": {
+     "10469":"RTX 2060 SUPER IN VIDEOCARDS",
+     "10505":"RTX 2060 SUPER IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10536":"RTX 2060 SUPER"
+    },
+   "RTX 3090 TI": {
+     "9094":"RTX 3090 TI IN VIDEOCARDS",
+     "10506":"RTX 2060 SUPER IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10537":"RTX 3090 TI"
+    },
+   "RTX 3090": {
+     "9095":"RTX 3090  IN VIDEOCARDS",
+     "10507":"RTX 3090 IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10538":"RTX 3090"
+    },
+   "RTX 3070 TI": {
+     "9096":"RTX 3070 TI  IN VIDEOCARDS",
+     "10508":"RTX 3070 TI SUPER IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10539":"RTX 3070 TI"
+    },
+   "RTX 3050": {
+     "9097":"RTX 3050 IN VIDEOCARDS",
+     "10509":"RTX 3050 SUPER IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10540":"RTX 3050"
+    },
+   "GTX 1660": {
+     "9098":"GTX 1660 IN VIDEOCARDS",
+     "10510":"GTX 1660 SUPER IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA GTX VIDEOCARDS" },
+     "10541":"GTX 1660"
+    },
+   "GTX 1660 TI": {
+     "9099":"GTX 1660 TI IN VIDEOCARDS",
+     "10511":"GTX 1660 TI SUPER IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA GTX VIDEOCARDS" },
+     "10542":"GTX 1660 TI"
+    },
+   "GTX 1650": {
+     "9100":"GTX 1650 IN VIDEOCARDS",
+     "10512":"GTX 1650 SUPER IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA GTX VIDEOCARDS" },
+     "10543":"GTX 1650"
+    },
+   "GTX 1050 TI": {
+     "9101":"GTX 1050 TI IN VIDEOCARDS",
+     "10513":"GTX 1050 TI SUPER IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA GTX VIDEOCARDS" },
+     "10544":"GTX 1050 TI"
+    },
+   "GT 1030": {
+     "9102":"GT 1030 IN VIDEOCARDS",
+     "10514":"GT 1030  IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA GT VIDEOCARDS" },
+     "10545":"GT 1030"
+    },
+   "GT 710": {
+     "9103":"GT 710 IN VIDEOCARDS",
+     "10515":"GT 710  IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA GT VIDEOCARDS" },
+     "10546":"GT 710"
+    },
+   "GT 730": {
+     "9104":"GT 730 IN VIDEOCARDS",
+     "10516":"GT 730  IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA GT VIDEOCARDS" },
+     "10547":"GT 730"
+    },
+   "AMPERE A4000": {
+     "9105":"AMPERE A4000 IN VIDEOCARDS",
+     "10517":"AMPERE A4000  IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA AMPERE VIDEOCARDS" },
+     "10548":"AMPERE A4000"
+    },
+   "RTX AMPERE 2000": {
+     "9106":"RTX AMPERE 2000 IN VIDEOCARDS",
+     "10518":"RTX AMPERE 2000  IN VIDEOCARDS BY GIGABYTE",
+     "template": {
+       "gigabyte": [
+         "NVIDIA AMPERE VIDEOCARDS",
+         "NVIDIA RTX VIDEOCARDS"
+        ]
+      },
+     "10549":"RTX AMPERE 2000"
+    },
+   "QUADRO T1000": {
+     "9107":"QUADRO T1000 IN VIDEOCARDS",
+     "10519":"QUADRO T1000  IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NIDIA QUADRO VIDEOCARDS" },
+     "10550":"QUADRO T1000"
+    },
+   "RTX 4090": {
+     "9108":"RTX 4090 IN VIDEOCARDS",
+     "10520":"RTX 4090  IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10551":"RTX 4090"
+    },
+   "RTX 4080": {
+     "9109":"RTX 4080 IN VIDEOCARDS",
+     "10521":"RTX 4080  IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10552":"RTX 4080"
+    },
+   "QUADRO RTX AMPERE 4500": {
+     "9110":"RTX 4500 IN VIDEOCARDS",
+     "10522":"RTX 4500  IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10553":"RTX 4500"
+    },
+   "RTX 4070": {
+     "10566":"RTX 4070 IN VIDEOCARDS",
+     "10568":"RTX 4070  IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10570":"RTX 4070"
+    },
+   "RTX 4070 TI": {
+     "10567":"RTX 4070 IN VIDEOCARDS",
+     "10569":"RTX 4070  IN VIDEOCARDS BY GIGABYTE",
+     "template": {"gigabyte":"NVIDIA RTX VIDEOCARDS" },
+     "10571":"RTX 4070"
+    }
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "store": {
+    "store_id": 1188042,
+    "supplier_id": 2829,
+    "description": "Motherboards etc.",
+    "about": " ",
+    "category ID on site": "",
+    "brand": [ "GIGABYTE", "ASUS", "MSI" ],
+    "url": "https://www.aliexpress.com/store/1188042",
+    "shop categories page": "https://www.aliexpress.com/store/all-wholesale-products/1188042.html",
+    "shop categories json file": "https://www.aliexpress.com/store/productGroupsAjax.htm?storeId=1188042&shopVersion=3.0&callback=",
+    "get store banners": true
+  },
+  "scenarios": {
+    "LGA 1155": {
+      "category ID on site": "",
+      "brand": [ "GIGABYTE", "ASUS" ],
+      "url": "https://www.aliexpress.com/store/group/LGA-1155/1188042_515757575.html?spm=a2g0o.store_pc_groupList.0.0.45ee173ac58ebg",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "LGA 1155" }
+      },
+
+      "product combinations": null
+    },
+    "LGA 1156": {
+      "category ID on site": "",
+      "brand": [ "GIGABYTE", "ASUS", "MSI" ],
+      "url": "https://www.aliexpress.com/store/group/LGA-1156/1188042_515757576.html?spm=a2g0o.store_pc_groupList.0.0.45ee173ac58ebg",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "motherboards": "LGA 1156"
+        }
+      },
+      "product combinations": null
+    },
+
+    "LGA 775 (771)": {
+      "category ID on site": "",
+      "brand": [ "GIGABYTE", "ASUS", "MSI" ],
+      "url": "https://www.aliexpress.com/store/group/LGA-775-771/1188042_515911970.html?spm=a2g0o.store_pc_groupList.0.0.45ee173ac58ebg",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "LGA 775" }
+      },
+      "product combinations": null
+    },
+    "LGA 1151": {
+      "category ID on site": "",
+      "brand": [ "GIGABYTE", "ASUS", "MSI" ],
+      "url": "https://www.aliexpress.com/store/group/LGA-1151/1188042_515911971.html?spm=a2g0o.store_pc_groupList.0.0.45ee173ac58ebg",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "LGA 1151" }
+      },
+      "product combinations": null
+    },
+    "LGA 1150": {
+      "category ID on site": "",
+      "brand": [ "GIGABYTE", "ASUS", "MSI" ],
+      "url": "https://www.aliexpress.com/store/group/LGA-1150/1188042_515915579.html?spm=a2g0o.store_pc_groupList.0.0.45ee173ac58ebg",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "LGA 1150" }
+      },
+      "product combinations": null
+    },
+    "LGA 1366": {
+      "category ID on site": "",
+      "brand": [ "GIGABYTE", "ASUS", "MSI" ],
+      "url": "https://www.aliexpress.com/store/group/LGA-1366/1188042_515915580.html?spm=a2g0o.store_pc_groupList.0.0.45ee173ac58ebg",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "LGA 1366" }
+      },
+      "product combinations": null
+    },
+    "LGA 2011": {
+      "category ID on site": "",
+      "brand": [ "GIGABYTE", "ASUS", "MSI" ],
+      "url": "https://www.aliexpress.com/store/group/LGA-2011/1188042_515915581.html?spm=a2g0o.store_pc_groupList.0.0.45ee173ac58ebg",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "motherboards": "LGA 2011" }
+      },
+      "product combinations": null
+    },
+    "FBD ECC server RAM": {
+      "category ID on site": "",
+      "brand": [ "ADATA" ],
+      "url": "https://www.aliexpress.com/store/group/FBD-ECC-server-RAM/1188042_515936129.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "memory plates": "FBD ECC server RAM" }
+      },
+      "product combinations": null
+    },
+
+    "REG ECC server RAM": {
+      "category ID on site": "",
+      "brand": [ "ADATA" ],
+      "url": "https://www.aliexpress.com/store/group/REG-ECC-server-RAM/1188042_515936130.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "memory plates": "REG ECC server RAM" }
+      },
+      "product combinations": null
+    },
+    "SODIMM": {
+      "category ID on site": "",
+      "brand": [ "ADATA" ],
+      "url": "https://www.aliexpress.com/store/group/REG-ECC-server-RAM/1188042_515936130.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "memory plates": "SODIMM" }
+      },
+      "product combinations": null
+    },
+    "DIMM": {
+      "category ID on site": "",
+      "brand": [ "ADATA" ],
+      "url": "https://www.aliexpress.com/store/group/Computer-Memory-RAM/1188042_515932826.htm",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "memory plates": "DIMM" }
+      },
+      "product combinations": null
+    },
+    "VIDEO SAPPHIRE": {
+      "category ID on site": "",
+      "brand": "SAPPHIRE",
+      "url": "https://www.aliexpress.com/store/group/SAPPhIRE/1188042_516545051.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "9002 VIDEOCARDS": "SAPPHIRE" }
+      },
+      "product combinations": null
+    },
+    "VIDEO ZOTAC": {
+      "category ID on site": "",
+      "brand": "ZOTAC",
+      "url": "https://www.aliexpress.com/store/group/ZOTAC/1188042_516445259.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "9002 VIDEOCARDS": "ZOTAC" }
+      },
+      "product combinations": null
+    },
+    "VIDEO GIGABYTE": {
+      "category ID on site": "",
+      "brand": "GIGABYTE",
+      "url": "https://www.aliexpress.com/store/group/GIGABYTE/1188042_516768605.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "9002 VIDEOCARDS": "GIGABYTE" }
+      },
+      "product combinations": null
+    },
+
+    "VIDEO ASUS": {
+      "category ID on site": "",
+      "brand": "ASUS",
+      "url": "https://www.aliexpress.com/store/group/ASUS/1188042_516903043.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "9002 VIDEOCARDS": "ASUS" }
+      },
+      "product combinations": null
+    },
+    "VIDEO UNIKA": {
+      "category ID on site": "",
+      "brand": "UNIKA",
+      "url": "https://www.aliexpress.com/store/group/UNIKA/1188042_40000001670127.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "9002 VIDEOCARDS": "UNIKA" }
+      },
+      "product combinations": null
+    },
+    "VIDEO XFX": {
+      "category ID on site": "",
+      "brand": "XFX",
+      "url": "https://www.aliexpress.com/store/group/XFX/1188042_516449012.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": { "9002 VIDEOCARDS": "XFX" }
+      },
+      "product combinations": null
+    }
+  }
+}

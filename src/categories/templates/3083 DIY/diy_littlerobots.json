@@ -1,0 +1,141 @@
+{
+ "diy and little robots": {
+   "diy and little robots": {
+     "3198":"Space: CONSUMER ELECTRONICS",
+     "3201":"Little robots",
+     "3213":"DIY"
+    },
+   "Electronic wooden science toys": {
+     "template": {"diy and little robots":"diy and little robots" },
+     "3223":"Electronic wooden science toys"
+    },
+
+
+   "RASPBERRY PI": {
+     "template": {"diy and little robots":"diy and little robots" },
+     "5997":"diy and little robots['RASPBERRY PI']"
+    },
+   "BBC Micro:bit": {
+     "template": {"diy and little robots":"diy and little robots" },
+     "2730":"BBC Micro:bit"
+    },
+   "ARDUINO": {
+     "template": {"diy and little robots":"diy and little robots" },
+     "2737":"ARDUINO"
+    },
+   "Keyestudio EASY Plug": {
+     "3209":"Keyestudio EASY Plug",
+     "template": {"diy and little robots":"diy and little robots" }
+    },
+   "Keyestudio Kidbits": {
+     "3211":"Keyestudio Kidbits",
+     "template": {"diy and little robots":"diy and little robots" }
+    },
+
+   "ESP 32": {
+     "2744":"ESP 32",
+     "template": {"diy and little robots":"diy and little robots" },
+     "2743":"ESP 32"
+    },
+   "RASPBERRY PI KIT": {
+     "2720":"RASPBERRY Pi Kit",
+     "template": {"diy and little robots":"RASPBERRY PI" },
+     "2719":"diy and little robots['RASPBERRY PI']"
+    },
+   "RASPBERRY PI PICO": {
+     "template": {"diy and little robots":"diy and little robots" },
+     "2727":"RASPBERRY PI PICO"
+    },
+   "RASPBERRY PI PICO Boards": {
+     "2728":"RASPBERRY Pi PICO Boards",
+     "template": {"diy and little robots":"RASPBERRY PI PICO" },
+     "2727":"RASPBERRY PI PICO"
+    },
+   "RASPBERRY PI PICO SHIELD": {
+     "3205":"RASPBERRY Pi PICO SHIELD",
+     "template": {"diy and little robots":"RASPBERRY PI PICO" },
+     "2727":"RASPBERRY PI PICO"
+    },
+   "RASPBERRY PI PICO KIT": {
+     "2729":"RASPBERRY Pi PICO KIT",
+     "template": {"diy and little robots":"RASPBERRY PI PICO" },
+     "2727":"RASPBERRY PI PICO"
+    },
+
+   "RASPBERRY PI SHIELD": {
+     "2721":"RASPBERRY Pi SHIELD",
+     "template": {"diy and little robots":"RASPBERRY PI" },
+     "2727":"RASPBERRY PI"
+    },
+
+
+
+   "BBC Micro:bit v2.2 Boards": {
+     "2731":"v2.2 Boards",
+     "template": {"diy and little robots":"BBC Micro:bit" },
+     "2730":"BBC Micro:bit"
+    },
+   "BBC Micro:bit SHIELD": {
+     "2732":"BBC Micro:bit SHIELD",
+     "template": {"diy and little robots":"BBC Micro:bit" },
+     "2730":"BBC Micro:bit"
+    },
+   "BBC Micro:bit KIT": {
+     "2733":"BBC Micro:bit KIT",
+     "template": {"diy and little robots":"BBC Micro:bit" },
+     "2730":"BBC Micro:bit"
+    },
+   "BBC Micro:bit Robots": {
+     "2734":"BBC Micro:bit Robots",
+     "template": {"diy and little robots":"BBC Micro:bit" },
+     "2730":"BBC Micro:bit"
+    },
+   "BBC Micro:bit Modules": {
+     "2735":"BBC Micro:bit Modules",
+     "template": {"diy and little robots":"BBC Micro:bit" },
+     "2730":"BBC Micro:bit"
+    },
+   "BBC Micro:bit Accessories": {
+     "2736":"BBC Micro:bit Accessories",
+     "template": {"diy and little robots":"BBC Micro:bit" },
+     "2730":"BBC Micro:bit"
+    },
+
+
+   "ARDUINO Boards": {
+     "2738":"ARDUINO Boards",
+     "template": {"diy and little robots":"ARDUINO" }
+    },
+   "ARDUINO SHIELD": {
+     "2739":"ARDUINO SHIELD",
+     "template": {"diy and little robots":"ARDUINO" }
+    },
+   "ARDUINO KIT": {
+     "2740":"ARDUINO KIT",
+     "template": {"diy and little robots":"ARDUINO" }
+    },
+   "ARDUINO Robots": {
+     "2741":"ARDUINO Robots",
+     "template": {"diy and little robots":"ARDUINO" }
+    },
+   "ARDUINO Accessories": {
+     "2742":"ARDUINO Accessories",
+     "template": {"diy and little robots":"ARDUINO" }
+    },
+
+   "ESP 01": {
+     "6384":"ESP 01",
+     "template": {"diy and little robots":"ESP 32" },
+     "2743":"ESP 32"
+    },
+   "ESP 8266": {
+     "6384":"ESP 8266",
+     "template": {"diy and little robots":"ESP 32" },
+     "2743":"ESP 32"
+    },
+   "ELECTRONIC DIY KIT": {
+     "template": {"diy and little robots":"diy and little robots" }
+    }
+
+  }
+}

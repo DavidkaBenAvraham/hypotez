@@ -1,0 +1,17 @@
+{
+   "11036 FURNITURE": {
+       "template":"",
+       "11044":"LIVING SPACE FURNITURE",
+       "11045":"WORK SPACE FURNITURE"
+    },
+   "LIVING SPACE FURNITURE": {
+       "template": {
+           "11036 FURNITURE":"11044"
+        }
+    },
+   "WORK SPACE FURNITURE": {
+       "template": {
+           "11036 FURNITURE":"11045"
+        }
+    }
+}

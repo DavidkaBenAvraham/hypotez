@@ -1,0 +1,151 @@
+{
+ "motherboards": {
+   "BUNDLE MB CPU": {
+     "template": {"desktop_hardware":"MOTHERBOARDS" },
+     "9252":"Bundles CPU MB"
+    },
+   "BUNDLE MB CPU INTEL": {
+     "template": {"motherboards":"BUNDLE MB CPU" },
+     "9253":"BUNDLE MB CPU INTEL"
+    },
+   "BUNDLE MB CPU AMD": {
+     "template": {"motherboards":"BUNDLE MB CPU" },
+     "9254":"BUNDLE MB CPU AMD"
+    },
+
+   "INTEL": {
+     "template": {"desktop_hardware":"MOTHERBOARDS" },
+     "3547":"Intel motherboards by chipset"
+    },
+   "AMD": {
+     "template": {"desktop_hardware":"MOTHERBOARDS" },
+     "3450":"AMD motherboards by chipset"
+    },
+   "AMD AM4": {
+     "template": {"motherboards":"AMD" },
+     "8175":"AMD AM4"
+    },
+   "AMD AM5": {
+     "template": {"motherboards":"AMD" },
+     "8176":"AMD AM5"
+    },
+   "AMD Threadripper": {
+     "template": {"motherboards":"AMD" },
+     "8177":"AMD Threadripper"
+    },
+   "LGA 1155": {
+     "template": {"motherboards":"INTEL" },
+     "7482":"LGA 1155"
+    },
+   "LGA 1156": {
+     "template": {"motherboards":"INTEL" },
+     "7483":"LGA 1156"
+    },
+   "LGA 775": {
+     "template": {"motherboards":"INTEL" },
+     "7484":"LGA 775 (771)"
+    },
+   "LGA 1151": {
+     "template": {"motherboards":"INTEL" },
+     "7485":"LGA 1151"
+    },
+   "LGA 1200": {
+     "template": {"motherboards":"INTEL" },
+     "7490":"LGA 1200"
+    },
+   "LGA 1150": {
+     "template": {"motherboards":"INTEL" },
+     "7486":"LGA 1150"
+    },
+   "LGA 1366": {
+     "template": {"motherboards":"INTEL" },
+     "7487":"LGA 1366"
+    },
+   "LGA 1700": {
+     "template": {"motherboards":"INTEL" },
+     "7491":"LGA 1700"
+    },
+   "LGA 2011": {
+     "template": {"motherboards":"INTEL" },
+     "7488":"LGA 2011"
+    },
+   "LGA 2066": {
+     "template": {"motherboards":"INTEL" },
+     "8135":"LGA 2066"
+    },
+
+   "Intel H510": {
+     "template": {"motherboards":"LGA 1200" },
+     "3557":"Intel H510"
+    },
+   "Intel H410": {
+     "template": {"motherboards":"LGA 1200" },
+     "3560":"Intel H410"
+    },
+   "Intel H470": {
+     "template": {"motherboards":"LGA 1200" },
+     "8134":"Intel H470"
+    },
+   "Intel H610": {
+     "template": {"motherboards":"LGA 1200" },
+     "3555":"Intel H610"
+    },
+   "Intel Z590": {
+     "template": {"motherboards":"LGA 1700" },
+     "3559":"Intel Z590"
+    },
+   "Intel Z690": {
+     "template": {"motherboards":"LGA 1700" },
+     "3556":"Intel Z690"
+    },
+
+   "Intel B660": {
+     "template": {"motherboards":"LGA 1700" },
+     "3555":"Intel B660"
+    },
+   "Intel B560": {
+     "template": {"motherboards":"LGA 1200" },
+     "3558":"Intel B560"
+    },
+   "Intel X299": {
+     "template": {"motherboards":"LGA 2066" },
+     "3565":"Intel X299"
+    },
+   "AMD B450": {
+     "template": {"motherboards":"AMD AM4" },
+     "4047":"AMD B450"
+    },
+   "AMD B650": {
+     "template": {"motherboards":"AMD AM4" },
+     "7492":"AMD B650"
+    },
+   "AMD A520": {
+     "template": {"motherboards":"AMD AM4" },
+     "4046":"AMD A520"
+    },
+   "AMD B550": {
+     "template": {"motherboards":"AMD AM4" },
+     "7357":"AMD B550"
+    },
+   "AMD X570": {
+     "template": {"motherboards":"AMD AM4" },
+     "4056":"AMD X570"
+    },
+   "AMD X670": {
+     "template": {"motherboards":"AMD AM4" },
+     "7784":"AMD X670"
+    },
+   "AMD TRX40": {
+     "template": {"motherboards":"AMD Threadripper" },
+     "7784":"AMD TRX40"
+    },
+   "AMD X399": {
+     "template": {"motherboards":"AMD Threadripper" },
+     "4059":"AMD X399"
+    },
+   "AMD WRX80": {
+     "template": {"motherboards":"AMD Threadripper" },
+     "3060":"AMD WRX80"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+ "google": {
+   "SMARTPHONES": {
+     "3403":"GOOGLE",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "2256":"GOOGLE",
+     "1023":"SMARTPHONES"
+    },
+   "GOOGLE PIXEL 6": {
+     "3404":"GOOGLE PIXEL 6",
+     "template": {"google":"SMARTPHONES" },
+     "719":"GOOGLE PIXEL 6"
+    },
+   "GOOGLE PIXEL 6A": {
+     "6320":"GOOGLE PIXEL 6A",
+     "template": {"google":"GOOGLE PIXEL 6" },
+     "6319":"GOOGLE PIXEL 6A"
+    },
+   "GOOGLE PIXEL 6 PRO": {
+     "3405":"GOOGLE PIXEL 6 PRO",
+     "template": {"google":"GOOGLE PIXEL 6" },
+     "720":"GOOGLE PIXEL 6 PRO"
+    },
+   "GOOGLE PIXEL 5A 5G": {
+     "3408":"GOOGLE PIXEL 5A 5G",
+     "template": {"google":"GOOGLE PIXEL" },
+     "721":"GOOGLE PIXEL 6 PRO"
+    }
+  }
+}

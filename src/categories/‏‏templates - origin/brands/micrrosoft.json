@@ -1,0 +1,35 @@
+{
+ "microsoft": {
+   "Xbox Series X": {
+     "3230":"Microsoft Xbox Series X",
+     "template": {"gaming":"CONSOLES" },
+     "3376":"Microsoft Xbox",
+     "3379":"Microsoft Xbox Series X",
+
+
+     "2255":"MICROSOFT brand axis",
+     "3232":"Microsoft X-Box"
+    },
+   "Xbox Series S": {
+     "3380":"Microsoft Xbox Series S",
+
+     "template": {"gaming":"CONSOLES" },
+     "3376":"Microsoft Xbox",
+     "3231":"Microsoft Xbox Series S",
+
+
+     "2255":"MICROSOFT brand axis",
+     "3232":"Microsoft X-Box"
+    },
+   "HEADPHONES": {
+     "9353":"HEADPHONES",
+     "2255":"Microsoft",
+     "template": {"consumer electronics root":"HEADPHONES" }
+    },
+   "SURFACE": {
+     "template": {"consumer electronics root":"TABLETS" },
+     "2255":"Microsoft",
+     "9467":"Micosoft Surface"
+    }
+  }
+}

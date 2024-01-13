@@ -1,0 +1,75 @@
+{
+ "cpu": {
+   "INTEL": {"template": {"desktop_hardware":"CPU" } },
+   "AMD": {"template": {"desktop_hardware":"CPU" } },
+   "APPLE M1 M2": {"template": {"desktop_hardware":"CPU" } },
+   "SNAPDRAGON": {"template": {"desktop_hardware":"CPU" } },
+   "MEDIATEK": {"template": {"desktop_hardware":"CPU" } },
+   "INTEL": {"template": {"cpu":"INTEL" } },
+   "INTEL LGA2066": {
+     "8162":"LGA1150",
+     "template": {"cpu":"INTEL" }
+    },
+   "INTEL LGA1150": {
+     "8162":"LGA1150",
+     "template": {"cpu":"INTEL" }
+    },
+   "INTEL LGA1151": {
+     "8163":"LGA1151",
+     "template": {"cpu":"INTEL" }
+    },
+   "INTEL LGA1200": {
+     "8164":"LGA1200",
+     "template": {"cpu":"INTEL" }
+    },
+   "INTEL CELERON LGA1200": {
+     "9331":"INTEL CELERON LGA1200",
+     "template": {"cpu":"INTEL LGA1200" }
+    },
+   "INTEL PENTIUM LGA1200": {
+     "9316":"INTEL PENTIUM LGA1200",
+     "template": {"cpu":"INTEL LGA1200" }
+    },
+   "I3 LGA1200": {
+     "9317":"INTEL I3 LGA1200",
+     "template": {"cpu":"INTEL LGA1200" }
+    },
+   "I5 LGA1200": {
+     "9318":"INTEL I5 LGA1200",
+     "template": {"cpu":"INTEL LGA1200" }
+    },
+   "I7 LGA1200": {
+     "9319":"INTEL I7 LGA1200",
+     "template": {"cpu":"INTEL LGA1200" }
+    },
+   "I9 LGA1200": {
+     "9320":"INTEL I9 LGA1200",
+     "template": {"cpu":"INTEL LGA1200" }
+    },
+   "INTEL LGA1700": {
+     "8165":"LGA1700",
+     "template": {"cpu":"INTEL" }
+    },
+
+   "PENTIUM LGA1700": {
+     "9321":"Intel PENTIUM LGA1700",
+     "template": {"cpu":"INTEL LGA1700" }
+    },
+   "I3 LGA1700": {
+     "9322":"Intel Core i3 LGA1700",
+     "template": {"cpu":"INTEL LGA1700" }
+    },
+   "I5 LGA1700": {
+     "9323":"Intel Core i5 LGA1700",
+     "template": {"cpu":"INTEL LGA1700" }
+    },
+   "I7 LGA1700": {
+     "9324":"Intel Core i7 LGA1700",
+     "template": {"cpu":"INTEL LGA1700" }
+    },
+   "I9 LGA1700": {
+     "9325":"Intel Core i9 LGA1700",
+     "template": {"cpu":"INTEL LGA1700" }
+    }
+  }
+}

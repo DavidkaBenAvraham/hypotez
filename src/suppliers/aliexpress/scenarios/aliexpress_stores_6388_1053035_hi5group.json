@@ -1,0 +1,906 @@
+{
+  "store": {
+    "store_id": 1053035,
+    "supplier_id": 6388,
+    "description": "hi5group",
+    "about": " ",
+    "category ID on site": "",
+    "brand": "APPLE",
+    "url": "https://hi5group.aliexpress.com/store/1053035",
+    "shop categories page": "",
+    "shop categories json file": "https://hi5group.aliexpress.com/store/productGroupsAjax.htm?storeId=1053035&shopVersion=3.0&callback=jsonp_910331321",
+    "get store banners": true
+  },
+  "scenarios": {
+    "iPhone 13 & 13 MINI": {
+      "category ID on site": 40000002781737,
+      "brand": "APPLE",
+      "url": "https://hi5group.aliexpress.com/store/group/iPhone-13-13-mini/1053035_40000002781737.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "apple": "iPhone 13"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "iPhone 12 & 12 PRO": {
+      "category ID on site": 40000001656481,
+      "brand": "APPLE",
+      "url": "https://hi5group.aliexpress.com/store/group/iPhone-12Pro-12Pro-Max/1053035_40000001656481.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "apple": "iPhone 12"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "iPhone 12 & 12 MINI": {
+      "category ID on site": 40000001656481,
+      "brand": "APPLE",
+      "url": "https://hi5group.aliexpress.com/store/group/iPhone-12Pro-12Pro-Max/1053035_40000001656481.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "apple": "iPhone 12 MINI"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "iPhone 11 & 11 PRO": {
+      "category ID on site": 40000001348326,
+      "brand": "APPLE",
+      "url": "https://hi5group.aliexpress.com/store/group/iPhone-11-11Pro-11Pro-Max/1053035_40000001348326.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "apple": "iPhone 11"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "iPhone XS": {
+      "category ID on site": 40000001270797,
+      "brand": "APPLE",
+      "url": "https://hi5group.aliexpress.com/store/group/iPhone-XS-XS-Max/1053035_40000001270797.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "apple": "iPhone XS"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "iPhone X": {
+      "category ID on site": 40000001270797,
+      "brand": "APPLE",
+      "url": "https://hi5group.aliexpress.com/store/group/iPhone-XS-XS-Max/1053035_40000001270797.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "apple": "iPhone X"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "iPhone SE 2020": {
+      "category ID on site": 40000001356172,
+      "brand": "APPLE",
+      "url": "https://hi5group.aliexpress.com/store/group/iPhone-SE-2020/1053035_40000001356172.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "apple": "iPhone SE 2020"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "iPhone 6": {
+      "category ID on site": 40000001348333,
+      "brand": "APPLE",
+      "url": "https://hi5group.aliexpress.com/store/group/iPhone-6-6-Plus/1053035_40000001348333.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "apple": "iPhone 6"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "iPhone 6S": {
+      "category ID on site": 40000001383459,
+      "brand": "APPLE",
+      "url": "https://hi5group.aliexpress.com/store/group/iPhone-6S-6S-Plus/1053035_40000001383459.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "apple": "iPhone 6S"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "iPhone 7": {
+      "category ID on site": 40000001352283,
+      "brand": "APPLE",
+      "url": "https://hi5group.aliexpress.com/store/group/iPhone-7-7-Plus/1053035_40000001352283.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "apple": "iPhone 7"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "iPhone 8": {
+      "category ID on site": 40000001270798,
+      "brand": "APPLE",
+      "url": "https://hi5group.aliexpress.com/store/group/iPhone-8-8-Plus/1053035_40000001270798.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "apple": "iPhone 8"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "iPhone SE": {
+      "category ID on site": 40000001387213,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/iPhone-SE/1053035_40000001387213.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Samsung Galaxy S7": {
+      "category ID on site": 510326017,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Samsung-Galaxy-S7/1053035_510326017.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Samsung Galaxy S8": {
+      "category ID on site": 514968110,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Samsung-Galaxy-S8/1053035_514968110.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Samsung Galaxy S9": {
+      "category ID on site": 505412749,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Samsung-Galaxy-S9/1053035_505412749.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Samsung Galaxy S10": {
+      "category ID on site": 10000000885524,
+      "brand": "SAMSUNG",
+      "url": "https://hi5group.aliexpress.com/store/group/Samsung-Galaxy-S10-S10P/1053035_10000000885524.html?spm=a2g0o.store_pc_groupList.0.0.5fda6723q6xgHB",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "samsung": "GALAXY S10"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "Samsung Galaxy S20": {
+      "category ID on site": 40000001527472,
+      "brand": "SAMSUNG",
+      "url": "https://hi5group.aliexpress.com/store/group/Samsung-Galaxy-S20-S20P-S20U/1053035_40000001527472.html?spm=a2g0o.store_pc_groupList.0.0.53ef42eeotkoMF",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "samsung": "GALAXY S20"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "Samsung Galaxy Note 8": {
+      "category ID on site": 504848815,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Samsung-Galaxy-Note-8/1053035_504848815.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Samsung Galaxy Note 9": {
+      "category ID on site": 10000000897085,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Samsung-Galaxy-Note-9/1053035_10000000897085.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Samsung Galaxy Note 10": {
+      "category ID on site": 10000000897085,
+      "brand": "APPLE",
+      "url": "https://hi5group.aliexpress.com/store/group/Samsung-Galaxy-Note-9/1053035_10000000897085.html?spm=a2g0o.store_pc_groupList.0.0.562e412cXsikZj",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "samsung": "GALAXY NOTE 10"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "Sony Xperia 1 II": {
+      "category ID on site": 40000001676594,
+      "brand": "SONY",
+      "url": "https://hi5group.aliexpress.com/store/group/Xperia-1-II/1053035_40000001676594.html?spm=a2g0o.store_pc_groupList.0.0.5449412cJnU7Ia",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "sony": "XPERIA 1 II"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "Sony Xperia 5 II": {
+      "category ID on site": 40000001590734,
+      "brand": "SONY",
+      "url": "https://hi5group.aliexpress.com/store/group/Xperia-5-II/1053035_40000001590734.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "sony": "XPERIA 5 II"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "Sony Xperia 1": {
+      "category ID on site": 40000001549595,
+      "brand": "SONY",
+      "url": "https://hi5group.aliexpress.com/store/group/Xperia-1/1053035_40000001549595.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "sony": "XPERIA 1"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "Sony Xperia 5": {
+      "category ID on site": 40000001735555,
+      "brand": "SONY",
+      "url": "https://hi5group.aliexpress.com/store/group/Xperia-5/1053035_40000001735555.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "sony": "XPERIA 5"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "Sony Xperia XZ3": {
+      "category ID on site": 40000001735555,
+      "brand": "SONY",
+      "url": "https://hi5group.aliexpress.com/store/group/Xperia-5/1053035_40000001735555.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "sony": "XPERIA XZ3"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "Sony Xperia XZ1": {
+      "category ID on site": 40000001660124,
+      "brand": "SONY",
+      "url": "https://hi5group.aliexpress.com/store/group/Xperia-XZ1/1053035_40000001660124.html",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "sony": "XPERIA XZ1"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "Sony Xperia XZ": {
+      "category ID on site": 40000001660124,
+      "brand": "SONY",
+      "url": "https://hi5group.aliexpress.com/store/group/Xperia-XZ1/1053035_40000001660124.html?spm=a2g0o.store_pc_groupList.0.0.3cb23945iYO9ng",
+      "active": true,
+      "condition": "new",
+      "presta_categories": {
+        "template": {
+          "sony": "XPERIA XZ"
+        }
+      },
+      "product combinations": [
+        "bundle",
+        "color"
+      ]
+    },
+    "LG V50": {
+      "category ID on site": 505468179,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/LG-V50/1053035_505468179.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "LG V60": {
+      "category ID on site": 518549558,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/LG-V60/1053035_518549558.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "LG VELVET": {
+      "category ID on site": 518549559,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/LG-VELVET/1053035_518549559.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "LG WING": {
+      "category ID on site": 40000001623891,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/LG-WING/1053035_40000001623891.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "iPhone 12 &12 mini": {
+      "category ID on site": 40000001352281,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/iPhone-12-12-mini/1053035_40000001352281.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "iPhone X & XR": {
+      "category ID on site": 40000001387208,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/iPhone-X-XR/1053035_40000001387208.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Samsung Galaxy...": {
+      "category ID on site": 40000001527472,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Samsung-Galaxy-S20-S20P-S20U/1053035_40000001527472.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "Samsung Galaxy Note...": {
+      "category ID on site": 10000000803687,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Samsung-Galaxy-Note-10-Note-10P/1053035_10000000803687.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    " Xperia  1 II       ...": {
+      "category ID on site": 40000001676594,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Xperia-1-II/1053035_40000001676594.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    " Xperia XZ3": {
+      "category ID on site": 40000001570836,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Xperia-XZ3/1053035_40000001570836.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    " Xperia XZ ": {
+      "category ID on site": 40000001562793,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Xperia-XZ/1053035_40000001562793.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "About Us": {
+      "category ID on site": 514630366,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/About-Us/1053035_514630366.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    " Accessories &...": {
+      "category ID on site": 504649144,
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Accessories-Shipping-fee/1053035_504649144.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "groups": [
+      {
+        "encode": true,
+        "highlight": false,
+        "isExpand": "Y",
+        "autoGroup": false,
+        "groupId": 40000001383453,
+        "subGroupList": [
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000002781737,
+            "name": "iPhone 13 &13 mini",
+            "url": "//www.aliexpress.com/store/group/iPhone-13-13-mini/1053035_40000002781737.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001656481,
+            "name": "iPhone 12Pro &12Pro...",
+            "url": "//www.aliexpress.com/store/group/iPhone-12Pro-12Pro-Max/1053035_40000001656481.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001352281,
+            "name": "iPhone 12 &12 mini",
+            "url": "//www.aliexpress.com/store/group/iPhone-12-12-mini/1053035_40000001352281.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001348326,
+            "name": "iPhone 11 & 11Pro &...",
+            "url": "//www.aliexpress.com/store/group/iPhone-11-11Pro-11Pro-Max/1053035_40000001348326.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001270797,
+            "name": "iPhone XS & XS Max",
+            "url": "//www.aliexpress.com/store/group/iPhone-XS-XS-Max/1053035_40000001270797.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001387208,
+            "name": "iPhone X & XR",
+            "url": "//www.aliexpress.com/store/group/iPhone-X-XR/1053035_40000001387208.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001356172,
+            "name": "iPhone SE2020 &...",
+            "url": "//www.aliexpress.com/store/group/iPhone-SE2020-SE2022/1053035_40000001356172.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001270798,
+            "name": "iPhone 8 & 8 Plus",
+            "url": "//www.aliexpress.com/store/group/iPhone-8-8-Plus/1053035_40000001270798.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001352283,
+            "name": "iPhone 7 & 7 Plus",
+            "url": "//www.aliexpress.com/store/group/iPhone-7-7-Plus/1053035_40000001352283.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001383459,
+            "name": "iPhone 6S & 6S Plus",
+            "url": "//www.aliexpress.com/store/group/iPhone-6S-6S-Plus/1053035_40000001383459.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001348333,
+            "name": "iPhone 6 & 6 Plus",
+            "url": "//www.aliexpress.com/store/group/iPhone-6-6-Plus/1053035_40000001348333.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001387213,
+            "name": "iPhone SE",
+            "url": "//www.aliexpress.com/store/group/iPhone-SE/1053035_40000001387213.html"
+          }
+        ],
+        "name": "Apple Phone",
+        "url": "//www.aliexpress.com/store/group/Apple-Phone/1053035_40000001383453.html"
+      },
+      {
+        "encode": true,
+        "highlight": false,
+        "isExpand": "Y",
+        "autoGroup": false,
+        "groupId": 254389779,
+        "subGroupList": [
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 510326017,
+            "name": " Galaxy S8 S8P&S9 S9P",
+            "url": "//www.aliexpress.com/store/group/Galaxy-S8-S8P-S9-S9P/1053035_510326017.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 10000000885524,
+            "name": "Galaxy...",
+            "url": "//www.aliexpress.com/store/group/Galaxy-S10e-S10-S10Plus/1053035_10000000885524.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 504848815,
+            "name": "Galaxy Note 8 & Note...",
+            "url": "//www.aliexpress.com/store/group/Galaxy-Note-8-Note-9/1053035_504848815.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 10000000803687,
+            "name": "Galaxy Note 10 &...",
+            "url": "//www.aliexpress.com/store/group/Galaxy-Note-10-Note-10Plus/1053035_10000000803687.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000003665411,
+            "name": "Galaxy S20 FE & S20",
+            "url": "//www.aliexpress.com/store/group/Galaxy-S20-FE-S20/1053035_40000003665411.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001527472,
+            "name": "Galaxy S20 Plus &...",
+            "url": "//www.aliexpress.com/store/group/Galaxy-S20-Plus-S20U-Ultra/1053035_40000001527472.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000003661636,
+            "name": "Galaxy Note 20 &...",
+            "url": "//www.aliexpress.com/store/group/Galaxy-Note-20-Note-20-Ultra/1053035_40000003661636.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000003684548,
+            "name": "Galaxy S21 FE & S21",
+            "url": "//www.aliexpress.com/store/group/Galaxy-S21-FE-S21/1053035_40000003684548.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000003623418,
+            "name": "Galaxy S21Plus & S21...",
+            "url": "//www.aliexpress.com/store/group/Galaxy-S21Plus-S21-Ultra/1053035_40000003623418.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000003482748,
+            "name": "Galaxy S22 FE & S22",
+            "url": "//www.aliexpress.com/store/group/Galaxy-S22-FE-S22/1053035_40000003482748.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000003684560,
+            "name": "Galaxy S22 Plus FE &...",
+            "url": "//www.aliexpress.com/store/group/Galaxy-S22-Plus-FE-S22-Ultra/1053035_40000003684560.html"
+          }
+        ],
+        "name": "Samsung Phone",
+        "url": "//www.aliexpress.com/store/group/Samsung-Phone/1053035_254389779.html"
+      },
+      {
+        "encode": true,
+        "highlight": false,
+        "isExpand": "Y",
+        "autoGroup": false,
+        "groupId": 254334106,
+        "subGroupList": [
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 505468179,
+            "name": "LG V50",
+            "url": "//www.aliexpress.com/store/group/LG-V50/1053035_505468179.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 518549558,
+            "name": "LG V60",
+            "url": "//www.aliexpress.com/store/group/LG-V60/1053035_518549558.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 518549559,
+            "name": "LG VELVET",
+            "url": "//www.aliexpress.com/store/group/LG-VELVET/1053035_518549559.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001623891,
+            "name": "LG WING",
+            "url": "//www.aliexpress.com/store/group/LG-WING/1053035_40000001623891.html"
+          }
+        ],
+        "name": "LG  Phone",
+        "url": "//www.aliexpress.com/store/group/LG-Phone/1053035_254334106.html"
+      },
+      {
+        "encode": true,
+        "highlight": false,
+        "isExpand": "Y",
+        "autoGroup": false,
+        "groupId": 510082237,
+        "subGroupList": [
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001676594,
+            "name": " Xperia  1 II       ...",
+            "url": "//www.aliexpress.com/store/group/Xperia-1-II/1053035_40000001676594.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001590734,
+            "name": " Xperia  5 II       ...",
+            "url": "//www.aliexpress.com/store/group/Xperia-5-II/1053035_40000001590734.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001549595,
+            "name": " Xperia 1            ",
+            "url": "//www.aliexpress.com/store/group/Xperia-1/1053035_40000001549595.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001735555,
+            "name": " Xperia 5           ...",
+            "url": "//www.aliexpress.com/store/group/Xperia-5/1053035_40000001735555.html"
+          },
+          {
+            "encode": true,
+            "highlight": false,
+            "isExpand": "Y",
+            "autoGroup": false,
+            "groupId": 40000001570836,
+            "name": " Xperia XZ3",
+            "url": "//www.aliexpress.com/store/group/Xperia-XZ3/1053035_40000001570836.html"
+          }
+        ],
+        "name": "SONY Phone",
+        "url": "//www.aliexpress.com/store/group/SONY-Phone/1053035_510082237.html"
+      },
+      {
+        "encode": true,
+        "highlight": false,
+        "isExpand": "Y",
+        "autoGroup": false,
+        "groupId": 514630366,
+        "subGroupList": [
+        ],
+        "name": "About Us",
+        "url": "//www.aliexpress.com/store/group/About-Us/1053035_514630366.html"
+      },
+      {
+        "encode": true,
+        "highlight": false,
+        "isExpand": "Y",
+        "autoGroup": false,
+        "groupId": 504649144,
+        "subGroupList": [
+        ],
+        "name": " Accessories &...",
+        "url": "//www.aliexpress.com/store/group/Accessories-Shipping-fee/1053035_504649144.html"
+      }
+    ],
+    "allProductsUrl": "//www.aliexpress.com/store/all-wholesale-products/1053035.html",
+    "encode": {
+      "category ID on site": 40000001383453,
+      "brand": "APPLE",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Apple-Phone/1053035_40000001383453.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "highlight": {
+      "category ID on site": 40000001383453,
+      "brand": "APPLE",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Apple-Phone/1053035_40000001383453.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "isExpand": {
+      "category ID on site": 40000001383453,
+      "brand": "APPLE",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Apple-Phone/1053035_40000001383453.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "autoGroup": {
+      "category ID on site": 40000001383453,
+      "brand": "APPLE",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Apple-Phone/1053035_40000001383453.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "groupId": {
+      "category ID on site": 40000001383453,
+      "brand": "APPLE",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Apple-Phone/1053035_40000001383453.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "subGroupList": {
+      "category ID on site": 40000001383453,
+      "brand": "APPLE",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Apple-Phone/1053035_40000001383453.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "name": {
+      "category ID on site": 40000001383453,
+      "brand": "APPLE",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Apple-Phone/1053035_40000001383453.html",
+      "condition": "",
+      "presta_categories": ""
+    },
+    "url": {
+      "category ID on site": 40000001383453,
+      "brand": "APPLE",
+      "active": true,
+      "url": "//www.aliexpress.com/store/group/Apple-Phone/1053035_40000001383453.html",
+      "condition": "",
+      "presta_categories": ""
+    }
+  }
+}

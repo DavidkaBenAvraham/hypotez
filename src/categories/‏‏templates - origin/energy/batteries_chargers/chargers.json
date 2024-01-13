@@ -1,0 +1,59 @@
+{
+ "chargers": {
+   "CHARGERS": {
+     "7932":"Chargers",
+     "template": {"consumer electronics root":"BATTERIES & POWER" },
+     "7709":"Chargers"
+    },
+   "LITHIUM BATTERY CHARGER": {
+     "7880":"Lithium Battery Charger",
+     "template": {"chargers":"CHARGERS" },
+     "7892":"Lithium Battery Charger"
+    },
+   "2S 8.4V Charger": {
+     "7881":"2S 8.4V Charger",
+     "template": {"chargers":"LITHIUM BATTERY CHARGER" },
+     "7893":"2S 8.4V Charger"
+    },
+   "3S 12.6V Charger": {
+     "7882":"3S 12.6V Charger",
+     "template": {"chargers":"LITHIUM BATTERY CHARGER" },
+     "7894":"3S 12.6V Charger"
+    },
+   "4S 16.8V Charger": {
+     "7883":"4S 16.8V Charger",
+     "template": {"chargers":"LITHIUM BATTERY CHARGER" },
+     "7895":"4S 16.8V Charger"
+    },
+   "6S 25.2V Charger": {
+     "7884":"6S 25.2V Charger",
+     "template": {"chargers":"LITHIUM BATTERY CHARGER" },
+     "7896":"6S 25.2V Charger"
+    },
+   "7S 29.4V Charger": {
+     "7885":"7S 29.4V Charger",
+     "template": {"chargers":"LITHIUM BATTERY CHARGER" },
+     "7897":"7S 29.4V Charger"
+    },
+   "10S 36V 42V Charger": {
+     "7886":"10S 36V 42V Charger",
+     "template": {"chargers":"LITHIUM BATTERY CHARGER" },
+     "7898":"10S 36V 42V Charger"
+    },
+   "13S 48V 54.6V Charger": {
+     "7887":"13S 48V 54.6V Charger",
+     "template": {"chargers":"LITHIUM BATTERY CHARGER" },
+     "7899":"13S 48V 54.6V Charger"
+    },
+   "16S 60V 67.2V Charger": {
+     "7888":"16S 60V 67.2V Charger",
+     "template": {"chargers":"LITHIUM BATTERY CHARGER" },
+     "7900":"16S 60V 67.2V Charger"
+    },
+   "20S 72V 84V Charger": {
+     "7889":"20S 72V 84V Charger",
+     "template": {"chargers":"LITHIUM BATTERY CHARGER" },
+     "7901":"20S 72V 84V Charger"
+    }
+  }
+}

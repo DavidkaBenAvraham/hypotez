@@ -1,0 +1,374 @@
+{
+ "corsair": {
+   "FULL TOWER": {
+     "7982":"CORSAIR",
+     "template": {"computer cases":"FULL TOWER" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "4030":"FULL TOWER"
+    },
+   "MID TOWER": {
+     "7983":"CORSAIR",
+     "template": {"computer cases":"MID TOWER" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "4031":"MID TOWER"
+    },
+   "MINI TOWER": {
+     "7984":"CORSAIR",
+     "template": {"computer cases":"MINI TOWER" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "4032":"MINI TOWER"
+    },
+
+   "GAMING MID TOWER": {
+     "7985":"CORSAIR",
+     "template": {"computer cases":"GAMING MID TOWER" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "4033":"GAMING MID TOWER"
+    },
+   "GAMING FULL TOWER": {
+     "7986":"CORSAIR",
+     "template": {"computer cases":"GAMING FULL TOWER" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "4034":"GAMING FULL TOWER"
+    },
+   "ITX": {
+     "7987":"CORSAIR",
+     "template": {"computer cases":"ITX" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "4035":"ITX"
+    },
+   "MINI ITX": {
+     "7988":"CORSAIR",
+     "template": {"computer cases":"MINI ITX" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "4036":"MINI ITX"
+    },
+   "CFF (Сompact Form Factor)": {
+     "7989":"CORSAIR",
+     "template": {"computer cases":"CFF (Сompact Form Factor)" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "4037":"CFF (Сompact Form Factor)"
+    },
+   "LFF (Low Profile Form Factor)": {
+     "7990":"CORSAIR",
+     "template": {"computer cases":"LFF (Low Profile Form Factor)" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "4038":"LFF (Low Profile Form Factor)"
+    },
+   "SFF (Small Form Factor)": {
+     "7991":"CORSAIR",
+     "template": {"computer cases":"SFF (Small Form Factor)" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7636":"SFF (Small Form Factor)"
+    },
+   "TFF (Thin Form Factor)": {
+     "7992":"CORSAIR",
+     "template": {"computer cases":"TFF (Thin Form Factor)" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7637":"TFF (Thin Form Factor)"
+    },
+   "FLEX ATX": {
+     "7993":"CORSAIR",
+     "template": {"computer cases":"FLEX ATX" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7638":"FLEX ATX"
+    },
+   "MINI PCI": {
+     "7994":"CORSAIR",
+     "template": {"computer cases":"MINI PCI" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7639":"MINI PCI"
+    },
+   "ATX": {
+     "7995":"CORSAIR",
+     "template": {"computer cases":"ATX" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7640":"ATX"
+    },
+   "1U": {
+     "7996":"CORSAIR",
+     "template": {"computer cases":"1U" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7641":"1U"
+    },
+   "2U": {
+     "7997":"CORSAIR",
+     "template": {"computer cases":"2U" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7642":"2U"
+    },
+   "3U": {
+     "7998":"CORSAIR",
+     "template": {"computer cases":"3U" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7643":"3U"
+    },
+   "4U": {
+     "7999":"CORSAIR",
+     "template": {"computer cases":"4U" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7644":"4U"
+    },
+   "5U": {
+     "8000":"CORSAIR",
+     "template": {"computer cases":"5U" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7645":"5U"
+    },
+   "6U": {
+     "8001":"CORSAIR",
+     "template": {"computer cases":"6U" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7646":"6U"
+    },
+   "7U": {
+     "8002":"CORSAIR",
+     "template": {"computer cases":"7U" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7647":"7U"
+    },
+   "8U": {
+     "8003":"CORSAIR",
+     "template": {"computer cases":"8U" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7648":"8U"
+    },
+   "9U": {
+     "8004":"CORSAIR",
+     "template": {"computer cases":"9U" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7649":"9U"
+    },
+   "10U": {
+     "8005":"CORSAIR",
+     "template": {"computer cases":"10U" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7650":"10U"
+    },
+   "11U": {
+     "8006":"CORSAIR",
+     "template": {"computer cases":"11U" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7651":"11U"
+    },
+   "12U": {
+     "8007":"CORSAIR",
+     "template": {"computer cases":"12U" },
+     "3344":"CORSAIR",
+     "4013":"computer cases",
+     "7657":"12U"
+
+    },
+   "HEADPHONES": {
+     "9255":"HEADPHONES",
+     "8007":"CORSAIR",
+     "template": {"consumer electronics root":"HEADPHONES" }
+    },
+   "MEMORY": {
+     "3784":"MEMORY",
+     "template": {"memory plates":"MEMORY" }
+
+    },
+   "DIMM": {
+     "3785":"DIMM",
+     "template": {"memory plates":"DIMM" }
+    },
+   "SODIMM": {
+     "3786":"SODIMM",
+     "template": {"memory plates":"SODIMM" }
+    },
+   "DIMM DDR 3": {
+     "9258":"DIMM DDR 3",
+     "template": {
+       "memory plates":"DIMM DDR 3"
+      }
+
+    },
+   "DIMM DDR 3 2G": {
+     "9359":"DIMM DDR 3 2G",
+     "template": {
+       "memory plates":"DIMM DDR 3 2G"
+      },
+     "9336":"DIMM DDR 3 2G"
+    },
+   "DIMM DDR 3 4G": {
+     "9360":"DIMM DDR 4G",
+     "template": {
+       "memory plates":"DIMM DDR 3 4G"
+      }
+    },
+   "DIMM DDR 3 8GB": {
+     "9361":"DIMM DDR 8GB",
+     "template": {
+       "memory plates":"DIMM DDR 3 8GB"
+      }
+    },
+   "DIMM DDR 3 16GB": {
+     "9362":"DIMM DDR 16GB",
+     "template": {
+       "memory plates":"DIMM DDR 3 16GB"
+      }
+    },
+   "DIMM DDR 3 32GB": {
+     "9363":"DIMM DDR 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 3 32GB"
+      }
+    },
+   "DIMM DDR 3 64GB": {
+     "9364":"DIMM DDR 64GB",
+     "template": {
+       "memory plates":"DIMM DDR 3 64GB"
+      }
+    },
+   "DIMM DDR 4": {
+     "9365":"DIMM DDR 4",
+     "template": {
+       "memory plates":"DIMM DDR 4"
+      }
+    },
+   "DIMM DDR 4 4GB": {
+     "9366":"DIMM DDR 4 4GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 4GB"
+      }
+
+    },
+   "DIMM DDR 4 8GB": {
+     "9367":"DIMM DDR 4 8GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 8GB"
+      }
+    },
+
+   "DIMM DDR 4 16GB": {
+     "9368":"DIMM DDR 4 16GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 16GB"
+      }
+    },
+   "DIMM DDR 4 32GB": {
+     "9369":"DIMM DDR 4 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 32GB"
+      }
+    },
+   "DIMM DDR 4 64GB": {
+     "9370":"DIMM DDR 4 64GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 64GB"
+      }
+    },
+   "DIMM DDR 4 128GB": {
+     "9383":"DIMM DDR 4 128GB",
+     "template": {
+       "memory plates":"DIMM DDR 4 128GB"
+      }
+    },
+   "DIMM DDR 5": {
+     "9371":"DIMM DDR 5",
+     "template": {
+       "memory plates":"DIMM DDR 5"
+      }
+    },
+   "DIMM DDR 5 4GB": {
+     "9372":"DIMM DDR 5 4GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 4GB"
+      }
+    },
+   "DIMM DDR 5 8GB": {
+     "9373":"DIMM DDR 5 8GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 8GB"
+      }
+    },
+   "DIMM DDR 5 16GB": {
+     "9374":"DIMM DDR 5 16GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 16GB"
+      }
+    },
+   "DIMM DDR 5 32GB": {
+     "9375":"DIMM DDR 5 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 32GB"
+      }
+    },
+   "DIMM DDR 5 64GB": {
+     "9376":"DIMM DDR 5 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 32GB"
+      }
+    },
+   "DIMM DDR 5 128GB": {
+     "9384":"DIMM DDR 5 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 32GB"
+      }
+    },
+   "DIMM DDR 5 256GB": {
+     "9385":"DIMM DDR 5 32GB",
+     "template": {
+       "memory plates":"DIMM DDR 5 32GB"
+      }
+    },
+   "AIR CHAISES COOLING": {
+     "10358":"CORSAIR",
+     "template": {
+       "computer cooling":"CHAISES COOLING"
+      },
+     "3344":"CORSAIR",
+     "10363":"AIR COOLING SYSTEMS"
+    },
+   "LIQUID CHAISES COOLING": {
+     "10358":"CORSAIR",
+     "template": {
+       "computer cooling":"CHAISES COOLING"
+      },
+     "3344":"CORSAIR",
+     "10362":"LIQUID COOLING SYSTEMS"
+    },
+   "AIR CPU COOLING": {
+     "10358":"CORSAIR",
+     "template": {
+       "computer cooling":"CPU COOLING"
+      },
+     "3344":"CORSAIR",
+     "10366":"AIR COOLING SYSTEMS"
+    },
+   "LIQUID CPU COOLING": {
+     "10358":"CORSAIR",
+     "template": {
+       "computer cooling":"CPU COOLING"
+      },
+     "3344":"CORSAIR",
+     "10362":"LIQUID COOLING SYSTEMS"
+    }
+  }
+}

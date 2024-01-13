@@ -1,0 +1,107 @@
+{
+ "sony": {
+   "SMARTPHONES": {
+     "6372":"SONY",
+     "template": {"consumer electronics root":"SMARTPHONES" },
+     "2254":"Sony",
+     "6371":"Smartphones"
+
+    },
+   "CONSOLES": {
+     "6372":"SONY",
+     "template": {"gaming":"CONSOLES" },
+     "2254":"Sony",
+     "2482":"Gaming Consoles"
+    },
+   "HEADPHONES BT In-ear Bud": {
+     "7661":"SONY",
+
+     "template": {"headphones":"BT In-ear Bud" },
+     "2254":"Sony",
+     "2488":"Headphones",
+     "4230":"BT HEDPHONES"
+    },
+   "HEADPHONES BT OVEREAR": {
+     "7661":"SONY",
+
+     "template": {"headphones":"BT Overear" },
+     "2254":"Sony",
+     "2488":"Headphones",
+     "4230":"BT HEDPHONES"
+    },
+   "HEADPHONES NECKBAND": {
+     "7661":"SONY",
+
+     "template": {"headphones":"BT Overear" },
+     "2254":"Sony",
+     "2488":"Headphones",
+     "4230":"BT HEDPHONES"
+    },
+   "PlayStation 4": {
+     "7535":"PlayStation 4",
+     "template": {"sony":"CONSOLES" },
+     "2483":"PlayStation 4"
+    },
+   "PlayStation 5": {
+     "7536":"PlayStation 5",
+     "template": {"sony":"CONSOLES" },
+     "2484":"PlayStation 5"
+    },
+
+
+   "XPERIA 1": {
+     "7262":"XPERIA 1",
+     "template": {"sony":"SMARTPHONES" },
+     "7255":"XPERIA 1"
+    },
+   "XPERIA 1 II": {
+     "7260":"XPERIA 1 II",
+     "template": {"sony":"XPERIA 1" },
+     "7253":"XPERIA 1 II"
+    },
+   "XPERIA 1 III": {
+     "9030":"XPERIA 1 III",
+     "template": {"sony":"XPERIA 1" },
+     "9029":"XPERIA 1 III"
+    },
+
+   "XPERIA 5": {
+     "7263":"XPERIA 5",
+     "template": {"sony":"SMARTPHONES" },
+     "7256":"XPERIA 5"
+    },
+   "XPERIA 5 II": {
+     "7261":"XPERIA 5 II",
+     "7263":"XPERIA 5",
+     "template": {"sony":"SMARTPHONES" },
+     "7256":"XPERIA 5",
+     "7254":"XPERIA 5 II"
+    },
+
+   "XPERIA 10": {
+     "9028":"XPERIA 10",
+     "template": {"sony":"SMARTPHONES" },
+     "9027":"XPERIA 10"
+    },
+
+   "XPERIA XZ": {
+     "7266":"XPERIA XZ",
+     "template": {"sony":"SMARTPHONES" },
+     "7259":"XPERIA XZ"
+    },
+   "XPERIA XZ1": {
+     "7265":"XPERIA XZ1",
+     "7266":"XPERIA XZ",
+     "template": {"sony":"SMARTPHONES" },
+     "7259":"XPERIA XZ",
+     "7258":"XPERIA XZ1"
+    },
+   "XPERIA XZ3": {
+     "7264":"XPERIA XZ3",
+     "7266":"XPERIA XZ",
+     "template": {"sony":"SMARTPHONES" },
+     "7259":"XPERIA XZ",
+     "7257":"XPERIA XZ3"
+    }
+  }
+}
