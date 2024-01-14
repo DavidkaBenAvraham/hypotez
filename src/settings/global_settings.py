@@ -384,6 +384,7 @@ class ProjectSettings():
 
         # Подключение к базе данных Keepass
         kp: PyKeePass = self.open_kp()
+        if not kp: return False
 
 
         # ------------------------------- default_webdriver, scenario_language, threads ----------------
@@ -578,10 +579,12 @@ class ProjectSettings():
         
         if not Beeper.silent: asyncio.run(Beeper.beep(BeepLevel.INFO_LONG))
            
+        kp: PyKeePass =  None
         try:
             """! Возвращаю объект `KeePass` """
-            return PyKeePass (str (Path (self.dir_root, 'src', 'settings', 'db.kdbx') ), 
+            kp = PyKeePass (str (Path (self.dir_root, 'src', 'settings', 'db.kdbx') ), 
                                     password = getpass.getpass ('Master password for keepass database: '))
+            return kp
         except Exception as ex:
             logger.error(f'ошибка ', ex)
 

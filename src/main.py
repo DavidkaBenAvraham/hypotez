@@ -129,10 +129,13 @@ def launcher (supplier_prefix: Union [ list[str], str ] = None,
             threads: bool = False,
             gui_mode: str = None) -> bool:
     """! @~russian
-        @brief функция стартер программы. 
+        @brief <b>функция стартер программы</b>
         @details 
-        
-       Функция принимает на вход:
+        Функция получает на вход параметры запуска инстанса `Supplier` и корректно запускает инстaнс поставщика коммадой `run_supplier()`        
+       
+        @image html 'func_launcher.png'
+                
+        Функция принимает на вход:
        - список поставщиков `supplier_prefix`. <sub>[Опционально]</sub> Если аргумент не задан - то берется дефолтный из `gs.supplier_prefix`.
        - список сценариев <sub>[Опционально]</sub>
        - список файлов сценариев <sub>[Опционально]</sub>
@@ -262,6 +265,8 @@ def launcher (supplier_prefix: Union [ list[str], str ] = None,
         @endcode
         
         
+        
+        src.suppliers.supplier.Supplier.run_supplier()
         
         @~english    
         @brief Based on the `supplier_prefix`, creates an instance of the supplier and launches it.  

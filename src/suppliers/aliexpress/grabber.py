@@ -58,10 +58,10 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	global l
 	l = s.locators['product']
 	
-	d.scroll(3)
+	d.scroll()
 	"""! прокручиваю страницу товара, чтобы захватить области, которые подгружаются через AJAX """
 
-	f.active = field_active() # [v]
+	#f.active = field_active() # [v] (added by default)
 	f.additional_delivery_times = field_additional_delivery_times()	# [v]  Мое поле. Нахера - не знаю
 	f.additional_shipping_cost  = field_additional_shipping_cost() # [v]
 	f.advanced_stock_management = field_advanced_stock_management()

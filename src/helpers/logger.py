@@ -107,11 +107,8 @@ class LoggerSingleton():
         @param ex: Исключение
         @return: Отформатированный traceback.
         """
-        trbk = traceback.format_exc (ex)
-        #trbk = traceback.print_exception(ex)
-        if not trbk: return ''
-        #return trbk.format_exc()
-        return trbk
+
+        return traceback.print_exc ()
 
     def info(self, message, ex = None, exc_info=True):
         """!

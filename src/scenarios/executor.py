@@ -44,7 +44,7 @@ from src.io_interface import j_loads, j_dumps
 
 #@logs_and_errors_decorator(default_return =  False)
 def run_scenario_files(s, list_scenario_files_paths: Union [list[Path], Path] ) -> bool:
-    """!@ru_brief функция запускает список файлов сценариев один за другим
+    """!@~russian функция запускает список файлов сценариев один за другим
     
     @param s `src.suppliers.Supplier`
     @param scenario_files `list[str] | str` = `None` : A list of file paths for the JSON scenario files to be executed. 
@@ -148,7 +148,7 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> bool:
     list_products_in_category: list = s.related_modules.get_list_products_in_category(s)
     """! @russian Я решил отдавать поставщику обязанность собрать линки на товары """
 
-    # Нет товаров в категории
+    # Нет товаров в категории (или не успели загрузиться)
     if not list_products_in_category:
         logger.warning ('Не собран список товаров со страницы категории. Возможно пустая категория  - ', d.current_url)
         return False

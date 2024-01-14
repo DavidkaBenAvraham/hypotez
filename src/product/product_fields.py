@@ -210,15 +210,13 @@ class ProductFields:
 
     def _payload(self, s: Supplier, *args, **kwargs):
         """! Загрузка дефолтных значений полей """
+        
         _default = j_loads (Path (gs.dir_src, 'product', 'product_fields_default_values.json'))
-        """! данные по умолчанию для полей престашоп хранятся в json """
-       
+        
         for attr_name, default_value in _default.items():
             setattr(self, f'field_{attr_name}', default_value)
         pass
-    
-        for field in self.fields:
-            setattr(self, field, locals()[f'field_{field}']())
+
     
     def get_fields(self):
         """! Чтобы получить список полей (атрибутов) класса, 
@@ -257,7 +255,149 @@ class ProductFields:
 
 ############################################################
 
+
 #   1   ID товара
+    @property
+    def field_assotiations(self):
+        """! <sub>*[getter]*</sub> Возвращает словарь ключей ассоциаций.
+        @details
+        Конструкция `assotiations`:
+        
+        ```python
+        {
+         "categories": {
+            "category": [
+              { "id": "1" },
+              { "id": "2" },
+              { "id": "3" }
+            ]
+        },
+        
+        "images": {
+            "image": [ { "id": "1" }  ]
+        },
+      
+        "combinations": {
+            "combination": { "id": "" }
+        },
+        
+        "product_option_values": {
+            "product_option_value": { "id": ""}
+            },
+            
+        "product_features": {
+            "product_feature": {
+                "id": "",
+                "id_feature_value": ""
+            }
+        },
+        
+        "tags": {
+            "tag": { "id": "" }
+        },
+        
+        "stock_availables": {
+            "stock_available": [
+                { "id": "1", "id_product_attribute": "1" },
+                { "id": "2", "id_product_attribute": "2" },
+                { "id": "3", "id_product_attribute": "3" }
+            ]
+        },
+      
+        "attachments": {
+            "attachment": {
+                "id": ""
+            }
+        },
+        "accessories": {
+        "product": {
+            "id": ""
+        }
+        },
+        "product_bundle": {
+        "product": {
+            "id": "",
+            "id_product_attribute": "",
+            "quantity": ""
+        }
+        }
+            }```
+        """
+        return self.assotiations
+    @field_assotiations.setter
+    #@logs_and_errors_decorator (default_return =  False)
+    def field_assotiations(self, value: dict = None) -> dict:
+        """!  <sub>*[setter]*</sub>  Словарь ассоциаций. Список асоциаций:
+        
+        `product_bundle, 
+        accessories, 
+        attachments, 
+        stock_availables, 
+        tags, 
+        product_features, 
+        product_option_values, 
+        combinations, 
+        images, 
+        categories`
+        """
+        if not self.assotiations:
+            self.associations:dict =  {
+            "categories": {
+            "category": {
+              "id": ""
+            }
+          },
+          "images": {
+            "image": {
+              "id": ""
+            }
+          },
+          "combinations": {
+            "combination": {
+              "id": ""
+            }
+          },
+          "product_option_values": {
+            "product_option_value": {
+              "id": ""
+            }
+          },
+          "product_features": {
+            "product_feature": {
+              "id": "",
+              "id_feature_value": ""
+            }
+          },
+          "tags": {
+            "tag": {
+              "id": ""
+            }
+          },
+          "stock_availables": {
+            "stock_available": {
+              "id": "",
+              "id_product_attribute": ""
+            }
+          },
+          "attachments": {
+            "attachment": {
+              "id": ""
+            }
+          },
+          "accessories": {
+            "product": {
+              "id": ""
+            }
+          },
+          "product_bundle": {
+            "product": {
+              "id": "",
+              "id_product_attribute": "",
+              "quantity": ""
+            }
+          }
+        }
+
     @property
     def field_id_product(self) -> int :
         """! <sub>*[property]*</sub>  `ps_product.id: int(10) unsigned`

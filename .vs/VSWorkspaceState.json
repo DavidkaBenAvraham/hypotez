@@ -2,15 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\helpers",
+    "\\src\\prestashop",
+    "\\src\\prestashop\\schemas_apis",
     "\\src\\product",
+    "\\src\\scenarios",
+    "\\src\\settings",
     "\\src\\suppliers",
     "\\src\\suppliers\\aliexpress",
-    "\\src\\suppliers\\ebay",
-    "\\src\\suppliers\\hb",
-    "\\src\\tools",
-    "\\src\\webdriver"
+    "\\src\\suppliers\\aliexpress\\locators"
   ],
-  "SelectedNode": "\\src\\product\\product_fields.py",
   "PreviewInSolutionExplorer": false
 }

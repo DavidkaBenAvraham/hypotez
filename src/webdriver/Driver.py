@@ -720,69 +720,94 @@ class Driver(WebDriver):
         await loop.run_in_executor(None, execute_locator.click, locator)
             
     #@logs_and_errors_decorator(default_return =  False)
-    def scroll(self, number_of_scrolls: int = 5, framesize_to_scroll: int = 1800, direction: str = 'forward', delay: float = 1) -> bool:
+    def scroll(self, scrolls: int = 5, frame_size: int = 1800, direction: str = 'forward', delay: float = 1) -> bool:
         """! @~english Scroll the web page.
 
-        @param number_of_scrolls `int`  :  Number of times to scroll.
-        @param framesize_to_scroll `int`  :  The scroll frame in pixels.
+        @param scrolls `int`  :  Number of times to scroll.
+        @param frame_size `int`  :  The scroll frame in pixels.
         @param direction `str`  :  Direction of scrolling. Possible values are 'both', 'forward', 'backward', 'carousel'.
         @param delay `int`  :  Delay in seconds between each scroll.
 
-    @returns bool  :  True if scrolling is successful, False otherwise.
-    """
-        """!@russian @brief Крутилка страницы вперед, назад
+        @returns bool  :  True if scrolling is successful, False otherwise.
+        """
+        """!@~russian @brief Крутилка страницы вперед, назад
 
         @param direction `str`  :  Направление скроллинга:  'both', 'forward', 'backward'.   
         Обычно, я кручу на 5 экранов вниз, а потом вверх """
         
+ 
+        # def carousel (scrolls: int = 5, frame_size: int = 1800, direction: str = 'both', delay: float = 1) -> bool:
+        #     """! @russian крутилка экрана
+        #     @scrolls количество прокручиваний фреймов
+        #     @frame_size размер фрейма
+        #     @param direction `str`  :  'forward','backward','both' 
+        #      в карусели для `window.scrollBy()` я передаю размер фрейма и направление: 
+        #     'вниз': `frame_size`, 'вверх' отрицательное значение: `-frame_size`
+        #     @param delay `int`  :   пауза между скроллингом - имитирую действия человека, чтобы ба нарвать на бан
+        #     @returns bool  :  `True` в случае успеха, иначе `False`
+        #     """
+        #     for i in range ( int(scrolls) ):
+        #         self.execute_script (f'window.scrollBy({delay},{frame_size})')
+        #         self.wait (delay)  
+        
+        # try:
+        #     """! """
+        #     if direction == 'forward':
+        #         carousel (scrolls, 'forward')
+        #     if direction == 'backward':
+        #         carousel (f'-{scrolls}', 'backward')
+        #     if direction == 'both':
+        #         carousel (scrolls, 'forward')
+        #         carousel (f'-{scrolls}', 'backward')
+        #     else:
+        #         logger.warning(f"""неправильно задано направление. Ожидается `'forward', 'backward', 'both'`. Получено {direction} '""")
+        #         carousel('')
+        #         carousel('-')
+        # except Exception as ex:
+        #     logger.error(f'ошибка в карусели (прокрутка страницы)', ex)
         try:
             """! """
             if direction == 'forward':
-                carousel ('',number_of_scrolls)
+                self.carousel ('',scrolls)
             if direction == 'backward':
-                carousel ('-',number_of_scrolls)
+                self.carousel ('-',scrolls)
             if direction == 'both':
-                carousel ('', number_of_scrolls)
-                carousel ('-', number_of_scrolls)
+                self.carousel ('', scrolls)
+                self.carousel ('-', scrolls)
             else:
                 logger.warning(f"""неправильно задано направление. Ожидается `'forward', 'backward', 'both'`. Получено {direction} '""")
-                carousel('')
-                carousel('-')
+                # self.carousel('')
+                # self.carousel('-')
+                return False
         except Exception as ex:
             logger.error(f'ошибка ', ex)
             return False
                 
 
          
-        def carousel (self, number_of_scrolls: int = 5, framesize_to_scroll: int = 1800, direction: str = 'both', delay: float = 1) -> bool:
-            """! @russian крутилка экрана
-            @number_of_scrolls количество прокручиваний фреймов
-            @framesize_to_scroll размер фрейма
-            @param direction `str`  :  'forward','backward','both' 
-             в карусели для `window.scrollBy()` я передаю размер фрейма и направление: 
-            'вниз': `framesize_to_scroll`, 'вверх' отрицательное значение: `-framesize_to_scroll`
-            @param delay `int`  :   пауза между скроллингом - имитирую действия человека, чтобы ба нарвать на бан
-            @returns bool  :  `True` в случае успеха, иначе `False`
-            """
-            for i in range(number_of_scrolls):
-                execute_locator.execute_script (f'window.scrollBy({delay},{direction}{framesize_to_scroll})')
-                self.wait(delay)                
-                
-            # try:
-            #     """! """
-            #     for i in range(number_of_scrolls):
-            #         self.execute_script (f'window.scrollBy({delay},{direction}{framesize_to_scroll})')
-            #         self.wait(delay)    
-            #     return True
-            # except Exception as ex:
-            #     logger.error(f'ошибка в скролере', ex)
-            #     return False    
+    def carousel (self,  direction: str = '', scrolls: int = 5, frame_size: int = 1800,  delay: float = 1) -> bool:
+        """! @russian крутилка экрана. Можно задать через scroll()
+        @scrolls количество прокручиваний фреймов
+        @frame_size размер фрейма
+        @param direction `str`  :  'forward','backward','both' 
+            в карусели для `window.scrollBy()` я передаю размер фрейма и направление: 
+        'вниз': `frame_size`, 'вверх' отрицательное значение: `-frame_size`
+        @param delay `int`  :   пауза между скроллингом - имитирую действия человека, чтобы ба нарвать на бан
+        @returns bool  :  `True` в случае успеха, иначе `False`
+        """
+        for i in range(scrolls):
+            self.execute_script (f'window.scrollBy({delay},{direction}{frame_size})')
+            #self.wait(delay)
+
+  
     
     #@logs_and_errors_decorator(default_return=False)
     async def async_scroll(self, locator) -> bool:
         """! Асинхронный вызов scroll() """
         loop = asyncio.get_running_loop()
         await loop.run_in_executor(None, self.scroll, locator)
+
+
 
     #@logs_and_errors_decorator(default_return =  False)
     def get_webelement_as_screenshot(webelement):
