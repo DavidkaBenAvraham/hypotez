@@ -99,15 +99,19 @@ def run_scenario_file(s, scenario_file_path: Union[Path, str]) -> bool:
     for scenario_name, scenario in scenarios_dict.items ():
         """! @~russian прочитав сценарии из файла запускаю их по одному """
         s.current_scenario: dict = scenario
-        run_scenario (s, scenario, scenario_name)
-        """! @~russian запуск сценария """
-        
-        s.settings['last_runned_scenario'] = scenario_name
-        j_dumps(s.settings, Path(s.supplier_abs_path, f'{s.supplier_prefix}.json'))
-        """! оставляю запись в файле сценариев информацию о последнем успешно испоненном сценарии.
+        if run_scenario (s, scenario, scenario_name):
+            """! @~russian запуск сценария """
+            s.supplier_settings['last_runned_scenario'] = scenario_name
+            logger.info(f'''last runned scenario {s.settings['last_runned_scenario']}''')
+        else:
+            logger.critical(f'Сценарий {scenario} завершился ошибкой')
+            s.supplier_settings['scenario_interrupted'] = scenario_name
+
+        j_dumps(s.supplier_settings, Path(s.supplier_abs_path, f'{s.supplier_prefix}.json'))
+        """! оставляю запись в файле сценариев информацию о последнем сценарии.
         В случае непредвидинного краша позволяет мне знать с какого сценария продолжать сбор товаров."""
         """! @todo Сделать такой -же контроль но на уровне файлов в файле поставщика """
-        logger.info(f'''last runned scenario {s.settings['last_runned_scenario']}''')
+
     return True
 
 #@logs_and_errors_decorator(default_return =  False)

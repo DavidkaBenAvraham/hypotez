@@ -221,7 +221,7 @@ class ProductFields:
         _default = j_loads (Path (gs.dir_src, 'product', 'product_fields_default_values.json'))
         
         for attr_name, default_value in _default.items():
-            setattr(self, f'{attr_name}', default_value)
+            setattr(self, f'field_{attr_name}', default_value)
         pass
 
     
@@ -265,7 +265,7 @@ class ProductFields:
 
 #   1   ID товара
     @property
-    def associations(self):
+    def field_associations(self):
         """! <sub>*[getter]*</sub> Возвращает словарь ключей ассоциаций.
         @details
         Конструкция `associations`:
@@ -331,9 +331,9 @@ class ProductFields:
             }```
         """
         return self.fields_dict['associations']
-    @associations.setter
+    @field_associations.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def associations(self, value = None) -> dict:
+    def field_associations(self, value = None) -> dict:
         """!  <sub>*[setter]*</sub>  Словарь ассоциаций. Список ассоциаций:
         
         `product_bundle, 
@@ -408,16 +408,16 @@ class ProductFields:
         }
 
     @property
-    def id_product(self) -> int :
+    def field_id_product(self) -> int :
         """! <sub>*[property]*</sub>  `ps_product.id: int(10) unsigned`
         @note для нового тoвара `ID` назначется в `prestashop`
         """
         return self.fields_dict['id_product']
     
     
-    @id_product.setter
+    @field_id_product.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def id_product(self, value: int = None):
+    def field_id_product(self, value: int = None):
         """!  <sub>*[setter]*</sub>  `ID` товара. *для нового тoвара id назначется из `prestashop`*
         @details Запись нового товара в престашоп делается в два шага:
         -> в престасшоп заносятся парамеры, которые не связаны с ID, например, название товара, артикул и т.п. 
@@ -438,16 +438,16 @@ class ProductFields:
 #   2   Поставщик
     
     @property
-    def id_supplier(self):
+    def field_id_supplier(self):
         """!  <sub>*[property]*</sub>  `ps_product.id_supplier: int(10) unsigned`
         @russian @details: привязываю товар к id поставщика
         """
         return self.fields_dict['id_supplier']
     
     
-    @id_supplier.setter
+    @field_id_supplier.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def id_supplier(self, value: int = None):
+    def field_id_supplier(self, value: int = None):
         """!  <sub>*[setter]*</sub> """
         
         try:
@@ -463,7 +463,7 @@ class ProductFields:
 #   3   Бренд
     
     @property
-    def id_manufacturer(self) -> int:
+    def field_id_manufacturer(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.id_manufacturer: int(10) unsigned`
         field
         @russian @details: means BRAND. 
@@ -475,9 +475,9 @@ class ProductFields:
         return self.fields_dict['id_manufacturer']
     
     
-    @id_manufacturer.setter
+    @field_id_manufacturer.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def id_manufacturer(self, value: int = None):
+    def field_id_manufacturer(self, value: int = None):
         """!  <sub>*[setter]*</sub>  Бренд может быть передан как по имени так и по ID 
 
          `ps_product.id_manufacturer`
@@ -496,16 +496,16 @@ class ProductFields:
 #   4   Главная категория этого товара
     
     @property
-    def id_category_default(self) -> int:
+    def field_id_category_default(self) -> int:
         """!  <sub>*[property]*</sub>  `ps_product.id_category_default: int(10) unsigned`
         @russian @details: привязываю товар к главной категории для этого товара
         """
         return self.fields_dict['id_category_default']
     
     
-    @id_category_default.setter
+    @field_id_category_default.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def id_category_default(self, value: int):
+    def field_id_category_default(self, value: int):
         """!  <sub>*[setter]*</sub> Сюда передается та категория, которая будет однознчно - родительская `ps_product.id_category_default: int(10) unsigned`"""
         try:
             self.fields_dict['id_category_default'] = value
@@ -519,15 +519,15 @@ class ProductFields:
 
 # дополнительные, которые записываются в ключе associations['categories']  
     @property
-    def additional_categories(self) -> Union [dict, False]:
+    def field_additional_categories(self) -> Union [dict, False]:
         """!  <sub>*[property]*</sub> возвращает словарь категорий товара восстановленный из файла сценария """
 
         return self.fields_dict['associations']['categories'] or False
 
     
-    @additional_categories.setter
+    @field_additional_categories.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def additional_categories(self, value: Union[int,list[int]]):
+    def field_additional_categories(self, value: Union[int,list[int]]):
         """!  <sub>*[setter]*</sub>  @ru_brief Дополнительные к основной категории.
         При задании доп ключей прдеыдущие значения заменяются новыми из `additional_categories`.
         Для добавления новых к уже существующим используй  функцию additional_categories_append()
@@ -555,7 +555,7 @@ class ProductFields:
             return False
     
     
-#     def additional_categories_append(self,additional_categories: Union[int,list[int]]):
+#     def field_additional_categories_append(self,additional_categories: Union[int,list[int]]):
 #         """! @russian Дополнительные категории, кроме основной.
 #         Функция расширяет additional_categories() """
         
@@ -570,7 +570,7 @@ class ProductFields:
 # #   5   Магазин по умолчанию
     
     @property
-    def id_shop_default(self) -> int:
+    def field_id_shop_default(self) -> int:
         """!  <sub>*[property]*</sub>  `ps_product.id_shop_default: int(10) unsigned`
         field DB type: int(10) unsigned
         @russian @details: ID магазина по умолчанию """
@@ -578,9 +578,9 @@ class ProductFields:
         return self.fields_dict['id_shop_default']
     
     
-    @id_shop_default.setter
+    @field_id_shop_default.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def id_shop_default(self, value: int = None):
+    def field_id_shop_default(self, value: int = None):
         """!  <sub>*[setter]*</sub>   `ps_product.id_shop_default: int(10) unsigned`
             `ID` магазина заказчика """
         try:
@@ -594,15 +594,15 @@ class ProductFields:
 #   6   НДС (Израиль - обычно 13)
     
     @property
-    def id_tax(self) -> int:
+    def field_id_tax(self) -> int:
         """!  <sub>*[property]*</sub> tax_rule `int`  :  `ID` НДС  `ps_product.id_tax: int(10) unsigned`"""
 
         return self.fields_dict['id_tax']
 
     
-    @id_tax.setter
+    @field_id_tax.setter
     #@logs_and_errors_decorator (default_return =  False)    
-    def id_tax(self, value: int ):
+    def field_id_tax(self, value: int ):
         """!   <sub>*[setter]*</sub>  `ID` ндс. מע''מ = 13 """
         try:
             self.fields_dict['id_tax'] = int(value)
@@ -615,14 +615,14 @@ class ProductFields:
 #   7   Распродажа - Mivtza
     
     @property
-    def on_sale(self) -> int:
+    def field_on_sale(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.on_sale: tinyint(1)  unsigned`"""
 
         return self.fields_dict['on_sale']
 
-    @on_sale.setter
+    @field_on_sale.setter
     #@logs_and_errors_decorator (default_return =  False)    
-    def on_sale(self, value = 0 ):
+    def field_on_sale(self, value = 0 ):
         """!  <sub>*[setter]*</sub> `1` - распродажа
 
         @param value (int, optional): Defaults to 0.
@@ -641,7 +641,7 @@ class ProductFields:
 #   8 online_only: только через онлайн
     
     @property
-    def online_only(self) -> int:
+    def field_online_only(self) -> int:
         """!   <sub>*[property]*</sub>   `ps_product.online_only: tinyint(1) unsigned`
         field DB type: tinyint(1) unsigned
         @russian @details: товар только онлайн """
@@ -649,9 +649,9 @@ class ProductFields:
         return self.fields_dict['online_only']
     
     
-    @online_only.setter
+    @field_online_only.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def online_only(self, value = 0) -> bool:
+    def field_online_only(self, value = 0) -> bool:
         """!   <sub>*[setter]*</sub> """
         try:
             self.fields_dict['online_only'] = value
@@ -664,16 +664,16 @@ class ProductFields:
 #   9   ean13
     
     @property
-    def ean13(self) -> Union[str, None]:
+    def field_ean13(self) -> Union[str, None]:
         """!  <sub>*[property]*</sub>   `ps_product.ean13  varchar(13)`
         field DB type: 
         @russian @details: __prod_desc__"""
         return self.fields_dict['ean13']
 
     
-    @ean13.setter
+    @field_ean13.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def ean13(self, value = None) -> bool:
+    def field_ean13(self, value = None) -> bool:
         """!   <sub>*[setter]*</sub>   `ean13`
         field DB type:  varchar(13)
         @russian @details: __prod_desc__"""
@@ -688,16 +688,16 @@ class ProductFields:
 #   10
     
     @property
-    def isbn(self) -> Union[str, None]:
+    def field_isbn(self) -> Union[str, None]:
         """!   <sub>*[property]*</sub>   `isbn`
         field DB type: varchar(32)
         @russian @details: __prod_desc__"""
         return self.fields_dict['isbn']
     
     
-    @isbn.setter
+    @field_isbn.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def isbn(self, value = None) -> bool:
+    def field_isbn(self, value = None) -> bool:
         """!   <sub>*[setter]*</sub>   `isbn`
         field DB type: varchar(32)
         @russian @details: __prod_desc__"""
@@ -712,16 +712,16 @@ class ProductFields:
 #   11
     
     @property
-    def upc(self):
+    def field_upc(self):
         """!  <sub>*[property]*</sub>   `upc`
         field DB type: varchar(12)
         @russian @details: __prod_desc__"""
         return self.fields_dict['upc']
     
     
-    @upc.setter
+    @field_upc.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def upc(self, value = None) -> Union[str, None]:
+    def field_upc(self, value = None) -> Union[str, None]:
         """!   <sub>*[setter]*</sub>   `ps_product.upc`
         field DB type: varchar(12)
         @russian @details: __prod_desc__"""
@@ -736,16 +736,16 @@ class ProductFields:
 #   12  mpn
     
     @property
-    def mpn(self) -> str:
+    def field_mpn(self) -> str:
         """!  <sub>*[property]*</sub>   `ps_product.mpn`
         field DB type: varchar(40)
         @russian @details: __prod_desc__"""
         return self.fields_dict['mpn']
 
     
-    @mpn.setter
+    @field_mpn.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def mpn(self, value = None) -> bool:
+    def field_mpn(self, value = None) -> bool:
         """!   <sub>*[setter]*</sub>  """
         try:
             self.fields_dict['mpn'] = value
@@ -760,16 +760,16 @@ class ProductFields:
 #   13   ecotax
     
     @property
-    def ecotax(self):
+    def field_ecotax(self):
         """!  <sub>*[property]*</sub>   `ps_product.ecotax`
         field DB type:  decimal(17,6)
         @russian @details: __prod_desc__"""
         return self.fields_dict['ecotax']
 
     
-    @ecotax.setter
+    @field_ecotax.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def ecotax(self, value = None) -> bool:
+    def field_ecotax(self, value = None) -> bool:
         """!   <sub>*[setter]*</sub>  """
         try:
             self.fields_dict['ecotax'] = value
@@ -782,7 +782,7 @@ class ProductFields:
 # 14
     
     @property
-    def quantity(self) -> int:
+    def field_quantity(self) -> int:
         """!  <sub>*[property]*</sub>   `ps_product.quantity`
         field DB type: int(10)
         @russian @details: __prod_desc__"""
@@ -790,9 +790,9 @@ class ProductFields:
         return self.fields_dict['quantity']
 
     
-    @quantity.setter
+    @field_quantity.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def quantity(self, value: int = 0) -> bool:
+    def field_quantity(self, value: int = 0) -> bool:
         """!  <sub>*[setter]*</sub>   `ps_product.quantity` """
         try:
             self.fields_dict['quantity'] = value
@@ -805,16 +805,16 @@ class ProductFields:
 # 15
     
     @property
-    def minimal_quantity(self) -> int:
+    def field_minimal_quantity(self) -> int:
         """!  <sub>*[property]*</sub>  `ps_product.minimal_quantity`
         field DB type: int(10)
         @russian @details: __prod_desc__"""
         return self.fields_dict['minimal_quantity']
 
     
-    @minimal_quantity.setter
+    @field_minimal_quantity.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def minimal_quantity(self, value: int = 0) -> bool:
+    def field_minimal_quantity(self, value: int = 0) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['minimal_quantity'] = value
@@ -827,16 +827,16 @@ class ProductFields:
 #   16
     
     @property
-    def low_stock_threshold(self) -> int:
+    def field_low_stock_threshold(self) -> int:
         """!  <sub>*[property]*</sub>  `ps_product.low_stock_threshold`
         field DB type: int(10)
         @russian @details: __prod_desc__"""
         return self.fields_dict['low_stock_threshold']
 
     
-    @low_stock_threshold.setter
+    @field_low_stock_threshold.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def low_stock_threshold(self, value: int = 0) -> bool:
+    def field_low_stock_threshold(self, value: int = 0) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['low_stock_threshold'] = value
@@ -849,16 +849,16 @@ class ProductFields:
 #   17
     
     @property
-    def low_stock_alert(self) -> int:
+    def field_low_stock_alert(self) -> int:
         """!  <sub>*[property]*</sub>  `ps_product.low_stock_alert`
         field DB type: tinyint(1)
         @russian @details: __prod_desc__"""
         return self.fields_dict['low_stock_alert']
 
     
-    @low_stock_alert.setter
+    @field_low_stock_alert.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def low_stock_alert(self, value: int = 0) -> bool:
+    def field_low_stock_alert(self, value: int = 0) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['low_stock_alert'] = value
@@ -871,16 +871,16 @@ class ProductFields:
 #   18
     
     @property
-    def price(self) -> float:
+    def field_price(self) -> float:
         """!  <sub>*[property]*</sub>  `ps_product.price`
         field DB type: decimal(20,6)
         @russian @details: __prod_desc__"""
         return self.fields_dict['price']
     
     
-    @price.setter
+    @field_price.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def price(self, value: Union[str,int,float]) -> bool:
+    def field_price(self, value: Union[str,int,float]) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             if not value:
@@ -895,16 +895,16 @@ class ProductFields:
 #   19
     
     @property
-    def wholesale_price(self) -> float:
+    def field_wholesale_price(self) -> float:
         """!  <sub>*[property]*</sub>  `ps_product.wholesale_price`
         field DB type: decimal(20,6)
         @russian @details: __prod_desc__"""
         return self.fields_dict['wholesale_price']
 
     
-    @wholesale_price.setter
+    @field_wholesale_price.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def wholesale_price(self, value = None) -> float:
+    def field_wholesale_price(self, value = None) -> float:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['wholesale_price'] = str (SN.normalize_price (value) )
@@ -917,15 +917,15 @@ class ProductFields:
 #   20
     
     @property
-    def unity(self) -> str:
+    def field_unity(self) -> str:
         """!  <sub>*[property]*</sub>  `ps_product.unity`
         field DB type: varchar(255)
         @russian @details: __prod_desc__"""
         return self.fields_dict['unity']
     
-    @unity.setter
+    @field_unity.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def unity(self, value = None) -> bool:
+    def field_unity(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['unity'] = value
@@ -939,16 +939,16 @@ class ProductFields:
 #   21
     
     @property
-    def unit_price_ratio(self) -> float:
+    def field_unit_price_ratio(self) -> float:
         """!  <sub>*[property]*</sub>  `ps_product.unit_price_ratio`
         field DB type: decimal(20,6)
         @russian @details: __prod_desc__"""
         return self.fields_dict['unit_price_ratio']
 
     
-    @unit_price_ratio.setter
+    @field_unit_price_ratio.setter
     #@logs_and_errors_decorator(default_return =  False)
-    def unit_price_ratio(self, value: float = 0) -> bool:
+    def field_unit_price_ratio(self, value: float = 0) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['unit_price_ratio'] = value
@@ -961,16 +961,16 @@ class ProductFields:
 #   22
     
     @property
-    def additional_shipping_cost(self) -> float:
+    def field_additional_shipping_cost(self) -> float:
         """!  <sub>*[property]*</sub> `ps_product.additional_shipping_cost`
         field DB type: decimal(20,6)
         @russian @details: __prod_desc__"""
         return self.fields_dict['additional_shipping_cost']
 
     
-    @additional_shipping_cost.setter
+    @field_additional_shipping_cost.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def additional_shipping_cost(self, value: int = 1) -> bool:
+    def field_additional_shipping_cost(self, value: int = 1) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['additional_shipping_cost'] = value
@@ -983,7 +983,7 @@ class ProductFields:
 #   23
     
     @property
-    def reference(self) -> str:
+    def field_reference(self) -> str:
         """!  <sub>*[property]*</sub> `ps_product.reference`
         field DB type: `varchar(64)`
         @russian @details: __prod_desc__
@@ -991,9 +991,9 @@ class ProductFields:
         return self.fields_dict['reference']
 
     
-    @reference.setter
+    @field_reference.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def reference(self, value = None) -> bool:
+    def field_reference(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['reference'] = value
@@ -1006,7 +1006,7 @@ class ProductFields:
         
     
     @property
-    def supplier_reference(self):
+    def field_supplier_reference(self):
         """!  <sub>*[property]*</sub>  `ps_product.supplier_reference`
         field DB type: `varchar(64)`
         @russian @details: __prod_desc__
@@ -1014,9 +1014,9 @@ class ProductFields:
         return self.fields_dict['supplier_reference']
 #   24
     
-    @supplier_reference.setter
+    @field_supplier_reference.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def supplier_reference(self, value = None) -> bool:
+    def field_supplier_reference(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['supplier_reference'] = value
@@ -1029,16 +1029,16 @@ class ProductFields:
 #   25
     
     @property
-    def location(self) -> str:
+    def field_location(self) -> str:
         """!  <sub>*[property]*</sub> `ps_product.location`
         field DB type: varchar(255)
         @russian @details: __prod_desc__"""
         return self.fields_dict['location']
 
     
-    @location.setter
+    @field_location.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def location(self, value = None) -> bool:
+    def field_location(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['location'] = value
@@ -1052,16 +1052,16 @@ class ProductFields:
 #   26
     
     @property
-    def width(self) -> float:
+    def field_width(self) -> float:
         """!  <sub>*[property]*</sub> `ps_product.width`
         field DB type: decimal(20,6)
         @russian @details: __prod_desc__"""
         return self.fields_dict['width']
 
     
-    @width.setter
+    @field_width.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def width(self, value: float = None) -> bool:
+    def field_width(self, value: float = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['width'] = value
@@ -1074,16 +1074,16 @@ class ProductFields:
 #   27
     
     @property
-    def height(self) -> float:
+    def field_height(self) -> float:
         """!  <sub>*[property]*</sub> `ps_product.height`
         field DB type: decimal(20,6)
         @russian @details: __prod_desc__"""
         return self.fields_dict['height']
 
     
-    @height.setter
+    @field_height.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def height(self, value: float = None) -> bool:
+    def field_height(self, value: float = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['height'] = value
@@ -1096,16 +1096,16 @@ class ProductFields:
 #   28
     
     @property
-    def depth(self) -> float:
+    def field_depth(self) -> float:
         """!  <sub>*[property]*</sub> `[28] ps_product.depth  decimal(20,6)`
         field DB type:
         @russian @details: __prod_desc__"""
         return self.fields_dict['depth']
 
     
-    @depth.setter
+    @field_depth.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def depth(self, value: float = None) -> bool:
+    def field_depth(self, value: float = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['depth'] = value
@@ -1118,16 +1118,16 @@ class ProductFields:
 #   29
     
     @property
-    def weight(self) -> float:
+    def field_weight(self) -> float:
         """!  <sub>*[property]*</sub> `ps_product.weight`
         field DB type: decimal(20,6)
         @russian @details: __prod_desc__"""
         return self.fields_dict['weight']
 
     
-    @weight.setter
+    @field_weight.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def weight(self, value: float = None) -> bool:
+    def field_weight(self, value: float = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['weight'] = value
@@ -1141,16 +1141,16 @@ class ProductFields:
     #  30
     
     @property
-    def out_of_stock(self) -> int:
+    def field_out_of_stock(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.out_of_stock`
         field DB type: int(10)
         @russian @details: __prod_desc__"""
         return self.fields_dict['out_of_stock']
 
     
-    @out_of_stock.setter
+    @field_out_of_stock.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def out_of_stock(self, value: int = None) -> bool:
+    def field_out_of_stock(self, value: int = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['out_of_stock'] = value
@@ -1164,15 +1164,15 @@ class ProductFields:
   #  31
     
     @property
-    def additional_delivery_times(self) -> int:
+    def field_additional_delivery_times(self) -> int:
         """!!  <sub>*[property]*</sub> `ps_product.additional_delivery_times tinyint(1)`
         @russian @details: __prod_desc__"""
         return self.fields_dict['additional_delivery_times']
 
     
-    @additional_delivery_times.setter
+    @field_additional_delivery_times.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def additional_delivery_times(self, value: int = 0) -> bool:
+    def field_additional_delivery_times(self, value: int = 0) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['additional_delivery_times'] = value
@@ -1185,16 +1185,16 @@ class ProductFields:
   #  32
     
     @property
-    def quantity_discount(self) -> int:
+    def field_quantity_discount(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.quantity_discount`
         field DB type: tinyint(1)
         @russian @details: __prod_desc__"""
         return self.fields_dict['quantity_discount']
 
     
-    @quantity_discount.setter
+    @field_quantity_discount.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def quantity_discount(self, value: int = 0) -> bool:
+    def field_quantity_discount(self, value: int = 0) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['quantity_discount'] = value
@@ -1208,16 +1208,16 @@ class ProductFields:
   #  33
     
     @property
-    def customizable(self) -> int:
+    def field_customizable(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.customizable`
         field DB type: tinyint(2)
         @russian @details: __prod_desc__"""
         return self.fields_dict['customizable']
 
     
-    @customizable.setter
+    @field_customizable.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def customizable(self, value: int = 0) -> bool:
+    def field_customizable(self, value: int = 0) -> bool:
         try:
             self.fields_dict['customizable'] = value
             return True
@@ -1230,7 +1230,7 @@ class ProductFields:
   #  34
     
     @property
-    def uploadable_files(self) -> int:
+    def field_uploadable_files(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.uploadable_files`
         field DB type: tinyint(4)
         @russian @details: __prod_desc__"""
@@ -1238,9 +1238,9 @@ class ProductFields:
         return self.fields_dict['uploadable_files']
 
     
-    @uploadable_files.setter
+    @field_uploadable_files.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def uploadable_files(self, value: int = 0) -> bool:
+    def field_uploadable_files(self, value: int = 0) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['uploadable_files'] = value
@@ -1253,7 +1253,7 @@ class ProductFields:
 #  35
     
     @property
-    def text_fields(self) -> int:
+    def field_text_fields(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.text_fields`
         field DB type: tinyint(4)
         @russian @details: __prod_desc__"""
@@ -1261,9 +1261,9 @@ class ProductFields:
         return self.fields_dict['text_fields']
 
     
-    @text_fields.setter
+    @field_text_fields.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def text_fields(self, value: int = 0) -> bool:
+    def field_text_fields(self, value: int = 0) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['text_fields'] = value
@@ -1277,7 +1277,7 @@ class ProductFields:
 #  36
     
     @property
-    def active(self) -> int:
+    def field_active(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.active`
         field DB type: tinyint(1)
         @russian @details: __prod_desc__"""
@@ -1285,9 +1285,9 @@ class ProductFields:
         return self.fields_dict['active']
 
     
-    @active.setter
+    @field_active.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def active(self, value: int = 1) -> bool:
+    def field_active(self, value: int = 1) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['active'] = value
@@ -1304,7 +1304,7 @@ class ProductFields:
 
         
     @property
-    def redirect_type(self) -> str:
+    def field_redirect_type(self) -> str:
         """!  <sub>*[property]*</sub> `[37] ps_product.redirect_type enum('404','301-product','302-product','301-category','302-category')`
         
     Редиректы HTTP 301 (Moved Permanently) и 302 (Found, временное перенаправление) различаются в том, как они обрабатываются браузерами и поисковыми системами:
@@ -1332,9 +1332,9 @@ class ProductFields:
         REDIRECT_301_CATEGORY = '301-category'
         REDIRECT_302_CATEGORY = '302-category'
         
-    @redirect_type.setter
+    @field_redirect_type.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def redirect_type(self, value: Union[EnumRedirect,str]) -> bool:
+    def field_redirect_type(self, value: Union[EnumRedirect,str]) -> bool:
         """!  <sub>*[setter]*</sub>   Редирект. 
         Редиректы представляют собой механизм перенаправления пользователя или браузера с одного URL-адреса на другой. Они часто используются в веб-разработке для переноса посетителя с одной страницы на другую. Различные HTTP-статусы и типы редиректов сообщают браузеру или клиенту, как следует интерпретировать запрос и что делать дальше. В вашем коде вы используете строки для представления различных типов редиректов.
 
@@ -1390,7 +1390,7 @@ class ProductFields:
  #  38
     
     @property
-    def id_type_redirected(self) -> int:
+    def field_id_type_redirected(self) -> int:
         """!  <sub>*[property]*</sub> `[38] ps_product.id_type_redirected  tinyint(10)`
         field DB type:
         @russian @details: __prod_desc__"""
@@ -1398,9 +1398,9 @@ class ProductFields:
         return self.fields_dict['id_type_redirected']
     
     
-    @id_type_redirected.setter
+    @field_id_type_redirected.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def id_type_redirected(self, value: int = 0) -> bool:
+    def field_id_type_redirected(self, value: int = 0) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['id_type_redirected'] = value
@@ -1414,7 +1414,7 @@ class ProductFields:
  #  39
     
     @property
-    def available_for_order(self) -> int:
+    def field_available_for_order(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.available_for_order`
         field DB type: tinyint(10)
         @russian @details: __prod_desc__"""
@@ -1422,9 +1422,9 @@ class ProductFields:
         return self.fields_dict['available_for_order']
 
     
-    @available_for_order.setter
+    @field_available_for_order.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def available_for_order(self, value: int = 0) -> bool:
+    def field_available_for_order(self, value: int = 0) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['available_for_order'] = value
@@ -1438,7 +1438,7 @@ class ProductFields:
  #  40
     
     @property
-    def available_date(self) -> Date:
+    def field_available_date(self) -> Date:
         """!  <sub>*[property]*</sub> `ps_product.available_date`
         field DB type: date
         @russian @details: __prod_desc__"""
@@ -1446,9 +1446,9 @@ class ProductFields:
         return self.fields_dict['available_date']
 
     
-    @available_date.setter
+    @field_available_date.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def available_date(self, value: Date = Date.today) -> bool:
+    def field_available_date(self, value: Date = Date.today) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['available_date'] = value
@@ -1462,7 +1462,7 @@ class ProductFields:
  #  41
     
     @property
-    def show_condition(self) -> int:
+    def field_show_condition(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.show_condition`
         field DB type: tinyint(1)
         @russian @details: __prod_desc__"""
@@ -1470,9 +1470,9 @@ class ProductFields:
         return self.fields_dict['show_condition']
 
     
-    @show_condition.setter
+    @field_show_condition.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def show_condition(self, value: int = 1) -> bool:
+    def field_show_condition(self, value: int = 1) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['show_condition'] = value
@@ -1486,7 +1486,7 @@ class ProductFields:
  #  42
 
     @property
-    def condition(self) -> str:
+    def field_condition(self) -> str:
         """!  <sub>*[property]*</sub> `[42] ps_product.condition  enum('new','used','refurbished')`
         @russian @details: __prod_desc__"""
 
@@ -1497,9 +1497,9 @@ class ProductFields:
         USED = 'used'
         REFURBISHED = 'refurbished'
        
-    @condition.setter
+    @field_condition.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def condition(self, value: Union[EnumCondition, str] = EnumCondition.NEW) -> bool:
+    def field_condition(self, value: Union[EnumCondition, str] = EnumCondition.NEW) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['condition'] = value
@@ -1513,7 +1513,7 @@ class ProductFields:
  #  43
     
     @property
-    def show_price(self) -> int:
+    def field_show_price(self) -> int:
         """!  <sub>*[property]*</sub> `[43] ps_product.show_price tinyint(1)`
         field DB type: 
         @russian @details: __prod_desc__"""
@@ -1521,9 +1521,9 @@ class ProductFields:
         return self.fields_dict['show_price']
     
     
-    @show_price.setter
+    @field_show_price.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def show_price(self, value: int = 1) -> bool:
+    def field_show_price(self, value: int = 1) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['show_price'] = value
@@ -1537,15 +1537,15 @@ class ProductFields:
 #  44
     
     @property
-    def indexed(self) -> int:
+    def field_indexed(self) -> int:
         """!  <sub>*[property]*</sub> `[44] ps_product.indexed  tinyint(1)`
         @russian @details: __prod_desc__"""
         return self.fields_dict['indexed']
     
     
-    @indexed.setter
+    @field_indexed.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def indexed(self, value: int = 1) -> bool:
+    def field_indexed(self, value: int = 1) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['indexed'] = value
@@ -1559,7 +1559,7 @@ class ProductFields:
 #  45
     
     @property
-    def visibility(self) -> str:
+    def field_visibility(self) -> str:
         """!  <sub>*[property]*</sub> `ps_product.visibility`
         field DB type: enum('both','catalog','search','none')
         @russian @details: __prod_desc__"""
@@ -1573,9 +1573,9 @@ class ProductFields:
         NONE = 'none'
 
     
-    @visibility.setter
+    @field_visibility.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def visibility(self, value: EnumVisibity = EnumVisibity.BOTH) -> bool:
+    def field_visibility(self, value: EnumVisibity = EnumVisibity.BOTH) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['visibility'] = value
@@ -1591,7 +1591,7 @@ class ProductFields:
 
     
     @property
-    def cache_is_pack(self) -> int:
+    def field_cache_is_pack(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.cache_is_pack`
         field DB type: tinyint(1)
         @russian @details: __prod_desc__"""
@@ -1599,9 +1599,9 @@ class ProductFields:
         return self.fields_dict['cache_is_pack']
     
     
-    @cache_is_pack.setter
+    @field_cache_is_pack.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def cache_is_pack(self, value: int = 1) -> bool:
+    def field_cache_is_pack(self, value: int = 1) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['cache_is_pack'] = value
@@ -1615,7 +1615,7 @@ class ProductFields:
 #  47
     
     @property
-    def cache_has_attachments(self) -> int:
+    def field_cache_has_attachments(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.cache_has_attachments`
         field DB type: tinyint(1)
         @russian @details: __prod_desc__"""
@@ -1623,9 +1623,9 @@ class ProductFields:
         return self.fields_dict['cache_has_attachments']
     
     
-    @cache_has_attachments.setter
+    @field_cache_has_attachments.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def cache_has_attachments(self, value: int = 1) -> bool:
+    def field_cache_has_attachments(self, value: int = 1) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['cache_has_attachments'] = value
@@ -1639,7 +1639,7 @@ class ProductFields:
 #  48
     
     @property
-    def is_virtual(self) -> int:
+    def field_is_virtual(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.is_virtual`
         field DB type: tinyint(1)
         @russian @details: __prod_desc__"""
@@ -1647,9 +1647,9 @@ class ProductFields:
         return self.fields_dict['is_virtual']
 
     
-    @is_virtual.setter
+    @field_is_virtual.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def is_virtual(self, value: int = 1) -> bool:
+    def field_is_virtual(self, value: int = 1) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['is_virtual'] = value
@@ -1663,7 +1663,7 @@ class ProductFields:
 #  49
     
     @property
-    def cache_default_attribute(self) -> int:
+    def field_cache_default_attribute(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.cache_default_attribute`
         field DB type: int(10)
         @russian @details: __prod_desc__"""
@@ -1671,9 +1671,9 @@ class ProductFields:
         return self.fields_dict['cache_default_attribute']
 
     
-    @cache_default_attribute.setter
+    @field_cache_default_attribute.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def cache_default_attribute(self, value: int = 1) -> bool:
+    def field_cache_default_attribute(self, value: int = 1) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['cache_default_attribute'] = value
@@ -1687,7 +1687,7 @@ class ProductFields:
 #  50
     
     @property
-    def date_add(self) -> Date:
+    def field_date_add(self) -> Date:
         """!  <sub>*[property]*</sub> `ps_product.date_add`
         field DB type: datetime
         @russian @details: __prod_desc__"""
@@ -1695,9 +1695,9 @@ class ProductFields:
         return self.fields_dict['date_add']
     
     
-    @date_add.setter
+    @field_date_add.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def date_add(self, value: Date = Date.today()) -> bool:
+    def field_date_add(self, value: Date = Date.today()) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['date_add'] = value
@@ -1711,7 +1711,7 @@ class ProductFields:
 #  51
     
     @property
-    def date_upd(self) -> Date:
+    def field_date_upd(self) -> Date:
         """!  <sub>*[property]*</sub> `ps_product.date_upd`
         field DB type: datetime
         @russian @details: __prod_desc__"""
@@ -1719,9 +1719,9 @@ class ProductFields:
         return self.fields_dict['date_upd']
     
     
-    @date_upd.setter
+    @field_date_upd.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def date_upd(self, value: Date = Date.today()) -> bool:
+    def field_date_upd(self, value: Date = Date.today()) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['date_upd'] = value
@@ -1736,7 +1736,7 @@ class ProductFields:
 #  52
     
     @property
-    def advanced_stock_management(self) -> int:
+    def field_advanced_stock_management(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.advanced_stock_management`
         field DB type: tinyint(1)
         @russian @details: __prod_desc__"""
@@ -1744,9 +1744,9 @@ class ProductFields:
         return self.fields_dict['advanced_stock_management']
     
     
-    @advanced_stock_management.setter
+    @field_advanced_stock_management.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def advanced_stock_management(self, value: int = 0) -> bool:
+    def field_advanced_stock_management(self, value: int = 0) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['advanced_stock_management'] = value
@@ -1760,7 +1760,7 @@ class ProductFields:
 #  53
     
     @property
-    def pack_stock_type(self) -> int:
+    def field_pack_stock_type(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.pack_stock_type`
         field DB type: int(11)
         @russian @details: __prod_desc__"""
@@ -1768,9 +1768,9 @@ class ProductFields:
         return self.fields_dict['pack_stock_type']
     
     
-    @pack_stock_type.setter
+    @field_pack_stock_type.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def pack_stock_type(self, value: int = 0) -> bool:
+    def field_pack_stock_type(self, value: int = 0) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['pack_stock_type'] = value
@@ -1785,7 +1785,7 @@ class ProductFields:
 #  54
     
     @property
-    def state(self) -> int:
+    def field_state(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.state`
         field DB type: int(11)
         @russian @details: __prod_desc__"""
@@ -1793,9 +1793,9 @@ class ProductFields:
         return self.fields_dict['state']
     
     
-    @state.setter
+    @field_state.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def state(self, value: int = 0) -> bool:
+    def field_state(self, value: int = 0) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['state'] = value
@@ -1810,7 +1810,7 @@ class ProductFields:
 #  55
     
     @property
-    def product_type(self) -> str:
+    def field_product_type(self) -> str:
         """!  <sub>*[property]*</sub> `ps_product.product_type`
         field DB type: enum('standard', 'pack', 'virtual', 'combinations', '')
         @russian @details: __prod_desc__"""
@@ -1824,9 +1824,9 @@ class ProductFields:
         COMBINATIONS = 'combinations'
         EMPTY = ''
           
-    @product_type.setter
+    @field_product_type.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def product_type(self, product_type: EnumProductType = EnumProductType.STANDARD) -> bool:
+    def field_product_type(self, product_type: EnumProductType = EnumProductType.STANDARD) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['product_type'] = product_type
@@ -1904,16 +1904,16 @@ class ProductFields:
 #   2 id_shop Я могу определить данные, ОТНОСИТЕЛЬНО магазина
 
     @property
-    def id_shop(self):
+    def field_id_shop(self):
         """!  <sub>*[property]*</sub> `ps_product_lang.id_shop`
         field DB type: int(10)
         description: Я могу переопределить переводы и прочее в зависимости от магазина"""
         return self.fields_dict['id_shop']
 
     
-    @id_shop.setter
+    @field_id_shop.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def id_shop(self, value: Date = None) -> bool:
+    def field_id_shop(self, value: Date = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['id_shop'] = value
@@ -1926,15 +1926,15 @@ class ProductFields:
 # 3 id_lang 
     """! @note  Здесь я выставляю язык перевода """
     @property
-    def id_lang(self):
+    def field_id_lang(self):
         """!  <sub>*[property]*</sub> `[3] ps_product_lang.id_lang int(10)`
         description: Я выставляю язык перевода"""
         return self.fields_dict['id_lang']
 
     
-    @id_lang.setter
+    @field_id_lang.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def id_lang(self, value: Date = None) -> bool:
+    def field_id_lang(self, value: Date = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['id_lang'] = value
@@ -1946,15 +1946,15 @@ class ProductFields:
 #   4
     
     @property
-    def description(self) -> str:
+    def field_description(self) -> str:
         """!  <sub>*[property]*</sub> `[4] ps_product_lang.description text`
         description: Описание """
         return self.fields_dict['description']
 
     
-    @description.setter
+    @field_description.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def description(self, value = None) -> bool:
+    def field_description(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['description']: dict = {
@@ -1971,15 +1971,15 @@ class ProductFields:
 #   5
     
     @property
-    def description_short(self) -> str:
+    def field_description_short(self) -> str:
         """!  <sub>*[property]*</sub> `[5] ps_product_lang.description_short text`
         description: __prod_desc__"""
 
         return self.fields_dict['description_short']
     
-    @description_short.setter
+    @field_description_short.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def description_short(self, value = None) -> bool:
+    def field_description_short(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['description_short']: dict = {
@@ -1996,16 +1996,16 @@ class ProductFields:
 #   6
     
     @property
-    def link_rewrite(self) -> str:
+    def field_link_rewrite(self) -> str:
         """!  <sub>*[property]*</sub> `ps_product_lang.link_rewrite`
         field DB type: varchar(128)
         description: __prod_desc__"""
         return self.fields_dict['link_rewrite']
 
     
-    @link_rewrite.setter
+    @field_link_rewrite.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def link_rewrite(self, value = None) -> bool:
+    def field_link_rewrite(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             #self.fields_dict['link_rewrite = link_rewrite
@@ -2023,16 +2023,16 @@ class ProductFields:
 #   7
     
     @property
-    def meta_description(self) -> str:
+    def field_meta_description(self) -> str:
         """!  <sub>*[property]*</sub> `[7] ps_product_lang.meta_description varchar(512)` 
         field DB type: 
         description: __prod_desc__"""
         return self.fields_dict['meta_description']
     
     
-    @meta_description.setter
+    @field_meta_description.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def meta_description(self, value = None) -> bool:
+    def field_meta_description(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['meta_description']: dict = {
@@ -2050,15 +2050,15 @@ class ProductFields:
 #   8
     
     @property
-    def meta_keywords(self):
+    def field_meta_keywords(self):
         """!  <sub>*[property]*</sub> `[8] ps_product_lang.meta_keywords varchar(255)`
         field DB type: 
         description: __prod_desc__"""
         return self.fields_dict['meta_keywords']
     
-    @meta_keywords.setter
+    @field_meta_keywords.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def meta_keywords(self, value = None) -> bool:
+    def field_meta_keywords(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['meta_keywords']: dict = {
@@ -2076,15 +2076,15 @@ class ProductFields:
 #   9
     
     @property
-    def meta_title(self) -> str:
+    def field_meta_title(self) -> str:
         """!  <sub>*[property]*</sub> `[9] s_product_lang.meta_title varchar(128)`
         description: __prod_desc__"""
         return self.fields_dict['meta_title']
     
     
-    @meta_title.setter
+    @field_meta_title.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def meta_title(self, value = None) -> bool:
+    def field_meta_title(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['meta_title']: dict = {
@@ -2102,15 +2102,15 @@ class ProductFields:
 #   10
     
     @property
-    def name(self):
+    def field_name(self):
         """!  <sub>*[property]*</sub> `[10] ps_product_lang.name  varchar(128)`
         description: __prod_desc__"""
         return self.fields_dict['name']
     
     
-    @name.setter
+    @field_name.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def name(self, value: str) -> bool:
+    def field_name(self, value: str) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['name']: dict = {
@@ -2128,15 +2128,15 @@ class ProductFields:
 #   11
     
     @property
-    def available_now(self) -> str:
+    def field_available_now(self) -> str:
         """!  <sub>*[property]*</sub>  `[11] ps_product_lang.available_now varchar(255)`
         description: __prod_desc__"""
         return self.fields_dict['available_now']
     
     
-    @available_now.setter
+    @field_available_now.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def available_now(self, value = None) -> bool:
+    def field_available_now(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['available_now']: dict = {
@@ -2154,15 +2154,15 @@ class ProductFields:
 #   12
     
     @property
-    def available_later(self) -> str:
+    def field_available_later(self) -> str:
         """!  <sub>*[property]*</sub>  field DB available_later: `[12] ps_product_lang.available_later varchar(255)`
         field DB type: varchar(255)
         description: __prod_desc__"""
         return self.fields_dict['available_later']
     
-    @available_later.setter
+    @field_available_later.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def available_later(self, value = None) -> bool:
+    def field_available_later(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['available_later']: dict = {
@@ -2181,14 +2181,14 @@ class ProductFields:
 #   13
     
     @property
-    def delivery_in_stock(self):
+    def field_delivery_in_stock(self):
         """!  <sub>*[property]*</sub>   `[13] ps_product_lang.delivery_in_stock varchar(255)`
         @details:  (Доставка при наличии товара): Текст, который будет отображаться, когда товар есть в наличии."""
         return self.fields_dict['delivery_in_stock']
     
-    @delivery_in_stock.setter
+    @field_delivery_in_stock.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def delivery_in_stock(self, value = None) -> bool:
+    def field_delivery_in_stock(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['delivery_in_stock']: dict = {
@@ -2207,14 +2207,14 @@ class ProductFields:
 #   14
     
     @property
-    def delivery_out_stock(self) -> str:
+    def field_delivery_out_stock(self) -> str:
         """!  <sub>*[property]*</sub>   `[14] ps_product_lang.delivery_out_stock varchar(256)` 
         description: __prod_desc__"""
         return self.fields_dict['delivery_out_stock']
     
-    @delivery_out_stock.setter
+    @field_delivery_out_stock.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def delivery_out_stock(self, value = None) -> bool:
+    def field_delivery_out_stock(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['delivery_out_stock']: dict = {
@@ -2232,15 +2232,15 @@ class ProductFields:
 #   15
 
     @property
-    def delivery_additional_message(self) -> str:
+    def field_delivery_additional_message(self) -> str:
         """!  <sub>*[property]*</sub>   `[15] ps_product_lang.delivery_out_stock`
         field DB type: 
         description: __prod_desc__"""
         return self.fields_dict['delivery_additional_message']
     
-    @delivery_additional_message.setter
+    @field_delivery_additional_message.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def delivery_additional_message(self, value = None) -> bool:
+    def field_delivery_additional_message(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub> Заметки по доставке. Например: война, хз когда доставим  
         Мультиязычное поле. Формирует словарь:
         ```python
@@ -2269,14 +2269,14 @@ class ProductFields:
 
     
     @property
-    def affiliate_short_link(self) -> dict:
+    def field_affiliate_short_link(self) -> dict:
         """!  <sub>*[property]*</sub>   `[15] ps_product_lang.affiliate_short_link  varchar(255)`
         description: __prod_desc__"""
         return self.fields_dict['affiliate_short_link']
     
-    @affiliate_short_link.setter
+    @field_affiliate_short_link.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def affiliate_short_link(self, value = None) -> bool:
+    def field_affiliate_short_link(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub> Короткие линки не партнерские преогаммы. Мультиязычное поле.
         Формирует словарь:
         ```python
@@ -2312,13 +2312,13 @@ class ProductFields:
 #   17
     
     @property
-    def affiliate_text(self) -> str:
+    def field_affiliate_text(self) -> str:
         """!  <sub>*[property]*</sub>   `[17] ps_product_lang.affiliate_text varchar(256)`"""
         return self.fields_dict['affiliate_text']
     
-    @affiliate_text.setter
+    @field_affiliate_text.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def affiliate_text(self, value = None) -> bool:
+    def field_affiliate_text(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             #self.fields_dict['affiliate_text = affiliate_text
@@ -2338,14 +2338,14 @@ class ProductFields:
 #   18
     
     @property
-    def affiliate_summary(self) -> str:
+    def field_affiliate_summary(self) -> str:
         """!  <sub>*[property]*</sub>  `[18] ps_product_lang.affiliate_summary varchar(256)`"""
         return self.fields_dict['affiliate_summary']
     
     
-    @affiliate_summary.setter
+    @field_affiliate_summary.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def affiliate_summary(self, value = None) -> bool:
+    def field_affiliate_summary(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['affiliate_summary']: dict = {
@@ -2365,14 +2365,14 @@ class ProductFields:
 
     
     @property
-    def affiliate_summary_2(self) -> str:
+    def field_affiliate_summary_2(self) -> str:
         """!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`"""
         return self.fields_dict['affiliate_summary_2']
 
     
-    @affiliate_summary_2.setter
+    @field_affiliate_summary_2.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def affiliate_summary_2(self, value = None) -> bool:
+    def field_affiliate_summary_2(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['affiliate_summary_2']: dict = {
@@ -2391,14 +2391,14 @@ class ProductFields:
 
     
     @property
-    def affiliate_image_small(self) -> str:
+    def field_affiliate_image_small(self) -> str:
         """!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`"""
         return self.fields_dict['affiliate_image_small']
 
     
-    @affiliate_image_small.setter
+    @field_affiliate_image_small.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def affiliate_image_small(self, value = None) -> bool:
+    def field_affiliate_image_small(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['affiliate_image_small']: dict = {
@@ -2417,14 +2417,14 @@ class ProductFields:
 
     
     @property
-    def affiliate_image_medium(self) -> str:
+    def field_affiliate_image_medium(self) -> str:
         """!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`"""
         return self.fields_dict['affiliate_image_medium']
 
     
-    @affiliate_image_medium.setter
+    @field_affiliate_image_medium.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def affiliate_image_medium(self, value = None) -> bool:
+    def field_affiliate_image_medium(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['affiliate_image_medium']: dict = {
@@ -2444,14 +2444,14 @@ class ProductFields:
 
     
     @property
-    def affiliate_image_large(self) -> str:
+    def field_affiliate_image_large(self) -> str:
         """!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`"""
         return self.fields_dict['affiliate_image_medium']
 
     
-    @affiliate_image_large.setter
+    @field_affiliate_image_large.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def affiliate_image_large(self, value = None) -> bool:
+    def field_affiliate_image_large(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['affiliate_image_medium']: dict = {
@@ -2470,14 +2470,14 @@ class ProductFields:
 # 23
     
     @property
-    def ingridients(self) -> str:
+    def field_ingridients(self) -> str:
         """!  <sub>*[property]*</sub>  `ps_product_lang.ingridients`"""
         return self.fields_dict['ingridients']
 
     
-    @ingridients.setter
+    @field_ingridients.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def ingridients(self, value: str = None) -> bool:
+    def field_ingridients(self, value: str = None) -> bool:
         """!  <sub>*[setter]*</sub>  Ингридиенты. Текстовое поле - можно хранить фрагменты кода 
         формирует список словарей:
         ```python
@@ -2504,14 +2504,14 @@ class ProductFields:
 
     
     @property
-    def how_to_use(self) -> str:
+    def field_how_to_use(self) -> str:
         """!  <sub>*[property]*</sub> `ps_product_lang.how_to_use` """
         return self.fields_dict['how_to_use']
 
     
-    @how_to_use.setter
+    @field_how_to_use.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def how_to_use(self, value = None) -> bool:
+    def field_how_to_use(self, value = None) -> bool:
         """!  <sub>*[setter]*</sub>  `ps_product_lang.how_to_use` """
         try:
             self.fields_dict['how_to_use']: dict = {

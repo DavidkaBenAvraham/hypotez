@@ -350,7 +350,7 @@ class ProductFields():
             category_ids: dict = {'category': [{'id': id} for id in category_ids]}
 
             if 'associations' in self.fields.keys():
-                """! Всякие дополнения идут через ключ `assotiations` """
+                """! Всякие дополнения идут через ключ `associations` """
                 self.fields ['associations']['categories']: dict = category_ids
             else:
                 self.fields ['associations']: dict = {}

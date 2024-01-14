@@ -62,21 +62,20 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	"""! прокручиваю страницу товара, чтобы захватить области, которые подгружаются через AJAX """
 
 	#f.active = field_active() # [v] (added by default)
-	f.additional_delivery_times = field_additional_delivery_times()	# [v]  Мое поле. Нахера - не знаю
+	#f.additional_delivery_times = field_additional_delivery_times()	# [v]  Мое поле. Нахера - не знаю
 	f.additional_shipping_cost  = field_additional_shipping_cost() # [v]
-	f.advanced_stock_management = field_advanced_stock_management()
+	#f.advanced_stock_management = field_advanced_stock_management()
 	f.affiliate_short_link = field_affiliate_short_link() # [v]
-	f.affiliate_summary = field_affiliate_summary()
-	f.affiliate_image_large = field_affiliate_image_large()
-	f.affiliate_image_medium = field_affiliate_image_medium()
-	f.affiliate_image_small = field_affiliate_image_small()
-	f.affiliate_summary_2 = field_affiliate_summary_2()
-	f.affiliate_text = field_affiliate_text()
-	
-	f.affiliate_image_large = field_affiliate_image_large()
-	f.affiliate_image_medium = field_affiliate_image_medium()
-	f.affiliate_image_small = field_affiliate_image_small()
-	f.available_date = field_available_date()
+	#f.affiliate_summary = field_affiliate_summary()
+	#f.affiliate_image_large = field_affiliate_image_large()
+	#f.affiliate_image_medium = field_affiliate_image_medium()
+	#f.affiliate_image_small = field_affiliate_image_small()
+	#f.affiliate_summary_2 = field_affiliate_summary_2()
+	#f.affiliate_text = field_affiliate_text()
+	#f.affiliate_image_large = field_affiliate_image_large()
+	#f.affiliate_image_medium = field_affiliate_image_medium()
+	#f.affiliate_image_small = field_affiliate_image_small()
+	#f.available_date = field_available_date()
 	f.available_for_order = field_available_for_order()
 	f.available_later = field_available_later()
 	f.available_now = field_available_now()
@@ -89,7 +88,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	f.customizable = field_customizable()
 	f.date_add = field_date_add()
 	f.date_upd = field_date_upd()
-	f.delivery_in_stock = field_delivery_in_stock()
+	f.delivery_in_stock = field_delivery_in_stock()	 # [v]
 	f.delivery_out_stock = field_delivery_out_stock()
 	f.depth = field_depth()
 	f.description = field_description()
@@ -105,7 +104,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	f.id_manufacturer = field_id_manufacturer()
 	f.id_product = field_id_product()
 	f.id_shop_default = field_id_shop_default()
-	f.id_supplier = field_id_supplier()	# [v]
+	f.id_supplier = s.supplier_id	# [v]
 	f.id_tax = field_id_tax() # [v]
 	f.id_type_redirected = field_id_type_redirected()
 	f.images_urls = field_images_urls()	# [v]
@@ -399,10 +398,10 @@ def field_date_upd():
 #@logs_and_errors_decorator(default_return=False)
 def field_delivery_in_stock():
 	"""! @russian
-	@brief
+	@brief Доставка, когда товар в наличии
 	@details
 	"""
-	return f.delivery_in_stock
+	return d.execute_locator(l['delivery_in_stock'])
 	pass
 	
         

@@ -2,14 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\prestashop",
-    "\\src\\prestashop\\schemas_apis",
+    "\\src\\helpers",
     "\\src\\product",
     "\\src\\scenarios",
     "\\src\\settings",
     "\\src\\suppliers",
     "\\src\\suppliers\\aliexpress",
-    "\\src\\suppliers\\aliexpress\\locators"
+    "\\src\\suppliers\\aliexpress\\locators",
+    "\\src\\webdriver"
   ],
   "PreviewInSolutionExplorer": false
 }

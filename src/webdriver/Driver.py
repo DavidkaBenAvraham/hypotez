@@ -720,7 +720,7 @@ class Driver(WebDriver):
         await loop.run_in_executor(None, execute_locator.click, locator)
             
     #@logs_and_errors_decorator(default_return =  False)
-    def scroll(self, scrolls: int = 5, frame_size: int = 1800, direction: str = 'forward', delay: float = 1) -> bool:
+    def scroll(self, scrolls: int = 5, frame_size: int = 1800, direction: str = 'both', delay: float = 1) -> Union [None, False]:
         """! @~english Scroll the web page.
 
         @param scrolls `int`  :  Number of times to scroll.
@@ -736,35 +736,6 @@ class Driver(WebDriver):
         Обычно, я кручу на 5 экранов вниз, а потом вверх """
         
  
-        # def carousel (scrolls: int = 5, frame_size: int = 1800, direction: str = 'both', delay: float = 1) -> bool:
-        #     """! @russian крутилка экрана
-        #     @scrolls количество прокручиваний фреймов
-        #     @frame_size размер фрейма
-        #     @param direction `str`  :  'forward','backward','both' 
-        #      в карусели для `window.scrollBy()` я передаю размер фрейма и направление: 
-        #     'вниз': `frame_size`, 'вверх' отрицательное значение: `-frame_size`
-        #     @param delay `int`  :   пауза между скроллингом - имитирую действия человека, чтобы ба нарвать на бан
-        #     @returns bool  :  `True` в случае успеха, иначе `False`
-        #     """
-        #     for i in range ( int(scrolls) ):
-        #         self.execute_script (f'window.scrollBy({delay},{frame_size})')
-        #         self.wait (delay)  
-        
-        # try:
-        #     """! """
-        #     if direction == 'forward':
-        #         carousel (scrolls, 'forward')
-        #     if direction == 'backward':
-        #         carousel (f'-{scrolls}', 'backward')
-        #     if direction == 'both':
-        #         carousel (scrolls, 'forward')
-        #         carousel (f'-{scrolls}', 'backward')
-        #     else:
-        #         logger.warning(f"""неправильно задано направление. Ожидается `'forward', 'backward', 'both'`. Получено {direction} '""")
-        #         carousel('')
-        #         carousel('-')
-        # except Exception as ex:
-        #     logger.error(f'ошибка в карусели (прокрутка страницы)', ex)
         try:
             """! """
             if direction == 'forward':
