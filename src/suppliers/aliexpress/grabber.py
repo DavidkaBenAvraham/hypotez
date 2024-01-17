@@ -76,21 +76,20 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.affiliate_image_medium = field_affiliate_image_medium()
 	#f.affiliate_image_small = field_affiliate_image_small()
 	#f.available_date = field_available_date()
-	f.available_for_order = field_available_for_order()
-	f.available_later = field_available_later()
-	f.available_now = field_available_now()
-	f.cache_default_attribute = field_cache_default_attribute()
-	f.cache_has_attachments = field_cache_has_attachments()
-	f.cache_is_pack = field_cache_is_pack()
-	f.category_ids_append = field_category_ids_append() #<- добавочные категории. Если надо дополнить уже внесенные
-	f.category_ids = field_category_ids() #<- доп категории
-	f.condition = field_condition()
-	f.customizable = field_customizable()
-	f.date_add = field_date_add()
-	f.date_upd = field_date_upd()
-	f.delivery_in_stock = field_delivery_in_stock()	 # [v]
-	f.delivery_out_stock = field_delivery_out_stock()
-	f.depth = field_depth()
+	#f.available_for_order = field_available_for_order()
+	#f.available_later = field_available_later()
+	#f.available_now = field_available_now()
+	#f.cache_default_attribute = field_cache_default_attribute()
+	#f.cache_has_attachments = field_cache_has_attachments()
+	#f.cache_is_pack = field_cache_is_pack()
+	#f.category_ids_append = field_category_ids_append() ##<- добавочные категории. Если надо дополнить уже внесенные
+	#f.condition = field_condition()
+	#f.customizable = field_customizable()
+	#f.date_add = field_date_add()
+	#f.date_upd = field_date_upd()
+	f.delivery_in_stock = field_delivery_in_stock()	 # [v]	 ##<- доставка
+	#f.delivery_out_stock = field_delivery_out_stock()
+	#f.depth = field_depth()
 	f.description = field_description()
 	f.description_short = field_description_short()
 	f.ean13 = field_ean13()
@@ -316,12 +315,12 @@ def field_category_ids():
 	
 
 #@logs_and_errors_decorator(default_return=False)
-def field_category_ids_append(arg):
+def field_category_ids_append():
 	"""! @russian
 	@brief
 	@details
 	"""
-	return f.category_ids_append
+	#return f.category_ids_append
 	pass
 	
                 
@@ -358,7 +357,7 @@ def field_cache_is_pack():
 	
 
 #@logs_and_errors_decorator(default_return=False)
-def field_condition(arg):
+def field_condition():
 	"""! @russian
 	@brief
 	@details
@@ -419,8 +418,7 @@ def field_delivery_out_stock():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_depth():
-	"""! @russian
-	@brief
+	"""! @russian @brief
 	@details
 	"""
 	return f.depth
@@ -429,11 +427,10 @@ def field_depth():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_description():
-	"""! @russian
-	@brief
+	"""! @russian поле полного описания товара 
 	@details
 	"""
-	return str (d.execute_locator (l['description_locator'] ) )
+	return str (d.execute_locator (l['description'] ) )
 	pass
 
 

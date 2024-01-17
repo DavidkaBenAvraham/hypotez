@@ -1,10 +1,12 @@
 """! @~russian
-@brief   Модуль товара. Определяет характеристики и поля товара
+@brief   Модули товара. 
 
 @details Модуль содержит классы:
 - `Product`   методы и атрибуты товара
 - `ProductFields`  поля товара
  
+дефолтные поля заполняются при создании экземляра класса `ProjectFields`
+
  @section libs imports:
   - .product 
   - .product_fields 

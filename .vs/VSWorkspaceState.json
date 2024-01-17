@@ -4,12 +4,13 @@
     "\\src",
     "\\src\\helpers",
     "\\src\\product",
-    "\\src\\scenarios",
-    "\\src\\settings",
     "\\src\\suppliers",
     "\\src\\suppliers\\aliexpress",
-    "\\src\\suppliers\\aliexpress\\locators",
+    "\\src\\suppliers\\aliexpress\\scenarios",
+    "\\src\\suppliers\\ebay",
+    "\\src\\tools",
     "\\src\\webdriver"
   ],
+  "SelectedNode": "\\src\\suppliers\\aliexpress\\grabber.py",
   "PreviewInSolutionExplorer": false
 }

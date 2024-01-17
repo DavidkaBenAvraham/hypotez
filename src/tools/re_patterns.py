@@ -49,7 +49,7 @@ class RePtrn:
         self.remove_line_breaks: re = re.compile('^\s+|\n|\r|\s+$')
         self.clear_price: re = re.compile('[^0-9.,]')
         self.clear_number: re = re.compile('[^0-9.]')
-        self.remove_special_characters: re = re.compile('[#|]')
+        self.remove_special_characters: re = re.compile('[<>;=#{}]')
         self.remove_supplier_name: re = re.compile('[KSP,ksp]')
         self.replace_doubles: re = re.compile(r'(\w+)(\s+\1)+')
         #self.extract_value_from_parentheses_with_lead_dollar: re = re.compile('\$_\((.*?)\)_')

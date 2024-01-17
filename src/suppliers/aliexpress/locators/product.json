@@ -690,14 +690,14 @@
     "@note": "Название товара. Должно быть очищено от спецсимволов `#` etc"
   },
   "description": {
-    "attribute": null,
+    "attribute": "text",
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
-    "by": null,
-    "selector": null,
+    "by": "XPATH",
+    "selector": "//div[@id='nav-description']",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
     "action": null,
-    "@note": ""
+    "@note": "[4] ps_product_language.description text"
   },
   "description_short": {
     "attribute": null,
@@ -707,7 +707,7 @@
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
     "action": null,
-    "@note": ""
+    "@note": "[5] ps_product_language.description_short text"
   },
   "available_now": {
     "attribute": null,

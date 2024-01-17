@@ -728,7 +728,7 @@ def click(driver, locator) -> bool:
 
 
 #@logs_and_errors_decorator (default_return =  False)
-def reread_locators(s, entity: str ) -> Union[None, False]:
+def reread_locators(s, entity: str ) -> Union[dict, False]:
     """! @ru_brief  Заново перечитываю файлы локаторов вебэлементов
     @ru_details
     Иногда, чтобы построить локатор требуется провести предварительные вычисления
