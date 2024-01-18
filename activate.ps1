@@ -532,3 +532,4 @@ if (-Not (Test-Path $juLinkPath -PathType Leaf)) {
 # Pi82toPosJ66FzVJcjXOwa2c6C9I6VRHSKLaedwf8hbY57RvdQ2KIDMZ3ALBaJ2/
 # b7F8jx2hShogoDdEOzh+qotM2RllrIsT
 # SIG # End signature block
+function ju { Start-Process jupyter-notebook }
