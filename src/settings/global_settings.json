@@ -35,10 +35,11 @@
   "list_prestashop_api_domains": [ "emil-design.com", "sergey.mymaster.co.il", "dev.e-cat.co.il" ],
 
   "supplier_prefix": [
-    "aliexpress",
+
     "hb",
     "kualastyle",
     "amazon",
+    "aliexpress",
     "bangood",
     "kualastyle",
     "ksp",

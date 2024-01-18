@@ -7,20 +7,25 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 # Переходим в директорию hypotez
 #cd hypotez
 
-Write-Output " ######################### Создано виртуальное окружение ######################"
+
 # Создаем виртуальное окружение `venv`. Название окружения прописано в коде.
 # Желательно не менять его
 python -m venv venv
+Write-Output " ######################### Создано виртуальное окружение ######################"
 
 # Прописываем путь к каталогу с кодом
 # Получаем путь к директории, содержащей activate.ps1
 $venvDir = Get-Item -LiteralPath (Split-Path $MyInvocation.MyCommand.Path)
 
+Rename-Item -Path Join-Path -Path venvDir -ChildPath "Scripts\Activate.ps1" -NewName "Scripts\___Activate.ps1"
 # Полный путь к activate.ps1
 $activatePath = Join-Path -Path $venvDir -ChildPath "Scripts\Activate.ps1"
 
 # Строка, которую мы хотим добавить
 $lineToAdd = '$env:PYTHONPATH += ";$PSScriptRoot\src"'
+
+#копия моего файла активации
+Copy-Item -Path "src/templates/Activate.ps1" -Destination $activatePath
 
 # Добавляем строку в конец файла
 Add-Content -Path $activatePath -Value $lineToAdd
@@ -79,8 +84,14 @@ New-Item -ItemType Directory -Path .\docs
 # Клонируем репозиторий `docs` внутри директории hypotez
 git clone https://github.com/DavidkaBenAvraham/docs
 
+
 # Переходим в директорию doxygen
 cd .\docs\doxygen
+
+New-Item -ItemType Directory -Path .\_build
+New-Item -ItemType Directory -Path .\_build\ru
+New-Item -ItemType Directory -Path .\_build\en
+
 
 # Запускаем doxyrun
 ./doxyrun

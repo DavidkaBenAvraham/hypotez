@@ -49,4 +49,5 @@ def get_list_products_in_category (s) -> Union [list[str], str, None]:
 
     return list_products_in_category
 
-    
+def get_list_categories_from_site(s):
+    pass

@@ -72,7 +72,7 @@ sphinx/docs/_build/
 #doxygen
 doxygen/_build/
 # all docs
-docs/
+#docs/
 
 # PyBuilder
 .pybuilder/
@@ -164,9 +164,9 @@ cython_debug/
 .idea/
 
 # visual studio Я оставил. Там плагины 
-#.vs/
-#.vscode/
-
+#.vs/snippets
+.vscode/
+.vs/hypotez/FileContentIndex/
 
 # Jupyter Notepad
 .ipynb_checkpoints/
