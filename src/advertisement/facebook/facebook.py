@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #! /usr/share/projects/hypotez/venv/scripts python
-"""! @ru_brief Модуль рекламы на фейсбук
+"""! @~russian Модуль рекламы на фейсбук
 @rem Точка входа в программу """
 
 import os, sys
@@ -21,17 +21,17 @@ from src.scenarios import executor
 # ----------------------------------
 
 class Facebook():
-	"""! @ru_brief Класс общается с фейбуком через вебдрайвер 
+	"""! @~russian Класс общается с фейбуком через вебдрайвер 
 	
 	@param driver `Driver`  :   вебдрайвер (`src.webriver.Driver.Driver`) 
 	"""    
-	dir_facebook = Path(gs. )
-	driver = Driver()
+	dir_facebook_ads = Path(gs. )
+	d = driver = Driver()
 	locators = j_loads
 	
 	#@logs_and_errors_decorator(default_return=False)
 	def __init__(self, *args, **kwards):
-		"""! @~russian
+		"""! @~russian 
 		@brief Конструктор
 		"""
 		
@@ -39,17 +39,13 @@ class Facebook():
 	        
 	
 	#@logs_and_errors_decorator(default_return=False)
-	def login():
-		"""! @~russian
-		@brief
-		@details
-		"""
+	def login(self, d):
 		pass
 	    
 	
 	#@logs_and_errors_decorator(default_return=False)
 	def click_add_images_video():
-	    """! @~russian
+	    """! @~russian 
 	    @brief
 	    @details
 	    """

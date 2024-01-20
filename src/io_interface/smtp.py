@@ -1,4 +1,4 @@
-"""! @ru_brief Интерфейс SMTP электропочты
+"""! @~russian Интерфейс SMTP электропочты
 
  @section libs imports:
   - smtplib 
@@ -31,7 +31,7 @@ from email.mime.text import MIMEText
 
 def send(subject: str = '', body: str = '', to='one.last.bit@gmail.com'):
     """!
-    @ru_brief Функция отправляет электронное письмо, используя SMTP-сервер.
+    @~russian Функция отправляет электронное письмо, используя SMTP-сервер.
 
     @en_details 
     This function sends an email using the SMTP server specified in the 

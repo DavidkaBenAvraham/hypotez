@@ -1,1 +1,1 @@
-"""! @ru_brief Поставщик <I>hb.co.il</I> """
+"""! @~russian Поставщик <I>hb.co.il</I> """

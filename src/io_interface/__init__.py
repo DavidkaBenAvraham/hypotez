@@ -1,6 +1,6 @@
-﻿"""! @en_brief  input/output interfaces, such as `file`, `ftp`, `smtp`  
-@ru_brief  Модуль ввода/вывода
-@ru_details Интерфейсы подключения к внешним службам `file`, `ftp`, `smtp` итп
+﻿"""! @~en  input/output interfaces, such as `file`, `ftp`, `smtp`  
+@~russian  Модуль ввода/вывода
+@details Интерфейсы подключения к внешним службам `file`, `ftp`, `smtp` итп
 
  
 @section libs imports:

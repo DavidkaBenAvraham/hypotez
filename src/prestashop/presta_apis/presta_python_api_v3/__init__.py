@@ -1,4 +1,4 @@
-""" @ru_brief prestapython v3
+""" @~russian prestapython v3
  
  @section libs imports:
   - presta_python_api_v3 

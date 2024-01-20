@@ -1,4 +1,4 @@
-"""! @ru_brief Поставщик <I>ksp.co.il</I>
+"""! @~russian Поставщик <I>ksp.co.il</I>
 
  @section libs imports:
   - .scrapper 

@@ -1,4 +1,4 @@
-"""! @ru_brief бииип """
+"""! @~russian бииип """
 import asyncio
 import winsound, time
 from enum import Enum
@@ -23,7 +23,7 @@ note_freq = {
 }
 
 class BeepLevel(Enum):
-    """! @russian @brief Класс перечислитель типов событий
+    """! @~russian @brief Класс перечислитель типов событий
     @details разным событиям соответствуют разные мелодии
     Уровни событий
     - SUCCESS
@@ -111,7 +111,7 @@ class Beeper():
     @staticmethod
     @silent_mode
     async def beep(level: Union[BeepLevel, str] = BeepLevel.INFO, frequency: int = 400, duration: int = 1000) -> None:
-        """! @~russian
+        """! @~russian 
         @brief Звуковой сигнал оповещения 
         @details дает мне возможность на слух определить, что происходит в системе
         @param mode `BeepLevel | str`  :  тип события: `info`, `attention`, `warning`, `debug`, `error`, `long_error`, `critical`, `bell`  

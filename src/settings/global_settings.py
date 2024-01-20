@@ -1,4 +1,4 @@
-"""! @russian @brief Стартовые настройки программы 
+"""! @~russian @brief Стартовые настройки программы 
 @details Все логины, пути, аккаунты, API и другая чувствительная информация хранится в базе данных keepass.
 Открытые настройки находятся в файле `global_settings.json`
 
@@ -27,7 +27,7 @@
   - src.io_interface 
   - src.helpers 
 
- @~russian
+ @~russian 
 @note Для однозначной интерпретации слешей в разных ос я все пути объявляю как объекты `Path`
 @todo корневая директория может иметь любое название. Сейчас в коде жестко зашито `hypotez` Надо добавить опцию выбора имени коревой директории в файл конфигурации.
         (не срочно)
@@ -57,7 +57,7 @@ sys.path.append(str(dir_root))  # Adding the root folder to sys.path
 dir_src = Path(dir_root, 'src')
 sys.path.append(str(dir_root))
 """! @~english Adding my working directory to the system variable `OS.Path`"""
-"""! @russian Добавляю свою рабочую директорию в системную переменную `OS.Path`"""
+"""! @~russian Добавляю свою рабочую директорию в системную переменную `OS.Path`"""
 
 # -----------------------------------
 
@@ -75,7 +75,7 @@ from src.io_interface import j_loads
 
 
 class ProjectSettings():
-    """!@russian @brief `ProjectSettings` - определяяет параметры запуска программы.
+    """!@~russian @brief `ProjectSettings` - определяяет параметры запуска программы.
      @details Класс-синглтон, который хранит основные параметры и настройки проекта. 
       Класс разработан таким образом, чтобы существовал только один его экземпляр в программе. Он использует шаблон проектирования "Singleton", чтобы гарантировать, что у нас есть единственный и общий источник настроек для всего проекта.
       
@@ -110,7 +110,7 @@ class ProjectSettings():
     @param dir_root
     
     
-    @ru_note Переменные для хранения и управления различными типами учетных данных, 
+    @~russian _note Переменные для хранения и управления различными типами учетных данных, 
     используются для хранения учетных данных для различных сервисов, таких как `AliExpress API, 
     PrestaShop API, база данных PrestaShop, FTP и SMTP`. Переменные включают в себя как списки, используемые для хранения 
     нескольких наборов учетных данных, так и словари, используемые для конкретных учетных данных, 
@@ -268,7 +268,7 @@ class ProjectSettings():
     @todo Не работает. Надо пилить """
      
     beeper = settings['beeper_and_log_decorator']['silent']
-    """! @russian Бипер в декораторе запускается асинхронно! 
+    """! @~russian Бипер в декораторе запускается асинхронно! 
     Это не работает в jupyter, поэтому я его отключаю еще до запуска  декорированных функций """
 
     threads: bool = None
@@ -282,8 +282,8 @@ class ProjectSettings():
     """! флаг асинхронного исполнения функций """
     
     supplier_prefix: list = None
-    """! @ru_note  `supplier_prefix` Список поставщиков для которых я буду выполнять сценарии 
-    @ru_details `supplier_prefix` на протяжении всего кода означает  список поставщиков над которым будет выполнятся операция
+    """! @~russian _note  `supplier_prefix` Список поставщиков для которых я буду выполнять сценарии 
+    @details `supplier_prefix` на протяжении всего кода означает  список поставщиков над которым будет выполнятся операция
     При инициализации класса `Supplier` служит указателем, какого именно поставщика будет содержать инициализируемый класс
     """
 
@@ -291,7 +291,7 @@ class ProjectSettings():
     
     ##@logs_and_errors_decorator(default_return=False)
     def __new__(cls, *args, **kwargs):
-        """! @ru_brief Создаю инстанс  """
+        """! @~russian Создаю инстанс  """
         if not cls._instance:
             cls._instance = super().__new__(cls)
         return cls._instance
@@ -300,8 +300,8 @@ class ProjectSettings():
     ##@logs_and_errors_decorator(default_return=False)
     @classmethod
     def get_instance (cls) -> _instance:
-        """! @ru_brief Проверяю, а есть ли инстанс?
-       @ru_details Если инстанса класса еще нет - создаю, иначе возвращаю сам инстанс"""
+        """! @~russian Проверяю, а есть ли инстанс?
+       @details Если инстанса класса еще нет - создаю, иначе возвращаю сам инстанс"""
         if not cls._instance:
             cls._instance = cls()
             logger.info('Старт инстанса `gs`')
@@ -310,7 +310,7 @@ class ProjectSettings():
 
     #@logs_and_errors_decorator (default_return=None)
     def __init__ (self, *attrs, **kwards) -> None:
-        """! @russian Конструктор        
+        """! @~russian Конструктор        
          @param self  :  pointer
          @param *attrs `tuple`  :  collects positional arguments into a tuple
          @param **kwards `dict`  :  collects keyword arguments into a dictionary
@@ -329,7 +329,7 @@ class ProjectSettings():
 
     #@logs_and_errors_decorator (default_return = False)
     def _payload (self, *attrs, **kwargs) -> bool:
-        """! @~russian
+        """! @~russian 
         @brief функция начальных установок программы
         @details Функция берет данные из файла `global_settings.json` и базы данных `db.kdbx` 
         Функция вызывается из конструктора класса. Возвращает `True` в случае успеха, иначе `False`
@@ -441,7 +441,7 @@ class ProjectSettings():
                 
                 self.list_openai_credentials.append(entry_dict)
                 
-                """! @ru_note У меня только один API OpenAI ключ"""
+                """! @~russian _note У меня только один API OpenAI ключ"""
                 if entry.title == default_openai_api_title: 
                         self.default_openai_api_credentials = entry_dict      
                 
@@ -568,7 +568,7 @@ class ProjectSettings():
 
     #@logs_and_errors_decorator (default_return =  False)
     def open_kp(self, attempts:int = 3) -> Union[PyKeePass, False]:
-        """! @~russian
+        """! @~russian 
         @brief Открываю файл keepass паролём
         @details Даю три попытки на открытие            
         
@@ -578,12 +578,14 @@ class ProjectSettings():
         """
         
         if not Beeper.silent: asyncio.run(Beeper.beep(BeepLevel.INFO_LONG))
-           
+        
+        password = getpass.getpass ('Master password for keepass database: ')   
+        if len(password) == 0: self.open_kp(attempts)
         kp: PyKeePass =  None
         try:
+            
             """! Возвращаю объект `KeePass` """
-            kp = PyKeePass (str (Path (self.dir_root, 'src', 'settings', 'db.kdbx') ), 
-                                    password = getpass.getpass ('Master password for keepass database: '))
+            kp = PyKeePass (str (Path (self.dir_root, 'src', 'settings', 'db.kdbx') ), password = password)
             return kp
         except Exception as ex:
             logger.error(f'ошибка ', ex)
@@ -613,7 +615,7 @@ class ProjectSettings():
         @param self `pointer`
         @param dformat  `str` = '%Y%m%d%H%M%S' : Output format for datetime 
         """
-        """! @~russian
+        """! @~russian 
         @brief Возвращает метку даты в выбранном формате
         @details Возвращает метку даты в выбранном формате
         
@@ -630,7 +632,7 @@ class ProjectSettings():
     #@logs_and_errors_decorator (default_return =  False)
     def get_credentials_api_aliexpress(self, client: str ) ->  Union[dict, False]:
         """! 
-        @russian 
+        @~russian 
         @brief функция возвращает параметры подлючения к `aliexpress` через API 
         @param client `str`  :  клиент на другом конце провода
         @returns 
@@ -652,7 +654,7 @@ class ProjectSettings():
             }
         </code>
         """
-        """! @russian        
+        """! @~russian        
         @returns dict
         
         ### Пример возвращаемого словаря
@@ -676,7 +678,7 @@ class ProjectSettings():
 
     #@logs_and_errors_decorator (default_return =  False)
     def get_credentials_api_pestashop(self, client: str ) ->  Union[dict, False]:
-        """! @russian функция возвращает параметры подлючения к `prestashop` через API 
+        """! @~russian функция возвращает параметры подлючения к `prestashop` через API 
         @param client `str`  :  клиент на другом конце провода
         @returns dict  
         <code>
@@ -702,7 +704,7 @@ class ProjectSettings():
         @brief Settings for connecting to databases
         @details 'db.dev.e-cat.co.il', 'db.emil-design.com' , ...
         @returns dict
-        @~russian
+        @~russian 
         @brief  Функция возвращает параметры подлючения к `prestashop` через API 
         @param client `str`  :  клиент на другом конце провода. Например, 'db.dev.e-cat.co.il', 'db.emil-design.com'
         
@@ -737,7 +739,7 @@ class ProjectSettings():
         @details 'db.dev.e-cat.co.il', 'db.emil-design.com'
         @returns dict
         """
-        """! @~russian
+        """! @~russian 
         @brief Установки для подключения к базам данных
         @param client `str = None`  :   ftp аккаунты. Если было передано имя клиента, функция вернет
        словарь с параметрами подключения для конкретного клиента(например, 'db.dev.e-cat.co.il', 'db.emil-design.com' ... ),  
@@ -773,7 +775,7 @@ class ProjectSettings():
             'receiver': 'user@server.com'
         }</pre>
         """
-        """! @~russian
+        """! @~russian 
         @brief Подключение к почте
         @details Для получения api почты Google требует двухфакторную авторизацию.
         Надо произвести аутентификацию у Google, чтобы получить пароль
@@ -793,7 +795,7 @@ class ProjectSettings():
         @details 'db.dev.e-cat.co.il', 'db.emil-design.com'
         @returns dict
         """
-        """! @~russian
+        """! @~russian 
         @brief Установки для подключения к базам данных
         @param client `str | list[str]`  :   аккаунты ваз данных 'db.dev.e-cat.co.il', 'db.emil-design.com' ...
         @returns dict <pre>{
@@ -810,7 +812,7 @@ class ProjectSettings():
         pass
     
         if not client:
-            """! @ru_brief У меня всего один клиент SMTP """
+            """! @~russian У меня всего один клиент SMTP """
             try:
                 """! """
                 return {
@@ -830,7 +832,7 @@ class ProjectSettings():
     # ------------------------------------------------------------- suppliers_dict() -------------------------------------
     @property
     def suppliers_dict(self) -> dict:
-        """! @russian *[getter]* Словарь поставщиков из `suppliers/suppliers_dict.json` """
+        """! @~russian *[getter]* Словарь поставщиков из `suppliers/suppliers_dict.json` """
         """! @~english
         @brief Dictionary of suppliers from `suppliers/suppliers_dict.json`
         """
@@ -847,4 +849,4 @@ class ProjectSettings():
 
 
 gs: ProjectSettings = ProjectSettings().get_instance()
-"""! @ru_brief Инстанс `ProjectSettings"""
+"""! @~russian Инстанс `ProjectSettings"""

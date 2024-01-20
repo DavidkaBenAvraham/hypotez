@@ -1,4 +1,4 @@
-"""! @ru_brief Всякие манипуляции с гуглем
+"""! @~russian Всякие манипуляции с гуглем
 
  
  @section libs imports:
@@ -15,7 +15,7 @@ Author(s):
   - Created by Davidka on 15.11.2023 .
 """
 from __future__ import print_function
-
+                                              
 import os.path
 from pathlib import Path
 from google.auth.transport.requests import Request

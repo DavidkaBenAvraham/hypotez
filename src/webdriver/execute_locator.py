@@ -1,7 +1,7 @@
-"""! @~russian
+"""! @~russian 
 
 @brief  исполнитель (экзекьютор) сценария через вебдрайвер.
-@ru_details экзекьютор:
+@details экзекьютор:
 - выполняет алогритм по переходам на страницы, прописанный в <b>файлах сценария</b>.
 - исполняет алгоритм взаимодйствия со страницей, прописанный в <b>файлах локатора</b>.
 
@@ -96,7 +96,7 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
     If the locator contains `send_keys()` in the `action` section , there are two ways to obtain `keys`:
        - 1. From the locator itself, if a key is specified there. For example: `send_keys(Key.F5)`, `send_keys(12345)`.
        - 2. From an external source, passed as an argument `keys` to this function.
-    @ru_note Event handling is processed first, followed by attribute collection.
+    @~russian _note Event handling is processed first, followed by attribute collection.
     
     @param driver `Driver` The selenium webdriver object.
     @param keys  The `Keys` object used to send keys to the web element (f.e. `Key.Enter`) . Defaults to `None`.
@@ -190,7 +190,7 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
         
     # 1.4
     elif isinstance(locator['action'], list):
-        """! @ru_rem Блок производит список действий над элементом 
+        """! @~russian _rem Блок производит список действий над элементом 
         @todo Список не сорханяет порядок исполнения! Правильно будет передавать кортеж """
         """! @en_rem Execute the one action and return the result."""   
     
@@ -223,9 +223,9 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
             if _l['attribute']: 
                 attrs.append ( get_attributes_from_webelements (driver, _l) )
                 continue
-            """! @ru_rem Если я получил список - рекурсивно обрабатываю каждый элемент списка.
+            """! @~russian _rem Если я получил список - рекурсивно обрабатываю каждый элемент списка.
             Вначале исполняются локаторы, потом берутся аттрибуты.
-            @ru_todo сейчас для корректной обработки я требую, чтобы каждый элемент локатора бык определен, как список.
+            @todo сейчас для корректной обработки я требую, чтобы каждый элемент локатора бык определен, как список.
             А как сделать так, чтобы на требовалось обязательно передавать все элементы списком. Не срочно """
 
         locator = _saved_locator
@@ -238,8 +238,8 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
 
 #@logs_and_errors_decorator (default_return =  False)
 def execute_action(driver: Driver, locator: dict, keys: Union[Keys, None] = None) -> bool:
-    """! @en_brief Executes the specified action on the element identified by the given locator.
-    @ru_brief Исполняет действие над вебэлементом/страницей (click, send.KEY, scroll, refersh,  etc)
+    """! @~en Executes the specified action on the element identified by the given locator.
+    @~russian Исполняет действие над вебэлементом/страницей (click, send.KEY, scroll, refersh,  etc)
     
     @param driver `Driver` инстанс вебдрайвера подключенного к исполняемому поставщику
     @param locator `dict` a dictionary containing the following keys:
@@ -429,7 +429,7 @@ def get_webelements_from_page(driver: Driver, locator: dict) -> Union[list, Fals
 
     
 
-    """! @ru_note Я решил всегда возвращать список даже если нашелся один элемент
+    """! @~russian _note Я решил всегда возвращать список даже если нашелся один элемент
     Алогритм поиска
     - Вначале пытаюсь выловить через driver.find_elements, (множество)
     - в случае неудачи через driver.find_element, (один)
@@ -671,7 +671,7 @@ def evaluate_locator(expression_as_str, driver):
 
 #@logs_and_errors_decorator (default_return =  False)
 def get_webelement_as_screenshot(webelement) -> bool:
-    """! @~ru Беру скиншот элемента в формате `.png`.
+    """! @~russian Беру скиншот элемента в формате `.png`.
     @todo добавить возможность делать скриншот всего экрана, его части, всплывающих окон
     Takes a screenshot of a given WebElement object and returns it as a PNG image.
 
@@ -729,8 +729,8 @@ def click(driver, locator) -> bool:
 
 #@logs_and_errors_decorator (default_return =  False)
 def reread_locators(s, entity: str ) -> Union[dict, False]:
-    """! @ru_brief  Заново перечитываю файлы локаторов вебэлементов
-    @ru_details
+    """! @~russian  Заново перечитываю файлы локаторов вебэлементов
+    @details
     Иногда, чтобы построить локатор требуется провести предварительные вычисления
     После исполнения вычисления в памяти остается изменное значение локатора. 
     @param entity `str` : Какой из локаторов обновить: `product, category, login, shop`

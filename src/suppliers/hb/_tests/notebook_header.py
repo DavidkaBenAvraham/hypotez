@@ -14,8 +14,9 @@ import json
 import re
 
 
-#from settings import gs
-from src.webdriver import Driver
+
+from src.settings import gs
+from src.webdriver import Driver, execute_locator
 from src.suppliers import Supplier
 from src.product import Product, ProductFields
 from src.categories import Category
@@ -25,8 +26,10 @@ from src.prestashop import Product as PrestaProduct
 from src.io_interface import j_loads, j_dumps, save_text_file
 # ----------------
 
-def start_supplier(supplier_prefix: str = 'aliexpress', scenario_language: str = 'en' ):
+def start_supplier(supplier_prefix, scenario_language):
     """ Старт поставщика """
+    if not supplier_prefix and not scenario_language: return "Не задан сценарий и язык"
+    
     params: dict = \
     {
         'supplier_prefix': supplier_prefix,

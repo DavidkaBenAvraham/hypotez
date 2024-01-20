@@ -1,5 +1,5 @@
-"""! @en_brief   dictionary {UTF-8 : HTML ESCAPE}
-@ru_brief Словарь {UTF-8 : HTML ESCAPE}
+"""! @~en   dictionary {UTF-8 : HTML ESCAPE}
+@~russian Словарь {UTF-8 : HTML ESCAPE}
 
 @file
 @var html_entities - ASCII codes for special symbols

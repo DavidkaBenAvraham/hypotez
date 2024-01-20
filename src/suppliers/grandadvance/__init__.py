@@ -1,4 +1,4 @@
-"""! @ru_brief Поставщик <I>granadvance.co.il</I>
+"""! @~russian Поставщик <I>granadvance.co.il</I>
 
  
  @section libs imports:

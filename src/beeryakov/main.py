@@ -11,7 +11,12 @@ Author(s):
   - Created by [Name] [Last Name] on 07.11.2023 .
 """
 
-from global_settings import \
+# ------------------------------
+from src.settings import gs
+from src.helpers import logger,  logs_and_errors_decorator, DriverException, jprint, pprint
+from src.io_interface import j_loads, j_dumps
+# -------------------------------
+
     driver, \
     pprint, ksp, \
     GSpreadsheet, GWorksheet

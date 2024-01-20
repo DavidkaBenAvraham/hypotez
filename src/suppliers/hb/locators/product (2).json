@@ -107,35 +107,23 @@
     "use_mouse": false,
     "action": null
   },
-  "volume_and_price_for_100_and_sku": {
-    "attribute": null,
-    "logic for attribue[AND|OR|XOR|VALUE|null]": null,
-    "by": "XPATH",
-    "selector": "//div[@data-widget_type='shortcode.default']",
-    "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
-    "action": null,
-    "@note": "\u041d\u0430 \u0441\u0430\u0439\u0442\u0435 \u043a\u0440\u0438\u0432\u043e\u0439 HTML, \u043f\u043e\u044d\u0442\u043e\u043c\u0443 \u043e\u0434\u043d\u0438\u043c \u043b\u043e\u043a\u0430\u0442\u043e\u0440\u043e\u043c \u0432\u044b\u0442\u0435\u0441\u043a\u0438\u0432\u0430\u044e 3 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f, \u0430 \u043f\u043e\u0442\u043e\u043c \u0434\u0435\u043b\u0430\u044e \u043f\u0430\u0440\u0441\u0438\u043d\u0433. \u041f\u0440\u0438\u0445\u043e\u0434\u0438\u0442 \u0441\u043f\u0438\u0441\u043e\u043a \u0438\u0437 \u0447\u0435\u0442\u044b\u0440\u0435\u0445 \u043e\u0431\u044a\u0435\u043a\u0442\u043e\u0432: \u043e\u0431\u044a\u0435\u043c, \u0446\u0435\u043d\u0430 \u0437\u0430 100 \u0433\u0440, \u0430\u0440\u0442\u0438\u043a\u0443\u043b, \u043f\u0443\u0441\u0442\u043e\u0439 div"
-  },
   "reference": {
-    "attribute": null,
+    "attribute": "innerText",
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
     "by": "XPATH",
-    "selector": "//div[@data-widget_type='shortcode.default']",
+    "selector": "//div[@class='elementor-shortcode']",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
-    "action": null,
-    "@note": "ps_product.refernce \u0437\u0434\u0435\u0441\u044c \u044f \u043f\u044b\u0442\u0430\u044e\u0441\u044c \u0432\u044b\u0442\u0430\u0449\u0438\u0442\u044c \u0447\u0435\u0440\u0435\u0437 \u0430\u0442\u0442\u0440\u0438\u0431\u0443\u0442 \u043f\u0435\u0440\u0435\u0434\u0430\u043d\u043d\u044b\u0439 \u0432 \u0441\u0435\u043b\u0435\u043a\u0442\u043e\u0440\u0435"
+    "action": null
   },
   "supplier_reference": {
     "attribute": "innerText",
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
     "by": "XPATH",
-    "selector": "",
+    "selector": "//div[@data-widget_type='shortcode.default']",
     "logic for action[AND|OR|XOR|VALUE|null]": "TAKE 3 ELEMENT FROM ARRAY",
     "use_mouse": false,
-    "action": null,
-    "@note": "\u0437\u0430\u0431\u0438\u0440\u0430\u0435\u0442 3 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430 \u0441\u043e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b"
+    "action": null
   },
   "location": {
     "attribute": null,
@@ -470,6 +458,7 @@
     "use_mouse": false,
     "action": null
   },
+
   "show_price": {
     "attribute": null,
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
@@ -579,36 +568,36 @@
     "action": null
   },
   "description": {
-    "attribute": null,
+    "attribute": [
+      "innerText",
+      "innerText",
+      "innerText"
+    ],
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
-    "by": "XPATH",
-    "selector": "//div[@id = 'tab-description']//p",
+    "by": [
+      "XPATH",
+      "XPATH",
+      "XPATH"
+    ],
+    "selector": [
+      "//div[contains(@class,'woocommerce-tabs wc-tabs-wrapper')]//div[@id = 'tab-אופן-השימוש']",
+      "//div[contains(@class,'woocommerce-tabs wc-tabs-wrapper')]//div[@id = 'tab-מרכיבים']",
+      "//div[contains(@class,'woocommerce-tabs wc-tabs-wrapper')]//div[@id = 'tab-reviews']"
+    ],
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "action": null,
     "use_mouse": false,
-    "@note": ""
+    "action": null
   },
   "description_short": {
     "attribute": "innerText",
-    "logic for attribue[AND|OR|XOR|VALUE|null]": [
-      null,
-      null
-    ],
+    "logic for attribue[AND|OR|XOR|VALUE|null]": [ null, null ],
     "by": "XPATH",
     "selector": "//div[contains(@class,'woocommerce-tabs wc-tabs-wrapper')]//div[@id = 'tab-description']",
-    "logic for action[AND|OR|XOR|VALUE|null]": [
-      null,
-      null
-    ],
-    "use_mouse": [
-      false,
-      false
-    ],
-    "action": [
-      null,
-      null
-    ]
+    "logic for action[AND|OR|XOR|VALUE|null]": [ null, null ],
+    "use_mouse": [ false, false ],
+    "action": [ null, null ]
   },
+
   "affiliate_short_link": {
     "attribute": "$_(driver.current_url)_$",
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
@@ -672,6 +661,7 @@
     "use_mouse": false,
     "action": null
   },
+
   "Active (0/1)": {
     "attribute": null,
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
@@ -681,6 +671,7 @@
     "use_mouse": false,
     "action": null
   },
+
   "Categories (x,y,z...)": "2,",
   "Price tax excluded": {
     "attribute": null,
@@ -759,6 +750,24 @@
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
     "by": null,
     "selector": null,
+    "logic for action[AND|OR|XOR|VALUE|null]": null,
+    "use_mouse": false,
+    "action": null
+  },
+  "Reference #": {
+    "attribute": null,
+    "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+    "by": null,
+    "selector": null,
+    "logic for action[AND|OR|XOR|VALUE|null]": null,
+    "use_mouse": false,
+    "action": null
+  },
+  "Supplier reference #": {
+    "attribute": "InnerText",
+    "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+    "by": "XPATH",
+    "selector": "//div[contains(text(),'מקט')]",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
     "action": null
@@ -907,6 +916,7 @@
     "use_mouse": false,
     "action": null
   },
+
   "Tags (x,y,z...)": {
     "attribute": null,
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
@@ -1150,6 +1160,7 @@
     "use_mouse": false,
     "action": null
   },
+
   "Advanced Stock Management": {
     "attribute": null,
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
@@ -1186,6 +1197,7 @@
     "use_mouse": false,
     "action": null
   },
+
   "Open AI Product Description": {
     "attribute": null,
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
@@ -1231,4 +1243,5 @@
     "use_mouse": false,
     "action": null
   }
+
 }

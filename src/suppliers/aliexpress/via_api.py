@@ -1,4 +1,4 @@
-"""! @ru_brief  API Scenario
+"""! @~russian  API Scenario
 
 
  @section libs imports:
@@ -39,7 +39,7 @@ pass
 
 
 # def run_scenario(s: Supplier) -> bool:
-#     """! @ru_brief запускаю сценарии на исполнение
+#     """! @~russian запускаю сценарии на исполнение
 #     @param s `Supplier` поставщик.
 #     @returns bool: Возвращает True в случае успеха, иначе False.
 #     """
@@ -51,30 +51,30 @@ pass
 
 #@logs_and_errors_decorator (default_return =  False)
 def aliapi_get_products (products_urls: Union [list[str], str]) -> list [dict]:
-    """! @ru_brief Функция извлекает данные о товарах 
-    @ru_details Функция получает на вход список из URL, собранных спайдером,
+    """! @~russian Функция извлекает данные о товарах 
+    @details Функция получает на вход список из URL, собранных спайдером,
     вытаскивает id_product и получает детализированное инфо от aliexpress api
     """
     def extract_item_value (product_url: str) -> str:
-        """! @ru_brief Функция для извлечения id из URL 
-        @ru_details в URL https://he.aliexpress.com/item/1005005010835970.html
+        """! @~russian Функция для извлечения id из URL 
+        @details в URL https://he.aliexpress.com/item/1005005010835970.html
         id =1005005010835970
         @param product_url `str` Первый раз приходят сырые URL, в рекурсии приходят отфильтрованные id
         """
         match = re.search (r'item/(\d+).html', product_url)
         if match:
-            """! @ru_rem Сырой URL """
+            """! @~russian _rem Сырой URL """
             return str (match.group(1) )
         else:
-            """! @ru_rem отфильтрованный id """
+            """! @~russian _rem отфильтрованный id """
             return product_url
 
     # Фильтрация списка URL
     product_ids : list = set ( [extract_item_value (product_url) for product_url in products_urls] )
-    """! @ru_rem Очищаю список для получения id товара """
+    """! @~russian _rem Очищаю список для получения id товара """
     
     # products_details_list = [product for product in ali_api.get_products_details(product_ids)]
-    # """! @ru_bug НЕЛЬЗЯ генератором!
+    # """! @~russian _bug НЕЛЬЗЯ генератором!
     # Периодически падает на таймаут коннектора """
     products_details_list: list = []
     _failed_products_list: list = []
@@ -93,7 +93,7 @@ def aliapi_get_products (products_urls: Union [list[str], str]) -> list [dict]:
             
             if len(_failed_products_list) > 0:
                 if product_id in _failed_products_list:
-                    """! @ru_rem В случае успеха убираю id из списка упавших запросов """
+                    """! @~russian _rem В случае успеха убираю id из списка упавших запросов """
                     _failed_products_list.remove (product_id)
                     
                 logger.error(f'- Упавшие запросы: {_failed_products_list}')
@@ -118,7 +118,7 @@ def aliapi_get_products (products_urls: Union [list[str], str]) -> list [dict]:
 
 #@logs_and_errors_decorator (default_return =  False)
 def aliapi_to_prestashop(s, products_urls: Union [list [str], str]) -> bool:
-    """! @ru_brief интерфейс перевода полей api aliexpress в поля api prestashop"""
+    """! @~russian интерфейс перевода полей api aliexpress в поля api prestashop"""
     
     aliapi_products_details = aliapi_get_products (products_urls)
     for product in aliapi_products_details:

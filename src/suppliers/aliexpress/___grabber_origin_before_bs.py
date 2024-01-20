@@ -1,4 +1,4 @@
-"""! @ru_brief  Собиратель данных со страницы товара
+"""! @~russian  Собиратель данных со страницы товара
 
  @section libs imports:
   - gs 
@@ -20,13 +20,13 @@ from src.suppliers import Supplier
 
 
 def grab_product_page(s: Supplier) -> bool:
-    """! @ru_brief Собираю данные со страницы товара
-   @ru_details При помощи локаторов собираю данные о товаре: название, описание, характеристики, отзывы
+    """! @~russian Собираю данные со страницы товара
+   @details При помощи локаторов собираю данные о товаре: название, описание, характеристики, отзывы
 
    @param s `Supplier` класс поставщика 
-    @ru_note - вебдрайвер должен быть установлен на странице товара. 
+    @~russian _note - вебдрайвер должен быть установлен на странице товара. 
    - в моей учетной записи я вижу линейку "Affiliate links" - я беру из нее информацию о партнерской ссылке
-   @ru_note на али работает AJAX, это важно для сбора комбинаций! Они не передаются по URL
+   @~russian _note на али работает AJAX, это важно для сбора комбинаций! Они не передаются по URL
    
    """
     p = Product(supplier = s)
@@ -38,8 +38,8 @@ def grab_product_page(s: Supplier) -> bool:
 
     ## combinations
     def combinations():
-        """! @ru_brief У товара может быть насколько комбинаций. Функция вытаскивает все возможные
-        @ru_todo не проверена, я отложил реализацию на след версию
+        """! @~russian У товара может быть насколько комбинаций. Функция вытаскивает все возможные
+        @todo не проверена, я отложил реализацию на след версию
         """
         _l = s.locators['product']
         _comb_fs = p.combinations_fs
@@ -48,7 +48,7 @@ def grab_product_page(s: Supplier) -> bool:
         def product_combinations():
             _type = s.current_scenario['product combinations']
             if not _type: return
-            """! @ru_rem у товара не всегда есть комбинации """
+            """! @~russian _rem у товара не всегда есть комбинации """
 
             __ = s.locators['product']['combinations']
             _comb_fs['Product ID'] = _f['id']
@@ -58,7 +58,7 @@ def grab_product_page(s: Supplier) -> bool:
             _comb_fs['Attribute (Name:Type:Position)'] = f'''{_name}:{_type}:0'''
             _comb_fs['Value (Value:Position)'] = f'''{_value}:0'''
             _price = _d.execute_locator(_l['price_locator'])
-            """! @ru_rem получаю цену комбинации товара """
+            """! @~russian _rem получаю цену комбинации товара """
             
             _price = SF.clear_price(_price)
 

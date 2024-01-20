@@ -1,4 +1,4 @@
-﻿"""! @russian 
+﻿"""! @~russian 
 @brief Класс логгера
 @details 
 """
@@ -123,7 +123,7 @@ class LoggerSingleton():
         self._logger.info (colored_message)
 
     def success(self, message, ex = None, exc_info=True ):
-        """!@~russian
+        """!@~russian 
         @brief Записывает сообщение о успешном завершении в лог и бибикает.
         @param self: Экземпляр LoggerSingleton.
         @param message: Информационное сообщение.

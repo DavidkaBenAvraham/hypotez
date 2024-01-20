@@ -1,4 +1,4 @@
-"""! @ru_brief  функции и методы JavaScript 
+"""! @~russian  функции и методы JavaScript 
 
 
  @section libs imports:
@@ -19,7 +19,7 @@ from src.helpers import  logger, logs_and_errors_decorator
 
 #@logs_and_errors_decorator (default_return =  False)
 def unhide_DOM_element(driver, element):
-    '''! @ru_brief Если DOM элемент invisible, необходимо сделать его видимым.  '''
+    '''! @~russian Если DOM элемент invisible, необходимо сделать его видимым.  '''
     script :str = f''' 
     arguments[0].style.opacity=1;
     arguments[0].style['transform']='translate(0px, 0px) scale(1)';

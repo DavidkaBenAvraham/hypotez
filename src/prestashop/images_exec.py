@@ -1,5 +1,5 @@
-"""! @en_brief   Images preparation
-@ru_brief загрузка изображений в `Prestashop`
+"""! @~en   Images preparation
+@~russian загрузка изображений в `Prestashop`
  
  @section libs imports:
   - sys 

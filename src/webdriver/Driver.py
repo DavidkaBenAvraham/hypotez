@@ -587,8 +587,8 @@ class Driver(WebDriver):
         -----------------------------------------------------""")
         
         self.delete_driver_logs
-        """! @ru_brief Очищаю директорию логов.
-        @ru_todo 1. Продумать очистку только логов вебдрайвера  
+        """! @~russian Очищаю директорию логов.
+        @todo 1. Продумать очистку только логов вебдрайвера  
         2. Делать очистку по условию """
 
         super().__init__(*args, **kwards)
@@ -633,7 +633,7 @@ class Driver(WebDriver):
     #####################################################################
 
     #@logs_and_errors_decorator(default_return=False)
-    def execute_locator(self, locator) -> bool:
+    def execute_locator(self, locator: dict) -> bool:
         return execute_locator.execute_locator(self, locator)
 
     #@logs_and_errors_decorator(default_return=False)
@@ -757,7 +757,7 @@ class Driver(WebDriver):
 
          
     def carousel (self,  direction: str = '', scrolls: int = 5, frame_size: int = 1800,  delay: float = 1) -> bool:
-        """! @russian крутилка экрана. Можно задать через scroll()
+        """! @~russian крутилка экрана. Можно задать через scroll()
         @scrolls количество прокручиваний фреймов
         @frame_size размер фрейма
         @param direction `str`  :  'forward','backward','both' 
@@ -769,6 +769,7 @@ class Driver(WebDriver):
         for i in range(scrolls):
             self.execute_script (f'window.scrollBy({delay},{direction}{frame_size})')
             #self.wait(delay)
+        pass
 
   
     
@@ -934,7 +935,7 @@ class Driver(WebDriver):
     def delete_driver_logs(self) -> bool:
         """! Удаляю логи вебдрайвера 
         @param path `str`  :  путь к папке tmp, если None - будет построен из путей в ОС
-        @ru_todo подумать, а надо ли оно мне. пока поставил заглушку
+        @todo подумать, а надо ли оно мне. пока поставил заглушку
         """
         return True
     

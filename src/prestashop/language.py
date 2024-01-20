@@ -1,4 +1,4 @@
-"""! @brief @ru_brief класс языка в `Presatshop`
+"""! @brief @~russian класс языка в `Presatshop`
 
 
  @section libs imports:

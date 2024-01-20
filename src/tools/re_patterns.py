@@ -16,20 +16,20 @@ Author(s):
 import re
 
 class RePtrn:
-    """! @ru_brief Реалиация паттернов регулярных выражений """
+    """! @~russian Реалиация паттернов регулярных выражений """
 
     _instance = None
 
     def __new__ (cls, *args, **kwargs):
-        """! @ru_brief Создаю инстанс  """
+        """! @~russian Создаю инстанс  """
         if not cls._instance:
             cls._instance = super().__new__(cls)
         return cls._instance
 
     @classmethod
     def get_instance (cls) -> _instance:
-        """! @ru_brief Проверяю, а есть ли инстанс?
-       @ru_details Если инстанса класса еще нет - создаю, иначе возвращаю сам инстанс"""
+        """! @~russian Проверяю, а есть ли инстанс?
+       @details Если инстанса класса еще нет - создаю, иначе возвращаю сам инстанс"""
         if not cls._instance:
             cls._instance = cls()
         return cls._instance

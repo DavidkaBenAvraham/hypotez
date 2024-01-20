@@ -1,6 +1,6 @@
-"""! @en_brief   A set of tools used in the code, such as string validators, randomizers, regular expression patterns
-@ru_brief Внутренние утилиты
-@ru_details Вспомогательные утилиты включают в себя:
+"""! @~en   A set of tools used in the code, such as string validators, randomizers, regular expression patterns
+@~russian Внутренние утилиты
+@details Вспомогательные утилиты включают в себя:
 - Обработчики строк: 
 - - `StringValidator` Класс валидации строк `src.tools.string_validator.StringValidator`
 - - `StringFormatter` Класс форматирования строк `src.tools.string_formatter.StringFormatter`

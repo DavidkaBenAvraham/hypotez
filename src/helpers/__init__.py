@@ -1,5 +1,5 @@
-﻿"""! @en_brief  Auxiliary utilities
-@ru_brief Вспомогательные утилиты: логер, печать, ошибки
+﻿"""! @~en  Auxiliary utilities
+@~russian Вспомогательные утилиты: логер, печать, ошибки
 
  
  @section libs imports:

@@ -34,8 +34,8 @@ from src.prestashop import Product as PrestaProduct
 
 #@logs_and_errors_decorator(default_return =  False)
 def get_list_products_in_category(s) -> list:
-    """! @ru_brief Считываю URL товаров со страницы категории
-    @ru_details Если есть несколько страниц с товарами в одной категории - я листаю все.
+    """! @~russian Считываю URL товаров со страницы категории
+    @details Если есть несколько страниц с товарами в одной категории - я листаю все.
     Важно понимать, что к этому моменту вебдрайвер уже открыл страницу категорий 
     @param s `Supplier` 
     @returns list_products_in_category `list` список собранных URL. Может быть пустым, если в исследуемой категории нет товаров
@@ -51,7 +51,7 @@ def get_list_products_in_category(s) -> list:
     
     # perv_url = ''
     # while perv_url != _d.current_url:
-    #     """! @ru_brief Листаю страницы категории, чтобы получить полный список товаров """
+    #     """! @~russian Листаю страницы категории, чтобы получить полный список товаров """
     #     perv_url = _d.current_url
     #     _d.execute_locator (s.locators['category']['pagination']['->'])
         
@@ -62,7 +62,7 @@ def get_list_products_in_category(s) -> list:
    
             
     list_products_in_category = list_products_in_category if isinstance (list_products_in_category, list) else [list_products_in_category]
-    """! @ru_rem Всегда возвращаю список """
+    """! @~russian _rem Всегда возвращаю список """
     return list_products_in_category
 
     
@@ -82,7 +82,7 @@ def grab_product_page(s, list_products_in_category):
     
 #@logs_and_errors_decorator(default_return =  False)
 def get_urls_from_pagination(s) -> list[str]:
-    """! @russian @brief Функция собирает ссылки на товары со страницы категории с перелистыванием страниц 
+    """! @~russian @brief Функция собирает ссылки на товары со страницы категории с перелистыванием страниц 
     @param s `Supplier` 
     @returns list_products_in_category `list` :  Список ссылок, собранных со страницы категории"""
     
@@ -99,7 +99,7 @@ def get_urls_from_pagination(s) -> list[str]:
         prev_url = _d.current_url
         _d.execute_locator(s.locators['category']['pagination']['->'])
         if prev_url == _d.current_url:
-            """! @ru_rem Если больше некуда нажимать - выходим из цикла """
+            """! @~russian _rem Если больше некуда нажимать - выходим из цикла """
             break
 
         # Рекурсивный вызов для обработки следующих страниц
@@ -113,7 +113,7 @@ def get_urls_from_pagination(s) -> list[str]:
 
 #@logs_and_errors_decorator(default_return=False)
 def check_product_presence_in_prestashop(list_products_in_category):
-    """! @russian
+    """! @~russian 
     @brief Проверяю наличие товара в базе `Prestashop`. 
     Если такой товар уже есть в бд, проверяю изменения
     @details Если есть измения в товаре - заношу в историю параметры существующего товара
@@ -125,7 +125,7 @@ def check_product_presence_in_prestashop(list_products_in_category):
     pattern = re.compile(r'item/(\d+).html')
 
     dict_products_from_ali = {}
-    """! @russian функция создает словарь с параметрами товара.
+    """! @~russian функция создает словарь с параметрами товара.
     @details Начало подготовки товара для клиента (`Pestashop`)
     В дальнейшем словарь будет пополнятся новыми ключами """
 
@@ -136,7 +136,7 @@ def check_product_presence_in_prestashop(list_products_in_category):
             dict_products_from_ali.update ({item_id: url})
             
     dict_products_from_ali = PrestaProduct.check_prod_presence (dict_products_from_ali.keys)
-    """~@russian отдаю список `ID` товаров на проверку в `PrestaProduct`
+    """~@~russian отдаю список `ID` товаров на проверку в `PrestaProduct`
 
     
   
@@ -144,7 +144,7 @@ def check_product_presence_in_prestashop(list_products_in_category):
 # Сверяю файл сценария и текущее состояние списка категорий на сайте 
 #@logs_and_errors_decorator(default_return =  False)
 def update_categories_in_scenario_file(s, scenario_filename: str) -> bool:
-    @russian
+    @~russian 
     brief Проверка изменений категорий на сайте 
     @todo не проверен """
     

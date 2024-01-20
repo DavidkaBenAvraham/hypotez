@@ -1,6 +1,6 @@
-﻿"""! @ru_brief Интерфейс product <--> api Prestashop
+﻿"""! @~russian Интерфейс product <--> api Prestashop
 
-@ru_details brief  Я добавляю в базу данных престашоп товар путем нескольких последовательных действий
+@details brief  Я добавляю в базу данных престашоп товар путем нескольких последовательных действий
 1. Заполняю поля, необходимые для создания нового товара
 2. Получаю `id_product` созданного товара
 3. Используя полученный `id_product` загружаю дефолтную картинку
@@ -61,8 +61,8 @@ def fill(s:Supplier, f:ProductFields) -> ProductFields:
 
 
     def set_price(s, format: str = 'str') -> Union[str,float]:
-        """! @ru_brief Привожу денюшку через флаг `format` 
-        @ru_details к: 
+        """! @~russian Привожу денюшку через флаг `format` 
+        @details к: 
         - [ ] float 
         - [v] str
         """

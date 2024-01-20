@@ -1,4 +1,4 @@
-"""! @ru_brief Поставщик <I>hb.co.il</I>
+"""! @~russian Поставщик <I>hb.co.il</I>
 """
 
 # -*- coding: utf-8 -*-

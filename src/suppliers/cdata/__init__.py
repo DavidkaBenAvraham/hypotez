@@ -1,4 +1,4 @@
-"""! @ru_brief Поставщик <I>cdata.co.il</I>
+"""! @~russian Поставщик <I>cdata.co.il</I>
 @details execute `cdata` via vebdriver
 
 @todo `cdata` не реализован

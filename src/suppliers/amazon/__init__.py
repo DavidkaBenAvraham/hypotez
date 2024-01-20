@@ -1,4 +1,4 @@
-"""! @ru_brief Поставщик <I>amazon.com</I>
+"""! @~russian Поставщик <I>amazon.com</I>
 
 @namespace src: src
  \package src.suppliers.amazon

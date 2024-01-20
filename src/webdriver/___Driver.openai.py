@@ -611,7 +611,7 @@ class Driver(WebDriver):
         return self.get_url(self.current_url)
 
     def delete_driver_logs(self) -> bool:
-        """! @ru_todo нет реализации """
+        """! @todo нет реализации """
         return True  
 
     def close(self):
@@ -729,7 +729,7 @@ class Driver(WebDriver):
         return self.get_url(self.current_url)
 
     def delete_driver_logs(self) -> bool:
-        """! @ru_todo нет реализации """
+        """! @todo нет реализации """
         return True  
 
     async def close(self):

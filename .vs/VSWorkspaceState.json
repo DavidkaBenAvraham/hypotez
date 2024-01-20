@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\helpers",
     "\\src\\product",
+    "\\src\\settings",
     "\\src\\suppliers",
     "\\src\\suppliers\\aliexpress",
-    "\\src\\suppliers\\aliexpress\\scenarios",
-    "\\src\\suppliers\\ebay",
+    "\\src\\suppliers\\hb",
+    "\\src\\suppliers\\hb\\locators",
     "\\src\\tools",
     "\\src\\webdriver"
   ],
-  "SelectedNode": "\\src\\suppliers\\aliexpress\\grabber.py",
+  "SelectedNode": "\\src\\suppliers\\aliexpress\\locators",
   "PreviewInSolutionExplorer": false
 }

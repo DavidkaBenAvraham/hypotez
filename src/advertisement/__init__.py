@@ -1,4 +1,4 @@
-"""! @russin Модуль рамещения рекламы
+"""! @~russian Модуль рамещения рекламы
 @param dir_root `Path`  :  корневая директория (hypotez)
 @param dir_src `Path`  :  директория кода (hypotez)
 """

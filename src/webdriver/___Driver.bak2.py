@@ -245,8 +245,8 @@ class Driver(WebDriver):
         """)
         
         self.delete_driver_logs
-        """! @ru_brief Очищаю директорию логов.
-        @ru_todo 1. Продумать очистку только логов вебдрайвера  
+        """! @~russian Очищаю директорию логов.
+        @todo 1. Продумать очистку только логов вебдрайвера  
         2. Делать очистку по условию """
 
         super().__init__(*args, **kwards)
@@ -462,7 +462,7 @@ class Driver(WebDriver):
     def delete_driver_logs(self, path: str = None) -> bool:
         """ Очищаю %APPDATA% 
         @param path `str`: путь к папке tmp, если None - будет построен из путей в ОС
-        @ru_todo подумать, а надо ли оно мне. пока поставил заглушку
+        @todo подумать, а надо ли оно мне. пока поставил заглушку
         """
         return True
     

@@ -1,4 +1,4 @@
-"""! @~russian
+"""! @~russian 
 @brief  Модуль стартовых настроек 
 @details При инициализации класса `ProjectSettings` программа считывает настройки по умолчанию \n
  из файла `src/gs/global_settings.json`. \n
@@ -29,7 +29,7 @@
   - src.io_interface 
   - src.helpers 
 
- @~russian
+ @~russian 
  @file
  @var ProjectSettings `gs` инстанс ProjectSettings Класс инициализируется единожды, а потом вызывается его инстанс
  @var `dir_root` корневая директория для всей программы. 
@@ -69,7 +69,7 @@ pass
 
 
 sys.path.append (dir_root)
-"""! @ru_note Добавляю свою рабочую директорию в системную переменную `OS.Path`"""
+"""! @~russian _note Добавляю свою рабочую директорию в системную переменную `OS.Path`"""
 
 from pykeepass import PyKeePass, entry
 import getpass # <- модуль поля ввода типа password
@@ -79,7 +79,7 @@ from src.io_interface import j_loads
 
 
 class ProjectSettings():
-    """!@russian @brief ProjectSettings - класс синглтон с основными параметрами запуска программы.
+    """!@~russian @brief ProjectSettings - класс синглтон с основными параметрами запуска программы.
      @details Есть два источника, в которых хранятся настройки: 
      - файл `global_settings.json` (`src/gs/global_settings.json`)
      - база данных keepass<sup>1)</sup> `db.kdbx` (`src/gs/db.kdbx`)
@@ -118,8 +118,8 @@ class ProjectSettings():
     settings: dict = j_loads (Path (dir_root, 'src', 'settings', 'global_settings.json' ))
 
     supplier_prefix: list = settings ['supplier_prefix']
-    """! @ru_note  `supplier_prefix` Список поставщиков для которых я буду выполнять сценарии 
-    @ru_details `supplier_prefix` на протяжении всего кода означает  или поставщика или список поставщиков над которым будет выполнятся операция
+    """! @~russian _note  `supplier_prefix` Список поставщиков для которых я буду выполнять сценарии 
+    @details `supplier_prefix` на протяжении всего кода означает  или поставщика или список поставщиков над которым будет выполнятся операция
     При инициализации класса `Supplier` служит указателем, какого именно поставщика будет содержать инициализируемый класс
     
     """
@@ -128,7 +128,7 @@ class ProjectSettings():
     
     #@logs_and_errors_decorator(default_return=False)
     def __new__ (cls, *args, **kwargs):
-        """! @ru_brief Создаю инстанс  """
+        """! @~russian Создаю инстанс  """
         if not cls._instance:
             cls._instance = super().__new__(cls)
         return cls._instance
@@ -137,8 +137,8 @@ class ProjectSettings():
     #@logs_and_errors_decorator(default_return=False)
     @classmethod
     def get_instance (cls) -> _instance:
-        """! @ru_brief Проверяю, а есть ли инстанс?
-       @ru_details Если инстанса класса еще нет - создаю, иначе возвращаю сам инстанс"""
+        """! @~russian Проверяю, а есть ли инстанс?
+       @details Если инстанса класса еще нет - создаю, иначе возвращаю сам инстанс"""
         if not cls._instance:
             cls._instance = cls()
             logger.info('Старт инстанса `gs`')
@@ -146,7 +146,7 @@ class ProjectSettings():
     
     #@logs_and_errors_decorator(default_return = None)
     def __init__(self,   *attrs, **kwards) -> None:
-        """! @russian Конструктор 
+        """! @~russian Конструктор 
         
         
          @param self  :  pointer
@@ -159,7 +159,7 @@ class ProjectSettings():
     #@logs_and_errors_decorator(default_return = True)
     def _payload(self,   *attrs, **kwards) -> bool:
         """! 
-         @russian Функция загружает установки в методы и аттрибуты класса `ProjectSettings`
+         @~russian Функция загружает установки в методы и аттрибуты класса `ProjectSettings`
          @details
          - Обязателен мастер пароль от базы данных keepass. 
          - Для создания своей базы запустите `keepass.exe` из `bin/keepass/keepass.exe`  
@@ -179,22 +179,22 @@ class ProjectSettings():
         # api aliexpress -------------------------------------------------------------------------
         try:
             self.settings.update ( {'api_aliexpress' : _kp.find_entries_by_title('api_aliexpress_katia')[0]} )
-            """! @ru_note API Aliexpress """
+            """! @~russian _note API Aliexpress """
         except Exception as ex:
             logger.error (f'''ключ `api_aliexpress_katiа` завершился ошибкой {ex} ''')
         
         # api openAI ------------------------------------------------------------------------------
         try:
             self.settings.update ( {'api_openai' : _kp.find_entries_by_title('devhypotez')[0].custom_properties['key']} )
-            """! @ru_note API OpenAI """
+            """! @~russian _note API OpenAI """
         except Exception as ex:
             logger.error (f'''key 'api_openai_api' not found ''')
       
         # apis prestashop -------------------------------------------------------------------------
         try:
-            """! @ru_note Вытаскиваю api ключи для клиентских баз данных Prestashop из внутренней структуры keepass
-            @ru_bug Падает с ошибкой 'list index out of range' если нет ключа в keepass базе данных
-            @ru_todo 1. обработать ситуацию, когда не найден ключ в базе данных. 
+            """! @~russian _note Вытаскиваю api ключи для клиентских баз данных Prestashop из внутренней структуры keepass
+            @~russian _bug Падает с ошибкой 'list index out of range' если нет ключа в keepass базе данных
+            @todo 1. обработать ситуацию, когда не найден ключ в базе данных. 
             2. ситуация когда несколько ключей с одним именем в разных папках. 
             """
             prestashop_api : dict = {}
@@ -239,7 +239,7 @@ class ProjectSettings():
     #------------------------------------------------------------- kp() -------------------------------------
     #@logs_and_errors_decorator(default_return = PyKeePass)
     def kp(self) -> Union[PyKeePass, bool]:
-        """! @~russian
+        """! @~russian 
         @brief Открываю файл keepass паролём
         @details Даю три попытки на открытие            
         
@@ -270,8 +270,8 @@ class ProjectSettings():
     #------------------------------------------------------------- get_now() -------------------------------------                
     @property
     def get_now (self, dformat: str = '%Y%m%d%H%M%S') -> str:
-        """! @en_brief Returns a datestamp in the chosen format 
-             @ru_brief Returns a datestamp in the chosen format 
+        """! @~en Returns a datestamp in the chosen format 
+             @~russian Returns a datestamp in the chosen format 
         
              @param self `pointer`
              @param dformat  `str` = '%Y%m%d%H%M%S' : Output format for datetime 
@@ -283,8 +283,8 @@ class ProjectSettings():
     #------------------------------------------------------------- api_aliexpress() -------------------------------------
     @property
     def api_aliexpress (self) -> dict:
-        """! @en_brief Returns aliexpress API dictonary
-            @ru_brief словарь `API` алиекспресс
+        """! @~en Returns aliexpress API dictonary
+            @~russian словарь `API` алиекспресс
             
             @returns dict
             
@@ -308,19 +308,19 @@ class ProjectSettings():
     
     @property
     def prestashop_api (self) -> str:
-        """! @~russian
+        """! @~russian 
         @brief список словарей `API` `PrestaShop`
         @details Я обслужваю несколько заказчиков: `emil-design.com, sergey.mymaster.co.il, e-cat.co.il, shalom-phones.co.il`   
         Для каждого из них я держу параметры подключения через `API`
         
         @~english
-        @en_brief Connecting to PrestaShop API client database.  
+        @~en Connecting to PrestaShop API client database.  
         @en_details 
         Examples of clients:  
         * `emil-design.com`
         * `e-cat.co.il`
-        @ru_brief  API от клиентов Prestashop.
-        @ru_details 
+        @~russian  API от клиентов Prestashop.
+        @details 
         Примеры клиентов: 
         * `emil-design.com`
         * `e-cat.co.il`
@@ -357,24 +357,24 @@ class ProjectSettings():
 
     @property
     def dir_export (self) -> Path:
-        """! @en_brief absolute path for export files directory
-        @ru_brief абсолютный путь к директории экспорта файлов
+        """! @~en absolute path for export files directory
+        @~russian абсолютный путь к директории экспорта файлов
         @returns Path
         """
         return Path ( self.dir_root, 'export' ).absolute()
 
     @property
     def dir_logs(self) -> Path:
-        """! @en_brief Returns absolute directory for log files
-        @ru_brief абсолютный путь к директории логов 
+        """! @~en Returns absolute directory for log files
+        @~russian абсолютный путь к директории логов 
         @returns Path	"""
         return Path ( self.dir_root, 'logs' ).absolute()
 
     @property
     def dir_binaries(self) -> Path:
-        """! @en_brief returns absolute path to binary files
-             @ru_brief возвращает абсолютный путь к директории с бинарными файлами
-             @ru_details в директории хранятся вспомогательные файлы для работы кода.
+        """! @~en returns absolute path to binary files
+             @~russian возвращает абсолютный путь к директории с бинарными файлами
+             @details в директории хранятся вспомогательные файлы для работы кода.
              Например, драйверы веббраузеров `geckodriver.exe`, 
              GUI базы данных паролей `kypass.exe`,
              Генератор документации `doxygen.exe`
@@ -391,8 +391,8 @@ class ProjectSettings():
         
     @property
     def dev_null(self) -> Path:
-        """! @ru_brief определяет `null` операционной системы.  
-        @ru_details Для `windows` это `nul`  
+        """! @~russian определяет `null` операционной системы.  
+        @details Для `windows` это `nul`  
         Для линуксподобных `/devull`  
         """
                  
@@ -405,7 +405,7 @@ class ProjectSettings():
 
     @property
     def scenario_language(self) -> str:
-        """! @ru_brief Установка локали
+        """! @~russian Установка локали
         
         @details
         *[ru]*  
@@ -417,7 +417,7 @@ class ProjectSettings():
         
     @property
     def db_connection(self, client : str) -> dict:
-        """@ru_brief Установки для подлючения к базам данных:
+        """@~russian Установки для подлючения к базам данных:
         'db.dev.e-cat.co.il'
         'db.emil-design.com'
         
@@ -428,15 +428,15 @@ class ProjectSettings():
 
     @property
     def connection_ftp(self, client : str) -> dict:
-        """ @ru_brief настройки доступа по FTP к файлам клиента
+        """ @~russian настройки доступа по FTP к файлам клиента
             @returns dict
     	"""
         return self.settings ['ftp'][client]
 
     @property
     def connection_smtp(self, client : str = 'smtp.one.last.bit@gmail.com') -> dict:
-        """! @ru_brief подключние к почте
-         @ru_details Для получения api почты Google требуется двухфакторная авторизация. 
+        """! @~russian подключние к почте
+         @details Для получения api почты Google требуется двухфакторная авторизация. 
          Надо произвести аутентификацию у Google, чтобы получить пароль 
 
         @returns `dict` <pre>{
@@ -458,7 +458,7 @@ class ProjectSettings():
 
     @property
     def threads(self) -> bool:
-        """! @~russian
+        """! @~russian 
         @brief флаг, режима запуска программы в потоках (иначе - конвеер)
         @details 
         - `True`  :  программа будет выполняться в многозадачном режиме - это дает возможность обрабатывать 
@@ -471,12 +471,12 @@ class ProjectSettings():
         `True`: the program will run in multithreaded mode - each supplier from the variable `supplier_prefix` will be launched in a separate thread.  
         `False`: the program will sequentially run suppliers from the list.  
 
-        @returns bool  :  @russian  
+        @returns bool  :  @~russian  
         - `True` : Запустить список поставщиков в ***многопоточном режиме*** (*для каждого поставщика создается отдельный поток выполнения*)
         - `False` : Запустить список поставщиков ***по очереди***
         @~english `True` - run suppliers list in multithread, `False` - run suppliers sequentially
 
-        @note @russian Запуск многопоточного режима, если задан всего один поставщик не имеет смысла
+        @note @~russian Запуск многопоточного режима, если задан всего один поставщик не имеет смысла
         """
         return self.settings ['threads']
     
@@ -484,7 +484,7 @@ class ProjectSettings():
 
     @property
     def webdriver(self) -> str:
-        """! @~russian
+        """! @~russian 
         @brief инстанс вебдрйавера (`Mozilla, Chrome, Edge`, или другого)
          @details По умолчанию все настройки сделаны для Firefox (`geckodriver.com`).  
          Подробней о настройках вебдрайвера см `src.webdriver.Driver`, а настройки Firefox в `src.webdriver.Firefox`
@@ -493,10 +493,10 @@ class ProjectSettings():
 
     @property
     def suppliers_dict(self) -> dict:
-        """! @~russian
+        """! @~russian 
         @brief Словарь поставщиков из `suppliers/suppliers_dict.json"""
         return j_loads (Path ( self.dir_root, 'suppliers', 'suppliers_dict.json' ))
 
 
 gs: ProjectSettings = ProjectSettings().get_instance()
-"""! @ru_brief Инстанс `ProjectSettings"""
+"""! @~russian Инстанс `ProjectSettings"""

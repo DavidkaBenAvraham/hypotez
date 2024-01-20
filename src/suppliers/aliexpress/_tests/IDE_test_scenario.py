@@ -79,7 +79,7 @@ set_default_values()
 
 
 def field_additional_shipping_cost():
-    """! @russian
+    """! @~russian 
     @brief стоимость доставки
     @details
     """
@@ -96,7 +96,7 @@ f.additional_shipping_cost = field_additional_shipping_cost()
 #get_attributes_from_webelements (driver, _l)[0].text
 
 def field_affiliate_short_link():
-    """! @russian
+    """! @~russian 
     @brief Короткая ссылка на партнрскую программу
     @details
     """
@@ -108,7 +108,7 @@ f.affiliate_short_link = field_affiliate_short_link()
 
 
 def field_affiliate_summary():
-    """! @russian Описание к партнерской программе """
+    """! @~russian Описание к партнерской программе """
     
     return d.execute_locator(l['field_affiliate_summary'])[0]
     

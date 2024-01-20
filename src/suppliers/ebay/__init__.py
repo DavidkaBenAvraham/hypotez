@@ -1,4 +1,4 @@
-"""! @ru_brief Поставщик <I>ebay.com</I>
+"""! @~russian Поставщик <I>ebay.com</I>
  
  @section libs imports:
   - src.gs 

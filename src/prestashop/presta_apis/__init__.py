@@ -1,5 +1,5 @@
-"""! @ru_brief Модуль взаимодействия с несколькими версиями API Prestashop
-@ru_detailsTrance
+"""! @~russian Модуль взаимодействия с несколькими версиями API Prestashop
+@detailsTrance
 """
 
 # -*- coding: utf-8 -*-

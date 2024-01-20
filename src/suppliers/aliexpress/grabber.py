@@ -1,6 +1,6 @@
-"""! @ru_brief  Собиратель данных со страницы товара
+"""! @~russian  Собиратель данных со страницы товара
 
-@ru_warning Алиэкспресс загружает страницу через javascript. bs и requests не работают. 
+@warning Алиэкспресс загружает страницу через javascript. bs и requests не работают. 
 Все манипулации со страницей модуль осуществляет через селениум
 
  @section libs imports:
@@ -37,9 +37,9 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	"""! Собираю со страницы товара значения вебэлементов и привожу их к полям ProductFields
 	
 	@param s `Supplier` класс поставщика 
-	@ru_note - вебдрайвер должен быть установлен на странице товара. 
+	@~russian _note - вебдрайвер должен быть установлен на странице товара. 
 	- в моей учетной записи я вижу линейку "Affiliate links" - я беру из нее информацию о партнерской ссылке
-	@ru_note на али работает AJAX, это важно для сбора комбинаций! Они не передаются по URL
+	@~russian _note на али работает AJAX, это важно для сбора комбинаций! Они не передаются по URL
    
 	"""
 	
@@ -142,6 +142,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	f.upc = field_upc()
 	f.uploadable_files = field_uploadable_files()
 	f.url_default_image = field_url_default_image()
+	#f.volume = field_volume()
 	f.visibility = field_visibility()
 	f.weight = field_weight()
 	f.wholesale_price = field_wholesale_price()
@@ -153,7 +154,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 
 #@logs_and_errors_decorator(default_return=False)
 def field_active():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -164,7 +165,7 @@ def field_active():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_additional_delivery_times():
-    """! @russian
+    """! @~russian 
     @brief
     @details
     """
@@ -176,7 +177,7 @@ def field_additional_delivery_times():
  
 #@logs_and_errors_decorator(default_return=False)
 def field_additional_shipping_cost():
-    """! @russian
+    """! @~russian 
     @brief
     @details
     """
@@ -186,7 +187,7 @@ def field_additional_shipping_cost():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_advanced_stock_management():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -196,7 +197,7 @@ def field_advanced_stock_management():
         
 #@logs_and_errors_decorator(default_return=False)
 def field_affiliate_short_link():
-    """! @russian
+    """! @~russian 
     @brief
     @details
     """
@@ -207,7 +208,7 @@ def field_affiliate_short_link():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_affiliate_summary():
-    """! @russian
+    """! @~russian 
     @brief
     @details
     """
@@ -217,7 +218,7 @@ def field_affiliate_summary():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_affiliate_summary_2():
-    """! @russian
+    """! @~russian 
     @brief
     @details
     """
@@ -227,7 +228,7 @@ def field_affiliate_summary_2():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_affiliate_text():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -238,7 +239,7 @@ def field_affiliate_text():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_affiliate_image_large():
-	"""! @~russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -247,7 +248,7 @@ def field_affiliate_image_large():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_affiliate_image_medium():
-	"""! @~russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -256,7 +257,7 @@ def field_affiliate_image_medium():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_affiliate_image_small():
-	"""! @~russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -264,7 +265,7 @@ def field_affiliate_image_small():
         
 #@logs_and_errors_decorator(default_return=False)
 def field_available_date():
-    """! @russian
+    """! @~russian 
     @brief
     @details
     """
@@ -275,7 +276,7 @@ def field_available_date():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_available_for_order():
-    """! @russian
+    """! @~russian 
     @brief
     @details
     """
@@ -285,7 +286,7 @@ def field_available_for_order():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_available_later():
-    """! @russian
+    """! @~russian 
     @brief
     @details
     """
@@ -295,7 +296,7 @@ def field_available_later():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_available_now():
-    """! @russian
+    """! @~russian 
     @brief
     @details
     """
@@ -306,7 +307,7 @@ def field_available_now():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_category_ids():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -316,7 +317,7 @@ def field_category_ids():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_category_ids_append():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -327,7 +328,7 @@ def field_category_ids_append():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_cache_default_attribute():
-    """! @russian
+    """! @~russian 
     @brief
     @details
     """
@@ -337,7 +338,7 @@ def field_cache_default_attribute():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_cache_has_attachments():
-    """! @russian
+    """! @~russian 
     @brief
     @details
     """
@@ -348,7 +349,7 @@ def field_cache_has_attachments():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_cache_is_pack():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -358,7 +359,7 @@ def field_cache_is_pack():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_condition():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -367,7 +368,7 @@ def field_condition():
         
 #@logs_and_errors_decorator(default_return=False)
 def field_customizable():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -376,7 +377,7 @@ def field_customizable():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_date_add():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -386,7 +387,7 @@ def field_date_add():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_date_upd():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -396,7 +397,7 @@ def field_date_upd():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_delivery_in_stock():
-	"""! @russian
+	"""! @~russian 
 	@brief Доставка, когда товар в наличии
 	@details
 	"""
@@ -407,7 +408,7 @@ def field_delivery_in_stock():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_delivery_out_stock():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -418,7 +419,7 @@ def field_delivery_out_stock():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_depth():
-	"""! @russian @brief
+	"""! @~russian @brief
 	@details
 	"""
 	return f.depth
@@ -427,7 +428,7 @@ def field_depth():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_description():
-	"""! @russian поле полного описания товара 
+	"""! @~russian поле полного описания товара 
 	@details
 	"""
 	return str (d.execute_locator (l['description'] ) )
@@ -436,7 +437,7 @@ def field_description():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_description_short():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -446,7 +447,7 @@ def field_description_short():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_ean13():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -456,7 +457,7 @@ def field_ean13():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_ecotax():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -468,7 +469,7 @@ def field_ecotax():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_height():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -478,7 +479,7 @@ def field_height():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_how_to_use():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -489,7 +490,7 @@ def field_how_to_use():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_id_category_default():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -499,7 +500,7 @@ def field_id_category_default():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_id_default_combination():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -509,7 +510,7 @@ def field_id_default_combination():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_id_default_image():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -518,7 +519,7 @@ def field_id_default_image():
 	
 #@logs_and_errors_decorator(default_return=False)
 def field_id_lang():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -527,7 +528,7 @@ def field_id_lang():
 	
 #@logs_and_errors_decorator(default_return=False)
 def field_id_manufacturer():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -536,7 +537,7 @@ def field_id_manufacturer():
 	
 #@logs_and_errors_decorator(default_return=False)
 def field_id_product():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -545,7 +546,7 @@ def field_id_product():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_id_shop_default():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -554,7 +555,7 @@ def field_id_shop_default():
 	
 #@logs_and_errors_decorator(default_return=False)
 def field_id_supplier():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -563,7 +564,7 @@ def field_id_supplier():
 	
 #@logs_and_errors_decorator(default_return=False)
 def field_id_tax():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -572,7 +573,7 @@ def field_id_tax():
 	
 #@logs_and_errors_decorator(default_return=False)
 def field_id_type_redirected():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -581,7 +582,7 @@ def field_id_type_redirected():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_images_urls():
-	"""! @russian
+	"""! @~russian 
 	@brief Вначале я загружу дефолтную картинку
 	@details
 	"""
@@ -591,7 +592,7 @@ def field_images_urls():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_indexed():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -601,7 +602,7 @@ def field_indexed():
         
 #@logs_and_errors_decorator(default_return=False)
 def field_ingridients():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -611,7 +612,7 @@ def field_ingridients():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_is_virtual():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -621,7 +622,7 @@ def field_is_virtual():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_isbn():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -631,7 +632,7 @@ def field_isbn():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_link_rewrite():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -642,7 +643,7 @@ def field_link_rewrite():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_location():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -652,7 +653,7 @@ def field_location():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_low_stock_alert():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -663,7 +664,7 @@ def field_low_stock_alert():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_low_stock_threshold():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -673,7 +674,7 @@ def field_low_stock_threshold():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_meta_description():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -682,7 +683,7 @@ def field_meta_description():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_meta_keywords():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -693,7 +694,7 @@ def field_meta_keywords():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_meta_title():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -704,7 +705,7 @@ def field_meta_title():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_minimal_quantity():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -714,7 +715,7 @@ def field_minimal_quantity():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_mpn():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -724,7 +725,7 @@ def field_mpn():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_name():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -734,7 +735,7 @@ def field_name():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_online_only():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -744,7 +745,7 @@ def field_online_only():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_on_sale():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -754,7 +755,7 @@ def field_on_sale():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_out_of_stock():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details`
 	"""
@@ -764,7 +765,7 @@ def field_out_of_stock():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_pack_stock_type():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -774,7 +775,7 @@ def field_pack_stock_type():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_position_in_category():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -785,7 +786,7 @@ def field_position_in_category():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_price():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -795,7 +796,7 @@ def field_price():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_product_type():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -805,7 +806,7 @@ def field_product_type():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_quantity():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -815,7 +816,7 @@ def field_quantity():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_quantity_discount():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -825,7 +826,7 @@ def field_quantity_discount():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_redirect_type():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -835,7 +836,7 @@ def field_redirect_type():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_reference():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -845,7 +846,7 @@ def field_reference():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_show_condition():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -855,7 +856,7 @@ def field_show_condition():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_show_price():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -865,7 +866,7 @@ def field_show_price():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_state():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -875,7 +876,7 @@ def field_state():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_supplier_reference():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -886,7 +887,7 @@ def field_supplier_reference():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_text_fields():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -896,7 +897,7 @@ def field_text_fields():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_unit_price_ratio():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -906,7 +907,7 @@ def field_unit_price_ratio():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_unity():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -917,7 +918,7 @@ def field_unity():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_upc():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -927,7 +928,7 @@ def field_upc():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_uploadable_files():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -937,7 +938,7 @@ def field_uploadable_files():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_url_default_image():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -947,7 +948,7 @@ def field_url_default_image():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_visibility():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -957,7 +958,7 @@ def field_visibility():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_weight():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -967,7 +968,7 @@ def field_weight():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_wholesale_price():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -977,7 +978,7 @@ def field_wholesale_price():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_width():
-	"""! @russian
+	"""! @~russian 
 	@brief
 	@details
 	"""
@@ -989,8 +990,8 @@ def field_width():
 
 #@logs_and_errors_decorator
 async def get_price(_d, _l) -> Union[str,float]:
-    """! @ru_brief Привожу денюшку через флаг `format` 
-    @ru_details к: 
+    """! @~russian Привожу денюшку через флаг `format` 
+    @details к: 
     - [ ] float 
     - [v] str
     """
@@ -1096,8 +1097,8 @@ def rewritted_URL():
 
 ## combinations
 def combinations():
-    """! @ru_brief У товара может быть насколько комбинаций. Функция вытаскивает все возможные
-    @ru_todo не проверена, я отложил реализацию на след версию
+    """! @~russian У товара может быть насколько комбинаций. Функция вытаскивает все возможные
+    @todo не проверена, я отложил реализацию на след версию
     """
     _l = s.locators['product']
     _combfs = p.combinationsfs
@@ -1106,7 +1107,7 @@ def combinations():
     def product_combinations():
         _type = s.current_scenario['product combinations']
         if not _type: return
-        """! @ru_rem у товара не всегда есть комбинации """
+        """! @~russian _rem у товара не всегда есть комбинации """
 
         __ = s.locators['product']['combinations']
         _combfs['Product ID'] = f['id']
@@ -1116,7 +1117,7 @@ def combinations():
         _combfs['Attribute (Name:Type:Position)'] = f'''{_name}:{_type}:0'''
         _combfs['Value (Value:Position)'] = f'''{_value}:0'''
         _price = _d.execute_locator(_l['price_locator'])
-        """! @ru_rem получаю цену комбинации товара """
+        """! @~russian _rem получаю цену комбинации товара """
             
         _price = SF.clear_price(_price)
 

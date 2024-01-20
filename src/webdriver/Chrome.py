@@ -1,4 +1,4 @@
-"""! @ru_brief вебдрайвер Chrome
+"""! @~russian вебдрайвер Chrome
 
 """
 

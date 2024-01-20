@@ -1,4 +1,4 @@
-﻿"""! @ru_brief Модуль I/O интерфейса для JSON  
+﻿"""! @~russian Модуль I/O интерфейса для JSON  
 Module for working with JSON and HTML data.
  
  @section libs imports:
@@ -54,7 +54,7 @@ def json_loads(jjson: Union[Path, dict, str], ordered: bool = False) -> Union[di
     else:
         logger.error(f'Не нашелся файл: {jjson}. ')
         raise exceptions.FileNotFoundError(f'Не нашелся файл: {jjson}. ')
-        """! @ru_todo Реализовать обработку ошибок """
+        """! @todo Реализовать обработку ошибок """
             
 
 

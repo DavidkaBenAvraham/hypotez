@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 #! /usr/share/projects/hypotez/venv/scripts python
-"""! @ru_brief <b> Модуль запуска программы. </b>
+"""! @~russian <b> Модуль запуска программы. </b>
 
-@ru_details Здесь я устанавливаю порядок запуска поставщиков (в потоки или по очереди), интерфейс пользователя (`GUI`, `JUPYTER`, `CMD`). \n 
+@details Здесь я устанавливаю порядок запуска поставщиков (в потоки или по очереди), интерфейс пользователя (`GUI`, `JUPYTER`, `CMD`). \n 
             Расширенные параметры запуска поставщиков вы можете задать при вызове функции  `launcher()`. Подробности см 
             в комментариях в теле функции `launcher()` (`src.main.launcher()` )
             
@@ -61,13 +61,13 @@ from typing import Union
    
 
 class Thread4Supplier(Thread):
-    """! @en_brief This class runs lot of supppliers in multitheads 
-    @ru_brief Класс запуска списка поставщиков в отдельных потоках
-    @ru_brief Программу можно запустить в многопоточном режиме. Поскольку поставщики 
+    """! @~en This class runs lot of supppliers in multitheads 
+    @~russian Класс запуска списка поставщиков в отдельных потоках
+    @~russian Программу можно запустить в многопоточном режиме. Поскольку поставщики 
     не зависят друг от друга их вполне можно запускать каждого в своем потоке. \n Класс `Thread4Supplier` (src.main.Thread4Supplier) реализует механизм многопоточности
     Режим многопоточности задается в файле `global_settings.json` ключ: `threads`:`True` включает режим многопоточности.
     
-    @ru_note Запуск многопоточности нагружает цпу
+    @~russian _note Запуск многопоточности нагружает цпу
 
     @todo не тестирован
 
@@ -128,7 +128,7 @@ def launcher (supplier_prefix: Union [ list[str], str ] = None,
             scenario_language: Union[ list[str], str ] = None,
             threads: bool = False,
             gui_mode: str = None) -> bool:
-    """! @~russian
+    """! @~russian 
         @brief <b>функция стартер программы</b>
         @details 
         Функция получает на вход параметры запуска инстанса `Supplier` и корректно запускает инстaнс поставщика коммадой `run_supplier()`        
@@ -190,7 +190,7 @@ def launcher (supplier_prefix: Union [ list[str], str ] = None,
         @param  scenario_files `str | list[str]`  <sub>[Опционально]</sub>  Список файлов сценария к исполнению. По умолчанию список сценарив выполнения находится в установках поставщика по адресу   
                                             `src/suppliers/<supplier_prefix>/<supplier_prefix>.json`       
                                      
-        @russian @note `scenario` и `scenario_files` Позволяют осуществить все варианты сбора товара. Можно задать один из параметров, 
+        @~russian @note `scenario` и `scenario_files` Позволяют осуществить все варианты сбора товара. Можно задать один из параметров, 
         оба параметра или вовсе их не задавать, тогда программа возьмет параметры из файла настроек.
         
         @param scenario_language `str | list[str]` <sub>[Опционально]</sub> Язык на котором исполняется сценарий. Выбирается из ISO 639-1 двухбуквенного кода. Может получать строку или список. 
@@ -342,18 +342,18 @@ def launcher (supplier_prefix: Union [ list[str], str ] = None,
         for supplier_prefix in supplier_prefix:
             for lang in scenario_language:
                 supplier: Supplier  = Supplier ( supplier_prefix = supplier_prefix, scenario_language = lang )
-                """! @ru_note здесь появляется `supplier` от `Supplier`. 
-                    @ru_todo В этой части кода можно сделать интересный интерфейс запуска
+                """! @~russian _note здесь появляется `supplier` от `Supplier`. 
+                    @todo В этой части кода можно сделать интересный интерфейс запуска
                 """
                 logger.info (f'''Старт поставщика {supplier.supplier_prefix} ''')
                 supplier.run_supplier ( scenarios_any )
                 
                 # if scenario:
-                #     """! @ru_note Здесь я могу запустить сценарий заданный при вызове launcher()"""
+                #     """! @~russian _note Здесь я могу запустить сценарий заданный при вызове launcher()"""
                 #     supplier.run_supplier ( scenario )
                 # else:
-                #     """! @ru_note Иначе будет запущен список по умолчанию, определенный в `gs`
-                #     @ru_bug - а если не найдется список - все наебнется
+                #     """! @~russian _note Иначе будет запущен список по умолчанию, определенный в `gs`
+                #     @~russian _bug - а если не найдется список - все наебнется
                 #     """
                 #     supplier.run_supplier ()
                     
@@ -367,7 +367,7 @@ def main(supplier_prefix: Union[list[str], str] = None,
             scenario_language: Union[list[str], str] = None,
             gui_mode: str = None
          ) -> bool:
-    """! @ru_brief Точка входа. Детали запуска смотри в launcher()
+    """! @~russian Точка входа. Детали запуска смотри в launcher()
     
     @param supplier_prefix `str | list[str]` <sub>[Опционально]</sub>  список поставщиков с которых мне надо получить info
     @param scenario `dict`  <sub>[Опционально]</sub> одиночный сценарий исполнения.  Сценарий! НЕ ФАЙЛ! Опция позволяет составлять свои надоры сценариев из разных файлов сценариев

@@ -1,4 +1,4 @@
-"""! @~russian
+"""! @~russian 
 @brief Модуль нормализации строк
 @details Модуль может содержать функции для нормализации строк, то есть приведения строк к определенному стандарту или формату.
 Это может включать в себя приведение всех символов к нижнему или верхнему регистру, удаление пробелов, удаление диакритических знаков и т. д.
@@ -28,8 +28,8 @@ from . import symbols2HTML_dict
 
 
 class StringNormalizer:
-    """! @ru_brief StringNormalizer (Нормализатор строк):
-    @ru_details 
+    """! @~russian StringNormalizer (Нормализатор строк):
+    @details 
     - Задача: Преобразование строк в стандартный формат или нормализация.
     - Действия: Удаление лишних пробелов, преобразование регистра, обработка специальных символов и прочее.
     - Пример использования: Приведение всех букв к нижнему регистру или удаление лишних пробелов в начале и конце строки.
@@ -41,7 +41,7 @@ class StringNormalizer:
     # #                               Декораторы
     # #
     # def list_to_str_decorator(func):
-    #     """! @ru_brief Декоратор приводящий `input_str` к строке, если на входе был список """
+    #     """! @~russian Декоратор приводящий `input_str` к строке, если на входе был список """
     #     def wrapper(input_str: Union[str, List]) -> Union[str, List[str]]:
     #         if isinstance(input_str, list):
     #             input_str = ' '.join(map(str, input_str))
@@ -50,7 +50,7 @@ class StringNormalizer:
     #     return wrapper
     
     # def list_to_str_decorator_static(method):
-    #     """! @ru_brief Декоратор для статических методов, приводящий `input_str` к строке, если на входе был список """
+    #     """! @~russian Декоратор для статических методов, приводящий `input_str` к строке, если на входе был список """
     #     def wrapper(cls, input_str: Union[str, List]) -> Union[str, List[str]]:
     #         if isinstance(input_str, list):
     #             input_str = ' '.join(map(str, input_str))
@@ -95,9 +95,22 @@ class StringNormalizer:
 
 
     @staticmethod
+    #@logs_and_errors_decorator(default_return=False)
+    def get_numbers_only(input_str:str) -> Union[str,False]:
+        """! @~russian Очищает строку и отдает только цифры. 
+        Функция пробегает по строке и выдергивает только цифры, 
+        присоединяя их одну к другой
+        """
+        try:
+            return ''.join ( [ c for c in input_str if c.isdigit() ] )
+        except Exception as ex:
+            logger.error(f'Что-то не так с очисткой строки ', ех)
+            return False
+            
+    @staticmethod
     def normalize_sku(sku: str) -> str:
         """
-        Нормализация артикула
+        Нормализация артикула ?????
         """
         sku = SF.remove_non_latin_characters(sku)
         sku = SF.remove_special_characters(sku)
@@ -107,14 +120,14 @@ class StringNormalizer:
     
     @staticmethod
     def normalize_product_name (input_str: Union [str,list]) -> str:
-        """! @ru_brief поле `name` в `Prestashop` не должно содержать спецсимволов 
+        """! @~russian поле `name` в `Prestashop` не должно содержать спецсимволов 
         Если пришел список  - декоратор конвертирует его в строку
         """
         return SF.remove_special_characters (SF.remove_line_breaks (input_str) ) 
     
     @staticmethod
     def normalize_url (url: Union [str,list]) -> str:
-        """! @ru_brief Функция старается привeсти входную строку в легитимный URL """
+        """! @~russian Функция старается привeсти входную строку в легитимный URL """
         return url        
         """!@todo не проверен    """
 
@@ -134,28 +147,28 @@ class StringNormalizer:
 
         return parsed_url.geturl()
 
+        ###################################################
+        #
+        # Другой вариант
+        #
+        # protocol_pattern = re.compile(r'^https?://', re.IGNORECASE)
 
-    #
-    # Другой вариант
-    #
-    # protocol_pattern = re.compile(r'^https?://', re.IGNORECASE)
-
-    # if protocol_pattern.match(url):
-    #     # Если строка уже содержит протокол, считаем ее валидной
-    #     return url
-    # else:
-    #     # Добавляем протокол, если его нет
-    #     return 'http://' + url if not protocol_pattern.match('http://' + url) else 'https://' + url
+        # if protocol_pattern.match(url):
+        #     # Если строка уже содержит протокол, считаем ее валидной
+        #     return url
+        # else:
+        #     # Добавляем протокол, если его нет
+        #     return 'http://' + url if not protocol_pattern.match('http://' + url) else 'https://' + url
 
 
-    # # Пример использования
-    # input_url = input("Введите URL: ")
-    # result = validate_and_fix_url(input_url)
+        # # Пример использования
+        # input_url = input("Введите URL: ")
+        # result = validate_and_fix_url(input_url)
 
-    # if result:
-    #     print("Релевантный URL:", result)
-    # else:
-    #     print("Невалидный URL.")
+        # if result:
+        #     print("Релевантный URL:", result)
+        # else:
+        #     print("Невалидный URL.")
 
 
 

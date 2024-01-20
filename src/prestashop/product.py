@@ -1,4 +1,4 @@
-"""! @brief @ru_brief класс товара в `Prestashop`
+"""! @brief @~russian класс товара в `Prestashop`
 
  @section libs imports:
   - sys 

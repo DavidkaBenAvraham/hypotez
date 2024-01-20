@@ -36,7 +36,7 @@ from src.webdriver import execute_locator
 
 
 def grab(s, id_product: int = 0 , api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> ProductFields:
-    """! @russian  Я добавляю в базу данных престашоп товар 
+    """! @~russian  Я добавляю в базу данных престашоп товар 
     путем нескольких последовательных действий:
         1. Добавляю поля, необходимые для создания нового товара
         2. Получаю `id_product` созданного товара
@@ -57,7 +57,7 @@ def grab(s, id_product: int = 0 , api_method: Union[str('V1'),str('V2'),str('V3'
     """
 
     execute_locator.reread_locators(s, 'product')
-    """! @ru_remark Если в локаторе встречается функция - она портит содержимое локатора, 
+    """! @~russian _remark Если в локаторе встречается функция - она портит содержимое локатора, 
     поэтому я периодически перечитываю оригинал из файла локаторов """
     
     d = s.driver

@@ -1,4 +1,4 @@
-"""! @ru_brief Поставщик <I>gearbest.com</I>
+"""! @~russian Поставщик <I>gearbest.com</I>
 
  
  @section libs imports:

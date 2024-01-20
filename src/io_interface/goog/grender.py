@@ -12,14 +12,19 @@
 Author(s):
   - Created by [Davidka] [BenAvraham] on 08.11.2023 .
 """
+# ------------------------------
+from src.settings import gs
+from src.helpers import logger,  logs_and_errors_decorator, DriverException, jprint, pprint
+from src.io_interface import j_loads, j_dumps
+# -------------------------------
+
 import json
 from typing import List, Type, Union
-from global_settingspread_formatting import *
-from global_settingspread import Spreadsheet, Worksheet
-from goog.helpers import \
-    hex_color_to_decimal, decimal_color_to_hex, hex_to_rgb
+from spread_formatting import *
+from spread import Spreadsheet, Worksheet
+from goog.helpers import hex_color_to_decimal, decimal_color_to_hex, hex_to_rgb
 
-from global_settingspread.utils import ValueInputOption, ValueRenderOption
+from spread.utils import ValueInputOption, ValueRenderOption
 
 
 class GSRender():

@@ -1,4 +1,4 @@
-"""! @ru_brief вебдрайвер Edge
+"""! @~russian вебдрайвер Edge
 """
 # -*- coding: utf-8 -*-
 #! /usr/share/projects/hypotez/venv/scripts python

@@ -6,7 +6,7 @@ To open the database, a master password is required.
 [More details about KeyPass](https://keepass.info/help/base/index.html) 
 
 
-@~russian
+@~russian 
 @brief Дефолтные настройки программы
 @details Класс `ProjectSetting` (`src.settings.global_settings.ProjectSettings`) 
 определяет основные параметры запуска: 

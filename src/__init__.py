@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #! /usr/share/projects/hypotez/venv/scripts python
-"""! @ru_brief **Это корневая директория проекта** 
-@ru_details 
+"""! @~russian **Это корневая директория проекта** 
+@details 
 
 ---------------------------------------
 

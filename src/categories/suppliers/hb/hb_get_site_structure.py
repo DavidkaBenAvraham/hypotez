@@ -1,4 +1,4 @@
-"""! @ru_brief Строит структу сайта
+"""! @~russian Строит структу сайта
 
 @section libs imports:
   - typing 

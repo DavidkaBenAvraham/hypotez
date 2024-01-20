@@ -1,28 +1,24 @@
-"""  [File's Description]
+""" перевод цветовых форматов.
+Перевод:
+- HEX->DECIMAL
+- DECIMAL->HEX
+- HEX->RGB
 
-@namespace src: src
- \package beeryakov.goog
-\file helpers.py
- 
  @section libs imports:
  
 Author(s):
-  - Created by [Davidka] [BenAvraham] on 08.11.2023 .
+  - Created by hypotez
 """
 
-
+#@logs_and_errors_decorator(default_return =  False)
 def hex_color_to_decimal(letters: str) -> int:
-    """
-     [Function's description]
-
-    Parameters : 
-         letters : str : [description]
+    """ Перевод HEX->DECIMAL
+    
+    @param letters `str` : [description]
     Returns : 
          int : [description]
 
-    """
-    """    
-    # Example usage \n
+    ### Example usage 
     print(number_to_letter(1))  # Output: 'a' \n
     print(number_to_letter(2))  # Output: 'b' \n
     print(number_to_letter(3))  # Output: 'c' \n
@@ -65,6 +61,7 @@ def decimal_color_to_hex(number: int) -> str:
         quotient, remainder = divmod (number - 1, 26)
         return str ( decimal_color_to_hex (quotient) + chr (remainder + 97) ).upper()
 
+#@logs_and_errors_decorator(default_return =  False)
 def hex_to_rgb (hex: str) -> tuple:
     """
      [Function's description]

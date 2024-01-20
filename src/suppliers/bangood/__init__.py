@@ -1,4 +1,4 @@
-"""! @ru_brief Поставщик <i>bangood.com</i>
+"""! @~russian Поставщик <i>bangood.com</i>
 
  @section libs imports:
   - .scrapper 

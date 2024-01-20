@@ -1,4 +1,4 @@
-"""! @ru_brief вебдрайвер Firefox
+"""! @~russian вебдрайвер Firefox
 
 @en_details This code defines a subclass of webdriver.Firefox called Firefox. 
         It provides additional functionality such as the ability to launch Firefox 
@@ -16,7 +16,7 @@
         Each method is accompanied by a docstring that explains its purpose, arguments, and return value (if any). 
         The class and its methods are also annotated with type hints to make the code more readable and easier to maintain.
 
-        @ru_details класс webdriver.Firefox 
+        @details класс webdriver.Firefox 
         
 
 @image html class_firefox.png
@@ -71,7 +71,7 @@ class Firefox(FF):
     #@logs_and_errors_decorator (default_return =  False)
     def __init__(self, *args, **kwards) -> None:
         """! en_brief Initializes the Firefox webdriver with the specified launch options and profile.
-        @ru_brief Определяю стартовые параметры для `Firefox`
+        @~russian Определяю стартовые параметры для `Firefox`
         """
         logger.info(f''' Firefox ... ''')
         self._payload(self, *args, **kwards)
@@ -79,7 +79,7 @@ class Firefox(FF):
 
     #@logs_and_errors_decorator (default_return =  False)        
     def _payload(self, *args, **kwards):
-        """! @russian Загрузка стартовых параметров для запуска  `Firefox` 
+        """! @~russian Загрузка стартовых параметров для запуска  `Firefox` 
         @param args `*args`  :  Дополнительные аргументы.
         @param kwards `**kwards`  :  Дополнительные именованные аргументы.
         
@@ -161,7 +161,7 @@ class Firefox(FF):
 
         options = FirefoxOptions()
 
-        @ru_param service `Service`  :  `selenium.webdriver.firefox.service` представляет собой компонент `Selenium`, 
+        @~russian _param service `Service`  :  `selenium.webdriver.firefox.service` представляет собой компонент `Selenium`, 
         который предоставляет возможность запуска драйвера `Firefox`. Он используется для настройки и запуска 
         сервиса драйвера `Firefox`. Обычно это делается с помощью `geckodriver`, который является драйвером для `Firefox`, 
         предоставляемым `Mozilla`. У меня он лежит в директории `bin`
@@ -223,8 +223,8 @@ class Firefox(FF):
         # selenium  4
         service = Service ( geckodriver_path, log_output = gs.dev_null )
         
-        """! @ru_var service `Service`
-        @ru_details 
+        """! @~russian _var service `Service`
+        @details 
             `Service` в модуле `selenium.webdriver.firefox.service` представляет собой компонент `Selenium`, 
             который предоставляет возможность запуска драйвера `Firefox`. Он используется для настройки и запуска 
             сервиса драйвера `Firefox`. Обычно это делается с помощью `geckodriver`, который является драйвером для `Firefox`, 
@@ -275,14 +275,14 @@ class Firefox(FF):
         
         _profiles_path = ff_settings ['profiles_path'] [ff_settings ['profile_from'] ]
         if '%APPDATA%' in _profiles_path:
-            """! @ru_note Подключаюсь к профилю пользователя внутри ос
+            """! @~russian _note Подключаюсь к профилю пользователя внутри ос
             переменную os `%APPDATA%` раскываю в абсолютный путь """
             _profiles_path: Path = Path (_profiles_path.replace ('%APPDATA%',os.environ.get('APPDATA')))
-            """! @ru_todo Здесь надо разобрать ситуацию а какой именно профиль брать в ос """
+            """! @todo Здесь надо разобрать ситуацию а какой именно профиль брать в ос """
             _profiles_path: Path = Path(_profiles_path, ff_settings['default_profile_directory'][0])
         else:
             _profiles_path: Path = Path (gs.dir_root, 'src', 'webdriver', 'profiles','firefox_profiles', ff_settings['default_profile_directory'][0])
-            """! @ru_note подключаю локальный профиль из папки `profiles` """
+            """! @~russian _note подключаю локальный профиль из папки `profiles` """
 
         profile = FirefoxProfile(profile_directory=_profiles_path)
         # TODO: Implement profile setup logic

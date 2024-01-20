@@ -1,10 +1,10 @@
-"""! @ru_brief <b>класс</b> `Supplier` <b> базовый класс для всех поставщиков </b>
+"""! @~russian <b>класс</b> `Supplier` <b> базовый класс для всех поставщиков </b>
 
-@ru_details
+@details
 `Supplier` - предоставляет методы и атрибуты для конкретного 
 поставщика данных: например, amazon.com, wallmart.com, mouser.com, digikey.com либо заданный клиентом. 
 В програме уже соданы несколько поставщиков, другие будут определены заказчиком.
-@ru_note
+@~russian _note
 Для доступа к данным класс обращается к коннекторам, которые предоставляют досту к источнику информации. Реализованые коннекторы:
 - `HTML` grabber:  Mетод получения информации с помощью вебдрайвера (например, для Firefox, Chrome, Edge)
 - `API` connection:  Mетод предполагает взаимодействие с API поставщика данных. 
@@ -102,7 +102,7 @@ class Supplier():
         'category': None,
         'product': None,
     }
-    """! @ru_var locators  словарь локаторов вебэлементов на страницах `product`,`category`,`login`,`store`.
+    """! @~russian _var locators  словарь локаторов вебэлементов на страницах `product`,`category`,`login`,`store`.
     каждый из ключей будет заполнен словарем вебэлементов из файлов `product.json`,`category.json`,`login.json`,`store.json`
     из директории `<supplier_prefix>/locators` """        
 
@@ -191,7 +191,7 @@ class Supplier():
         _start_time = int(time.time())
         """! @todo needs for debugging. Start driver takes too long """        
         self.driver = Driver()
-        """! @ru_todo Здесь надо делать подключение вебдрайвера по условию, если работа с поставщиком может быть реализована другими методами 
+        """! @todo Здесь надо делать подключение вебдрайвера по условию, если работа с поставщиком может быть реализована другими методами 
         Может быть (апи, база данных, импорт файла)"""
         logger.debug(f""" ... драйвер подключился за {int(time.time()) - _start_time} seconds """)
            
@@ -199,19 +199,19 @@ class Supplier():
 
 
     def relatvie_to_abs_path(self, directories_names: Union[Path, list[Path], str, list[str]] = None, file_names:Union[Path, list[Path], str, list[str]] = None) -> Union[list[Path], Path]:
-        """! @russian  функция конвертирует относительные пути в абсолютные
+        """! @~russian  функция конвертирует относительные пути в абсолютные
         @param self  `pointer`
         @param directories_names `Path | list[Path] | list[str] | str` = None : пути директорий. 
         @param file_names `Path | list[Path] | list[str] | str` = None :  пути файлов
         
-        @ru_note если `directories_names = None`  функция будет строить путь для `file_names`, 
+        @~russian _note если `directories_names = None`  функция будет строить путь для `file_names`, 
         которые могут содержать часть пути.  
         Например: `foo.txt` | `bar/foo.txt` | `bar,foo.txt`  
         В качестве разделителя пути можно использовать  косую черту `/` или запятую `,`.  
         Хотя бы один из параметров `directories_names` или `files_names` должен содержать данные. 
         
         @returns:
-        @russian абсолютный путь как `Path` или список `list[Path]`
+        @~russian абсолютный путь как `Path` или список `list[Path]`
         @~english Absolute path as `Path` or `list[Path]`
 
         @todo 
@@ -220,15 +220,15 @@ class Supplier():
         """
 
         if directories_names is not None and file_names is None:
-            """! @ru_rem функция получила имя дирекатории. Функция строит для нее абсолютный путь """
+            """! @~russian _rem функция получила имя дирекатории. Функция строит для нее абсолютный путь """
             return Path(self.supplier_abs_path, directories_names)
 
         if isinstance(file_names, str):
-            """! @ru_rem функция получила один файл. Функция строит для него абсолютный путь"""
+            """! @~russian _rem функция получила один файл. Функция строит для него абсолютный путь"""
             return Path(self.supplier_abs_path, directories_names, file_names)
 
         if isinstance(file_names, list):
-            """! @ru_rem функция получила список файлов. Функция строит для каждого файла абсолютный путь" """
+            """! @~russian _rem функция получила список файлов. Функция строит для каждого файла абсолютный путь" """
             abs_filenames = [
                 Path(self.supplier_abs_path, directories_names, filename)
                     for filename in file_names
@@ -239,10 +239,10 @@ class Supplier():
 
     def login(self) -> bool:
         """! @~en Log in to the supplier website.  
-        @ru_brief Обработка ситуации, когда вход на сайт поставщика требует авторизации.
+        @~russian Обработка ситуации, когда вход на сайт поставщика требует авторизации.
         @param self : pointer
         @returns bool : `True` if login successful, else `False`
-        @ru_details Вызыаваю функцию `login()` из модуля поставщика и получаю от нее флаг завершения авторизации: 
+        @details Вызыаваю функцию `login()` из модуля поставщика и получаю от нее флаг завершения авторизации: 
         `True` в случае успеха, иначе `False`
         """
         
@@ -250,12 +250,12 @@ class Supplier():
 
 
     def run_supplier(self, scenario_files: Union [list[str], str] = None) -> bool:
-        """! @ru_brief Запуск выполнения сценариев
-        @ru_param scenario_files `list[str] | str` = None : Файлы с именами, содержащими сценарии выполнения для поставщика.
-        @ru_details 
+        """! @~russian Запуск выполнения сценариев
+        @~russian _param scenario_files `list[str] | str` = None : Файлы с именами, содержащими сценарии выполнения для поставщика.
+        @details 
         Если они не предоставлены, будут запущены сценарии из файла настроек поставщика.
         Значение по умолчанию - `None`.
-        @ru_note
+        @~russian _note
         Файлы сценариев находятся в каталоге `suppliers/<supplier_prefix>/scenarios`.
             Список сценариев выполнения по умолчанию определен в файле `<supplier>/<supplier_prefix>.json`.
             Например, для поставщика `aliexpress.com`:
@@ -291,12 +291,12 @@ class Supplier():
 
 
     def run_scenario_files(self, scenario_files: Union [list[str], str] = None) -> bool:
-        """! @en_brief Execute one or more scenario files.
-        @ru_brief  Функция запускает исполнитель `run_scenarios()` и передает ему в переменной `scenario_files` список файлов сценариев 
-        @ru_details (`src.scenarios.executor.run_scenarios()`).
+        """! @~en Execute one or more scenario files.
+        @~russian  Функция запускает исполнитель `run_scenarios()` и передает ему в переменной `scenario_files` список файлов сценариев 
+        @details (`src.scenarios.executor.run_scenarios()`).
         @param scenario_files `list[str] | str`: список имен файлов сценариев
         @returns bool `True` в случае успешного завершения всего списка сценариев исполнителем, иначе: `False`
-        @ru_todo А если один сценарий завершился `False`, а остальные `True`, все равно получаю общий `False`? 
+        @todo А если один сценарий завершился `False`, а остальные `True`, все равно получаю общий `False`? 
         Надо протестировать эту ситуацию
         """
         
@@ -304,7 +304,7 @@ class Supplier():
         return run_scenario_files (self, scenario_files)
 
     def run_scenarios(self, scenarios: Union[dict, list[dict]]) -> bool:
-        """! @ru_brief Функция запускает исполнение списка или одиночного сценария.
+        """! @~russian Функция запускает исполнение списка или одиночного сценария.
         @param scenarios `dict | list[dict]` : сценарий / список сценариев на исполнение.
         @returns bool `True` в случае успешного завершения сценария испонителем, иначе: `False`
         """

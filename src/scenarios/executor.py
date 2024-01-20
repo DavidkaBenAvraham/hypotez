@@ -51,7 +51,7 @@ def run_scenario_files(s, list_scenario_files_paths: Union [list[Path], Path] ) 
     If None, the default list of scenarios from s.scenario_files will be used.
     @returns bool `True` if all scenarios were executed successfully, else `False`
     
-    @ru_details Набор сценариев можно передать через `scenario_files`. 
+    @details Набор сценариев можно передать через `scenario_files`. 
     Если список сценариев не передан, он берется из установок поставщика по умолчанию  `s.settings.scenarios`. 
     Для каждого сценария из списка будет вызвана функция `src.scenarios.executor.run_scenario_file()`, 
     которая загружает файл сценариев в формате JSON и передает и запускет для каждого сценария функцию
@@ -75,7 +75,7 @@ def run_scenario_files(s, list_scenario_files_paths: Union [list[Path], Path] ) 
         if run_scenario_file(s, current_scenario_file_path):
             s.settings['last_runned_scenario_filename'] = current_scenario_file_path
             j_dumps(s.settings, Path(s.supplier_abs_path, f'{s.supplier_prefix}.json'))
-            """! @russian записываю измемения в файл 
+            """! @~russian записываю измемения в файл 
             @details запоминаю последний выполненный файл сценария, чтобы знать откуда продолжать в случае перезапуска """
         else:
             logger.error(f'Сценарий {current_scenario_file_path} Не выполнился !')
@@ -85,8 +85,8 @@ def run_scenario_files(s, list_scenario_files_paths: Union [list[Path], Path] ) 
 
 #@logs_and_errors_decorator(default_return =  False)
 def run_scenario_file(s, scenario_file_path: Union[Path, str]) -> bool:
-    """! @en_brief Runs the scenario file specified in `scenario_file_path`.
-    @ru_brief Загружаю сценарий из файла, указанного в `scenario_file_path`
+    """! @~en Runs the scenario file specified in `scenario_file_path`.
+    @~russian Загружаю сценарий из файла, указанного в `scenario_file_path`
 
     @param s `Supplier`
     @param scenario_file_path `str` The name of the scenario file in the scenarios directory.
@@ -150,7 +150,7 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> bool:
     d.get_url(scenario['url'])
     
     list_products_in_category: list = s.related_modules.get_list_products_in_category(s)
-    """! @russian Я решил отдавать поставщику обязанность собрать линки на товары """
+    """! @~russian Я решил отдавать поставщику обязанность собрать линки на товары """
 
     # Нет товаров в категории (или не успели загрузиться)
     if not list_products_in_category:
@@ -165,7 +165,8 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> bool:
             
         try:
             """! Собираю со страницы товара значения элементов и привожу их к полям ProductFields """
-            products_fields_list.append (s.related_modules.grab_product_page(s) )
+            res = s.related_modules.grab_product_page(s)
+            #products_fields_list.append (s.related_modules.grab_product_page(s) )
             pass
         except Exception as ex:
             logger.error(f'ошибка ', ex)
@@ -186,7 +187,7 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> bool:
 
 
     def update_locators_file(self, locators: dict, entity: str = 'product | category | login | store' ) -> dict:
-        """! @russian Редактор локаторов  
+        """! @~russian Редактор локаторов  
         Если я меняю локатор на лету - я могу заменить его в файле  
         Хорош для дебаггера и изменения локатора при изменении дизайна целевой страницы.
         Целевые страницы часто меняют дизайн, поэтому есть необходимость менять локатор "на лету".

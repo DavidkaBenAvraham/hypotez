@@ -1,4 +1,4 @@
-"""! @ru_brief Поставщик <I>etzmaleh.co.il</I>
+"""! @~russian Поставщик <I>etzmaleh.co.il</I>
 
  
  @section libs imports:

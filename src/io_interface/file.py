@@ -1,4 +1,4 @@
-"""! @ru_brief Модуль импорта / экспотра файлов
+"""! @~russian Модуль импорта / экспотра файлов
 
  
 @section libs imports:
@@ -84,7 +84,7 @@ def export_products_data_to_csv(data: str, file_name_path: str, format: Union[st
     return False
 
 def save_text_file(data: str, file_name_path: str, mode: str = 'w') -> bool:
-    """! @ru_brief Функция записывает текстовый файл 
+    """! @~russian Функция записывает текстовый файл 
     @param data `str` Данные на запись
     @param file_name_path `str` полный путь к файлу 
     @param mode `str` Режим записи :

@@ -1,4 +1,4 @@
-"""! ru_brief - Пример, как развести chatGPT на грубости
+"""! @~russian  - Пример, как развести chatGPT на грубости
 """
 import os
 import src.openai

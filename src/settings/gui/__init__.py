@@ -1,4 +1,4 @@
-"""! @russian @brief  Выбор пользовательского интерфейса
+"""! @~russian @brief  Выбор пользовательского интерфейса
 @details Предлагаемые интерфейсы
  - command line interface
  - gui (QT)

@@ -1,4 +1,4 @@
-"""! @ru_brief Вебдрайвер Firefox
+"""! @~russian Вебдрайвер Firefox
 
 @en_details Этот код определяет подкласс webdriver.Firefox с именем Firefox. 
         Он предоставляет дополнительные функции, такие как возможность запуска Firefox 
@@ -16,7 +16,7 @@
         аргументы и возвращаемое значение (если оно есть). 
         Класс и его методы также аннотированы подсказками типа для более читаемого кода и удобства обслуживания.
 
-        @ru_details Класс webdriver.Firefox 
+        @details Класс webdriver.Firefox 
 
 @image html class_firefox.png
  
@@ -56,7 +56,7 @@ from src.io_interface import j_loads, j_dumps
 
 
 class Firefox(FF):
-    """! @ru_brief Подкласс `webdriver.Firefox`, предоставляющий дополнительные функции.
+    """! @~russian Подкласс `webdriver.Firefox`, предоставляющий дополнительные функции.
 
     Атрибуты:
         actions (ActionChains): Объект `selenium.webdriver.common.action_chains.ActionChains`, 
@@ -66,8 +66,8 @@ class Firefox(FF):
 
     #@logs_and_errors_decorator(default_return=False)
     def __init__(self, *args, **kwards) -> None:
-        """! @ru_brief Инициализирует веб-драйвер Firefox с указанными параметрами запуска и профилем.
-        @ru_details Определяет стартовые параметры для `Firefox`.
+        """! @~russian Инициализирует веб-драйвер Firefox с указанными параметрами запуска и профилем.
+        @details Определяет стартовые параметры для `Firefox`.
         @param args `*args`  :  Дополнительные аргументы.
         @param kwards `**kwards`  :  Дополнительные именованные аргументы.
         """
@@ -76,7 +76,7 @@ class Firefox(FF):
 
     #@logs_and_errors_decorator(default_return=False)        
     def _payload(self, *args, **kwards):
-        """! @russian Загрузка стартовых параметров для запуска  `Firefox` 
+        """! @~russian Загрузка стартовых параметров для запуска  `Firefox` 
         @param args `*args`  :  Дополнительные аргументы.
         @param kwards `**kwards`  :  Дополнительные именованные аргументы.
         
@@ -186,7 +186,7 @@ class Firefox(FF):
 
         # selenium  4
         
-        @ru_param service `Service`  :  `selenium.webdriver.firefox.service` представляет собой компонент `Selenium`, 
+        @~russian _param service `Service`  :  `selenium.webdriver.firefox.service` представляет собой компонент `Selenium`, 
         который предоставляет возможность запуска драйвера `Firefox`. Он используется для настройки и запуска 
         сервиса драйвера `Firefox`. Обычно это делается с помощью `geckodriver`, который является драйвером для `Firefox`, 
         предоставляемым `Mozilla`. У меня он лежит в директории `bin`
@@ -221,7 +221,7 @@ class Firefox(FF):
 
     #@logs_and_errors_decorator(default_return=False)
     def set_options(self, opts=None) -> Options:
-        """! @ru_brief Опции запуска веб-драйвера Firefox Запуск вариантов для веб-драйвера Firefox включает в себя:
+        """! @~russian Опции запуска веб-драйвера Firefox Запуск вариантов для веб-драйвера Firefox включает в себя:
             `kiosk` : Запускает Firefox в полноэкранном режиме.
             `headless` : Окно Firefox скрыто
             
@@ -286,16 +286,16 @@ class Firefox(FF):
         """
         _profile_directory = ff_settings['profiles_path'][ff_settings['profile_from']]
         if '%APPDATA%' in _profile_directory:
-            """! @ru_note Подключаюсь к профилю пользователя внутри ОС
+            """! @~russian _note Подключаюсь к профилю пользователя внутри ОС
             переменную окружения `%APPDATA%` разворачиваю в абсолютный путь """
             _profile_directory: Path = Path(_profile_directory.replace('%APPDATA%', os.environ.get('APPDATA')))
-            """! @ru_todo Здесь нужно рассмотреть, какой именно профиль использовать в ОС """
+            """! @todo Здесь нужно рассмотреть, какой именно профиль использовать в ОС """
             logger.info ('Подключаюпрофиль из %APPDATA% ')
         else:
             _profile_directory: Path = Path(gs.dir_root, 'src', 'webdriver', 'profiles', 'firefox_profiles',
                                         ff_settings['default_profile_directory'][0])
             logger.info ('Подключаю локальный профиль из папки `profiles`')
-            """! @ru_note Подключаю локальный профиль из папки `profiles` """
+            """! @~russian _note Подключаю локальный профиль из папки `profiles` """
 
         profile = FirefoxProfile(profile_directory=_profile_directory)
         # TODO: Реализовать логику настройки профиля

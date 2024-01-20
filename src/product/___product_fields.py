@@ -1,4 +1,4 @@
-"""! @~russian
+"""! @~russian 
 @brief  Kласс `ProductFields` и функции сортировки в категориях
 Наименование полей в классе соответствуют именам полей в таблицах `Prestashop`
 Порядок полей в этом файле соответствует номерам полей в таблице, В коде программы в дальнейшем я использую алфавитный порядок
@@ -119,7 +119,7 @@ class ProductFields():
         pass
 
     def _payload(self, *args, **kwards):
-        """! @russian Установки полей товара по умолчанию """
+        """! @~russian Установки полей товара по умолчанию """
         
         default_value = j_loads (Path (gs.dir_src, 'product', 'product_fields_default_values.json'))
         
@@ -252,7 +252,7 @@ class ProductFields():
     @property
     def id_supplier(self):
         """! *[getter]*  field: `table_product.id_supplier: int(10) unsigned`
-        @russian @details: привязываю товар к id поставщика
+        @~russian @details: привязываю товар к id поставщика
         """
         return self.fields.get('id_supplier', None)
     
@@ -277,7 +277,7 @@ class ProductFields():
     def id_manufacturer(self) -> int:
         """! *[getter]* field: `table_product.id_manufacturer: int(10) unsigned`
         field
-        @russian @details: means BRAND. 
+        @~russian @details: means BRAND. 
             Бренд может быть передан как по имени так и по ID.
             Таблица брендов:
 
@@ -293,7 +293,7 @@ class ProductFields():
 
         field: `table_product.id_manufacturer`
         field type: int(10) unsigned
-        @russian @details: привязываю товар к бренду
+        @~russian @details: привязываю товар к бренду
         """
         try:
             self.fields['id_manufacturer'] = id_manufacturer
@@ -312,7 +312,7 @@ class ProductFields():
     @property
     def id_category_default(self) -> int:
         """! *[getter]* field: `table_product.id_category_default: int(10) unsigned`
-        @russian @details: привязываю товар к главной категории для этого товара
+        @~russian @details: привязываю товар к главной категории для этого товара
         """
         return self.fields.get('id_category_default', None)
     
@@ -339,7 +339,7 @@ class ProductFields():
     @category_ids.setter
     #@logs_and_errors_decorator (default_return =  False)
     def category_ids(self, category_ids: Union[int,list[int]] ) -> bool :
-        """! *[setter]*  @ru_brief Дополнительные к основной категории.
+        """! *[setter]*  @~russian Дополнительные к основной категории.
         При задании доп ключей прдеыдущие значения заменяются новыми из `category_ids`.
         Для добавления новых к уже существующим используй  функцию category_ids_append()
         """
@@ -362,7 +362,7 @@ class ProductFields():
     
     
     def category_ids_append(self,category_ids: Union[int,list[int]]):
-        """! @russian Дополнительные категории, кроме основной.
+        """! @~russian Дополнительные категории, кроме основной.
         Функция расширяет category_ids() """
         
         try:
@@ -379,7 +379,7 @@ class ProductFields():
     def id_shop_default(self) -> int:
         """! *[getter]* field: `table_product.id_shop_default: int(10) unsigned`
         field DB type: int(10) unsigned
-        @russian @details: ID магазина по умолчанию """
+        @~russian @details: ID магазина по умолчанию """
 
         return self.fields.get('id_shop_default')
     
@@ -435,7 +435,7 @@ class ProductFields():
             on_sale (int, optional): Defaults to 0.
 
         @returns
-            bool: _@russian @details_
+            bool: _@~russian @details_
         """
         try:
             self.fields['on_sale'] = on_sale
@@ -451,7 +451,7 @@ class ProductFields():
     def online_only(self) -> int:
         """!  *[getter]*  field: `table_product.online_only: tinyint(1) unsigned`
         field DB type: tinyint(1) unsigned
-        @russian @details: товар только онлайн """
+        @~russian @details: товар только онлайн """
 
         return self.fields.get('online_only')
     
@@ -474,7 +474,7 @@ class ProductFields():
     def ean13(self: str = None) -> Union[str, None]:
         """! *[getter]*  field: `ean13`
         field DB type:  varchar(13)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('ean13')
 
     
@@ -483,7 +483,7 @@ class ProductFields():
     def ean13(self, ean13=None) -> bool:
         """!  *[setter]*  field: `ean13`
         field DB type:  varchar(13)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         try:
             self.fields['ean13'] = ean13
             return True
@@ -498,7 +498,7 @@ class ProductFields():
     def isbn(self) -> Union[str, None]:
         """!  *[setter]*  field: `isbn`
         field DB type: varchar(32)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('isbn')
     
     
@@ -507,7 +507,7 @@ class ProductFields():
     def isbn(self, isbn: str = None) -> bool:
         """!  *[setter]*  field: `isbn`
         field DB type: varchar(32)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         try:
             self.fields['isbn'] = isbn
             return True
@@ -522,7 +522,7 @@ class ProductFields():
     def upc(self):
         """! *[getter]*  field: `upc`
         field DB type: varchar(12)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('upc')
     
     
@@ -531,7 +531,7 @@ class ProductFields():
     def upc(self, upc: str = None) -> Union[str, None]:
         """!  *[setter]*  field: `table_product.upc`
         field DB type: varchar(12)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         try:
             self.fields['isbn'] = upc
             return True
@@ -546,7 +546,7 @@ class ProductFields():
     def mpn(self) -> str:
         """! *[getter]*  field: `table_product.mpn`
         field DB type: varchar(40)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('mpn')
 
     
@@ -570,7 +570,7 @@ class ProductFields():
     def ecotax(self):
         """! *[getter]*  field: `table_product.ecotax`
         field DB type:  decimal(17,6)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('ecotax')
 
     
@@ -592,7 +592,7 @@ class ProductFields():
     def quantity(self) -> int:
         """! *[getter]*  field: `table_product.quantity`
         field DB type: int(10)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('quantity')
 
@@ -615,7 +615,7 @@ class ProductFields():
     def minimal_quantity(self) -> int:
         """! *[getter]* field: `table_product.minimal_quantity`
         field DB type: int(10)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('minimal_quantity')
 
     
@@ -636,7 +636,7 @@ class ProductFields():
     def low_stock_threshold(self) -> int:
         """! *[getter]* field: `table_product.low_stock_threshold`
         field DB type: int(10)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('low_stock_threshold')
 
     
@@ -657,7 +657,7 @@ class ProductFields():
     def low_stock_alert(self) -> int:
         """! *[getter]* field: `table_product.low_stock_alert`
         field DB type: tinyint(1)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('low_stock_alert')
 
     
@@ -678,7 +678,7 @@ class ProductFields():
     def price(self) -> float:
         """! *[getter]* field: `table_product.price`
         field DB type: decimal(20,6)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('price')
     
     
@@ -701,7 +701,7 @@ class ProductFields():
     def wholesale_price(self) -> float:
         """! *[getter]* field: `table_product.wholesale_price`
         field DB type: decimal(20,6)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('wholesale_price')
 
     
@@ -723,7 +723,7 @@ class ProductFields():
     def unity(self) -> str:
         """! *[getter]* field: `table_product.unity`
         field DB type: varchar(255)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
     
     @unity.setter
@@ -744,7 +744,7 @@ class ProductFields():
     def unit_price_ratio(self) -> float:
         """! *[getter]* field: `table_product.unit_price_ratio`
         field DB type: decimal(20,6)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('unit_price_ratio')
 
     
@@ -764,7 +764,7 @@ class ProductFields():
     def additional_shipping_cost(self) -> float:
         """! *[getter]* field: `table_product.additional_shipping_cost`
         field DB type: decimal(20,6)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('additional_shipping_cost')
 
     
@@ -786,7 +786,7 @@ class ProductFields():
         """ 
        ! *[getter]* field: `table_product.reference`
         field DB type: `varchar(64)`
-        @russian @details: __prod_desc__
+        @~russian @details: __prod_desc__
         """
         return self.fields.get('reference')
 
@@ -809,7 +809,7 @@ class ProductFields():
         """
        ! *[getter]* field: `table_product.supplier_reference`
         field DB type: `varchar(64)`
-        @russian @details: __prod_desc__
+        @~russian @details: __prod_desc__
         """
         return self.fields.get('supplier_reference')
 #   24
@@ -831,7 +831,7 @@ class ProductFields():
     def location(self) -> str:
         """! *[getter]* field: `table_product.location`
         field DB type: varchar(255)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('location')
 
     
@@ -853,7 +853,7 @@ class ProductFields():
     def width(self) -> float:
         """! *[getter]* field: `table_product.width`
         field DB type: decimal(20,6)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('width')
 
     
@@ -874,7 +874,7 @@ class ProductFields():
     def height(self) -> float:
         """! *[getter]* field: `table_product`..`height`
         field DB type: decimal(20,6)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('height')
 
     
@@ -895,7 +895,7 @@ class ProductFields():
     def depth(self) -> float:
         """! *[getter]* field: `table_product`..`depth`
         field DB type: decimal(20,6)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('depth')
 
     
@@ -916,7 +916,7 @@ class ProductFields():
     def weight(self) -> float:
         """! *[getter]* field: `table_product.weight`
         field DB type: decimal(20,6)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('weight')
 
     
@@ -938,7 +938,7 @@ class ProductFields():
     def out_of_stock(self) -> int:
         """! *[getter]* field: `table_product.out_of_stock`
         field DB type: int(10)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('out_of_stock')
 
     
@@ -960,7 +960,7 @@ class ProductFields():
     def additional_delivery_times(self) -> int:
         """!! *[getter]* field: `table_product.additional_delivery_times`
         field DB type: int(10)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('additional_delivery_times')
 
     
@@ -981,7 +981,7 @@ class ProductFields():
     def quantity_discount(self) -> int:
         """! *[getter]* field: `table_product.quantity_discount`
         field DB type: tinyint(1)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('quantity_discount')
 
     
@@ -1003,7 +1003,7 @@ class ProductFields():
     def customizable(self) -> int:
         """! *[getter]* field: `table_product.customizable`
         field DB type: tinyint(2)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
         return self.fields.get('customizable')
 
     
@@ -1025,7 +1025,7 @@ class ProductFields():
     def uploadable_files(self) -> int:
         """! *[getter]* field: `table_product.uploadable_files`
         field DB type: tinyint(4)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('uploadable_files')
 
@@ -1047,7 +1047,7 @@ class ProductFields():
     def text_fields(self) -> int:
         """! *[getter]* field: `table_product.text_fields`
         field DB type: tinyint(4)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('text_fields')
 
@@ -1070,7 +1070,7 @@ class ProductFields():
     def active(self) -> int:
         """! *[getter]* field: `table_product.active`
         field DB type: tinyint(1)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('active')
 
@@ -1095,7 +1095,7 @@ class ProductFields():
     def redirect_type(self) -> str:
         """! *[getter]* field: `table_product.redirect_type`
         field DB type: tinyint(1)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('redirect_type')
 
@@ -1125,7 +1125,7 @@ class ProductFields():
     def id_type_redirected(self) -> int:
         """! *[getter]* field: `table_product.id_type_redirected`
         field DB type: tinyint(10)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('id_type_redirected')
     
@@ -1148,7 +1148,7 @@ class ProductFields():
     def available_for_order(self) -> int:
         """! *[getter]* field: `table_product.available_for_order`
         field DB type: tinyint(10)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('available_for_order')
 
@@ -1171,7 +1171,7 @@ class ProductFields():
     def available_date(self) -> Date:
         """! *[getter]* field: `table_product.available_date`
         field DB type: date
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('available_date')
 
@@ -1194,7 +1194,7 @@ class ProductFields():
     def show_condition(self) -> int:
         """! *[getter]* field: `table_product.show_condition`
         field DB type: tinyint(1)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('show_condition')
 
@@ -1217,7 +1217,7 @@ class ProductFields():
     def condition(self) -> str:
         """! *[getter]* field: `table_product.condition`
         field DB type: enum('new','used','refurbished')
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('condition')
 
@@ -1245,7 +1245,7 @@ class ProductFields():
     def show_price(self) -> int:
         """! *[getter]* field: `table_product.show_price`
         field DB type: tinyint(1)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('show_price')
     
@@ -1268,7 +1268,7 @@ class ProductFields():
     def indexed(self) -> int:
         """! *[getter]* field: `table_product.indexed`
         field DB type: tinyint(1)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('indexed')
     
@@ -1291,7 +1291,7 @@ class ProductFields():
     def visibility(self) -> str:
         """! *[getter]* field: `table_product.visibility`
         field DB type: enum('both','catalog','search','none')
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('visibility')
 
@@ -1322,7 +1322,7 @@ class ProductFields():
     def cache_is_pack(self) -> int:
         """! *[getter]* field: `table_product.cache_is_pack`
         field DB type: tinyint(1)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('cache_is_pack')
     
@@ -1345,7 +1345,7 @@ class ProductFields():
     def cache_has_attachments(self) -> int:
         """! *[getter]* field: `table_product.cache_has_attachments`
         field DB type: tinyint(1)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('cache_has_attachments')
     
@@ -1368,7 +1368,7 @@ class ProductFields():
     def is_virtual(self) -> int:
         """! *[getter]* field: `table_product.is_virtual`
         field DB type: tinyint(1)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('is_virtual')
 
@@ -1391,7 +1391,7 @@ class ProductFields():
     def cache_default_attribute(self) -> int:
         """! *[getter]* field: `table_product.cache_default_attribute`
         field DB type: int(10)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('cache_default_attribute')
 
@@ -1414,7 +1414,7 @@ class ProductFields():
     def date_add(self) -> Date:
         """! *[getter]* field: `table_product.date_add`
         field DB type: datetime
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('date_add')
     
@@ -1437,7 +1437,7 @@ class ProductFields():
     def date_upd(self) -> Date:
         """! *[getter]* field: `table_product.date_upd`
         field DB type: datetime
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('date_upd')
     
@@ -1461,7 +1461,7 @@ class ProductFields():
     def advanced_stock_management(self) -> int:
         """! *[getter]* field: `table_product.advanced_stock_management`
         field DB type: tinyint(1)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('advanced_stock_management')
     
@@ -1484,7 +1484,7 @@ class ProductFields():
     def pack_stock_type(self) -> int:
         """! *[getter]* field: `table_product.pack_stock_type`
         field DB type: int(11)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('pack_stock_type')
     
@@ -1508,7 +1508,7 @@ class ProductFields():
     def state(self) -> int:
         """! *[getter]* field: `table_product.state`
         field DB type: int(11)
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('state')
     
@@ -1532,7 +1532,7 @@ class ProductFields():
     def product_type(self) -> str:
         """! *[getter]* field: `table_product.product_type`
         field DB type: enum('standard', 'pack', 'virtual', 'combinations', '')
-        @russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__"""
 
         return self.fields.get('product_type')
 

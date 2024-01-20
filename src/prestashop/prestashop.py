@@ -1,6 +1,6 @@
 """! @brief модуль коннактор `Prestashop`
 
-@ru_details API хранятся в базе данных keypass.
+@details API хранятся в базе данных keypass.
 
  @section libs imports:
   - sys 
