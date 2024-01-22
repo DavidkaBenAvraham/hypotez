@@ -1,8 +1,6 @@
 """  [File's Description]
 
- @namespace src
- \package src.prestashop.presta_apis.presta_python_api_v3.presta_python_api_v3
-\file utils.py
+
  @section libs imports:
   - xml.dom.minidom 
   - builtins 

@@ -1,36 +1,36 @@
-"""  [File's Description]
+"""  Prestashop API V2
 
- @namespace src
- \package src.prestashop.presta_apis.presta_python_api_v2
-\file prestashop_api.py
  
  @section libs imports:
   - requests 
   - xmltodict 
-Author(s):
-  - Created by Davidka on 10.11.2023 .
+
 """
+from src.helpers import logger 
 import requests
 import xmltodict
 
 
-class PrestashopError(RuntimeError):
+
+
+class PrestashopError_V2(RuntimeError):
+    logger.error("Error v2", RuntimeError)
     pass
 
 
-class PrestashopApi:
+class PrestashopApi_V2:
     STATUSES = (200, 201)
 
-    def __init__(self, api, key):
-        self.api = api
-        self.key = key
+    def __init__(self, api_domain, api_key):
+        self.api = api_key
+        self.key = api_domain
 
     def _get_url(self, path):
         return self.api + '/' + path
 
     def _check_response(self, res, ret):
         if res.status_code not in self.STATUSES:
-            raise PrestashopError('Status %s, %s' % (res.status_code, ret))
+            raise PrestashopError_V2('Status %s, %s' % (res.status_code, ret))
         return ret
 
     def _request(self, method, path, params=None, data=None, files=None):

@@ -29,9 +29,12 @@ import os
 
 from src.settings import gs
 from .product import PrestaProduct
-from .supplier import Supplier
+from .supplier import PrestaSupplier
 from .category import PrestaCategory
-from .language import Language
+from .language import PrestaLanguage
 from .shop import Shop
-from .images_exec import upload_image
-from .presta_apis import presta_python_api_v1, presta_python_api_v2, presta_python_api_v3
+
+from .prestashop import PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
+
+
+#from .images_exec import upload_image

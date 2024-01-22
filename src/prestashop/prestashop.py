@@ -1,6 +1,7 @@
-"""! @brief модуль коннактор `Prestashop`
+"""! @brief модуль коннектор `Prestashop`
 
 @details API хранятся в базе данных keypass.
+Я использую 3 версии prestashop api, потому, что еще не выбрал 
 
  @section libs imports:
   - sys 
@@ -12,9 +13,6 @@
   - pathlib 
   - requests 
   - xmltodict 
-  - presta_python_api_v1 
-  - .presta_apis.presta_python_api_v3.presta_python_api_v3 
-
 
 """
 
@@ -40,73 +38,41 @@ import xmltodict
 api_domain = gs.default_prestashop_api_credentials['api_domain']
 api_key = gs.default_prestashop_api_credentials['api_key']
 
-#from prestapyt import  PrestaShopWebServiceDict, PrestaShopWebServiceError
+
+
+
+#######################################################################
+#
+#                      -= V1 =-
+#
 # https://python.hotexamples.com/examples/prestapyt/PrestaShopWebServiceDict/-/python-prestashopwebservicedict-class-examples.html
 #
-from .presta_apis.presta_python_api_v1 import PrestaShopWebServiceDict, PrestaShopWebServiceError as PrestaAPIV1Error
 
-PrestaAPIV1: PrestaShopWebServiceDict = \
-    PrestaShopWebServiceDict(
-    api_domain,
-    api_key
-    )
+from .presta_apis.presta_python_api_v1 import PrestaShopWebServiceDict_V1
 
+PrestaAPIV1: PrestaShopWebServiceDict_V1 = PrestaShopWebServiceDict_V1 (api_domain, api_key )
 #
 #
 ##############################################################################
 
 
 
+
+
+
+
+
+
+
+
 ##############################################################################
 #
 #
-class PrestaAPIV2Error(RuntimeError):
-    pass
+
+from .presta_apis.presta_python_api_v2 import PrestashopApi_V2
 
 
-class PrestaAPIV2:
-    STATUSES = (200, 201)
-
-    def __init__(self, api, key):
-        self.api = api
-        self.key = key
-
-    def _get_url(self, path):
-        return self.api + '/' + path
-
-    def _check_response(self, res, ret):
-        if res.status_code not in self.STATUSES:
-            raise PrestaAPIV2Error(f'''
-            Status {res.status_code}, 
-            Return {ret}
-            ''')
-        return ret
-
-    def _request(self, method, path, params=None, data=None, files=None):
-        if data is not None:
-            data = xmltodict.unparse({'prestashop': data}).encode('utf-8')
-        res = requests.request(method, self._get_url(path), auth=(self.key, ''), params=params, data=data, files=files)
-        return self._check_response(res, xmltodict.parse(res.text)['prestashop'] if not files and res.text else None)
-
-    def add(self, path, data):
-        return self._request('POST', path, data=data)
-
-    def add_image(self, path, fp, exists=False):
-        with open(fp, 'rb') as fp:
-            return self._request('POST', 'images/' + path, {'ps_method': 'PUT'} if exists else None,
-                                 files={'image': fp})
-
-    def get(self, path, params=None):
-        return self._request('GET', path, params)
-
-    def edit(self, path, data):
-        return self._request('PUT', path, data=data)
-
-    def delete(self, path):
-        return self._request('DELETE', path)
-
-
-PrestaAPIV2: PrestaAPIV2 = PrestaAPIV2 (api_domain, api_key)
+PrestaAPIV2: PrestashopApi_V2 = PrestashopApi_V2 (api_domain, api_key)
 #
 #
 ################################################################################
@@ -117,9 +83,9 @@ PrestaAPIV2: PrestaAPIV2 = PrestaAPIV2 (api_domain, api_key)
 ################################################################################
 #
 #
-from .presta_apis.presta_python_api_v3.presta_python_api_v3 import \
-    PrestaAPIV3, PrestaAPIV3Format, \
-    PrestaAPIV3Error, PrestaAPIV3AuthenticationError
+#                   -= V3 =-
+#
+from .presta_apis.presta_python_api_v3.presta_python_api_v3 import PrestaAPIV3, PrestaAPIV3Format
 
 PrestaAPIV3: PrestaAPIV3 = PrestaAPIV3(
     api_domain,
@@ -138,8 +104,8 @@ PrestaAPIV3: PrestaAPIV3 = PrestaAPIV3(
 
 
 
-class PrestaAPIError():
-    pass
+# class PrestaAPIError():
+#     pass
 
 
 

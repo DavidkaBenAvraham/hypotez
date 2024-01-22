@@ -1,5 +1,5 @@
-"""! @~en   Images preparation
-@~russian загрузка изображений в `Prestashop`
+"""! @~russian  модуль загрузки картинок в prestashop
+ загрузка изображений в `Prestashop`
  
  @section libs imports:
   - sys 
@@ -31,19 +31,16 @@ from typing import Union
 from src.settings import gs
 from src.helpers import  logger, logs_and_errors_decorator, jprint, pprint
 from src.tools import randomizer
-from src.prestashop.prestashop import \
-    PrestaAPIV1, PrestaAPIV2, PrestaAPIV3, \
-    PrestaAPIV1Error, PrestaAPIV2Error, PrestaAPIV3Error
-#from . import PrestaShopWebServiceError
-# --------------------
+from src.prestashop.prestashop import PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
+
 
 #@logs_and_errors_decorator(default_return =  False)
 def upload_image(resource: str, image_data: bytes = None, \
                  image_name: str = 'default.png', image_url: str = None) -> Union[dict, False]:
-    """ Загружаю картинку через API
+    """! Загружаю картинку через API
 
-    Args:
-        resource `str`  :  entity/id
+    
+    @param resource `str`  :  entity/id
                         
                         The entity is: "general", "products", "categories", "manufacturers", "suppliers", "stores", "customizations"
                         id: id of entity
@@ -51,18 +48,17 @@ def upload_image(resource: str, image_data: bytes = None, \
                         F.E.
                         `products/15`
 
-        image_data (bytes): the binary data of the image. 
+     @param image_data (bytes): the binary data of the image. 
                             Binary data is a sequence of bytes that represents information about the image. 
                             This data can include the image pixels, metadata, file format, and other information 
                             necessary for representing and reproducing the image.
 
-        image_name (str, optional): _description_. Defaults to 'img.png'.
+    @param     image_name (str, optional): _description_. Defaults to 'img.png'.
 
-        image_url `str`  :  Я могу не передавать бинарный файл, если у меня есть откуда его скачать. 
+    @param     image_url `str`  :  Я могу не передавать бинарный файл, если у меня есть откуда его скачать. 
         Если нет - я передаю URl картинки
 
-    @returns
-        Union[dict, False]:  dictionary object if success else False
+    @returns  Union[dict, False]:  dictionary object if success else False
     """
 
 

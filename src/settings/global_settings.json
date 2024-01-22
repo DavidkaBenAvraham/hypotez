@@ -25,14 +25,20 @@
   },
 
   "default_webdriver": "firefox",
-  "default_aliexpress_api_title": "katia",
-  "default_prestashop_api_title": "emil-design.com",
-  "default_openai_api_title": "hypotez",
-  "default_prestashop_db_title": "emil-design.com",
-  "default_ftp_title": "emil-design.com",
-  "default_smtp_title": "davidka",
-  "default_prestashop_api_domain": "emil-design.com",
   "list_prestashop_api_domains": [ "emil-design.com", "sergey.mymaster.co.il", "dev.e-cat.co.il" ],
+
+  "keepass": {
+    "keepass_aliexpress_api_title": "katia",
+    "keepass_prestashop_api_title": "emil-design.com",
+    "keepass_openai_api_title": "hypotez",
+    "keepass_prestashop_db_title": "emil-design.com",
+    "keepass_ftp_title": "emil-design.com",
+    "keepass_smtp_title": "davidka",
+    "keepass_prestashop_api_domain": "emil-design.com"
+  },
+
+
+
 
   "supplier_prefix": [
 

@@ -68,7 +68,7 @@ import sys
 import datetime
 from pathlib import Path
 from pykeepass import PyKeePass, entry
-import getpass  # <- модуль поля ввода типа password
+import getpass  ## <- модуль поля ввода типа `password`
 from src.helpers import logger, logger_decorators, logs_and_errors_decorator, KeepassException, DefaultSettingsException,  Beeper, BeepLevel, jprint, pprint
 from src.io_interface import j_loads
 # -----------------------------------
@@ -177,12 +177,12 @@ class ProjectSettings():
 
 
       "default_webdriver": "firefox",
-      "default_aliexpress_api_title": "katia",
-      "default_prestashop_api_title": "emil-design.com",
-      "default_openai_api_title": "hypotez",
-      "default_prestashop_db_title": "emil-design.com",
-      "default_ftp_title": "emil-design.com",
-      "default_smtp_title": "davidka",
+      "keepass_aliexpress_api_title": "katia",
+      "keepass_prestashop_api_title": "emil-design.com",
+      "keepass_openai_api_title": "hypotez",
+      "keepass_prestashop_db_title": "emil-design.com",
+      "keepass_ftp_title": "emil-design.com",
+      "keepass_smtp_title": "davidka",
       "default_prestashop_api_domain": "emil-design.com",
       "list_prestashop_api_domains": [ "emil-design.com", "sergey.mymaster.co.il", "dev.e-cat.co.il" ],
 
@@ -340,12 +340,12 @@ class ProjectSettings():
         
         @param settings `json`  :  установки программы, записаные в файле `global_settings.json`
         
-        @param default_aliexpress_api_title
-        @param default_prestashop_api_title `str`  :  поле `Title` в базе данных keepass.
-        @param default_prestashop_db_title `str`  :  поле `Title` в базе данных keepass
-        @param default_openai_api_title `str`  :  поле `Title` в базе данных keepass
-        @param default_ftp_title `str`  :  поле `Title` в базе данных keepass
-        @param default_smtp_title `str`  :  поле `Title` в базе данных keepass
+        @param keepass_aliexpress_api_title
+        @param keepass_prestashop_api_title `str`  :  поле `Title` в базе данных keepass.
+        @param keepass_prestashop_db_title `str`  :  поле `Title` в базе данных keepass
+        @param keepass_openai_api_title `str`  :  поле `Title` в базе данных keepass
+        @param keepass_ftp_title `str`  :  поле `Title` в базе данных keepass
+        @param keepass_smtp_title `str`  :  поле `Title` в базе данных keepass
         @returns `True` if succes, `Flase` otherwise
         
         """
@@ -359,14 +359,17 @@ class ProjectSettings():
             logger.critical(f'ошибка чтения файла global_settings.json', ex)
             return False
         try:
-            """! key names for keypass """
-            default_aliexpress_api_title: str = self.settings ['default_aliexpress_api_title']
-            default_prestashop_api_title: str = self.settings ['default_prestashop_api_title']
-            default_prestashop_db_title: str = self.settings ['default_prestashop_db_title']
-            default_openai_api_title: str =  self.settings ['default_openai_api_title']
-            default_ftp_title: str =  self.settings ['default_ftp_title']
-            default_smtp_title: str =  self.settings ['default_smtp_title']
             
+            """! key names for keypass """
+            kp_settings = self.settings ['keepass']
+            keepass_aliexpress_api_title: str = kp_settings ['keepass_aliexpress_api_title']
+            keepass_prestashop_api_title: str = kp_settings ['keepass_prestashop_api_title']
+            keepass_prestashop_db_title: str = kp_settings ['keepass_prestashop_db_title']
+            keepass_openai_api_title: str =  kp_settings ['keepass_openai_api_title']
+            keepass_ftp_title: str =  kp_settings ['keepass_ftp_title']
+            keepass_smtp_title: str =  kp_settings ['keepass_smtp_title']
+            
+            """! async """
             self.async_run: bool = self.settings ['async_run']
             
             self.supplier_prefix: list = self.settings ['supplier_prefix']
@@ -374,7 +377,7 @@ class ProjectSettings():
             
             self.logger_onoff_decorator = self.settings ['beeper_and_log_decorator']['onoff_log_decorator']
             Beeper.silent: bool = self.settings ['beeper_and_log_decorator']['silent']
-            """! Включаю / отлючаю лог декораторы. При работе с jupyter ne получается испоьзовать асинхронность """    
+            """! Включаю / отлючаю лог декораторы и пищалку. При работе с jupyter ne получается испоьзовать асинхронность """    
 
         except DefaultSettingsException as ex:
             logger.critical ('Ошибка в получении дaнных из `global_settings.json', ex)
@@ -384,7 +387,9 @@ class ProjectSettings():
 
         # Подключение к базе данных Keepass
         kp: PyKeePass = self.open_kp()
-        if not kp: return False
+        while not kp:
+            """! попытки открыть базу данных keepass """
+            kp = self.open_kp()
 
 
         # ------------------------------- default_webdriver, scenario_language, threads ----------------
@@ -416,7 +421,7 @@ class ProjectSettings():
                 
                 self.list_api_aliexpress_credentials.append(entry_dict)
                 
-                if entry.title == default_aliexpress_api_title: 
+                if entry.title == keepass_aliexpress_api_title: 
                     self.default_aliexpress_api_credentials = entry_dict
                 
         except Exception as ex:
@@ -442,7 +447,7 @@ class ProjectSettings():
                 self.list_openai_credentials.append(entry_dict)
                 
                 """! @~russian _note У меня только один API OpenAI ключ"""
-                if entry.title == default_openai_api_title: 
+                if entry.title == keepass_openai_api_title: 
                         self.default_openai_api_credentials = entry_dict      
                 
         except Exception as ex:
@@ -464,7 +469,7 @@ class ProjectSettings():
                         }
                 self.list_prestashop_api_credentials.append(entry_dict)
                 
-                if entry.title == default_prestashop_api_title: 
+                if entry.title == keepass_prestashop_api_title: 
                         self.default_prestashop_api_credentials = entry_dict   
                         
         except Exception as ex:
@@ -488,7 +493,7 @@ class ProjectSettings():
                         }
                 self.list_prestashop_db_credentials.append(entry_dict)
                 
-                if entry.title == default_prestashop_db_title:
+                if entry.title == keepass_prestashop_db_title:
                     self.default_prestashop_db_credentials = entry_dict
                     
         except Exception as ex:
@@ -510,7 +515,7 @@ class ProjectSettings():
                         'kp_username' : entry.username,
                         }
                 self.list_ftp_credentials.append(entry_dict)
-                if entry.title == default_ftp_title:
+                if entry.title == keepass_ftp_title:
                     self.default_ftp_credentials = entry_dict
                     
         except Exception as ex:
@@ -533,7 +538,7 @@ class ProjectSettings():
                 }
                 self.list_smtp_credentials.append(entry_dict)
                 
-                if entry.title == default_smtp_title:
+                if entry.title == keepass_smtp_title:
                     self.default_smtp_credentials = entry_dict
                     
         except Exception as ex:
@@ -580,27 +585,17 @@ class ProjectSettings():
         if not Beeper.silent: asyncio.run(Beeper.beep(BeepLevel.INFO_LONG))
         
         password = getpass.getpass ('Master password for keepass database: ')   
-        if len(password) == 0: self.open_kp(attempts)
-        kp: PyKeePass =  None
+        if len(password) == 0: return False
+        """! не получил пароль. Случается, когда нажимаем `Enter` без пароля   """
+        
+        _kp: PyKeePass =  None
         try:
             
             """! Возвращаю объект `KeePass` """
-            kp = PyKeePass (str (Path (self.dir_root, 'src', 'settings', 'db.kdbx') ), password = password)
-            return kp
+            return PyKeePass (str (Path (self.dir_root, 'src', 'settings', 'db.kdbx') ), password = password)
         except Exception as ex:
             logger.error(f'ошибка ', ex)
-
-            if attempts > 0:
-                self.open_kp (attempts - 1)
-                
-            else:
-                logger.error("Превышено максимальное количество попыток.")
-                
-                if logger.level_name.upper() == 'DEBUG':
-                    logger.info(f'да и хуй с ним. Дебажим ')
-                    self.open_kp (3)
-                    
-                else: return False
+            return False
                 
             
  

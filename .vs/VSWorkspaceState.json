@@ -3,14 +3,11 @@
     "",
     "\\src",
     "\\src\\categories",
-    "\\src\\categories\\templates\\11036 HOME AND INTERIOR",
     "\\src\\categories\\_tests",
-    "\\src\\helpers",
-    "\\src\\prestashop\\presta_apis\\presta_python_api_v1",
-    "\\src\\prestashop\\presta_apis\\presta_python_api_v1\\presta_python_api_v1",
-    "\\src\\settings",
-    "\\src\\suppliers\\amazon"
+    "\\src\\prestashop",
+    "\\src\\prestashop\\presta_apis",
+    "\\src\\prestashop\\presta_apis\\presta_python_api_v1"
   ],
-  "SelectedNode": "\\src\\categories\\_tests\\ide_test_category.py",
+  "SelectedNode": "\\src\\prestashop\\presta_apis\\presta_python_api_v1\\prestapyt.py",
   "PreviewInSolutionExplorer": false
 }

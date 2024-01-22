@@ -24,16 +24,16 @@ from typing import Union
 from src.settings import gs
 from src.helpers import  logger, logs_and_errors_decorator, jprint, pprint
 from src.io_interface import j_loads, j_dumps
-from src.prestashop import PrestaCategory as PrestaCategory
+from src.prestashop import PrestaCategory
 # -----------------------------------
 
-class Category():
+class Category (PrestaCategory):
     """ Класс категорий товара 
     Methods:
          __init__(self, *args, **kwards)
-         get_categories_from_template_files(self, normalize: bool = True) -> dict
+         get_list_categories_from_template_files(self, normalize: bool = True) -> dict
          move_templates_to_first_position(dictionary: dict) -> dict:
-         get_list_categories_for_scenario_category(self, category_name: str) -> list:
+         get_list_categories_from_scenario_category(self, category_name: str) -> list:
     @var:
         categories_tree_from_template_files (list[dict]) : Категории, построенные из файлов шаблонов
     """
@@ -41,20 +41,20 @@ class Category():
     categories_tree_from_template_files: dict = {}
     """! дерево категорий, восстановленное из файлов JSON в `templates` """
     
-    PrestaCategory = PrestaCategory()
-    
-    categories_tree_from_prestashop: dict = self.PrestaCategory
+    categories_tree_from_prestashop: dict = {} 
+    """! Дерево категорий, полученнное от Pestashop """
     
     def __init__(self, *args, **kwards):
         self._payload(*args, **kwards)
+    
         
 
     #@logs_and_errors_decorator(default_return =  False)
     def _payload(self, *args, **kwards):
-        self.get_categories_from_template_files()
+        self.categories_tree_from_template_files = self.get_list_categories_from_template_files()
         
     #@logs_and_errors_decorator(default_return =  False)
-    def get_categories_from_template_files(self, normalize: bool = True) -> dict:
+    def get_list_categories_from_template_files(self, normalize: bool = True) -> dict:
         """ Build a dictionary of template categories based on JSON files in the specified directory.
 
         @param
@@ -70,33 +70,39 @@ class Category():
         
         _product_categories_templates : dict = {}
 
-        product_categories_templates_path : Path = Path(gs.dir_root,'categories','templates')
+        product_categories_templates_path : Path = Path(gs.dir_src,'categories','templates')
 
-        for root, dirs, files in os.walk(product_categories_templates_path):
-            if isinstance(files, list):
-                for file in files:
-                    category_from_template = j_loads(Path(root, file), ordered=True)
-                    #   """ Load the contents of the JSON file """
+        try:
+            for root, dirs, files in os.walk(product_categories_templates_path):
+                if isinstance(files, list):
+                    for file in files:
+                        category_from_template = j_loads(Path(root, file), ordered=True)
+                        #   """ Load the contents of the JSON file """
 
-                    if normalize:
-                        """pop up templates"""
-                        category_from_template = self.move_templates_to_first_position(category_from_template)
-                    try:
-                        _product_categories_templates.update(category_from_template)
-                        #   """ Update the _product_categories_templates dictionary with the contents of the JSON file """
-                    except Exception as ex:
-                        logger.error(f"""Error adding _product_categories_templates from {file}: {ex} """)
-                        continue
+                        if normalize:
+                            """pop up templates"""
+                            category_from_template = self.move_templates_to_first_position(category_from_template)
+                        try:
+                            _product_categories_templates.update(category_from_template)
+                            #   """ Update the _product_categories_templates dictionary with the contents of the JSON file """
+                        except Exception as ex:
+                            logger.error(f"""Error adding _product_categories_templates from {file}: {ex} """)
+                            continue
 
-            else:
-                _product_categories_templates.update(j_loads(Path(root, file)))
+                else:
+                    _product_categories_templates.update(j_loads(Path(root, file)))
 
-        return _product_categories_templates
+            return _product_categories_templates
+
+        except Exception as ex :
+            logger.error('', ex)
+            return False
+
 
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def move_templates_to_first_position(dictionary: dict) -> dict:
+    def move_templates_to_first_position(self, dictionary: dict) -> dict:
         """
         сдвигаю темплейт в JSON файлах на первую позицию. Так я знаю, что она будет дефолтной
         Move the 'templates' key to the first position in the dictionary.
@@ -117,7 +123,7 @@ class Category():
     
 
     #@logs_and_errors_decorator(default_return =  False)
-    def get_list_categories_for_scenario_category(self, category_name: str) -> list:
+    def get_list_categories_from_scenario_category(self, category_name: str) -> list:
         category_path = []
         current_category = category_name
 

@@ -24,13 +24,3 @@ from src.helpers import  logger, logs_and_errors_decorator, jprint, pprint
 from src.prestashop import Product as PrestaProduct
 from src.io_interface import j_loads, j_dumps, save_text_file
 # ----------------
-
-def start_supplier(supplier_prefix: str = 'aliexpress', scenario_language: str = 'en' ):
-    """ Старт поставщика """
-    params: dict = \
-    {
-        'supplier_prefix': supplier_prefix,
-        'scenario_language': scenario_language
-    }
-    
-    return Supplier(**params)

@@ -17,8 +17,8 @@
 #! /usr/share/projects/hypotez/venv/scripts python
 import sys
 import os
-path = os.getcwd()[:os.getcwd().rfind(r'\hypotez')+7]
-sys.path.append(path)  # Добавляю корневую папку в sys.path
+# path = os.getcwd()[:os.getcwd().rfind(r'\hypotez')+7]
+# sys.path.append(path)  # Добавляю корневую папку в sys.path
 
 from attr import attr, attrs
 from pathlib import Path
@@ -29,9 +29,9 @@ from src.settings import gs
 from src.helpers import  logger,  logs_and_errors_decorator
 from src.io_interface import j_loads as j_loads
 
-from src.prestashop.prestashop import  PrestaAPIV1, PrestaAPIV2, PrestaAPIV3, PrestaAPIError 
+from src.prestashop.prestashop import  PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
 from .images_exec import upload_image
 
 # --------------------------------
 
-class Supplier(PrestaAPIV1): pass
+class PrestaSupplier (PrestaAPIV1): pass

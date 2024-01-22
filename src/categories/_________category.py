@@ -34,7 +34,7 @@ sys.path.append(hypotez_root_path)  # Добавляю корневую папк
 from src.settings import gs
 from src.helpers import  logger, jprint
 from src.io_interface import j_loads, j_dumps
-from src.prestashop import PrestaCategory as PrestaCategory
+from src.prestashop import PrestaCategory
 # -----------------------------------
 
 class Category():
@@ -44,11 +44,11 @@ class Category():
 
     categories_from_templates: dict = {}
     def __init__(self, *args, **kwards):
-        self.categories_from_templates = self.get_categories_from_template_files()
+        self.categories_from_templates = self.get_list_categories_from_template_files()
     
 
 
-    def get_categories_from_template_files(self, normalize: bool = True) -> dict:
+    def get_list_categories_from_template_files(self, normalize: bool = True) -> dict:
         """
         Build a dictionary of template categories based on JSON files in the specified directory.
 
@@ -107,7 +107,7 @@ class Category():
 
 
 
-    def get_list_categories_for_scenario_category(self, category_name: str) -> list:
+    def get_list_categories_from_scenario_category(self, category_name: str) -> list:
         category_path = []
         current_category = category_name
 
