@@ -34,7 +34,7 @@ sys.path.append(hypotez_root_path)  # Добавляю корневую папк
 from src.settings import gs
 from src.helpers import  logger, jprint
 from src.io_interface import j_loads, j_dumps
-from src.prestashop import Category as PrestaCategory
+from src.prestashop import PrestaCategory as PrestaCategory
 # -----------------------------------
 
 class Category():

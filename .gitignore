@@ -167,6 +167,7 @@ cython_debug/
 #.vs/snippets
 .vscode/
 .vs/hypotez/FileContentIndex/
+.vs/hypotez/v17/
 
 # Jupyter Notepad
 .ipynb_checkpoints/

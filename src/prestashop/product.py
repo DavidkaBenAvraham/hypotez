@@ -39,7 +39,7 @@ from .images_exec import upload_image
 
 
 
-class Product():
+class PrestaProduct():
     """ Класс товара из модуля prestashop
    Непосредственно выполняет все операции через API
    ------------------------------------
@@ -51,12 +51,13 @@ class Product():
     get(id_product): Возвращает информацию о товаре по ID
     """
 
-    
+    #@logs_and_errors_decorator(default_return =  False)
     def __init__(self,*args,**kwards):
         
         pass
 
-    @staticmethod
+    
+    #@logs_and_errors_decorator(default_return =  False)
     def check_prod_presence(product_reference: str) -> Union[dict, False]:
         """! Проверка наличия товара в БД 
         -----------------
@@ -73,7 +74,8 @@ class Product():
         else:
             return False
 
-    @staticmethod
+    
+    #@logs_and_errors_decorator(default_return =  False)
     def search(filter: str, value: str) -> Union[dict, False]:
         """ Расширенный поиск в БД
         -----------------
@@ -97,7 +99,8 @@ class Product():
             return False
 
 
-    @staticmethod
+    
+    #@logs_and_errors_decorator(default_return =  False)
     def get(id_product: Union[int,str]) -> dict:
         """ Тестовая функция, по сути повтор check, но работает непосредстевенно 
        с id_product 
@@ -114,7 +117,8 @@ class Product():
             return False
     
 
-    @staticmethod
+    
+    #@logs_and_errors_decorator(default_return =  False)
     def get_list_products(api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') ->dict:
         """
         Полный список товаров. Осторожно!
@@ -128,7 +132,8 @@ class Product():
         
 
 
-    @staticmethod
+    
+    #@logs_and_errors_decorator(default_return =  False)
     def add(product_dict: dict, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> dict:
         """ Добавление нового товара в БД PRESTASHOP через API
         -----------------
@@ -171,7 +176,8 @@ class Product():
                 return False
 
 
-    @staticmethod
+    
+    #@logs_and_errors_decorator(default_return =  False)
     def update(id_product: int, product_dict: dict, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3')-> dict:
         """ Изменение данных о существующем товаре
         @param
@@ -196,7 +202,7 @@ class Product():
         #PrestaAPIV1.edit('products', id_product, product_dict)
         pass
 
-    #@staticmethod
+    #
     #def update_categories(id_product: int, category_ids: list, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3')-> Union[dict, PrestaAPIError]:
     #    """ Изменение данных о существующем товаре
     #    @param
@@ -210,7 +216,7 @@ class Product():
     #    PrestaAPIV1.edit('products', id_product, product)
     #    pass
 
-
+    #@logs_and_errors_decorator(default_return =  False)
     def get_schema(self, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> Union[dict, False]:
         """JSON схема товара
 
@@ -219,7 +225,7 @@ class Product():
         """
         params = \
             {
-            'display': 'full',  # или 'basic' в зависимости от того, какую информацию вы хотите получить
+            'display': 'full',  ## <- или 'basic' в зависимости от того, какую информацию я хочу получить
             }
         response = PrestaAPIV1.get(params)
         if response.status != 200:
@@ -229,7 +235,8 @@ class Product():
         return response.json
 
 
-    @staticmethod
+    
+    #@logs_and_errors_decorator(default_return =  False)
     def upload_image(id_product: int, image_url: str, target_file_name: str = 'default.png') -> Union[int, bool]:
         """
         Загружаю картинку, получаю или id_image или False
@@ -248,7 +255,8 @@ class Product():
         return upload_image(resource = resource , image_url = image_url)
         return response
 
-    @staticmethod
+    
+    #@logs_and_errors_decorator(default_return =  False)
     def delete(id_product: Union[int,str], api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> dict:
         """ Удаляю товер из бд """
 

@@ -33,9 +33,8 @@ from src.prestashop.prestashop import  PrestaAPIV1, PrestaAPIV2, PrestaAPIV3, Pr
 from .images_exec import upload_image
 # --------------------------------
 
-class Category(): 
-    """! @~russian Класс обработки категорий для предоставления товару списка связанных категорий
-    """
+class PrestaCategory(): 
+    """! @~russian Класс обработки категорий для предоставления товару списка связанных категорий    """
 
     def __init__(self,*args,**kwards) -> None:
         pass
@@ -43,7 +42,7 @@ class Category():
 
     @staticmethod
     def get_parents(id_category: int, dept: int = 0) -> list:
-        """! @~russian Вытаскивет родительские категории от заданной 
+        """! @~russian Вытаскивет из базы данных Prestashop родительские категории от заданной 
         @details функция через API получает список категорий
 
         @param id_category `int`  категория для которой надо вытащить родителя

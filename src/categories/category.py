@@ -24,7 +24,7 @@ from typing import Union
 from src.settings import gs
 from src.helpers import  logger, logs_and_errors_decorator, jprint, pprint
 from src.io_interface import j_loads, j_dumps
-from src.prestashop import Category as PrestaCategory
+from src.prestashop import PrestaCategory as PrestaCategory
 # -----------------------------------
 
 class Category():
@@ -35,15 +35,25 @@ class Category():
          move_templates_to_first_position(dictionary: dict) -> dict:
          get_list_categories_for_scenario_category(self, category_name: str) -> list:
     @var:
-        categories_from_templates (list[dict]) : Категории, построенные из файлов шаблонов
+        categories_tree_from_template_files (list[dict]) : Категории, построенные из файлов шаблонов
     """
 
-    categories_from_templates: dict = {}
-    def __init__(self, *args, **kwards):
-        self.categories_from_templates = self.get_categories_from_template_files()
+    categories_tree_from_template_files: dict = {}
+    """! дерево категорий, восстановленное из файлов JSON в `templates` """
     
+    PrestaCategory = PrestaCategory()
+    
+    categories_tree_from_prestashop: dict = self.PrestaCategory
+    
+    def __init__(self, *args, **kwards):
+        self._payload(*args, **kwards)
+        
 
-
+    #@logs_and_errors_decorator(default_return =  False)
+    def _payload(self, *args, **kwards):
+        self.get_categories_from_template_files()
+        
+    #@logs_and_errors_decorator(default_return =  False)
     def get_categories_from_template_files(self, normalize: bool = True) -> dict:
         """ Build a dictionary of template categories based on JSON files in the specified directory.
 
@@ -83,9 +93,12 @@ class Category():
 
         return _product_categories_templates
 
-    @staticmethod
+
+    
+    #@logs_and_errors_decorator(default_return =  False)
     def move_templates_to_first_position(dictionary: dict) -> dict:
         """
+        сдвигаю темплейт в JSON файлах на первую позицию. Так я знаю, что она будет дефолтной
         Move the 'templates' key to the first position in the dictionary.
 
         @param
@@ -101,17 +114,22 @@ class Category():
             dictionary[key] = value
 
         return dictionary
+    
 
+    #@logs_and_errors_decorator(default_return =  False)
     def get_list_categories_for_scenario_category(self, category_name: str) -> list:
         category_path = []
         current_category = category_name
 
         while current_category != "ROOT":
-            if current_category in self.categories_from_templates:
+            """! поднимаюсь по родительским категориям до ROOT """
+            if current_category in self.categories_tree_from_template_files:
                 category_path.append(current_category)
-                current_category = categories_from_template[current_category]['template'][current_category]
+                current_category = self.categories_tree_from_template_files[current_category]['template'][current_category]
             else:
                 break
 
         category_path.reverse()
         return category_path
+
+    

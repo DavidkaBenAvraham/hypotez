@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\product",
+    "\\src\\categories",
+    "\\src\\categories\\templates\\11036 HOME AND INTERIOR",
+    "\\src\\categories\\_tests",
+    "\\src\\helpers",
+    "\\src\\prestashop\\presta_apis\\presta_python_api_v1",
+    "\\src\\prestashop\\presta_apis\\presta_python_api_v1\\presta_python_api_v1",
     "\\src\\settings",
-    "\\src\\suppliers",
-    "\\src\\suppliers\\aliexpress",
-    "\\src\\suppliers\\hb",
-    "\\src\\suppliers\\hb\\locators",
-    "\\src\\tools",
-    "\\src\\webdriver"
+    "\\src\\suppliers\\amazon"
   ],
-  "SelectedNode": "\\src\\suppliers\\aliexpress\\locators",
+  "SelectedNode": "\\src\\categories\\_tests\\ide_test_category.py",
   "PreviewInSolutionExplorer": false
 }
