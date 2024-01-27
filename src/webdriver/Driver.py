@@ -753,7 +753,7 @@ class Driver(WebDriver):
         except Exception as ex:
             logger.error(f'ошибка ', ex)
             return False
-                
+        pass
 
          
     def carousel (self,  direction: str = '', scrolls: int = 5, frame_size: int = 1800,  delay: float = 1) -> bool:

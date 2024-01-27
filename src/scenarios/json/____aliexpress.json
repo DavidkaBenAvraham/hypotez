@@ -5,7 +5,7 @@
   "start_url": "https://www.aliexpress.com/",
   "price_rule": "+0",
   "num_items_4_flush": 300,
-  "use_mouse": false,
+  "use_mouse": false, "mandatory": true,
   "if_login": true,
   "parcing method [webdriver|api]": "api",
   "about method web scrapping [webdriver|api]": "Если я работаю через API мне не нужен webdriver",

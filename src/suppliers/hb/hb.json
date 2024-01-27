@@ -4,7 +4,7 @@
   "supplier_prefix": "hb",
   "start_url": "https://hbdeadsea.co.il/",
   "price_rule": "+0",
-  "use_mouse": false,
+  "use_mouse": false, "mandatory": true,
   "if_login": false,
   "login_url": "https://amazon.com",
   "lang": "EN",
@@ -12,11 +12,10 @@
   "parsing via api": false,
   "collect_products_from_categorypage": false,
   "scenario_files": [
-    "11247 facial care.json"
+    "bodyspa.json"
   ],
   "excluded": [
-    
   ],
-  "last_runned_scenario": ""
+  "last_runned_scenario": "",
+  "scenario_interrupted": "creams-butters-serums-for-body"
 }
-

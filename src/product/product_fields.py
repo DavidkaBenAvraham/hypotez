@@ -229,7 +229,7 @@ class ProductFields:
         pass
 
     
-    def get_fields(self):
+    def get_fields_vars(self):
         """! Чтобы получить список полей (атрибутов) класса, 
         я использую встроенную функцию `vars()` внутри метода класса. 
         
@@ -259,10 +259,41 @@ class ProductFields:
         Этот вариант вернет только атрибуты, которые не являются callable (то есть методами).
         """
         #return list(vars(self).keys())
-        #return [(key, value = None) for key, value in vars(self).items()]
+        #return [(key, value:str = '') for key, value in vars(self).items()]
         return vars(self)
-        
 
+    def get_fields_keys(self):
+        """! Чтобы получить список полей (атрибутов) класса, 
+        я использую встроенную функцию `vars()` внутри метода класса. 
+        
+      
+
+        # Пример использования
+        ```python
+        product_fields_instance = ProductFields(s)
+        fields_list = product_fields_instance.get_fields()
+
+        print("Список полей класса:")
+        print(fields_list)
+        ```
+
+        Метод `get_fields` использует `vars(self)`, чтобы получить словарь всех атрибутов экземпляра класса, 
+        а затем возвращает список ключей этого словаря, что является списком полей класса.
+
+        Обратите внимание, что этот подход вернет все атрибуты, включая методы и свойства. 
+        Если вам нужны только атрибуты, представляющие поля, вы можете дополнительно фильтровать результат. 
+        Например, вы можете изменить метод `get_fields` следующим образом:
+
+        ```python
+        def get_fields(self):
+            return [field for field in vars(self).keys() if not callable(getattr(self, field))]
+        ```
+
+        Этот вариант вернет только атрибуты, которые не являются callable (то есть методами).
+        """
+        return list(vars(self).keys())
+        #return [ ( key, value:str = '' ) for key, value in vars(self).items() ]
+        #return vars(self)
 
 ############################################################
 
@@ -275,6 +306,7 @@ class ProductFields:
         Конструкция `associations`:
         
         ```python
+        "associations":
         {
          "categories": {
             "category": [
@@ -337,7 +369,7 @@ class ProductFields:
         return self.fields_dict['associations']
     @associations.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def associations(self, value = None) -> dict:
+    def associations(self, value:str = '') -> dict:
         """!  <sub>*[setter]*</sub>  Словарь ассоциаций. Список ассоциаций:
         
         `product_bundle, 
@@ -410,6 +442,7 @@ class ProductFields:
             }
           }
         }
+
 
     @property
     def id_product(self) -> int :
@@ -546,13 +579,13 @@ class ProductFields:
 
             if 'associations' not in self.fields_dict['fields'].keys():
                 self.fields_dict['associations'].update('associations')
+                
             if 'categories' not in self.fields_dict['associations'].keys():
                 self.fields_dict['associations'].update('categories')
-                self.fields_dict['categories']: dict = additional_categories_dict
-                """! Всякие дополнения идут через ключ `associations` """
-            else:
-                self.fields_dict['categories']: dict = additional_categories_append(s, value = None)
-                
+         
+            #if len(self.fields_dict['associations']['categories'] == 0):
+            self.fields_dict['associations']['categories'].update(additional_categories_dict)
+            
         except ProductFieldException as ex:
             logger.error(f"""Ошибка заполнения поля: 'additional_categories' данными {value}
             Ошибка:""", ex)  
@@ -677,7 +710,7 @@ class ProductFields:
     
     @ean13.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def ean13(self, value = None) -> bool:
+    def ean13(self, value:str = '') -> bool:
         """!   <sub>*[setter]*</sub>   `ean13`
         field DB type:  varchar(13)
         @~russian @details: __prod_desc__"""
@@ -701,7 +734,7 @@ class ProductFields:
     
     @isbn.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def isbn(self, value = None) -> bool:
+    def isbn(self, value:str = '') -> bool:
         """!   <sub>*[setter]*</sub>   `isbn`
         field DB type: varchar(32)
         @~russian @details: __prod_desc__"""
@@ -725,7 +758,7 @@ class ProductFields:
     
     @upc.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def upc(self, value = None) -> Union[str, None]:
+    def upc(self, value:str = '') -> Union[str, None]:
         """!   <sub>*[setter]*</sub>   `ps_product.upc`
         field DB type: varchar(12)
         @~russian @details: __prod_desc__"""
@@ -749,7 +782,7 @@ class ProductFields:
     
     @mpn.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def mpn(self, value = None) -> bool:
+    def mpn(self, value:str = '') -> bool:
         """!   <sub>*[setter]*</sub>  """
         try:
             self.fields_dict['mpn'] = value
@@ -773,7 +806,7 @@ class ProductFields:
     
     @ecotax.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def ecotax(self, value = None) -> bool:
+    def ecotax(self, value:str = '') -> bool:
         """!   <sub>*[setter]*</sub>  """
         try:
             self.fields_dict['ecotax'] = value
@@ -908,7 +941,7 @@ class ProductFields:
     
     @wholesale_price.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def wholesale_price(self, value = None) -> float:
+    def wholesale_price(self, value:str = '') -> float:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['wholesale_price'] = str (SN.normalize_price (value) )
@@ -929,7 +962,7 @@ class ProductFields:
     
     @unity.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def unity(self, value = None) -> bool:
+    def unity(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['unity'] = value
@@ -997,7 +1030,7 @@ class ProductFields:
     
     @reference.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def reference(self, value = None) -> bool:
+    def reference(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['reference'] = value
@@ -1020,7 +1053,7 @@ class ProductFields:
     
     @supplier_reference.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def supplier_reference(self, value = None) -> bool:
+    def supplier_reference(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['supplier_reference'] = value
@@ -1042,7 +1075,7 @@ class ProductFields:
     
     @location.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def location(self, value = None) -> bool:
+    def location(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['location'] = value
@@ -1958,7 +1991,7 @@ class ProductFields:
     
     @description.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def description(self, value = None) -> bool:
+    def description(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['description']: dict = {
@@ -1983,7 +2016,7 @@ class ProductFields:
     
     @description_short.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def description_short(self, value = None) -> bool:
+    def description_short(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['description_short']: dict = {
@@ -2009,7 +2042,7 @@ class ProductFields:
     
     @link_rewrite.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def link_rewrite(self, value = None) -> bool:
+    def link_rewrite(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             #self.fields_dict['link_rewrite = link_rewrite
@@ -2036,7 +2069,7 @@ class ProductFields:
     
     @meta_description.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def meta_description(self, value = None) -> bool:
+    def meta_description(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['meta_description']: dict = {
@@ -2062,7 +2095,7 @@ class ProductFields:
     
     @meta_keywords.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def meta_keywords(self, value = None) -> bool:
+    def meta_keywords(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['meta_keywords']: dict = {
@@ -2088,7 +2121,7 @@ class ProductFields:
     
     @meta_title.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def meta_title(self, value = None) -> bool:
+    def meta_title(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['meta_title']: dict = {
@@ -2140,7 +2173,7 @@ class ProductFields:
     
     @available_now.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def available_now(self, value = None) -> bool:
+    def available_now(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['available_now']: dict = {
@@ -2166,7 +2199,7 @@ class ProductFields:
     
     @available_later.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def available_later(self, value = None) -> bool:
+    def available_later(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['available_later']: dict = {
@@ -2192,8 +2225,18 @@ class ProductFields:
     
     @delivery_in_stock.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def delivery_in_stock(self, value = None) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+    def delivery_in_stock(self, value:str = '') -> bool:
+        """!  <sub>*[setter]*</sub>  Функция строит список словарей для поля `ps_product_lang.delivery_in_stock`
+        ```python
+        {
+            "language":[
+                {'attrs':{'id':'1'}, 'value':value},
+                {'attrs':{'id':'2'}, 'value':value},
+                {'attrs':{'id':'3'}, 'value':value},
+            ]
+        }
+            ```
+        """
         try:
             self.fields_dict['delivery_in_stock']: dict = {
                 "language":[
@@ -2218,8 +2261,17 @@ class ProductFields:
     
     @delivery_out_stock.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def delivery_out_stock(self, value = None) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+    def delivery_out_stock(self, value:str = '') -> bool:
+        """!  <sub>*[setter]*</sub>  Функция строит список словарей для поля `ps_product_lang.delivery_out_stock`
+        ```python
+        {
+                "language":[
+                {'attrs':{'id':'1'}, 'value':value},
+                {'attrs':{'id':'2'}, 'value':value},
+                {'attrs':{'id':'3'}, 'value':value},
+            ]}
+            ```
+        """
         try:
             self.fields_dict['delivery_out_stock']: dict = {
                 "language":[
@@ -2244,7 +2296,7 @@ class ProductFields:
     
     @delivery_additional_message.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def delivery_additional_message(self, value = None) -> bool:
+    def delivery_additional_message(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub> Заметки по доставке. Например: война, хз когда доставим  
         Мультиязычное поле. Формирует словарь:
         ```python
@@ -2280,7 +2332,7 @@ class ProductFields:
     
     @affiliate_short_link.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def affiliate_short_link(self, value = None) -> bool:
+    def affiliate_short_link(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub> Короткие линки не партнерские преогаммы. Мультиязычное поле.
         Формирует словарь:
         ```python
@@ -2322,7 +2374,7 @@ class ProductFields:
     
     @affiliate_text.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def affiliate_text(self, value = None) -> bool:
+    def affiliate_text(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             #self.fields_dict['affiliate_text = affiliate_text
@@ -2349,7 +2401,7 @@ class ProductFields:
     
     @affiliate_summary.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def affiliate_summary(self, value = None) -> bool:
+    def affiliate_summary(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['affiliate_summary']: dict = {
@@ -2376,7 +2428,7 @@ class ProductFields:
     
     @affiliate_summary_2.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def affiliate_summary_2(self, value = None) -> bool:
+    def affiliate_summary_2(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['affiliate_summary_2']: dict = {
@@ -2402,7 +2454,7 @@ class ProductFields:
     
     @affiliate_image_small.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def affiliate_image_small(self, value = None) -> bool:
+    def affiliate_image_small(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['affiliate_image_small']: dict = {
@@ -2428,7 +2480,7 @@ class ProductFields:
     
     @affiliate_image_medium.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def affiliate_image_medium(self, value = None) -> bool:
+    def affiliate_image_medium(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['affiliate_image_medium']: dict = {
@@ -2455,7 +2507,7 @@ class ProductFields:
     
     @affiliate_image_large.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def affiliate_image_large(self, value = None) -> bool:
+    def affiliate_image_large(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['affiliate_image_medium']: dict = {
@@ -2515,7 +2567,7 @@ class ProductFields:
     
     @how_to_use.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def how_to_use(self, value = None) -> bool:
+    def how_to_use(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>  `ps_product_lang.how_to_use` """
         try:
             self.fields_dict['how_to_use']: dict = {
@@ -2558,7 +2610,7 @@ class ProductFields:
     
     @id_default_image.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def id_default_image(self, value = None) -> bool:
+    def id_default_image(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['id_default_image'] = value
@@ -2580,7 +2632,7 @@ class ProductFields:
     
     @images_urls.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def images_urls(self, value = None) -> bool:
+    def images_urls(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['images_urls'] = value
@@ -2615,7 +2667,7 @@ class ProductFields:
     
     @id_default_combination.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def id_default_combination(self, value = None) -> bool:
+    def id_default_combination(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['id_default_combination'] = value
@@ -2636,7 +2688,7 @@ class ProductFields:
     
     @position_in_category.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def position_in_category(self, value = None) -> bool:
+    def position_in_category(self, value:str = '') -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
             self.fields_dict['position_in_category'] = value

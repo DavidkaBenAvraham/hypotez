@@ -12,9 +12,9 @@
   "program_paths": {
     "export": "export",
     "export_images": "export_images",
-    "logs": "log",
-    "binaries": "binaries",
-    "temp": "tmp"
+    "log": "log",
+    "bin": "bin",
+    "tmp": "tmp"
   },
 
   "beeper_and_log_decorator": {

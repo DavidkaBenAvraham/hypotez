@@ -6,7 +6,7 @@
   "wholesale_products_url": "https://www.aliexpress.com/shop categories page.html",
   "price_rule": "+0",
   "num_items_4_flush": 300,
-  "use_mouse": false,
+  "use_mouse": false, "mandatory": true,
   "if_login": true,
   "login_url": "https://www.login.aliexpress.com",
   "root_category": 3,

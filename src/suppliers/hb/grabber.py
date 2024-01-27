@@ -1,7 +1,10 @@
 """! @~russian  Собиратель данных со страницы товара
 
-@warning Алиэкспресс загружает страницу через javascript. bs и requests не работают. 
-Все манипулации со страницей модуль осуществляет через селениум
+Функции, специфичные для HB:
+- product_reference_and_volume_and_price_for_100():
+В НВ поле `supplier_reference` заполняется нестандартным методом: 	
+Созданный для НВ локатор `product_reference_and_volume_and_price_for_100` 
+получает сразу 4 вебэлемента. У меня не получилось найти их по одному, да это и не надо.
 
  @section libs imports:
   - gs 
@@ -19,7 +22,6 @@ from typing import Union
 from selenium.webdriver.remote.webelement import WebElement
 from src.settings import gs
 from src.product import  Product, ProductFields
-from src.prestashop import Product as PrestaProduct
 from src.helpers import  logger, logs_and_errors_decorator
 from src.tools import StringFormatter as SF, StringNormalizer as SN
 from src.suppliers import Supplier
@@ -31,6 +33,7 @@ f: ProductFields = None
 d: Driver = None 
 l: dict = None
 async_run = gs.async_run
+
 
 
 #@logs_and_errors_decorator
@@ -63,21 +66,53 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	"""! прокручиваю страницу товара, чтобы захватить области, которые подгружаются через AJAX """
 
 
-	"""! Я получаю со страницы список из трех локаторов.
-   У меня нш получается вытащить только reference. Я забираю volume, price_for_100_ml, sku """
-	volume_and_price_for_100_and_sku()
+	######################################################################################
+	# 
+	# 
+	#			"""! Функции, специфичные для конкретного  поставщика """ 
+	#
+	#
+	#
+	#	
 
+	#@logs_and_errors_decorator(default_return=False)
+	def product_reference_and_volume_and_price_for_100():
+		"""! @~russian Функция вытаскивает 3 поля:
+		- volume,
+		- supplier_reference,
+		- цена за единицу товара 
+		@todo Реализовать поле `цена за единицу товара`"""
+		global f
+		webelements: [WebElement] = d.execute_locator(l['product_reference_and_volume_and_price_for_100'])
+        
+		for webelement in webelements:
+			if ('Fl.oz' and 'מ"ל' )	in webelement.text:
+				"""! объем """
+				f.volume = webelement.text
+			elif str(r'מחיר ל100 מ"ל') in webelement.text:
+				"""! цена за единицу товара
+				@todo придумать куда
+				"""
+				print(f'цена за единицу товара:{webelement.text}')
+			elif 'מקט' in webelement.text:
+				f.supplier_reference = SN.get_numbers_only(webelement.text)
+			pass
+		pass
+		#
+		#
+		#	
+		#######################################################################################
 
-	#######################################################
-	"""! testing right now """
-	f.reference = field_reference()
-	########################################################
+	
+	
+	product_reference_and_volume_and_price_for_100()
+	
 
 
 
 	#f.active = field_active() # [v] (added by default)
 	#f.additional_delivery_times = field_additional_delivery_times()	# [v]  Мое поле. Нахера - не знаю
-	f.additional_shipping_cost  = 0 #field_additional_shipping_cost() # [v]
+	f.additional_shipping_cost = field_additional_shipping_cost() # [v]
 	#f.advanced_stock_management = field_advanced_stock_management()
 	f.affiliate_short_link = d.current_url # field_affiliate_short_link() # [v]
 	#f.affiliate_summary = field_affiliate_summary()
@@ -101,11 +136,11 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.customizable = field_customizable()
 	#f.date_add = field_date_add()
 	#f.date_upd = field_date_upd()
-	f.delivery_in_stock = 30 #field_delivery_in_stock()	 # [v]	 ##<- доставка
-	#f.delivery_out_stock = field_delivery_out_stock()
+	f.delivery_in_stock = field_delivery_in_stock()	 # [v]	 ##<- заметка о доставке. если товар в наличии
+	f.delivery_out_stock = field_delivery_out_stock() # [v]	 ##<- доставка
 	#f.depth = field_depth()
 	#f.description = field_description()
-	f.description_short = f.description = field_description_short()
+	f.description_short = f.description = field_description()
 	# f.ean13 = field_ean13()
 	# f.ecotax = field_ecotax()
 	# f.height = field_height()
@@ -149,7 +184,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	f.show_condition = field_show_condition()
 	f.show_price = field_show_price()
 	f.state = field_state()
-	f.supplier_reference = field_supplier_reference()  # [v]
+	f.supplier_reference = field_supplier_reference()  # [v] ## <- SKU со страницы поставщика
 	f.text_fields = field_text_fields()
 	f.unit_price_ratio = field_unit_price_ratio()
 	f.unity = field_unity()
@@ -162,9 +197,19 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	f.wholesale_price = field_wholesale_price()
 	f.width = field_width()    
 	pass
+	set_references(f, s)
 	return f
     
 
+def set_references(f, s):
+    #f.supplier_reference = field_supplier_reference()
+    f.id_supplier = s.supplier_id	
+    f.reference = f'{f.id_supplier}-{f.supplier_reference}'
+	
+
+
+
+	
 
 #@logs_and_errors_decorator(default_return=False)
 def field_active():
@@ -449,15 +494,14 @@ def field_description():
 	pass
 
 
-#@logs_and_errors_decorator(default_return=False)
-def field_description_short():
-	"""! @~russian 
-	@brief
-	@details
-	"""
-	return str (d.execute_locator (l['description_short'] ) )
-	pass
-	
+# #@logs_and_errors_decorator(default_return=False)
+# def field_description_short():
+# 	"""! @~russian  На сайте нет короткого описания. Я закладываю в поле `description_short` значение из `description`
+# 	@brief
+# 	@details
+# 	"""
+# 	return str (d.execute_locator (l['description_short'] ) )
+# 	pass
 
 #@logs_and_errors_decorator(default_return=False)
 def field_ean13():
@@ -947,27 +991,6 @@ def field_url_default_image():
 	"""
 	return f.url_default_image
 	pass
-	
-
-#@logs_and_errors_decorator(default_return=False)
-def volume_and_price_for_100_and_sku():
-    """! @~russian """
-    global f
-    webelements: [WebElement] = d.execute_locator(l['volume_and_price_for_100_and_sku'])
-        
-    for webelement in webelements:
-        if ('Fl.oz' and 'מ"ל' )	in webelement.text:
-            """! объем """
-            f.volume = webelement.text
-        elif str(r'מחיר ל100 מ"ל') in webelement.text:
-            """! цена за единицу товара
-            @todo придумать куда
-            """
-            print(f'цена за единицу товара:{webelement.text}')
-        elif 'מקט' in webelement.text:
-            f.supplier_reference = SN.get_numbers_only(webelement.text)
-        pass
-    pass
         
 
 #@logs_and_errors_decorator(default_return=False)

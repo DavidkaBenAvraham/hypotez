@@ -9,7 +9,7 @@
       "by": "XPATH",
       "selector": "//div[contains(text(), 'אפשר')]",
       "action": "send_keys(Key.RETURN)",
-      "use_mouse": false,
+      "use_mouse": false, "mandatory": true,
       "@note": ""
     },
 
@@ -19,7 +19,7 @@
       "by": "XPATH",
       "selector": "//div[@class = 'account-main']//span[. = 'Sign in'] | //div[@class = 'account-main']//span[. = 'Se connecter'] | //div[@class = 'account-main']//span[. = 'כניסה'] ",
       "action": "click()",
-      "use_mouse": false,
+      "use_mouse": false, "mandatory": true,
       "@note": ""
     },
 
@@ -30,7 +30,7 @@
       "by": "XPATH",
       "selector": "//input[@id='fm-login-id']",
       "action": "send_keys('one.last.bit@gmail.com')",
-      "use_mouse": false,
+      "use_mouse": false, "mandatory": true,
       "@note": ""
     },
 
@@ -40,7 +40,7 @@
       "by": "XPATH",
       "selector": "//input[@id='fm-login-password']",
       "action": "send_keys('7p3ato9kijsosw7')",
-      "use_mouse": false,
+      "use_mouse": false, "mandatory": true,
       "@note": ""
     },
 
@@ -50,7 +50,7 @@
       "by": "XPATH",
       "selector": "//button[@type='submit']",
       "action": "click()",
-      "use_mouse": false,
+      "use_mouse": false, "mandatory": true,
       "@note": ""
     },
 
@@ -60,7 +60,7 @@
       "by": "XPATH",
       "selector": "//button[contains(@data-role,'gdpr-accept')]",
       "action": "click()",
-      "use_mouse": false,
+      "use_mouse": false, "mandatory": true,
       "@note": ""
     }
 
@@ -73,7 +73,7 @@
       "by": "XPATH",
       "selector": "//div[@data-role = 'region-pannel']/a",
       "action": "click()",
-      "use_mouse": false,
+      "use_mouse": false, "mandatory": true,
       "@note": ""
     },
 
@@ -87,7 +87,7 @@
         "//li[contains(@data-code,'il')]"
       ],
       "action": [ "click()", "click()", "click()" ],
-      "use_mouse": false,
+      "use_mouse": false, "mandatory": true,
       "@note": ""
     },
     "language_locator": {
@@ -100,7 +100,7 @@
         "//a[contains(@data-scenario_language,'en_US')]"
       ],
       "action": [ "click()", "click()", "click()" ],
-      "use_mouse": false,
+      "use_mouse": false, "mandatory": true,
       "@note": ""
     },
     "currency_locator": {
@@ -113,7 +113,7 @@
         "//a[contains(@data-currency , 'ILS')]"
       ],
       "action": [ "click()", "click()", "click()" ],
-      "use_mouse": false,
+      "use_mouse": false, "mandatory": true,
       "@note": ""
     },
     "save_button_locator": {
@@ -122,7 +122,7 @@
       "by": "XPATH",
       "selector": "//div[contains(@class , 'switcher-btn')]",
       "action": "click()",
-      "use_mouse": false,
+      "use_mouse": false, "mandatory": true,
       "@note": ""
     }
   }

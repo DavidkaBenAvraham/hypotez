@@ -5,7 +5,7 @@
     "by": "XPATH",
     "selector": "//span[@data-component-type ='s-product-image']//a",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null
   }
 }

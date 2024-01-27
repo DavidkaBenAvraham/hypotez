@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 #! /usr/share/projects/hypotez/venv/scripts python
 import header
-from src.prestashop import PrestaCategory
+from src.categories import Category
 
-parents = Category.get_parents(11209)
 
+c = Category()
+c.get_list_parent_categories_from_prestashop(11209)

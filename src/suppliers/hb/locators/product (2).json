@@ -6,6 +6,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "id_manufacturer": {
@@ -15,6 +16,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "id_supplier": {
@@ -24,6 +26,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "id_category_default": {
@@ -33,6 +36,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "new": {
@@ -42,6 +46,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "cache_default_attribute": {
@@ -51,6 +56,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "url_default_image": {
@@ -60,6 +66,7 @@
     "selector": "//div[contains(@class,'woocommerce-product-gallery__image')]/a",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "id_default_combination": {
@@ -69,6 +76,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "id_tax": {
@@ -78,6 +86,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "position_in_category": {
@@ -87,6 +96,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "type": {
@@ -96,6 +106,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "id_shop_default": {
@@ -105,6 +116,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "reference": {
@@ -114,6 +126,7 @@
     "selector": "//div[@class='elementor-shortcode']",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "supplier_reference": {
@@ -123,6 +136,7 @@
     "selector": "//div[@data-widget_type='shortcode.default']",
     "logic for action[AND|OR|XOR|VALUE|null]": "TAKE 3 ELEMENT FROM ARRAY",
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "location": {
@@ -132,6 +146,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "width": {
@@ -141,6 +156,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "height": {
@@ -150,6 +166,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "depth": {
@@ -159,6 +176,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "weight": {
@@ -168,6 +186,7 @@
     "selector": "//div[@data-widget_type='shortcode.default']",
     "logic for action[AND|OR|XOR|VALUE|null]": "TAKE 2 ELEMENT FROM ARRAY",
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "quantity_discount": {
@@ -177,6 +196,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "ean13": {
@@ -186,6 +206,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "isbn": {
@@ -195,6 +216,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "upc": {
@@ -204,6 +226,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "mpn": {
@@ -213,6 +236,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "cache_is_pack": {
@@ -222,6 +246,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "cache_has_attachments": {
@@ -231,6 +256,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "is_virtual": {
@@ -240,6 +266,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "state": {
@@ -249,6 +276,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "additional_delivery_times": {
@@ -258,6 +286,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "delivery_in_stock": {
@@ -267,6 +296,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "delivery_out_stock": {
@@ -276,6 +306,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "product_type": {
@@ -285,6 +316,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "on_sale": {
@@ -294,6 +326,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "online_only": {
@@ -303,6 +336,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "ecotax": {
@@ -312,6 +346,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "minimal_quantity": {
@@ -321,6 +356,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "low_stock_threshold": {
@@ -330,6 +366,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "low_stock_alert": {
@@ -339,6 +376,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "price": {
@@ -348,6 +386,7 @@
     "selector": "//p[@class='price']",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "wholesale_price": {
@@ -357,6 +396,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "unity": {
@@ -366,6 +406,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "unit_price_ratio": {
@@ -375,6 +416,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "additional_shipping_cost": {
@@ -384,6 +426,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "customizable": {
@@ -393,6 +436,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "text_fields": {
@@ -402,6 +446,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "uploadable_files": {
@@ -411,6 +456,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "active": {
@@ -420,6 +466,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "redirect_type": {
@@ -429,6 +476,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "id_type_redirected": {
@@ -438,6 +486,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "available_for_order": {
@@ -447,6 +496,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "available_date": {
@@ -456,6 +506,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
 
@@ -466,6 +517,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "indexed": {
@@ -475,6 +527,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "visibility": {
@@ -484,6 +537,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "advanced_stock_management": {
@@ -493,6 +547,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "date_add": {
@@ -502,6 +557,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "date_upd": {
@@ -511,6 +567,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "pack_stock_type": {
@@ -520,6 +577,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "meta_description": {
@@ -529,6 +587,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "meta_keywords": {
@@ -538,6 +597,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "meta_title": {
@@ -547,6 +607,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "link_rewrite": {
@@ -556,6 +617,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "name": {
@@ -565,6 +627,7 @@
     "selector": "//h1[contains(@class,'product_title')]",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "description": {
@@ -586,6 +649,7 @@
     ],
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "description_short": {
@@ -605,6 +669,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "affiliate_text": {
@@ -614,6 +679,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "affiliate_summary": {
@@ -623,6 +689,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "affiliate_summary_2": {
@@ -632,6 +699,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "available_now": {
@@ -641,6 +709,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "available_later": {
@@ -650,6 +719,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "associations": {
@@ -659,6 +729,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
 
@@ -669,6 +740,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
 
@@ -680,6 +752,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Price tax included": {
@@ -689,6 +762,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Tax rule ID": {
@@ -698,6 +772,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Cost price": {
@@ -707,6 +782,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "On sale (0/1)": {
@@ -716,6 +792,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Discount amount": {
@@ -725,6 +802,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Discount percent": {
@@ -734,6 +812,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Discount from (yyyy-mm-dd)": {
@@ -743,6 +822,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Discount to (yyyy-mm-dd)": {
@@ -752,15 +832,17 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
-  "Reference #": {
+  "reference #": {
     "attribute": null,
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Supplier reference #": {
@@ -770,6 +852,7 @@
     "selector": "//div[contains(text(),'מקט')]",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Supplier": {
@@ -779,6 +862,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Brand": {
@@ -788,6 +872,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "EAN13": {
@@ -797,6 +882,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "UPC": {
@@ -806,6 +892,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "MPN": {
@@ -815,6 +902,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Ecotax": {
@@ -824,6 +912,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Width": {
@@ -833,6 +922,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Height": {
@@ -842,6 +932,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Depth": {
@@ -851,6 +942,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Weight": {
@@ -860,6 +952,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Delivery time of in-stock products:": {
@@ -869,6 +962,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Delivery time of out-of-stock products with allowed orders:": {
@@ -878,6 +972,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Quantity": {
@@ -887,6 +982,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Minimal quantity": {
@@ -896,6 +992,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Low stock level": {
@@ -905,6 +1002,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Send me an email when the quantity is under this level": {
@@ -914,6 +1012,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
 
@@ -924,6 +1023,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Meta title": {
@@ -933,6 +1033,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Meta keywords": {
@@ -942,6 +1043,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Meta description": {
@@ -951,6 +1053,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Rewritten URL": {
@@ -960,6 +1063,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Label when in stock": {
@@ -969,6 +1073,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Label when backorder allowed": {
@@ -978,6 +1083,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Available for order (0 = No, 1 = Yes)": {
@@ -987,6 +1093,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Product availability date": {
@@ -996,6 +1103,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Product creation date": {
@@ -1005,6 +1113,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Show price (0 = No, 1 = Yes)": {
@@ -1014,6 +1123,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Screenshot": {
@@ -1022,6 +1132,7 @@
     "by": null,
     "selector": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": "screenshot()",
     "logic for action[AND|OR|XOR|VALUE|null]": null
   },
@@ -1032,6 +1143,7 @@
     "selector": "//img[@class='product-gallery--loaded-image']",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Image alt texts (x,y,z...)": {
@@ -1041,6 +1153,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Delete existing images (0 = No, 1 = Yes)": {
@@ -1050,6 +1163,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Feature (Name:Value:Position:Customized)": {
@@ -1059,6 +1173,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Available online only (0 = No, 1 = Yes)": {
@@ -1068,6 +1183,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Condition": {
@@ -1077,6 +1193,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Customizable (0 = No, 1 = Yes)": {
@@ -1086,6 +1203,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Uploadable files (0 = No, 1 = Yes)": {
@@ -1095,6 +1213,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Text fields (0 = No, 1 = Yes)": {
@@ -1104,6 +1223,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Action when out of stock": {
@@ -1113,6 +1233,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Virtual product (0 = No, 1 = Yes)": {
@@ -1122,6 +1243,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "File URL": {
@@ -1131,6 +1253,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Number of allowed downloads": {
@@ -1140,6 +1263,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Expiration date (yyyy-mm-dd)": {
@@ -1149,6 +1273,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Number of days": {
@@ -1158,6 +1283,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
 
@@ -1168,6 +1294,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Depends on stock": {
@@ -1177,6 +1304,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Warehouse": {
@@ -1186,6 +1314,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Accessories (x,y,z...)": {
@@ -1195,6 +1324,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
 
@@ -1205,6 +1335,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Byer protection": {
@@ -1214,6 +1345,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Specification": {
@@ -1223,6 +1355,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Refirbished product description": {
@@ -1232,6 +1365,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Additional shipping details": {
@@ -1241,6 +1375,7 @@
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
+    "mandatory": true,
     "action": null
   }
 

@@ -550,10 +550,10 @@ class ProjectSettings():
         try:
             """! """
             # Определение абсолютных путей к директориям
-            self.dir_export = Path(self.dir_root, 'export').absolute()
-            self.dir_logs = Path(self.dir_root, 'logs').absolute()
-            self.dir_binaries = Path(self.dir_root, 'bin').absolute()
-            self.dir_temp = Path(self.dir_root, 'tmp').absolute()
+            self.dir_export = Path(self.dir_root, self.settings ['program_paths']['export']).absolute()
+            self.dir_log = Path(self.dir_root, self.settings ['program_paths']['log']).absolute()
+            self.dir_binaries = Path(self.dir_root,  self.settings ['program_paths']['bin']).absolute()
+            self.dir_temp = Path(self.dir_root, self.settings ['program_paths']['tmp']).absolute()
         except Exception as ex:
             logger.error(f'ошибка ', ex)
             return False

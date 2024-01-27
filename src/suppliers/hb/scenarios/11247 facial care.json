@@ -5,7 +5,7 @@
       "condition": "new",
       "presta_categories": {
         "default_category": { "11253": "moisture-face" },
-        "addtinal categories root": [ "" ]
+        "addtinal categories": [ "" ]
       },
       "price_rule": 1
     },
@@ -14,7 +14,7 @@
       "condition": "new",
       "presta_categories": {
         "default_category": { "11254": "serums" },
-        "addtinal categories root": [ "" ]
+        "addtinal categories": [ "" ]
       },
       "price_rule": 1
     },
@@ -23,7 +23,7 @@
       "condition": "new",
       "presta_categories": {
         "default_category": { "11255": "face-masks" },
-        "addtinal categories root": [ "" ]
+        "addtinal categories": [ "" ]
       },
       "price_rule": 1
     },
@@ -32,7 +32,7 @@
       "condition": "new",
       "presta_categories": {
         "default_category": { "11256": "facial-cleaning-products" },
-        "addtinal categories root": [ "" ]
+        "addtinal categories": [ "" ]
       },
       "price_rule": 1
     },
@@ -42,7 +42,7 @@
       "condition": "new",
       "presta_categories": {
         "default_category": { "11257": "multi-active-series" },
-        "addtinal categories root": [ "" ]
+        "addtinal categories": [ "" ]
       },
       "price_rule": 1
     },
@@ -51,7 +51,7 @@
       "condition": "new",
       "presta_categories": {
         "default_category": { "11258": "mineral-peptide" },
-        "addtinal categories root": [ "" ]
+        "addtinal categories": [ "" ]
       },
       "price_rule": 1
     }

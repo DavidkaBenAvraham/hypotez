@@ -7,42 +7,8 @@
       "new"
     ],
     "presta_categories": {
-      "default_category": {
-        "11111": "presta_category"
-      },
-      "addtinal categories root": [
-        ""
-      ]
-    }
-  },
-  "children": {},
-  "url": "https://hbdeadsea.co.il/product-category/aromatherapy/",
-  "name": "ארומתרפי",
-  "condition": [
-    "new"
-  ],
-  "presta_categories": {
-    "default_category": {
-      "11111": "presta_category"
-    },
-    "addtinal categories root": [
-      ""
-    ]
-  },
-  "%d7%9e%d7%91%d7%a9%d7%9d-%d7%91%d7%93%d7%99%d7%9d": {
-    "children": {},
-    "url": "https://hbdeadsea.co.il/product-category/aromatherapy/%d7%9e%d7%91%d7%a9%d7%9d-%d7%91%d7%93%d7%99%d7%9d/",
-    "name": "מבשם בדים",
-    "condition": [
-      "new"
-    ],
-    "presta_categories": {
-      "default_category": {
-        "11111": "presta_category"
-      },
-      "addtinal categories root": [
-        ""
-      ]
+      "default_category": "11111",
+      "addtinal categories": [ "" ]
     }
   }
 }

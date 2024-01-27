@@ -7,7 +7,7 @@
 
 
 ### Примеры локаторов
-<pre>
+``` python
 {
   "product_links": {
     "attribute": "href",
@@ -16,7 +16,7 @@
     "selector": "//div[contains(@id,'node-gallery')]//li[contains(@class,'item')]//a",
     "selector 2": "//span[@data-component-type='s-product-image']//a",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null
   },
 
@@ -39,8 +39,9 @@
   }
 
 }
-</pre>
+```
 
+@todo сделать вариант, когда в списке передается аттрибут по `VALUE`, но формулой, например $_(get_user_name())_$, $_(get_user_password())_$
 
  @section libs imports:
   - logging 
@@ -168,29 +169,70 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
      ## Действия (actions) Всегда выполняются ДО получения атрибута. Если надо получить действие по значению атрибута -
      сделай формулу в конструкции "$_(...)_$ 
     """
+
+    """! проверяю локаторы на наличие формул. Если нашел - выполняю формулу, а потом фвигаюсь дальше """    
+    _saved_locator = locator
+    locator['attribute'] = evaluate_locator(locator.get('attribute'),driver)
+    locator['selector'] = evaluate_locator(locator.get('selector'),driver) 
+    
+
+    ret = None
+
     # 1.
     if all ( [ locator['action'], locator['attribute'] ] ) is None:
         """! @~russian если нет действий на элементов и нет конкретных аттрибутов для получения от вебэлемента - то я возвращаю ВЕСЬ элемент """
         """! @~english Return the entire web element if `action` and `attribute` are None."""
 
-        return get_webelements_from_page (driver, locator)
-
+        ret = get_webelements_from_page (driver, locator)
+    
+    # 1.1 
+    if str(locator['by']).upper() == 'VALUE':
+        """! Я могу передать свое значение (формулу) через ключ `attribute` 
+        @todo проверить на формулу в `attribute`
+        Например:
+        ```python
+          "delivery_in_stock": {
+            "attribute": "Israel Post",
+            "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+            "by": "VALUE",
+            "selector": null,
+            "logic for action[AND|OR|XOR|VALUE|null]": null,
+            "use_mouse": false, "mandatory": true,
+            "action": null
+          }
+        ```
+        """
+        ret = locator['attribute']
+    
     # 1.2.
     elif locator['action'] is None:
         """! действия над элементом не требуются. Будет возвращен аттрибут 
          Return the attribute(s) of the web element if 'action' is None but 'attribute' 
-         is specified in the locator."""
-        return get_attributes_from_webelements ( driver, locator )
+         is specified in the locator.
+         Например:
+         ```python
+        "product_reference_and_volume_and_price_for_100": {
+            "attribute": "InnerText",
+            "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+            "by": "XPATH",
+            "selector": "//div[@data-widget_type='shortcode.default']",
+            "logic for action[AND|OR|XOR|VALUE|null]": null,
+            "use_mouse": false, "mandatory": true,
+            "action": null,
+            "@note": ""
+          },
+                 """
+        ret = get_attributes_from_webelements ( driver, locator )
 
     # 1.3
     elif isinstance(locator['action'], str):
         """! @~russian если задан параметр 'action' -> бегу выполнять его  """
         """! @en_rem Execute the one action and return the result."""        
-        return execute_action (driver, locator, keys)
+        ret = execute_action (driver, locator, keys)
         
     # 1.4
     elif isinstance(locator['action'], list):
-        """! @~russian _rem Блок производит список действий над элементом 
+        """! @~russian получил список действий над элементом 
         @todo Список не сорханяет порядок исполнения! Правильно будет передавать кортеж """
         """! @en_rem Execute the one action and return the result."""   
     
@@ -200,7 +242,7 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
         
         attrs = []
         
-        _saved_locator = locator
+        
         """! Я срезаю слои списка. Надо вернуть список как он был """
         
         while len(locator['action']) > 0:
@@ -227,14 +269,18 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
             Вначале исполняются локаторы, потом берутся аттрибуты.
             @todo сейчас для корректной обработки я требую, чтобы каждый элемент локатора бык определен, как список.
             А как сделать так, чтобы на требовалось обязательно передавать все элементы списком. Не срочно """
-
-        locator = _saved_locator
-        return attrs
+        ret = attrs
 
     # 1.5
     elif isinstance(locator['action'], dict):
         # Feature not yet implemented
         pass
+    
+    
+    locator = _saved_locator
+    """! возвращаю локатору дефолтные значения, которые могли вытереться при исполнении функции, заложенной внутри локатора """
+    
+    return ret
 
 #@logs_and_errors_decorator (default_return =  False)
 def execute_action(driver: Driver, locator: dict, keys: Union[Keys, None] = None) -> bool:
@@ -291,8 +337,11 @@ def execute_action(driver: Driver, locator: dict, keys: Union[Keys, None] = None
         # """  send_keys() """
         webelement = get_webelements_from_page(driver, locator)
         if not webelement:
-            logger.error(f"""Element not found: {locator}""")
+            logger.error(f""" Не на что кликать
+            Элемент не найден: {pprint(locator)}""")
             return False
+
+
         # if keys are not specified, extract them from the locator
         if keys is None:
             key_from_locator = locator['action']
@@ -411,7 +460,6 @@ def get_webelements_from_page(driver: Driver, locator: dict) -> Union[list, Fals
         by = By.CLASS_NAME
         
     elif str ( locator['by'] ).upper() == 'VALUE':
-        """! @todo Эта ситуация еще не была проверена """
         return locator ['attribute']
     
     
@@ -567,26 +615,28 @@ def get_attribute_by_locator(driver: Driver, locator: dict) -> str:
 
 
     # -------------------- Поиск вебелемента --------------------------
-    _saved_locator = locator
-    locator['attribute'] = evaluate_locator(locator.get('attribute'),driver)
-    locator['selector'] = evaluate_locator(locator.get('selector'),driver)
+ 
     """! @~russian Проверяю наличие формулы в локаторе.
     Если внутри локатора есть кострукция вида "$_(...)_$ - я ее обрабатываю как свою формулу.
     Следовательно, меняется локатор. Когда я нашел вебэлемент - я возвращаю значение локатора """
+    ret = None
 
     webelements = get_webelements_from_page(driver, locator)
     """! Вначале получаю вебэлемент целиком, а потом забираю нужный аттрибут """
 
-    locator = _saved_locator
-    """! возвращаю локатору дефолтные значения, которые могли вытереться при исполнении функции, заложенной внутри локатора """
     
     # ------------------------------------------------------------------
 
     if not webelements:
         # If no web elements are found by the locator, log an error message and return an empty list:
         if 'mandatory' in locator and locator['mandatory'] is False:
-            logger.warning(f""" Не вернулся элемент по локатору: 
-                     {locator}  """)
+            """! необязательный элемент """
+            logger.warning(f"""Не вернулся необязательный элемент по локатору: 
+                           {pprint(locator)}  """)
+            return None
+        
+        logger.debug(f"""Не вернулся элемент по локатору: 
+                {pprint(locator)}  """)
         return False
         
     elif isinstance(webelements, list) and len(webelements) >1 :
@@ -607,16 +657,19 @@ def get_attribute_by_locator(driver: Driver, locator: dict) -> str:
 
                 # ---- ОЧ СТРОГО
                 #raise ExecuteLocatorException(ex)
-        return attributes
+        ret =  attributes
     else:
-        # If only one web element is found by the locator, get the attribute value of the web element
+        """! получил один вебэлемент. Все равно возваращаю список аттрибутов """
         try:
             """! """
-            return webelements[0].get_attribute ( locator['attribute'] )
+            ret =[ webelements.get_attribute ( locator['attribute'] ) ]
             #attributes = webelements.get_attribute(locator['attribute']) 
         except Exception as ex:
             logger.error(f'ошибка ', ex)
-            return False 
+            ret = False 
+
+   
+    return ret
 
           
 
@@ -636,11 +689,12 @@ def evaluate_locator(expression_as_str, driver):
         Функция, которая перечитывает локаторы из исходных файлов - `reread_locators(s: Supplier, entity: str)`,
         где entity - имя исходного файла `product` , `category` , `shop`
     """
-    if expression_as_str is None: 
-        return None
-    if not '$_(' in expression_as_str:
-        """! В строке нет формулы """
-        return expression_as_str
+    
+    if not isinstance (expression_as_str, str): return expression_as_str
+    if expression_as_str is None: return None
+    if not '$_(' in expression_as_str: return expression_as_str
+
+        
 
     def evaluate_expression(expression, driver):
         try:
@@ -743,7 +797,8 @@ def reread_locators(s, entity: str ) -> Union[dict, False]:
             "by": "XPATH",
             "selector": "//div[contains(@data-csa-c-asin, '$_(driver.current_url.split(f'''/''')[-2])_$') and contains(@id, 'corePriceDisplay')]//span[1]",
             "logic for action[AND|OR|XOR|VALUE|null]": null,
-            "use_mouse": false,
+            "use_mouse": false, 
+            "mandatory": true,
             "action": null
             }
         }
@@ -762,9 +817,15 @@ def reread_locators(s, entity: str ) -> Union[dict, False]:
 
 
 
-#def return_action_from_locator(driver,locator):
-#    pass
 
+
+
+####################################################################################################
+#            
+#
+#                                   Старый код
+#
+#
 #def return_value_from_locator(driver, locator):
 #    """
 #    @param
@@ -800,7 +861,7 @@ def reread_locators(s, entity: str ) -> Union[dict, False]:
 #                "by": "XPATH",
 #                "selector": "//div[contains(@data-csa-c-asin, '$_(d.current_url.split(f'''/''')[-2])_$') and contains(@id, 'corePrice_desktop')]// span[contains(@class, 'apexPriceToPay')]",
 #                "logic for action[AND|OR|XOR|VALUE|null]": null,
-#                "use_mouse": false,
+#                "use_mouse": false, "mandatory": true,
 #                "action": null
 #              }
 

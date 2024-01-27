@@ -1,96 +1,67 @@
 {
-  "body-spa-products": {
-    "children": {},
-    "url": "https://hbdeadsea.co.il/product-category/bodyspa/body-spa-products/",
-    "name": "מוצרי גוף וספא",
-    "condition": [
-      "new"
-    ],
-    "presta_categories": {
-      "default_category": {
-        "11111": "presta_category"
-      },
-      "addtinal categories root": [
-        ""
-      ]
-    }
-  },
-  "feet-hand-treatment": {
-    "children": {},
-    "url": "https://hbdeadsea.co.il/product-category/bodyspa/feet-hand-treatment/",
-    "name": "טיפוח כפות ידיים ורגליים",
-    "condition": [
-      "new"
-    ],
-    "presta_categories": {
-      "default_category": {
-        "11111": "presta_category"
-      },
-      "addtinal categories root": [
-        ""
-      ]
-    }
-  },
-  "shower-soaps": {
-    "children": {},
-    "url": "https://hbdeadsea.co.il/product-category/bodyspa/shower-soaps/",
-    "name": "תחליבי רחצה",
-    "condition": [
-      "new"
-    ],
-    "presta_categories": {
-      "default_category": {
-        "11111": "presta_category"
-      },
-      "addtinal categories root": [
-        ""
-      ]
-    }
-  },
-  "perfume": {
-    "children": {},
-    "url": "https://hbdeadsea.co.il/product-category/bodyspa/perfume/",
-    "name": "בישום",
-    "condition": [
-      "new"
-    ],
-    "presta_categories": {
-      "default_category": {
-        "11111": "presta_category"
-      },
-      "addtinal categories root": [
-        ""
-      ]
-    }
-  },
-  "multi-purpose-cream": {
-    "children": {},
-    "url": "https://hbdeadsea.co.il/product-category/bodyspa/multi-purpose-cream/",
-    "name": "קרמים רב שימושיים",
-    "condition": [
-      "new"
-    ],
-    "presta_categories": {
-      "default_category": {
-        "11111": "presta_category"
-      },
-      "addtinal categories root": [
-        ""
-      ]
-    }
-  },
-  "children": {},
-  "url": "https://hbdeadsea.co.il/product-category/bodyspa/",
-  "name": "גוף וספא",
-  "condition": [
-    "new"
-  ],
-  "presta_categories": {
-    "default_category": {
-      "11111": "presta_category"
+  "scenarios": {
+
+    "feet-hand-treatment": {
+      "url": "https://hbdeadsea.co.il/product-category/bodyspa/feet-hand-treatment/",
+      "name": "טיפוח כפות ידיים ורגליים",
+      "condition": "new",
+      "presta_categories": {
+        "default_category": 11259,
+        "addtinal categories": []
+      }
     },
-    "addtinal categories root": [
-      ""
-    ]
+
+
+
+    "creams-butters-serums-for-body": {
+      "url": "https://hbdeadsea.co.il/product-category/bodyspa/creams-butters-serums-for-body/",
+      "name": "קרמים, חמאות וסרומים לגוף",
+      "condition": "new",
+      "presta_categories": {
+        "default_category": 11260,
+        "addtinal categories": []
+      }
+    },
+
+
+
+    "bath-products": {
+      "url": "https://hbdeadsea.co.il/product-category/bodyspa/bath-products/",
+      "name": "מוצרי רחצה",
+      "condition": "new",
+      "presta_categories": {
+        "default_category": 11261,
+        "addtinal categories": []
+      }
+    },
+
+    "soaps-bar": {
+      "url": "https://hbdeadsea.co.il/product-category/soap-bar/https://hbdeadsea.co.il/product-category/soap-bar",
+      "name": "סבונים מוצקים",
+      "condition": "new",
+      "presta_categories": {
+        "default_category": 11262,
+        "addtinal categories": []
+      }
+    },
+    "Body and Spa Products": {
+      "url": "https://hbdeadsea.co.il/product-category/bodyspa/body-spa-products/",
+      "name": "גוף וספא",
+      "condition": "new",
+      "presta_categories": {
+        "default_category": 11263,
+        "addtinal categories": []
+      }
+    },
+    "desodorants": {
+      "url": "https://hbdeadsea.co.il/product-category/bodyspa/%d7%93%d7%90%d7%95%d7%93%d7%95%d7%a8%d7%a0%d7%98/",
+      "name": "דאודוראנטים",
+      "condition": "new",
+      "presta_categories": {
+        "default_category": 11264,
+        "addtinal categories": []
+      }
+    }
+
   }
 }

@@ -76,7 +76,7 @@ def recursive_crawl(response, depth, visited_links, starting_url, link_text=None
         current_dict["url"] = link  # Добавляем URL в текущий узел
         current_dict["name"] = link_text or get_link_name(response, link)  # Добавляем текст ссылки в текущий узел
         current_dict["condition"] = "new",
-        current_dict["presta_categories"]: dict = {"default_category":{"11111": "presta_category"},"addtinal categories root": [ "" ]}
+        current_dict["presta_categories"]: dict = {"default_category":{"11111": "presta_category"},"addtinal categories": [ "" ]}
 
     return current_node_data
 

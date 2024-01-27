@@ -7,7 +7,7 @@
     "by": "XPATH",
     "selector": "//div[contains(@class,'dynamic-shipping-line')]//span//strong[contains(text(),'Shipping')]",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "ps_table.field": "[22] ps_product.additional_shipping_cost decimal(20,6)",
     "@note": "стоимость доставки"
@@ -18,7 +18,7 @@
     "by": [ "XPATH", "XPATH" ],
     "selector": [ "//text()[contains(., 'Get link as')]/following-sibling::button", "//textarea[contains(@name,'href')]" ],
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": [ "click()", null ],
     "@note": "ссылка, которая возвращает партнерскую ссылку на  партнера `defalt`",
     "ps_table.field": "[16] ps_product_lang.affiliate_short_link varchar(256)"
@@ -29,7 +29,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -39,7 +39,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -49,7 +49,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -59,17 +59,18 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
+
   "affiliate_image_medium": {
     "attribute": null,
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -79,17 +80,49 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
+  "ingridients": {
+    "attribute": null,
+    "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+    "by": null,
+    "selector": null,
+    "logic for action[AND|OR|XOR|VALUE|null]": null,
+    "use_mouse": false, "mandatory": true,
+    "action": null,
+    "@note": ""
+  },
+
+  "how_to_use": {
+    "attribute": null,
+    "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+    "by": null,
+    "selector": "//div[@id = 'tab-description']/following-sibling::node()",
+    "logic for action[AND|OR|XOR|VALUE|null]": null,
+    "use_mouse": false, "mandatory": true,
+    "action": null,
+    "@note": ""
+  },
+
+  "spcecification": {
+    "attribute": null,
+    "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+    "by": null,
+    "selector": null,
+    "logic for action[AND|OR|XOR|VALUE|null]": null,
+    "use_mouse": false, "mandatory": true,
+    "action": null
+  },
+
   "condition": {
     "attribute": null,
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "ps_table.field": "[#36] ps_product.condition tinyint",
     "@note": "Состояние: new | used | refirbished "
@@ -101,7 +134,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "ps_table.field": "ps_product.id_product [#1] int(10) unsigned",
     "@note": ""
@@ -112,7 +145,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "ps_table.field": "",
     "@note": ""
@@ -123,7 +156,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "ps_table.field": "",
     "@note": ""
@@ -134,7 +167,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "ps_table.field": "",
     "@note": ""
@@ -148,7 +181,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "ps_table.field": "",
     "@note": ""
@@ -159,7 +192,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "ps_table.field": "",
     "@note": ""
@@ -170,7 +203,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -180,7 +213,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -190,7 +223,7 @@
     "by": "VALUE",
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -200,7 +233,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -210,7 +243,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -220,7 +253,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -230,7 +263,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -240,7 +273,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -250,7 +283,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -260,7 +293,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -270,7 +303,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -280,7 +313,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -290,7 +323,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -300,7 +333,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -310,7 +343,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -320,7 +353,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -330,7 +363,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -340,7 +373,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -351,7 +384,7 @@
     "by": "XPATH",
     "selector": "//div[contains(@class,'dynamic-shipping-line')]//span[contains(text(),'Estimated delivery on')]/following-sibling::span[1]",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "ps_table.field": "[31] ps_product_lang.delivery_in_stock varchar(256)",
     "@note": "сроки доставки"
@@ -362,7 +395,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -372,7 +405,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -382,7 +415,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -392,7 +425,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -402,7 +435,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -412,7 +445,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -422,7 +455,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -432,7 +465,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -452,7 +485,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -462,7 +495,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -472,7 +505,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -483,7 +516,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -493,7 +526,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -503,7 +536,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -513,7 +546,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -523,7 +556,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -533,7 +566,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -543,7 +576,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -553,7 +586,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -563,7 +596,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -574,7 +607,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -584,7 +617,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -594,7 +627,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -604,7 +637,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -614,7 +647,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -624,7 +657,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -634,7 +667,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -644,7 +677,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -654,7 +687,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -664,7 +697,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -674,7 +707,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -684,7 +717,7 @@
     "by": "XPATH",
     "selector": "//h1[@data-pl='product-title']",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "ps_table.field": "ps_product_lang.name [#10] varchar(512)",
     "@note": "Название товара. Должно быть очищено от спецсимволов `#` etc"
@@ -695,7 +728,7 @@
     "by": "XPATH",
     "selector": "//div[@id='nav-description']",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": "[4] ps_product_language.description text"
   },
@@ -705,7 +738,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": "[5] ps_product_language.description_short text"
   },
@@ -715,7 +748,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -725,7 +758,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -735,7 +768,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -745,7 +778,7 @@
     "by": "XPATH",
     "selector": "//*[contains(text(),'ASIN')]/following-sibling::*",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -755,7 +788,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -769,7 +802,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -779,7 +812,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -789,7 +822,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -799,7 +832,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -809,17 +842,17 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
-  "Reference #": {
+  "reference #": {
     "attribute": null,
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -829,7 +862,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -839,7 +872,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -849,7 +882,7 @@
     "by": "XPATH",
     "selector": "//span[contains(text(), 'Brand')]/parent::td/following-sibling::td/span[contains(@class, 'po-break-word')]",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -859,7 +892,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -869,7 +902,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -879,7 +912,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -889,7 +922,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -899,7 +932,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -909,7 +942,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -919,7 +952,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -929,7 +962,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -939,7 +972,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -949,7 +982,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -959,7 +992,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -969,7 +1002,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -979,7 +1012,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -989,7 +1022,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -999,7 +1032,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1009,7 +1042,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1019,7 +1052,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1029,7 +1062,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1039,7 +1072,7 @@
     "by": "XPATH",
     "selector": "//div[contains(@data-a-expander-name , 'product_overview')]//table",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1049,7 +1082,7 @@
     "by": "XPATH",
     "selector": "//div[@id='productDescription']",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1059,7 +1092,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1069,7 +1102,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1079,7 +1112,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1089,7 +1122,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1099,7 +1132,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1109,7 +1142,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1119,7 +1152,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1129,7 +1162,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1139,7 +1172,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1149,7 +1182,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1159,7 +1192,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1168,7 +1201,7 @@
     "logic for attribue[AND|OR|XOR|VALUE|null]": null,
     "by": "XPATH",
     "selector": "//img[@id='landingImage']|//img[@class='a-dynamic-image']",
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": "screenshot()",
     "logic for action[AND|OR|XOR|VALUE|null]": null
   },
@@ -1178,7 +1211,7 @@
     "by": null,
     "selector": "//img[contains(@class,'magnifier--image--')]",
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1188,7 +1221,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1198,7 +1231,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1208,7 +1241,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1218,7 +1251,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1228,7 +1261,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1238,7 +1271,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1248,7 +1281,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1258,7 +1291,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1268,7 +1301,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1278,7 +1311,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1288,7 +1321,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1298,7 +1331,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1308,7 +1341,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1318,7 +1351,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1328,7 +1361,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1338,7 +1371,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1348,7 +1381,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1358,7 +1391,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1368,7 +1401,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1408,7 +1441,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1418,7 +1451,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1428,7 +1461,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1438,7 +1471,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1448,7 +1481,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1458,7 +1491,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1468,7 +1501,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   },
@@ -1478,7 +1511,7 @@
     "by": null,
     "selector": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null,
-    "use_mouse": false,
+    "use_mouse": false, "mandatory": true,
     "action": null,
     "@note": ""
   }

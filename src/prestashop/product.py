@@ -30,7 +30,7 @@ from src.settings import gs
 from src.helpers import  logger, logs_and_errors_decorator, jprint, pprint
 from src.io_interface import j_loads, j_dumps
 
-#from src.prestashop.prestashop import  PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
+from src.prestashop.prestashop import  PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
 
 from .images_exec import upload_image
 # --------------------------------
@@ -119,7 +119,7 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def get_list_products(api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') ->dict:
+    def get_list_products_from_prestashop(api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') ->dict:
         """
         Полный список товаров. Осторожно!
 
@@ -152,7 +152,7 @@ class PrestaProduct():
                 return response
             except Exception as ex:
                 print('---------------------------------------------------------------')
-                pprint(e)
+                pprint(ex)
                 print('---------------------------------------------------------------')
                 return False
         elif api_method == 'V2':
@@ -161,7 +161,7 @@ class PrestaProduct():
                 return response
             except Exception as ex:
                 print('---------------------------------------------------------------')
-                pprint(e)
+                pprint(ex)
                 print('---------------------------------------------------------------')
                 return False
         else:
@@ -171,7 +171,7 @@ class PrestaProduct():
 
             except Exception as ex:
                 print('---------------------------------------------------------------')
-                pprint(e)
+                pprint(ex)
                 print('---------------------------------------------------------------')
                 return False
 
@@ -217,16 +217,15 @@ class PrestaProduct():
     #    pass
 
     #@logs_and_errors_decorator(default_return =  False)
-    def get_schema(self, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> Union[dict, False]:
+    def get_product_schema_from_prestashop(self, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V1') -> Union[dict, False]:
         """JSON схема товара
 
         @returns
             Union[dict,bool]: JSON или False
         """
-        params = \
-            {
-            'display': 'full',  ## <- или 'basic' в зависимости от того, какую информацию я хочу получить
-            }
+        params = { 'display': 'full'},  ## <- или 'basic' в зависимости от того, какую информацию я хочу получить
+        
+        params = 'products'
         response = PrestaAPIV1.get(params)
         if response.status != 200:
             logger.error(f'''Ошибка при выполнении запроса: {response}''')

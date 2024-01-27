@@ -1,15 +1,10 @@
-"""! @brief  [File's Description]
-
-@namespace src: src
- \package src.suppliers.hb
-\file via_webdriver.py
+"""! @brief  Добыча и обработка данных HB через вебдрайвер
 
  @section libs imports:
   - typing 
   - pathlib 
   - gs 
-Author(s):
-  - Created by Davidka  on 09.11.2023 .
+
 """
 from typing import Union
 from pathlib import Path

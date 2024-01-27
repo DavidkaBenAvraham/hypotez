@@ -2,12 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\categories",
-    "\\src\\categories\\_tests",
-    "\\src\\prestashop",
-    "\\src\\prestashop\\presta_apis",
-    "\\src\\prestashop\\presta_apis\\presta_python_api_v1"
+    "\\src\\helpers",
+    "\\src\\io_interface",
+    "\\src\\product",
+    "\\src\\suppliers",
+    "\\src\\suppliers\\hb",
+    "\\src\\suppliers\\hb\\locators",
+    "\\src\\tools",
+    "\\src\\webdriver"
   ],
-  "SelectedNode": "\\src\\prestashop\\presta_apis\\presta_python_api_v1\\prestapyt.py",
+  "SelectedNode": "\\src\\suppliers\\hb\\_tests\\ide_test_fields_hb.py",
   "PreviewInSolutionExplorer": false
 }

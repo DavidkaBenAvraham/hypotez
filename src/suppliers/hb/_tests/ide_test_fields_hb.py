@@ -1,37 +1,46 @@
-"""! @~russian  Собиратель данных со страницы товара
+"""! @~russian Запуск теста сценариев из IDE Visual Studio """
+"""!@~russian @details """
 
-@warning Алиэкспресс загружает страницу через javascript. bs и requests не работают. 
-Все манипулации со страницей модуль осуществляет через селениум
 
- @section libs imports:
-  - gs 
-  - product 
-  - helpers 
-  - tools 
-  @file
-"""
+from math import prod
+import os, sys
+from pathlib import Path
+from typing import List, Union, Dict
+from selenium.webdriver.remote.webelement import WebElement
 
-# -*- coding: utf-8 -*-
-#! /usr/share/projects/hypotez/venv/scripts python
+################# добавление корневой директории позволяет мне плясать от печки ###################
+dir_root: Path = Path(os.getcwd()[:os.getcwd().rfind('hypotez') + 7])
+sys.path.append(str(dir_root))  # Adding the root folder to sys.path
+dir_src = Path(dir_root, 'src')
+sys.path.append(str(dir_root))
+from src.webdriver import execute_locator
+"""! @~russian добавление корневой директории позволяет мне плясать от печки. """
+####################################################################################################
 
-import asyncio
-from typing import Union
+
 from src.settings import gs
-from src.product import  Product, ProductFields
-from src.prestashop import Product as PrestaProduct
-from src.helpers import  logger, logs_and_errors_decorator
-from src.tools import StringFormatter as SF, StringNormalizer as SN
-from .via_api import aliapi_to_prestashop
 from src.suppliers import Supplier
+from src.product import Product, ProductFields
+from src.io_interface import j_loads, j_dumps
+from src.helpers import logger, ExecuteLocatorException
 from src.webdriver import Driver
+from src.tools import StringFormatter as SF, StringNormalizer as SN
 
-s: Supplier = None
-p: Product = None
-f: ProductFields = None
-d: Driver = None 
-l: dict = None
-async_run = gs.async_run
 
+s: Supplier = Supplier(supplier_prefix = 'hb')
+p: Product = Product(s)
+l: dict = s.locators['product']
+d: Driver = s.driver
+f: ProductFields = ProductFields(s)
+s.current_scenario: dict =  {
+      "url": "https://hbdeadsea.co.il/product-category/bodyspa/feet-hand-treatment/",
+      "name": "טיפוח כפות ידיים ורגליים",
+      "condition": "new",
+      "presta_categories": {
+        "default_category": 11259,
+        "addtinal categories": []
+      }
+    }
 
 #@logs_and_errors_decorator
 def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
@@ -44,29 +53,74 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
    
 	"""
 	
-	global s
-	s = supplier
+	# global s
+	# s = supplier
 
-	global p 
-	p = Product (s)
+	# global p 
+	# p = Product (s)
 
-	global f
-	f = ProductFields (s)
+	# global f
+	# f = ProductFields (s)
 
-	global d
-	d = s.driver
+	# global d
+	# d = s.driver
 	
-	global l
-	l = s.locators['product']
+	# global l
+	# l = s.locators['product']
 	
 	d.scroll()
 	"""! прокручиваю страницу товара, чтобы захватить области, которые подгружаются через AJAX """
+
+
+	######################################################################################
+	# 
+	# 
+	#			"""! Функции, специфичные для конкретного  поставщика """ 
+	#
+	#
+	#
+	#	
+
+	#@logs_and_errors_decorator(default_return=False)
+	def product_reference_and_volume_and_price_for_100():
+		"""! @~russian Функция вытаскивает 3 поля:
+		- volume,
+		- supplier_reference,
+		- цена за единицу товара 
+		@todo Реализовать поле `цена за единицу товара`"""
+		global f
+		webelements: [WebElement] = d.execute_locator(l['product_reference_and_volume_and_price_for_100'])
+        
+		for webelement in webelements:
+			if ('Fl.oz' and 'מ"ל' )	in webelement.text:
+				"""! объем """
+				f.volume = webelement.text
+			elif str(r'מחיר ל100 מ"ל') in webelement.text:
+				"""! цена за единицу товара
+				@todo придумать куда
+				"""
+				print(f'цена за единицу товара:{webelement.text}')
+			elif 'מקט' in webelement.text:
+				f.supplier_reference = SN.get_numbers_only(webelement.text)
+			pass
+		pass
+		#
+		#
+		#	
+		#######################################################################################
+
+	
+	
+	product_reference_and_volume_and_price_for_100()
+	
+
+
 
 	#f.active = field_active() # [v] (added by default)
 	#f.additional_delivery_times = field_additional_delivery_times()	# [v]  Мое поле. Нахера - не знаю
 	f.additional_shipping_cost  = field_additional_shipping_cost() # [v]
 	#f.advanced_stock_management = field_advanced_stock_management()
-	f.affiliate_short_link = field_affiliate_short_link() # [v]
+	f.affiliate_short_link =  field_affiliate_short_link() # [v]
 	#f.affiliate_summary = field_affiliate_summary()
 	#f.affiliate_image_large = field_affiliate_image_large()
 	#f.affiliate_image_medium = field_affiliate_image_medium()
@@ -88,76 +142,130 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.customizable = field_customizable()
 	#f.date_add = field_date_add()
 	#f.date_upd = field_date_upd()
-	f.delivery_in_stock = field_delivery_in_stock()	 # [v]	 ##<- доставка
-	#f.delivery_out_stock = field_delivery_out_stock()
+	#f.delivery_in_stock = field_delivery_in_stock()	 # [v]	 ##<- доставка
+	f.delivery_out_stock = field_delivery_out_stock()	#   Заметка о доставке, когда товара нет в наличии
+
 	#f.depth = field_depth()
-	f.description = field_description()
-	f.description_short = field_description_short()
-	#f.ean13 = field_ean13()
-	#f.ecotax = field_ecotax()
-	#f.height = field_height()
+	#f.description = field_description()
+	f.description_short = f.description = field_description()
+	# f.ean13 = field_ean13()
+	# f.ecotax = field_ecotax()
+	# f.height = field_height()
 	f.how_to_use = field_how_to_use()
 	f.id_category_default = field_id_category_default()
-	f.id_default_combination = field_id_default_combination()
+	#f.id_default_combination = field_id_default_combination()
 	f.id_default_image = field_id_default_image()
 	f.id_lang = field_id_lang()
 	f.id_manufacturer = field_id_manufacturer()
 	f.id_product = field_id_product()
-	#f.id_shop_default = field_id_shop_default()
-	#f.id_supplier = s.supplier_id	# [v]			[v] ## <- Устанавливается через функцию: def set_references()
-	f.id_tax = field_id_tax() # [v]
+	#f.id_shop_default = field_id_shop_default()   ## <- усранавливается в `product_fields_default_values.json`
+	#f.id_supplier = s.supplier_id	# [v] ## <- добывается функцией set_references()
+	#f.id_tax = field_id_tax() # [v]
 	#f.id_type_redirected = field_id_type_redirected()
 	f.images_urls = field_images_urls()	# [v]
-	f.indexed = field_indexed()
+	#f.indexed = field_indexed()
 	f.ingridients = field_ingridients()
-	f.is_virtual = field_is_virtual()
+	#f.is_virtual = field_is_virtual()
 	#f.isbn = field_isbn()
-	f.link_rewrite = field_link_rewrite()
-	f.location = field_location()
-	f.low_stock_alert = field_low_stock_alert()
-	f.low_stock_threshold = field_low_stock_threshold()
+	#f.link_rewrite = field_link_rewrite()
+	#f.location = field_location()
+	#f.low_stock_alert = field_low_stock_alert()
+	#f.low_stock_threshold = field_low_stock_threshold()
 	f.meta_description = field_meta_description()
 	f.meta_keywords = field_meta_keywords()
 	f.meta_title = field_meta_title()
-	f.minimal_quantity = field_minimal_quantity()
-	f.mpn = field_mpn()
+	#f.minimal_quantity = field_minimal_quantity()
+	#f.mpn = field_mpn()
 	f.name = field_name()  # [v]
-	f.online_only = field_online_only()
+	#f.online_only = field_online_only()
 	f.on_sale = field_on_sale()
-	f.out_of_stock = field_out_of_stock()
-	f.pack_stock_type = field_pack_stock_type()
-	f.position_in_category = field_position_in_category()
+	#f.out_of_stock = field_out_of_stock()
+	#f.pack_stock_type = field_pack_stock_type()
+	#f.position_in_category = field_position_in_category()
 	f.price = field_price()
-	f.product_type = field_product_type()
-	f.quantity = field_quantity()
-	f.quantity_discount = field_quantity_discount()
-	f.redirect_type = field_redirect_type()
-	#f.reference = field_reference()	[v] ## <- Устанавливается через функцию: def set_references()
-	f.show_condition = field_show_condition()
-	f.show_price = field_show_price()
-	f.state = field_state()
-	f.supplier_reference = field_supplier_reference()  # [v]
-	f.text_fields = field_text_fields()
-	f.unit_price_ratio = field_unit_price_ratio()
-	f.unity = field_unity()
-	f.upc = field_upc()
-	f.uploadable_files = field_uploadable_files()
+	#f.product_type = field_product_type()
+	#f.quantity = field_quantity()
+	#f.quantity_discount = field_quantity_discount()
+	#f.redirect_type = field_redirect_type()
+	#f.reference = field_reference()	# [v]  ## <- устанавливается в функции `set_references()`
+	#f.show_condition = field_show_condition()
+	#f.show_price = field_show_price()
+	#f.state = field_state()
+	# f.supplier_reference = field_supplier_reference()  # [v]  ## <- устанавливается в функции `set_references()`
+	#f.text_fields = field_text_fields()
+	#f.unit_price_ratio = field_unit_price_ratio()		<- см описание поля в базе данных
+	#f.unity = field_unity()
+	#f.upc = field_upc()
+	#f.uploadable_files = field_uploadable_files()
 	f.url_default_image = field_url_default_image()
-	#f.volume = field_volume()
-	f.visibility = field_visibility()
-	f.weight = field_weight()
-	f.wholesale_price = field_wholesale_price()
-	f.width = field_width()    
+	#f.volume = field_volume()		 ## <- устанавливается в функции `product_reference_and_volume_and_price_for_100()`
+	#f.visibility = field_visibility()
+	#f.weight = field_weight()
+	#f.wholesale_price = field_wholesale_price()
+	#f.width = field_width()    
 	pass
 	set_references()
 	return f
+    
 
-#@logs_and_errors_decorator(default_return=False)    
+def set_references(f, s):
+    #f.supplier_reference = field_supplier_reference()
+    f.id_supplier = s.supplier_id
+    f.reference = f'{s.supplier_id}-{f.supplier_reference}'
+
+
+pass
+
+
+d.get_url (s.current_scenario['url'])
+"""! перехожу по URL сценария (обычно, категория)"""
+
+list_products_in_category: list = s.related_modules.get_list_products_in_category(s)
+"""! собрал список товаров в категории """
+
+if not 	list_products_in_category:
+	pass
+
+
+d.get_url(list_products_in_category[0])
+"""! перешел по первому url из списка """
+
+pass
+
+
+
+
 def set_references():
     global f
     f.supplier_reference = field_supplier_reference()
-    f.id_supplier = s.supplier_id	  ## <- зададно в файле product.json
+    #f.id_supplier = s.supplier_id ## <- прописан в product.json
     f.reference = f'{s.supplier_id}-{f.supplier_reference}'
+
+
+def field_additional_shipping_cost():
+	"""! @~russian 
+	@brief стоимость доставки
+	@details
+	"""
+	return d.execute_locator(l['additional_shipping_cost'])
+	
+
+#f.additional_shipping_cost  = field_additional_shipping_cost()
+
+
+#f.affiliate_short_link = d.current_url
+
+#f.affiliate_summary = f.affiliate_summary_2 = ''   
+
+
+#@logs_and_errors_decorator(default_return=False)
+def field_delivery_in_stock():
+	"""! @~russian 
+	@brief Доставка, когда товар в наличии
+	@details
+	"""
+	return d.execute_locator(l['delivery_in_stock'])
+	pass
 
 
 
@@ -167,7 +275,7 @@ def field_active():
 	@brief
 	@details
 	"""
-	return f.active
+	return f.active	 # <-  поставить в зависимость от delivery_out_stock
 	pass
 	
         
@@ -210,7 +318,7 @@ def field_affiliate_short_link():
     @brief
     @details
     """
-    return d.execute_locator(l['affiliate_short_link'])
+    return d.current_url
     pass
     
 
@@ -418,8 +526,7 @@ def field_delivery_in_stock():
 #@logs_and_errors_decorator(default_return=False)
 def field_delivery_out_stock():
 	"""! @~russian 
-	@brief
-	@details
+	@brief Заметка о доставке, когда товара нет в наличии
 	"""
 	return f.delivery_out_stock
 	pass
@@ -440,18 +547,10 @@ def field_description():
 	"""! @~russian поле полного описания товара 
 	@details
 	"""
-	return str (d.execute_locator (l['description'] ) )
+	return d.execute_locator (l['description'] )[0].text
 	pass
 
 
-#@logs_and_errors_decorator(default_return=False)
-def field_description_short():
-	"""! @~russian 
-	@brief
-	@details
-	"""
-	return f.description_short
-	pass
 	
 
 #@logs_and_errors_decorator(default_return=False)
@@ -492,7 +591,7 @@ def field_how_to_use():
 	@brief
 	@details
 	"""
-	return f.how_to_use
+	return d.execute_locator ( l ['how_to_use'] ) 
 	pass
 	
                 	
@@ -503,7 +602,7 @@ def field_id_category_default():
 	@brief
 	@details
 	"""
-	return f.id_category_default
+	return s.current_scenario['presta_categories']['default_category']
 	pass
 	
 
@@ -744,7 +843,7 @@ def field_name():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_online_only():
-	"""! @~russian 
+	"""! @~russian 	товар только в интернет магазине
 	@brief
 	@details
 	"""
@@ -754,21 +853,15 @@ def field_online_only():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_on_sale():
-	"""! @~russian 
-	@brief
-	@details
-	"""
+	"""! @~russian 	Распродажа	"""
 	return f.on_sale
 	pass
 	
 
 #@logs_and_errors_decorator(default_return=False)
 def field_out_of_stock():
-	"""! @~russian 
-	@brief
-	@details`
-	"""
-	return f.out_of_stock
+	"""! @~russian Товара нет в наличии """
+	return d.execute_locator ( l['out_of_stock']) 
 	pass
 	
 
@@ -845,11 +938,8 @@ def field_redirect_type():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_reference():
-	"""! @~russian 
-	@brief
-	@details
-	"""
-	return f'{f.field_supplier_reference}-{s.supplier_id}'
+	"""! @~russian supplier's SKU """
+	return f'{s.supplier_id}-{f.supplier_reference}' 
 	pass
 	
 
@@ -885,9 +975,7 @@ def field_state():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_supplier_reference():
-	"""! @~russian 
-	@brief
-	@details
+	"""! @~russian Локатор захватит 3 объекта (по одному я устал их искать). Здесь я делаю обработку результата
 	"""
 	return d.execute_locator (l['supplier_reference'])
 	pass
@@ -953,7 +1041,7 @@ def field_url_default_image():
 	"""
 	return f.url_default_image
 	pass
-	
+        
 
 #@logs_and_errors_decorator(default_return=False)
 def field_visibility():
@@ -999,21 +1087,23 @@ def field_width():
 
 #@logs_and_errors_decorator
 async def get_price(_d, _l) -> Union[str,float]:
-    """! @~russian Привожу денюшку через флаг `format` 
-    @details к: 
-    - [ ] float 
-    - [v] str
-    """
-    try:
-        raw_price = asyncio.run ( _d.execute_locator ( _l ['price']['new'] )[0])
-        ''' raw_price получаю в таком виде:
-        ILS382.00\nILS382\n.\n00
-        '''
-        raw_price = str (raw_price).split ('\n')[0]
-        return SN.normalize_price (raw_price)
-    except Exception as ex:
-        logger.error (ex)
-        return False
+	"""! @~russian Привожу денюшку через флаг `format` 
+	@details к: 
+	- [ ] float 
+	- [v] str
+	"""
+	try:
+		
+		#raw_price = asyncio.run ( _d.execute_locator ( _l ['price']['new'] )[0])
+		raw_price = asyncio.run ( _d.execute_locator ( _l ['price']['new'] )[0]) if gs.async_run else _d.execute_locator ( _l ['price']['new'] )[0]
+		''' raw_price получаю в таком виде:
+		ILS382.00\nILS382\n.\n00
+		'''
+		raw_price = str (raw_price).split ('\n')[0]
+		return SN.normalize_price (raw_price)
+	except Exception as ex:
+		logger.error (ex)
+		return False
     
     ## price
     # async def cost_price():
@@ -1188,3 +1278,5 @@ def combinations():
             
         logger.error(ex)
         return False
+
+grab_product_page(s)

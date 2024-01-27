@@ -5,7 +5,7 @@
       "condition": "new",
       "presta_categories": {
         "default_category": { "11241": "Hand Towels" },
-        "addtinal categories root": [ "" ]
+        "addtinal categories": [ "" ]
       },
       "price_rule": 1
     },
@@ -14,7 +14,7 @@
       "condition": "new",
       "presta_categories": {
         "default_category": { "11242": "Bath Towels" },
-        "addtinal categories root": [ "" ]
+        "addtinal categories": [ "" ]
       },
       "price_rule": 1
     },
@@ -23,7 +23,7 @@
       "condition": "new",
       "presta_categories": {
         "default_category": { "11243": "beach Towels" },
-        "addtinal categories root": [ "" ]
+        "addtinal categories": [ "" ]
       },
       "price_rule": 1
     },
@@ -32,7 +32,7 @@
       "condition": "new",
       "presta_categories": {
         "default_category": { "11244": "Sport Towels" },
-        "addtinal categories root": [ "" ]
+        "addtinal categories": [ "" ]
       },
       "price_rule": 1
     }
