@@ -551,6 +551,13 @@ def field_description():
 	pass
 
 
+def field_id_category_default():
+	"""! @~russian 
+	@brief
+	@details
+	"""
+	f.id_category_default = s.current_scenario['presta_categories']['default_category']
+	pass
 	
 
 #@logs_and_errors_decorator(default_return=False)
@@ -591,7 +598,7 @@ def field_how_to_use():
 	@brief
 	@details
 	"""
-	return d.execute_locator ( l ['how_to_use'] ) 
+	return d.execute_locator ( l ['how_to_use'] )
 	pass
 	
                 	

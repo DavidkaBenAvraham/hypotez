@@ -5,7 +5,7 @@
     "login_url": "https://amazon.com",
 
     "open_login": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": null,
       "by": "XPATH",
@@ -16,7 +16,7 @@
     },
 
     "email_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": null,
       "by": "XPATH",
@@ -27,7 +27,7 @@
     },
 
     "continue_button_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": null,
       "by": "XPATH",
@@ -37,7 +37,7 @@
       "logic for action[AND|OR|XOR|VALUE|null]": null
     },
     "password_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": null,
       "by": "XPATH",
@@ -47,7 +47,7 @@
       "logic for action[AND|OR|XOR|VALUE|null]": null
     },
     "keep_signed_in": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": null,
       "by": "XPATH",
@@ -57,7 +57,7 @@
       "logic for action[AND|OR|XOR|VALUE|null]": null
     },
     "loginbutton_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": null,
       "by": "XPATH",
@@ -82,31 +82,31 @@
 
     "link_to_product_locator": {
 
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "href",
       "by": "XPATH",
       "selector": "//span[@data-component-type ='s-product-image']//a",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
     "link_to_product_locator-2": {
 
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "href",
       "by": "XPATH",
       "selector": "//div[@data-component-type='s-search-result']//a[@class='a-link-normal s-no-outline']",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
     "link_to_product_locator-3": {
 
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "href",
       "by": "XPATH",
       "selector": "//div[contains(@class,'a-section')]//h2//a",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
@@ -148,65 +148,65 @@
 
 
     "product_block_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "innerHTML",
       "by": "XPATH",
       "selector": "//div[@id='pdd')]",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
 
 
     "ASIN": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "innerText",
       "by": "XPATH",
       "selector": "//*[contains(text(),'ASIN')]/following-sibling::*",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
     "product_name_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "innerText",
       "by": "XPATH",
       "selector": "//span[@id='productTitle']",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
 
     "price_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "innerText",
       "by": "XPATH",
       "selector": "//DIV[contains(@id,'corePrice_feature_')]//span[contains(@class,'a-price')]//span",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
     "brand_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "innerText",
       "by": "XPATH",
       "selector": "//span[contains(text(), 'Brand')]/parent::td/following-sibling::td/span[contains(@class, 'po-break-word')]",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
     "summary_locator": {
       "about": "может быть разная. Надо долго проверять локатор",
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "innerHTML",
       "by": "XPATH",
       "selector": "//div[contains(@data-a-expander-name , 'product_overview')]//table",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
     "specification_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "innerHTML",
       "by": "XPATH",
       "selector": "//table[contains(@id,'productDetails_techSpec_')]",
@@ -215,20 +215,20 @@
       "logic for action[AND|OR|XOR|VALUE|null]": null
     },
     "product_details_block_locators": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "innerHTML",
       "by": "XPATH",
       "selector": "//div[@id='prodDetails']",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
     "reviews_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "innerText",
       "by": "XPATH",
       "selector": "//div[@id='reviewsMedley']",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
@@ -236,47 +236,47 @@
 
 
     "availability_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "innerTaxt",
       "by": "XPATH",
       "selector": "//div[@id='availability']",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
 
     "refurbished_product_description": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "innerHTML",
       "by": "XPATH",
       "selector": "//div[@id='RENEWED_TIER_2_renewedProgramDescriptionAtf']",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
 
     "deliveryBlockMessage": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "innerHTML",
       "by": "XPATH",
       "selector": "//div[@id='deliveryBlockMessage']//span",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
     "delivery error": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": "innerText",
       "by": "XPATH",
       "selector": "//span[@class='a-color-error']",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
 
     "all buying optiopns": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": null,
       "by": "XPATH",
@@ -287,18 +287,18 @@
     },
 
     "product_shipping_details": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": "innerText",
       "by": "XPATH",
       "selector": "//div[@id='amazonGlobal_feature_div']",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
 
     "main_image_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": null,
       "by": "XPATH",
@@ -311,110 +311,110 @@
 
 
     "product_combinations_container_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": null,
       "by": "XPATH",
       "selector": "//div[contains(@class='Product_Sku__container')]",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
 
     "product_combinations_title": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": "innerText",
       "by": "XPATH",
       "selector": "//div[@class='Product_SkuItem__title']//span",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
 
     "product_combinations_values": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": null,
       "by": "XPATH",
       "selector": "//div[@class='Product_SkuValueBaseItem']//img",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
     "product_combinations_value_title": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": "innerText",
       "by": "XPATH",
       "selector": "//span[contains(@class,'sku-title-value')]",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
 
     "text_attribute_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": "innerHTML",
       "by": "XPATH",
       "selector": "//ul[@class='sku-property-list']//li//span",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
     "image_attribute_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": null,
       "by": "XPATH",
       "selector": "//*[@class='sku-property-image']//img",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
 
     "qty_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": "innerText",
       "by": "XPATH",
       "selector": "//div[@class='product-quantity-tip']//span",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
 
     "product_addition_information_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": "innerHTML",
       "by": "XPATH",
       "selector": "//div[@id='prodDetails']/div/div[1]",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
 
     "techical_details_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": "innerHTML",
       "by": "XPATH",
       "selector": "//div[@id='prodDetails']/div/div[2]",
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "use_mouse": false, "mandatory": true,
       "action": null
     },
 
     "customer_reviews_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
 
       "attribute": [ null, "innerHTML" ],
       "by": [ "XPATH", "XPATH" ],
       "selector": [ "reviewsMedley", null ],
       "use_mouse": false, "mandatory": true,
-      "logic for action[AND|OR|XOR|VALUE|null]": null,
+      
       "action": [ "click()", null ]
     }
 

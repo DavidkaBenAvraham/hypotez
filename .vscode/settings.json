@@ -1,9 +1,16 @@
 {
     "autodoxygen.language": "english",
-    "autodoxygen.author": "Davidka",
+    "autodoxygen.author": "Hypotez",
+    "files.associations": {
+        "*.dox": "txt"
+    },
+
     "markdownlint.ignore": [
         
     ],
+    
     "docwriter.style": "Doxygen",
-    "docwriter.progress.trackMethods": false
+    "docwriter.progress.trackMethods": false,
+
+
 }

@@ -1,10 +1,10 @@
 {
   "product_links": {
     "attribute": "href",
-    "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+    
     "by": "XPATH",
     "selector": "//div[contains(@style, 'grid-template-columns')]//a",
-    "logic for action[AND|OR|XOR|VALUE|null]": null,
+    
     "use_mouse": false, "mandatory": true,
     "action": null,
     "mandatory": true,
@@ -14,7 +14,7 @@
 
   "pagination": {
     "ul": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": null,
       "by": "XPATH",
       "selector": "//ul[@class='pagination']",

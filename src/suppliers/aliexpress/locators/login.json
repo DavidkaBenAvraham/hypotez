@@ -4,7 +4,7 @@
 
 
     "close banner": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": "text",
       "by": "XPATH",
       "selector": "//div[contains(text(), 'אפשר')]",
@@ -14,7 +14,7 @@
     },
 
     "open_login": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": null,
       "by": "XPATH",
       "selector": "//div[@class = 'account-main']//span[. = 'Sign in'] | //div[@class = 'account-main']//span[. = 'Se connecter'] | //div[@class = 'account-main']//span[. = 'כניסה'] ",
@@ -25,7 +25,7 @@
 
 
     "email_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": null,
       "by": "XPATH",
       "selector": "//input[@id='fm-login-id']",
@@ -35,7 +35,7 @@
     },
 
     "password_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": null,
       "by": "XPATH",
       "selector": "//input[@id='fm-login-password']",
@@ -45,7 +45,7 @@
     },
 
     "loginbutton_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": null,
       "by": "XPATH",
       "selector": "//button[@type='submit']",
@@ -55,7 +55,7 @@
     },
 
     "coockies_accept": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": null,
       "by": "XPATH",
       "selector": "//button[contains(@data-role,'gdpr-accept')]",
@@ -68,7 +68,7 @@
   "currency_language_shipto_locators": {
 
     "currency_language_shipto_block_opener_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": null,
       "by": "XPATH",
       "selector": "//div[@data-role = 'region-pannel']/a",
@@ -78,7 +78,7 @@
     },
 
     "shipto_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": [ null, null, null ],
       "by": [ "XPATH", "XPATH", "xpath" ],
       "selector": [
@@ -91,7 +91,7 @@
       "@note": ""
     },
     "language_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": [ null, null, null ],
       "by": [ "XPATH", "XPATH", "xpath" ],
       "selector": [
@@ -104,7 +104,7 @@
       "@note": ""
     },
     "currency_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": [ null, null, null ],
       "by": [ "XPATH", "XPATH", "xpath" ],
       "selector": [
@@ -117,7 +117,7 @@
       "@note": ""
     },
     "save_button_locator": {
-      "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+      
       "attribute": null,
       "by": "XPATH",
       "selector": "//div[contains(@class , 'switcher-btn')]",

@@ -455,25 +455,14 @@ def field_date_upd():
 	
 
 #@logs_and_errors_decorator(default_return=False)
-def field_delivery_in_stock():
-	"""! @~russian 
-	@brief Доставка, когда товар в наличии
-	@details
-	"""
-	return d.execute_locator(l['delivery_in_stock'])
-	pass
+def field_delivery_out_stock():
+    """! @~russian 
+    @brief Заметка о доставке, когда товара нет в наличии
+    """
+    webelement = d.execute_locator(l['delivery_out_stock'])
+    f.delivery_out_stock = webelement[0].text
 	
         
-
-#@logs_and_errors_decorator(default_return=False)
-def field_delivery_out_stock():
-	"""! @~russian 
-	@brief
-	@details
-	"""
-	return f.delivery_out_stock
-	pass
-	
                 
 
 #@logs_and_errors_decorator(default_return=False)
@@ -487,11 +476,9 @@ def field_depth():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_description():
-	"""! @~russian поле полного описания товара 
-	@details
-	"""
-	return str (d.execute_locator (l['description'] ) )
-	pass
+    descr = d.execute_locator (l['description'] )
+    f.description = descr[0].text
+    pass
 
 
 # #@logs_and_errors_decorator(default_return=False)

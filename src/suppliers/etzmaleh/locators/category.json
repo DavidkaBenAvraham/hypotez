@@ -1,19 +1,19 @@
 {
   "pager": {
     "attribute": null,
-    "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+    
     "by": "ACTION",
     "selector": null,
-    "logic for action[AND|OR|XOR|VALUE|null]": null,
+    
     "use_mouse": false, "mandatory": true,
     "action": "scroll(5,'both')"
   },
   "product_links": {
     "attribute": "href",
-    "logic for attribue[AND|OR|XOR|VALUE|null]": null,
+    
     "by": "XPATH",
     "selector": "//span[@data-component-type ='s-product-image']//a",
-    "logic for action[AND|OR|XOR|VALUE|null]": null,
+    
     "use_mouse": false, "mandatory": true,
     "action": null
   }
