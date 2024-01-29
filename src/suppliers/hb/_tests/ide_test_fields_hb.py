@@ -113,7 +113,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	
 	product_reference_and_volume_and_price_for_100()
 	
-
+	f.ingridients = field_ingridients()
 
 
 	#f.active = field_active() # [v] (added by default)
@@ -165,6 +165,9 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	f.images_urls = field_images_urls()	# [v]
 	#f.indexed = field_indexed()
 	f.ingridients = field_ingridients()
+	
+	return f
+
 	#f.is_virtual = field_is_virtual()
 	#f.isbn = field_isbn()
 	#f.link_rewrite = field_link_rewrite()
@@ -598,7 +601,7 @@ def field_how_to_use():
 	@brief
 	@details
 	"""
-	return d.execute_locator ( l ['how_to_use'] )
+	return d.execute_locator ( l ['how_to_use'] ) [0].text
 	pass
 	
                 	
@@ -721,7 +724,7 @@ def field_ingridients():
 	@brief
 	@details
 	"""
-	return f.ingridients
+	return d.execute_locator ( l['ingridients'] )
 	pass
 	
 
@@ -981,11 +984,11 @@ def field_state():
 
 
 #@logs_and_errors_decorator(default_return=False)
-def field_supplier_reference():
-	"""! @~russian Локатор захватит 3 объекта (по одному я устал их искать). Здесь я делаю обработку результата
-	"""
-	return d.execute_locator (l['supplier_reference'])
-	pass
+# def field_supplier_reference():
+# 	"""! @~russian Локатор захватит 3 объекта (по одному я устал их искать). Здесь я делаю обработку результата
+# 	"""
+# 	return d.execute_locator (l['supplier_reference'])
+# 	pass
 	
 
 
@@ -1286,4 +1289,4 @@ def combinations():
         logger.error(ex)
         return False
 
-grab_product_page(s)
+f = grab_product_page(s)

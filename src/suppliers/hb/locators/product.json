@@ -776,15 +776,15 @@
     "mandatory": true,
     "action": null
   },
+
   "ingridients": {
-    "attribute": null,
-
-    "by": null,
-    "selector": "//div[contains(@id ,'מרכיבים'])//p",
-
-    "use_mouse": false,
-    "mandatory": true,
-    "action": null
+    "attribute": [ null, null ],
+    "by": [ "XPATH", "XPATH" ],
+    "selector": [ "//a[contains(@href, 'מרכיבים')]", "//div[contains(@id ,'מרכיבים')]" ],
+    "use_mouse": [ false, false ],
+    "mandatory": [ true, true ],
+    "action": [ "click()", null ],
+    "@note": [ null, null ]
   },
 
   "how_to_use": {

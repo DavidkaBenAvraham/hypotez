@@ -651,7 +651,7 @@ def field_ingridients():
 	@brief
 	@details
 	"""
-	return f.ingridients
+	return d.execute_locator ( l['ingridients'] )
 	pass
 	
 
