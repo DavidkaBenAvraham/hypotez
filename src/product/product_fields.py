@@ -88,7 +88,7 @@ from src.suppliers import Supplier
 #   37      `active`                    tinyint(1) unsigned
 #   38      `redirect_type`             enum('404','301-product','302-product','301-category','302-category')
 #   39      `id_type_redirected`        int(10) unsigned
-#   40      `available_for_order`       tinyint(1)
+#   40      `available_for_order`       tinyint(1)          # если товара нет в наличии у поставщика выставляю флаг в 0
 #   41      `available_date`            date
 #   42      `show_condition`            tinyint(1)
 #   43      `condition`                 enum('new','used','refurbished')
@@ -200,12 +200,13 @@ class ProductFields:
     'unity',
     'upc',
     'uploadable_files',
-    'url_default_image',
+    'default_image_url',
     'visibility',
     'volume',
     'weight',
     'wholesale_price',
     'width',
+    'product_exist_in_prestashop'
     ]
 
     fields_dict = {key: None for key in fields_list}
@@ -1875,8 +1876,24 @@ class ProductFields:
             return False
 
 
-
-
+    @property
+    #@logs_and_errors_decorator(default_return=False)
+    def product_exist_in_prestashop():
+        """! @~russian наличие товара в базе данных Престашоп.
+        в зависимости от наличия/отсутствия товара в престашоп выставляется флаг: `update`/`insert`
+        """
+        pass
+    
+    @product_exist_in_prestashop.setter            
+    @logs_and_errors_decorator(default_return=False)
+    def product_exist_in_prestashop(self, value):
+        """! @~russian
+        @brief
+        @details
+        """
+        self.fields_dict['exist_in_presta'] = value
+        pass
+            
 
 
 
@@ -1916,7 +1933,7 @@ class ProductFields:
 # 8	    `meta_keywords`	                varchar(255)
 # 9	    `meta_title`	                varchar(128)
 # 10	`name`	                        varchar(128)
-# 11	`available_now`	                varchar(255)
+# 11	`available_now`	                varchar(255)        Заметка, о наличии товара сегодня
 # 12	`available_later`	            varchar(255)
 # 13	`delivery_in_stock`	            varchar(255)        Доставка, если товар н наличии
 # 14	`delivery_out_stock`	        varchar(255)        (Доставка если товара нет в наличии): Текст, который будет отображаться, когда товара нет в наличии.
@@ -2584,17 +2601,17 @@ class ProductFields:
 
     
     @property
-    def url_default_image(self) -> str:
+    def default_image_url(self) -> str:
         """!  <sub>*[property]*</sub>   `_???????.id_default_image` """
         return self.fields_dict['id_default_image']
     
     
-    @url_default_image.setter
+    @default_image_url.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def url_default_image(self, value = '' ) -> bool:
+    def default_image_url(self, value = '' ) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
-            self.fields_dict['url_default_image'] = value
+            self.fields_dict['default_image_url'] = value
             return True
         except ProductFieldException as ex:
             logger.error(f"""Ошибка заполнения поля: 'id_default_image' данными {value}

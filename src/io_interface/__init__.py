@@ -17,8 +17,7 @@
 # -*- coding: utf-8 -*-
 #! /usr/share/projects/hypotez/venv/scripts python
 
-from .jjson import json_loads as j_loads
-from .jjson import json_dumps as j_dumps
+from .jjson import j_loads, j_dumps
 
 from .file import save_text_file
 from .ftp import send, receive

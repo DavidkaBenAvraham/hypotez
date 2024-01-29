@@ -24,7 +24,7 @@ from collections import OrderedDict
 from src.helpers import logger,  logs_and_errors_decorator, exceptions
 
 #@logs_and_errors_decorator (default_return =  False)
-def json_loads(jjson: Union[Path, dict, str], ordered: bool = False) -> Union[dict, OrderedDict, bool]:
+def j_loads(jjson: Union[Path, dict, str], ordered: bool = False) -> Union[dict, OrderedDict, bool]:
     """Load JSON data from file or string.
     @details ОЧЕНЬ! Внимательно относиться к параметрам. `Path | str` Если функция получит на вход путь к файлу типа строки - она будет парсить строку
     Поэтому надо указывать тип Path в адресе файла
@@ -58,7 +58,7 @@ def json_loads(jjson: Union[Path, dict, str], ordered: bool = False) -> Union[di
             
 
 
-def json_dumps(data: dict, path: Path) -> bool:
+def j_dumps(data: dict, path: Path) -> bool:
     """Dump JSON data to file.
 
     @param
@@ -69,9 +69,14 @@ def json_dumps(data: dict, path: Path) -> bool:
         bool: True if successful, False if an error occurred.
 
     """
+    logger.debug(data)
+    logger.debug(path)
     try:
         with path.absolute().open('w', encoding='utf-8') as f:
-            json.dump(data, f)
+            json.dumps (data, f, ensure_ascii = False)
+            
+            """! Параметр ensure_ascii=False используется для указания модулю JSON не кодировать не-ASCII символы (такие как символы кириллицы) в формате Unicode. 
+            По умолчанию, если ensure_ascii=True, все символы будут кодированы в Unicode escape-последовательности в формате \\uXXXX."""
         return True
     except Exception as ex:
         logger.error(f'Failed to dump file {path}. Error: ', ex)

@@ -32,4 +32,4 @@ from src.prestashop.prestashop import  PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
 from .images_exec import upload_image
 # --------------------------------
 
-class Shop(PrestaAPIV1): pass
+class PrestaShop(PrestaAPIV1): pass

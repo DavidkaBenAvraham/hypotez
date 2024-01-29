@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\prestashop",
-    "\\src\\prestashop\\_tests",
+    "\\src\\helpers",
+    "\\src\\settings",
     "\\src\\suppliers",
+    "\\src\\suppliers\\aliexpress",
+    "\\src\\suppliers\\aliexpress\\_tests",
     "\\src\\suppliers\\hb",
     "\\src\\suppliers\\hb\\locators",
-    "\\src\\suppliers\\hb\\_tests",
-    "\\src\\tools",
-    "\\src\\webdriver"
+    "\\src\\suppliers\\ksp"
   ],
-  "SelectedNode": "\\src\\suppliers\\hb\\locators\\product.json",
+  "SelectedNode": "\\src\\scenarios\\executor.py",
   "PreviewInSolutionExplorer": false
 }

@@ -2,7 +2,7 @@
 """!@~russian @details """
 
 
-from math import prod
+#from math import prod
 import os, sys
 from pathlib import Path
 from typing import List, Union, Dict
@@ -32,6 +32,7 @@ p: Product = Product(s)
 l: dict = s.locators['product']
 d: Driver = s.driver
 f: ProductFields = ProductFields(s)
+
 s.current_scenario: dict =  {
       "url": "https://hbdeadsea.co.il/product-category/bodyspa/feet-hand-treatment/",
       "name": "טיפוח כפות ידיים ורגליים",
@@ -88,7 +89,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 		- supplier_reference,
 		- цена за единицу товара 
 		@todo Реализовать поле `цена за единицу товара`"""
-		global f
+		global f,s
 		webelements: [WebElement] = d.execute_locator(l['product_reference_and_volume_and_price_for_100'])
         
 		for webelement in webelements:
@@ -110,11 +111,18 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 		#######################################################################################
 
 	
+	def set_references(f, s):
+		"""! все, что касается id товара """
+		#f.supplier_reference = field_supplier_reference()
+		f.id_supplier = s.supplier_id
+		f.reference = f'{s.supplier_id}-{f.supplier_reference}'
 	
 	product_reference_and_volume_and_price_for_100()
-	
-	f.ingridients = field_ingridients()
+	set_references(f, s)
 
+	f.product_exist_in_prestashop = p.check_prod_presence(f.reference)	
+	
+	
 
 	#f.active = field_active() # [v] (added by default)
 	#f.additional_delivery_times = field_additional_delivery_times()	# [v]  Мое поле. Нахера - не знаю
@@ -131,7 +139,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.affiliate_image_medium = field_affiliate_image_medium()
 	#f.affiliate_image_small = field_affiliate_image_small()
 	#f.available_date = field_available_date()
-	#f.available_for_order = field_available_for_order()
+	f.available_for_order = field_available_for_order()
 	#f.available_later = field_available_later()
 	#f.available_now = field_available_now()
 	#f.cache_default_attribute = field_cache_default_attribute()
@@ -143,7 +151,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.date_add = field_date_add()
 	#f.date_upd = field_date_upd()
 	#f.delivery_in_stock = field_delivery_in_stock()	 # [v]	 ##<- доставка
-	f.delivery_out_stock = field_delivery_out_stock()	#   Заметка о доставке, когда товара нет в наличии
+	#f.delivery_out_stock = field_delivery_out_stock()	#   Заметка о доставке, когда товара нет в наличии
 
 	#f.depth = field_depth()
 	#f.description = field_description()
@@ -200,21 +208,16 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.unity = field_unity()
 	#f.upc = field_upc()
 	#f.uploadable_files = field_uploadable_files()
-	f.url_default_image = field_url_default_image()
+	f.default_image_url = field_default_image_url()
 	#f.volume = field_volume()		 ## <- устанавливается в функции `product_reference_and_volume_and_price_for_100()`
 	#f.visibility = field_visibility()
 	#f.weight = field_weight()
 	#f.wholesale_price = field_wholesale_price()
 	#f.width = field_width()    
 	pass
-	set_references()
 	return f
     
 
-def set_references(f, s):
-    #f.supplier_reference = field_supplier_reference()
-    f.id_supplier = s.supplier_id
-    f.reference = f'{s.supplier_id}-{f.supplier_reference}'
 
 
 pass
@@ -396,12 +399,15 @@ def field_available_date():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_available_for_order():
-    """! @~russian 
-    @brief
-    @details
-    """
-    return f.available_for_order
-    pass
+	"""! @~russian Если вернулся вебэлемент, это флаг, что товара нет в наличии, а вернулся <p>המלאי אזל
+	"""
+	available_for_order = d.execute_locator(l['available_for_order'])
+	pass
+	if available_for_order is None:
+		f.available_for_order = 1
+	else:
+		f.available_for_order = 0
+	pass
 
 
 #@logs_and_errors_decorator(default_return=False)
@@ -724,7 +730,7 @@ def field_ingridients():
 	@brief
 	@details
 	"""
-	return d.execute_locator ( l['ingridients'] )
+	return d.execute_locator ( l['ingridients'] )[0].text
 	pass
 	
 
@@ -1044,12 +1050,12 @@ def field_uploadable_files():
 	
 
 #@logs_and_errors_decorator(default_return=False)
-def field_url_default_image():
+def field_default_image_url():
 	"""! @~russian 
 	@brief
 	@details
 	"""
-	return f.url_default_image
+	return f.default_image_url
 	pass
         
 

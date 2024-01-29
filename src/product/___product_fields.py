@@ -199,7 +199,7 @@ class ProductFields():
         self.unity = default_value['unity']
         self.upc = default_value['upc']
         self.uploadable_files = default_value['uploadable_files']
-        self.url_default_image = None # default_value['url_default_image']
+        self.default_image_url = None # default_value['default_image_url']
         self.visibility = default_value['visibility']
         self.weight = default_value['weight']
         self.wholesale_price = default_value['wholesale_price']
@@ -2110,18 +2110,18 @@ class ProductFields():
 
     
     @property
-    def url_default_image(self) -> str:
+    def default_image_url(self) -> str:
         """ field DB affiliate_summary_2: `_???????.id_default_image`
         field DB type: text
         description: __prod_desc__"""
         return self.fields.get('id_default_image')
     
     
-    @url_default_image.setter
+    @default_image_url.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def url_default_image(self, url_default_image: int) -> bool:
+    def default_image_url(self, default_image_url: int) -> bool:
         try:
-            self.fields['url_default_image'] = url_default_image
+            self.fields['default_image_url'] = default_image_url
             return True
         except ProductFieldException as ex:
             logger.error(f"""Ошибка заполнения поля: 'id_default_image' данными {id_default_image}

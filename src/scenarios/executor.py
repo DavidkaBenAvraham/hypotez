@@ -23,6 +23,7 @@
 #! /usr/share/projects/hypotez/venv/scripts python
 
 # Imports
+from math import prod
 import sys
 import os
 from pathlib import Path
@@ -33,6 +34,7 @@ import asyncio
 from src.settings import gs
 from src.helpers import logger,  logs_and_errors_decorator, DriverException, jprint, pprint
 from src.io_interface import j_loads, j_dumps
+from src.product import Product
 # -------------------------------
 
 ################################################################################################################
@@ -166,6 +168,8 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> bool:
         try:
             """! Собираю со страницы товара значения элементов и привожу их к полям ProductFields """
             res = s.related_modules.grab_product_page(s)
+            pass
+            p = Product()
             #products_fields_list.append (s.related_modules.grab_product_page(s) )
             pass
         except Exception as ex:

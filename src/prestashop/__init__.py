@@ -32,7 +32,7 @@ from .product import PrestaProduct
 from .supplier import PrestaSupplier
 from .category import PrestaCategory
 from .language import PrestaLanguage
-from .shop import Shop
+from .shop import PrestaShop
 
 from .prestashop import PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
 

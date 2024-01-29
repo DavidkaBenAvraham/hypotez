@@ -197,7 +197,7 @@ class ProductFields:
     'unity',
     'upc',
     'uploadable_files',
-    'url_default_image',
+    'default_image_url',
     'visibility',
     'weight',
     'wholesale_price',
@@ -2528,17 +2528,17 @@ class ProductFields:
 
     
     @property
-    def url_default_image(self) -> str:
+    def default_image_url(self) -> str:
         """!  <sub>*[property]*</sub>   `_???????.id_default_image` """
         return self.fields_dict['id_default_image']
     
     
-    @url_default_image.setter
+    @default_image_url.setter
     #@logs_and_errors_decorator (default_return =  False)
-    def url_default_image(self, value = '' ) -> bool:
+    def default_image_url(self, value = '' ) -> bool:
         """!  <sub>*[setter]*</sub>   """
         try:
-            self.fields_dict['url_default_image'] = value
+            self.fields_dict['default_image_url'] = value
             return True
         except ProductFieldException as ex:
             logger.error(f"""Ошибка заполнения поля: 'id_default_image' данными {value}

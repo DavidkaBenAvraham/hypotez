@@ -273,9 +273,9 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
         ret = []
         for i in range(len(locator['attribute'])):
             l = {key: locator[key][i] for key in locator}
-            if len(ret) == 0:
-                _ret = parse_locator(l) 
-                if _ret: ret = _ret
+            if ret is None or len(ret) == 0:
+                """! код может вернуть `None` """
+                ret = parse_locator(l) 
             else:    
                 ret.append ( parse_locator(l) )
                 

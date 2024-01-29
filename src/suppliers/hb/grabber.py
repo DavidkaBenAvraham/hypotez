@@ -98,16 +98,36 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 				f.supplier_reference = SN.get_numbers_only(webelement.text)
 			pass
 		pass
-		#
-		#
-		#	
-		#######################################################################################
-
-	
 	
 	product_reference_and_volume_and_price_for_100()
 	
+	#
+	#
+	#	
+	#######################################################################################
 
+
+
+
+	######################################################################################## 
+	#
+	#			Поля `f.id_supplier`, `f.reference`  
+	#			Поле `f.supplier_reference` определено в функции `product_reference_and_volume_and_price_for_100()`
+
+	def set_references(f, s):
+		"""! все, что касается id товара """
+		#f.supplier_reference = field_supplier_reference()
+		f.id_supplier = s.supplier_id
+		f.reference = f'{s.supplier_id}-{f.supplier_reference}'
+	
+	set_references(f, s)
+	#
+	#######################################################################################
+	
+
+	f.product_exist_in_prestashop = p.check_prod_presence(f.reference)
+	"""! Если товар уже есть в бд - Надо использовать `update`, иначе `insert` """
+	
 
 
 	#f.active = field_active() # [v] (added by default)
@@ -125,7 +145,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.affiliate_image_medium = field_affiliate_image_medium()
 	#f.affiliate_image_small = field_affiliate_image_small()
 	#f.available_date = field_available_date()
-	#f.available_for_order = field_available_for_order()
+	f.available_for_order = field_available_for_order()
 	#f.available_later = field_available_later()
 	#f.available_now = field_available_now()
 	#f.cache_default_attribute = field_cache_default_attribute()
@@ -136,8 +156,8 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.customizable = field_customizable()
 	#f.date_add = field_date_add()
 	#f.date_upd = field_date_upd()
-	f.delivery_in_stock = field_delivery_in_stock()	 # [v]	 ##<- заметка о доставке. если товар в наличии
-	f.delivery_out_stock = field_delivery_out_stock() # [v]	 ##<- доставка
+	#f.delivery_in_stock = field_delivery_in_stock()	 # [v]	 ##<- заметка о доставке. если товар в наличии
+	#f.delivery_out_stock = field_delivery_out_stock() # [v]	 ##<- заметка о доставке, если товара нет в наличии
 	#f.depth = field_depth()
 	#f.description = field_description()
 	f.description_short = f.description = field_description()
@@ -146,18 +166,19 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	# f.height = field_height()
 	f.how_to_use = field_how_to_use()
 	f.id_category_default = field_id_category_default()
-	f.id_default_combination = field_id_default_combination()
-	f.id_default_image = field_id_default_image()
-	f.id_lang = field_id_lang()
+	#f.id_default_combination = field_id_default_combination()
+	#f.id_default_image = field_id_default_image()
+	#f.id_lang = field_id_lang()
 	f.id_manufacturer = field_id_manufacturer()
 	f.id_product = field_id_product()
-	f.id_shop_default = field_id_shop_default()
-	f.id_supplier = s.supplier_id	# [v]
-	f.id_tax = field_id_tax() # [v]
-	f.id_type_redirected = field_id_type_redirected()
-	f.images_urls = field_images_urls()	# [v]
-	f.indexed = field_indexed()
+	#f.id_shop_default = field_id_shop_default()
+	#f.id_supplier = s.supplier_id	# [v]
+	#f.id_tax = field_id_tax() # [v]
+	#f.id_type_redirected = field_id_type_redirected()
+	#f.images_urls = field_images_urls()	# [v]
+	#f.indexed = field_indexed()
 	f.ingridients = field_ingridients()
+	f.product_insert_or_update =  product_insert_or_update() # если это новый товар, которого нет в базе данных - использую метод `insert`, иначе `update`
 	#f.is_virtual = field_is_virtual()
 	#f.isbn = field_isbn()
 	f.link_rewrite = field_link_rewrite()
@@ -170,13 +191,13 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	f.minimal_quantity = field_minimal_quantity()
 	#f.mpn = field_mpn()
 	f.name = field_name()  # [v]
-	f.online_only = field_online_only()
-	f.on_sale = field_on_sale()
-	f.out_of_stock = field_out_of_stock()
-	f.pack_stock_type = field_pack_stock_type()
-	f.position_in_category = field_position_in_category()
+	#f.online_only = field_online_only()
+	#f.on_sale = field_on_sale()
+	#f.out_of_stock = field_out_of_stock()
+	#f.pack_stock_type = field_pack_stock_type()
+	#f.position_in_category = field_position_in_category()
 	f.price = field_price()
-	f.product_type = field_product_type()
+	f.product_type = field_product_type()	 # enum('standard','pack','virtual','combinations','')
 	f.quantity = field_quantity()
 	f.quantity_discount = field_quantity_discount()
 	f.redirect_type = field_redirect_type()
@@ -190,7 +211,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	f.unity = field_unity()
 	f.upc = field_upc()
 	f.uploadable_files = field_uploadable_files()
-	f.url_default_image = field_url_default_image()
+	f.default_image_url = field_default_image_url()
 	#f.volume = field_volume()
 	f.visibility = field_visibility()
 	f.weight = field_weight()
@@ -200,13 +221,6 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	set_references(f, s)
 	return f
     
-
-def set_references(f, s):
-    #f.supplier_reference = field_supplier_reference()
-    f.id_supplier = s.supplier_id	
-    f.reference = f'{f.id_supplier}-{f.supplier_reference}'
-	
-
 
 
 	
@@ -335,12 +349,16 @@ def field_available_date():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_available_for_order():
-    """! @~russian 
-    @brief
-    @details
-    """
-    return f.available_for_order
-    pass
+	"""! @~russian Если вернулся вебэлемент, это флаг, что товара нет в наличии, а вернулся <p>המלאי אזל
+	"""
+	available_for_order = d.execute_locator(l['available_for_order'])
+	pass
+	if available_for_order is None:
+		f.available_for_order = 1
+	else:
+		f.available_for_order = 0
+	pass
+
 
 
 #@logs_and_errors_decorator(default_return=False)
@@ -651,7 +669,7 @@ def field_ingridients():
 	@brief
 	@details
 	"""
-	return d.execute_locator ( l['ingridients'] )
+	return d.execute_locator ( l['ingridients'] )[0].text
 	pass
 	
 
@@ -971,12 +989,12 @@ def field_uploadable_files():
 	
 
 #@logs_and_errors_decorator(default_return=False)
-def field_url_default_image():
+def field_default_image_url():
 	"""! @~russian 
 	@brief
 	@details
 	"""
-	return f.url_default_image
+	return f.default_image_url
 	pass
         
 

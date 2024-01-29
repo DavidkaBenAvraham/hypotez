@@ -59,7 +59,7 @@
     "mandatory": true,
     "action": null
   },
-  "url_default_image": {
+  "default_image_url": {
     "attribute": "href",
     
     "by": "XPATH",

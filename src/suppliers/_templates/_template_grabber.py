@@ -135,7 +135,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	f.unity = set_field_unity()
 	f.upc = set_field_upc()
 	f.uploadable_files = set_field_uploadable_files()
-	f.url_default_image = set_field_url_default_image()
+	f.default_image_url = set_field_default_image_url()
 	f.visibility = set_field_visibility()
 	f.weight = set_field_weight()
 	f.wholesale_price = set_field_wholesale_price()
@@ -907,12 +907,12 @@ def field_uploadable_files():
 	
 
 #@logs_and_errors_decorator(default_return=False)
-def field_url_default_image():
+def field_default_image_url():
 	"""! @~russian 
 	@brief
 	@details
 	"""
-	return f.url_default_image
+	return f.default_image_url
 	pass
 	
 

@@ -58,7 +58,7 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def check_prod_presence(product_reference: str) -> Union[dict, False]:
+    def check_prod_presence(self, product_reference: str) -> Union[dict, False]:
         """! Проверка наличия товара в БД 
         -----------------
         @param reference `str`  `product_reference` - термин из престашоп = `product_id` 
@@ -76,7 +76,7 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def search(filter: str, value: str) -> Union[dict, False]:
+    def search(self, filter: str, value: str) -> Union[dict, False]:
         """ Расширенный поиск в БД
         -----------------
         Attrs:
@@ -101,7 +101,7 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def get(id_product: Union[int,str]) -> dict:
+    def get(self, id_product: Union[int,str]) -> dict:
         """ Тестовая функция, по сути повтор check, но работает непосредстевенно 
        с id_product 
        
@@ -119,7 +119,7 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def get_list_products_from_prestashop(api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') ->dict:
+    def get_list_products_from_prestashop(self, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') ->dict:
         """
         Полный список товаров. Осторожно!
 
@@ -134,7 +134,7 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def add(product_dict: dict, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> dict:
+    def add(self, product_dict: dict, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> dict:
         """ Добавление нового товара в БД PRESTASHOP через API
         -----------------
        @param
@@ -178,7 +178,7 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def update(id_product: int, product_dict: dict, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3')-> dict:
+    def update(self, id_product: int, product_dict: dict, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3')-> dict:
         """ Изменение данных о существующем товаре
         @param
             product:dict - Заполненный словарь товара / поля класса Product
@@ -236,7 +236,7 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def upload_image(id_product: int, image_url: str, target_file_name: str = 'default.png') -> Union[int, bool]:
+    def upload_image(self, id_product: int, image_url: str, target_file_name: str = 'default.png') -> Union[int, bool]:
         """
         Загружаю картинку, получаю или id_image или False
         @param
@@ -256,7 +256,7 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def delete(id_product: Union[int,str], api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> dict:
+    def delete(self, id_product: Union[int,str], api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> dict:
         """ Удаляю товер из бд """
 
         #return PrestaProd.delete_product(f'products/{id_product}')

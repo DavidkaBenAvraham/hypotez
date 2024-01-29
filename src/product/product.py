@@ -60,6 +60,7 @@ class Product(PrestaProduct):
     """@~russian _note Я могу передать локаторы товара из сценария или изменить их на лету """
     
     def __init__(self, *args, **kwards):
+        super().__init__(*args, **kwards)
         pass
 
     #@logs_and_errors_decorator(default_return =  False)
@@ -70,7 +71,8 @@ class Product(PrestaProduct):
             product_reference `str`  :  SKU, ASIN, etc.
         @returns
             id_product if present, else False
-        """     
+        """
+        
         return PrestaProduct.check(self, product_reference)
 
     # #@logs_and_errors_decorator(default_return =  False)

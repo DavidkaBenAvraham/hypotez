@@ -132,7 +132,7 @@ def set_product_fields(s:Supplier,f:ProductFields) -> ProductFields:
     _field.unity = asyncio.run (  )
     _field.upc = asyncio.run (  )
     _field.uploadable_files = asyncio.run (  )
-    _field.url_default_image = asyncio.run (  )
+    _field.default_image_url = asyncio.run (  )
     _field.visibility = asyncio.run (  )
     _field.weight = asyncio.run (  )
     _field.wholesale_price = asyncio.run (  )
