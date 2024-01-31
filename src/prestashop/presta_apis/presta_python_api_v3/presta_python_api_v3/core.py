@@ -64,7 +64,7 @@ class Prestashop():
 
     api = Prestashop(
         url = "https://myprestashop.com",
-        api_key="4MV3E41MFR7E3N9VNJE2W5EHS83E2EMI",
+        api_key="ХХХХХХХХХХХХХХХХХХХХХХХ",
         default_lang=1,
         debug=True,
         data_format=Format.JSON,
@@ -441,7 +441,7 @@ class Prestashop():
         _data = dict2xml(data)
         return self._exec(resource=resource,data=_data,method='POST',display=None)
 
-    def create_binary(self,resource:str, file:str,_type:str = 'image',file_name=None):
+    def create_binary(self, resource:str, file:str, _type:str = 'image',file_name=None):
         """create binary record
 
         @param

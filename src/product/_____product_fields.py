@@ -211,15 +211,15 @@ class ProductFields:
     fields_dict = {key: None for key in fields_list}
     
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, s: Supplier, *args, **kwargs):
         """! Класс работы с полями товара. Поля берутся состраницы HTML или другого источника
         и форматируются в стандарте API Prestashop. Поля можно в принципе форматировать как угодно
         
         @param s `Supplier` класс поставщика """
         
-        self._payload( *args, **kwargs)
+        self._payload(s, *args, **kwargs)
 
-    def _payload(self,  *args, **kwargs):
+    def _payload(self, s: Supplier, *args, **kwargs):
         """! Загрузка дефолтных значений полей """
         
         _default = j_loads (Path (gs.dir_src, 'product', 'product_fields_default_values.json'))
@@ -1020,7 +1020,6 @@ class ProductFields:
 #   23
     
     @property
-    #@logs_and_errors_decorator (default_return =  False)
     def reference(self) -> str:
         """!  <sub>*[property]*</sub> `ps_product.reference`
         field DB type: `varchar(64)`
@@ -1878,11 +1877,10 @@ class ProductFields:
 
     @property
     #@logs_and_errors_decorator(default_return=False)
-    def product_exist_in_prestashop(self):
+    def product_exist_in_prestashop():
         """! @~russian наличие товара в базе данных Престашоп.
         в зависимости от наличия/отсутствия товара в престашоп выставляется флаг: `update`/`insert`
         """
-        return self.fields_dict['exist_in_presta'] 
         pass
     
     @product_exist_in_prestashop.setter            

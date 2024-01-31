@@ -167,9 +167,15 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> bool:
             
         try:
             """! Собираю со страницы товара значения элементов и привожу их к полям ProductFields """
-            res = s.related_modules.grab_product_page(s)
+            product_fields = s.related_modules.grab_product_page(s)
             pass
             p = Product()
+            if  product_fields.product_exist_in_prestashop:
+                p.update(product_fields)
+            else:
+                p.add(product_fields)
+                
+            
             #products_fields_list.append (s.related_modules.grab_product_page(s) )
             pass
         except Exception as ex:

@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\helpers",
+    "\\src\\prestashop",
+    "\\src\\product",
+    "\\src\\scenarios",
     "\\src\\settings",
     "\\src\\suppliers",
-    "\\src\\suppliers\\aliexpress",
-    "\\src\\suppliers\\aliexpress\\_tests",
     "\\src\\suppliers\\hb",
-    "\\src\\suppliers\\hb\\locators",
+    "\\src\\suppliers\\hb\\_tests",
     "\\src\\suppliers\\ksp"
   ],
-  "SelectedNode": "\\src\\scenarios\\executor.py",
+  "SelectedNode": "\\src\\suppliers\\hb\\_tests\\ide_test_scenario.py",
   "PreviewInSolutionExplorer": false
 }

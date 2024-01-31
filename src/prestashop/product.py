@@ -58,7 +58,7 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def check_prod_presence(self, product_reference: str) -> Union[dict, False]:
+    def check_prod_presence(self, product_reference: str) -> bool:
         """! Проверка наличия товара в БД 
         -----------------
         @param reference `str`  `product_reference` - термин из престашоп = `product_id` 
@@ -70,7 +70,8 @@ class PrestaProduct():
         response = PrestaAPIV1.search('products', product_filter)
     
         if isinstance(response, list) and len(response) > 0:
-            return response[0]
+            #return response[0]
+            return True
         else:
             return False
 

@@ -170,7 +170,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.id_supplier = s.supplier_id	# [v] ## <- добывается функцией set_references()
 	#f.id_tax = field_id_tax() # [v]
 	#f.id_type_redirected = field_id_type_redirected()
-	f.images_urls = field_images_urls()	# [v]
+	#f.images_urls = field_images_urls()	# [v]
 	#f.indexed = field_indexed()
 	f.ingridients = field_ingridients()
 	
@@ -1296,3 +1296,8 @@ def combinations():
         return False
 
 f = grab_product_page(s)
+
+if f.product_exist_in_prestashop:
+	p.update(f.fields_dict)
+else:
+	p.add(f.fields_dict)

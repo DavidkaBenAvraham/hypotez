@@ -178,7 +178,6 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.images_urls = field_images_urls()	# [v]
 	#f.indexed = field_indexed()
 	f.ingridients = field_ingridients()
-	f.product_insert_or_update =  product_insert_or_update() # если это новый товар, которого нет в базе данных - использую метод `insert`, иначе `update`
 	#f.is_virtual = field_is_virtual()
 	#f.isbn = field_isbn()
 	f.link_rewrite = field_link_rewrite()

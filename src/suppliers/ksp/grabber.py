@@ -207,17 +207,17 @@ def grab_product_page(s):
     pass
 
 
-def get_list_products_in_category(s, scenario = None):
-    _d = s.driver
-    _l: dict = s.locators['product']
-        _l : dict = s.locators['category']['product_links']
+# def get_list_products_in_category(s, scenario = None):
+#     _d = s.driver
+#     _l: dict = s.locators['product']
+#         _l : dict = s.locators['category']['product_links']
 
-    _d.scroll(5)
+#     _d.scroll(5)
 
-    list_products_in_category = s.driver.execute_locator(_l)
-    if isinstance(list_products_in_category,str):
-        return [list_products_in_category]
-    return list_products_in_category
+#     list_products_in_category = s.driver.execute_locator(_l)
+#     if isinstance(list_products_in_category,str):
+#         return [list_products_in_category]
+#     return list_products_in_category
 
-def update_categories_in_scenario_file(supplier,current_scenario_filename):
-    return True
+# def update_categories_in_scenario_file(supplier,current_scenario_filename):
+#     return True
