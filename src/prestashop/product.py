@@ -58,7 +58,7 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def check_prod_presence(self, product_reference: str) -> bool:
+    def check_prod_presence_in_prestashop(self, product_reference: str) -> bool:
         """! Проверка наличия товара в БД 
         -----------------
         @param reference `str`  `product_reference` - термин из престашоп = `product_id` 

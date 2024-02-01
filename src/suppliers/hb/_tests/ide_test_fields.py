@@ -1,5 +1,5 @@
-"""! @~russian Запуск теста сценариев из IDE Visual Studio """
-"""!@~russian @details """
+"""! @~russian Файл проверки наполнения полей HB -> product_fields """
+
 
 
 #from math import prod
@@ -48,9 +48,9 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	"""! Собираю со страницы товара значения вебэлементов и привожу их к полям ProductFields
 	
 	@param s `Supplier` класс поставщика 
-	@~russian _note - вебдрайвер должен быть установлен на странице товара. 
+	 - вебдрайвер должен быть установлен на странице товара. 
 	- в моей учетной записи я вижу линейку "Affiliate links" - я беру из нее информацию о партнерской ссылке
-	@~russian _note на али работает AJAX, это важно для сбора комбинаций! Они не передаются по URL
+	 на али работает AJAX, это важно для сбора комбинаций! Они не передаются по URL
    
 	"""
 	
@@ -68,6 +68,8 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	
 	# global l
 	# l = s.locators['product']
+	d.execute_locator(l['close_banner'])	
+	"""! закрываю баннер """
 	
 	d.scroll()
 	"""! прокручиваю страницу товара, чтобы захватить области, которые подгружаются через AJAX """
@@ -120,9 +122,6 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	product_reference_and_volume_and_price_for_100()
 	set_references(f, s)
 
-	f.product_exist_in_prestashop = p.check_prod_presence(f.reference)	
-	
-	
 
 	#f.active = field_active() # [v] (added by default)
 	#f.additional_delivery_times = field_additional_delivery_times()	# [v]  Мое поле. Нахера - не знаю
@@ -182,9 +181,9 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.location = field_location()
 	#f.low_stock_alert = field_low_stock_alert()
 	#f.low_stock_threshold = field_low_stock_threshold()
-	f.meta_description = field_meta_description()
-	f.meta_keywords = field_meta_keywords()
-	f.meta_title = field_meta_title()
+	#f.meta_description = field_meta_description()
+	#f.meta_keywords = field_meta_keywords()
+	#f.meta_title = field_meta_title()
 	#f.minimal_quantity = field_minimal_quantity()
 	#f.mpn = field_mpn()
 	f.name = field_name()  # [v]
@@ -407,6 +406,7 @@ def field_available_for_order():
 		f.available_for_order = 1
 	else:
 		f.available_for_order = 0
+		f.active = 0
 	pass
 
 

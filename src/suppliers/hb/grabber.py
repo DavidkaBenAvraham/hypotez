@@ -27,6 +27,9 @@ from src.tools import StringFormatter as SF, StringNormalizer as SN
 from src.suppliers import Supplier
 from src.webdriver import Driver
 
+SN = SN()
+SF = SF()
+
 s: Supplier = None
 p: Product = None
 f: ProductFields = None
@@ -41,12 +44,12 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	"""! Собираю со страницы товара значения вебэлементов и привожу их к полям ProductFields
 	
 	@param s `Supplier` класс поставщика 
-	@~russian _note - вебдрайвер должен быть установлен на странице товара. 
+	 - вебдрайвер должен быть установлен на странице товара. 
 	- в моей учетной записи я вижу линейку "Affiliate links" - я беру из нее информацию о партнерской ссылке
-	@~russian _note на али работает AJAX, это важно для сбора комбинаций! Они не передаются по URL
+	 на али работает AJAX, это важно для сбора комбинаций! Они не передаются по URL
    
 	"""
-	
+		
 	global s
 	s = supplier
 
@@ -61,6 +64,8 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	
 	global l
 	l = s.locators['product']
+	
+	d.execute_locator(l['close_banner'])
 	
 	d.scroll()
 	"""! прокручиваю страницу товара, чтобы захватить области, которые подгружаются через AJAX """
@@ -123,14 +128,11 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	set_references(f, s)
 	#
 	#######################################################################################
-	
 
-	f.product_exist_in_prestashop = p.check_prod_presence(f.reference)
-	"""! Если товар уже есть в бд - Надо использовать `update`, иначе `insert` """
 	
 
 
-	#f.active = field_active() # [v] (added by default)
+	f.active = field_active() # [v] (1 - по умолчанию) Если товара нет в наличии - выставляю флаг 0
 	#f.additional_delivery_times = field_additional_delivery_times()	# [v]  Мое поле. Нахера - не знаю
 	f.additional_shipping_cost = field_additional_shipping_cost() # [v]
 	#f.advanced_stock_management = field_advanced_stock_management()
@@ -145,10 +147,11 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.affiliate_image_medium = field_affiliate_image_medium()
 	#f.affiliate_image_small = field_affiliate_image_small()
 	#f.available_date = field_available_date()
-	f.available_for_order = field_available_for_order()
+	f.available_for_order = f.active
 	#f.available_later = field_available_later()
 	#f.available_now = field_available_now()
 	#f.cache_default_attribute = field_cache_default_attribute()
+
 	#f.cache_has_attachments = field_cache_has_attachments()
 	#f.cache_is_pack = field_cache_is_pack()
 	#f.category_ids_append = field_category_ids_append() ##<- добавочные категории. Если надо дополнить уже внесенные
@@ -180,7 +183,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	f.ingridients = field_ingridients()
 	#f.is_virtual = field_is_virtual()
 	#f.isbn = field_isbn()
-	f.link_rewrite = field_link_rewrite()
+
 	f.location = field_location()
 	#f.low_stock_alert = field_low_stock_alert()
 	#f.low_stock_threshold = field_low_stock_threshold()
@@ -189,7 +192,11 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	f.meta_title = field_meta_title()
 	f.minimal_quantity = field_minimal_quantity()
 	#f.mpn = field_mpn()
-	f.name = field_name()  # [v]
+	_name = d.execute_locator (l['name'])[0]	# чтоб два раза не бегать, Я получаю значение локатора в _name
+	f.name = field_name(_name)					# а потом использую для f.name
+	f.link_rewrite = field_link_rewrite(_name)  # и для f.link_rewrite
+	
+
 	#f.online_only = field_online_only()
 	#f.on_sale = field_on_sale()
 	#f.out_of_stock = field_out_of_stock()
@@ -211,13 +218,11 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	f.upc = field_upc()
 	f.uploadable_files = field_uploadable_files()
 	f.default_image_url = field_default_image_url()
-	#f.volume = field_volume()
+	#f.volume = field_volume() # <- вычисляется в функции product_reference_and_volume_and_price_for_100()
 	f.visibility = field_visibility()
 	f.weight = field_weight()
 	f.wholesale_price = field_wholesale_price()
 	f.width = field_width()    
-	pass
-	set_references(f, s)
 	return f
     
 
@@ -269,10 +274,7 @@ def field_advanced_stock_management():
         
 #@logs_and_errors_decorator(default_return=False)
 def field_affiliate_short_link():
-    """! @~russian 
-    @brief
-    @details
-    """
+    """! @~russian 	 Возвращаю `current_url` поскольку у меня нет affiliate на этом сайте """
     return d.execute_locator(l['affiliate_short_link'])
     pass
     
@@ -693,12 +695,9 @@ def field_isbn():
 	
 
 #@logs_and_errors_decorator(default_return=False)
-def field_link_rewrite():
-	"""! @~russian 
-	@brief
-	@details
-	"""
-	return f.link_rewrite
+def field_link_rewrite(product_name):
+	"""! @~russian надо создавать из `title` Важен порядок сбора.	"""	
+	return SN.normalize_link_rewrite ( product_name )
 	pass
 	
         
@@ -786,12 +785,11 @@ def field_mpn():
 	
 
 #@logs_and_errors_decorator(default_return=False)
-def field_name():
-	"""! @~russian 
-	@brief
-	@details
+def field_name(name: str):
+	"""! @~russian Название товара 
+	Очищаю поля от лишних параметров, которые не проходят в престашоп 
 	"""
-	return d.execute_locator ( l['name'] )
+	return SN.normalize_product_name(name)
 	pass
 	
 

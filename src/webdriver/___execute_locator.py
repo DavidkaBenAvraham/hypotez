@@ -98,7 +98,7 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
     If the locator contains `send_keys()` in the `action` section , there are two ways to obtain `keys`:
        - 1. From the locator itself, if a key is specified there. For example: `send_keys(Key.F5)`, `send_keys(12345)`.
        - 2. From an external source, passed as an argument `keys` to this function.
-    @~russian _note Event handling is processed first, followed by attribute collection.
+     Event handling is processed first, followed by attribute collection.
     
     @param driver `Driver` The selenium webdriver object.
     @param keys  The `Keys` object used to send keys to the web element (f.e. `Key.Enter`) . Defaults to `None`.
@@ -481,7 +481,7 @@ def get_webelements_from_page(driver: Driver, locator: dict) -> Union[list, Fals
 
     
 
-    """! @~russian _note Я решил всегда возвращать список даже если нашелся один элемент
+    """!  Я решил всегда возвращать список даже если нашелся один элемент
     Алогритм поиска
     - Вначале пытаюсь выловить через driver.find_elements, (множество)
     - в случае неудачи через driver.find_element, (один)

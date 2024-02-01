@@ -32,9 +32,10 @@ def get_list_products_in_category (s) -> Union [list[str], str, None]:
     #TODO: Нет листалки
 
     list_products_in_category = d.execute_locator(l['product_links'])
-    """ Собираю ссылки на товары.  """
+    """ Собирал ссылки на товары.  """
+    
     if not list_products_in_category:
-        logger.warning('Нет ссылок на товары')
+        logger.warning('Нет ссылок на товары. Так бывает')
         return False
     
     list_products_in_category = [list_products_in_category] if isinstance(list_products_in_category, str) else list_products_in_category

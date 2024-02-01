@@ -67,7 +67,7 @@ class Thread4Supplier(Thread):
     не зависят друг от друга их вполне можно запускать каждого в своем потоке. \n Класс `Thread4Supplier` (src.main.Thread4Supplier) реализует механизм многопоточности
     Режим многопоточности задается в файле `global_settings.json` ключ: `threads`:`True` включает режим многопоточности.
     
-    @~russian _note Запуск многопоточности нагружает цпу
+     Запуск многопоточности нагружает цпу
 
     @todo не тестирован
 
@@ -342,17 +342,17 @@ def launcher (supplier_prefix: Union [ list[str], str ] = None,
         for supplier_prefix in supplier_prefix:
             for lang in scenario_language:
                 supplier: Supplier  = Supplier ( supplier_prefix = supplier_prefix, scenario_language = lang )
-                """! @~russian _note здесь появляется `supplier` от `Supplier`. 
+                """!  здесь появляется `supplier` от `Supplier`. 
                     @todo В этой части кода можно сделать интересный интерфейс запуска
                 """
                 logger.info (f'''Старт поставщика {supplier.supplier_prefix} ''')
                 supplier.run_supplier ( scenarios_any )
                 
                 # if scenario:
-                #     """! @~russian _note Здесь я могу запустить сценарий заданный при вызове launcher()"""
+                #     """!  Здесь я могу запустить сценарий заданный при вызове launcher()"""
                 #     supplier.run_supplier ( scenario )
                 # else:
-                #     """! @~russian _note Иначе будет запущен список по умолчанию, определенный в `gs`
+                #     """!  Иначе будет запущен список по умолчанию, определенный в `gs`
                 #     @~russian _bug - а если не найдется список - все наебнется
                 #     """
                 #     supplier.run_supplier ()

@@ -125,6 +125,10 @@ class StringNormalizer:
         """
         return SF.remove_special_characters (SF.remove_line_breaks (input_str) ) 
     
+    def normalize_link_rewrite(input_str: Union [str,list]) -> str:
+        return str( SF.remove_special_characters (SF.remove_line_breaks (input_str) ) ).replace(" ", "_")
+        
+    
     @staticmethod
     def normalize_url (url: Union [str,list]) -> str:
         """! @~russian Функция старается привeсти входную строку в легитимный URL """

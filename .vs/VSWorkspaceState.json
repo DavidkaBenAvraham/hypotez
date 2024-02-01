@@ -1,16 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\docs\\doxygen",
+    "\\docs\\doxygen\\_examples",
+    "\\docs\\doxygen\\_examples\\code",
+    "\\docs\\doxygen\\_examples\\code\\settings",
     "\\src",
-    "\\src\\prestashop",
     "\\src\\product",
-    "\\src\\scenarios",
-    "\\src\\settings",
     "\\src\\suppliers",
     "\\src\\suppliers\\hb",
     "\\src\\suppliers\\hb\\_tests",
-    "\\src\\suppliers\\ksp"
+    "\\src\\tools"
   ],
-  "SelectedNode": "\\src\\suppliers\\hb\\_tests\\ide_test_scenario.py",
+  "SelectedNode": "\\src\\suppliers\\hb\\grabber.py",
   "PreviewInSolutionExplorer": false
 }

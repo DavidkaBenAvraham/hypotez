@@ -1,10 +1,17 @@
 {
+  "close_banner": {
+    "attribute": null,
+    "by": "XPATH",
+    "selector": "//button[@id = 'closeXButton']",
+    "use_mouse": false,
+    "mandatory": false,
+    "action": "click()",
+    "@note": ""
+  },
   "id": {
     "attribute": null,
-
     "by": null,
     "selector": null,
-
     "use_mouse": false,
     "mandatory": true,
     "action": null,
@@ -150,11 +157,11 @@
     "attribute": "innerText",
     "by": "XPATH",
     "selector": "",
-    "logic for action[AND|OR|XOR|VALUE|null]": "TAKE 3 ELEMENT FROM ARRAY",
+    "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
     "mandatory": true,
     "action": null,
-    "@note": "сценарий извлекает 3 элемента со страницы через product_reference_and_volume_and_price_for_100()"
+    "@note": "Получаю через локатор product_reference_and_volume_and_price_for_100"
   },
   "location": {
     "attribute": null,
@@ -196,11 +203,11 @@
     "@note": ""
   },
   "weight": {
-    "attribute": "innerText",
+    "attribute": null,
 
-    "by": "XPATH",
-    "selector": "//div[@data-widget_type='shortcode.default']",
-    "logic for action[AND|OR|XOR|VALUE|null]": "TAKE 2 ELEMENT FROM ARRAY",
+    "by": null,
+    "selector": null,
+    "logic for action[AND|OR|XOR|VALUE|null]": null,
     "use_mouse": false,
     "mandatory": true,
     "action": null,
@@ -691,27 +698,23 @@
     "@note": ""
   },
   "description_short": {
-    "attribute": "innerText",
-
-
-    "by": "XPATH",
-    "selector": "//div[@id = 'tab-description']//p",
-
+    "attribute": null,
+    "by": null,
+    "selector": null,
     "use_mouse": false,
     "mandatory": true,
     "action": null,
-    "@note": "на сайте есть только description. "
+    "@note": "на сайте есть только description. получаю через селектор `description`"
   },
 
   "affiliate_short_link": {
     "attribute": "$_(driver.current_url)_$",
-
     "by": "VALUE",
     "selector": null,
-
     "use_mouse": false,
     "mandatory": true,
-    "action": null
+    "action": null,
+    "@note": "Исполняю формулу и отдаю результат через `value`"
   },
   "affiliate_text": {
     "attribute": null,
@@ -947,9 +950,9 @@
     "action": null
   },
   "Brand": {
-    "attribute": null,
+    "attribute": "hb",
 
-    "by": null,
+    "by": "VALUE",
     "selector": null,
 
     "use_mouse": false,
@@ -1028,13 +1031,20 @@
   },
   "Weight": {
     "attribute": null,
-
     "by": null,
     "selector": null,
-
     "use_mouse": false,
     "mandatory": true,
     "action": null
+  },
+  "volume": {
+    "attribute": null,
+    "by": null,
+    "selector": null,
+    "use_mouse": false,
+    "mandatory": true,
+    "action": null,
+    "@note": "получаю локатором `volume_and_price_for_100_and_sku`"
   },
   "Delivery time of in-stock products:": {
     "attribute": null,
@@ -1044,27 +1054,26 @@
 
     "use_mouse": false,
     "mandatory": true,
-    "action": null
+    "action": null,
+    "@note": ""
   },
   "Delivery time of out-of-stock products with allowed orders:": {
     "attribute": null,
-
     "by": null,
     "selector": null,
-
     "use_mouse": false,
     "mandatory": true,
-    "action": null
+    "action": null,
+    "@note": ""
   },
   "Quantity": {
     "attribute": null,
-
     "by": null,
     "selector": null,
-
     "use_mouse": false,
     "mandatory": true,
-    "action": null
+    "action": null,
+    "@note": ""
   },
   "Minimal quantity": {
     "attribute": null,

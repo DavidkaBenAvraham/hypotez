@@ -4,7 +4,7 @@
 `Supplier` - предоставляет методы и атрибуты для конкретного 
 поставщика данных: например, amazon.com, wallmart.com, mouser.com, digikey.com либо заданный клиентом. 
 В програме уже соданы несколько поставщиков, другие будут определены заказчиком.
-@~russian _note
+
 Для доступа к данным класс обращается к коннекторам, которые предоставляют досту к источнику информации. Реализованые коннекторы:
 - `HTML` grabber:  Mетод получения информации с помощью вебдрайвера (например, для Firefox, Chrome, Edge)
 - `API` connection:  Mетод предполагает взаимодействие с API поставщика данных. 
@@ -204,7 +204,7 @@ class Supplier():
         @param directories_names `Path | list[Path] | list[str] | str` = None : пути директорий. 
         @param file_names `Path | list[Path] | list[str] | str` = None :  пути файлов
         
-        @~russian _note если `directories_names = None`  функция будет строить путь для `file_names`, 
+         если `directories_names = None`  функция будет строить путь для `file_names`, 
         которые могут содержать часть пути.  
         Например: `foo.txt` | `bar/foo.txt` | `bar,foo.txt`  
         В качестве разделителя пути можно использовать  косую черту `/` или запятую `,`.  
@@ -255,7 +255,7 @@ class Supplier():
         @details 
         Если они не предоставлены, будут запущены сценарии из файла настроек поставщика.
         Значение по умолчанию - `None`.
-        @~russian _note
+        
         Файлы сценариев находятся в каталоге `suppliers/<supplier_prefix>/scenarios`.
             Список сценариев выполнения по умолчанию определен в файле `<supplier>/<supplier_prefix>.json`.
             Например, для поставщика `aliexpress.com`:

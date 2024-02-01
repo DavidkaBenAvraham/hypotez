@@ -117,36 +117,36 @@ def run_scenario_file(s, scenario_file_path: Union[Path, str]) -> bool:
     return True
 
 #@logs_and_errors_decorator(default_return =  False)
-def run_scenarios(s, scenarios_list: Union[list[dict], dict] ):
-    """! Функция выполняет список сценариев (НЕ ФАЙЛОВ) """
-    scenarios_list = scenarios_list if isinstance(scenarios_list, list) else [scenarios_list]
-    for scenario in scenarios_list:
-        res = run_scenario(s, scenario)
-    return True
+def run_scenarios(s, scenarios: Union [ list[dict], dict ] = None) -> Union[list, dict, False]:
+    """! Функция выполняет список сценариев (НЕ ФАЙЛОВ) 
+    @param `scenarios` На вход принимает список сценариев, или одиночный сценарий как dict
+    Для исполнения сценариев вызывается `run_scenario(s, scenario)
+    @param s `Supplier` поставщик
+    """
+    if not scenarios:
+        scenarios = [s.current_scenario]
+        """! Если не заданы сценарии - беру из s.current_scenario
+        @todo - проверить со всех сторон эту опцию. Например, не задан `s.current_scenario` и не задан `scenarios` 
+        """
+        
+        
+    scenarios = scenarios if isinstance(scenarios, list) else [scenarios]
+    res = []
+    for scenario in scenarios:
+        res.append ( run_scenario(s, scenario) ) 
+    return res
 
 #@logs_and_errors_decorator(default_return =  False)
-def run_scenario(s, scenario: dict, scenario_name: str = None) -> bool:
-    """! Executes each scenario in the set.
-    It receives a list of product URLs in the category and, using the function grab_product_page(),
-    extracts data about each product, writing it to a list of products for the supplier.
-    If more than 150 products were obtained, the results are written to a separate file.
-
-    Parameters : 
+def run_scenario(s, scenario: dict, scenario_name: str = None) -> Union[list, dict, False]:
+    """! Функция запускает полученный сценарий.
     @param s `Supplier`
     @param scenario `dict` : dictionary containing scenario details
-    @param scenario_name `str` : name of scenario f.e. 
-    <code>
-    <pre>
-    "smartphones":{
-    ---- scenario dict ----
-    }
-    </pre>
-    </code>
-
-    @returns bool `True` if successful, `False` otherwise
+    @param scenario_name `str` : name of scenario f.e. ???? Мне непонятно зачем этот параметр ???
+    @todo проверить надобность в `scenario_name`
+    @returns результат исполнения сценария
 
     """
-
+    #if not scenario_name: scenario_name = s.current_scenario
     logger.info (f'Старт сценария: {scenario_name}')
     d = s.driver
     d.get_url(scenario['url'])
@@ -159,7 +159,7 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> bool:
         logger.warning ('Не собран список товаров со страницы категории. Возможно пустая категория  - ', d.current_url)
         return False
 
-    products_fields_list :list = []
+    #products_fields_list :list = []
     for url in list_products_in_category:
         """! Перехожу по url товара и вытаскиваю данные со страницы """
         if not d.get_url(url):
@@ -170,7 +170,7 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> bool:
             product_fields = s.related_modules.grab_product_page(s)
             pass
             p = Product()
-            if  product_fields.product_exist_in_prestashop:
+            if p.check_prod_presence_in_prestashop(product_fields.reference):  
                 p.update(product_fields)
             else:
                 p.add(product_fields)

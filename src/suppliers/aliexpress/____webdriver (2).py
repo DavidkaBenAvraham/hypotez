@@ -135,7 +135,7 @@ def check_product_presence_in_prestashop(list_products_in_category):
             item_id = match.group(1)
             dict_products_from_ali.update ({item_id: url})
             
-    dict_products_from_ali = PrestaProduct.check_prod_presence (dict_products_from_ali.keys)
+    dict_products_from_ali = PrestaProduct.check_prod_presence_in_prestashop (dict_products_from_ali.keys)
     """~@~russian отдаю список `ID` товаров на проверку в `PrestaProduct`
 
     

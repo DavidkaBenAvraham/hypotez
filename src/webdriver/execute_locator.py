@@ -85,6 +85,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from src.webdriver import Driver
 from src.settings import gs
 from src.helpers import logger, logs_and_errors_decorator, jprint, pprint
+from src.helpers.exceptions import DefaultSettingsException, DriverException, ExecuteLocatorException
 from src.io_interface import j_loads, j_dumps
 from src.tools.string_formatter import StringFormatter as SF
 #from src.suppliers import Supplier
@@ -98,7 +99,7 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
     If the locator contains `send_keys()` in the `action` section , there are two ways to obtain `keys`:
        - 1. From the locator itself, if a key is specified there. For example: `send_keys(Key.F5)`, `send_keys(12345)`.
        - 2. From an external source, passed as an argument `keys` to this function.
-    @~russian _note Event handling is processed first, folowed by attribute colection.
+     Event handling is processed first, folowed by attribute colection.
     
     @param driver `Driver` The selenium webdriver object.
     @param keys  The `Keys` object used to send keys to the web element (f.e. `Key.Enter`) . Defaults to `None`.
@@ -243,6 +244,7 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
         
    
         l = _saved_locator
+        """! возвращаю локатор в изначальное состояние """
         return ret
     #
     #
@@ -266,6 +268,16 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
             "mandatory": [ true, true ],
             "action": [ "click()", nul ],
             "@note": [ nul, nul ]
+          }
+          
+        "affiliate_short_link": {
+            "attribute": "$_(driver.current_url)_$",
+            "by": "VALUE",
+            "selector": null,
+            "use_mouse": false,
+            "mandatory": true,
+            "action": null,
+            "@note": "Исполняю формулу и отдаю результат через `value`"
           }
           ```
           """
@@ -339,7 +351,13 @@ def execute_action(driver: Driver, locator: dict, keys: Union[Keys, None] = None
         """! реализация простого клика.  click() 
         Если надо заполнить поле и потом кликнуть - 
         используй click( send_keys(KEY.VALUE) ) внутри локатора"""
-        driver.click(locator)
+        
+        if not driver.click(locator):
+           if locator['mandatory']:
+               logger.error(f'Не нашел на что кликать {locator.keys} => {locator}')  
+           
+           return False
+           
 
     # 3.
     # if the action is a "send_keys" action
@@ -487,7 +505,7 @@ def get_webelements_from_page(driver: Driver, locator: dict) -> Union[list, Fals
 
     
 
-    """! @~russian _note Я решил всегда возвращать список даже если нашелся один элемент
+    """!  Я решил всегда возвращать список даже если нашелся один элемент
     Алогритм поиска
     - Вначале пытаюсь выловить через driver.find_elements, (множество)
     - в случае неудачи через driver.find_element, (один)
@@ -600,7 +618,7 @@ def get_attributes_from_webelements(driver: Driver, locator: dict) -> Union[List
 
     # 1.4
     else:
-        """! Отдать один единственный аттрибут вебэлемента """
+        """! Отдать аттрибут вебэлемента (списка веэлементов)"""
         # If attribute is a string, get the attribute value for the web element.
         ret = get_attribute_by_locator(driver, locator)
     return ret
@@ -653,7 +671,7 @@ def get_attribute_by_locator(driver: Driver, locator: dict) -> str:
         for webelement in webelements:
             try:
                 attributes.append (webelement.get_attribute ( locator['attribute']) )
-                pass
+                
             except Exception as ex:
                 logger.debug(F"Error: {ex}", exc_info=True)
                 # -- аттрибут не найден. Не строго. Пропускаю и ищу в следующем
@@ -765,10 +783,12 @@ def click(driver, locator) -> bool:
     # Get the WebElement
     webelement = get_webelements_from_page (driver, locator)
 
-    if not webelement:
+    if not webelement and locator['mandatory'] is False:
+        return False
+    elif not webelement and locator['mandatory'] is True:
         logger.error(f"Could not find element to click. Locator: {locator}")
         return False
-
+    
     # Click the FIRST  element
     try:
         _prev_url = driver.current_url

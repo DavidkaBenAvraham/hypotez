@@ -57,7 +57,7 @@ class Product(PrestaProduct):
                     - иначе, из suppliers.ProductFields()
                     - сделано для тестов, чтобы менять на лету  
     """
-    """@~russian _note Я могу передать локаторы товара из сценария или изменить их на лету """
+    """ Я могу передать локаторы товара из сценария или изменить их на лету """
     
     def __init__(self, *args, **kwards):
         super().__init__(*args, **kwards)

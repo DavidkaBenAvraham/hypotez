@@ -63,7 +63,7 @@ class Product():
     """
     product_fields: ProductFields = ProductFields()
     webelements_locators : dict = None
-    """@~russian _note Я могу передать локаторы товара из сценария или изменить их на лету """
+    """ Я могу передать локаторы товара из сценария или изменить их на лету """
     
     def __init__(self , *args, **kwards):
         pass

@@ -286,7 +286,7 @@ class Firefox(FF):
         """
         _profile_directory = ff_settings['profiles_path'][ff_settings['profile_from']]
         if '%APPDATA%' in _profile_directory:
-            """! @~russian _note Подключаюсь к профилю пользователя внутри ОС
+            """!  Подключаюсь к профилю пользователя внутри ОС
             переменную окружения `%APPDATA%` разворачиваю в абсолютный путь """
             _profile_directory: Path = Path(_profile_directory.replace('%APPDATA%', os.environ.get('APPDATA')))
             """! @todo Здесь нужно рассмотреть, какой именно профиль использовать в ОС """
@@ -295,7 +295,7 @@ class Firefox(FF):
             _profile_directory: Path = Path(gs.dir_root, 'src', 'webdriver', 'profiles', 'firefox_profiles',
                                         ff_settings['default_profile_directory'][0])
             logger.info ('Подключаю локальный профиль из папки `profiles`')
-            """! @~russian _note Подключаю локальный профиль из папки `profiles` """
+            """!  Подключаю локальный профиль из папки `profiles` """
 
         profile = FirefoxProfile(profile_directory=_profile_directory)
         # TODO: Реализовать логику настройки профиля

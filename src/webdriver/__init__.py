@@ -22,3 +22,5 @@
 #! /usr/share/projects/hypotez/venv/scripts python
 
 from .Driver import Driver
+from .execute_locator import execute_locator, execute_action,  click
+from .execute_locator import get_attributes_from_webelements, get_attribute_by_locator, get_webelements_from_page, get_webelement_as_screenshot

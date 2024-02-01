@@ -110,7 +110,7 @@ class ProjectSettings():
     @param dir_root
     
     
-    @~russian _note Переменные для хранения и управления различными типами учетных данных, 
+     Переменные для хранения и управления различными типами учетных данных, 
     используются для хранения учетных данных для различных сервисов, таких как `AliExpress API, 
     PrestaShop API, база данных PrestaShop, FTP и SMTP`. Переменные включают в себя как списки, используемые для хранения 
     нескольких наборов учетных данных, так и словари, используемые для конкретных учетных данных, 
@@ -282,7 +282,7 @@ class ProjectSettings():
     """! флаг асинхронного исполнения функций """
     
     supplier_prefix: list = None
-    """! @~russian _note  `supplier_prefix` Список поставщиков для которых я буду выполнять сценарии 
+    """!   `supplier_prefix` Список поставщиков для которых я буду выполнять сценарии 
     @details `supplier_prefix` на протяжении всего кода означает  список поставщиков над которым будет выполнятся операция
     При инициализации класса `Supplier` служит указателем, какого именно поставщика будет содержать инициализируемый класс
     """
@@ -446,7 +446,7 @@ class ProjectSettings():
                 
                 self.list_openai_credentials.append(entry_dict)
                 
-                """! @~russian _note У меня только один API OpenAI ключ"""
+                """!  У меня только один API OpenAI ключ"""
                 if entry.title == keepass_openai_api_title: 
                         self.default_openai_api_credentials = entry_dict      
                 
