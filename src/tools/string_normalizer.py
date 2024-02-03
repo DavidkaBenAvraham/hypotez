@@ -109,9 +109,8 @@ class StringNormalizer:
             
     @staticmethod
     def normalize_sku(sku: str) -> str:
-        """
-        Нормализация артикула ?????
-        """
+        """! Нормализация артикула ????? """
+        
         sku = SF.remove_non_latin_characters(sku)
         sku = SF.remove_special_characters(sku)
         sku = SF.remove_line_breaks(sku)
@@ -119,13 +118,14 @@ class StringNormalizer:
         return sku
     
     @staticmethod
-    def normalize_product_name (input_str: Union [str,list]) -> str:
-        """! @~russian поле `name` в `Prestashop` не должно содержать спецсимволов 
-        Если пришел список  - декоратор конвертирует его в строку
-        """
+    def normalize_product_name (input_str: str) -> str:
+        """! @~russian поле `name` в `Prestashop` не должно содержать спецсимволов """
         return SF.remove_special_characters (SF.remove_line_breaks (input_str) ) 
     
-    def normalize_link_rewrite(input_str: Union [str,list]) -> str:
+    def normalize_link_rewrite(input_str: str) -> str:
+        """! функция приводит строку к валидному url страницы.
+        Заменяет пробелы почеркиваниями, валидирует ASCII последовательности """
+        
         return str( SF.remove_special_characters (SF.remove_line_breaks (input_str) ) ).replace(" ", "_")
         
     

@@ -179,14 +179,14 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
     #
     #
     def parse_locator(l):
+        """! если в локаторах есть функция - я ее исполняю до обработки локатора.
+        @note Функция из локатора обычно замещает себя результатом исполнения. После всех действий с локатором я возвращаю ему дефолтное значение
+        @todo проверить как веддет себя `l`, если это локальная в функции тогда `_saved_locator = l` не нужен, т.к. глобальный `l` не меняется"""     
         
         ret = None
 
         _saved_locator = l 
-        """! если в локаторах есть функция - я ее исполняю до обработки локатора.
-        @note Функция из локатора обычно замещает себя результатом исполнения.
-        @todo проверить как веддет себя `l`, если это локальная в функции тогда `_saved_locator = l` не нужен, т.к. глобальный `l` не меняется"""     
-        
+       
         l['attribute'] = evaluate_locator(l.get('attribute'),driver)
         l['selector'] = evaluate_locator(l.get('selector'),driver) 
    
@@ -225,14 +225,14 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
              is specified in the locator.
              Например:
              ```python
-            "product_reference_and_volume_and_price_for_100": {
-                "attribute": "InnerText",
-                "by": "XPATH",
-                "selector": "//div[@data-widget_type='shortcode.default']",
-                "use_mouse": false, "mandatory": true,
-                "action": null,
-                "@note": ""
-              },
+                "product_reference_and_volume_and_price_for_100": {
+                    "attribute": "InnerText",
+                    "by": "XPATH",
+                    "selector": "//div[@data-widget_type='shortcode.default']",
+                    "use_mouse": false, "mandatory": true,
+                    "action": null,
+                    "@note": ""
+                  },
                      """
             ret = get_attributes_from_webelements ( driver, l )
 
@@ -292,6 +292,7 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
                 ret.append ( parse_locator(l) )
                 
             ret = ret if ret is None else list(filter(lambda x: x is not None, ret))
+            """! очищаю от None, если пришел список"""
             pass
                 
     else:
@@ -354,9 +355,10 @@ def execute_action(driver: Driver, locator: dict, keys: Union[Keys, None] = None
         
         if not driver.click(locator):
            if locator['mandatory']:
+               """! locator['mandatory'] если False - локатор не обязательный. Другими словами: если не исполнится - то и хуй с ним """
                logger.error(f'Не нашел на что кликать {locator.keys} => {locator}')  
            
-           return False
+        return False
            
 
     # 3.

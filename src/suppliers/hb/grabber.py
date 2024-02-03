@@ -132,7 +132,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	
 
 
-	f.active = field_active() # [v] (1 - по умолчанию) Если товара нет в наличии - выставляю флаг 0
+	#f.active = field_active() # Совпадает с f.available_for_order Если товара нет в наличии - выставляю флаг 0
 	#f.additional_delivery_times = field_additional_delivery_times()	# [v]  Мое поле. Нахера - не знаю
 	f.additional_shipping_cost = field_additional_shipping_cost() # [v]
 	#f.advanced_stock_management = field_advanced_stock_management()
@@ -159,6 +159,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.customizable = field_customizable()
 	#f.date_add = field_date_add()
 	#f.date_upd = field_date_upd()
+	f.default_image_url = field_default_image_url()
 	#f.delivery_in_stock = field_delivery_in_stock()	 # [v]	 ##<- заметка о доставке. если товар в наличии
 	#f.delivery_out_stock = field_delivery_out_stock() # [v]	 ##<- заметка о доставке, если товара нет в наличии
 	#f.depth = field_depth()
@@ -192,10 +193,12 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	f.meta_title = field_meta_title()
 	f.minimal_quantity = field_minimal_quantity()
 	#f.mpn = field_mpn()
+
+	###########################################################################################################
 	_name = d.execute_locator (l['name'])[0]	# чтоб два раза не бегать, Я получаю значение локатора в _name
 	f.name = field_name(_name)					# а потом использую для f.name
 	f.link_rewrite = field_link_rewrite(_name)  # и для f.link_rewrite
-	
+	###########################################################################################################	
 
 	#f.online_only = field_online_only()
 	#f.on_sale = field_on_sale()
@@ -203,26 +206,26 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.pack_stock_type = field_pack_stock_type()
 	#f.position_in_category = field_position_in_category()
 	f.price = field_price()
-	f.product_type = field_product_type()	 # enum('standard','pack','virtual','combinations','')
-	f.quantity = field_quantity()
-	f.quantity_discount = field_quantity_discount()
-	f.redirect_type = field_redirect_type()
-	f.reference = field_reference()	# [v]
-	f.show_condition = field_show_condition()
-	f.show_price = field_show_price()
-	f.state = field_state()
-	f.supplier_reference = field_supplier_reference()  # [v] ## <- SKU со страницы поставщика
-	f.text_fields = field_text_fields()
-	f.unit_price_ratio = field_unit_price_ratio()
-	f.unity = field_unity()
-	f.upc = field_upc()
-	f.uploadable_files = field_uploadable_files()
+	#f.product_type = field_product_type()	 # enum('standard','pack','virtual','combinations','')
+	#f.quantity = field_quantity()
+	#f.quantity_discount = field_quantity_discount()
+	#f.redirect_type = field_redirect_type()
+	#f.reference = field_reference()	# [v] заполняется в функции `set_references()`
+	#f.show_condition = field_show_condition()
+	#f.show_price = field_show_price()
+	#f.state = field_state()
+	#f.supplier_reference = field_supplier_reference()  # заполняется в функции `set_references()`
+	#f.text_fields = field_text_fields()
+	#f.unit_price_ratio = field_unit_price_ratio()
+	#f.unity = field_unity()
+	#f.upc = field_upc()
+	#f.uploadable_files = field_uploadable_files()
 	f.default_image_url = field_default_image_url()
 	#f.volume = field_volume() # <- вычисляется в функции product_reference_and_volume_and_price_for_100()
-	f.visibility = field_visibility()
-	f.weight = field_weight()
-	f.wholesale_price = field_wholesale_price()
-	f.width = field_width()    
+	#f.visibility = field_visibility()
+	#f.weight = field_weight()
+	#f.wholesale_price = field_wholesale_price()
+	#f.width = field_width()    
 	return f
     
 
@@ -554,12 +557,11 @@ def field_how_to_use():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_id_category_default():
-	"""! @~russian 
-	@brief
-	@details
-	"""
-	return f.id_category_default
+	"""! @~russian Главная категория товара. Берется из сценария	"""
+	
+	return s.current_scenario['presta_categories']['default_category']
 	pass
+	
 	
 
 #@logs_and_errors_decorator(default_return=False)
@@ -592,11 +594,9 @@ def field_id_lang():
 	
 #@logs_and_errors_decorator(default_return=False)
 def field_id_manufacturer():
-	"""! @~russian 
-	@brief
-	@details
-	"""
-	return f.id_manufacturer
+	"""! @~russian ID бренда. Может быть и названием бренда - престашоп сам разберется """
+	
+	return 'HB'
 	pass
 	
 #@logs_and_errors_decorator(default_return=False)
@@ -695,8 +695,8 @@ def field_isbn():
 	
 
 #@logs_and_errors_decorator(default_return=False)
-def field_link_rewrite(product_name):
-	"""! @~russian надо создавать из `title` Важен порядок сбора.	"""	
+def field_link_rewrite(product_name: str) -> str:
+	"""! @~russian Создается из переменной `product_name` которая содержит значение локатора l['name'] 	"""	
 	return SN.normalize_link_rewrite ( product_name )
 	pass
 	
@@ -785,11 +785,11 @@ def field_mpn():
 	
 
 #@logs_and_errors_decorator(default_return=False)
-def field_name(name: str):
+def field_name(product_name: str) -> str:
 	"""! @~russian Название товара 
 	Очищаю поля от лишних параметров, которые не проходят в престашоп 
 	"""
-	return SN.normalize_product_name(name)
+	return SN.normalize_product_name(product_name)
 	pass
 	
 

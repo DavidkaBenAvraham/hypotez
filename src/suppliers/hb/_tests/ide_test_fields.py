@@ -68,6 +68,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	
 	# global l
 	# l = s.locators['product']
+	d.wait(5)
 	d.execute_locator(l['close_banner'])	
 	"""! закрываю баннер """
 	
@@ -123,7 +124,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	set_references(f, s)
 
 
-	#f.active = field_active() # [v] (added by default)
+	#f.active = field_active() # Совпадает с f.available_for_order
 	#f.additional_delivery_times = field_additional_delivery_times()	# [v]  Мое поле. Нахера - не знаю
 	f.additional_shipping_cost  = field_additional_shipping_cost() # [v]
 	#f.advanced_stock_management = field_advanced_stock_management()
@@ -138,7 +139,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.affiliate_image_medium = field_affiliate_image_medium()
 	#f.affiliate_image_small = field_affiliate_image_small()
 	#f.available_date = field_available_date()
-	f.available_for_order = field_available_for_order()
+	f.available_for_order = f.active = field_available_for_order()
 	#f.available_later = field_available_later()
 	#f.available_now = field_available_now()
 	#f.cache_default_attribute = field_cache_default_attribute()
@@ -149,6 +150,13 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.customizable = field_customizable()
 	#f.date_add = field_date_add()
 	#f.date_upd = field_date_upd()
+
+	################################################################################
+	_images_urls = d.execute_locator(l['Image URLs (x,y,z...)'])	
+	f.default_image_url = _images_urls[0]
+	f.images_urls = _images_urls[1::]
+	################################################################################
+
 	#f.delivery_in_stock = field_delivery_in_stock()	 # [v]	 ##<- доставка
 	#f.delivery_out_stock = field_delivery_out_stock()	#   Заметка о доставке, когда товара нет в наличии
 
@@ -161,10 +169,10 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	f.how_to_use = field_how_to_use()
 	f.id_category_default = field_id_category_default()
 	#f.id_default_combination = field_id_default_combination()
-	f.id_default_image = field_id_default_image()
-	f.id_lang = field_id_lang()
+	#f.id_default_image = field_id_default_image()
+	f.id_lang = s.scenario_language
 	f.id_manufacturer = field_id_manufacturer()
-	f.id_product = field_id_product()
+	#f.id_product = field_id_product()
 	#f.id_shop_default = field_id_shop_default()   ## <- усранавливается в `product_fields_default_values.json`
 	#f.id_supplier = s.supplier_id	# [v] ## <- добывается функцией set_references()
 	#f.id_tax = field_id_tax() # [v]
@@ -172,8 +180,6 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.images_urls = field_images_urls()	# [v]
 	#f.indexed = field_indexed()
 	f.ingridients = field_ingridients()
-	
-	return f
 
 	#f.is_virtual = field_is_virtual()
 	#f.isbn = field_isbn()
@@ -186,7 +192,13 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.meta_title = field_meta_title()
 	#f.minimal_quantity = field_minimal_quantity()
 	#f.mpn = field_mpn()
-	f.name = field_name()  # [v]
+
+	###########################################################################################################
+	_name = d.execute_locator (l['name'])[0]	# чтоб два раза не бегать, Я получаю значение локатора в _name
+	f.name = field_name(_name)					# а потом использую для f.name
+	f.link_rewrite = field_link_rewrite(_name)  # и для f.link_rewrite
+	###########################################################################################################	
+
 	#f.online_only = field_online_only()
 	f.on_sale = field_on_sale()
 	#f.out_of_stock = field_out_of_stock()
@@ -207,7 +219,6 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.unity = field_unity()
 	#f.upc = field_upc()
 	#f.uploadable_files = field_uploadable_files()
-	f.default_image_url = field_default_image_url()
 	#f.volume = field_volume()		 ## <- устанавливается в функции `product_reference_and_volume_and_price_for_100()`
 	#f.visibility = field_visibility()
 	#f.weight = field_weight()
@@ -559,13 +570,10 @@ def field_description():
 	return d.execute_locator (l['description'] )[0].text
 	pass
 
-
+#@logs_and_errors_decorator(default_return=False)
 def field_id_category_default():
-	"""! @~russian 
-	@brief
-	@details
-	"""
-	f.id_category_default = s.current_scenario['presta_categories']['default_category']
+	"""! @~russian Главная категория товара. Берется из сценария	"""
+	return s.current_scenario['presta_categories']['default_category']
 	pass
 	
 
@@ -652,11 +660,9 @@ def field_id_lang():
 	
 #@logs_and_errors_decorator(default_return=False)
 def field_id_manufacturer():
-	"""! @~russian 
-	@brief
-	@details
-	"""
-	return f.id_manufacturer
+	"""! @~russian ID бренда. Может быть и названием бренда - престашоп сам разберется """
+	
+	return 'HB'
 	pass
 	
 #@logs_and_errors_decorator(default_return=False)
@@ -726,10 +732,8 @@ def field_indexed():
         
 #@logs_and_errors_decorator(default_return=False)
 def field_ingridients():
-	"""! @~russian 
-	@brief
-	@details
-	"""
+	"""! @~russian Состав. Забираю с сайта HTML с картинками ингридиентов """
+	
 	return d.execute_locator ( l['ingridients'] )[0].text
 	pass
 	
@@ -755,13 +759,11 @@ def field_isbn():
 	
 
 #@logs_and_errors_decorator(default_return=False)
-def field_link_rewrite():
-	"""! @~russian 
-	@brief
-	@details
-	"""
-	return f.link_rewrite
+def field_link_rewrite(product_name: str) -> str:
+	"""! @~russian Создается из переменной `product_name` которая содержит значение локатора l['name'] 	"""	
+	return SN.normalize_link_rewrite ( product_name )
 	pass
+	
 	
         
 
@@ -848,14 +850,12 @@ def field_mpn():
 	
 
 #@logs_and_errors_decorator(default_return=False)
-def field_name():
-	"""! @~russian 
-	@brief
-	@details
+def field_name(name: str):
+	"""! @~russian Название товара 
+	Очищаю поля от лишних параметров, которые не проходят в престашоп 
 	"""
-	return d.execute_locator ( l['name'] )
+	return SN.normalize_product_name(name)
 	pass
-	
 
 #@logs_and_errors_decorator(default_return=False)
 def field_online_only():

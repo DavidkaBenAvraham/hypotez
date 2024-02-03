@@ -6,7 +6,7 @@
     "use_mouse": false,
     "mandatory": false,
     "action": "click()",
-    "@note": ""
+    "@note": "Закрываю pop-up окно, если оно не появилось - не страшно (`mandatory`:`false`)"
   },
   "id": {
     "attribute": null,
@@ -18,11 +18,9 @@
     "@note": ""
   },
   "id_manufacturer": {
-    "attribute": null,
-
-    "by": null,
+    "attribute": "HB",
+    "by": "VALUE",
     "selector": null,
-
     "use_mouse": false,
     "mandatory": true,
     "action": null,
@@ -30,10 +28,8 @@
   },
   "id_supplier": {
     "attribute": "11267",
-
     "by": "VALUE",
     "selector": null,
-
     "use_mouse": false,
     "mandatory": true,
     "action": null,
@@ -72,10 +68,8 @@
   },
   "default_image_url": {
     "attribute": "href",
-
     "by": "XPATH",
     "selector": "//div[contains(@class,'woocommerce-product-gallery__image')]/a",
-
     "use_mouse": false,
     "mandatory": true,
     "action": null,
@@ -671,31 +665,26 @@
 
     "by": null,
     "selector": null,
-
     "use_mouse": false,
     "mandatory": true,
     "action": null
   },
   "name": {
     "attribute": "innerText",
-
     "by": "XPATH",
     "selector": "//h1[contains(@class,'product_title')]",
-
     "use_mouse": false,
     "mandatory": true,
     "action": null
   },
   "description": {
-    "attribute": null,
-
-    "by": "XPATH",
-    "selector": "//div[@id = 'tab-description']//p",
-
-    "action": null,
-    "use_mouse": false,
-    "mandatory": true,
-    "@note": ""
+    "attribute": [ null, null ],
+    "by": [ "XPATH", "XPATH" ],
+    "selector": [ "//a[contains(@href, '#tab-description')]", "//div[@id = 'tab-description']//p" ],
+    "action": [ "click()", null ],
+    "use_mouse": [ false, false ],
+    "mandatory": [ true, true ],
+    "@note": [ "Нажимаю на таб для отркытия поля description" , "читаю данные из div"]
   },
   "description_short": {
     "attribute": null,
@@ -1226,11 +1215,9 @@
     "logic for action[AND|OR|XOR|VALUE|null]": null
   },
   "Image URLs (x,y,z...)": {
-    "attribute": "src",
-
+    "attribute": "href",
     "by": "XPATH",
-    "selector": "//img[@class='product-gallery--loaded-image']",
-
+    "selector": "//div[contains(@class,'woocommerce-product-gallery__image')]/a",
     "use_mouse": false,
     "mandatory": true,
     "action": null

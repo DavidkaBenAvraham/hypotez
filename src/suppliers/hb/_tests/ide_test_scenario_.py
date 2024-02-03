@@ -46,4 +46,5 @@ s.current_scenario: dict =  {
     }
 
 ret = run_scenarios(s, s.current_scenario)
+pass
 

@@ -205,7 +205,6 @@ class ProductFields:
     'weight',
     'wholesale_price',
     'width',
-    'product_exist_in_prestashop'
     ]
 
     fields_dict = {key: None for key in fields_list}
@@ -1876,26 +1875,6 @@ class ProductFields:
             return False
 
 
-    @property
-    #@logs_and_errors_decorator(default_return=False)
-    def product_exist_in_prestashop(self):
-        """! @~russian наличие товара в базе данных Престашоп.
-        в зависимости от наличия/отсутствия товара в престашоп выставляется флаг: `update`/`insert`
-        """
-        return self.fields_dict['exist_in_presta'] 
-        pass
-    
-    @product_exist_in_prestashop.setter            
-    @logs_and_errors_decorator(default_return=False)
-    def product_exist_in_prestashop(self, value):
-        """! @~russian
-        @brief
-        @details
-        """
-        self.fields_dict['exist_in_presta'] = value
-        pass
-            
-
 
 
 
@@ -2604,7 +2583,7 @@ class ProductFields:
     @property
     def default_image_url(self) -> str:
         """!  <sub>*[property]*</sub>   `_???????.id_default_image` """
-        return self.fields_dict['id_default_image']
+        return self.fields_dict['default_image_url']
     
     
     @default_image_url.setter

@@ -1,17 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\docs\\doxygen",
-    "\\docs\\doxygen\\_examples",
-    "\\docs\\doxygen\\_examples\\code",
-    "\\docs\\doxygen\\_examples\\code\\settings",
     "\\src",
+    "\\src\\helpers",
     "\\src\\product",
+    "\\src\\scenarios",
     "\\src\\suppliers",
     "\\src\\suppliers\\hb",
     "\\src\\suppliers\\hb\\_tests",
-    "\\src\\tools"
+    "\\src\\tools",
+    "\\src\\webdriver"
   ],
-  "SelectedNode": "\\src\\suppliers\\hb\\grabber.py",
+  "SelectedNode": "\\src\\suppliers\\hb\\_tests\\ide_test_fields.py",
   "PreviewInSolutionExplorer": false
 }
