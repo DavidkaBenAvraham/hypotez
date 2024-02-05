@@ -149,37 +149,37 @@ class StringFormatter:
 
     @staticmethod
     def remove_special_characters (input_str: Union [str,list]) -> str:
-        """! @~russian 
-        @brief Удаляю символы, которые не проходят валидацию в поле `name`  `Prestashop`
+        """! @~russian Удаляю символы, которые не проходят валидацию в поле `name`  `Prestashop`
         @param input_str `str` входящая строка
         @returns output_str `str` Обработанная строка
         ### Пример
-        @code
-        @~python
-        >>> input_str = 'abc#def'
-        >>> output_str = remove_special_characters(input_str)
-        >>> print(output_str)
-        >>> 'abc def'
-        >>>
-        >>> input_str = '<div>Text</div>'
-        >>> output_str = remove_special_characters(input_str)
-        >>> print(output_str)
-        >>> 'Text'
-        >>> input_str = ['a','text',45]
-        >>> output_str = remove_special_characters(input_str)
-        >>> print(output_str)
-        >>> 'a text 45'        
-        @endcode
+
+        ```python
+            input_str = 'abc#def'
+            output_str = remove_special_characters(input_str)
+            print(output_str)
+            'abc def'
+        
+            input_str = '<div>Text</div>'
+            output_str = remove_special_characters(input_str)
+            print(output_str)
+            'Text'
+            
+            input_str = ['a','text',45]
+            output_str = remove_special_characters(input_str)
+            print(output_str)
+            'a text 45'        
+       ```
         """
         s =  StringFormatter.convert_to_html_entities (input_str)
 
         if isinstance(s, list):
             out_str: str = ''
             for sub_s in s:
-                sub_s = Ptrn.remove_special_characters.sub(r' ', string=s).strip
+                sub_s = Ptrn.remove_special_characters.sub(r' ', string=s).strip()
                 out_str += (sub_s)
         else:
-            out_str = Ptrn.remove_special_characters.sub(r' ', s).strip
+            out_str = Ptrn.remove_special_characters.sub(r' ', s).strip()
         return out_str
 
     @staticmethod

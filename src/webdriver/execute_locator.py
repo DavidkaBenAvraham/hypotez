@@ -354,11 +354,13 @@ def execute_action(driver: Driver, locator: dict, keys: Union[Keys, None] = None
         используй click( send_keys(KEY.VALUE) ) внутри локатора"""
         
         if not driver.click(locator):
+           """! Если нет клика то """
            if locator['mandatory']:
-               """! locator['mandatory'] если False - локатор не обязательный. Другими словами: если не исполнится - то и хуй с ним """
+               """! locator['mandatory'] если False - локатор не обязательный. 
+               Другими словами: если не исполнится - то и хуй с ним """
                logger.error(f'Не нашел на что кликать {locator.keys} => {locator}')  
            
-        return False
+           return False
            
 
     # 3.

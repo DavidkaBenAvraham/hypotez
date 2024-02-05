@@ -3,14 +3,13 @@
     "",
     "\\src",
     "\\src\\helpers",
-    "\\src\\product",
     "\\src\\scenarios",
     "\\src\\suppliers",
     "\\src\\suppliers\\hb",
     "\\src\\suppliers\\hb\\_tests",
     "\\src\\tools",
-    "\\src\\webdriver"
+    "\\src\\webdriver",
+    "\\src\\webdriver\\_test"
   ],
-  "SelectedNode": "\\src\\suppliers\\hb\\_tests\\ide_test_fields.py",
   "PreviewInSolutionExplorer": false
 }

@@ -179,4 +179,4 @@ webdriver/profiles/FirefoxProfile/
 
 log/
 tmp/
-secrets_file.py
+bin/

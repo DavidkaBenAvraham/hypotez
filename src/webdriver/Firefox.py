@@ -18,7 +18,6 @@
 
         @details класс webdriver.Firefox 
         
-
 @image html class_firefox.png
  
 @section libs imports:
@@ -33,8 +32,6 @@
   - gs 
   - gs 
   - gs 
-
-
 """
 # -*- coding: utf-8 -*-
 #! /usr/share/projects/hypotez/venv/scripts python
@@ -168,15 +165,15 @@ class Firefox(FF):
   
         
         """
-
+                         
 
 
         # selenium < 4.0.0
         #params: dict = {}
         ##TODO: проверить, куда записывается лог!
         #params['service_log_path'] = gs.path_to_dev_null
-        #if not geckodriver_path is None:
-        #    params['executable_path'] = geckodriver_path
+        #if not geckodriver is None:
+        #    params['executable_path'] = geckodriver
         #if not _firefox_profile_path is None:
         #    params['firefox_profile'] = _firefox_profile_path
         #if not _options is None:
@@ -185,16 +182,13 @@ class Firefox(FF):
         # END selenium < 4.0.0)
 
         # selenium  4
-        ff_settings: dict = j_loads (Path (gs.dir_root, 'src', 'webdriver', 'firefox.json' ) )
-        
-        geckodriver_path: str = str (Path ( gs.dir_binaries, 'geckodriver.exe' ) )
+        ff_settings: dict = j_loads (Path (gs.dir_src, 'webdriver', 'firefox.json' ) )
+                                                                     
+        geckodriver: str = str (ff_settings['geckodriver'] ) 
  
-        profile: FirefoxProfile = self.set_profile (ff_settings)
+        profile: FirefoxProfile = self.set_profile (ff_settings.get('profile'))
 
         options: Options = self.set_options (ff_settings.get ('options') )
-        
-        if not profile is None:
-            options.profile = profile
 
         pass
 
@@ -205,8 +199,8 @@ class Firefox(FF):
         #params: dict = {}
         ##TODO: проверить, куда записывается лог!
         #params['service_log_path'] = gs.path_to_dev_null
-        #if not geckodriver_path is None:
-        #    params['executable_path'] = geckodriver_path
+        #if not geckodriver is None:
+        #    params['executable_path'] = geckodriver
         #if not _firefox_profile_path is None:
         #    params['firefox_profile'] = _firefox_profile_path
         #if not _options is None:
@@ -220,8 +214,14 @@ class Firefox(FF):
         if not profile is None:
             options.profile = profile
 
-        # selenium  4
-        service = Service ( geckodriver_path, log_output = gs.dev_null )
+        # selenium 4 ; geckodriver = 0.33
+        service = Service ( str (Path (gs.dir_binaries, geckodriver) ), log_output = str( Path (gs.dir_log, f'{gs.get_now()}_firefox.txt' ) ) )
+        
+        # selenium 4.17; geckodriver = 0.34
+        """! 64 битная версия еще не вышла """
+        #options.binary_location = str (gs.dir_binaries)
+        #options.binary = str (Path (gs.dir_binaries, geckodriver) )
+        #service = Service (executable_path=geckodriver,  log_output = str( Path (gs.dir_log,'firefox.txt' ) ) )
         
         """! @~russian _var service `Service`
         @details 
@@ -231,14 +231,16 @@ class Firefox(FF):
             предоставляемым `Mozilla`. У меня он лежит в директории `bin`
             """
         try:
-            super().__init__(service=service, options=options)
+            #super().__init__(options=options, service=service) # <- geckodriver = 0.33
+            super().__init__(options=options)
+            pass
         except WebDriverException as ex:
             logger.critical(f'''
-        ---------------------------------
-                Не поднялся драйвер
-                так бывает при обновлениях самого Firefox
-                ну, или он не установлен в ос.
-        ----------------------------------
+            ---------------------------------
+                    Не поднялся драйвер
+                    так бывает при обновлениях самого Firefox
+                    ну, или он не установлен в ос.
+            ----------------------------------
                          ''', ex)
             return False
         except Exception as ex:
@@ -260,6 +262,7 @@ class Firefox(FF):
 
         options = Options()
         for opt in opts:
+            
             if 'headless' in opt:
                 options.headless = True
             else:
@@ -267,21 +270,21 @@ class Firefox(FF):
         return options
 
     #@logs_and_errors_decorator (default_return =  False)
-    def set_profile(self, ff_settings: dict) -> FirefoxProfile:
+    def set_profile(self, ff_profile: dict) -> FirefoxProfile:
         """! @brief Sets up a Firefox profile for the webdriver.
         @param ff_settings `dict` словарь установок из файла `firefox.json`
         @returns profile A `selenium.webdriver.FirefoxProfile` object representing the profile.
         """
         
-        _profiles_path = ff_settings ['profiles_path'] [ff_settings ['profile_from'] ]
+        _profiles_path = ff_profile ['profile_path'] [ff_profile ['default_profile_from'] ]
         if '%APPDATA%' in _profiles_path:
             """!  Подключаюсь к профилю пользователя внутри ос
             переменную os `%APPDATA%` раскываю в абсолютный путь """
             _profiles_path: Path = Path (_profiles_path.replace ('%APPDATA%',os.environ.get('APPDATA')))
             """! @todo Здесь надо разобрать ситуацию а какой именно профиль брать в ос """
-            _profiles_path: Path = Path(_profiles_path, ff_settings['default_profile_directory'][0])
+            _profiles_path: Path = Path(_profiles_path, ff_profile['default_profile_directory'][0])
         else:
-            _profiles_path: Path = Path (gs.dir_root, 'src', 'webdriver', 'profiles','firefox_profiles', ff_settings['default_profile_directory'][0])
+            _profiles_path: Path = Path (gs.dir_root, 'src', 'webdriver', 'profiles','firefox_profiles', ff_profile['default_profile_directory'][0])
             """!  подключаю локальный профиль из папки `profiles` """
 
         profile = FirefoxProfile(profile_directory=_profiles_path)

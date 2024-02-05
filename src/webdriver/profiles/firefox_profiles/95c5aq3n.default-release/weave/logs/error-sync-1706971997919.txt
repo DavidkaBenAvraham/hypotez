@@ -1,0 +1,19 @@
+1706971375767	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1706971932407	FirefoxAccounts	DEBUG	FxAccountsProfileClient: Requested profile
+1706971932407	FirefoxAccounts	DEBUG	getOAuthToken enter
+1706971932408	FirefoxAccounts	TRACE	getCachedToken returning cached token
+1706971932408	FirefoxAccounts	DEBUG	getOAuthToken returning a cached token
+1706971932408	Services.Common.RESTRequest	DEBUG	GET request to https://profile.accounts.firefox.com/v1/profile
+1706971932748	Services.Common.RESTRequest	DEBUG	GET https://profile.accounts.firefox.com/v1/profile 304
+1706971975796	Sync.Service	DEBUG	User-Agent: Firefox/122.0 (Windows NT 10.0; Win64; x64) FxSync/1.124.0.20240118164516.desktop
+1706971975796	Sync.Service	INFO	Starting sync at 2024-02-03 16:52:55 in browser session TgeSS93Rwdgx
+1706971975796	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1706971975797	Sync.Status	INFO	Resetting Status.
+1706971975797	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1706971975798	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1706971997916	Sync.Resource	WARN	GET request to https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/153437806/info/collections failed: [Exception... "The lookup of the hostname failed"  nsresult: "0x804b001e (NS_ERROR_UNKNOWN_HOST)"  location: "<unknown>"  data: no] No traceback available
+1706971997916	Sync.Status	DEBUG	Status.sync: success.sync => error.login.reason.network
+1706971997916	Sync.Status	DEBUG	Status.service: success.status_ok => error.sync.failed
+1706971997916	Sync.ErrorHandler	ERROR	Sync encountered an error: [Exception... "The lookup of the hostname failed"  nsresult: "0x804b001e (NS_ERROR_UNKNOWN_HOST)"  location: "<unknown>"  data: no] No traceback available
+1706971997916	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=reschedule)
+1706971997919	Sync.Service	DEBUG	Exception calling anonymous function: [Exception... "The lookup of the hostname failed"  nsresult: "0x804b001e (NS_ERROR_UNKNOWN_HOST)"  location: "<unknown>"  data: no] No traceback available

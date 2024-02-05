@@ -1,15 +1,19 @@
 {
   "options": [],
   "disabled options": [ "headless" ],
-  "profiles_path": {
-    "os": "%APPDATA%\\Mozilla\\Firefox\\Profiles",
-    "internal": "webdriver\\profiles"
-  },
-  "profile_from": "internal",
+  "profile": {
+    "profile_path": {
+      "os": "%APPDATA%\\Mozilla\\Firefox\\Profiles",
+      "internal": "webdriver\\profiles\\firefox_profiles"
+    },
+    "default_profile_from": "internal",
 
-  "default_profile_directory": [
-    "95c5aq3n.default-release"
-  ],
+    "default_profile_directory": [
+      "95c5aq3n.default-release"
+    ]
+  },
+
+  "geckodriver": "geckodriver_v033.exe",
 
   "headers": {
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11",

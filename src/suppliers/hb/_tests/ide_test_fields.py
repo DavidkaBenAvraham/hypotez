@@ -1296,7 +1296,7 @@ def combinations():
         return False
 
 f = grab_product_page(s)
-
+					
 if f.product_exist_in_prestashop:
 	p.update(f.fields_dict)
 else:
