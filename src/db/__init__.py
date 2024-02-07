@@ -54,7 +54,7 @@ def connection(connection_type = 'mysql' , server = "davidka.net", trying = 3):
 
     return mysql.connector.connect(**connection_string)
     try:
-        if connection_type == 'mysql'  :return mysql.connector.connect(**connection_string[server])
+        if connection_type == 'mysql'  @returns mysql.connector.connect(**connection_string[server])
         if connection_type == 'sqlite3': return sqlite3.connect(**Ini.db_file)
     except:
         

@@ -1,8 +1,6 @@
 """! @brief  [File's Description]
 
-@namespace src: src
- \package src.suppliers.amazon
-\file ____grabber.py
+
  
  @section libs imports:
   - typing 
@@ -28,7 +26,7 @@ from typing import Union
 # ----------------------------
 from src.settings import gs
 from src.helpers import  logger,  logs_and_errors_decorator,  jprint, pprint
-from src.tools import StringFormatter as SF, StringNormalizer as SN
+from src.tools import SF, SN
 from src.product import Product, ProductFields
 from src.suppliers import Supplier
 # ----------------------------

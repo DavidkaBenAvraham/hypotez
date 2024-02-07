@@ -32,13 +32,14 @@ from typing import Union
 from pathlib import Path
 from attr import attr, attrs
 from enum import Enum
+from types import MappingProxyType
 
 # --------------------------------------------
 from src.settings import gs
 #from src.suppliers import Supplier
 from src.helpers import  logger, logs_and_errors_decorator, ProductFieldException
 from src.io_interface import j_loads, j_dumps
-from src.tools import StringFormatter as SF, StringNormalizer as SN
+from src.tools import SF, SN
 # --------------------------------------------
 
 
@@ -207,8 +208,39 @@ class ProductFields:
     'width',
     ]
 
-    fields_dict = {key: None for key in fields_list}
+    fields_dict =  {key: None for key in fields_list}
     
+    """!
+    В Питоне нет встроенной возможности "замораживать" словарь после его создания, чтобы предотвратить добавление новых ключей. 
+    Однако, вы можете использовать стороннюю библиотеку `types` и класс `MappingProxyType`, чтобы создать "несменяемый" вид словаря. 
+    Этот вид словаря не позволяет изменять его содержимое, включая добавление новых ключей. Вот пример:
+
+    ```python
+    from types import MappingProxyType
+
+    # Создаем обычный словарь
+    my_dict = {'a': 1, 'b': 2}
+
+    # Создаем неизменяемую копию словаря
+    immutable_dict = MappingProxyType(my_dict)
+
+    # Попытка добавить новый ключ вызовет ошибку
+    try:
+        immutable_dict['c'] = 3
+    except TypeError:
+        print("Вы не можете добавлять новые ключи к неизменяемому словарю.")
+    ```
+
+    Этот код выведет:
+
+    ```
+    Вы не можете добавлять новые ключи к неизменяемому словарю.
+    ```
+
+    Таким образом, вы создаете неизменяемую "копию" словаря, которая не позволяет добавлять новые ключи после ее создания.
+    """
+
+
 
     def __init__(self, *args, **kwargs):
         """! Класс работы с полями товара. Поля берутся состраницы HTML или другого источника
@@ -221,9 +253,9 @@ class ProductFields:
     def _payload(self,  *args, **kwargs):
         """! Загрузка дефолтных значений полей """
         
-        _default = j_loads (Path (gs.dir_src, 'product', 'product_fields_default_values.json'))
+        _default_values = j_loads (Path (gs.dir_src, 'product', 'product_fields_default_values.json'))
         
-        for attr_name, default_value in _default.items():
+        for attr_name, default_value in _default_values.items():
             setattr(self, f'{attr_name}', default_value)
         pass
 
@@ -232,7 +264,7 @@ class ProductFields:
         """! Чтобы получить список полей (атрибутов) класса, 
         я использую встроенную функцию `vars()` внутри метода класса. 
         
-      
+        @todo - это лишний код. Проверить
 
         # Пример использования
         ```python
@@ -265,7 +297,7 @@ class ProductFields:
         """! Чтобы получить список полей (атрибутов) класса, 
         я использую встроенную функцию `vars()` внутри метода класса. 
         
-      
+        @todo - это лишний код. Проверить
 
         # Пример использования
         ```python
@@ -384,6 +416,7 @@ class ProductFields:
         """
 
         if not self.fields_dict['associations']:
+            """! по первому разу собираю словарь 'associations' """
 
             self.fields_dict['associations']:dict =  {
             "categories": {

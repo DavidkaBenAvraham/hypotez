@@ -2,7 +2,7 @@
 """
 import os
 import src.openai
-openai.api_key = "YOUR_API_KEYS_OPENAI"
+openai.API_KEY = "YOUR_API_KEYS_OPENAI"
 
 #It works with GPT-3.5-turbo and GPT-4
 system_prompt = """You are an expert on hate speech.

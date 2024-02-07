@@ -17,7 +17,7 @@ from xml.etree import ElementTree
 
 
 prestashop = PrestaShopWebServiceDict('http://localhost:8080/api',
-                                  'BVWPFFYBT97WKM959D7AVVD0M4815Y1L',)
+                                  'API_KEY',)
 print(prestashop.get(''))
 print(prestashop.head(''))
 print(prestashop.get('addresses', 1))

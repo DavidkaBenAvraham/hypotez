@@ -1,6 +1,3 @@
-"""!  Обработчик ошибок `presta_pythov_v3
-
-"""
 # -*- coding: utf-8 -*-
 
 class PrestaShopError(Exception):
@@ -23,6 +20,6 @@ class PrestaShopError(Exception):
 class PrestaShopAuthenticationError(PrestaShopError):
     """Authentication Exception
 
-    @param
+    Args:
         PrestaShopError (Unauthorized)
     """

@@ -204,7 +204,7 @@ if __name__ == '__main__':
     from . import xml2dict
     from .prestapyt import PrestaShopWebService
     prestashop = PrestaShopWebService('http://localhost:8080/api',
-                                      'BVWPFFYBT97WKM959D7AVVD0M4815Y1L')
+                                      'API_KEY')
 
     products_xml = prestashop.get('products', 1)
 

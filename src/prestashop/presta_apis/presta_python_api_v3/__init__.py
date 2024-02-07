@@ -1,12 +1,5 @@
-""" @~russian prestapython v3
- 
- @section libs imports:
-  - presta_python_api_v3 
+"""!"""
 
-"""
-
-# -*- coding: utf-8 -*-
-#! /usr/share/projects/hypotez/venv/scripts python
-
-
-from .core import Prestashop_V3
+from .core import Prestashop as PrestaAPIV3 ,Format
+from .exceptions import PrestaShopError,PrestaShopAuthenticationError
+from .version import __author__,__version__

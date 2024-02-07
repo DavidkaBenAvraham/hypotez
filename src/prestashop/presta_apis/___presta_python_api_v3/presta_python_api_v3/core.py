@@ -64,7 +64,7 @@ class Prestashop():
 
     api = Prestashop(
         url = "https://myprestashop.com",
-        api_key="ХХХХХХХХХХХХХХХХХХХХХХХ",
+        API_KEY="ХХХХХХХХХХХХХХХХХХХХХХХ",
         default_lang=1,
         debug=True,
         data_format=Format.JSON,
@@ -122,19 +122,19 @@ class Prestashop():
     # or
     api.create_binary('images/products/22','img.jpeg','image')
     """
-    api_key = ''
+    API_KEY = ''
     url = ''
     client = None
     debug = False
     lang = None
     data_format = Format.JSON
 
-    def __init__(self,url:str, api_key:str,data_format=Format.JSON,default_lang:str=None,session:Session=None,debug:bool=False) -> None:
+    def __init__(self,url:str, API_KEY:str,data_format=Format.JSON,default_lang:str=None,session:Session=None,debug:bool=False) -> None:
         """ Prestashop class
 
         @param
             url `str`  :  url of your shop (https://myprestashop.com)
-            api_key `str`  :  api key generate from src.prestashop 
+            API_KEY `str`  :  api key generate from src.prestashop 
             https://devdocs.prestashop-project.org/1.7/webservice/tutorials/creating-access/
             data_format (Format, optional): default data format (Format.JSON or Format.XML). Defaults to Format.JSON.
             default_lang (str, optional): default language id (1). Defaults to None.
@@ -143,7 +143,7 @@ class Prestashop():
         """
         
         self.url = url
-        self.api_key = api_key
+        self.API_KEY = API_KEY
         self.debug = debug
         self.lang = default_lang
         self.data_format = data_format
@@ -162,7 +162,7 @@ class Prestashop():
             self.client = session
 
         if not self.client.auth:
-            self.client.auth = (self.api_key , '')
+            self.client.auth = (self.API_KEY , '')
 
     def ping(self):
         """ Test if webservice work perfectly else raise error
@@ -317,7 +317,7 @@ class Prestashop():
         """Parse the response of the webservice.
 
         @param content: response from the webservice
-        :return: an ElementTree of the content
+        @returns  an ElementTree of the content
         """
         if not content:
             raise PrestaShopError('HTTP response is empty')

@@ -71,6 +71,8 @@ class StringNormalizer:
         if len(rawprice) <1: return False 
         try:
             price = rawprice[0] if isinstance(rawprice, list) else rawprice
+            """! Если получил список - возвращаю Первый элемент. Это неправильно - надо парсить список 
+            @todo если пришел список - это не просто так - надо парсить """
             price = Ptrn.clear_price.sub ('', price) .replace(',', '')
             return float (price)
         except Exception as ex:

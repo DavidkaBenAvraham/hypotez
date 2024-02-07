@@ -58,17 +58,33 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def check_prod_presence_in_prestashop(self, product_reference: str) -> bool:
+    def check_prod_presence_in_prestashop(self, product_reference: str = None, product_id: int = None, options: dict = {'display':'full'}, PrestaAPIV = PrestaAPIV3) -> bool:
         """! Проверка наличия товара в БД 
         -----------------
-        @param reference `str`  `product_reference` - термин из престашоп = `product_id` 
-        
-        @returns   product `dict` - словарь товарам иначе `False`
-        @returns    False `bool` - if Product NOT in the DB, else Product
+        @param product_reference `str`  - термин из престашоп = `reference` 
+        @param product_id `str`   - термин из престашоп = `id`
+        @param option `dict` 
+
+        @returns `bool`   False  - if Product NOT in the DB, else True
         """
-        product_filter = {'filter[reference]': product_reference}
-        response = PrestaAPIV1.search('products', product_filter)
-    
+        product_filter: dict = {}
+        if  product_reference:
+            product_filter = {'filter[reference]': product_reference}
+        elif  product_id and isinstance(product_id, int):
+            product_filter = {'filter[id]': product_id} 
+        else:
+            logger.warning(f'Ситуация, когда не определен ни `product_reference` ни `product_id, в апи запросе Возвращется список всех `id` товара')
+            """! Возвращется список всех `id` товара """
+            pass
+        if PrestaAPIV == PrestaAPIV1:
+            response = PrestaAPIV1.search('products', product_filter, options)
+            """! Приходит ID """
+        elif  PrestaAPIV == PrestaAPIV2:   
+            pass
+        else:
+            PrestaAPIV3.
+            pass
+        
         if isinstance(response, list) and len(response) > 0:
             #return response[0]
             return True
@@ -92,7 +108,7 @@ class PrestaProduct():
 
         #return PrestaAPIV1.search('products', product_filter)
 
-        return  PrestaAPIV3.search('products', product_filter)
+        response = PrestaAPIV3.search('products', product_filter)
 
         if isinstance(response, list) and len(response) > 0:
             return response[0]
@@ -110,7 +126,7 @@ class PrestaProduct():
         #dic_product_type_PrestaAPIV1 = PrestaAPIV1.get(f'products/{id_product}')
         #dic_product_type_PrestaAPIV2 = PrestaAPIV2.get(f'products/{id_product}')
 
-        return  PrestaAPIV3.read('products', id_product, display = 'full')
+        response = PrestaAPIV3.read('products', id_product, display = 'full')
 
         if isinstance(response, list) and len(response) > 0:
             return response[0]
@@ -227,9 +243,9 @@ class PrestaProduct():
         params = { 'display': 'full'},  ## <- или 'basic' в зависимости от того, какую информацию я хочу получить
         
         params = 'products'
-        response = PrestaAPIV1.get(params)
+        response = PrestaAPIV1.get('products',1658)
         if response.status != 200:
-            logger.error(f'''Ошибка при выполнении запроса: {response}''')
+            logger.error(f'Ошибка при выполнении запроса: {response}')
             return False
 
         return response.json

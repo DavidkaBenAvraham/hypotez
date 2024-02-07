@@ -1,6 +1,6 @@
 import sys
 import os
-path = os.getcwd()[:os.getcwd().rfind(r'\hypotez')]
+path = os.getcwd()[:os.getcwd().rfind(r'hypotez')]
 sys.path.append(path)  # Добавляю корневую папку в sys.path
 # ----------------
 from pathlib import Path

@@ -38,8 +38,8 @@ from .images_exec import upload_image
 class PrestaCategory(): 
     """! @~russian Класс категорий товара Prestashop """
 
-    api_domain = gs.default_prestashop_api_credentials['api_domain']
-    api_key = gs.default_prestashop_api_credentials['api_key']
+    API_DOMAIN = gs.default_prestashop_api_credentials['API_DOMAIN']
+    API_KEY = gs.default_prestashop_api_credentials['API_KEY']
                                                                                                                                                       
     def __init__(self,*args,**kwards) -> None:
         """! @~russian Класс категорий товара Prestashop """
@@ -47,7 +47,7 @@ class PrestaCategory():
    
 
     def get_category_id_by_name(self, category_name):
-        response = requests.get(self.api_domain + 'categories', params={'filter[name]': category_name, 'display': 'full'}, headers={'Authorization': 'Bearer ' + self.api_key})
+        response = requests.get(self.API_DOMAIN + 'categories', params={'filter[name]': category_name, 'display': 'full'}, headers={'Authorization': 'Bearer ' + self.API_KEY})
         category_data = response.json()['categories'][0]
         return category_data['id'] if category_data else None
 
@@ -65,29 +65,29 @@ class PrestaCategory():
                 print(f"Parent category '{parent_category_name}' not found.")
                 return
 
-        response = requests.post(self.api_domain + 'categories', json={'category': data}, headers={'Authorization': 'Bearer ' + self.api_key})
+        response = requests.post(self.API_DOMAIN + 'categories', json={'category': data}, headers={'Authorization': 'Bearer ' + self.API_KEY})
         print(response.json())
 
     def delete_category(category_id):
-        response = requests.delete(self.api_domain + f'categories/{category_id}', headers={'Authorization': 'Bearer ' + self.api_key})
+        response = requests.delete(self.API_DOMAIN + f'categories/{category_id}', headers={'Authorization': 'Bearer ' + self.API_KEY})
         print(response.json())
 
     def update_category(category_id, new_name):
         data = {'name': new_name}
-        response = requests.put(self.api_domain + f'categories/{category_id}', json={'category': data}, headers={'Authorization': 'Bearer ' + self.api_key})
+        response = requests.put(self.API_DOMAIN + f'categories/{category_id}', json={'category': data}, headers={'Authorization': 'Bearer ' + self.API_KEY})
         print(response.json())
 
     def get_list_parent_categories(category_id, category_name=None):
         if category_name:
             category_id = get_category_id_by_name(category_name)
 
-        response = requests.get(self.api_domain + f'categories/{category_id}', params={'display': 'full'}, headers={'Authorization': 'Bearer ' + self.api_key})
+        response = requests.get(self.API_DOMAIN + f'categories/{category_id}', params={'display': 'full'}, headers={'Authorization': 'Bearer ' + self.API_KEY})
         category_data = response.json()['category']
     
         parents = []
         while category_data['id_parent'] != '0':
             parent_id = category_data['id_parent']
-            response = requests.get(self.api_domain + f'categories/{parent_id}', params={'display': 'full'}, headers={'Authorization': 'Bearer ' + self.api_key})
+            response = requests.get(self.API_DOMAIN + f'categories/{parent_id}', params={'display': 'full'}, headers={'Authorization': 'Bearer ' + self.API_KEY})
             category_data = response.json()['category']
             parents.append(category_data['name'])
 

@@ -30,7 +30,7 @@ from enum import Enum
 # --------------------------------------------
 from src.helpers import  logger,  logs_and_errors_decorator
 from src.io_interface import j_loads as j_loads
-from src.tools import StringFormatter as SF, StringNormalizer as SN
+from src.tools import SF, SN
 from src.product import Product_fields
 product_fields.ProductFields()
 from src.settings import GlobalSettings

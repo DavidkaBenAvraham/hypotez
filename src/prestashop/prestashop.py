@@ -35,8 +35,8 @@ import requests
 import xmltodict
     
 
-api_domain = gs.default_prestashop_api_credentials['api_domain']
-api_key = gs.default_prestashop_api_credentials['api_key']
+API_DOMAIN = gs.default_prestashop_api_credentials['API_DOMAIN']
+API_KEY = gs.default_prestashop_api_credentials['API_KEY']
 
 
 
@@ -50,7 +50,7 @@ api_key = gs.default_prestashop_api_credentials['api_key']
 
 from .presta_apis.presta_python_api_v1 import PrestaShopWebServiceDict_V1
 
-PrestaAPIV1: PrestaShopWebServiceDict_V1 = PrestaShopWebServiceDict_V1 (api_domain, api_key )
+PrestaAPIV1: PrestaShopWebServiceDict_V1 = PrestaShopWebServiceDict_V1 (API_DOMAIN, API_KEY )
 #
 #
 ##############################################################################
@@ -72,7 +72,7 @@ PrestaAPIV1: PrestaShopWebServiceDict_V1 = PrestaShopWebServiceDict_V1 (api_doma
 from .presta_apis.presta_python_api_v2 import PrestashopApi_V2
 
 
-PrestaAPIV2: PrestashopApi_V2 = PrestashopApi_V2 (api_domain, api_key)
+PrestaAPIV2: PrestashopApi_V2 = PrestashopApi_V2 (API_DOMAIN, API_KEY)
 #
 #
 ################################################################################
@@ -88,8 +88,8 @@ PrestaAPIV2: PrestashopApi_V2 = PrestashopApi_V2 (api_domain, api_key)
 from .presta_apis.presta_python_api_v3.presta_python_api_v3 import PrestaAPIV3, PrestaAPIV3Format
 
 PrestaAPIV3: PrestaAPIV3 = PrestaAPIV3(
-    api_domain,
-    api_key,
+    API_DOMAIN,
+    API_KEY,
     default_lang = 1,
     debug = True,
     data_format = PrestaAPIV3Format.JSON
@@ -143,7 +143,7 @@ PrestaAPIV3: PrestaAPIV3 = PrestaAPIV3(
 
 
     #def ping():
-    #    return PrestaAPIV1V3.ping()
+    #    return PrestaAPIV3.ping()
 
     #def buid_schemas(self):
     #    """

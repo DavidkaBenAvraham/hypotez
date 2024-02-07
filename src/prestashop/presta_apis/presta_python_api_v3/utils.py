@@ -1,20 +1,3 @@
-"""  [File's Description]
-
- @namespace src
- \package src.prestashop.presta_apis.presta_python_api_v3
-\file utils.py
- 
- @section libs imports:
-  - xml.dom.minidom 
-  - builtins 
-  - past.types 
-  - base64 
-  - tempfile 
-  - mimetypes 
-  - os 
-Author(s):
-  - Created by Davidka on 10.11.2023 .
-"""
 from xml.dom.minidom import getDOMImplementation
 from builtins import str
 from past.types import basestring
@@ -28,10 +11,10 @@ def _process(doc, tag, tag_value):
     """
     Generate dom object for tag: tag_value
 
-     doc: xml doc
-     tag: tag
-     tag_value: tag value
-    : node or nodelist, be careful
+    @param doc: xml doc
+    @param tag: tag
+    @param tag_value: tag value
+    @return: node or nodelist, be careful
     """
     if isinstance(tag_value, dict) and 'value' in list(tag_value.keys()) == ['value']:
         tag_value = tag_value['value']
@@ -69,9 +52,9 @@ def _process(doc, tag, tag_value):
 def _process_complex(doc, children):
     """
     Generate multi nodes for list, dict
-     doc: xml doc
-     children: tuple of (tag, value)
-    : nodelist
+    @param doc: xml doc
+    @param children: tuple of (tag, value)
+    @return: nodelist
     """
     nodelist = []
     attrs = []
@@ -91,9 +74,9 @@ def _process_attr(doc, attr_value):
     """
     Generate attributes of an element
 
-     doc: xml doc
-     attr_value: attribute value
-    : list of attributes
+    @param doc: xml doc
+    @param attr_value: attribute value
+    @return: list of attributes
     """
     attrs = []
     for attr_name, attr_value in list(attr_value.items()):
@@ -110,10 +93,10 @@ def _process_attr(doc, attr_value):
 def _process_simple(doc, tag, tag_value):
     """
     Generate node for simple types (int, str)
-     doc: xml doc
-     tag: tag
-     tag_value: tag value
-    : node
+    @param doc: xml doc
+    @param tag: tag
+    @param tag_value: tag value
+    @return: node
     """
     node = doc.createElement(tag)
     node.appendChild(doc.createTextNode(str(tag_value)))
@@ -122,9 +105,9 @@ def _process_simple(doc, tag, tag_value):
 def dict2xml(data, encoding='UTF-8'):
     """
     Generate a xml string from a dict
-     data:     data as a dict
-     encoding: data encoding, default: UTF-8
-    : the data as a xml string
+    @param data:     data as a dict
+    @param encoding: data encoding, default: UTF-8
+    @return: the data as a xml string
     """
     doc = getDOMImplementation().createDocument(None, None, None)
     if len(data) > 1:

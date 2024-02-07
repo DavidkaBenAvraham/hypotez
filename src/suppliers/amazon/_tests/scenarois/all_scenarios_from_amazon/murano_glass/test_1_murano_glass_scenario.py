@@ -1,7 +1,12 @@
 from pathlib import Path
 from typing import Union
+
 import header
-from header import logger,  logs_and_errors_decorator,  jprint, pprint, SN, SF, translate, Product, ProductFields, PrestaProduct, PrestaAPIV1, upload_image, Supplier, start_supplier
+from header import logger,  logs_and_errors_decorator,  jprint, pprint
+from header import SN, SF
+from header import Product, ProductFields, Supplier, Driver
+from header import PrestaAPIV1,PrestaAPIV2, PrestaAPIV2, upload_image
+from header import start_supplier
 supplier_prefix = 'amazon'
 s = start_supplier(supplier_prefix)
 """ s - на протяжении всего кода означает класс `Supplier` """
@@ -9,16 +14,23 @@ s = start_supplier(supplier_prefix)
 print(" Можно продолжать ")
 
 
-from dict_scenarios import scenario
-s.current_scenario = scenario['Murano Glass']
+s.current_scenario: dict = {
+      "url": "https://amzn.to/3OhRz2g",
+      "condition": "new",
+      "presta_categories": {
+        "default_category": { "11209": "MURANO GLASS" },
+        "addtinal categories": [ "" ]
+      },
+      "price_rule": 1
+    }
 l = s.locators.get('product')
 d = s.driver
 _ = d.execute_locator
 
-test_url_4 = r"https://www.amazon.com/C%C3%A1-dOro-Hippie-Colored-Murano-Style/dp/B09N53XSQB/ref=sr_1_1_sspa?crid=24Q0ZZYVNOQMP&keywords=Art+Deco+murano+glass&qid=1687277030&sprefix=art+deco+murano+glass%2Caps%2C230&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
-test_url_5 = r"https://www.amazon.com/Luxury-Lane-Sommerso-Centerpiece-Decoration/dp/B0BSZBF8NJ/ref=sr_1_3_sspa?c=ts&keywords=Vases&qid=1688326048&s=furniture&sr=1-3-spons&ts_id=3745451&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"
+# test_url_4 = r"https://www.amazon.com/C%C3%A1-dOro-Hippie-Colored-Murano-Style/dp/B09N53XSQB/ref=sr_1_1_sspa?crid=24Q0ZZYVNOQMP&keywords=Art+Deco+murano+glass&qid=1687277030&sprefix=art+deco+murano+glass%2Caps%2C230&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
+# test_url_5 = r"https://www.amazon.com/Luxury-Lane-Sommerso-Centerpiece-Decoration/dp/B0BSZBF8NJ/ref=sr_1_3_sspa?c=ts&keywords=Vases&qid=1688326048&s=furniture&sr=1-3-spons&ts_id=3745451&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"
 
-d.get_url(test_url_4)
+d.get_url(s.current_scenario['url'])
 
 
 

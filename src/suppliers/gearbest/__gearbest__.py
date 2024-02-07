@@ -83,7 +83,7 @@ def run_stores(s):
                 run_local_scenario(s,stores[-1])
                 '''запускаю последний добавленный в список '''
 
-        except Exception as ex:return False, print(ex)
+        except Exception as ex@returns False, print(ex)
     pass 
     ''' ------------------ КОНЕЦ  -------------------------- '''
 

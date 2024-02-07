@@ -1,35 +1,32 @@
-"""! @brief  [File's Description]
+"""! @brief Модуль сбора товаров со страницы категорий поставщика amazon.com через вебдрайвер
 
-@namespace src: src
- \package src.suppliers.amazon
-\file via_webdriver.py
  
  @section libs imports:
   - typing 
   - pathlib 
   - gs 
 Author(s):
-  - Created by Davidka on 09.11.2023 .
+  - Created by hypotez on 09.11.2023 .
 """
 from typing import Union
 from pathlib import Path
 
-from src.settings import gs, logger
+from src.settings import gs
+from src.helpers import logger
 
 
 def get_list_products_in_category(s) -> Union[list[str],str,None]:    
-    """ Returns list of products urls from category page
+    """! Returns list of products urls from category page
     Если надо пролистстать - страницы категорий - листаю ??????
 
     Attrs:
-        s - Supplier
-    @returns
-        list or one of products urls or None
+    @param s: Supplier - Supplier intstance
+    @returns list or one of products urls or None
     """
     d = s.driver
     l: dict = s.locators['category']
     if not l:
-        """ Много проверок, потому, что код можно запускать от лица разных ихполнителей: Supplier, Product, Scenario """
+        """! Много проверок, потому, что код можно запускать от лица разных ихполнителей: Supplier, Product, Scenario """
         logger.error(f"А где локаторы? {l}")
         return False
     d.scroll()
@@ -37,7 +34,7 @@ def get_list_products_in_category(s) -> Union[list[str],str,None]:
     #TODO: Нет листалки
 
     list_products_in_category = d.execute_locator(l['product_links'])
-    """ Собираю ссылки на товары.  """
+    """! Собираю ссылки на товары.  """
     if not list_products_in_category:
         logger.warning('Нет ссылок на товары')
         return False

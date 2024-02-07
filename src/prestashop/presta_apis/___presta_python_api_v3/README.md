@@ -47,7 +47,7 @@ from presta_python_api_v3 import PrestaAPIV3, PrestaAPIV3Format
 
 PrestaAPIV3: PrestaAPIV3 = PrestaAPIV3(
     url = "https://myprestashop.com",
-    api_key="4MV3E41MFR7E3N9VNJE2W5EHS83E2EMI",
+    API_KEY="4MV3E41MFR7E3N9VNJE2W5EHS83E2EMI",
     default_lang=1,
     debug=True,
     data_format=PrestaAPIV3Format.JSON,
@@ -61,7 +61,7 @@ from presta_python_api_v3 import PrestaAPIV3, PrestaAPIV3Format
 
 PrestaAPIV3: PrestaAPIV3 = PrestaAPIV3(
     url = "https://myprestashop.com",
-    api_key="4MV3E41MFR7E3N9VNJE2W5EHS83E2EMI",
+    API_KEY="4MV3E41MFR7E3N9VNJE2W5EHS83E2EMI",
     default_lang=1,
     debug=True,
     data_format=PrestaAPIV3Format.XML,

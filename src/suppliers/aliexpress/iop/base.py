@@ -158,18 +158,18 @@ class IopClient(object):
 
         sign_parameter[P_SIGN] = sign(self._app_secret,request._api_pame,sign_parameter)
 
-        api_url = self._server_url
+        API_DOMAIN = self._server_url
 
-        full_url = api_url + "?";
+        full_url = API_DOMAIN + "?";
         for key in sign_parameter:
             full_url += key + "=" + str(sign_parameter[key]) + "&";
         full_url = full_url[0:-1]
 
         try:
             if(request._http_method == 'POST' or len(request._file_params) != 0) :
-                r = requests.post(api_url,sign_parameter,files=request._file_params, timeout=self._timeout)
+                r = requests.post(API_DOMAIN,sign_parameter,files=request._file_params, timeout=self._timeout)
             else:
-                r = requests.get(api_url,sign_parameter, timeout=self._timeout)
+                r = requests.get(API_DOMAIN,sign_parameter, timeout=self._timeout)
         except Exception as err:
             logApiError(self._app_key, P_SDK_VERSION, full_url, "HTTP_ERROR", str(err))
             raise err

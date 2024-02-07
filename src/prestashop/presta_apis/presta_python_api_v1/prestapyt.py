@@ -95,8 +95,8 @@ class PrestaShopWebService_V1(object):
     # 4th version number is to avoid constant version changes
     MAX_COMPATIBLE_VERSION = '1.7.8.999'
 
-    def __init__(self, api_url, api_key, debug=False, session=None,
-                 verbose=False):
+    def __init__(self, API_DOMAIN, API_KEY, debug=True, session=None,
+                 verbose=True):
         """
         Create an instance of PrestashopWebService.
 
@@ -120,24 +120,24 @@ class PrestaShopWebService_V1(object):
         The verbose logging will show the requests, including headers and data,
         and the responses with headers but no data.
 
-        @param api_url: Root URL for the shop
-        @param api_key: Authentification key
+        @param API_DOMAIN: Root URL for the shop
+        @param API_KEY: Authentification key
         @param debug: activate PrestaShop's webservice debug mode
         @param session: pass a custom requests Session
         @param verbose: activate logging of the requests/responses (but no
         responses body)
         """
         # required to hit prestashop
-        self._api_url = api_url
-        self._api_key = api_key
+        self.API_DOMAIN = API_DOMAIN
+        self.API_KEY = API_KEY
 
         # add a trailing slash to the url if there is not one
-        if not self._api_url.endswith('/'):
-            self._api_url += '/'
+        if not self.API_DOMAIN.endswith('/'):
+            self.API_DOMAIN += '/'
 
         # add a trail /api/ if there is not
-        if not self._api_url.endswith('/api/'):
-            self._api_url += 'api/'
+        if not self.API_DOMAIN.endswith('/api/'):
+            self.API_DOMAIN += 'api/'
 
         # optional arguments
         self.debug = debug
@@ -149,13 +149,13 @@ class PrestaShopWebService_V1(object):
             self.client = session
 
         if not self.client.auth:
-            self.client.auth = (api_key, '')
+            self.client.auth = (API_KEY, '')
 
     def _parse_error(self, xml_content):
         """Take the XML content as string and extract the PrestaShop error.
 
         @param xml_content: xml content returned by the PS server as string
-        :return (prestashop_error_code, prestashop_error_message)
+        @returns (prestashop_error_code, prestashop_error_message)
         """
         error_answer = self._parse(xml_content)
         if isinstance(error_answer, dict):
@@ -181,7 +181,7 @@ class PrestaShopWebService_V1(object):
         Throw an exception if the server didn't return 200 or 201 code.
 
         @param status_code: status code returned by the server
-        :return: True or raise an exception PrestaShopWebServiceError
+        @returns  True or raise an exception PrestaShopWebServiceError
         """
         message_by_code = {204: 'No content',
                            400: 'Bad Request',
@@ -219,7 +219,7 @@ class PrestaShopWebService_V1(object):
         """Check if lib version is compatible with called webservice.
 
         @param version: version returned by the PrestaShop webservice
-        :return: True if the library is compatible.
+        @returns  True if the library is compatible.
             Otherwise raise an error PrestaShopWebServiceError
         """
         if version:
@@ -233,14 +233,16 @@ class PrestaShopWebService_V1(object):
         return True
 
     def _execute(self, url, method, data=None, add_headers=None):
-        """Execute a request on the PrestaShop Webservice.
+        """! Execute a request on the PrestaShop Webservice.
 
         @param url: full url to call
         @param method: GET, POST, PUT, DELETE, HEAD
         @param data: for PUT (edit) and POST (add) only,
                      the xml sent to PrestaShop
         @param add_headers: additional headers merged onto instance's headers.
-        :return: tuple with (status code, header, content) of the response.
+        @returns  tuple with (status code, header, content) of the response.
+        
+        @examle request_headers {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
         """
         if add_headers is None:
             add_headers = {}
@@ -271,7 +273,7 @@ class PrestaShopWebService_V1(object):
         """Parse the response of the webservice.
 
         @param content: response from the webservice
-        :return: an ElementTree of the content
+        @returns  an ElementTree of the content
         """
         if not content:
             raise PrestaShopWebServiceError_V1('HTTP response is empty')
@@ -294,7 +296,7 @@ class PrestaShopWebService_V1(object):
         r"""Check options against supported options.
 
         @param options: dict of options to use for the request
-        :return: True if valid, else raise an error PrestaShopWebServiceError
+        @returns  True if valid, else raise an error PrestaShopWebServiceError
 
         Official ref:
         http://doc.prestashop.com/display/PS14/ \
@@ -333,7 +335,7 @@ class PrestaShopWebService_V1(object):
             'display=[firstname,lastname]&filter[id]=[1|5]'
 
         @param options: dict of options for the request
-        :return: string to use in the url
+        @returns  string to use in the url
         """
         if self.debug:
             options.update({'debug': True})
@@ -349,9 +351,9 @@ class PrestaShopWebService_V1(object):
             <prestashop>[[dict converted to xml]]</prestashop>
         @param files: a sequence of (type, filename, value) elements
             for data to be uploaded as files.
-        :return: an ElementTree of the response from the web service
+        @returns  an ElementTree of the response from the web service
         """
-        full_url = self._api_url + resource
+        full_url = self.API_DOMAIN + resource
         if options is not None:
             self._validate_query_options(options)
             full_url += "?%s" % (self._options_to_querystring(options),)
@@ -364,7 +366,7 @@ class PrestaShopWebService_V1(object):
         @param xml: Full XML as string of new resource.
         @param files: a sequence of (type, filename, value)
             elements for data to be uploaded as files.
-        :return: an ElementTree of the response from the web service
+        @returns  an ElementTree of the response from the web service
         """
         if files is not None:
             headers, data = self.encode_multipart_formdata(files)
@@ -393,7 +395,7 @@ class PrestaShopWebService_V1(object):
             to search like 'addresses', 'products'
         @param options: optional dict of parameters to filter the search
             (one or more of 'filter', 'display', 'sort', 'limit', 'schema')
-        :return: ElementTree of the xml message
+        @returns  ElementTree of the xml message
         """
         return self.get(resource, options=options)
 
@@ -404,9 +406,9 @@ class PrestaShopWebService_V1(object):
         @param resource_id: optional resource id to retrieve
         @param options: Optional dict of parameters (one or more of
                         'filter', 'display', 'sort', 'limit', 'schema')
-        :return: an ElementTree of the response
+        @returns  an ElementTree of the response
         """
-        full_url = self._api_url + resource
+        full_url = self.API_DOMAIN + resource
         if resource_id is not None:
             full_url += "/%s" % (resource_id,)
         if options is not None:
@@ -418,7 +420,7 @@ class PrestaShopWebService_V1(object):
         """Retrieve (GET) a resource from a full URL.
 
         @param url: URL which explicitly set resource type and ID to retrieve
-        :return: an ElementTree of the resource
+        @returns  an ElementTree of the resource
         """
         return self._parse(self._execute(url, 'GET').content)
 
@@ -429,9 +431,9 @@ class PrestaShopWebService_V1(object):
         @param resource_id: optional resource id to retrieve
         @param options: optional dict of parameters
             (one or more of 'filter', 'display', 'sort', 'limit', 'schema')
-        :return: the header of the response as a dict
+        @returns  the header of the response as a dict
         """
-        full_url = self._api_url + resource
+        full_url = self.API_DOMAIN + resource
         if resource_id is not None:
             full_url += "/%s" % (resource_id,)
         if options is not None:
@@ -443,7 +445,7 @@ class PrestaShopWebService_V1(object):
         """Head method (HEAD) a resource from a full URL.
 
         @param url: URL which explicitly set resource type and ID to retrieve
-        :return: the header of the response as a dict
+        @returns  the header of the response as a dict
         """
         return self._execute(url, 'HEAD').headers
 
@@ -452,9 +454,9 @@ class PrestaShopWebService_V1(object):
 
         @param resource: type of resource to edit
         @param content: modified XML as string of the resource.
-        :return: an ElementTree of the Webservice's response
+        @returns  an ElementTree of the Webservice's response
         """
-        full_url = "%s%s" % (self._api_url, resource)
+        full_url = "%s%s" % (self.API_DOMAIN, resource)
         if options:
             self._validate_query_options(options)
             full_url += "?%s" % (self._options_to_querystring(options),)
@@ -465,7 +467,7 @@ class PrestaShopWebService_V1(object):
 
         @param url: an full url to edit a resource
         @param content: modified XML as string of the resource.
-        :return: an ElementTree of the Webservice's response
+        @returns  an ElementTree of the Webservice's response
         """
         headers = {'Content-Type': 'text/xml'}
         response = self._execute(url, 'PUT', data=content, add_headers=headers)
@@ -476,10 +478,10 @@ class PrestaShopWebService_V1(object):
 
         @param resource: type of resource to retrieve
         @param resource_ids: int or list of ids to delete
-        :return: True if delete is done,
+        @returns  True if delete is done,
             raise an error PrestaShopWebServiceError if missed
         """
-        full_url = self._api_url + resource
+        full_url = self.API_DOMAIN + resource
         if isinstance(resource_ids, (tuple, list)):
             full_url += "/?id=[%s]" % (','.join([str(resource_id)
                                        for resource_id in resource_ids]),)
@@ -491,7 +493,7 @@ class PrestaShopWebService_V1(object):
         """Delete (DELETE) a resource.
 
         @param url: full URL to delete a resource
-        :return: True if delete is done,
+        @returns  True if delete is done,
             raise an error PrestaShopWebServiceError if missed
         """
         self._execute(url, 'DELETE')
@@ -502,7 +504,7 @@ class PrestaShopWebService_V1(object):
 
         @param files: a sequence of (type, filename, value)
             elements for data to be uploaded as files.
-        :return: headers and body.
+        @returns  headers and body.
         """
         BOUNDARY = '----------ThIs_Is_tHe_bouNdaRY_$'
         CRLF = b'\r\n'
@@ -528,7 +530,7 @@ class PrestaShopWebService_V1(object):
         """Retrieve filename mimetype.
 
         @param filename: file name.
-        :return: mimetype.
+        @returns  mimetype.
         """
         return mimetypes.guess_type(filename)[0] or 'application/octet-stream'
 #
@@ -575,7 +577,7 @@ class PrestaShopWebServiceDict_V1(PrestaShopWebService_V1):
             ie: 'addresses', 'products', 'manufacturers', etc.
         @param options: optional dict of parameters to filter the search
             (one or more of 'filter', 'display', 'sort', 'limit', 'schema')
-        :return: list of ids as int
+        @returns  list of ids as int
         """
         def dive(response, level=1):
             # not deterministic but we know that we only have one key
@@ -614,7 +616,7 @@ class PrestaShopWebServiceDict_V1(PrestaShopWebService_V1):
         """! Retrieve (GET) a resource from a full URL.
 
         @param url: URL which explicitly set resource type and ID to retrieve
-        :return: a dict of the response.
+        @returns  a dict of the response.
             Remove root keys ['prestashop'] from the message
         """
         response = super(PrestaShopWebServiceDict_V1, self).get_with_url(url)
@@ -631,7 +633,7 @@ class PrestaShopWebServiceDict_V1(PrestaShopWebService_V1):
 
         @param resource: type of resource to create
         @param fields: dict of fields of the resource to create
-        :return: response of the server
+        @returns  response of the server
         """
         blank_envelope = self.get(resource, options={'schema': 'blank'})
         complete_content = dict(blank_envelope, **fields)
@@ -650,7 +652,7 @@ class PrestaShopWebServiceDict_V1(PrestaShopWebService_V1):
         @param resource_id: id of the resource to edit
         @param fields: dict containing the field name as key
             and the values of the files to modify
-        :return: an ElementTree of the Webservice's response
+        @returns  an ElementTree of the Webservice's response
         """
         complete_content = self.get(resource, resource_id)
         for key in complete_content:
@@ -667,7 +669,7 @@ class PrestaShopWebServiceDict_V1(PrestaShopWebService_V1):
             <prestashop>[[dict converted to xml]]</prestashop>
         @param files: a sequence of (type, filename, value) elements
             for data to be uploaded as files.
-        :return: a dict of the response from the web service
+        @returns  a dict of the response from the web service
         """
         if content is not None and isinstance(content, dict):
             xml_content = dict2xml.dict2xml({'prestashop': content})
@@ -681,7 +683,7 @@ class PrestaShopWebServiceDict_V1(PrestaShopWebService_V1):
 
         @param url: an full url to edit a resource
         @param content: modified dict of the resource.
-        :return: an ElementTree of the Webservice's response
+        @returns  an ElementTree of the Webservice's response
         """
         xml_content = dict2xml.dict2xml({'prestashop': content})
         _super = super(PrestaShopWebServiceDict_V1, self)
@@ -691,14 +693,15 @@ class PrestaShopWebServiceDict_V1(PrestaShopWebService_V1):
         """! Parse the response of the webservice, assumed to be a XML in utf-8.
 
         @param content: response from the webservice
-        :return: a dict of the content
+        @returns  a dict of the content
         """
         parsed_content = super(PrestaShopWebServiceDict_V1, self)._parse(content)
-        return xml2dict.ET2dict(parsed_content)
+        xml2dict_content = xml2dict.ET2dict(parsed_content)
+        return  xml2dict_content
 
 
 if __name__ == '__main__':
-    prestashop = PrestaShopWebServiceDict_V1('http://localhost:8080/api','BVWPFFYBT97WKM959D7AVVD0M4815Y1L')
+    prestashop = PrestaShopWebServiceDict_V1('http://localhost:8080/api','API_KEY')
 
     from pprint import pprint
 

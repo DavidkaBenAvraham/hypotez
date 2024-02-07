@@ -1,1180 +1,1310 @@
 {
   "id": {
     "attribute": null,
-    
+
     "by": "VALUE",
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "id_manufacturer": {
     "attribute": "innerText",
-    
+
     "by": "XPATH",
     "selector": "//span[contains(text(), 'Brand')]/parent::td/following-sibling::td/span[contains(@class, 'po-break-word')]",
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "id_supplier": {
     "attribute": null,
-    
+
     "by": "VALUE",
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "id_category_default": {
     "attribute": null,
-    
+
     "by": "VALUE",
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "new": {
     "attribute": null,
-    
+
     "by": "VALUE",
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "cache_default_attribute": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "id_default_image": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "id_default_combination": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "id_tax": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "position_in_category": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "type": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "id_shop_default": {
     "attribute": "1",
-    
+
     "by": "VALUE",
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "reference": {
     "attribute": "$d.current_url.split(f'''/''')[-2]",
-    
+
     "by": "VALUE",
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "supplier_reference": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "location": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "width": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "height": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "depth": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "weight": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "quantity_discount": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "ean13": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "isbn": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "upc": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "mpn": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "cache_is_pack": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "cache_has_attachments": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "is_virtual": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "state": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "additional_delivery_times": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "delivery_in_stock": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "delivery_out_stock": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "product_type": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "on_sale": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "online_only": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "ecotax": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "minimal_quantity": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "low_stock_threshold": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "low_stock_alert": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "price": {
 
     "new": {
       "attribute": "innerText",
-      
+
       "by": "XPATH",
       "selector": "//div[contains(@data-csa-c-asin, '$_(driver.current_url.split(f'''/''')[-2])_$') and contains(@id, 'corePriceDisplay')]//span[1]",
-      
-      "use_mouse": false, "mandatory": true,
+
+      "use_mouse": false,
+      "mandatory": true,
       "action": null
     },
 
     "ref": {
       "attribute": "innerText",
-      
+
       "by": "XPATH",
       "selector": "//div[contains(@data-csa-c-asin, '$_(driver.current_url.split(f'''/''')[-2])_$') and contains(@id, 'corePrice_desktop')]//span[contains(@class, 'apexPriceToPay')]//span",
-      
-      "use_mouse": false, "mandatory": true,
+
+      "use_mouse": false,
+      "mandatory": true,
       "action": null
     }
   },
   "wholesale_price": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "unity": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "unit_price_ratio": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "additional_shipping_cost": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "customizable": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "text_fields": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "uploadable_files": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "active": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "redirect_type": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "id_type_redirected": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "available_for_order": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "available_date": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "show_condition": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "condition": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "show_price": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "indexed": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "visibility": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "advanced_stock_management": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "date_add": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "date_upd": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "pack_stock_type": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "meta_description": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "meta_keywords": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "meta_title": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "link_rewrite": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "name": {
     "attribute": "innerText",
-    
+
     "by": "XPATH",
     "selector": "//span[@id='productTitle']",
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "description": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
 
   "available_now": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "available_later": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "associations": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "ASIN": {
     "attribute": "$_(driver.current_url[(driver.current_url.index(r'dp/') + 3):(driver.current_url.index(r'dp/') + 3) + 10:])_$",
-    
+
     "by": "VALUE",
     "selector": "",
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Active (0/1)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
 
   "Categories (x,y,z...)": "2,",
   "On sale (0/1)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Discount amount": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Discount percent": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Discount from (yyyy-mm-dd)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Discount to (yyyy-mm-dd)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "reference #": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Supplier reference #": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Supplier": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "UPC": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "MPN": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Ecotax": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Width": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Height": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Depth": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Weight": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Delivery time of in-stock products:": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Delivery time of out-of-stock products with allowed orders:": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "quantity": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Minimal quantity": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Low stock level": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Send me an email when the quantity is under this level": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Visibility": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Additional shipping cost": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Unit for base price": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Base price": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
 
   "Description": {
     "attribute": "innerText",
-    
+
     "by": "XPATH",
     "selector": "//div[@id='productDescription']",
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Tags (x,y,z...)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Meta title": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Meta keywords": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Meta description": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Rewritten URL": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Label when in stock": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Label when backorder allowed": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Available for order (0 = No, 1 = Yes)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Product availability date": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Product creation date": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Show price (0 = No, 1 = Yes)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Screenshot": {
     "attribute": "src",
-    
+
     "by": "XPATH",
     "selector": "//img[@id='landingImage']",
-    "use_mouse": false, "mandatory": true,
+    "use_mouse": false,
+    "mandatory": true,
     "action": "screenshot()",
     "logic for action[AND|OR|XOR|VALUE|null]": null
   },
   "Image URLs (x,y,z...)": {
     "attribute": "src",
-    
+
     "by": "XPATH",
     "selector": "//img[@id='landingImage']",
-    "use_mouse": false, "mandatory": true,
+    "use_mouse": false,
+    "mandatory": true,
     "action": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null
   },
   "Image alt texts (x,y,z...)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Delete existing images (0 = No, 1 = Yes)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Feature (Name:Value:Position:Customized)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Available online only (0 = No, 1 = Yes)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Condition": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Customizable (0 = No, 1 = Yes)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Uploadable files (0 = No, 1 = Yes)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Text fields (0 = No, 1 = Yes)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Action when out of stock": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Virtual product (0 = No, 1 = Yes)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "File URL": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Number of allowed downloads": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Expiration date (yyyy-mm-dd)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Number of days": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "ID / Name of shop": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Advanced Stock Management": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Depends on stock": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Warehouse": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Accessories (x,y,z...)": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
 
@@ -1210,83 +1340,92 @@
   },
   "affiliate_text": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "affiliate_summary": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "affiliate_summary_2": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Open AI Product Description": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Byer protection": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Specification": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Refirbished product description": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Additional shipping details": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "Product features": {
     "attribute": null,
-    
+
     "by": null,
     "selector": null,
-    
-    "use_mouse": false, "mandatory": true,
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null
   },
   "affiliate_img_HTML": {
@@ -1351,23 +1490,25 @@
   },
   "Additional product info": {
     "attribute": "innerText",
-    
+
     "by": "XPATH",
     "selector": "",
-    "use_mouse": false, "mandatory": true,
+    "use_mouse": false,
+    "mandatory": true,
     "action": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null
   },
   "description_short": {
     "attribute": "innerText",
-    
+
     "by": "XPATH",
     "selector": "//div[@id='feature-bullets']/ul/li",
     "multi selectors": {
       "1": "//div[@id='feature-bullets']/ul/li"
     },
     "old_selector": "//div[@id='productDescription'] | ",
-    "use_mouse": false, "mandatory": true,
+    "use_mouse": false,
+    "mandatory": true,
     "action": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null
   }

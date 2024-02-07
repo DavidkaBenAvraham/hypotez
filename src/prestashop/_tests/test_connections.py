@@ -6,4 +6,7 @@ import header
 # ----------------
 from src.product import Product
 
-presta_product = Product.check_if_product_in_db(108)
+p = Product()
+presta_product = Product().check_prod_presence_in_prestashop(product_id = 1658)
+
+pass

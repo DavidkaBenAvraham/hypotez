@@ -24,7 +24,7 @@ from src.product import Product, ProductFields
 from src.io_interface import j_loads, j_dumps
 from src.helpers import logger, ExecuteLocatorException
 from src.webdriver import Driver
-from src.tools import StringFormatter as SF, StringNormalizer as SN
+from src.tools import SF, SN
 
 
 s: Supplier = Supplier(supplier_prefix = 'hb')
@@ -227,11 +227,6 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	pass
 	return f
     
-
-
-
-pass
-
 
 d.get_url (s.current_scenario['url'])
 """! перехожу по URL сценария (обычно, категория)"""
@@ -900,7 +895,6 @@ def field_position_in_category():
 	return f.position_in_category
 	pass
 	
-                                
 
 #@logs_and_errors_decorator(default_return=False)
 def field_price():
@@ -908,7 +902,7 @@ def field_price():
 	@brief
 	@details
 	"""
-	return d.execute_locator ( l['price'] )
+	return SN.normalize_price (d.execute_locator (l['price'])[0] ) 
 	
 	
 

@@ -15,7 +15,7 @@ from xml.etree import ElementTree
 
 
 prestashop = PrestaShopWebService('http://localhost:8080/api',
-                                  'BVWPFFYBT97WKM959D7AVVD0M4815Y1L')
+                                  'API_KEY')
 prestashop.debug = True
 
 prestashop.get('')

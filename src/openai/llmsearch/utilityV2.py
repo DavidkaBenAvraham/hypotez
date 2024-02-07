@@ -16,7 +16,7 @@ from tenacity import (
     wait_random_exponential,
 )
 
-openai.api_key = os.getenv("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")
+openai.API_KEY = os.getenv("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")
 
 GOOGLE = 'google'
 USER = 'user'

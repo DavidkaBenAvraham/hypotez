@@ -38,7 +38,7 @@ from src.settings import gs
 #from src.suppliers import Supplier
 from src.helpers import  logger, logs_and_errors_decorator, ProductFieldException
 from src.io_interface import j_loads, j_dumps
-from src.tools import StringFormatter as SF, StringNormalizer as SN
+from src.tools import SF, SN
 # --------------------------------------------
 
 

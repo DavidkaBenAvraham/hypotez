@@ -4,12 +4,11 @@ from header import gs
 
 
 
-from src.prestashop_api import PrestaAPIV1 as PrestaAPIV1V2
+from src.prestashop_api import PrestaAPIV1 as PrestaAPIV2
 # https://github.com/DavidkaBenAvraham/prestashop_api
-
-api: PrestaAPIV1V2 = \
-    PrestaAPIV1V2(gs.prestashop_api['api_domain'],
-    gs.prestashop_api['api_key']
+api: PrestaAPIV2 = \
+    PrestaAPIV2(gs.prestashop_api['API_DOMAIN'],
+    gs.prestashop_api['API_KEY']
     )
 
 

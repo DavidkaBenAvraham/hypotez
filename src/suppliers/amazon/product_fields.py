@@ -31,7 +31,7 @@ import time
 # ----------------------------
 from src.settings import gs
 from src.helpers import  logger,  logs_and_errors_decorator,  jprint, pprint
-from src.tools import StringFormatter as SF, StringNormalizer as SN
+from src.tools import SF, SN
 from src.product import Product, ProductFields
 from src.suppliers import Supplier
 # ----------------------------
@@ -176,7 +176,7 @@ def set_product_fields(s:Supplier,f:ProductFields) -> ProductFields:
 
     f.id_supplier = s.supplier_id
         
-    affiliate = _(l['affiliate_short_link'])
+    affiliate = _(l['affiliate_short_link'])[1][0]
     affiliate = affiliate[1][0]
     f.affiliate_short_link = affiliate
 

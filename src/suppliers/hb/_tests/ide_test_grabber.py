@@ -28,7 +28,7 @@ from src.product import Product, ProductFields
 from src.io_interface import j_loads, j_dumps
 from src.helpers import logger, ExecuteLocatorException
 from src.webdriver import Driver
-from src.tools import StringFormatter as SF, StringNormalizer as SN
+from src.tools import SF, SN
 
 
 s: Supplier = Supplier(supplier_prefix = 'hb')

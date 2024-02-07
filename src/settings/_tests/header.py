@@ -15,5 +15,5 @@ import os
 import datetime
 from pathlib import Path
 
-dir_root : Path = os.getcwd() [:os.getcwd().rfind(r'\hypotez')+7]
+dir_root : Path = os.getcwd() [:os.getcwd().rfind(r'hypotez')+7]
 sys.path.append (dir_root)

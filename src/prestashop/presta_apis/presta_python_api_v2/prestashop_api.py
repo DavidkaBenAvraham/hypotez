@@ -21,9 +21,9 @@ class PrestashopError_V2(RuntimeError):
 class PrestashopApi_V2:
     STATUSES = (200, 201)
 
-    def __init__(self, api_domain, api_key):
-        self.api = api_key
-        self.key = api_domain
+    def __init__(self, API_DOMAIN, API_KEY):
+        self.api = API_KEY
+        self.key = API_DOMAIN
 
     def _get_url(self, path):
         return self.api + '/' + path

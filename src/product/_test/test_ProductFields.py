@@ -10,7 +10,7 @@ sys.path.append (str (dir_root) )  # Добавляю рабочую папку 
 
 from src.suppliers import Supplier
 from src.product import Product, ProductFields
-from src.tools import StringFormatter as SF, StringNormalizer as SN, StringValidator as SV
+from src.tools import SF, SN, StringValidator as SV
 from src.helpers import logger,  logs_and_errors_decorator
 
 def start_supplier(supplier_prefix: str = 'aliexpress', scenario_language: str = 'en' ):

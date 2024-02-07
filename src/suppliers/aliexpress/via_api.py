@@ -31,7 +31,7 @@ import json
 _credentials = gs.default_aliexpress_api_credentials
 
 from aliexpress_api import AliexpressApi, models
-aliapi = AliexpressApi(_credentials['api_key'], _credentials['secret'], models.Language.EN, models.Currency.EUR, _credentials['tracking_id'])
+aliapi = AliexpressApi(_credentials['API_KEY'], _credentials['secret'], models.Language.EN, models.Currency.EUR, _credentials['tracking_id'])
 """! @todo переделать валюту. Там надо в код лезть 
 исходник тут https://github.com/sergioteula/python-aliexpress-api
 """

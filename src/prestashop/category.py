@@ -39,28 +39,28 @@ from .images_exec import upload_image
 
 
 # Загрузка учетных данных для PrestaShop API из настроек
-api_domain = gs.default_prestashop_api_credentials['api_domain']
-api_key = gs.default_prestashop_api_credentials['api_key']
+API_DOMAIN = gs.default_prestashop_api_credentials['API_DOMAIN']
+API_KEY = gs.default_prestashop_api_credentials['API_KEY']
 
 class PrestaCategory:
     """!    
         Пример использования класса:
         ```python    
-        prestacategory = PrestaCategory(api_domain=api_domain, api_key=api_key)
+        prestacategory = PrestaCategory(API_DOMAIN=API_DOMAIN, API_KEY=API_KEY)
         prestacategory.add_category_prestashop('New Category', 'Parent Category')
         prestacategory.delete_category_prestashop(3)
         prestacategory.update_category_prestashop(4, 'Updated Category Name')
         print(prestacategory.get_list_parent_categories_prestashop(5))
         ```    
         """
-    api_domain = api_domain
-    api_key = api_key
+    API_DOMAIN = API_DOMAIN
+    API_KEY = API_KEY
     
     def __init__(self, *args, **kwards):
         """! Инициализация объекта PrestaCategory с учетными данными для PrestaShop API.
 
-        @param api_domain: URL PrestaShop API
-        @param api_key: Ключ API PrestaShop
+        @param API_DOMAIN: URL PrestaShop API
+        @param API_KEY: Ключ API PrestaShop
         """
 
 
@@ -69,12 +69,12 @@ class PrestaCategory:
         Вспомогательный метод для получения ID категории по ее имени.
 
         @param category_name: Имя категории
-        :return: ID категории или None, если категория не найдена
+        @returns  ID категории или None, если категория не найдена
         """
         response = requests.get(
-            self.api_domain + 'categories',
+            self.API_DOMAIN + 'categories',
             params={'filter[name]': category_name, 'display': 'full'},
-            headers={'Authorization': 'Bearer ' + self.api_key}
+            headers={'Authorization': 'Bearer ' + self.API_KEY}
         )
         category_data = response.json()['categories'][0]
         return category_data['id'] if category_data else None
@@ -98,9 +98,9 @@ class PrestaCategory:
                 return
 
         response = requests.post(
-            self.api_domain + 'categories',
+            self.API_DOMAIN + 'categories',
             json={'category': data},
-            headers={'Authorization': 'Bearer ' + self.api_key}
+            headers={'Authorization': 'Bearer ' + self.API_KEY}
         )
         print(response.json())
 
@@ -111,8 +111,8 @@ class PrestaCategory:
         @param category_id: ID категории для удаления
         """
         response = requests.delete(
-            self.api_domain + f'categories/{category_id}',
-            headers={'Authorization': 'Bearer ' + self.api_key}
+            self.API_DOMAIN + f'categories/{category_id}',
+            headers={'Authorization': 'Bearer ' + self.API_KEY}
         )
         print(response.json())
 
@@ -125,9 +125,9 @@ class PrestaCategory:
         """
         data = {'name': new_name}
         response = requests.put(
-            self.api_domain + f'categories/{category_id}',
+            self.API_DOMAIN + f'categories/{category_id}',
             json={'category': data},
-            headers={'Authorization': 'Bearer ' + self.api_key}
+            headers={'Authorization': 'Bearer ' + self.API_KEY}
         )
         print(response.json())
 
@@ -137,15 +137,15 @@ class PrestaCategory:
 
     #     @param category_id: ID категории, от которой нужно получить родительские категории
     #     @param category_name: Имя категории, от которой нужно получить родительские категории (по умолчанию None)
-    #     :return: Список родительских категорий
+    #     @returns  Список родительских категорий
     #     """
     #     if category_name:
     #         category_id = self._get_category_id_by_name(category_name)
 
     #     response = requests.get(
-    #         self.api_domain + f'/categories/{category_id}',
+    #         self.API_DOMAIN + f'/categories/{category_id}',
     #         params={'display': 'full'},
-    #         headers={'Authorization': 'Bearer ' + self.api_key}
+    #         headers={'Authorization': 'Bearer ' + self.API_KEY}
     #     )
     #     response_json = response.json()
     #     category_data = response.json()['category']
@@ -154,9 +154,9 @@ class PrestaCategory:
     #     while category_data['id_parent'] != '0':
     #         parent_id = category_data['id_parent']
     #         response = requests.get(
-    #             self.api_domain + f'categories/{parent_id}',
+    #             self.API_DOMAIN + f'categories/{parent_id}',
     #             params={'display': 'full'},
-    #             headers={'Authorization': 'Bearer ' + self.api_key}
+    #             headers={'Authorization': 'Bearer ' + self.API_KEY}
     #         )
     #         category_data = response.json()['category']
     #         parents.append(category_data['name'])

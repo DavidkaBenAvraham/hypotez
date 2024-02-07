@@ -23,7 +23,7 @@ import openai
 # --------------------
 from src.settings import gs
 # --------------------
-openai.api_key = gs.api_openai
+openai.API_KEY = gs.api_openai
 
 def translate(input_text: str, target_lang: str) -> str:
     """! @brief OpenAI translator

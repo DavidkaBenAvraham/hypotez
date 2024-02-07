@@ -2,14 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\helpers",
-    "\\src\\scenarios",
+    "\\src\\prestashop",
+    "\\src\\prestashop\\_tests",
+    "\\src\\prestashop\\_tests\\test_add",
     "\\src\\suppliers",
+    "\\src\\suppliers\\amazon",
+    "\\src\\suppliers\\amazon\\_tests",
     "\\src\\suppliers\\hb",
-    "\\src\\suppliers\\hb\\_tests",
-    "\\src\\tools",
-    "\\src\\webdriver",
-    "\\src\\webdriver\\_test"
+    "\\src\\tools"
   ],
+  "SelectedNode": "\\src\\tools\\__init__.py",
   "PreviewInSolutionExplorer": false
 }

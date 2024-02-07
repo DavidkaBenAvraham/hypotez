@@ -23,8 +23,8 @@
 # -*- coding: utf-8 -*-
 #! /usr/share/projects/hypotez/venv/scripts python
 
-from .string_validator import StringValidator
-from .string_formatter import StringFormatter
-from .string_normalizer import StringNormalizer
+from .string_validator import StringValidator as SV
+from .string_formatter import StringFormatter as SF
+from .string_normalizer import StringNormalizer as SN
 from .re_patterns import Ptrn
 from .randomizer import get_random_string

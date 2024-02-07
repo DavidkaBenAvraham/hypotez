@@ -183,8 +183,8 @@ class ProjectSettings():
       "keepass_prestashop_db_title": "emil-design.com",
       "keepass_ftp_title": "emil-design.com",
       "keepass_smtp_title": "davidka",
-      "default_prestashop_api_domain": "emil-design.com",
-      "list_prestashop_api_domains": [ "emil-design.com", "sergey.mymaster.co.il", "dev.e-cat.co.il" ],
+      "default_prestashop_API_DOMAIN": "emil-design.com",
+      "list_prestashop_API_DOMAINs": [ "emil-design.com", "sergey.mymaster.co.il", "dev.e-cat.co.il" ],
 
       "supplier_prefix": [
         "aliexpress",
@@ -412,11 +412,11 @@ class ProjectSettings():
         try:    
             for entry in entries:
                 entry_dict = {
-                 'api_key': entry.custom_properties ['api_key'],
+                 'API_KEY': entry.custom_properties ['api_key'],
                  'secret': entry.custom_properties ['secret'],
                  'tracking_id': entry.custom_properties ['tracking_id'],
                  'email': entry.custom_properties ['email'],
-                 'kp_user_name' : entry.username,
+                 'USERNAME' : entry.username,
                  }
                 
                 self.list_api_aliexpress_credentials.append(entry_dict)
@@ -439,8 +439,8 @@ class ProjectSettings():
             entry_dict: dict = {}
             for entry in entries:
                 entry_dict = {
-                 'api_key': entry.custom_properties ['api_key'],
-                 'kp_username': entry.username,
+                 'API_KEY': entry.custom_properties ['api_key'],
+                 'USERNAME': entry.username,
                  
                  }
                 
@@ -463,9 +463,9 @@ class ProjectSettings():
 
             for entry in entries:
                 entry_dict = {
-                        'api_key' : entry.custom_properties['api_key'],
-                        'api_domain': entry.custom_properties['api_domain'],
-                        'kp_username': entry.username,
+                        'API_KEY' : entry.custom_properties['api_key'],
+                        'API_DOMAIN': entry.custom_properties['api_domain'],
+                        'USERNAME': entry.username,
                         }
                 self.list_prestashop_api_credentials.append(entry_dict)
                 
@@ -487,9 +487,9 @@ class ProjectSettings():
                         'server' : entry.custom_properties['server'],
                         'port' : entry.custom_properties['port'],
                         'db_name' : entry.custom_properties['db_name'],
-                        'user' : entry.username,
+                        'USERNAME' : entry.username,
                         'password' : entry.password,
-                        'kp_username' : entry.username,
+                        
                         }
                 self.list_prestashop_db_credentials.append(entry_dict)
                 
@@ -510,9 +510,9 @@ class ProjectSettings():
                 entry_dict = {
                         'server' : entry.url,
                         'port' : entry.custom_properties['port'],
-                        'user' : entry.username,
+                        'USERNAME' : entry.username,
                         'password' : entry.password,
-                        'kp_username' : entry.username,
+                        
                         }
                 self.list_ftp_credentials.append(entry_dict)
                 if entry.title == keepass_ftp_title:
@@ -531,10 +531,10 @@ class ProjectSettings():
             for entry in entries:
                 entry_dict = {
                 'server': entry.custom_properties['server'],
-                'user' : entry.username,
+                'USERNAME' : entry.username,
                 'password' : entry.password,
                 'receiver': entry.custom_properties['receiver'],
-                'kp_username' : entry.username,
+                
                 }
                 self.list_smtp_credentials.append(entry_dict)
                 
@@ -678,9 +678,9 @@ class ProjectSettings():
         @returns dict  
         <code>
         {
-            'api_key' : value,
-            'api_domain': value,
-            'kp_username': value,
+            'API_KEY' : value,
+            'API_DOMAIN': value,
+            'USERNAME': value,
         }
         </code>
         """       
@@ -711,7 +711,7 @@ class ProjectSettings():
             'db_name' : value,
             'user' : value,
             'password' : value,
-            'kp_username' : value,        
+            'USERNAME' : value,        
         }
         </code>
         """

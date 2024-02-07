@@ -1,4 +1,5 @@
 {
+  "associations": "",
   "active": 1,
   "additional_categories": "",
   "additional_delivery_times": 0,
@@ -19,7 +20,6 @@
   "cache_has_attachments": "",
   "cache_is_pack": "",
   "condition": "new",
-
   "customizable": "",
   "date_add": "",
   "date_upd": "",
@@ -59,9 +59,7 @@
   "name": "",
   "on_sale": "",
   "online_only": 1,
-  "@note online_only": "товар продается только в интернет магазине",
   "out_of_stock": 0,
-  "@note out_of_stock": "находится ли товар в настоящее время вне запаса (out of stock). Это поле принимает значение 1, если товар закончился на складе, и 0, если товар все еще доступен для продажи",
   "pack_stock_type": "",
   "position_in_category": "",
   "price": "",

@@ -32,7 +32,7 @@ Having said that, I use this code base every day, all day long, as a chatGPT plu
 INSTALLATION:
 1. clone the repository
 2. pip3 install -r requirements.txt
-3. add your openai.api_key either as an evironment var or directly in utilityV2.py
+3. add your openai.API_KEY either as an evironment var or directly in utilityV2.py
 4. add your google credentials either as environment vars or directly in google_search_concurrent.py
 
 to test, try:

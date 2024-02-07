@@ -197,13 +197,13 @@ from selenium.common.exceptions import InvalidArgumentException
 from selenium.webdriver.support import expected_conditions as EC
 
 # # ------------------------------
-# hypotez_root_path = os.getcwd()[:os.getcwd().rfind(r'\hypotez')+7]
+# hypotez_root_path = os.getcwd()[:os.getcwd().rfind(r'hypotez')+7]
 # sys.path.append(hypotez_root_path)  # Добавляю корневую папку в sys.path
 
 
 from src.settings import gs
 from src.helpers import  logger, logs_and_errors_decorator, DriverException, jprint, pprint
-from src.tools import StringFormatter as SF, StringNormalizer as SN
+from src.tools import SF, SN
 from . import execute_locator, js
 # -------------------------------
 

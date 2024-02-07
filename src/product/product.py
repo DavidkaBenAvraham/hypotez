@@ -31,6 +31,7 @@ from src.settings import gs
 from src.helpers import logger,  logs_and_errors_decorator, jprint, pprint
 from src.io_interface import j_loads, j_dumps
 from src.prestashop import PrestaProduct, PrestaCategory, PrestaSupplier
+from src.categories import Category
 # ---------------------------------
 
 
@@ -39,26 +40,14 @@ class Product(PrestaProduct):
     @details Вначале я отдаю грабберу комманду забрать данные со страницы товара,
     а потом работаю с API престашоп
 
-    @note
-    
-        `supplier` (Supplier): supplier inctance
-        `webelements_locators` (dict): - locators for product fields
-                    Я могу читать дефолтные локаторы из файла suppliers/<supplier>/locators/product.json
-                    или погонять свои для теста
-                        
+
         `product_categories` (dict): - все категории. 
         TODO: Надо переделать!
         
 
-        `prestashop_product_categories` (dict): словарь категорий prestashop
-
-        `product_fields` : набор полей товара:
-                    - при определении класса поставщика строится из класса suppliers.related_modules.ProductFields()
-                    - иначе, из suppliers.ProductFields()
-                    - сделано для тестов, чтобы менять на лету  
     """
     """ Я могу передать локаторы товара из сценария или изменить их на лету """
-    
+    c = Category()    
     def __init__(self, *args, **kwards):
         super().__init__(*args, **kwards)
         pass
@@ -112,7 +101,7 @@ class Product(PrestaProduct):
 
     #@logs_and_errors_decorator(default_return =  False)
     def get_parent_categories(id_category: int, dept: int = 0) -> list:
-        return PrestaCategory.get_parents(id_category, dept)
+        return Category.get_parents(id_category, dept)
 
     # #@logs_and_errors_decorator(default_return =  False)
     # def update_product_in_prestashop(id_product: int, product_dict: dict) -> Union[int,bool]:

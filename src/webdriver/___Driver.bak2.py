@@ -191,7 +191,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.remote.webelement import WebElement
 
 # # ------------------------------
-# hypotez_root_path = os.getcwd()[:os.getcwd().rfind(r'\hypotez')+7]
+# hypotez_root_path = os.getcwd()[:os.getcwd().rfind(r'hypotez')+7]
 # sys.path.append(hypotez_root_path)  # Добавляю корневую папку в sys.path
 
 

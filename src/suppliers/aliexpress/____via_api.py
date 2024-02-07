@@ -126,7 +126,7 @@ import json
 #            'pageNo': page_no,
 #            'pageSize': page_size,
 #            'app_secret': app_secret,
-#            'api_key': api_key
+#            'API_KEY': API_KEY
 #        }
 #        #p = api_aliexpress.get_products_from_category(category_ids = str(category_ids),  page_no = page_no, page_size = page_size)
 #        # Make a request to the AliExpress API to retrieve a list of products for the specified category and page
@@ -152,12 +152,12 @@ import json
 #    category_ids = 0 # replace with the ID of the category you want to retrieve
 #    page_no = 2 # replace with the page number you want to retrieve
 #    page_size = 20 # replace with the number of products per page you want to retrieve
-#    api_key = API_KEYS_ALIEXPRESS['key']
+#    API_KEY = API_KEYS_ALIEXPRESS['key']
 #    app_secret = API_KEYS_ALIEXPRESS['secret']
 #    for _key, _scenario in s.scenarios.items():
         
 #        # Call the function to retrieve the list of products for the specified category and page
-#        if not AliexpressSolutionProductListGetRequest(api_key, app_secret, domain, port, _scenario['category ID on site'], page_no=page_no, page_size=page_size):
+#        if not AliexpressSolutionProductListGetRequest(API_KEY, app_secret, domain, port, _scenario['category ID on site'], page_no=page_no, page_size=page_size):
 #            return False
 
 def get_affiliate_links(url:list=None)->list:

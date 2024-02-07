@@ -19,7 +19,7 @@ from src.webdriver import Driver
 from src.suppliers import Supplier
 from src.product import Product, ProductFields
 from src.categories import Category
-from src.tools import StringNormalizer as SN, StringFormatter as SF
+from src.tools import SF, SN
 from src.helpers import  logger, logs_and_errors_decorator, jprint, pprint
 from src.prestashop import Product as PrestaProduct
 from src.io_interface import j_loads, j_dumps, save_text_file

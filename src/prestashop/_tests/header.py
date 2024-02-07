@@ -14,14 +14,14 @@ import json
 import re
 
 
-#from settings import gs
+from src.settings import gs
 from src.webdriver import Driver, execute_locator
 from src.suppliers import Supplier
 from src.product import Product, ProductFields
 from src.categories import Category
-from src.tools import StringNormalizer as SN, StringFormatter as SF
+from src.tools import SF, SN
 from src.helpers import  logger, logs_and_errors_decorator, jprint, pprint
 from src.prestashop import PrestaProduct
 from src.io_interface import j_loads, j_dumps, save_text_file
 # ----------------
-from src.prestashop import PrestaAPIV1,PrestaAPIV1V2,PrestaAPIV1V3,upload_image
+from src.prestashop import PrestaAPIV1,PrestaAPIV2,PrestaAPIV3,upload_image

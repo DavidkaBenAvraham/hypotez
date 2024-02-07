@@ -2,7 +2,7 @@
 @details Слой между сущностями престашоп: товар, поставщик, категория, язык и пр и сущностями программы.
         <code>  
             {    
-                "api_domain": "https://domain.com",  
+                "API_DOMAIN": "https://domain.com",  
                 "product_manipulations_key": "xxxxxxxxxxxxxxxxxx"  
             }
         </code>
@@ -33,8 +33,9 @@ from .supplier import PrestaSupplier
 from .category import PrestaCategory
 from .language import PrestaLanguage
 from .shop import PrestaShop
-
+from .images_exec import upload_image
 from .prestashop import PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
+
 
 
 #from .images_exec import upload_image
