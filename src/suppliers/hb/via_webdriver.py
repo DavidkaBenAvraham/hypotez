@@ -22,7 +22,12 @@ def get_list_products_in_category (s) -> Union [list[str], str, None]:
         list or one of products urls or None
     """
     d = s.driver
+    
+    
     l: dict = s.locators['category']
+    
+    d.execute_locator (s.locators ['product']['close_banner'] )
+    
     if not l:
         """ Много проверок, потому, что код можно запускать от лица разных ихполнителей: Supplier, Product, Scenario """
         logger.error(f"А где локаторы? {l}")

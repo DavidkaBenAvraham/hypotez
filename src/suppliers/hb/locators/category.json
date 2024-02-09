@@ -1,11 +1,12 @@
 {
   "product_links": {
     "attribute": "href",
-    
+
     "by": "XPATH",
-    "selector": "//h1[contains(@class, 'product_title')]//a",
-    
-    "use_mouse": false, "mandatory": true,
+    "selector": "//h3[@class = 'post-title']//a",
+
+    "use_mouse": false,
+    "mandatory": true,
     "action": null,
     "@note": "Список ссылок на товары со страницы категории"
   }

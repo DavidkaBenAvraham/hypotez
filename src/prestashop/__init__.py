@@ -34,8 +34,5 @@ from .category import PrestaCategory
 from .language import PrestaLanguage
 from .shop import PrestaShop
 from .images_exec import upload_image
-from .prestashop import PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
+from .presta_apis import PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
 
-
-
-#from .images_exec import upload_image

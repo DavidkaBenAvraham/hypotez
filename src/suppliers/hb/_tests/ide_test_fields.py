@@ -225,7 +225,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.wholesale_price = field_wholesale_price()
 	#f.width = field_width()    
 	pass
-	return f
+	return f.presta_fields_dict
     
 
 d.get_url (s.current_scenario['url'])
@@ -240,6 +240,8 @@ if not 	list_products_in_category:
 
 d.get_url(list_products_in_category[0])
 """! перешел по первому url из списка """
+
+d.execute_locator(s.locators['product']['close_banner'])
 
 pass
 
@@ -1289,9 +1291,23 @@ def combinations():
         logger.error(ex)
         return False
 
-f = grab_product_page(s)
-					
-if f.product_exist_in_prestashop:
-	p.update(f.fields_dict)
+presta_fields_dict = grab_product_page(s)
+
+
+#prod_in_presta = p.get( filter = f"[reference] = [{product_fields['reference']}]" ) 	
+"""! Для `V3` """
+
+prod_in_presta = p.get( options = { 'filter[reference]': f"[{presta_fields_dict['reference']}]" } ) 	
+"""! Для `V1` """
+if len(prod_in_presta) == 0:
+	"""! Новый товар """
+	p.add(presta_fields_dict)
+pass
+
+# product_fields['default_image_url'] = None
+# product_fields['images_urls'] = None
+
+if f.search(_filter = '[reference] = [{f.reference}]'):
+	p.update(presta_fields_dict)
 else:
-	p.add(f.fields_dict)
+	p.add(product_fields)

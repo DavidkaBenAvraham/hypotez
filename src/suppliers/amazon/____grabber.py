@@ -34,7 +34,7 @@ from src.suppliers import Supplier
 
 
 
-def grab_product_page(s: Supplier, id_product: int = 0 , api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> ProductFields:
+def grab_product_page(s: Supplier, id_product: int = 0 , presta_api_version: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> ProductFields:
     """ ПОКА ТОЛЬКО ДЛЯ НОВЫХ!!!!! СТРАНИЦ
         Собираю информацию со страницы товара. 
         Важно помнить, что драйвер уже должен быть на
@@ -155,7 +155,7 @@ def grab_product_page(s: Supplier, id_product: int = 0 , api_method: Union[str('
 
         product_dict = f.product_dict
          
-        response = Product.add_2_prestashop(product_dict, api_method)
+        response = Product.add_2_prestashop(product_dict, presta_api_version)
         if 'error' in response.keys():
             pprint(response)
             return False

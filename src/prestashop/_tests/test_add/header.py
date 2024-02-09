@@ -24,7 +24,7 @@ from src.tools import StringNormalizer as SN, \
 
 from src.prestashop import Product as PrestaProduct , upload_image
 
-from src.prestashop.prestashop import PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
+from src.prestashop import PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
 
 
 def start_supplier(supplier_prefix):

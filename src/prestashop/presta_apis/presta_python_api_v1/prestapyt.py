@@ -28,6 +28,9 @@ if PY2:
     install_aliases()
 
 from urllib.parse import urlencode
+from urllib.parse import urlparse, parse_qs
+
+import json
 
 import warnings
 import requests
@@ -65,7 +68,7 @@ from .version import __version__
 
 
 class PrestaShopWebServiceError_V1(Exception):
-    """Generic PrestaShop WebServices error class.
+    """! Generic PrestaShop WebServices error class.
 
     To catch these, you need to import it in you code e.g. :
     from prestapyt import PrestaShopWebServiceError
@@ -89,7 +92,7 @@ class PrestaShopAuthenticationError_V1(PrestaShopWebServiceError_V1): # noqa
 
 
 class PrestaShopWebService_V1(object):
-    """Interact with the PrestaShop WebService API, use XML for messages."""
+    """! Interact with the PrestaShop WebService API, use XML for messages."""
 
     MIN_COMPATIBLE_VERSION = '1.4.0.17'
     # 4th version number is to avoid constant version changes
@@ -97,7 +100,7 @@ class PrestaShopWebService_V1(object):
 
     def __init__(self, API_DOMAIN, API_KEY, debug=True, session=None,
                  verbose=True):
-        """
+        """!
         Create an instance of PrestashopWebService.
 
         In your code, you can use :
@@ -152,7 +155,7 @@ class PrestaShopWebService_V1(object):
             self.client.auth = (API_KEY, '')
 
     def _parse_error(self, xml_content):
-        """Take the XML content as string and extract the PrestaShop error.
+        """! Take the XML content as string and extract the PrestaShop error.
 
         @param xml_content: xml content returned by the PS server as string
         @returns (prestashop_error_code, prestashop_error_message)
@@ -176,7 +179,7 @@ class PrestaShopWebService_V1(object):
         return (code, message)
 
     def _check_status_code(self, status_code, content):
-        """Take the status code and check it.
+        """! Take the status code and check it.
 
         Throw an exception if the server didn't return 200 or 201 code.
 
@@ -216,7 +219,7 @@ class PrestaShopWebService_V1(object):
             )
 
     def _check_version(self, version):
-        """Check if lib version is compatible with called webservice.
+        """! Check if lib version is compatible with called webservice.
 
         @param version: version returned by the PrestaShop webservice
         @returns  True if the library is compatible.
@@ -270,7 +273,7 @@ class PrestaShopWebService_V1(object):
         return response
 
     def _parse(self, content):
-        """Parse the response of the webservice.
+        """! Parse the response of the webservice.
 
         @param content: response from the webservice
         @returns  an ElementTree of the content
@@ -293,7 +296,7 @@ class PrestaShopWebService_V1(object):
         return parsed_content
 
     def _validate_query_options(self, options):
-        r"""Check options against supported options.
+        r"""! Check options against supported options.
 
         @param options: dict of options to use for the request
         @returns  True if valid, else raise an error PrestaShopWebServiceError
@@ -301,6 +304,10 @@ class PrestaShopWebService_V1(object):
         Official ref:
         http://doc.prestashop.com/display/PS14/ \
             Cheat-sheet+-+Concepts+outlined+in+this+tutorial
+            
+        supported options:
+            'filter', 'display', 'sort','ws_key',
+            'limit', 'schema', 'date', 'id_shop', 'id_group_shop',
         """
         if not isinstance(options, dict):
             raise PrestaShopWebServiceError_V1(
@@ -326,7 +333,7 @@ class PrestaShopWebService_V1(object):
     _validate = _validate_query_options
 
     def _options_to_querystring(self, options):
-        """Translate the dict of options to a url form.
+        """! Translate the dict of options to a url form.
 
         For instance :
             {'display': '[firstname,lastname]',
@@ -339,10 +346,11 @@ class PrestaShopWebService_V1(object):
         """
         if self.debug:
             options.update({'debug': True})
-        return urlencode(options)
+        opts = urlencode(options)
+        return opts
 
     def add(self, resource, content=None, files=None, options=None):
-        """Add (POST) a resource. Content can be a dict of values to create.
+        """! Add (POST) a resource. Content can be a dict of values to create.
 
         @param resource: type of resource to create
         @param content: Full XML as string or dict of new resource values.
@@ -360,7 +368,7 @@ class PrestaShopWebService_V1(object):
         return self.add_with_url(full_url, content, files)
 
     def add_with_url(self, url, xml=None, files=None):
-        """Add (POST) a resource.
+        """! Add (POST) a resource.
 
         @param url: A full URL which for the resource type to create
         @param xml: Full XML as string of new resource.
@@ -381,7 +389,7 @@ class PrestaShopWebService_V1(object):
         return self._parse(response.content)
 
     def search(self, resource, options=None):
-        """Retrieve (GET) a resource and return the xml with the ids.
+        """! Retrieve (GET) a resource and return the xml with the ids.
 
         Is not supposed to be called with an id
         or whatever in the resource line 'addresses/1'
@@ -399,33 +407,55 @@ class PrestaShopWebService_V1(object):
         """
         return self.get(resource, options=options)
 
-    def get(self, resource, resource_id=None, options=None):
-        """Retrieve (GET) a resource.
+    def get(self, resource, resource_id=None, options=None, output_format: str = 'JSON'):
+        """! Retrieve (GET) a resource.
 
         @param resource: type of resource to retrieve
         @param resource_id: optional resource id to retrieve
         @param options: Optional dict of parameters (one or more of
                         'filter', 'display', 'sort', 'limit', 'schema')
-        @returns  an ElementTree of the response
+        @param output_format `str`: в каком формате получить ответ `response` Есть две опции: `JSON / XML`
+        @example:
+        ``` python
+            get('products', 1, {'display': ['id','reference','name'] }, 'JSON')
+        ```
+        @returns  an `ElementTree` or `JSON` dict of the response 
         """
         full_url = self.API_DOMAIN + resource
         if resource_id is not None:
             full_url += "/%s" % (resource_id,)
         if options is not None:
             self._validate_query_options(options)
-            full_url += "?%s" % (self._options_to_querystring(options),)
-        return self.get_with_url(full_url)
+    
+        full_url += f"?{self._options_to_querystring(options)}&output_format={output_format}"      # <- добавил опцию получить данные в JSON
+    
+        return self.get_with_url (full_url)
 
     def get_with_url(self, url):
-        """Retrieve (GET) a resource from a full URL.
+        """! Retrieve (GET) a resource from a full URL.
 
         @param url: URL which explicitly set resource type and ID to retrieve
         @returns  an ElementTree of the resource
         """
-        return self._parse(self._execute(url, 'GET').content)
+        # Разбиваю URL
+        parsed_url = urlparse(url)
+
+        # Получаю значения параметров запроса
+        query_params = parse_qs(parsed_url.query)
+
+        # Извлекаю значение параметра output_format
+        output_format = query_params.get('output_format', [None])[0]
+
+        content = self._execute(url, 'GET').content
+        
+        if output_format == 'JSON':
+
+            return json.loads(content)    
+        
+        return self._parse(content)
 
     def head(self, resource, resource_id=None, options=None):
-        """Head method (HEAD) a resource.
+        """! Head method (HEAD) a resource.
 
         @param resource: type of resource to retrieve
         @param resource_id: optional resource id to retrieve
@@ -442,7 +472,7 @@ class PrestaShopWebService_V1(object):
         return self.head_with_url(full_url)
 
     def head_with_url(self, url):
-        """Head method (HEAD) a resource from a full URL.
+        """! Head method (HEAD) a resource from a full URL.
 
         @param url: URL which explicitly set resource type and ID to retrieve
         @returns  the header of the response as a dict
@@ -450,7 +480,7 @@ class PrestaShopWebService_V1(object):
         return self._execute(url, 'HEAD').headers
 
     def edit(self, resource, content, options=None):
-        """Edit (PUT) a resource.
+        """! Edit (PUT) a resource.
 
         @param resource: type of resource to edit
         @param content: modified XML as string of the resource.
@@ -463,7 +493,7 @@ class PrestaShopWebService_V1(object):
         return self.edit_with_url(full_url, content)
 
     def edit_with_url(self, url, content):
-        """Edit (PUT) a resource from a full URL.
+        """! Edit (PUT) a resource from a full URL.
 
         @param url: an full url to edit a resource
         @param content: modified XML as string of the resource.
@@ -474,7 +504,7 @@ class PrestaShopWebService_V1(object):
         return self._parse(response.content)
 
     def delete(self, resource, resource_ids):
-        """Delete (DELETE) a resource.
+        """! Delete (DELETE) a resource.
 
         @param resource: type of resource to retrieve
         @param resource_ids: int or list of ids to delete
@@ -490,7 +520,7 @@ class PrestaShopWebService_V1(object):
         return self.delete_with_url(full_url)
 
     def delete_with_url(self, url):
-        """Delete (DELETE) a resource.
+        """! Delete (DELETE) a resource.
 
         @param url: full URL to delete a resource
         @returns  True if delete is done,
@@ -500,7 +530,7 @@ class PrestaShopWebService_V1(object):
         return True
 
     def encode_multipart_formdata(self, files):
-        """Encode files to an http multipart/form-data.
+        """! Encode files to an http multipart/form-data.
 
         @param files: a sequence of (type, filename, value)
             elements for data to be uploaded as files.
@@ -527,7 +557,7 @@ class PrestaShopWebService_V1(object):
         return headers, body
 
     def get_content_type(self, filename):
-        """Retrieve filename mimetype.
+        """! Retrieve filename mimetype.
 
         @param filename: file name.
         @returns  mimetype.
@@ -620,10 +650,11 @@ class PrestaShopWebServiceDict_V1(PrestaShopWebService_V1):
             Remove root keys ['prestashop'] from the message
         """
         response = super(PrestaShopWebServiceDict_V1, self).get_with_url(url)
-        if isinstance(response, dict):
-            return response['prestashop']
-        else:
-            return response
+        # if isinstance(response, dict):
+        #     return response['prestashop']
+        # else:
+        #     return response
+        return response
 
     def partial_add(self, resource, fields):
         """! Add (POST) a resource without necessary all the content.
@@ -672,11 +703,10 @@ class PrestaShopWebServiceDict_V1(PrestaShopWebService_V1):
         @returns  a dict of the response from the web service
         """
         if content is not None and isinstance(content, dict):
-            xml_content = dict2xml.dict2xml({'prestashop': content})
-        else:
-            xml_content = content
+            content = dict2xml.dict2xml({'prestashop': content})
+            
         _super = super(PrestaShopWebServiceDict_V1, self)
-        return _super.add_with_url(url, xml_content, files)
+        return _super.add_with_url(url, content, files)
 
     def edit_with_url(self, url, content):
         """! Edit (PUT) a resource from a full URL.
@@ -701,7 +731,18 @@ class PrestaShopWebServiceDict_V1(PrestaShopWebService_V1):
 
 
 if __name__ == '__main__':
-    prestashop = PrestaShopWebServiceDict_V1('http://localhost:8080/api','API_KEY')
+
+    import sys
+    import os
+    path = os.getcwd()[:os.getcwd().rfind(r'hypotez')+7]
+    sys.path.append(path)  # Добавляю корневую папку в sys.path
+
+    from src.settings import gs
+    
+    API_DOMAIN = gs.default_prestashop_api_credentials['API_DOMAIN']
+    API_KEY = gs.default_prestashop_api_credentials['API_KEY']
+    
+    prestashop = PrestaShopWebServiceDict_V1(API_DOMAIN,API_KEY)
 
     from pprint import pprint
 

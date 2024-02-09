@@ -15,6 +15,9 @@ import re
 
 
 from src.settings import gs
+API_KEY = gs.default_prestashop_api_credentials['API_KEY']
+API_DOMAIN = gs.default_prestashop_api_credentials['API_DOMAIN']
+
 from src.webdriver import Driver, execute_locator
 from src.suppliers import Supplier
 from src.product import Product, ProductFields

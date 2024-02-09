@@ -29,9 +29,9 @@ from src.settings import gs
 from src.helpers import  logger,  logs_and_errors_decorator
 from src.io_interface import j_loads as j_loads
 
-from src.prestashop.prestashop import  PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
+from .presta_apis import  PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
 from .images_exec import upload_image
 
 # --------------------------------
 
-class PrestaSupplier (PrestaAPIV1): pass
+class PrestaSupplier (): pass

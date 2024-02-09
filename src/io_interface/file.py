@@ -83,7 +83,7 @@ def export_products_data_to_csv(data: str, file_name_path: str, format: Union[st
 
     return False
 
-def save_text_file(data: str, file_name_path: str, mode: str = 'w') -> bool:
+def save_text_file(data: Union[str,list,dict], file_name_path: str, mode: str = 'w') -> bool:
     """! @~russian Функция записывает текстовый файл 
     @param data `str` Данные на запись
     @param file_name_path `str` полный путь к файлу 
@@ -94,7 +94,7 @@ def save_text_file(data: str, file_name_path: str, mode: str = 'w') -> bool:
     """
     try:
         with open(file_name_path, mode) as file:
-            file.write(data)
+            file.write(str(data))
         return True
     except Exception as ex:
         logger.error(f'Файл {file_name_path} не записался. Ошибка {ex} ')

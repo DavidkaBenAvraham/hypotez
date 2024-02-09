@@ -84,7 +84,7 @@ class Product():
         return s.related_modules.get_list_products_in_category(s)
 
     @staticmethod
-    def grab_product_page(s, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> Union[dict,bool]:
+    def grab_product_page(s, presta_api_version: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> Union[dict,bool]:
         """ Запуск сценария сбора информации о товаре    
         -------------------------------------
         Attrs:
@@ -93,7 +93,7 @@ class Product():
             ProductFields if success, else False
         """
         # 1.    
-        return s.related_modules.grab_product_page(s, api_method = api_method)
+        return s.related_modules.grab_product_page(s, presta_api_version = presta_api_version)
     #
     #
     # =================================================================================
@@ -140,19 +140,19 @@ class Product():
         pass
     
     @staticmethod
-    def add_2_prestashop(product_dict: dict, api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> Union[int,bool]:
+    def add_2_prestashop(product_dict: dict, presta_api_version: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> Union[int,bool]:
         """ Add new product to prestashop db via api
         ---------------------------------
         @param
             product_fields (ProductFields): класс полей товара
-            api_method `str`  :  Какая API будет задействована:
+            presta_api_version `str`  :  Какая API будет задействована:
                 'V1' - prestapyt
                 'V2' - prestashop_api
         @returns
             id for added product if success, else False
         """
 
-        return PrestaProduct.add(product_dict, api_method)
+        return PrestaProduct.add(product_dict, presta_api_version)
 
     @staticmethod
     def get_parent_categories(id_category: int, dept: int = 0) -> list:

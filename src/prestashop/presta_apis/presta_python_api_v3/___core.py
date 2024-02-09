@@ -1,12 +1,13 @@
-# -*- coding: utf-8 -*-
-
-""" !
+"""! 
 Prestashop is a Python library to interact with PrestaShop's Web Service API.
 
 :copyright: (c) 2023 Aymen Jemi
 :copyright: (c) 2023 AISYSNEXT
 :license: GPLv3, see LICENSE for more details
 """
+
+
+
 import os
 from enum import Enum
 
@@ -23,11 +24,10 @@ from packaging import version
 from .exceptions import PrestaShopError,PrestaShopAuthenticationError
 from .utils import dict2xml
 from .utils import base64_to_tmpfile
-from typing import Union
 
 
 class Format(Enum):
-    """Data types return (JSON,XML)
+    """!Data types return (JSON,XML)
 
     Args:
         Enum (int): 1 => JSON, 2 => XML
@@ -44,103 +44,195 @@ class Prestashop():
         when: wrong api key or api key not exist.
         PrestaShopError: Generic PrestaShop WebServices error .
 
-    Example:
+    Example:  
+        Usage:
+        ```python
+        
+            init api
+            for json data format
 
-    from prestashop import Prestashop, Format
+            from prestashop import Prestashop, Format
 
-    api = Prestashop(
-        url = "https://myprestashop.com",
-        api_key="4MV3E41MFR7E3N9VNJE2W5EHS83E2EMI",
-        default_lang=1,
-        debug=True,
-        data_format=Format.JSON,
-    )
+            api = Prestashop(
+                url = "https://myprestashop.com",
+                API_KEY="4MV3E41MFR7E3N9VNJE2W5EHS83E2EMI",
+                default_lang=1,
+                debug=True,
+                data_format=Format.JSON,
+            )
+            for xml data format
 
-    api.ping()
+            from prestashop import Prestashop, Format
 
-    data = {
-        'tax':{
-            'rate' : 3.000,
-            'active': '1',
-            'name' : {
-                'language' : {
-                    'attrs' : {'id' : '1'},
-                    'value' : '3% tax'
+            api = Prestashop(
+                url = "https://myprestashop.com",
+                API_KEY="4MV3E41MFR7E3N9VNJE2W5EHS83E2EMI",
+                default_lang=1,
+                debug=True,
+                data_format=Format.XML,
+            )
+            Test API
+            test if you webservice run
+
+            api.ping()
+            Create Record
+            data = {
+                    'tax':{
+                        'rate' : 3.000,
+                        'active': '1',
+                        'name' : {
+                            'language' : {
+                                'attrs' : {'id' : '1'},
+                                'value' : '3% tax'
+                            }
+                        }
+                    }
+                }
+
+            rec = api.create('taxes',data)
+            Add product image
+            file_name = 'sample.jpg'
+
+            api.create_binary('images/products/30',file=file_name , _type='image')
+            Update record
+            update_data = {
+                    'tax':{
+                        'id' : str(rec['id']),
+                        'rate' : 3.000,
+                        'active': '1',
+                        'name' : {
+                            'language' : {
+                                'attrs' : {'id' : '1'},
+                                'value' : '3% tax'
+                            }
+                        }
+                    }
+                }
+
+            update_rec = api.write('taxes',update_data)
+            Remove record
+            api.unlink('taxes',str(rec['id']))
+            remove many records at once
+
+            api.unlink('taxes',[2,4,5])
+            Read
+            import pprint
+            result = api.read('taxes','2',display='[id,name]')
+
+            pprint(result)
+            Search
+             # search the first 3 taxes with 5 in the name 
+            import pprint
+            recs = api.search('taxes',_filter='[name]=%[5]%',limit='3')
+
+            for rec in recs:
+                pprint(rec)
+
+
+            # search with id = 3 or id = 5
+
+            recs = api.search('taxes' ,_filter='[id]=[3 | 5]')
+
+            #######################################################################         
+            
+            from prestashop import Prestashop, Format
+
+            api = Prestashop(
+                url = "https://myprestashop.com",
+                API_KEY="4MV3E41MFR7E3N9VNJE2W5EHS83E2EMI",
+                default_lang=1,
+                debug=True,
+                data_format=Format.JSON,
+            )
+
+            api.ping()
+
+            data = {
+                'tax':{
+                    'rate' : 3.000,
+                    'active': '1',
+                    'name' : {
+                        'language' : {
+                            'attrs' : {'id' : '1'},
+                            'value' : '3% tax'
+                        }
+                    }
                 }
             }
-        }
-    }
 
-    # create tax record
-    rec = api.create('taxes',data)
+            # create tax record
+            rec = api.create('taxes',data)
 
-    # update the same tax record
+            # update the same tax record
 
-    update_data = {
-        'tax':{
-            'id' : str(rec['id']),
-            'rate' : 3.000,
-            'active': '1',
-            'name' : {
-                'language' : {
-                    'attrs' : {'id' : '1'},
-                    'value' : '3% tax'
+            update_data = {
+                'tax':{
+                    'id' : str(rec['id']),
+                    'rate' : 3.000,
+                    'active': '1',
+                    'name' : {
+                        'language' : {
+                            'attrs' : {'id' : '1'},
+                            'value' : '3% tax'
+                        }
+                    }
                 }
             }
-        }
-    }
 
-    update_rec = api.write('taxes',update_data)
+            update_rec = api.write('taxes',update_data)
 
-    # remove this tax
-    api.unlink('taxes',str(rec['id']))
+            # remove this tax
+            api.unlink('taxes',str(rec['id']))
 
-    # search the first 3 taxes with 5 in the name 
-    import pprint
-    recs = api.search('taxes',filter='[name]=%[5]%',limit='3')
+            # search the first 3 taxes with 5 in the name 
+            import pprint
+            recs = api.search('taxes',_filter='[name]=%[5]%',limit='3')
 
-    for rec in recs:
-        pprint(rec)
+            for rec in recs:
+                pprint(rec)
 
-    # create binary (product image)
+            # create binary (product image)
 
-    api.create_binary('images/products/22','img.jpeg','image')
-    # or
-    api.create_binary('images/products/22','img.jpeg','image')
+            api.create_binary('images/products/22','img.jpeg','image')
+            # or
+            api.create_binary('images/products/22','img.jpeg','image')
+    
+    ```
     """
-    api_key = ''
-    url = ''
+    API_KEY = ''
+    API_DOMAIN = ''
     client = None
     debug = False
     lang = None
     data_format = Format.JSON
     ps_version = ''
 
-    def __init__(self,url:str, api_key:str,data_format=Format.JSON,default_lang:str=None,session:Session=None,debug:bool=False) -> None:
+    def __init__(self, API_DOMAIN:str, API_KEY:str, data_format=Format.JSON, default_lang:str=None,session:Session=None,debug:bool=False) -> None:
         """! Prestashop class
 
         Args:
             url (str): url of your shop (https://myprestashop.com)
-            api_key (str): api key generate from prestashop 
+            API_KEY (str): api key generate from prestashop 
             https://devdocs.prestashop-project.org/1.7/webservice/tutorials/creating-access/
             data_format (Format, optional): default data format (Format.JSON or Format.XML). Defaults to Format.JSON.
             default_lang (str, optional): default language id (1). Defaults to None.
+            @note я могу выбирать язык из престашоп на котором я получу `response`
             session (Session, optional): requests.Session() for old sessing. Defaults to None.
             debug (bool, optional): activate debug mode. Defaults to False.
         """
         
-        self.url = url
-        self.api_key = api_key
+        self.API_DOMAIN = API_DOMAIN
+        self.API_KEY = API_KEY
         self.debug = debug
         self.lang = default_lang
         self.data_format = data_format
 
 
         # fix url 
-        if not self.url.endswith('/'):
-            self.url += '/'
-        if not self.url.endswith('/api/'):
-            self.url += 'api/'
+        if not self.API_DOMAIN.endswith('/'):
+            self.API_DOMAIN += '/'
+        if not self.API_DOMAIN.endswith('/api/'):
+            self.API_DOMAIN += 'api/'
 
 
         if session is None:
@@ -149,12 +241,12 @@ class Prestashop():
             self.client = session
 
         if not self.client.auth:
-            self.client.auth = (self.api_key , '')
+            self.client.auth = (self.API_KEY , '')
         
         
         response = self.client.request(
             method='HEAD',
-            url=self.url
+            url=self.API_DOMAIN
         )
 
         self.ps_version = response.headers.get('psws-version')
@@ -167,7 +259,7 @@ class Prestashop():
         """
         response = self.client.request(
             method='HEAD',
-            url=self.url
+            url=self.API_DOMAIN
         )
         content = {
             "errors": [
@@ -241,56 +333,65 @@ class Prestashop():
         req.prepare_url(url , params)
         return req.url
 
-    def _exec(self,resource: str,
-              _id: int = None, 
-              ids: list = None,
-              method: str ='GET',
-              data: dict = None,      # <- словарь сущности  
-              _headers=None,  # <- заголовки
-              display=None,   # <- размер выводимых данных
-              filter=None,    # <- фильтер f.e. `filer[reference] = reference`
-              sort=None,
-              limit=None):
+    #def _exec(self,resource,_id=None,ids=None, method='GET',data=None,_headers=None, display: str = 'full' ,_filter=None,sort=None,limit=None):
+    def _exec(self,
+              resource,
+              _id: int=None,
+              method='GET',
+              data=None,
+              headers:dict=None,
+              params: dict = {'display':'full', 
+                              'filter':None, 
+                              'sort':None, 
+                              'limit':None, 
+                              'language':None, 
+                              'io_format' : 'JSON' , 
+                              'output_format' : 'JSON'} ):
         
-        params = {}
+        #params = params
 
-        if self.lang:
-            params.update({'language' : self.lang})
+        # if self.lang:
+        #     params.update({'language' : self.lang})
 
-        if self.data_format == Format.JSON:
-            params.update({'io_format' : 'JSON' , 'output_format' : 'JSON'})
+        # if self.data_format == Format.JSON:
+        #     params.update({'io_format' : 'JSON' , 'output_format' : 'JSON'})
         
-        if display:
-            params.update({'display' : display})
+        #params.update(params)
+        # if display:
+        #     params.update({'display' : display})
 
-        if filter:
-            lst = filter.split('=',1)
-            key = 'filter{}'.format(lst[0])
-            params.update({key : lst[1]})
-        if sort:
-            params.update({'sort' : sort})
-        if limit:
-            params.update({'limit' : limit})
+        """! @todo Переделать парсер параметров """
 
-        if _id:
-            _url = '{}{}/{}'.format(self.url,resource,_id)
-        else:
-            _url = '{}{}'.format(self.url,resource)
+        # if _filter:
+        #     lst = _filter.split('=',1)
+        #     key = 'filter{}'.format(lst[0])
+        #     params.update({key : lst[1]})
+        # if sort:
+        #     params.update({'sort' : sort})
+        # if limit:
+        #     params.update({'limit' : limit})
+
+      
+
+        _url = fr'{self.API_DOMAIN}{resource}/{_id}' if _id else fr'{self.API_DOMAIN}{resource}'
+
         
-        if ids:
-            params.update({'ids' : ids})
+        # if ids:
+        #     params.update({'id' : ids})
 
-        url = self._prepare(_url,params)
+        url = self._prepare (_url, params)
 
         if self.debug:
             HTTPConnection.debuglevel = 1
 
 
         if self.data_format == Format.JSON:
-            headers = {'Content-Type': 'application/json'}
-            if _headers:
-                """! Возможность передавать свои _headers """
+            _headers = {'Content-Type': 'application/json'}
+            if not headers:
+                headers = _headers
+            else:
                 headers.update(_headers)
+                
             response = self.client.request(
                 method=method,
                 url=url,
@@ -299,8 +400,11 @@ class Prestashop():
             )
 
             if response.content == b'' and response.status_code == 200:
+                """! Empty content """
+                
+                self._error(response.status_code,response.json())
                 return True
-            self._error(response.status_code,response.json())
+                """! @todo проверить """
             return response.json()
         
         headers = {'Content-Type': 'text/xml'}
@@ -314,9 +418,12 @@ class Prestashop():
         )
 
         if response.content == b'' and response.status_code == 200:
-            return True
+            """! вернулся пустой `response` """
+            self._error(response.status_code,response.content)
+            
+            return False
         
-        self._error(response.status_code,response.content)
+        
         return self._parse(response.content)
 
     def _parse(self, content):
@@ -342,25 +449,32 @@ class Prestashop():
 
         return parsed_content
     
-    def search(self, resource, filter=None, display='full', sort=None,limit=None):
-        """! Search from prestashop with options, for more details check the official doc \n
+    def search(self,resource, filter:str = None, params: dict = {'display':'full', 
+                              'filter':None, 
+                              'sort':None, 
+                              'limit':None, 
+                              'language':None, 
+                              'io_format' : Format.JSON , 
+                              'output_format' : Format.JSON} ):
+        
+        """! search from prestashop with options, for more details check the official doc \n
         https://devdocs.prestashop-project.org/1.7/webservice/tutorials/advanced-use/additional-list-parameters/
 
-        Args:
-            resource (str): resource to search ( taxes,customers,products ...)
-            display (str, optional): display parameter (full | [field1,field2]). Defaults to 'full'.
-            filter (str, optional): filter parameter ([id]=[1|5] , [name]=[app]%). Defaults to None.
-            sort (str, optional): sort parameter ([{fieldname}_{ASC|DESC}] ,[lastname_ASC,id_DESC] ). Defaults to None.
-            limit (str, optional): limit parameter ('offset,limit' , '9,2' , '5'). Defaults to None.
+        
+            @param resource (str): resource to search ( taxes,customers,products ...)
+            @param     display (str, optional): display parameter (full | [field1,field2]). Defaults to 'full'.
+            @param _filter (str, optional): filter parameter ([id]=[1|5] , [name]=[app]%). Defaults to None.
+            @param  sort (str, optional): sort parameter ([{fieldname}_{ASC|DESC}] ,[lastname_ASC,id_DESC] ). Defaults to None.
+            @param limit (str, optional): limit parameter ('offset,limit' , '9,2' , '5'). Defaults to None.
 
-        Returns:
-            dict : result of search
+            @returns dict : result of search
         """
+        if filter: params['filter'] = f'filter{}'
+            
+        return self._exec (resource = resource, method = 'GET', params = params )
 
-        return self._exec(resource=resource, method='GET', display=display, filter=filter, sort=sort,limit=limit)
-
-    def get(self,resource:str, _id:str = None, filter:str = None, display:str='full') -> dict:
-        """! get one result from prestashop with options .
+    def read(self,resource:str, _id:str = None, _reference: str = None, params: dict = {}) -> dict:
+        """get one result from prestashop with options .
         for more details check the official doc \n
         https://devdocs.prestashop-project.org/1.7/webservice/tutorials/advanced-use/additional-list-parameters/
 
@@ -376,7 +490,8 @@ class Prestashop():
         if version.parse(self.ps_version)  <= version.parse('1.7.6.8') :
             display = None
 
-        return self._exec(resource = resource ,_id = _id, method='GET',display = display, filter = filter)
+
+        return self._exec (resource, _id, 'GET', params  )
 
     def write(self,resource:str,data:dict):
         """update record from prestashop
@@ -404,7 +519,6 @@ class Prestashop():
         """
         data  = {'prestashop' : data}
         _data = dict2xml(data)
-        
         return self._exec(resource=resource,method='PUT',data=_data,display=None)
 
     def unlink(self,resource:str,ids:list):

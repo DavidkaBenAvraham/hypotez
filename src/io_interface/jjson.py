@@ -69,11 +69,34 @@ def j_dumps(data: dict, path: Path) -> bool:
         bool: True if successful, False if an error occurred.
 
     """
-    logger.debug(data)
-    logger.debug(path)
+    #logger.debug(data)
+    logger.info(f'Файл будет сохаранен в {path}')
+    
+    def convert_values(d):
+        """! В соответствии со стандартон JSON
+        функция кoнвертирует значения None, True, False в null, true, false """
+        for key, value in d.items():
+            if isinstance(value, dict):
+                convert_values(value)
+                
+            if isinstance(value, list):
+                for v in value:
+                    convert_values(v)
+                    
+            elif value is None:
+                d[key] = "null" # Преобразую None в 'null'
+                
+            elif isinstance(value, bool):
+                d[key] = str(value).lower()  # Преобразую True/False в 'true'/'false'
+            
+        return d
+    
+    data = convert_values(data)
+    
+
     try:
         with path.absolute().open('w', encoding='utf-8') as f:
-            json.dumps (data, f, ensure_ascii = False)
+            json.dump (data, f, ensure_ascii = False)
             
             """! Параметр ensure_ascii=False используется для указания модулю JSON не кодировать не-ASCII символы (такие как символы кириллицы) в формате Unicode. 
             По умолчанию, если ensure_ascii=True, все символы будут кодированы в Unicode escape-последовательности в формате \\uXXXX."""

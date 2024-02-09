@@ -35,7 +35,7 @@ from src.webdriver import execute_locator
 
 
 
-def grab(s, id_product: int = 0 , api_method: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> ProductFields:
+def grab(s, id_product: int = 0 , presta_api_version: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> ProductFields:
     """! @~russian  Я добавляю в базу данных престашоп товар 
     путем нескольких последовательных действий:
         1. Добавляю поля, необходимые для создания нового товара
@@ -50,7 +50,7 @@ def grab(s, id_product: int = 0 , api_method: Union[str('V1'),str('V2'),str('V3'
     Parameters : 
          s : Supplier
          id_product : int = 0 : if `id_product` == 0  new product
-         api_method : Union[str('V1'),str('V2'),str('V3')] = 'V3' : [description]
+         presta_api_version : Union[str('V1'),str('V2'),str('V3')] = 'V3' : [description]
     Returns : 
          ProductFields : f (ProductFields) с заполненными полями, else False
 
@@ -136,7 +136,7 @@ def grab(s, id_product: int = 0 , api_method: Union[str('V1'),str('V2'),str('V3'
         product_dict = f.product_dict
 
         print ("---------------------NEW PRODUCT-----------------------")
-        response = Product.add_2_prestashop (product_dict, api_method)
+        response = Product.add_2_prestashop (product_dict, presta_api_version)
         if not response:
             return False
         if 'errors' in response.keys():

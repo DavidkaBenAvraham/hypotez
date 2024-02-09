@@ -31,7 +31,7 @@ from typing import Union
 from src.settings import gs
 from src.helpers import  logger, logs_and_errors_decorator, jprint, pprint
 from src.tools import randomizer
-from src.prestashop.prestashop import PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
+from .presta_apis import  PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
 
 
 #@logs_and_errors_decorator(default_return =  False)
