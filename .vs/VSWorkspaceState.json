@@ -4,13 +4,12 @@
     "\\src",
     "\\src\\prestashop",
     "\\src\\prestashop\\presta_apis",
-    "\\src\\prestashop\\presta_apis\\presta_python_api_v2",
-    "\\src\\prestashop\\presta_apis\\presta_python_api_v3",
+    "\\src\\prestashop\\presta_apis\\presta_python_api_v1",
+    "\\src\\product",
     "\\src\\suppliers",
     "\\src\\suppliers\\hb",
-    "\\src\\suppliers\\hb\\locators",
-    "\\src\\suppliers\\hb\\_tests"
+    "\\src\\suppliers\\hb\\_tests",
+    "\\src\\webdriver"
   ],
-  "SelectedNode": "\\src\\prestashop\\product.py",
   "PreviewInSolutionExplorer": false
 }
