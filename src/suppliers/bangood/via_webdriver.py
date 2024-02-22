@@ -1,4 +1,4 @@
-"""! @brief Модуль сбора товаров со страницы категорий поставщика hb.co.il через вебдрайвер
+"""! @brief Модуль сбора товаров со страницы категорий поставщика bangood.co.il через вебдрайвер
 У каждого поставщика свой сценарий обреботки категорий
 
 -Модуль Собирает список категорий со страниц продавца . `get_list_categories_from_site()`.
@@ -35,9 +35,7 @@ def get_list_products_in_category (s) -> Union [list[str], str, None]:
     
     l: dict = s.locators['category']
     
-    d.wait(5)
     d.execute_locator (s.locators ['product']['close_banner'] )
-    d.scroll()
     
     if not l:
         """ Много проверок, потому, что код можно запускать от лица разных ихполнителей: Supplier, Product, Scenario """

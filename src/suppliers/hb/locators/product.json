@@ -18,7 +18,7 @@
     "@note": ""
   },
   "id_manufacturer": {
-    "attribute": "HB",
+    "attribute": 11290,
     "by": "VALUE",
     "selector": null,
     "use_mouse": false,
@@ -27,7 +27,7 @@
     "@note": ""
   },
   "id_supplier": {
-    "attribute": "11267",
+    "attribute": 11267,
     "by": "VALUE",
     "selector": null,
     "use_mouse": false,
@@ -45,8 +45,8 @@
     "action": null,
     "@note": ""
   },
-  "new": {
-    "attribute": true,
+  "condition": {
+    "attribute": "new",
 
     "by": "VALUE",
     "selector": null,
@@ -348,11 +348,9 @@
     "@note": ""
   },
   "on_sale": {
-    "attribute": null,
-
-    "by": null,
+    "attribute": 0,
+    "by": "VALUE",
     "selector": null,
-
     "use_mouse": false,
     "mandatory": true,
     "action": null,
@@ -381,11 +379,9 @@
     "@note": ""
   },
   "minimal_quantity": {
-    "attribute": null,
-
-    "by": null,
+    "attribute": 1,
+    "by": "VALUE",
     "selector": null,
-
     "use_mouse": false,
     "mandatory": true,
     "action": null,
@@ -577,9 +573,9 @@
     "@note": ""
   },
   "visibility": {
-    "attribute": null,
+    "attribute": "both",
 
-    "by": null,
+    "by": "VALUE",
     "selector": null,
 
     "use_mouse": false,
@@ -684,7 +680,7 @@
     "action": [ "click()", null ],
     "use_mouse": [ false, false ],
     "mandatory": [ true, true ],
-    "@note": [ "Нажимаю на таб для отркытия поля description" , "читаю данные из div"]
+    "@note": [ "Нажимаю на таб для отркытия поля description", "читаю данные из div" ]
   },
   "description_short": {
     "attribute": null,
@@ -1055,25 +1051,16 @@
     "action": null,
     "@note": ""
   },
-  "Quantity": {
-    "attribute": null,
-    "by": null,
+  "quantity": {
+    "attribute": 1,
+    "by": "VALUE",
     "selector": null,
     "use_mouse": false,
     "mandatory": true,
     "action": null,
     "@note": ""
   },
-  "Minimal quantity": {
-    "attribute": null,
 
-    "by": null,
-    "selector": null,
-
-    "use_mouse": false,
-    "mandatory": true,
-    "action": null
-  },
   "Low stock level": {
     "attribute": null,
 

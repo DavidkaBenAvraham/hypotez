@@ -1,20 +1,16 @@
 """! aliexpress.com - модуль выполнения сценариев через вебдрайвер
-@details Модуль делает:
 
-- Собирает список категорий со страниц продавца . `get_list_categories_from_site()`.
+У каждого поставщика свой сценарий обреботки категорий
+
+Модуль Собирает список категорий со страниц продавца . `get_list_categories_from_site()`.
 @todo Сделать проверку на изменение категорий на страницах продавца. 
 Продавец может добавлять новые категории, переименовывать или удалять/прятать уже существующие. 
 По большому счету надо держать таблицу категории `prestashop.categories <-> aliexpress.shop.categoies`
 
 - Собирает список товаров со страницы категории `get_list_products_in_category()`
-- Обрабатывает поля товара `grab_product_page()`
- @section libs imports:
-  - typing 
-  - pathlib 
-  - gs 
-  - helpers 
-  - api_aliexpress 
-  @file
+- Итерируясь по списку передает управление в `grab_product_page()` отсылая функции текущий url страницы  
+`grab_product_page()` обрабатывает поля товара и передает управление классу `Product` 
+
 """
 
 # -*- coding: utf-8 -*-
@@ -29,7 +25,7 @@ from src.helpers import  logger, logs_and_errors_decorator
 from .via_api import aliapi_to_prestashop
 from .grabber import grab_product_page
 from src.io_interface import j_loads, j_dumps
-from src.prestashop import Product as PrestaProduct
+from src.product import Product
 
 
 
@@ -40,12 +36,12 @@ from src.prestashop import Product as PrestaProduct
     ##########################################################################
 
 #@logs_and_errors_decorator(default_return=False)
-def grab_product_pages(s, product_page_url_list: Union[list[str], str]) -> Union[list[dict], dict, False]:
-    results = []
-    for product_url in product_page_url_list if isinstance(product_page_url_list, list) else [product_page_url_list]:
-        s.driver.get_url(product_url)
-        results.append(grab_product_page(s))
-    return results
+# def grab_product_pages(s, product_page_url_list: Union[list[str], str]) -> Union[list[dict], dict, False]:
+#     results = []
+#     for product_url in product_page_url_list if isinstance(product_page_url_list, list) else [product_page_url_list]:
+#         s.driver.get_url(product_url)
+#         results.append(grab_product_page(s))
+#     return results
 
     
 
@@ -103,10 +99,11 @@ def check_product_presence_in_prestashop(list_products_in_category):
     """
  
 
-    # Паттерн регулярного выражения для извлечения значения между "item/" и ".html"
+    """! Паттерн регулярного выражения для извлечения значения между "item/" и ".html"
+    В алиехпресс id_product находится в url """
     pattern = re.compile(r'item/(\d+).html')
 
-    dict_products_from_ali = {}
+    #dict_products_from_ali = {}
     """! @~russian функция создает словарь с параметрами товара.
     @details Начало подготовки товара для клиента (`Pestashop`)
     В дальнейшем словарь будет пополнятся новыми ключами """
@@ -117,7 +114,7 @@ def check_product_presence_in_prestashop(list_products_in_category):
             item_id = match.group(1)
             dict_products_from_ali.update ({item_id: url})
             
-    dict_products_from_ali = PrestaProduct.check_prod_presence_in_prestashop (dict_products_from_ali.keys)
+    dict_products_from_ali = Product.check_prod_presence_in_prestashop (dict_products_from_ali.keys)
     """~@~russian отдаю список `ID` товаров на проверку в `PrestaProduct` """
 
     
@@ -128,7 +125,7 @@ def check_product_presence_in_prestashop(list_products_in_category):
 def update_categories_in_scenario_file(s, scenario_filename: str) -> bool:
     """@~russian @brief Проверка изменений категорий на сайте 
     @details Сличаю фактически файл JSON, полученный с  сайта
-    @todo не проверен """
+    @todo не проверен !!!! """
     
     scenario_json = j_loads(Path(gs.dir_scenarios, f'''{scenario_filename}'''))
     scenarios_in_file = scenario_json['scenarios']

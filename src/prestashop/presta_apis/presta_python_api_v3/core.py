@@ -49,8 +49,8 @@ class Prestashop():
     from prestashop import Prestashop, Format
 
     api = Prestashop(
-        url = "https://myprestashop.com",
-        api_key="4MV3E41MFR7E3N9VNJE2W5EHS83E2EMI",
+        API_DOMAIN = "https://myprestashop.com",
+        API_KEY="4MV3E41MFR7E3N9VNJE2W5EHS83E2EMI",
         default_lang=1,
         debug=True,
         data_format=Format.JSON,
@@ -108,20 +108,28 @@ class Prestashop():
     # or
     api.create_binary('images/products/22','img.jpeg','image')
     """
-    api_key = ''
-    url = ''
-    client = None
+    API_KEY = ''
+    API_DOMAIN = ''
+    client: Session = Session()
     debug = False
     lang = None
-    data_format = Format.JSON
+    #data_format = Format.JSON
+    data_format = 'JSON'
+    #session: Session = None
+    #params: dict = {}
     ps_version = ''
 
-    def __init__(self,url:str, api_key:str,data_format=Format.JSON,default_lang:str=None,session:Session=None,debug:bool=False) -> None:
+    def __init__(self,
+                 API_DOMAIN:str, 
+                 API_KEY:str, 
+                 data_format = Format.JSON, 
+                 default_lang:str = None,
+                 debug:bool = False) -> None:
         """! Prestashop class
 
         Args:
-            url (str): url of your shop (https://myprestashop.com)
-            api_key (str): api key generate from prestashop 
+            API_DOMAIN (str): API_DOMAIN of your shop (https://myprestashop.com)
+            API_KEY (str): api key generate from prestashop 
             https://devdocs.prestashop-project.org/1.7/webservice/tutorials/creating-access/
             data_format (Format, optional): default data format (Format.JSON or Format.XML). Defaults to Format.JSON.
             default_lang (str, optional): default language id (1). Defaults to None.
@@ -129,32 +137,32 @@ class Prestashop():
             debug (bool, optional): activate debug mode. Defaults to False.
         """
         
-        self.url = url
-        self.api_key = api_key
+        self.API_DOMAIN = API_DOMAIN
+        self.API_KEY = API_KEY
         self.debug = debug
         self.lang = default_lang
         self.data_format = data_format
 
 
-        # fix url 
-        if not self.url.endswith('/'):
-            self.url += '/'
-        if not self.url.endswith('/api/'):
-            self.url += 'api/'
+        # fix API_DOMAIN 
+        if not self.API_DOMAIN.endswith('/'):
+            self.API_DOMAIN += '/'
+        if not self.API_DOMAIN.endswith('/api/'):
+            self.API_DOMAIN += 'api/'
 
 
-        if session is None:
-            self.client = Session()
-        else:
-            self.client = session
+        # if session is None:
+        #     self.client = Session()
+        # else:
+        #     self.client = session
 
         if not self.client.auth:
-            self.client.auth = (self.api_key , '')
+            self.client.auth = (API_KEY , '')
         
         
         response = self.client.request(
-            method='HEAD',
-            url=self.url
+            method = 'HEAD',
+            url = API_DOMAIN
         )
 
         self.ps_version = response.headers.get('psws-version')
@@ -167,7 +175,7 @@ class Prestashop():
         """
         response = self.client.request(
             method='HEAD',
-            url=self.url
+            API_DOMAIN=self.API_DOMAIN
         )
         content = {
             "errors": [
@@ -236,88 +244,130 @@ class Prestashop():
             message = error.find('message').text
         return (code, message)
     
-    def _prepare(self,url,params):
+    def _prepare(self, url, params):
         req = PreparedRequest()
         req.prepare_url(url , params)
         return req.url
 
-    def _exec(self,resource: str,
+    def _exec(self,
+              resource: str,   # <- `products`, `categories`, etc.
               _id: int = None, 
               ids: list = None,
-              method: str ='GET',
+              method: str ='GET',   # <- GET | PUT | 
               data: dict = None,      # <- словарь сущности  
-              _headers=None,  # <- заголовки
-              display=None,   # <- размер выводимых данных
-              filter=None,    # <- фильтер f.e. `filer[reference] = reference`
-              sort=None,
-              limit=None):
+              _headers = None,  # <- дополнительные заголовки
+              display = None,   # <- размер выводимых данных
+              search_filter = None,    # <- фильтр f.e. `filer[reference] = [reference] | {'filer[reference]':'reference'}`
+              sort = None,
+              limit = None):
+        """! 
+        @param _id 
+        @param ids
+        @param method
+        @param data
+        @param _headers
+        @param display
+        @param search_filter
+        @param sort
+        @param limit
+        """
+        params: dict = {}
+
+        if search_filter:
+            if isinstance(search_filter, str):     # `'filter[id]' = '[5]'`
+                lst = search_filter.split('=',1)
+                key = lst[0]
+                params.update({key : lst[1]})
+            elif isinstance(search_filter, dict):
+                params.update(search_filter)
+        """! Я могу передать фильтр, как строку `filter[id] = [5]`
+        и как словарь `{'filter[id]':'[5]'}
+        """        
         
-        params = {}
+        
+        
+        """! 
+        В запросе API PrestaShop параметры output_format и io_format используются для указания формата данных при отправке
+        и получении запросов соответственно.
+
+        `output_format` : Этот параметр определяет формат данных, который вы хотите получить в ответ на ваш запрос. 
+        Обычно значениями этого параметра являются JSON или XML. Например, если вы хотите получить ответ в формате JSON, 
+        вы установите output_format=JSON. Это позволит серверу PrestaShop вернуть данные в формате JSON.
+
+        `io_format`: Этот параметр определяет формат данных, который вы отправляете на сервер в теле вашего запроса. 
+        Как и в случае с output_format, значениями этого параметра также являются JSON или XML. 
+        вы отправляете данные в формате JSON, укажите io_format=JSON в вашем запросе.
+        """
+        
+        #params.update ({'io_format' : self.data_format , 'output_format' : self.data_format})
 
         if self.lang:
-            params.update({'language' : self.lang})
+            params.update ({'language' : self.lang })
 
-        if self.data_format == Format.JSON:
-            params.update({'io_format' : 'JSON' , 'output_format' : 'JSON'})
         
         if display:
-            params.update({'display' : display})
-
-        if filter:
-            lst = filter.split('=',1)
-            key = 'filter{}'.format(lst[0])
-            params.update({key : lst[1]})
+            params.update ({'display' : display})
+                
         if sort:
             params.update({'sort' : sort})
+
         if limit:
             params.update({'limit' : limit})
 
         if _id:
-            _url = '{}{}/{}'.format(self.url,resource,_id)
+            _API_DOMAIN = f'{self.API_DOMAIN}{resource}/{_id}'
         else:
-            _url = '{}{}'.format(self.url,resource)
+            _API_DOMAIN = f'{self.API_DOMAIN}{resource}'
         
         if ids:
             params.update({'ids' : ids})
 
-        url = self._prepare(_url,params)
+        url = self._prepare(_API_DOMAIN, params)
 
         if self.debug:
             HTTPConnection.debuglevel = 1
 
-
-        if self.data_format == Format.JSON:
-            headers = {'Content-Type': 'application/json'}
-            if _headers:
-                """! Возможность передавать свои _headers """
-                headers.update(_headers)
-            response = self.client.request(
-                method=method,
-                url=url,
-                data=data,
-                headers=headers
-            )
-
-            if response.content == b'' and response.status_code == 200:
-                return True
-            self._error(response.status_code,response.json())
-            return response.json()
+        self.data_format = 'XML'
         
-        headers = {'Content-Type': 'text/xml'}
+        if self.data_format == Format.JSON:
+            """! Данные в формате `JSON` """
+            headers = {'Content-Type': 'application/json'}
+        else:
+            """! Данные в формате `XML` """
+            headers = {'Content-Type': 'text/xml'}
+                
         if _headers:
-            headers = _headers
+            """! Возможность передавать свои _headers """
+            headers.update(_headers)
+                
         response = self.client.request(
-                method=method,
-                url=url,
-                data=data,
-                headers=headers
+            method = method,
+            url = url,
+            data = data,
+            headers = headers
         )
 
-        if response.content == b'' and response.status_code == 200:
-            return True
+        # if response.content == b'' or response.content == b'[]' and response.status_code == 200:
+        #     """! Вернулся пустой ответ. Значит что нет такой сущности с заданными параметрами. """
+        #     return True
+        self._error(response.status_code, response.json())
+        return response.json()
         
-        self._error(response.status_code,response.content)
-        return self._parse(response.content)
+        # else:
+
+        #     if _headers:
+        #         headers = _headers
+        #     response = self.client.request(
+        #             method = method,
+        #             url = url,
+        #             data = data,
+        #             headers = headers
+        #     )
+
+        #     # if response.content == b'' and response.status_code == 200:
+        #     #     return True
+        #     self._error(response.status_code,response.content)
+        #     return self._parse(response.content)
 
     def _parse(self, content):
         """Parse the response of the webservice.
@@ -342,7 +392,7 @@ class Prestashop():
 
         return parsed_content
     
-    def search(self, resource, filter=None, display='full', sort=None,limit=None):
+    def search(self, resource, search_filter = None, display = None, sort = None, limit = None):
         """! Search from prestashop with options, for more details check the official doc \n
         https://devdocs.prestashop-project.org/1.7/webservice/tutorials/advanced-use/additional-list-parameters/
 
@@ -357,9 +407,9 @@ class Prestashop():
             dict : result of search
         """
 
-        return self._exec(resource=resource, method='GET', display=display, filter=filter, sort=sort,limit=limit)
+        return self._exec(resource=resource, method='GET', search_filter=search_filter, display=display,  sort=sort,limit=limit)
 
-    def get(self,resource:str, _id:str = None, filter:str = None, display:str='full') -> dict:
+    def get(self, resource:str, _id:str = None, search_filter:Union[dict,str] = None, display:str = None,  sort:str= None, limit:str = None) -> dict:
         """! get one result from prestashop with options .
         for more details check the official doc \n
         https://devdocs.prestashop-project.org/1.7/webservice/tutorials/advanced-use/additional-list-parameters/
@@ -376,36 +426,36 @@ class Prestashop():
         if version.parse(self.ps_version)  <= version.parse('1.7.6.8') :
             display = None
 
-        return self._exec(resource = resource ,_id = _id, method='GET',display = display, filter = filter)
+        return self._exec(resource = resource ,_id = _id, method='GET', search_filter = search_filter, display = display, sort = sort, limit = limit)
 
-    def write(self,resource:str,data:dict):
-        """update record from prestashop
+    # def write(self, resource:str, data:dict):
+    #     """update record from prestashop
 
-        Args:
-            resource (str): resource to search ( taxes,customers,products ...)
-            data (dict): data in dict format (
-                    data = {
-                        'tax':{
-                            'id': 2,
-                            'rate' : 3.000,
-                            'active': '1',
-                            'name' : {
-                                'language' : {
-                                    'attrs' : {'id' : '1'},
-                                    'value' : '3% tax'
-                                }
-                            }
-                        }
-                    }
-        )
+    #     Args:
+    #         resource (str): resource to search ( taxes,customers,products ...)
+    #         data (dict): data in dict format (
+    #                 data = {
+    #                     'tax':{
+    #                         'id': 2,
+    #                         'rate' : 3.000,
+    #                         'active': '1',
+    #                         'name' : {
+    #                             'language' : {
+    #                                 'attrs' : {'id' : '1'},
+    #                                 'value' : '3% tax'
+    #                             }
+    #                         }
+    #                     }
+    #                 }
+    #     )
 
-        Returns:
-            dict: the updated record.
-        """
-        data  = {'prestashop' : data}
-        _data = dict2xml(data)
+    #     Returns:
+    #         dict: the updated record.
+    #     """
+    #     data  = {'prestashop' : data}
+    #     _data = dict2xml(data)
         
-        return self._exec(resource=resource,method='PUT',data=_data,display=None)
+    #     return self._exec(resource=resource, method='PUT', data=_data, display=None)
 
     def unlink(self,resource:str,ids:list):
         """remove one or multiple records
@@ -425,7 +475,7 @@ class Prestashop():
         else:
             return self._exec(resource=resource ,ids=ids, method='DELETE' , display=None)
     
-    def create(self,resource:str,data:dict):
+    def add(self, resource:str, data:dict):
         """create record 
 
         Args:
@@ -452,7 +502,7 @@ class Prestashop():
 
         data  = {'prestashop' : data}
         _data = dict2xml(data)
-        return self._exec(resource=resource,data=_data,method='POST',display=None)
+        return self._exec(resource = resource, data = _data, method='POST', display='full')
 
     def create_binary(self,resource:str, file:str,_type:str = 'image',file_name=None):
         """create binary record
@@ -473,8 +523,8 @@ class Prestashop():
             params.update({'io_format' : 'JSON' , 'output_format' : 'JSON'})
     
 
-        _url = '{}{}'.format(self.url,resource)
-        url = self._prepare(_url,params)
+        _API_DOMAIN = '{}{}'.format(self.API_DOMAIN,resource)
+        API_DOMAIN = self._prepare(_API_DOMAIN,params)
 
 
         if os.path.exists(file):
@@ -488,7 +538,7 @@ class Prestashop():
 
 
         response = self.client.post(
-            url=url,
+            API_DOMAIN=API_DOMAIN,
             files=_file
         )
 
@@ -517,12 +567,12 @@ class Prestashop():
         if self.data_format == Format.JSON:
             params.update({'io_format' : 'JSON' , 'output_format' : 'JSON'})
 
-        _url = f'{self.url}images/products/{product_id}/{image_id}'
-        _url = self._prepare(_url,params)
+        _API_DOMAIN = f'{self.API_DOMAIN}images/products/{product_id}/{image_id}'
+        _API_DOMAIN = self._prepare(_API_DOMAIN,params)
         
         response = self.client.request(
             method='GET',
-            url = _url,
+            API_DOMAIN = _API_DOMAIN,
             headers={'Content-Type': 'application/json'}
         )
 

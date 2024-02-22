@@ -22,4 +22,4 @@ Modules:
 # -*- coding: utf-8 -*-
 #! /usr/share/projects/hypotez/venv/scripts python
 
-from .supplier import Supplier
+from .supplier import Supplier  

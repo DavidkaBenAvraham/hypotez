@@ -27,14 +27,14 @@ from math import prod
 import sys
 import os
 from pathlib import Path
-from typing import Union
+from typing import Union, Dict, List
 import asyncio
 
 # ------------------------------
 from src.settings import gs
 from src.helpers import logger,  logs_and_errors_decorator, DriverException, jprint, pprint
 from src.io_interface import j_loads, j_dumps
-from src.product import Product
+from src.product import Product, ProductFields
 # -------------------------------
 
 ################################################################################################################
@@ -163,19 +163,32 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> Union[list, di
     for url in list_products_in_category:
         """! Перехожу по url товара и вытаскиваю данные со страницы """
         if not d.get_url(url):
-            logger.error(f'Ошибка перехода по адресу: {url}')
+            logger.error(f'Ошибка перехода на страницу товара по адресу: {url}' )
+            continue
             
         try:
-            """! Собираю со страницы товара значения элементов и привожу их к полям ProductFields """
+            
             product_fields = s.related_modules.grab_product_page(s)
+            """! Собираю со страницы товара значения элементов и привожу их к полям ProductFields 
+            Внимание! В словаре `product_fields` находится служебный словарь `dict_assist_fields`.
+            Его надо вычленить в отдельный словарь
+            """
+            dict_presta_fields: Dict = product_fields.dict_presta_fields
+            dict_assist_fields: Dict = product_fields.dict_assist_fields
             pass
             p = Product()
-            if p.check_prod_presence_in_prestashop(product_fields.reference):  
-                p.update(product_fields)
-            else:
-                p.add(product_fields)
-                
-            
+            # if p.check_prod_presence_in_prestashop(product_fields.reference):  
+            #     p.update(product_fields)
+            # else:
+            #     p.add(product_fields)
+            """! Для `V3` Я могу передать фильтр, как строку `filter[id] = [5]` и как словарь `{'filter[id]':'[5]'}	"""
+            search_filter_str =  f'filter[reference] = [{dict_presta_fields["reference"]}]'
+            search_filter_dict = { 'filter[reference]': [f'{dict_presta_fields["reference"]}'] }
+            ret = p.get( search_filter = search_filter_dict, PrestaAPIV = 'V1' ) 
+
+            if ret is False or len(ret) == 0: p.add(dict_presta_fields, 'V2')
+            """! Новый товар """
+ 
             #products_fields_list.append (s.related_modules.grab_product_page(s) )
             pass
         except Exception as ex:

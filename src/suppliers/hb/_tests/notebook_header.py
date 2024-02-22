@@ -23,6 +23,7 @@ from src.categories import Category
 from src.tools import SF, SN
 from src.helpers import  logger, logs_and_errors_decorator, jprint, pprint
 from src.io_interface import j_loads, j_dumps, save_text_file
+from src.scenarios import run_scenarios
 # ----------------
 
 def start_supplier(supplier_prefix, scenario_language):

@@ -11,9 +11,7 @@
   - gs 
   - prestashop.prestashop 
   - .images_exec 
-  
-Author(s):
-  - Created by Davidka on 09.11.2023 .
+
 """
 # -*- coding: utf-8 -*-
 #! /usr/share/projects/hypotez/venv/scripts python
@@ -52,9 +50,19 @@ class PrestaProduct():
     """
 
     #@logs_and_errors_decorator(default_return =  False)
+    # def __init__(self,*args,**kwards):
+    #     self.params: dict = {'display':'full', 
+    #                     'search_filter':None, 
+    #                     'sort':None, 
+    #                     'limit':None, 
+    #                     'language':None, 
+    #                     'io_format' : 'JSON' , 
+    #                     'output_format' : 'JSON'}        
+    #     pass
+
+    #@logs_and_errors_decorator(default_return =  False)
     def __init__(self,*args,**kwards):
         self.params: dict = {'display':'full', 
-                        'filter':None, 
                         'sort':None, 
                         'limit':None, 
                         'language':None, 
@@ -64,110 +72,104 @@ class PrestaProduct():
 
 
     
-    #@logs_and_errors_decorator(default_return =  False)
-    def get(self,  product_id: Union[int, list[int]] = None,  product_reference: str = None, params: dict = None, PrestaAPIV: str = 'PrestaAPIV3') -> bool:
-        
-        """! Проверка наличия товара в БД 
-        -----------------
-        @param product_reference `str`  - термин из престашоп = `reference` 
-        @param product_id `str`   - термин из престашоп = `id`
-        @param params `dict` {'display':'option'}
-        example {'display':'full' | '[id, name]' | 'schema'}
-
-        @returns `bool`   False  - if Product NOT in the DB, else True
-        """
-        
-        product_filter: dict = {}
-        if  product_reference:
-            product_filter = {'filter[reference]': product_reference}
-        elif  product_id and isinstance(product_id, int):
-            product_filter = {'filter[id]': product_id} 
-        else:
-            logger.warning(f'Ситуация, когда не определен ни `product_reference` ни `product_id, в апи запросе Возвращется список всех `id` товара')
-            """! Возвращется список всех `id` товара """
-            pass
-
-        params =  self.params if not params else params
-        
-        params['filter'] = product_filter
-        
-        if PrestaAPIV == 'PrestaAPIV1':
-            
-            response = PrestaAPIV1.get('products', product_id, params)
-            """! в версии PrestaAPIV возврщается Словарь товара """
-        elif  PrestaAPIV == 'PrestaAPIV2':   
-            pass
-        else:
-
-            response = PrestaAPIV3.get('products', filter = params['filter'])
-            """! параметры по умолчанию уже заложены в реализации функции """
-            pass
-        
-        return response
-
-
-    
     # #@logs_and_errors_decorator(default_return =  False)
-    # def search(self, filter: str, value: str, PrestaAPI = PrestaAPIV3) -> Union[dict, False]:
-    #     """ Расширенный поиск в БД
+    # def get(self,  
+    #         product_id: Union[int, list[int]] = None,  
+    #         product_reference: Union[str, list[str]] = None, 
+    #         params: dict = None, 
+    #         search_filter: str = None, 
+    #         PrestaAPIV: str = 'V3') -> bool:
+        
+    #     """! Проверка наличия товара в БД 
     #     -----------------
-    #     Attrs:
-    #         filter`str`  :  фильтр поиска
-    #             Значения `reference` `id_category` , `id_supplier` etc
-    #         value `str`  :  искомое значение
-    #     @returns
-    #         product - словарь товарам иначе False
-    #         False - if Product NOT in the DB, else Product
+    #     @param product_reference `str`  - термин из престашоп = `reference` 
+    #     @param product_id `str`   - термин из престашоп = `id`
+    #     @param params `dict` {'display':'option'}
+    #     example {'display':'full' | '[id, name]' | 'schema'}
+
+    #     @returns `bool`   False  - if Product NOT in the DB, else True
     #     """
-    #     product_filter = {f'filter[{filter}]': value}
-
-    #     #return PrestaAPIV1.search('products', product_filter)
-
-    #     response = PrestaAPIV3.search('products', product_filter)
-
-    #     if isinstance(response, list) and len(response) > 0:
-    #         return response[0]
+        
+    #     productsearch_filter: dict = {}
+    #     if  product_reference:
+    #         productsearch_filter = {'filter[reference]': product_reference}
+    #     elif  product_id and isinstance(product_id, int):
+    #         productsearch_filter = {'filter[id]': product_id} 
     #     else:
-    #         return False
+    #         logger.warning(f'Ситуация, когда не определен ни `product_reference` ни `product_id, в апи запросе Возвращется список всех `id` товара')
+    #         """! Возвращется список всех `id` товара """
+    #         pass
+
+    #     params =  self.params if not params else params
+        
+    #     params['filter'] = productsearch_filter
+        
+    #     if PrestaAPIV == 'V1':
+            
+    #         response = PrestaAPIV1.get('products', product_id, params)
+    #         """! в версии PrestaAPIV возврщается Словарь товара """
+    #     elif  PrestaAPIV == 'V2':   
+    #         pass
+    #     else:
+
+    #         response = PrestaAPIV3.get('products', filter = filter)
+    #         """! параметры по умолчанию уже заложены в реализации функции """
+    #         pass
+        
+    #     return response
 
 
     
+    
     #@logs_and_errors_decorator(default_return =  False)
-    def get(self, product_id: int = None, product_reference:str = None, options:dict = None, presta_api_version: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> dict:
-        """ Тестовая функция, по сути повтор check, но работает непосредстевенно 
+    def get(self, 
+            product_id: int = None, 
+            product_reference:str = None, 
+            search_filter: Union[str, dict] = None, 
+            PrestaAPIV: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> dict:
+        """! Тестовая функция, по сути повтор check, но работает непосредстевенно
+        @details Я могу задать параметр поиска по `product_id`, `product_reference` 
+        или получить готовый фильтр поиска. f.e.`{'filter[id]': product_id}` )
+          
         @param  product_id `str`: id товара
         @param  product_reference `str`: reference товара
-        @param filter: dict
-       Я могу задать параметр поиска по `product_id`, `product_reference` или 
-       с id_product 
-       
+        @param filter `dict`:  фильтр поиска. f.e.`{'filter[id]': product_id}` )
+
+        @todo  Union[str('V1'),str('V2'),str('V3')] = 'V3' переписать в Enum
+        
+        display=display,  sort=sort,limit=limit <- передается через  `search_filter`
        """
         #dic_product_type_PrestaAPIV1 = PrestaAPIV1.get(f'products/{id_product}')
         #dic_product_type_PrestaAPIV2 = PrestaAPIV2.get(f'products/{id_product}')
-        #product_filter: dict = {} if not filter else filter
+        #productsearch_filter: dict = {} if not filter else filter
 
         if  product_reference:
-            self.params.update ( {'filter[reference]': product_reference} )
+            self.params.update( {'filter[reference]': product_reference}  )
         elif  product_id and isinstance(product_id, int):
-            self.params.update ( {'filter[id]': product_id} )
+            self.params.update( {'filter[id]': product_id} )
+        elif isinstance(search_filter, dict):
+            self.params.update( search_filter )
      
 
 
-        #####################################################
-        presta_api_version = 'V1' # <- версия АПИ обработчика
-        ######################################################
+        if PrestaAPIV == 'V1':
+            """! в версии PrestaAPIV возврщается Словарь товара если товар уже существует в базе Prestashop."""
+            response = PrestaAPIV1.get('products', product_id, search_filter = search_filter)
+        elif PrestaAPIV == 'V2':
+            #self.params.update( {'display':'full'} )
+            response = PrestaAPIV2.get('products', params = self.params)            
+        elif  PrestaAPIV == 'V3':
+            response = PrestaAPIV3.get('products', search_filter = self.params) 
+            
+            # if product_reference:
+            #     search_filter = f"[reference] = [{product_reference}]"
+            # if product_id:
+            #     search_filter = f"[id] = [{product_id}]"
+            # if search_filter:  
+                #response = PrestaAPIV3.get('products', search_filter = search_filter, display = 'full')
+            #else:
+                #response = PrestaAPIV3.get('products') # <- вываливаю  все товары из бд.
 
-        if presta_api_version == 'V1':
-            
-            response = PrestaAPIV1.get('products', product_id, options = options)
-            """! в версии PrestaAPIV возврщается Словарь товара """
-            
-        elif  presta_api_version == 'V3':
-            #resource:str, _id:str = None, _filter:str = None, display:str='full'
-            filter = f"[reference] = [{product_reference}]"
-            response = PrestaAPIV3.get('products', filter = filter, display = 'full')
-       
-            
         return response
     
 
@@ -187,43 +189,45 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def add(self, product_dict: dict, presta_api_version: Union[str('V1'),str('V2'),str('V3')] = 'V1') -> dict:
+    def add(self, product_dict: dict, data_format = 'JSON', PrestaAPIV: Union[str('V1'),str('V2'),str('V3')] = 'V1') -> dict:
         """ Добавление нового товара в БД PRESTASHOP через API
         -----------------
        @param
         product_dict (dict): - Заполненный словарь товара / поля класса Product
-        presta_api_version `str`  :  Какая API будет задействована:
+        PrestaAPIV `str`  :  Какая API будет задействована:
                 'V1' - prestapyt
                 'V2' - prestashop_api
        @returns
         product:dict - Заполненный словарь добавленного товара в случае успеха, иначе сообщение об ошибке
         """
-
-        if presta_api_version == 'V3':
+        data: dict = { 'product': product_dict }
+        
+        if PrestaAPIV == 'V3':
             try:
-                response = PrestaAPIV3.create('products', product_dict)
+                
+                response = PrestaAPIV3.add('products', data)
                 return response
             except Exception as ex:
-                print('---------------------------------------------------------------')
+                print('-------------------------V3 ERROR --------------------------------------')
                 pprint(ex)
                 print('---------------------------------------------------------------')
                 return False
-        elif presta_api_version == 'V2':
+        elif PrestaAPIV == 'V2':
             try:
-                response = PrestaAPIV2.add('products', product_dict)['product']
+                response = PrestaAPIV2.add('products', data, data_format)['product']
                 return response
             except Exception as ex:
-                print('---------------------------------------------------------------')
+                print('--------------------------V2 ERROR -------------------------------------')
                 pprint(ex)
                 print('---------------------------------------------------------------')
                 return False
         else:
             try:
-                response = PrestaAPIV1.add('products', product_dict)['product']
+                response = PrestaAPIV1.add('products', data)['product']
                 return response
 
             except Exception as ex:
-                print('---------------------------------------------------------------')
+                print('------------------------- V1 ERROR --------------------------------------')
                 pprint(ex)
                 print('---------------------------------------------------------------')
                 return False
@@ -231,17 +235,18 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def update(self, id_product: int, product_dict: dict, presta_api_version: Union[str('V1'),str('V2'),str('V3')] = 'V3')-> dict:
+    def update(self, id_product: int, product_dict: dict, PrestaAPIV: Union[str('V1'),str('V2'),str('V3')] = 'V3')-> dict:
         """ Изменение данных о существующем товаре
-        @param
-            product:dict - Заполненный словарь товара / поля класса Product
-        @returns
-            product - изменненый товар в случае успеха иначе сообщение об ошибке от prestashop 
+        @param id_product - 
+        @param product:dict - Заполненный словарь товара / поля класса Product
+        @PrestaAPIV - 'V1' 
+        @returns product - изменненый товар в случае успеха иначе сообщение об ошибке от prestashop
+        
         """
         resourse = f'products/{id_product}'
-        if presta_api_version == 'V3':
+        if PrestaAPIV == 'V3':
             return   PrestaAPIV3.write(resourse, product_dict)
-        elif presta_api_version == 'V2':
+        elif PrestaAPIV == 'V2':
             return   PrestaAPIV2.add(resourse, product_dict)['product']
         else:
             return   PrestaAPIV1.add(resourse, product_dict)
@@ -256,7 +261,7 @@ class PrestaProduct():
         pass
 
     #
-    #def update_categories(id_product: int, category_ids: list, presta_api_version: Union[str('V1'),str('V2'),str('V3')] = 'V3')-> Union[dict, PrestaAPIError]:
+    #def update_categories(id_product: int, category_ids: list, PrestaAPIV: Union[str('V1'),str('V2'),str('V3')] = 'V3')-> Union[dict, PrestaAPIError]:
     #    """ Изменение данных о существующем товаре
     #    @param
     #        product:dict - Заполненный словарь товара / поля класса Product
@@ -270,7 +275,7 @@ class PrestaProduct():
     #    pass
 
     #@logs_and_errors_decorator(default_return =  False)
-    def get_product_schema(self, presta_api_version: Union[str('V1'),str('V2'),str('V3')] = 'V1') -> Union[dict, False]:
+    def get_product_schema(self, PrestaAPIV: Union[str('V1'),str('V2'),str('V3')] = 'V1') -> Union[dict, False]:
         """JSON схема товара
 
         @returns
@@ -309,7 +314,7 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def delete(self, id_product: Union[int,str], presta_api_version: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> dict:
+    def delete(self, id_product: Union[int,str], PrestaAPIV: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> dict:
         """ Удаляю товер из бд """
 
         #return PrestaProd.delete_product(f'products/{id_product}')

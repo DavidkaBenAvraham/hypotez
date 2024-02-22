@@ -187,8 +187,10 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
 
         _saved_locator = l 
        
-        l['attribute'] = evaluate_locator(l.get('attribute'),driver)
-        l['selector'] = evaluate_locator(l.get('selector'),driver) 
+        l['attribute'] = evaluate_locator (l.get ('attribute'), driver)
+        """! Проверка на наличие внутренней функции переданной через аттрибут в локаторе """
+        l['selector'] = evaluate_locator (l.get ('selector'), driver)
+        """! Проверка на наличие внутренней функции переданной через селектор в локаторе """
    
         # 1.
         if all ( [ l['action'], l['attribute'] ] ) is None:
@@ -285,16 +287,34 @@ def execute_locator(driver: Driver, locator: dict, keys: Union[Keys, None] = Non
         ret = []
         for i in range(len(locator['attribute'])):
             l = {key: locator[key][i] for key in locator}
-            if ret is None or len(ret) == 0:
+            if ret is None or ret is False or len(ret) == 0:
                 """! код может вернуть `None` """
                 ret = parse_locator(l) 
             else:    
                 ret.append ( parse_locator(l) )
                 
-            ret = ret if ret is None else list(filter(lambda x: x is not None, ret))
-            """! очищаю от None, если пришел список"""
-            pass
-                
+            ret = False if ret is False or ret is None else list(filter(lambda x: x is not None or x is not False, ret))
+            """! 
+            `list(filter(lambda x: x is not None, ret))`
+            
+            Это выражение использует функцию `filter()` для фильтрации списка ret, оставляя только те элементы, 
+            которые не равны None.
+
+            по частям:
+            - `lambda x: x is not None` - это анонимная функция, которая принимает один аргумент x и возвращает True, 
+            если x не равен None, и False в противном случае.
+
+            - filter() - это функция, которая применяет указанную функцию 
+            (в данном случае анонимную функцию, созданную с помощью lambda) к каждому элементу итерируемого объекта 
+            (в данном случае списка ret). Она возвращает итератор, содержащий только те элементы, 
+            для которых функция возвращает True.
+
+            - list() - это функция, которая преобразует итерируемый объект (в данном случае итератор, возвращенный функцией filter()) в список.
+
+            Таким образом, в результате выполнения этого выражения будет получен список, 
+            содержащий только те элементы из ret, которые не равны None.
+
+"""    
     else:
         ret = parse_locator(locator)
         
@@ -622,7 +642,7 @@ def get_attributes_from_webelements(driver: Driver, locator: dict) -> Union[List
 
     # 1.4
     else:
-        """! Отдать аттрибут вебэлемента (списка веэлементов)"""
+        """! Отдать аттрибут вебэлемента (одного веэлементов)"""
         # If attribute is a string, get the attribute value for the web element.
         ret = get_attribute_by_locator(driver, locator)
     return ret
@@ -847,358 +867,4 @@ def reread_locators(s, entity: str ) -> Union[dict, False]:
             
 
 
-
-
-
-
-####################################################################################################
-#            
-#
-#                                   Старый код
-#
-#
-#def return_value_from_locator(driver, locator):
-#    """
-#    @param
-#        locator['attribute'] (Union[str,list]): - const f.e. 1 or 'string' or nul etc
-#                                                - list(const) f.e. "[1,'string,False]"
-#                                                - variable: start from `_$` f.e. _$var1
-#                                                - I can alternate variables and constants in any sequence: "1,_$var2,Flase ..." or "[1,_$var2,Flase]"
-#                                                - hypotez objects: $d, $s, $c, $p each one mean: Driver, Supplier, Category, Product
-#                                                (I can easily assign properties to object attributes if alowed.
-#                                                f.e. $d.get_url )
-
-
-
-#        To avoid creating additional entities in the locator dictionary, I can transfer the values from attributes through selector.
-#        я могу передать данные (константы, переменные, классы) через ключ `attribute` 
-#        здесь строится логика, основанная на синтаксисе $_()_
-
-#        Here is an example of how such a locator looks like:
-
-#        {
-#            "attribute": "$_(d.current_url.split(f'''/''')[-2])_$",
-#            "logic for attribue[AND|OR|XOR|VALUE|nul]": None,
-#            "by": "VALUE",
-#            "selector": "",
-#            "logic for action[AND|OR|XOR|VALUE|nul]": None,
-#            "use_mouse": False,
-#            "action": None
-#        }
-#        OR
-#          "price": {
-#                "attribute": "innerText",
-#                
-#                "by": "XPATH",
-#                "selector": "//div[contains(@data-csa-c-asin, '$_(d.current_url.split(f'''/''')[-2])_$') and contains(@id, 'corePrice_desktop')]// span[contains(@class, 'apexPriceToPay')]",
-#                
-#                "use_mouse": false, "mandatory": true,
-#                "action": nul
-#              }
-
-#    @returns from the example shown above, the folowing wil be returned: [5,forward',0]
-#        """
-#    pass
-
-
-#def get_imgs_links(driver, url):
-#    """
-#    Extracts image URLs from the specified URL.
-
-#    @param
-#        driver: An instance of the Selenium webdriver.
-#        url `str`  :  The URL of the page to extract images from.
-
-#    @returns
-#        A dictionary of image names and URLs. Returns None if no images were found.
-#    """
-
-
-#    locator = {
-#        "attribute": {"innerText": "src"},
-#        "by": "XPATH",
-#        "selector": "//img",
-#        "action": None
-#    }
-
-#    _ = driver.scrol(5)
-    
-#    imgs = driver.execute_locator(locator)
-#    f"""возвращает словарь {"img name":"img url"} """
-    
-#    if not imgs or len(imgs) == 0:
-#        return None
-#    else:
-#        return imgs
-
-#def calculate_formulae_in_locators(driver, locator) -> list[str]:
-#    formulae = SF.extract_value_from_parentheses_with_lead_dolar(locator['attribute'])
-#    res: list = list()
-#    for formula in formulae:
-#         res.append(eval(formula))    
-#    return res
-
-
-# def execute_action(driver,locator,keys=None)->bool:
-#     _d = driver
-#     # Проверяю наличие формулы для локатора
-#     if locator['action'] == 'loop':
-#         if len(locator['variables in selector'])>0 :
-#             #x = eval(locator['variables in selector'])
-#             _range = locator['formula for locator']
-#             for x in eval(_range):
-#                 selector = str(locator['selector']).replace('{x}',str(x))
-#                 _l:dict = {
-#                 "attribute" : locator['attribute'],
-#                 "by": locator['by'],
-#                 "selector" : selector,
-#                 "action":None}
-
-#                 if not _d.execute_locator(_l):
-#                     pass               
-#         pass
-    
-#     #1. click
-#     if locator['action'] == 'click()':
-#         """ 1. click() """
-#         driver.click(locator)
-        
-#     #2. send_keys([key])
-#     elif str(locator['action']).find('send_keys(')>-1:
-#         """ 2. send_keys() """
-#         #if not driver.click(driver, locator):pass
-#         """ не нажался элемент. Пока не страшно. 
-#         нам важно ему передать значение. Нажималка для подстраховки"""
-
-#         webelement = get_webelements_from_page(driver,locator)
-#         if not webelement:
-#             logger.error(f"""Не найден {locator}""")
-#             return False
-                     
-#         """ ключ может передаваться самим локатором или извне 
-#         TODO сделать внешний приоритетным
-#         """
-#         if keys is None:
-#             key_from_locator = locator['action']
-#             key_from_locator = f"""{key_from_locator[key_from_locator.rfind("('")+2:key_from_locator.rfind("')"):]}"""
-#             """ ключи передаются в ОДИНОЧНЫХ скобках парамертрами функции. Я их вытаскиваю """
-#             keys = key_from_locator
-#             try:
-#                 webelement.send_keys(keys)
-#                 return True
-#             except Exception as ex:
-#                 logger.error(f""" не выполнилось действие {locator['action']}""")
-#                 return False
-
-#         else:
-#             try:
-#                 webelement.send_keys(keys)
-#                 return True
-#             except Exception as ex:
-#                 logger.error(f"""Ошибка в send_keys({keys}):
-#                 {ex.with_traceback(ex.__traceback__)}""") 
-
-#                 return False
-
-#     #3. screenshot
-#     elif str(locator['action']).find('screenshot(')>-1:
-#         """ 3. screenshot() """
-#         webelements = get_webelements_from_page(driver,locator)
-#         if webelements == False: 
-#             logger.error(f''' Не нашел картинку :( ''')
-#             return False
-#         return get_webelement_as_screenshot(webelements[0]) if isinstance(webelements, list) else get_webelement_as_screenshot(webelements)
-
-#     #4. scrol
-#     elif str(locator['action']).find('scrol(')>-1:
-#         """ 4. scrol() """
-#         return eval(locator['action'])
-#     #5. wait
-#     elif str(locator['action']).find('wait(')>-1:
-#         pattern = r"wait\(([^,]+),\s*([^,]+),\s*(after|before)\)"
-
-#         """ Объяснение:
-#             wait\( соответствует литералу "wait(" в строке
-#             ([^,]+) соответствует любой непустой последовательности символов, не являющихся запятой, 
-#                 и сохраняет их в первую группу захвата
-#             ,\s* соответствует запятой, за которой могут следовать некоторые пробелы
-#             ([^,]+) соответствует любой непустой последовательности символов, не являющихся запятой, 
-#                 и сохраняет их во вторую группу захвата
-#             ,\s* соответствует запятой, за которой могут следовать некоторые пробелы
-#             (after|before) соответствует либо строке "after", либо строке "before", 
-#                 и сохраняет ее в третью группу захвата.
-#             \) соответствует литералу ")" в строке.
-
-#         """
-#         match = re.match(pattern, locator['action'])
-#         if match:
-#             cal_func = match.group(1)
-#             if cal_func == 'click()':
-#                 cal_func = cal_func.replace('()',f'''({locator})''')
-#                 """ вставляю локатор в click() """
-#             inteval = int(match.group(2))
-#             when =  match.group(3)
-#             driver.wait(cal_func = cal_func, wait=inteval, when=when)
-
-    
-# def get_attributes_from_webelements(driver,locator)->list:
-       
-#     _ret:list=[]                          
-#     if locator['attribute'] is None:
-#         """TODO ЗАЧЕМ Я ВОЗВРАЩАЮ разные ТИПы ??? 
-#         Здесь я возвращаю весь вебэлемент """
-#         return get_webelements_from_page(driver,locator)
-
-#     if isinstance(locator['attribute'],dict):
-#         # Я могу получить аттрибут в виде словаря.
-#         # Например, attribute:{"innerText":"href"}
-#         # пример использования есть в файле gsmarena_com.py
-            
-        
-#         for key,value in locator['attribute'].items():
-
-#             #а) ключи
-#             _k : dict = {"attribute":key,
-#                         "by":locator["by"],
-#                         "selector":locator['selector'],
-#                         "action":locator['action']}
-
-#             k = get_attribute_by_locator(driver,_k)
-#             # получаю в ответ список ключей
-
-#             #б) значения
-#             _l : dict = {"attribute":value,
-#                         "by":locator["by"],
-#                         "selector":locator['selector'],
-#                         "action":locator['action']}
-
-#             v = get_attribute_from_web_element(driver,_l)  
-#             # получаю в ответ список значений
-                             
-
-#             if isinstance(k,list):
-#                 """ Может вернуться список [{ключ:значение},{...|...}]"""
-#                 for i in range(len(k)):
-#                     _ret.append({k[i]:v[i]})
-#                 return _ret
-
-#             elif isinstance(k,str):
-#                 """ или одна пара {ключ:значение}"""
-#                 return {k:v}
-#             else: 
-#                 """ не знаю, что за ситуация """
-#                 logger.error(f"""А ты кто такое?
-#                 {k,v}""")
-#                 return False
-
-#     elif isinstance(locator['attribute'],list):
-#         # я могу получить список требуемых аттрибутов веб эемента/ов
-
-#         while len(locator['attribute'])>0:
-#             _ret.append(get_attribute_by_locator(driver,locator).pop(0))
-                
-#     else:
-#         _ret = get_attribute_by_locator(driver, locator)
-#     return _ret
-     
-
-# def get_attribute_by_locator(driver,  locator)->str: 
-#     webelements = get_webelements_from_page(driver,locator)
-
-#     if not webelements:
-#         logger.error(f'''  Не вытащил атрибут по локатору 
-#         {locator}
-#         ''')
-#         return []
-
-#     elif isinstance(webelements,list):
-#         attributes:list = []
-#         for webelement in webelements:
-#             try:
-#                 _attr = webelement.get_attribute(locator['attribute'])
-#                 attributes.append(_attr)
-#             except Exception as ex: 
-#                 logger.error(ex)
-#                 return attributes
-#         return attributes
-                
-
-#     else:
-#         """ пришел один элемент """
-#         attributes = webelements.get_attribute(locator['attribute'])
-#         return attributes
-    
-
-# def get_webelements_from_page(driver, locator)->list:
-
-#     if locator['by'].upper() == 'XPATH':
-#         by = By.XPATH
-#     if locator['by'].upper() == 'ID':
-#         by = By.ID
-#     if locator['by'].upper() == 'TAG_NAME':
-#         by = By.TAG_NAME
-#     if locator['by'].upper() == 'CSS_SELECTOR':
-#         by = By.CSS_SELECTOR
-#     if locator['by'].upper() == 'NAME':
-#         by = By.NAME
-
-#     try: 
-#         """ может быть несколько элементов на странице """
-#         #elements = webdriverWait(driver,3).until(EC.visibility_of_al_elements_located((locator['by'], locator['selector'])))
-#         #WITH WAIT (GOOD FOR AJAX)
-
-#         elements = driver.find_elements(by, locator['selector'])
-#     except Exception as ex: 
-#         """ а может быть один """
-#         try:
-#             #elements = webdriverWait(driver,3).until(EC.visibility_of_element_located((locator['by'], locator['selector'])))
-#             #WITH WAIT (GOOD FOR AJAX)
-
-#             element = driver.find_element(by, locator['selector'])
-#         except Exception as ex:    
-#             logger.error(f""" Не найден элемент по локатору 
-#             {locator}
-#             """)
-#             return False
-
-#     ##if isinstance(elements, WebElement):
-#     #    return elements
-#     if len(elements)<1: 
-#         return False
-
-#     elif len(elements)==1:
-#         return elements[0]
-#     else: 
-#         return elements 
-
-# def get_webelement_as_screenshot(webelement)->bool:
-#     """ Возвращает png любого элемента DOM
-#     @param
-#         webelement (_WebElement_): релевантный DOM элемент
-#     @returns
-#         png image
-#     """
-#     try:
-#         screenshot = webelement.screenshot_as_png
-#         return screenshot
-#     except Exception as ex:
-#         if ex.with_traceback().find("is no longer attached to the DOM"):
-#             logger.error(f"""Потерял элемент в DOMе {ex.with_traceback(ex.__traceback__)}""" )
-#             return False
-#         else:
-#             logger.error(f"""Потерял элемент кяк то по - другому {ex.with_traceback(ex.__traceback__)}""")
-#             return False
-
-# def save_webelement_as_screenshot(driver, webelement, file_path, send=True)->bool:
-#     """Сохраняю вебэлемент в скриншот """
-#     ''' https://stackoverflow.com/questions/17361742/download-image-with-selenium-python '''
-#     #TODO: send to ftp
-    
-#     try:
-#         with open(file_path , 'wb') as\file
-#             file.write(webelement.screenshot_as_png)
-#             return True
-#     except Exception as ex:
-#         logger.error(f''' не записался скриншот элемента {dir(webelement)} 
-#         в путь: {file_path}''')
 

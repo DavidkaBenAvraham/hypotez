@@ -61,6 +61,7 @@ def _process_complex(doc, children):
     for tag, value in children:
         # If tag is attrs, all the nodes should be added to attrs
         # FIXME: Assume all values in attrs are simple values.
+        # if isinstance(value, str): value = str(value).encode('utf-8')
         if tag == 'attrs':
             attrs = _process_attr(doc, value)
             continue

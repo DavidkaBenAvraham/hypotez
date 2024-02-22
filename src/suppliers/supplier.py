@@ -142,15 +142,12 @@ class Supplier():
         
         self.related_modules = importlib.import_module(f'src.suppliers.{self.supplier_prefix}')
         """! `self.related_modules`  дополнительные функции из модуля `<supplier_pefix>` """
-
+        
+        
         self.supplier_settings = j_loads(
             Path(self.supplier_abs_path, f'{self.supplier_prefix}.json'))
         """! supplier_settings: `self.supplier_settings` Установки по умолчанию для данного поставщика, читаются из файла <supplier_prefix>.json """
        
-        # Реализовано в j_loads()
-        # if not self.supplier_settings: 
-        #     raise DefaultSettingsException("""! Ошибка чтения файла установок поставщика """)
-        #     return False
        
         self.price_rule = self.supplier_settings.get('price_rule',0)
         self.supplier_id = self.supplier_settings['supplier_id']
@@ -161,9 +158,12 @@ class Supplier():
        
         
         # Получаем список файлов сценариев
-        self.scenario_files = [ Path(self.supplier_abs_path, 'scenarios', scenario_filename) for scenario_filename in self.supplier_settings.get('scenario_files', 
-                            [ Path(self.supplier_abs_path, 'scenarios', scenario_filename) for scenario_filename in Path(self.supplier_abs_path, 'scenarios').iterdir() 
+        self.scenario_files = [ Path (self.supplier_abs_path, 'scenarios', scenario_filename) for scenario_filename 
+                               in self.supplier_settings.get ('scenario_files', 
+                            [ Path(self.supplier_abs_path, 'scenarios', scenario_filename) for scenario_filename 
+                             in Path(self.supplier_abs_path, 'scenarios').iterdir() 
                              if scenario_filename.suffix == '.json' ] ) ]
+        
         """! @~russian Если список сценариев НЕ определен при Инициализации класса - беру все из папки сценариев поставщика.  
         Я все равно оставил опцию подменять список до старта сбора сценариев.  
         Все пути файлов сценариев дополняю до абсолютного пути

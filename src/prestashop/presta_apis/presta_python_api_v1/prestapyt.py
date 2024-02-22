@@ -235,7 +235,7 @@ class PrestaShopWebService_V1(object):
                     "Please upgrade/downgrade this library") % (version,))
         return True
 
-    def _execute(self, url, method, data=None, add_headers=None):
+    def _execute(self, url, method, data=None, headers=None):
         """! Execute a request on the PrestaShop Webservice.
 
         @param url: full url to call
@@ -247,11 +247,11 @@ class PrestaShopWebService_V1(object):
         
         @examle request_headers {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
         """
-        if add_headers is None:
-            add_headers = {}
+        # if _headers is None:
+        #     _headers = {}
 
         request_headers = self.client.headers.copy()
-        request_headers.update(add_headers)
+        request_headers.update(headers)
 
         if self.verbose:
             currentlevel = HTTPConnection.debuglevel
@@ -338,6 +338,7 @@ class PrestaShopWebService_V1(object):
         For instance :
             {'display': '[firstname,lastname]',
              'filter[id]': '[1|5]'}
+             
         will return :
             'display=[firstname,lastname]&filter[id]=[1|5]'
 
@@ -367,7 +368,7 @@ class PrestaShopWebService_V1(object):
             full_url += "?%s" % (self._options_to_querystring(options),)
         return self.add_with_url(full_url, content, files)
 
-    def add_with_url(self, url, xml=None, files=None):
+    def add_with_url(self, url, xml=None, data = None, files=None, _format = 'JSON'):
         """! Add (POST) a resource.
 
         @param url: A full URL which for the resource type to create
@@ -376,14 +377,20 @@ class PrestaShopWebService_V1(object):
             elements for data to be uploaded as files.
         @returns  an ElementTree of the response from the web service
         """
+                
         if files is not None:
             headers, data = self.encode_multipart_formdata(files)
             response = self._execute(url, 'POST', data=data,
-                                     add_headers=headers)
+                                     headers = headers)
+            
+        elif _format == 'JSON' and  data  is not None:
+            headers = {'Content-Type': 'application/json'}
+            response = self._execute(url, 'POST', data = data,
+                                     headers = headers)
         elif xml is not None:
             headers = {'Content-Type': 'text/xml'}
             response = self._execute(url, 'POST', data=xml,
-                                     add_headers=headers)
+                                     headers = headers)
         else:
             raise PrestaShopWebServiceError_V1('Undefined data.')
         return self._parse(response.content)
@@ -407,7 +414,7 @@ class PrestaShopWebService_V1(object):
         """
         return self.get(resource, options=options)
 
-    def get(self, resource, resource_id=None, options=None, output_format: str = 'JSON'):
+    def get(self, resource, resource_id=None, options=None, search_filter = None, output_format: str = 'JSON'):
         """! Retrieve (GET) a resource.
 
         @param resource: type of resource to retrieve
@@ -424,10 +431,10 @@ class PrestaShopWebService_V1(object):
         full_url = self.API_DOMAIN + resource
         if resource_id is not None:
             full_url += "/%s" % (resource_id,)
-        if options is not None:
-            self._validate_query_options(options)
+        if search_filter is not None:
+            self._validate_query_options(search_filter)
     
-        full_url += f"?{self._options_to_querystring(options)}&output_format={output_format}"      # <- добавил опцию получить данные в JSON
+        full_url += f"?{self._options_to_querystring(search_filter)}&output_format={output_format}"      # <- добавил опцию получить данные в JSON
     
         return self.get_with_url (full_url)
 
@@ -447,12 +454,13 @@ class PrestaShopWebService_V1(object):
         output_format = query_params.get('output_format', [None])[0]
 
         content = self._execute(url, 'GET').content
+        if content == b'[]': return False
         
         if output_format == 'JSON':
 
-            return json.loads(content)    
+            return json.loads ( content.encode('utf-8') )    
         
-        return self._parse(content)
+        return self._parse ( content.encode('utf-8') )
 
     def head(self, resource, resource_id=None, options=None):
         """! Head method (HEAD) a resource.

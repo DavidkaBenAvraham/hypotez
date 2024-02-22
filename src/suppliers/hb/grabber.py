@@ -65,6 +65,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	global l
 	l = s.locators['product']
 	
+	d.wait(5)
 	d.execute_locator(l['close_banner'])
 	
 	d.scroll()
@@ -103,8 +104,21 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 				f.supplier_reference = SN.get_numbers_only(webelement.text)
 			pass
 		pass
+
+
+	
+	#@logs_and_errors_decorator(default_return=False)
+	def set_references():
+		"""! Поля `f.id_supplier`, `f.reference`  .
+		Поле `f.supplier_reference` определено в функции `product_reference_and_volume_and_price_for_100()` """
+		#f.supplier_reference = field_supplier_reference()
+		f.id_supplier = s.supplier_id
+		f.reference = f'{s.supplier_id}-{f.supplier_reference}'	
+
 	
 	product_reference_and_volume_and_price_for_100()
+	set_references()
+	
 	
 	#
 	#
@@ -113,23 +127,6 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 
 
 
-
-	######################################################################################## 
-	#
-	#			Поля `f.id_supplier`, `f.reference`  
-	#			Поле `f.supplier_reference` определено в функции `product_reference_and_volume_and_price_for_100()`
-
-	def set_references(f, s):
-		"""! все, что касается id товара """
-		#f.supplier_reference = field_supplier_reference()
-		f.id_supplier = s.supplier_id
-		f.reference = f'{s.supplier_id}-{f.supplier_reference}'
-	
-	set_references(f, s)
-	#
-	#######################################################################################
-
-	
 
 
 	#f.active = field_active() # Совпадает с f.available_for_order Если товара нет в наличии - выставляю флаг 0
@@ -159,12 +156,12 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.customizable = field_customizable()
 	#f.date_add = field_date_add()
 	#f.date_upd = field_date_upd()
-	f.default_image_url = field_default_image_url()
+	#f.default_image_url = field_default_image_url() # <- запоминаю в служебный словарь
 	#f.delivery_in_stock = field_delivery_in_stock()	 # [v]	 ##<- заметка о доставке. если товар в наличии
 	#f.delivery_out_stock = field_delivery_out_stock() # [v]	 ##<- заметка о доставке, если товара нет в наличии
 	#f.depth = field_depth()
 	#f.description = field_description()
-	f.description_short = f.description = field_description()
+	f.description_short = f.description = field_description()  # <- На сайте нет детального опсания. 
 	# f.ean13 = field_ean13()
 	# f.ecotax = field_ecotax()
 	# f.height = field_height()
@@ -179,13 +176,22 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.id_supplier = s.supplier_id	# [v]
 	#f.id_tax = field_id_tax() # [v]
 	#f.id_type_redirected = field_id_type_redirected()
+
+	################################################################################
+	_images_urls: list = d.execute_locator(l["Image URLs (x,y,z...)"])
+	if len(_images_urls) > 0:
+		f.dict_assist_fields['default_image_url'] = _images_urls[0]
+	if len(_images_urls) > 1:
+		f.dict_assist_fields['images_urls'] = _images_urls[1::]
+	################################################################################
+
 	#f.images_urls = field_images_urls()	# [v]
 	#f.indexed = field_indexed()
 	f.ingridients = field_ingridients()
 	#f.is_virtual = field_is_virtual()
 	#f.isbn = field_isbn()
 
-	f.location = field_location()
+	#f.location = field_location()
 	#f.low_stock_alert = field_low_stock_alert()
 	#f.low_stock_threshold = field_low_stock_threshold()
 	f.meta_description = field_meta_description()
@@ -220,7 +226,6 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.unity = field_unity()
 	#f.upc = field_upc()
 	#f.uploadable_files = field_uploadable_files()
-	f.default_image_url = field_default_image_url()
 	#f.volume = field_volume() # <- вычисляется в функции product_reference_and_volume_and_price_for_100()
 	#f.visibility = field_visibility()
 	#f.weight = field_weight()
@@ -229,7 +234,8 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	return f
     
 
-
+####################################################################################################################
+####################################################################################################################
 	
 
 #@logs_and_errors_decorator(default_return=False)
@@ -739,6 +745,7 @@ def field_meta_description():
 	@brief
 	@details
 	"""
+	d.execute_locator ( l['meta_description'] )
 	pass
 	
 
@@ -748,7 +755,7 @@ def field_meta_keywords():
 	@brief
 	@details
 	"""
-	return f.meta_keywords
+	return d.execute_locator ( l['meta_keywords'] )
 	pass
 	
         
@@ -759,7 +766,7 @@ def field_meta_title():
 	@brief
 	@details
 	"""
-	return f.meta_title
+	return d.execute_locator ( l['meta_title'] )
 	pass
 	
 
@@ -789,6 +796,7 @@ def field_name(product_name: str) -> str:
 	"""! @~russian Название товара 
 	Очищаю поля от лишних параметров, которые не проходят в престашоп 
 	"""
+	pass
 	return SN.normalize_product_name(product_name)
 	pass
 	
@@ -799,24 +807,23 @@ def field_online_only():
 	@brief
 	@details
 	"""
-	return f.online_only
+	return d.execute_locator ( l['online_only'] )
 	pass
 	
 
 #@logs_and_errors_decorator(default_return=False)
 def field_on_sale():
 	"""! @~russian 	Распродажа	"""
-	return f.on_sale
+	return d.execute_locator ( l['on_sale'] )
 	pass
 	
 
 #@logs_and_errors_decorator(default_return=False)
 def field_out_of_stock():
 	"""! @~russian Товара нет в наличии """
-	return d.execute_locator ( l['out_of_stock']) 
+	return d.execute_locator ( l["out_of_stock"]) 
 	pass
 	
-
 #@logs_and_errors_decorator(default_return=False)
 def field_pack_stock_type():
 	"""! @~russian 
@@ -1017,7 +1024,7 @@ def field_weight():
 
 #@logs_and_errors_decorator(default_return=False)
 def field_wholesale_price():
-	"""! @~russian 
+	"""! @~russian Цена у постащика
 	@brief
 	@details
 	"""
@@ -1230,3 +1237,5 @@ def combinations():
             
         logger.error(ex)
         return False
+	
+

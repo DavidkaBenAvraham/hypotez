@@ -740,11 +740,14 @@ class Driver(WebDriver):
             """! """
             if direction == 'forward':
                 self.carousel ('',scrolls)
+                return True
             if direction == 'backward':
                 self.carousel ('-',scrolls)
+                return True
             if direction == 'both':
                 self.carousel ('', scrolls)
                 self.carousel ('-', scrolls)
+                return True
             else:
                 logger.warning(f"""неправильно задано направление. Ожидается `'forward', 'backward', 'both'`. Получено {direction} '""")
                 # self.carousel('')
@@ -830,8 +833,8 @@ class Driver(WebDriver):
             while not js.get_ready_state(self) == 'complete':
                 #print('Жду, пока загрузится вся страница')
                 pass
-            logger.debug(f'Страница загрузилась за { float (time.time()) - _start_time }')
-            self.switch_to.window(self.window_handles[-1])
+            logger.debug ( f'Страница загрузилась за { float (time.time()) - _start_time }' )
+            self.switch_to.window ( self.window_handles[-1] )
             """! переключаюсь на активное окно. Это если ссылка открывает новое окно 
             @todo Надо быть внимательным, 
             """

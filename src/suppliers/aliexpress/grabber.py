@@ -18,7 +18,6 @@ import asyncio
 from typing import Union
 from src.settings import gs
 from src.product import  Product, ProductFields
-from src.prestashop import Product as PrestaProduct
 from src.helpers import  logger, logs_and_errors_decorator
 from src.tools import SF, SN
 from .via_api import aliapi_to_prestashop

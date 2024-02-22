@@ -46,6 +46,7 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 from selenium.common.exceptions import WebDriverException
+from selenium.webdriver.remote.webdriver import WebDriver
 
 # -----------------------------------
 from src.settings import gs
@@ -241,10 +242,11 @@ class Firefox(FF):
                     так бывает при обновлениях самого Firefox
                     ну, или он не установлен в ос.
             ----------------------------------
-                         ''', ex)
+                        ''', ex)
             return False
+
         except Exception as ex:
-            logger.error(' Упал webdriver Firefox ', ex)
+            logger.critical(' Упал webdriver Firefox. Общая ошибка: ', ex)
             return False
          # END selenium 4
          

@@ -25,7 +25,7 @@ class Facebook():
 	
 	@param driver `Driver`  :   вебдрайвер (`src.webriver.Driver.Driver`) 
 	"""    
-	dir_facebook_ads = Path(gs. )
+	#dir_facebook_ads = Path(gs. )
 	d = driver = Driver()
 	locators = j_loads
 	
