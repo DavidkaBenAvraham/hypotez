@@ -145,10 +145,14 @@ class PrestaProduct():
 
         if  product_reference:
             self.params.update( {'filter[reference]': product_reference}  )
+            """! Я могу прислать параметр `product_reference` """ 
         elif  product_id and isinstance(product_id, int):
+            product_id = [product_id]
             self.params.update( {'filter[id]': product_id} )
+            """! Я могу прислать параметр `product_id` """
         elif isinstance(search_filter, dict):
             self.params.update( search_filter )
+            """! Я могу прислать готовый фильтр """
      
 
 
@@ -156,9 +160,8 @@ class PrestaProduct():
             """! в версии PrestaAPIV возврщается Словарь товара если товар уже существует в базе Prestashop."""
             response = PrestaAPIV1.get('products', product_id, search_filter = search_filter)
         elif PrestaAPIV == 'V2':
-            #self.params.update( {'display':'full'} )
             response = PrestaAPIV2.get('products', params = self.params)            
-        elif  PrestaAPIV == 'V3':
+        elif  PrestaAPIV == 'V3':            
             response = PrestaAPIV3.get('products', search_filter = self.params) 
             
             # if product_reference:
@@ -209,7 +212,7 @@ class PrestaProduct():
                 return response
             except Exception as ex:
                 print('-------------------------V3 ERROR --------------------------------------')
-                pprint(ex)
+                logger.error(ex)
                 print('---------------------------------------------------------------')
                 return False
         elif PrestaAPIV == 'V2':
@@ -218,7 +221,7 @@ class PrestaProduct():
                 return response
             except Exception as ex:
                 print('--------------------------V2 ERROR -------------------------------------')
-                pprint(ex)
+                logger.error(ex)
                 print('---------------------------------------------------------------')
                 return False
         else:
@@ -228,7 +231,7 @@ class PrestaProduct():
 
             except Exception as ex:
                 print('------------------------- V1 ERROR --------------------------------------')
-                pprint(ex)
+                logger.error(ex)
                 print('---------------------------------------------------------------')
                 return False
 

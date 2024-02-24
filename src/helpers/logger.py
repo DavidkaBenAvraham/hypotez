@@ -20,7 +20,8 @@ class LoggerSingleton():
     """
 
     _instance = None
-    _logger = None
+    logger_console = None
+    logger_file: logging.Logger = None
     level = None
     colorama.init()
     
@@ -51,11 +52,12 @@ class LoggerSingleton():
 
         @return: Экземпляр LoggerSingleton.
         """
+        
         if not cls._instance:
             cls._instance = cls()
         return cls._instance
 
-    def __init__(self, name: str = 'l', level: str = logging.DEBUG, filename=None):
+    def __init__(self, name: str = 'l', level: str = logging.DEBUG, logger_file = None):
         """!
         @brief Инициализирует объект LoggerSingleton.
 
@@ -66,24 +68,48 @@ class LoggerSingleton():
         @param level: Уровень логирования (по умолчанию INFO).
         @param filename: Имя файла лога (по умолчанию None).
         """
-        if not self._logger:
-            self._logger = logging.getLogger(name)
-            
-            self._logger.setLevel(level)
+        if not self.logger_console:
+            self.logger_console = logging.getLogger(name)
+            self.logger_console.setLevel(level)
             self.level_name = logging.getLevelName(level)
 
             #formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
             formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 
-            if filename:
-                file_handler = logging.FileHandler(filename)
-                file_handler.setFormatter(formatter)
-                self._logger.addHandler(file_handler)
-            else:
-                console_handler = logging.StreamHandler()
-                console_handler.setFormatter(formatter)
-                self._logger.addHandler(console_handler)
 
+            # else:
+            #     console_handler = logging.StreamHandler()
+            #     console_handler.setFormatter(formatter)
+            #     self.logger_console.addHandler(console_handler)
+
+            console_handler = logging.StreamHandler()
+            console_handler.setFormatter(formatter)
+            self.logger_console.addHandler(console_handler)
+      
+            """! 
+            # Настроим вывод логов на экран
+            console_handler = logging.StreamHandler()
+            console_handler.setLevel(logging.INFO)
+            console_formatter = logging.Formatter('%(levelname)s: %(message)s')
+            console_handler.setFormatter(console_formatter)
+            logging.getLogger().addHandler(console_handler)
+
+            # Настроим запись логов в файл
+            file_handler = logging.FileHandler(filename='webdriver.log', mode='a')
+            file_handler.setLevel(logging.DEBUG)  # Например, мы записываем все сообщения в файл
+            file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+            file_handler.setFormatter(file_formatter)
+            logging.getLogger().addHandler(file_handler)
+            """
+    def set_log_file(self, filename: str, level:str = logging.DEBUG, name = 'file_logger'):
+        self.logger_file = logging.getLogger(name)
+        file_handler = logging.FileHandler(filename = filename, mode='a')
+        file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        file_handler.setFormatter(file_formatter)
+        #logging.getLogger().addHandler(file_handler)
+        self.logger_file.addHandler(file_handler)
+        self.logger_file.setLevel(level)
+        
     def _get_colored_message(self, message, ex, color):
         """!
         @brief Возвращает окрашенное сообщение.
@@ -120,7 +146,8 @@ class LoggerSingleton():
         """
         if not Beeper.silent: asyncio.run (Beeper.beep (BeepLevel.INFO) )
         colored_message = self._get_colored_message (message, None, colorama.Fore.GREEN)
-        self._logger.info (colored_message)
+        self.logger_console.info (colored_message)
+        self.logger_file.info (message)
 
     def success(self, message, ex = None, exc_info=True ):
         """!@~russian 
@@ -130,7 +157,8 @@ class LoggerSingleton():
         """
         if not Beeper.silent: asyncio.run (Beeper.beep (BeepLevel.ATTENTION))
         colored_message = self._get_colored_message (message, None, colorama.Fore.BLUE)
-        self._logger.info (f"{colored_message}", exc_info=exc_info)     
+        self.logger_console.info (f"{colored_message}", exc_info=exc_info) 
+        self.logger_file.info (message)
 
     def warning(self, message, ex = None, exc_info=True):
         """!
@@ -141,7 +169,8 @@ class LoggerSingleton():
         """
         if not Beeper.silent: asyncio.run (Beeper.beep (BeepLevel.WARNING) )
         colored_message = self._get_colored_message(message, None, colorama.Fore.YELLOW)
-        self._logger.warning(f"{colored_message}")        
+        self.logger_console.warning(f"{colored_message}")  
+        self.logger_file.warning (message)
 
     def debug(self, message, ex = None, exc_info=True):
         """!
@@ -152,7 +181,8 @@ class LoggerSingleton():
         """
         if not Beeper.silent: asyncio.run (Beeper.beep (BeepLevel.DEBUG))
         colored_message = self._get_colored_message(message, None, colorama.Fore.CYAN)
-        self._logger.debug(colored_message, exc_info=exc_info)        
+        self.logger_console.debug(colored_message, exc_info=exc_info) 
+        self.logger_file.debug (message)
 
     def error(self, message, ex = None, exc_info=True):
         """!
@@ -164,11 +194,12 @@ class LoggerSingleton():
         """
         if not Beeper.silent: asyncio.run ( Beeper.beep (BeepLevel.ERROR) )
         # colored_message = self._get_colored_message(message, colorama.Fore.RED)
-        # self._logger.error(f"{colored_message}\n{self._get_formatted_traceback(ex)}", exc_info=exc_info)
+        # self.logger_console.error(f"{colored_message}\n{self._get_formatted_traceback(ex)}", exc_info=exc_info)
         #colored_message = self._get_colored_message(self._get_formatted_traceback(ex), colorama.Fore.RED)
 
         colored_message = self._get_colored_message(message, self._get_formatted_traceback(ex), colorama.Fore.RED)
-        self._logger.error(colored_message, exc_info = exc_info)
+        self.logger_console.error(colored_message, exc_info = exc_info)
+        self.logger_file.error (message, self._get_formatted_traceback(ex))
 
     def critical(self, message, ex = None, exc_info=True):
         """!
@@ -180,7 +211,9 @@ class LoggerSingleton():
         """
         if not Beeper.silent: asyncio.run ( Beeper.beep (BeepLevel.CRITICAL) )
         colored_message = self._get_colored_message(message, self._get_formatted_traceback(ex), colorama.Fore.MAGENTA)
-        self._logger.critical(colored_message, exc_info=exc_info)        
+        self.logger_console.critical(colored_message, exc_info=exc_info) 
+        self.logger_file.critical (message)
 
     
 logger = LoggerSingleton.get_instance()
+pass

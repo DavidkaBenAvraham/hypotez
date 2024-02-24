@@ -37,15 +37,15 @@
 #! /usr/share/projects/hypotez/venv/scripts python
 
 # Imports
-import asyncio
+from typing import Union, Dict, List
 import os
 import sys
 import datetime
 from pathlib import Path
-from attr import setters
-from typing import Union
+from pykeepass import PyKeePass, entry
+import getpass  ## <- модуль поля ввода типа `password`
 
-from src.helpers.beeper import Beeper
+
 
 
 # -----------------------------------
@@ -61,16 +61,11 @@ sys.path.append(str(dir_root))
 
 # -----------------------------------
 
-# Imports
-from typing import Union
-import os
-import sys
-import datetime
-from pathlib import Path
-from pykeepass import PyKeePass, entry
-import getpass  ## <- модуль поля ввода типа `password`
-from src.helpers import logger, logger_decorators, logs_and_errors_decorator, KeepassException, DefaultSettingsException,  Beeper, BeepLevel, jprint, pprint
+# Imports 
+from src.helpers import logger, logger_decorators, logs_and_errors_decorator, Beeper, \
+                        KeepassException, DefaultSettingsException, jprint, pprint
 from src.io_interface import j_loads
+#from src.helpers.beeper import Beeper
 # -----------------------------------
 
 
@@ -184,7 +179,7 @@ class ProjectSettings():
       "keepass_ftp_title": "emil-design.com",
       "keepass_smtp_title": "davidka",
       "default_prestashop_API_DOMAIN": "emil-design.com",
-      "list_prestashop_API_DOMAINs": [ "emil-design.com", "sergey.mymaster.co.il", "dev.e-cat.co.il" ],
+      "list_prestashop_api_domains": [ "emil-design.com", "sergey.mymaster.co.il", "dev.e-cat.co.il" ],
 
       "supplier_prefix": [
         "aliexpress",
@@ -214,8 +209,21 @@ class ProjectSettings():
     
     dir_root = dir_root
     dir_src = dir_src
-    settings: dict = j_loads (Path (dir_root, 'src', 'settings', 'global_settings.json') )
+    settings: dict = j_loads (Path (dir_src, 'settings', 'global_settings.json') )
     
+    # -------------------------- PATH ---------------------------
+    try:
+        """! """
+        # Определение абсолютных путей к директориям
+        dir_export = Path(dir_root, settings ['program_paths']['export']).absolute()
+        dir_log = Path(dir_root, settings ['program_paths']['log']).absolute()
+        dir_binaries = Path(dir_root,  settings ['program_paths']['bin']).absolute()
+        dir_temp = Path(dir_root, settings ['program_paths']['tmp']).absolute()
+    except Exception as ex:
+        logger.error(f'ошибка ', ex)
+        exit()
+
+    logger.set_log_file(str( Path (dir_log, f"{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}.txt" ) ) )
     # -------------------------------- CREDENTIALS ------------------------------------
     
     list_openai_credentials: list = []
@@ -545,18 +553,6 @@ class ProjectSettings():
             logger.error(f'ошибка установки значений SMTP', ex)
             return False            
 
-                
-        # -------------------------- PATH ---------------------------
-        try:
-            """! """
-            # Определение абсолютных путей к директориям
-            self.dir_export = Path(self.dir_root, self.settings ['program_paths']['export']).absolute()
-            self.dir_log = Path(self.dir_root, self.settings ['program_paths']['log']).absolute()
-            self.dir_binaries = Path(self.dir_root,  self.settings ['program_paths']['bin']).absolute()
-            self.dir_temp = Path(self.dir_root, self.settings ['program_paths']['tmp']).absolute()
-        except Exception as ex:
-            logger.error(f'ошибка ', ex)
-            return False
                 
 
 

@@ -206,7 +206,8 @@ class ProductFields:
     """! Список ключей словаря API Prestashop """
 
     dict_presta_fields: Dict =  {key: None for key in presta_fields_list}
-    """! Словарь полей апи престашоп. При инициализации заполняется дефолтными данныни из """
+    """! Словарь полей апи престашоп. 
+    При инициализации заполняется дефолтными данныни из `product_fields_default_values.json`"""
     
     dict_assist_fields: Dict = {}
     """! Словарь служебных полей. Сюда добавляются поля для внутренего использования в коде
@@ -305,7 +306,7 @@ class ProductFields:
             }```
         """
         
-        return self.dict_presta_fields['associations']
+        return self.dict_presta_fields['associations']  or ''
     
     @associations.setter
     #@logs_and_errors_decorator (default_return =  False)
@@ -345,7 +346,7 @@ class ProductFields:
         """! <sub>*[property]*</sub>  `ps_product.id: int(10) unsigned`
         @note для нового тoвара `ID` назначется в `prestashop`
         """
-        return self.dict_presta_fields['id_product']
+        return self.dict_presta_fields['id_product'] or ''
     
     
     @id_product.setter
@@ -375,7 +376,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>  `ps_product.id_supplier: int(10) unsigned`
         @~russian @details: привязываю товар к id поставщика
         """
-        return self.dict_presta_fields['id_supplier']
+        return self.dict_presta_fields['id_supplier'] or ''
     
     
     @id_supplier.setter
@@ -405,7 +406,7 @@ class ProductFields:
 
             """
 
-        return self.dict_presta_fields['id_manufacturer']
+        return self.dict_presta_fields['id_manufacturer'] or ''
     
     
     @id_manufacturer.setter
@@ -433,7 +434,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>  `ps_product.id_category_default: int(10) unsigned`
         @~russian @details: привязываю товар к главной категории для этого товара
         """
-        return self.dict_presta_fields['id_category_default']
+        return self.dict_presta_fields['id_category_default'] or ''
     
     
     @id_category_default.setter
@@ -456,7 +457,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub> 
         возвращает словарь категорий товара восстановленный из файла сценария таблица `ps_category_product`"""
 
-        return self.dict_presta_fields['associations']['categories'] or False
+        return self.dict_presta_fields['associations']['categories'] or ''
 
     
     @additional_categories.setter
@@ -466,10 +467,8 @@ class ProductFields:
         При задании доп ключей прдеыдущие значения заменяются новыми из `additional_categories`.
         Для добавления новых к уже существующим используй  функцию additional_categories_append()
         """
-
-
-
-        value = value if isinstance(value, list) else value
+        
+        value = value if isinstance(value, list) else [value]
         
         for v in value:
             if not isinstance(v, int):
@@ -492,7 +491,7 @@ class ProductFields:
         field DB type: int(10) unsigned
         @~russian @details: ID магазина по умолчанию """
 
-        return self.dict_presta_fields['id_shop_default']
+        return self.dict_presta_fields['id_shop_default']  or ''
     
     
     @id_shop_default.setter
@@ -514,7 +513,7 @@ class ProductFields:
     def id_tax(self) -> int:
         """!  <sub>*[property]*</sub> tax_rule `int`  :  `ID` НДС  `ps_product.id_tax: int(10) unsigned`"""
 
-        return self.dict_presta_fields['id_tax']
+        return self.dict_presta_fields['id_tax']  or ''
 
     
     @id_tax.setter
@@ -535,7 +534,7 @@ class ProductFields:
     def on_sale(self) -> int:
         """!  <sub>*[property]*</sub> `ps_product.on_sale: tinyint(1)  unsigned`"""
 
-        return self.dict_presta_fields['on_sale']
+        return self.dict_presta_fields['on_sale']   or ''
 
     @on_sale.setter
     #@logs_and_errors_decorator (default_return =  False)    
@@ -563,7 +562,7 @@ class ProductFields:
         field DB type: tinyint(1) unsigned
         @~russian @details: товар только онлайн """
 
-        return self.dict_presta_fields['online_only']
+        return self.dict_presta_fields['online_only']  or ''
     
     
     @online_only.setter
@@ -585,7 +584,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>   `ps_product.ean13  varchar(13)`
         field DB type: 
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['ean13']
+        return self.dict_presta_fields['ean13']  or ''
 
     
     @ean13.setter
@@ -609,7 +608,7 @@ class ProductFields:
         """!   <sub>*[property]*</sub>   `isbn`
         field DB type: varchar(32)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['isbn']
+        return self.dict_presta_fields['isbn']  or ''
     
     
     @isbn.setter
@@ -633,7 +632,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>   `upc`
         field DB type: varchar(12)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['upc']
+        return self.dict_presta_fields['upc']  or ''
     
     
     @upc.setter
@@ -657,7 +656,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>   `ps_product.mpn`
         field DB type: varchar(40)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['mpn']
+        return self.dict_presta_fields['mpn']  or ''
 
     
     @mpn.setter
@@ -681,7 +680,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>   `ps_product.ecotax`
         field DB type:  decimal(17,6)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['ecotax']
+        return self.dict_presta_fields['ecotax']  or ''
 
     
     @ecotax.setter
@@ -697,7 +696,7 @@ class ProductFields:
             return False
 
 # 14
-    
+    """! quantity не заполнять - апи ее не хочет  """
     # @property
     # def quantity(self) -> int:
     #     """!  <sub>*[property]*</sub>   `ps_product.quantity`
@@ -726,7 +725,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>  `ps_product.minimal_quantity`
         field DB type: int(10)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['minimal_quantity']
+        return self.dict_presta_fields['minimal_quantity']  or ''
 
     
     @minimal_quantity.setter
@@ -748,7 +747,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>  `ps_product.low_stock_threshold`
         field DB type: int(10)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['low_stock_threshold']
+        return self.dict_presta_fields['low_stock_threshold']  or ''
 
     
     @low_stock_threshold.setter
@@ -770,7 +769,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>  `ps_product.low_stock_alert`
         field DB type: tinyint(1)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['low_stock_alert']
+        return self.dict_presta_fields['low_stock_alert']  or ''
 
     
     @low_stock_alert.setter
@@ -792,7 +791,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>  `ps_product.price`
         field DB type: decimal(20,6)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['price']
+        return self.dict_presta_fields['price']  or ''
     
     
     @price.setter
@@ -816,7 +815,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>  `ps_product.wholesale_price`
         field DB type: decimal(20,6)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['wholesale_price']
+        return self.dict_presta_fields['wholesale_price']  or ''
 
     
     @wholesale_price.setter
@@ -839,7 +838,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>  `ps_product.unity`
         field DB type: varchar(255)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['unity']
+        return self.dict_presta_fields['unity']  or ''
     
     @unity.setter
     #@logs_and_errors_decorator (default_return =  False)
@@ -861,7 +860,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>  `ps_product.unit_price_ratio`
         field DB type: decimal(20,6)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['unit_price_ratio']
+        return self.dict_presta_fields['unit_price_ratio']   or ''
 
     
     @unit_price_ratio.setter
@@ -883,7 +882,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub> `ps_product.additional_shipping_cost`
         field DB type: decimal(20,6)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['additional_shipping_cost']
+        return self.dict_presta_fields['additional_shipping_cost']   or ''
 
     
     @additional_shipping_cost.setter
@@ -907,7 +906,7 @@ class ProductFields:
         field DB type: `varchar(64)`
         @~russian @details: __prod_desc__
         """
-        return self.dict_presta_fields['reference']
+        return self.dict_presta_fields['reference']   or ''
 
     
     @reference.setter
@@ -930,7 +929,7 @@ class ProductFields:
         field DB type: `varchar(64)`
         @~russian @details: __prod_desc__
         """
-        return self.dict_presta_fields['supplier_reference']
+        return self.dict_presta_fields['supplier_reference']   or ''
 #   24
     
     @supplier_reference.setter
@@ -952,7 +951,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub> `ps_product.location`
         field DB type: varchar(255)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['location']
+        return self.dict_presta_fields['location']   or ''
 
     
     @location.setter
@@ -975,7 +974,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub> `ps_product.width`
         field DB type: decimal(20,6)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['width']
+        return self.dict_presta_fields['width']  or ''
 
     
     @width.setter
@@ -997,7 +996,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub> `ps_product.height`
         field DB type: decimal(20,6)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['height']
+        return self.dict_presta_fields['height']  or ''
 
     
     @height.setter
@@ -1019,7 +1018,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub> `[28] ps_product.depth  decimal(20,6)`
         field DB type:
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['depth']
+        return self.dict_presta_fields['depth']  or ''
 
     
     @depth.setter
@@ -1041,7 +1040,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub> `ps_product.weight`
         field DB type: decimal(20,6)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['weight']
+        return self.dict_presta_fields['weight']  or ''
 
     
     @weight.setter
@@ -1064,7 +1063,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub> `ps_product.out_of_stock`
         field DB type: int(10)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['out_of_stock']
+        return self.dict_presta_fields['out_of_stock']  or ''
 
     
     @out_of_stock.setter
@@ -1086,7 +1085,7 @@ class ProductFields:
     def additional_delivery_times(self) -> int:
         """!!  <sub>*[property]*</sub> `ps_product.additional_delivery_times tinyint(1)`
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['additional_delivery_times']
+        return self.dict_presta_fields['additional_delivery_times']    or ''
 
     
     @additional_delivery_times.setter
@@ -1108,7 +1107,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub> `ps_product.quantity_discount`
         field DB type: tinyint(1)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['quantity_discount']
+        return self.dict_presta_fields['quantity_discount']  or ''
 
     
     @quantity_discount.setter
@@ -1131,7 +1130,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub> `ps_product.customizable`
         field DB type: tinyint(2)
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['customizable']
+        return self.dict_presta_fields['customizable']   or ''
 
     
     @customizable.setter
@@ -1154,7 +1153,7 @@ class ProductFields:
         field DB type: tinyint(4)
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['uploadable_files']
+        return self.dict_presta_fields['uploadable_files']  or ''
 
     
     @uploadable_files.setter
@@ -1177,7 +1176,7 @@ class ProductFields:
         field DB type: tinyint(4)
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['text_fields']
+        return self.dict_presta_fields['text_fields']   or ''
 
     
     @text_fields.setter
@@ -1201,7 +1200,7 @@ class ProductFields:
         field DB type: tinyint(1)
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['active']
+        return self.dict_presta_fields['active']  or ''
 
     
     @active.setter
@@ -1240,7 +1239,7 @@ class ProductFields:
     Этот тип редиректа подходит, когда ресурс временно недоступен на оригинальном местоположении, и клиент должен использовать новый адрес, но при этом оригинальное местоположение может быть использовано в будущем.
     Выбор между 301 и 302 зависит от того, насколько постоянно изменение местоположения ресурса. Если изменение постоянное, то рекомендуется использовать 301. Если изменение временное, то следует использовать 302.
     """
-        return self.dict_presta_fields['redirect_type']
+        return self.dict_presta_fields['redirect_type']   or ''
 
 
     
@@ -1314,7 +1313,7 @@ class ProductFields:
         field DB type:
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['id_type_redirected']
+        return self.dict_presta_fields['id_type_redirected']  or ''
     
     
     @id_type_redirected.setter
@@ -1338,7 +1337,7 @@ class ProductFields:
         field DB type: tinyint(10)
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['available_for_order']
+        return self.dict_presta_fields['available_for_order']   or ''
 
     
     @available_for_order.setter
@@ -1362,7 +1361,7 @@ class ProductFields:
         field DB type: date
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['available_date']
+        return self.dict_presta_fields['available_date']   or ''
 
     
     @available_date.setter
@@ -1386,7 +1385,7 @@ class ProductFields:
         field DB type: tinyint(1)
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['show_condition']
+        return self.dict_presta_fields['show_condition']  or ''
 
     
     @show_condition.setter
@@ -1409,7 +1408,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub> `[42] ps_product.condition  enum('new','used','refurbished')`
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['condition']
+        return self.dict_presta_fields['condition']    or ''
         
     class EnumCondition(Enum):
         NEW = 'new'
@@ -1437,7 +1436,7 @@ class ProductFields:
         field DB type: 
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['show_price']
+        return self.dict_presta_fields['show_price']   or ''
     
     
     @show_price.setter
@@ -1459,7 +1458,7 @@ class ProductFields:
     def indexed(self) -> int:
         """!  <sub>*[property]*</sub> `[44] ps_product.indexed  tinyint(1)`
         @~russian @details: __prod_desc__"""
-        return self.dict_presta_fields['indexed']
+        return self.dict_presta_fields['indexed']   or ''
     
     
     @indexed.setter
@@ -1483,7 +1482,7 @@ class ProductFields:
         field DB type: enum('both','catalog','search','none')
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['visibility']
+        return self.dict_presta_fields['visibility']   or ''
 
     class EnumVisibity(Enum):
         BOTH = 'both'
@@ -1515,7 +1514,7 @@ class ProductFields:
         field DB type: tinyint(1)
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['cache_is_pack']
+        return self.dict_presta_fields['cache_is_pack']    or ''
     
     
     @cache_is_pack.setter
@@ -1539,7 +1538,7 @@ class ProductFields:
         field DB type: tinyint(1)
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['cache_has_attachments']
+        return self.dict_presta_fields['cache_has_attachments']   or ''
     
     
     @cache_has_attachments.setter
@@ -1563,7 +1562,7 @@ class ProductFields:
         field DB type: tinyint(1)
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['is_virtual']
+        return self.dict_presta_fields['is_virtual']    or ''
 
     
     @is_virtual.setter
@@ -1587,7 +1586,7 @@ class ProductFields:
         field DB type: int(10)
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['cache_default_attribute']
+        return self.dict_presta_fields['cache_default_attribute']   or ''
 
     
     @cache_default_attribute.setter
@@ -1611,7 +1610,7 @@ class ProductFields:
         field DB type: datetime
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['date_add']
+        return self.dict_presta_fields['date_add']   or ''
     
     
     @date_add.setter
@@ -1635,7 +1634,7 @@ class ProductFields:
         field DB type: datetime
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['date_upd']
+        return self.dict_presta_fields['date_upd']   or ''
     
     
     @date_upd.setter
@@ -1660,7 +1659,7 @@ class ProductFields:
         field DB type: tinyint(1)
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['advanced_stock_management']
+        return self.dict_presta_fields['advanced_stock_management']  or ''
     
     
     @advanced_stock_management.setter
@@ -1684,7 +1683,7 @@ class ProductFields:
         field DB type: int(11)
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['pack_stock_type']
+        return self.dict_presta_fields['pack_stock_type']  or ''
     
     
     @pack_stock_type.setter
@@ -1709,7 +1708,7 @@ class ProductFields:
         field DB type: int(11)
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['state']
+        return self.dict_presta_fields['state']   or ''
     
     
     @state.setter
@@ -1734,7 +1733,7 @@ class ProductFields:
         field DB type: enum('standard', 'pack', 'virtual', 'combinations', '')
         @~russian @details: __prod_desc__"""
 
-        return self.dict_presta_fields['product_type']
+        return self.dict_presta_fields['product_type']    or ''
 
     class EnumProductType(Enum):
         STANDARD = 'standard'
@@ -1769,54 +1768,54 @@ class ProductFields:
 
 
 
-####################################################################################################################################
-#
-#
-#
-#           ТАБЛИЦА `ps_product_lang` - СОДЕРЖИТ МИЛЬТИЯЗЫЧНЫЕ ПОЛЯ 
-#
-#
-#       
-#
-# -----------------------------------------------------------------------------------------------------------------------------------
+    ####################################################################################################################################
+    #
+    #
+    #
+    #           ТАБЛИЦА `ps_product_lang` - СОДЕРЖИТ МИЛЬТИЯЗЫЧНЫЕ ПОЛЯ 
+    #
+    #
+    #       
+    #
+    # -----------------------------------------------------------------------------------------------------------------------------------
 
-#
-#           
-#
-#   |    Column Name	              |  Data Type	       | Comment
-#---------------------------------------------------------------------
-# 1	    `id_product`                    int(10) unsigned
-# 2	    `id_shop`	                    int(11) unsigned
-# 3	    `id_lang`	                    int(10) unsigned
-# 4	    `description`	                text
-# 5	    `description_short`	            text
-# 6	    `link_rewrite`	                varchar(128)
-# 7	    `meta_description`	            varchar(512)
-# 8	    `meta_keywords`	                varchar(255)
-# 9	    `meta_title`	                varchar(128)
-# 10	`name`	                        varchar(128)
-# 11	`available_now`	                varchar(255)        Заметка, о наличии товара сегодня
-# 12	`available_later`	            varchar(255)
-# 13	`delivery_in_stock`	            varchar(255)        Доставка, если товар н наличии
-# 14	`delivery_out_stock`	        varchar(255)        (Доставка если товара нет в наличии): Текст, который будет отображаться, когда товара нет в наличии.
-# 15    `delivery_additional_message`   tinytext            Мое поле. Доп для полей доставки. Например, война
-# 16	`affiliate_short_link`	        tinytext
-# 17	`affiliate_text`	            tinytext
-# 18	`affiliate_summary`	            tinytext
-# 19	`affiliate_summary_2`	        tinytext
-# 20    `affiliate_image_small`         varchar(512)
-# 21    `affiliate_image_medium`        varchar(512)
-# 22    `affiliate_image_large`         varchar(512)
-# 23	`ingridients`	                tinytext
-# 24	`how_to_use`        	        tinytext
+    #
+    #           
+    #
+    #   |    Column Name	              |  Data Type	       | Comment
+    #---------------------------------------------------------------------
+    # 1	    `id_product`                    int(10) unsigned
+    # 2	    `id_shop`	                    int(11) unsigned
+    # 3	    `id_lang`	                    int(10) unsigned
+    # 4	    `description`	                text
+    # 5	    `description_short`	            text
+    # 6	    `link_rewrite`	                varchar(128)
+    # 7	    `meta_description`	            varchar(512)
+    # 8	    `meta_keywords`	                varchar(255)
+    # 9	    `meta_title`	                varchar(128)
+    # 10	`name`	                        varchar(128)
+    # 11	`available_now`	                varchar(255)        Заметка, о наличии товара сегодня
+    # 12	`available_later`	            varchar(255)
+    # 13	`delivery_in_stock`	            varchar(255)        Доставка, если товар н наличии
+    # 14	`delivery_out_stock`	        varchar(255)        (Доставка если товара нет в наличии): Текст, который будет отображаться, когда товара нет в наличии.
+    # 15    `delivery_additional_message`   tinytext            Мое поле. Доп для полей доставки. Например, война
+    # 16	`affiliate_short_link`	        tinytext
+    # 17	`affiliate_text`	            tinytext
+    # 18	`affiliate_summary`	            tinytext
+    # 19	`affiliate_summary_2`	        tinytext
+    # 20    `affiliate_image_small`         varchar(512)
+    # 21    `affiliate_image_medium`        varchar(512)
+    # 22    `affiliate_image_large`         varchar(512)
+    # 23	`ingridients`	                tinytext
+    # 24	`how_to_use`        	        tinytext
 
 
-#   Поля `id_product`  берутся из верхних значениий в этом коде
+    #   Поля `id_product`  берутся из верхних значениий в этом коде
 
-#
-#
-#
-########################################################################################
+    #
+    #
+    #
+    ########################################################################################
 
 
 #   2 id_shop Я могу определить данные, ОТНОСИТЕЛЬНО магазина
@@ -1825,7 +1824,7 @@ class ProductFields:
     def id_shop(self):
         """!  <sub>*[property]*</sub> `ps_product_lang.id_shop: int(10)`
         Я могу переопределить переводы и прочее в зависимости от магазина"""
-        return self.dict_presta_fields['id_shop']
+        return self.dict_presta_fields['id_shop']   or ''
 
     
     @id_shop.setter
@@ -1866,7 +1865,7 @@ class ProductFields:
     def description(self) -> str:
         """!  <sub>*[property]*</sub> `[4] ps_product_lang.description text`
         description: Описание """
-        return self.dict_presta_fields['description']
+        return self.dict_presta_fields['description']  or ''
 
     
     @description.setter
@@ -1892,7 +1891,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub> `[5] ps_product_lang.description_short text`
         description: __prod_desc__"""
 
-        return self.dict_presta_fields['description_short']
+        return self.dict_presta_fields['description_short']   or ''
     
     @description_short.setter
     #@logs_and_errors_decorator (default_return =  False)
@@ -1917,7 +1916,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub> `ps_product_lang.link_rewrite`
         field DB type: varchar(128)
         description: __prod_desc__"""
-        return self.dict_presta_fields['link_rewrite']
+        return self.dict_presta_fields['link_rewrite']   or ''
 
     
     @link_rewrite.setter
@@ -1944,7 +1943,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub> `[7] ps_product_lang.meta_description varchar(512)` 
         field DB type: 
         description: __prod_desc__"""
-        return self.dict_presta_fields['meta_description']
+        return self.dict_presta_fields['meta_description']   or ''
     
     
     @meta_description.setter
@@ -1971,7 +1970,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub> `[8] ps_product_lang.meta_keywords varchar(255)`
         field DB type: 
         description: __prod_desc__"""
-        return self.dict_presta_fields['meta_keywords']
+        return self.dict_presta_fields['meta_keywords']   or ''
     
     @meta_keywords.setter
     #@logs_and_errors_decorator (default_return =  False)
@@ -1996,7 +1995,7 @@ class ProductFields:
     def meta_title(self) -> str:
         """!  <sub>*[property]*</sub> `[9] s_product_lang.meta_title varchar(128)`
         description: __prod_desc__"""
-        return self.dict_presta_fields['meta_title']
+        return self.dict_presta_fields['meta_title']  or ''
     
     
     @meta_title.setter
@@ -2022,7 +2021,7 @@ class ProductFields:
     def name(self):
         """!  <sub>*[property]*</sub> `[10] ps_product_lang.name  varchar(128)`
         description: __prod_desc__"""
-        return self.dict_presta_fields['name']
+        return self.dict_presta_fields['name']  or ''
     
     
     @name.setter
@@ -2048,7 +2047,7 @@ class ProductFields:
     def available_now(self) -> str:
         """!  <sub>*[property]*</sub>  `[11] ps_product_lang.available_now varchar(255)`
         description: __prod_desc__"""
-        return self.dict_presta_fields['available_now']
+        return self.dict_presta_fields['available_now']  or ''
     
     
     @available_now.setter
@@ -2074,7 +2073,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>  field DB available_later: `[12] ps_product_lang.available_later varchar(255)`
         field DB type: varchar(255)
         description: __prod_desc__"""
-        return self.dict_presta_fields['available_later']
+        return self.dict_presta_fields['available_later']  or ''
     
     @available_later.setter
     #@logs_and_errors_decorator (default_return =  False)
@@ -2098,7 +2097,7 @@ class ProductFields:
     def delivery_in_stock(self):
         """!  <sub>*[property]*</sub>   `[13] ps_product_lang.delivery_in_stock varchar(255)`
         @details:  (Доставка при наличии товара): Текст, который будет отображаться, когда товар есть в наличии."""
-        return self.dict_presta_fields['delivery_in_stock']
+        return self.dict_presta_fields['delivery_in_stock']  or ''
     
     @delivery_in_stock.setter
     #@logs_and_errors_decorator (default_return =  False)
@@ -2157,7 +2156,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>   `[15] ps_product_lang.delivery_out_stock`
         field DB type: 
         description: __prod_desc__"""
-        return self.dict_presta_fields['delivery_additional_message']
+        return self.dict_presta_fields['delivery_additional_message'] or ''
     
     @delivery_additional_message.setter
     #@logs_and_errors_decorator (default_return =  False)
@@ -2185,7 +2184,7 @@ class ProductFields:
     def affiliate_short_link(self) -> dict:
         """!  <sub>*[property]*</sub>   `[15] ps_product_lang.affiliate_short_link  varchar(255)`
         description: __prod_desc__"""
-        return self.dict_presta_fields['affiliate_short_link']
+        return self.dict_presta_fields['affiliate_short_link']  or ''
     
     @affiliate_short_link.setter
     #@logs_and_errors_decorator (default_return =  False)
@@ -2225,7 +2224,7 @@ class ProductFields:
     @property
     def affiliate_text(self) -> str:
         """!  <sub>*[property]*</sub>   `[17] ps_product_lang.affiliate_text varchar(256)`"""
-        return self.dict_presta_fields['affiliate_text']
+        return self.dict_presta_fields['affiliate_text'] or ''
     
     @affiliate_text.setter
     #@logs_and_errors_decorator (default_return =  False)
@@ -2249,7 +2248,7 @@ class ProductFields:
     @property
     def affiliate_summary(self) -> str:
         """!  <sub>*[property]*</sub>  `[18] ps_product_lang.affiliate_summary varchar(256)`"""
-        return self.dict_presta_fields['affiliate_summary']
+        return self.dict_presta_fields['affiliate_summary']  or ''
     
     
     @affiliate_summary.setter
@@ -2273,7 +2272,7 @@ class ProductFields:
     @property
     def affiliate_summary_2(self) -> str:
         """!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`"""
-        return self.dict_presta_fields['affiliate_summary_2']
+        return self.dict_presta_fields['affiliate_summary_2'] or ''
 
     
     @affiliate_summary_2.setter
@@ -2296,7 +2295,7 @@ class ProductFields:
     @property
     def affiliate_image_small(self) -> str:
         """!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`"""
-        return self.dict_presta_fields['affiliate_image_small']
+        return self.dict_presta_fields['affiliate_image_small'] or ''
 
     
     @affiliate_image_small.setter
@@ -2319,7 +2318,7 @@ class ProductFields:
     @property
     def affiliate_image_medium(self) -> str:
         """!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`"""
-        return self.dict_presta_fields['affiliate_image_medium']
+        return self.dict_presta_fields['affiliate_image_medium'] or ''
 
     
     @affiliate_image_medium.setter
@@ -2344,7 +2343,7 @@ class ProductFields:
     @property
     def affiliate_image_large(self) -> str:
         """!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`"""
-        return self.dict_presta_fields['affiliate_image_medium']
+        return self.dict_presta_fields['affiliate_image_medium']  or ''
 
     
     @affiliate_image_large.setter
@@ -2367,7 +2366,7 @@ class ProductFields:
     @property
     def ingridients(self) -> str:
         """!  <sub>*[property]*</sub>  `ps_product_lang.ingridients`"""
-        return self.dict_presta_fields['ingridients']
+        return self.dict_presta_fields['ingridients'] or ''
 
     
     @ingridients.setter
@@ -2398,7 +2397,7 @@ class ProductFields:
     @property
     def how_to_use(self) -> str:
         """!  <sub>*[property]*</sub> `ps_product_lang.how_to_use` """
-        return self.dict_presta_fields['how_to_use']
+        return self.dict_presta_fields['how_to_use'] or ''
 
     
     @how_to_use.setter
@@ -2419,7 +2418,7 @@ class ProductFields:
     @property
     def id_default_image(self) -> str:
         """!  <sub>*[property]*</sub>  field DB affiliate_summary_2: `_???????.id_default_image`"""
-        return self.dict_presta_fields['id_default_image']
+        return self.dict_presta_fields['id_default_image']  or ''
     
     
     @id_default_image.setter
@@ -2439,7 +2438,7 @@ class ProductFields:
     @property
     def position_in_category(self) -> str:
         """!  <sub>*[property]*</sub>   field DB affiliate_summary_2: `_?????????.position_in_category`"""
-        return self.dict_presta_fields['position_in_category']
+        return self.dict_presta_fields['position_in_category']  or ''
 
     
     @position_in_category.setter
@@ -2456,15 +2455,14 @@ class ProductFields:
                                                                                                     
             
 
-
+    pass
 
         
         #########################################################################################
         #                                                                                       #
-        #                   Служебные поля                                                      #
+        #                   Служебные поля - images urls etc.                                   #
         #       Служебные поля не входят в основной словарь `dict_presta_fields`                #
-        #       Они заносятся в служебный словарь `dict_assist_fields`                                 #
-        #                                                                                       #
+        #       Они заносятся в служебный словарь `dict_assist_fields`                          #                                                                                       #
         #                                                                                       #
         #########################################################################################
 
@@ -2491,7 +2489,7 @@ class ProductFields:
         """!  <sub>*[property]*</sub>   __prod_name__
         field DB type: __prod_type__
         description: __prod_desc__"""
-        return self.dict_assist_fields['images_urls']
+        return self.dict_assist_fields['images_urls']  or ''
     
     
     @images_urls.setter
@@ -2507,7 +2505,7 @@ class ProductFields:
             return False
 
 
-
+    pass
 
 
 
@@ -2523,7 +2521,7 @@ class ProductFields:
     @property
     def id_default_combination(self) -> str:
         """!  <sub>*[property]*</sub>  field DB affiliate_summary_2: `_?????????.id_default_combination`"""
-        return self.dict_presta_fields['id_default_combination']
+        return self.dict_presta_fields['id_default_combination'] or ''
     
     
     @id_default_combination.setter

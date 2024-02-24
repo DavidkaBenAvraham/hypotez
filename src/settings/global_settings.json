@@ -25,7 +25,7 @@
   },
 
   "default_webdriver": "firefox",
-  "list_prestashop_API_DOMAINs": [ "emil-design.com", "sergey.mymaster.co.il", "dev.e-cat.co.il" ],
+  "list_prestashop_api_domains": [ "emil-design.com", "sergey.mymaster.co.il", "dev.e-cat.co.il" ],
 
   "keepass": {
     "keepass_aliexpress_api_title": "katia",
@@ -41,7 +41,6 @@
 
 
   "supplier_prefix": [
-
     "hb",
     "kualastyle",
     "amazon",

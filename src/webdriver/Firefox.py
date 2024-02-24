@@ -38,7 +38,7 @@
 
 
 from pathlib import Path
-import os
+import os, logging
 from selenium.webdriver import Firefox as FF
 #from selenium.webdriver import FirefoxProfile
 #from selenium.webdriver.common.action_chains import ActionChains <- нажималки
@@ -216,13 +216,18 @@ class Firefox(FF):
             options.profile = profile
 
         # selenium 4 ; geckodriver = 0.33
-        service = Service ( str (Path (gs.dir_binaries, geckodriver) ), log_output = str( Path (gs.dir_log, f'{gs.get_now()}_firefox.txt' ) ) )
-        
+        # log_output = str( Path (gs.dir_log, f'{gs.get_now()}_firefox.txt' ) )
+        # service = Service ( str (Path (gs.dir_binaries, geckodriver) ), log_output = log_output )
+        service = Service ( str (Path (gs.dir_binaries, geckodriver) ))
         # selenium 4.17; geckodriver = 0.34
         """! 64 битная версия еще не вышла """
         #options.binary_location = str (gs.dir_binaries)
         #options.binary = str (Path (gs.dir_binaries, geckodriver) )
         #service = Service (executable_path=geckodriver,  log_output = str( Path (gs.dir_log,'firefox.txt' ) ) )
+        
+        
+        #logging.basicConfig(filename = log_output, level = logging.INFO)
+        """! Настройки записи журналов в файл """
         
         """! @~russian _var service `Service`
         @details 

@@ -7,7 +7,7 @@
   "use_mouse": false, "mandatory": true,
   "if_login": false,
   "login_url": "https://amazon.com",
-  "lang": "EN",
+  "lang": "HE",
   "check categories on site": false,
   "parsing via api": false,
   "collect_products_from_categorypage": false,

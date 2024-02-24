@@ -48,6 +48,8 @@ sys.path.append (str (dir_root) ) # Добавляю рабочую директ
 
 from src.settings import gs         
 """! @var gs предстартовая подготовка """
+gs.dir_root = dir_root
+gs.dir_src = dir_src
 
 
 #from launchers import QTWindow <- оконный интерфейс
@@ -56,7 +58,7 @@ from src.suppliers import Supplier
 from src.helpers import logger, logs_and_errors_decorator
 
 from threading import Thread
-from typing import Union
+from typing import Union, Dict, List
 
    
 
@@ -116,8 +118,6 @@ class Thread4Supplier(Thread):
         # 3.
         self.supplier.driver.close()
         
-
-
 
 ###############################################################################################################
 

@@ -77,9 +77,9 @@ class TestRunScenarioFile(unittest.TestCase):
     def test_run_scenario_file_no_scenarios(self):
         with patch("your_module.j_loads") as mock_j_loads:
             mock_j_loads.return_value = {"scenarios": None}
-            with patch("your_module.logger.error") as mock_logger_error:
+            with patch("your_module.logger.error") as mocklogger_console_error:
                 self.assertFalse(run_scenario_file(self.s, "test_scenario.json"))
-                mock_logger_error.assert_called_once_with("Возможно файл test_scenario.json не содержит сценариев")
+                mocklogger_console_error.assert_called_once_with("Возможно файл test_scenario.json не содержит сценариев")
 
                 
 class TestGrabProductPage(unittest.TestCase):

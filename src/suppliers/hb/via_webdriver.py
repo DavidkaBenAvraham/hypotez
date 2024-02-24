@@ -15,7 +15,7 @@
 #! /usr/share/projects/hypotez/venv/scripts python
 
 
-from typing import Union
+from typing import Union, Dict, List
 from pathlib import Path
 
 from src.settings import gs
@@ -62,4 +62,5 @@ def get_list_products_in_category (s) -> Union [list[str], str, None]:
     return list_products_in_category
 
 def get_list_categories_from_site(s):
+    """! сборщик актуальных категорий с сайта """
     pass

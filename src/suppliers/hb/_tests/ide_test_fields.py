@@ -1,8 +1,5 @@
 """! @~russian Файл проверки наполнения полей HB -> product_fields """
 
-
-
-#from math import prod
 import os, sys
 from pathlib import Path
 from typing import List, Union, Dict
@@ -1245,90 +1242,6 @@ def rewritted_URL():
     f["Rewritten URL"] = f["id"]
     pass
 
-## combinations
-def combinations():
-    """! @~russian У товара может быть насколько комбинаций. Функция вытаскивает все возможные
-    @todo не проверена, я отложил реализацию на след версию
-    """
-    _l = s.locators["product"]
-    _combfs = p.combinationsfs
-    _attr_position = 0
-
-    def product_combinations():
-        _type = s.current_scenario["product combinations"]
-        if not _type: return
-        """! @~russian _rem у товара не всегда есть комбинации """
-
-        __ = s.locators["product"]["combinations"]
-        _combfs["Product ID"] = f["id"]
-        _name = _d.execute_locator(__l["name"])
-        _value = _d.execute_locator(__l["value"])
-            
-        _combfs["Attribute (Name:Type:Position)"] = f'''{_name}:{_type}:0'''
-        _combfs["Value (Value:Position)"] = f'''{_value}:0'''
-        _price = _d.execute_locator(_l["price_locator"])
-        """! @~russian _rem получаю цену комбинации товара """
-            
-        _price = SF.clear_price(_price)
-
-        _qty = _d.execute_locator(_l["qty_locator"])[0]
-        _qty = SF.clear_price(_qty)
-
-
-
-        ## форма комбинаций  в Prestashop
-        # Attribute (Name:Type:Position)*
-        # Value (Value:Position)*
-
-        attr_name = _d.execute_locator(_title)
-        attr_type = 'select'
-        attr_position = _attr_position
-
-        _combinationsfs["Attribute (Name:Type:Position)"] = f'''{attr_name}:{attr_type}:{attr_position}'''
-        
-        _vt = _d.execute_locator(_l["product_combinations_container_locator"]["product_combinations_value_title"])
-        _vp = _attr_position
-        _combinationsfs["Value (Value:Position)"] = f'''{_vt}:{_vp}'''
-
-                
-
-        url_dict = _d.get_dictfrom_urlstr()
-        _combinationsfs["Supplier reference"] = _combina["Product reference"] = url_dict["params"]["sku_id"]
-                
-                
-        _d.execute_locator(_l["product_name_locator"])
-
-        _combinationsfs["Image URLs(x,y,z)"] = _d.execute_locator(_l["main_image_locator"])
-        _combinationsfs["Quantity"] = _qty
-        _combinationsfs["Wholesale price"] = _price
-
-    try:
-        _title = _l["product_combinations_container_locator"]["product_combinations_title"]
-        _values_locator = _l["product_combinations_container_locator"]["image_attribute_locator"] 
-        _values = _d.execute_locator(_values_locator)
-        if not _values:
-            return False
-        ''' нет комбинаций '''
-            
-        if isinstance(_values , list):
-            ''' несколько вариантов товара'''
-            for x in _values:
-                ''' нажимаю на каждую опцию товара '''
-                x.click()
-                product_combinations()
-                _combinot.apply(_combina)
-
-        else:
-            ''' один вариант '''
-            _values.click()
-            values()
-            _combinot.apply(_combina)
-
-        return True
-    except Exception as ex: 
-            
-        logger.error(ex)
-        return False
 
 product_fields = grab_product_page (s)
 

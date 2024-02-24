@@ -49,7 +49,7 @@ class BeepLevel(Enum):
     LONG_ERROR = [('C7', 50), ('C7', 250)],
     CRITICAL = [('G5', 40), ('C7', 100)],
     BELL = [('G6', 200), ('C7', 200), ('E7', 200)],
-    
+pass    
 
 class BeepHandler:
     def emit(self, record):
@@ -69,7 +69,7 @@ class BeepHandler:
     def beep(self, level: Union[BeepLevel, str] = BeepLevel.INFO, frequency: int = 400, duration: int = 1000):
         Beeper.beep(level, frequency, duration)
 
-
+pass
 
 # ------------------------------------------------------------------------------------------------
 
@@ -101,6 +101,7 @@ def silent_mode(func):
             return
         return func(*args, **kwargs)
     return wrapper
+pass
 
 
 class Beeper():
@@ -140,5 +141,6 @@ class Beeper():
                     ''')
                 return False
             time.sleep(0.0)
+pass
 
 

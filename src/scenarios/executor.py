@@ -23,6 +23,7 @@
 #! /usr/share/projects/hypotez/venv/scripts python
 
 # Imports
+from ast import Str
 from math import prod
 import sys
 import os
@@ -104,7 +105,7 @@ def run_scenario_file(s, scenario_file_path: Union[Path, str]) -> bool:
         if run_scenario (s, scenario, scenario_name):
             """! @~russian запуск сценария """
             s.supplier_settings['last_runned_scenario'] = scenario_name
-            logger.info(f'''last runned scenario {s.settings['last_runned_scenario']}''')
+            logger.info(f'''last runned scenario {s.supplier_settings['last_runned_scenario']}''')
         else:
             logger.critical(f'Сценарий {scenario} завершился ошибкой')
             s.supplier_settings['scenario_interrupted'] = scenario_name
@@ -146,20 +147,21 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> Union[list, di
     @returns результат исполнения сценария
 
     """
-    #if not scenario_name: scenario_name = s.current_scenario
+    # 1.
     logger.info (f'Старт сценария: {scenario_name}')
     d = s.driver
     d.get_url(scenario['url'])
     
+    # 2.
     list_products_in_category: list = s.related_modules.get_list_products_in_category(s)
-    """! @~russian Я решил отдавать поставщику обязанность собрать линки на товары """
+    
 
     # Нет товаров в категории (или не успели загрузиться)
     if not list_products_in_category:
         logger.warning ('Не собран список товаров со страницы категории. Возможно пустая категория  - ', d.current_url)
         return False
 
-    #products_fields_list :list = []
+    # 3.
     for url in list_products_in_category:
         """! Перехожу по url товара и вытаскиваю данные со страницы """
         if not d.get_url(url):
@@ -167,30 +169,55 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> Union[list, di
             continue
             
         try:
-            
+            # 4.
             product_fields = s.related_modules.grab_product_page(s)
             """! Собираю со страницы товара значения элементов и привожу их к полям ProductFields 
             Внимание! В словаре `product_fields` находится служебный словарь `dict_assist_fields`.
             Его надо вычленить в отдельный словарь
             """
-            dict_presta_fields: Dict = product_fields.dict_presta_fields
-            dict_assist_fields: Dict = product_fields.dict_assist_fields
-            pass
-            p = Product()
-            # if p.check_prod_presence_in_prestashop(product_fields.reference):  
-            #     p.update(product_fields)
-            # else:
-            #     p.add(product_fields)
-            """! Для `V3` Я могу передать фильтр, как строку `filter[id] = [5]` и как словарь `{'filter[id]':'[5]'}	"""
-            search_filter_str =  f'filter[reference] = [{dict_presta_fields["reference"]}]'
-            search_filter_dict = { 'filter[reference]': [f'{dict_presta_fields["reference"]}'] }
-            ret = p.get( search_filter = search_filter_dict, PrestaAPIV = 'V1' ) 
 
-            if ret is False or len(ret) == 0: p.add(dict_presta_fields, 'V2')
-            """! Новый товар """
- 
-            #products_fields_list.append (s.related_modules.grab_product_page(s) )
+            dict_presta_fields: Dict = {key: value for key, value in product_fields.dict_presta_fields.items() if value is not None and value != ''}
+            """! очищаю словарь от пустых значений """
+            
+            """! dict: Словарь полей товара для престасшоп """
+            dict_assist_fields: Dict = product_fields.dict_assist_fields
+            """! dict: Словарь дополнительных полей для меня (images urls etc.)"""
+                        
+            if 'quantity' in dict_presta_fields: del dict_presta_fields['quantity']
+            """! `quantity` нельзя задавать при добавлении нового товара """
+            
+            p = Product()
+            """! Для каждого товара я заново переопрделяю класс `Product`, 
+            иначе может попасть мусор (данные прошлого товара) """ 
             pass
+
+            # 5.
+            """! @todo Это неправильно - создавать фильтр здесь. Это ответственность модуля коммуникации с престашоп (PrestaAPIV)"""
+            
+            display: Dict = {'display':'full'}
+            
+            reference = dict_presta_fields["reference"]
+            #search_filter_str: Str =  f'filter[reference] = [{reference}]'
+            search_filter_dict: Dict = { 'filter[reference]': '['+ reference + ']',  }
+            """! Для `V3` Я могу передать фильтр, как строку `filter[id] = [5]` и как словарь `{'filter[id]':'[5]'}	"""
+            search_filter_dict.update(display)            
+            """! str: фильтр как словарь """
+            
+            ret = p.get( search_filter = search_filter_dict, PrestaAPIV = 'V3' )
+            """!  Проверка наличия товара в базе данных.
+            если товара еще нет в бд - вернется пустое значение.
+            Если товар уже существует - редактирую поля если они изменились (цена, описание итп), иначе заношу новый товар в бд"""
+
+            # 6.
+            if ret is False or not ret or len(ret) == 0: 
+                res = p.add(dict_presta_fields, 'JSON', 'V3')
+                logger.info (pprint(res))
+                pass
+                """! Новый товар """
+            else:
+                pass
+                """! @todo Товар в бд. Реализовать редактирование """
+                
         except Exception as ex:
             logger.error(f'ошибка ', ex)
             return False

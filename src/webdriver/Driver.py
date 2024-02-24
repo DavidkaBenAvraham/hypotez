@@ -40,7 +40,7 @@
 #
 #
 #
-#import kora
+#import kora   <- Работа в Google colab
 #from kora.selenium import wd as KWD
 #from seleniumwire import webdriver as SWWD
 #''' seleniumwire работает с прокси '''
@@ -180,7 +180,7 @@
 from pathlib import Path
 import os
 import sys
-import pickle # использую для хранения / чтения кук
+import pickle ## <- использую для хранения / чтения кук
 import time
 import requests
 import asyncio
@@ -195,11 +195,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.common.exceptions import InvalidArgumentException
 from selenium.webdriver.support import expected_conditions as EC
-
-# # ------------------------------
-# hypotez_root_path = os.getcwd()[:os.getcwd().rfind(r'hypotez')+7]
-# sys.path.append(hypotez_root_path)  # Добавляю корневую папку в sys.path
-
 
 from src.settings import gs
 from src.helpers import  logger, logs_and_errors_decorator, DriverException, jprint, pprint
@@ -586,7 +581,7 @@ class Driver(WebDriver):
         На моем компьютере это занимает около полуминуты. Ждем....
         -----------------------------------------------------""")
         
-        self.delete_driver_logs()
+        #self.delete_driver_logs()
         """! @~russian Очищаю директорию логов.
         @todo 1. Продумать очистку только логов вебдрайвера  
         2. Делать очистку по условию """
@@ -928,7 +923,7 @@ class Driver(WebDriver):
         
     #@logs_and_errors_decorator(default_return =  False)
     def close(self):
-        self.delete_driver_logs()
+        #self.delete_driver_logs()
         if not self.close(): 
             logger.error(f""" Ошибка закрытия драйвера """)
         pass

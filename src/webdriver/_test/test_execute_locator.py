@@ -172,12 +172,12 @@ class TestGetWebElementsFromPage(unittest.TestCase):
         self.assertFalse(actual)
 
     @patch('your_module.logger.error')
-    def test_get_webelments_from_page_with_invalid_locator(self, mock_logger_error):
+    def test_get_webelments_from_page_with_invalid_locator(self, mocklogger_console_error):
         self.driver.find_elements.side_effect = Exception()
         locator = {'by': 'invalid', 'selector': 'my_element'}
         actual = get_webelements_from_page(self.driver, locator)
         self.assertFalse(actual)
-        mock_logger_error.assert_called_once()
+        mocklogger_console_error.assert_called_once()
 
 
 class TestGetWebElementAsScreenshot(unittest.TestCase):

@@ -122,7 +122,7 @@ class Supplier():
         
         self.supplier_prefix = supplier_prefix
         self.scenario_language = scenario_language
-        
+        logger.info('Start supplier')        
         if not self._payload(*attrs, **kwards): 
             raise DefaultSettingsException(f'Ошибка запуска поставщика ', supplier_prefix )
 
@@ -138,7 +138,7 @@ class Supplier():
                 Старт {self.supplier_prefix}
         -----------------------------------------''')        
 
-        self.supplier_abs_path = Path(gs.dir_root, 'src', 'suppliers', self.supplier_prefix)
+        self.supplier_abs_path = Path(gs.dir_src, 'suppliers', self.supplier_prefix)
         
         self.related_modules = importlib.import_module(f'src.suppliers.{self.supplier_prefix}')
         """! `self.related_modules`  дополнительные функции из модуля `<supplier_pefix>` """
@@ -286,7 +286,7 @@ class Supplier():
            
         #2. run scenarios
         logger.info('Старт сбора сценариев')
-        """! @todo тут надо сделать поинтересней: `файл / файлы / сценарий / список сценариев` """
+        """! @todo тут надо сделать поинтересней: `файл / список файлов / сценарий / список сценариев` """
         return self.run_scenario_files(scenario_files)
 
 

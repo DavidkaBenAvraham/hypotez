@@ -123,3 +123,5 @@ def logs_and_errors_decorator(default_return: bool = False):
         else:
             return wrapper
     return decorator
+
+pass     ## <- дебаг отсюда
