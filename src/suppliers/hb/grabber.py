@@ -96,10 +96,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 				f.supplier_reference = SN.get_numbers_only(webelement.text)
 			pass
 		pass
-	#
-	#
-	#	
-	#######################################################################################
+
 
 	#@logs_and_errors_decorator(default_return=False)
 	def set_references(f, s):
@@ -110,6 +107,10 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	
 	product_reference_and_volume_and_price_for_100()
 	set_references(f, s)
+	#
+	#
+	#	
+	#######################################################################################
 
 
 	f.active = field_active() # Совпадает с f.available_for_order
@@ -118,9 +119,6 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.advanced_stock_management = field_advanced_stock_management()
 	f.affiliate_short_link =  field_affiliate_short_link() # [v]
 	#f.affiliate_summary = field_affiliate_summary()
-	#f.affiliate_image_large = field_affiliate_image_large()
-	#f.affiliate_image_medium = field_affiliate_image_medium()
-	#f.affiliate_image_small = field_affiliate_image_small()
 	#f.affiliate_summary_2 = field_affiliate_summary_2()
 	#f.affiliate_text = field_affiliate_text()
 	#f.affiliate_image_large = field_affiliate_image_large()
@@ -142,9 +140,10 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	################################################################################
 	_images_urls: list = d.execute_locator(l["Image URLs (x,y,z...)"])
 	if len(_images_urls) > 0:
-		f.dict_assist_fields['default_image_url'] = _images_urls[0]
+		f.dict_assist_fields['product_image_default_url'] = _images_urls[0].replace("-100x100", "")
 	if len(_images_urls) > 1:
-		f.dict_assist_fields['images_urls'] = _images_urls[1::]
+		f.dict_assist_fields['product_images_additional_urls'] = [url.replace("-100x100", "") for url in _images_urls[1::]]
+		
 	################################################################################
 
 	#f.delivery_in_stock = field_delivery_in_stock()	 # [v]	 ##<- доставка
@@ -203,7 +202,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.show_condition = field_show_condition()
 	#f.show_price = field_show_price()
 	#f.state = field_state()
-	# f.supplier_reference = field_supplier_reference()  # [v]  ## <- устанавливается в функции `set_references()`
+	#f.supplier_reference = field_supplier_reference()  # [v]  ## <- устанавливается в функции `set_references()`
 	#f.text_fields = field_text_fields()
 	#f.unit_price_ratio = field_unit_price_ratio()		<- см описание поля в базе данных
 	#f.unity = field_unity()

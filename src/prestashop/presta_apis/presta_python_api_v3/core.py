@@ -516,7 +516,7 @@ class Prestashop():
                             method='POST', 
                             display='full')
 
-    def create_binary(self, resource:str, resource_id:int, file:str, _type:str = 'image', file_name=None):
+    def create_binary(self, resource:str, resource_id:int, file_local_path:str, _type:str = 'image', file_name=None):
         """! create binary record
             @param resource (str): resource to add file ( 'images/products/22' ...).
             @param files (str):  a path of file ('image.png', 'image.jpg') or binary.
@@ -533,23 +533,24 @@ class Prestashop():
             params.update({'io_format' : 'JSON' , 'output_format' : 'JSON'})
     
 
-        _API_DOMAIN = '{}{}'.format(self.API_DOMAIN,resource)
+        _API_DOMAIN = fr'{self.API_DOMAIN}images/{resource}/{resource_id}'
         API_DOMAIN = self._prepare(_API_DOMAIN,params)
 
 
-        if os.path.exists(file):
+        if os.path.exists(file_local_path):
 
-            _file = {_type : open(file,'rb')}
+            _file = {_type : open(file_local_path,'rb')}
 
-        elif isinstance(file ,str):
-            _file = {_type : open(base64_to_tmpfile(file,file_name),'rb') }
+        elif isinstance(file_local_path ,str):
+            _file = {_type : open(base64_to_tmpfile(file_local_path,file_name),'rb') }
+            """! @todo проверить поведение """
         else:
             raise PrestaShopError('File not found',404)
 
 
         response = self.client.post(
-            API_DOMAIN=API_DOMAIN,
-            files=_file
+            url = API_DOMAIN,
+            files = _file
         )
         """! Мне надо получить `ID` загруженной картинки """
         if response.status_code == 200:

@@ -65,7 +65,7 @@ def upload_image(resource: str, image_data: bytes = None, \
     #------------------------------------------------------------------------------------
 #                  Блядский цирк с форматами. Этот костыль мне вырвет глаз 
 
-    temp_filename = str(Path(gs.dirs.get('temp'), 'temp.png'))
+    temp_filename = str(file_name:str, tmp_dir = Path(gs.dir_temp, 'temp.png')):
     
     def write_temp_file_from_url_as_png(image_url: str):
     

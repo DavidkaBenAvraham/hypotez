@@ -25,8 +25,8 @@
 # Imports
 from ast import Str
 from math import prod
-import sys
-import os
+import os, sys
+import requests
 from pathlib import Path
 from typing import Union, Dict, List
 import asyncio
@@ -36,6 +36,7 @@ from src.settings import gs
 from src.helpers import logger,  logs_and_errors_decorator, DriverException, jprint, pprint
 from src.io_interface import j_loads, j_dumps
 from src.product import Product, ProductFields
+from src.prestashop import save_image_from_url_to_temp_as_png
 # -------------------------------
 
 ################################################################################################################
@@ -156,7 +157,7 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> Union[list, di
     list_products_in_category: list = s.related_modules.get_list_products_in_category(s)
     
 
-    # Нет товаров в категории (или не успели загрузиться)
+    # Нет товаров в категории (ну, или не успели загрузиться)
     if not list_products_in_category:
         logger.warning ('Не собран список товаров со страницы категории. Возможно пустая категория  - ', d.current_url)
         return False
@@ -192,10 +193,12 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> Union[list, di
             pass
 
             # 5.
-            """! @todo Это неправильно - создавать фильтр здесь. Это ответственность модуля коммуникации с престашоп (PrestaAPIV)"""
+            """! @todo Это неправильно - создавать фильтр здесь. 
+            Это ответственность модуля коммуникации с престашоп (PrestaAPIV)"""
             
             display: Dict = {'display':'full'}
             
+            # 5.1 строю фильтр API запроса
             reference = dict_presta_fields["reference"]
             #search_filter_str: Str =  f'filter[reference] = [{reference}]'
             search_filter_dict: Dict = { 'filter[reference]': '['+ reference + ']',  }
@@ -209,9 +212,26 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> Union[list, di
             Если товар уже существует - редактирую поля если они изменились (цена, описание итп), иначе заношу новый товар в бд"""
 
             # 6.
-            if ret is False or not ret or len(ret) == 0: 
-                res = p.add(dict_presta_fields, 'JSON', 'V3')
-                logger.info (pprint(res))
+            if ret is False or not ret or len(ret) == 0:  ## <- вернулся пустой responce от сервера. Значит товара с таким reference нет в бд престашоп
+                res = p.add(dict_presta_fields, 'JSON', 'V3') 
+                """! Добавляю товар в бд. В ответ получаю словарь с параметрами добавленного товара """
+                product_id = res['products'][0]['id']
+                product_reference = res['products'][0]['reference']
+                """! Мне нужен id товара и reference """
+                logger.info (pprint(product_id))
+
+                # 6.1 сохрняю картинки на диск.
+                """! @todo Реализовать проверку изменения картинок. Для этого я должен где-то хранить полный URL загруженных картинок """
+                url = dict_assist_fields['product_image_default_url']
+                url_parts = url.rsplit('.', 1)
+                url_without_extension = url_parts[0]
+                extension = url_parts[1] if len(url_parts) > 1 else ''
+                
+                i: int = 0
+                filename = str(product_reference)+f'_{i}.{extension}'
+                saved_file_path = save_image_from_url_to_temp_as_png(url, filename)
+                if saved_file_path: 
+                    p.upload_image(product_id, saved_file_path)
                 pass
                 """! Новый товар """
             else:
@@ -219,11 +239,10 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> Union[list, di
                 """! @todo Товар в бд. Реализовать редактирование """
                 
         except Exception as ex:
-            logger.error(f'ошибка ', ex)
+            logger.error(f'ошибка {ex}')
             return False
                 
     return True
-
 
 
 

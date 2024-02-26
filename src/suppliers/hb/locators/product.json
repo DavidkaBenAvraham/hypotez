@@ -1202,9 +1202,9 @@
     "logic for action[AND|OR|XOR|VALUE|null]": null
   },
   "Image URLs (x,y,z...)": {
-    "attribute": "href",
+    "attribute": "src",
     "by": "XPATH",
-    "selector": "//div[contains(@class,'woocommerce-product-gallery__image')]/a",
+    "selector": "//ol[contains(@class, 'flex-control-thumbs')]//img",
     "use_mouse": false,
     "mandatory": true,
     "action": null

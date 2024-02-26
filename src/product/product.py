@@ -47,7 +47,7 @@ class Product(PrestaProduct):
 
     """
     """ Я могу передать локаторы товара из сценария или изменить их на лету """
-    c = Category()    
+    #c = Category()    
     def __init__(self, *args, **kwards):
         super().__init__(*args, **kwards)
         pass
@@ -85,19 +85,19 @@ class Product(PrestaProduct):
     #     pass
     
     #@logs_and_errors_decorator(default_return =  False)
-    def add_2_prestashop(product_dict: dict, presta_api_version: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> Union[int,bool]:
-        """ Add new product to prestashop db via api
-        ---------------------------------
-        @param
-            product_fields (ProductFields): класс полей товара
-            presta_api_version `str`  :  Какая API будет задействована:
-                'V1' - prestapyt
-                'V2' - prestashop_api
-        @returns
-            id for added product if success, else False
-        """
+    # def add_2_prestashop(product_dict: dict, presta_api_version: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> Union[int,bool]:
+    #     """ Add new product to prestashop db via api
+    #     ---------------------------------
+    #     @param
+    #         product_fields (ProductFields): класс полей товара
+    #         presta_api_version `str`  :  Какая API будет задействована:
+    #             'V1' - prestapyt
+    #             'V2' - prestashop_api
+    #     @returns
+    #         id for added product if success, else False
+    #     """
 
-        return PrestaProduct.add(product_dict, presta_api_version)
+    #     return PrestaProduct.add(product_dict, presta_api_version)
 
     #@logs_and_errors_decorator(default_return =  False)
     def get_parent_categories(id_category: int, dept: int = 0) -> list:

@@ -75,21 +75,22 @@ def j_dumps(data: dict, path: Path) -> bool:
     def convert_values(d):
         """! В соответствии со стандартон JSON
         функция кoнвертирует значения None, True, False в null, true, false """
-        for key, value in d.items():
-            if isinstance(value, dict):
-                convert_values(value)
+        if isinstance(d, dict):
+            for key, value in d.items():
+                if isinstance(value, dict):
+                    convert_values(value)
                 
-            if isinstance(value, list):
-                for v in value:
-                    convert_values(v)
+                if isinstance(value, list):
+                    for v in value:
+                        convert_values(v)
                     
-            elif value is None:
-                d[key] = "null" # Преобразую None в 'null'
+                elif value is None:
+                    d[key] = "null" # Преобразую None в 'null'
                 
-            elif isinstance(value, bool):
-                d[key] = str(value).lower()  # Преобразую True/False в 'true'/'false'
+                elif isinstance(value, bool):
+                    d[key] = str(value).lower()  # Преобразую True/False в 'true'/'false'
             
-        return d
+            return d
     
     data = convert_values(data)
     

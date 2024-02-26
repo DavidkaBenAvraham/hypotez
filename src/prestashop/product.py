@@ -27,10 +27,7 @@ from typing import Union
 from src.settings import gs
 from src.helpers import  logger, logs_and_errors_decorator, jprint, pprint
 from src.io_interface import j_loads, j_dumps
-
 from .presta_apis import  PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
-
-from .images_exec import upload_image
 # --------------------------------
 
 
@@ -49,19 +46,11 @@ class PrestaProduct():
     get(id_product): Возвращает информацию о товаре по ID
     """
 
-    #@logs_and_errors_decorator(default_return =  False)
-    # def __init__(self,*args,**kwards):
-    #     self.params: dict = {'display':'full', 
-    #                     'search_filter':None, 
-    #                     'sort':None, 
-    #                     'limit':None, 
-    #                     'language':None, 
-    #                     'io_format' : 'JSON' , 
-    #                     'output_format' : 'JSON'}        
-    #     pass
+
 
     #@logs_and_errors_decorator(default_return =  False)
     def __init__(self,*args,**kwards):
+        
         self.params: dict = {'display':'full', 
                         'sort':None, 
                         'limit':None, 
@@ -70,53 +59,6 @@ class PrestaProduct():
                         'output_format' : 'JSON'}        
         pass
 
-
-    
-    # #@logs_and_errors_decorator(default_return =  False)
-    # def get(self,  
-    #         product_id: Union[int, list[int]] = None,  
-    #         product_reference: Union[str, list[str]] = None, 
-    #         params: dict = None, 
-    #         search_filter: str = None, 
-    #         PrestaAPIV: str = 'V3') -> bool:
-        
-    #     """! Проверка наличия товара в БД 
-    #     -----------------
-    #     @param product_reference `str`  - термин из престашоп = `reference` 
-    #     @param product_id `str`   - термин из престашоп = `id`
-    #     @param params `dict` {'display':'option'}
-    #     example {'display':'full' | '[id, name]' | 'schema'}
-
-    #     @returns `bool`   False  - if Product NOT in the DB, else True
-    #     """
-        
-    #     productsearch_filter: dict = {}
-    #     if  product_reference:
-    #         productsearch_filter = {'filter[reference]': product_reference}
-    #     elif  product_id and isinstance(product_id, int):
-    #         productsearch_filter = {'filter[id]': product_id} 
-    #     else:
-    #         logger.warning(f'Ситуация, когда не определен ни `product_reference` ни `product_id, в апи запросе Возвращется список всех `id` товара')
-    #         """! Возвращется список всех `id` товара """
-    #         pass
-
-    #     params =  self.params if not params else params
-        
-    #     params['filter'] = productsearch_filter
-        
-    #     if PrestaAPIV == 'V1':
-            
-    #         response = PrestaAPIV1.get('products', product_id, params)
-    #         """! в версии PrestaAPIV возврщается Словарь товара """
-    #     elif  PrestaAPIV == 'V2':   
-    #         pass
-    #     else:
-
-    #         response = PrestaAPIV3.get('products', filter = filter)
-    #         """! параметры по умолчанию уже заложены в реализации функции """
-    #         pass
-        
-    #     return response
 
 
     
@@ -297,23 +239,18 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def upload_image(self, id_product: int, image_url: str, target_file_name: str = 'default.png') -> Union[int, bool]:
+    def upload_image(self, product_id: int, local_file_path: str) -> Union[int, False]:
         """
         Загружаю картинку, получаю или id_image или False
         @param
             image_url `str`  :  source url
-            target_file_name `str`  :  имя файла для prestashop. Если на указано (`default.png`) - 
-            будет заменено на `default_<RANDOMSEQUENCE>.png`
+            local_file_path `str`  :  имя файла для prestashop. Если на указано (`default.png`) - 
         Returns
             id_image `int`  :  id_image from src.prestashop db if success else False
 
         """
+        PrestaAPIV3.create_binary('products', product_id, local_file_path)
 
-        resource = fr'products/{id_product}'
-        #response: dict = upload_image(resource = resource , image_url = image_url)
-        #return response['prestashop']['image']['id']
-        return upload_image(resource = resource , image_url = image_url)
-        return response
 
     
     #@logs_and_errors_decorator(default_return =  False)

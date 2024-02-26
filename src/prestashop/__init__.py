@@ -33,4 +33,4 @@ from .supplier import PrestaSupplier
 from .category import PrestaCategory
 from .language import PrestaLanguage
 from .shop import PrestaShop
-from .images_exec import upload_image
+from .image import save_image_from_url_to_temp_as_png
