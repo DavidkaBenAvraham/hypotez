@@ -5,3 +5,4 @@
 
 from .via_webdriver import get_list_products_in_category, get_list_categories_from_site
 from .grabber import grab_product_page
+from .login import login

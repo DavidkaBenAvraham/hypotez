@@ -164,7 +164,7 @@ def grab_product_page(s: Supplier, id_product: int = 0 , presta_api_version: Uni
         id_product = product['id']
         print("---------------------NEW PRODUCT ID-----------------------")
         print(id_product)
-        image_url = _(l['Image URLs (x,y,z...)'])[0]
+        image_url = _(l['Images URLs (x,y,z...)'])[0]
         img = upload_image(id_product, image_url)
         #return product, img
 

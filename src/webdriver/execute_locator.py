@@ -714,7 +714,7 @@ def get_attribute_by_locator(driver: Driver, locator: dict) -> str:
             ret =[ webelements.get_attribute ( locator['attribute'] ) ]
             #attributes = webelements.get_attribute(locator['attribute']) 
         except Exception as ex:
-            logger.error(f'ошибка ', ex)
+            logger.error(f'ошибка  {ex}')
             ret = False 
 
    
@@ -807,9 +807,9 @@ def click(driver, locator) -> bool:
     # Get the WebElement
     webelement = get_webelements_from_page (driver, locator)
 
-    if not webelement and locator['mandatory'] is False:
+    if not webelement and not locator['mandatory']:   # <- не найден НЕобязательный элемент
         return False
-    elif not webelement and locator['mandatory'] is True:
+    elif not webelement and locator['mandatory']:  # <- не найден Обязательный элемент
         logger.error(f"Could not find element to click. Locator: {locator}")
         return False
     
@@ -823,7 +823,7 @@ def click(driver, locator) -> bool:
         
         driver.switch_to.window(driver.window_handles[-1])
         """! фокус на последннeе открытое окно 
-        Если ссылка открывает новое окно - я фокусируюсь на нем """
+        Если ссылка откроет новое окно - я фокусируюсь на нем """
         
     except Exception as ex:
         logger.error(f"Failed to click element. Locator: {locator}. Error: {ex}")
@@ -862,7 +862,7 @@ def reread_locators(s, entity: str ) -> Union[dict, False]:
         s.locators [ entity ] = j_loads (locators_file) 
         return s.locators [ entity ]
     except Exception as ex:
-        logger.error(f'ошибка ', ex)
+        logger.error(f'ошибка  {ex}')
         return False
             
 

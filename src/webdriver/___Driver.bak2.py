@@ -273,7 +273,7 @@ class Driver(WebDriver):
             """! """
             return js.get_ready_state (self)
         except Exception as ex:
-            logger.error (f'ошибка ', ex)
+            logger.error (f'ошибка  {ex}')
             return False
                 
         

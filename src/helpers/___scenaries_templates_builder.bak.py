@@ -33,7 +33,7 @@ def build_templates(templates_dir_path: str = None) -> dict:
                     templates.update(_d)
                 except Exception as ex:
                     # If there was an error updating the dictionary, log the error and continue to the next file
-                    logger.error(f'''Error adding templates from {f}: ''', ex)
+                    logger.error(f'''Error adding templates from {f}: '' {ex}')
                     continue
         # If there are no files in the directory, move on to the next directory
         else:

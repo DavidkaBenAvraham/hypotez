@@ -85,7 +85,7 @@ def fill(s:Supplier, f:ProductFields) -> ProductFields:
     f.supplier_reference = ASIN
     f.price = set_price (s, format = 'str')
     f.name = _d.execute_locator (_l ['name'] )[0]
-    f.images_urls = _d.execute_locator (_l ['Image URLs (x,y,z...)'] )[0]
+    f.images_urls = _d.execute_locator (_l ['Images URLs (x,y,z...)'] )[0]
     try:    
         #f.description_short = _d.execute_locator (_l ['description_short'] )[0]
         f.description_short = _d.execute_locator (_l ['description_short'] )[0]

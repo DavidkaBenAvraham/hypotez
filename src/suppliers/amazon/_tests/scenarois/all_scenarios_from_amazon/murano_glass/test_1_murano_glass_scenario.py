@@ -42,7 +42,7 @@ product_id = Product.check_if_product_in_presta_db(product_reference)
 print(f' Если товар в бд получу id_product, иначе False. Получил: {product_id}')
 
 
-default_image_url = _(l['Image URLs (x,y,z...)'])[0]
+default_image_url = _(l['Images URLs (x,y,z...)'])[0]
 
 if not isinstance(product_id, bool):
     """ Если не вернулся False, значит товар уже в бд, я полуну его id_product

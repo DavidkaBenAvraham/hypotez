@@ -590,7 +590,7 @@ def field_images_urls():
 	@brief Вначале я загружу дефолтную картинку
 	@details
 	"""
-	return d.execute_locator(l['Image URLs (x,y,z...)'])
+	return d.execute_locator(l['Images URLs (x,y,z...)'])
 	pass
 	
 

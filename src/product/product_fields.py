@@ -1,4 +1,4 @@
-"""! @~russian @brief  <b>Kласс `ProductFields` Расписано каждое поле товара для таблиц престашоп.</b>
+'''! @~russian @brief  <b>Kласс `ProductFields` Расписано каждое поле товара для таблиц престашоп.</b>
 
 
 Наименование полей в классе соответствуют именам полей в таблицах `Prestashop`
@@ -20,7 +20,7 @@
   - src.tools 
 
  @todo поля `volume`, `product_as_service` не срочно 
-"""
+'''
 
 
 # -*- coding: utf-8 -*-
@@ -43,7 +43,7 @@ from src.tools import SF, SN
 # --------------------------------------------
 
 
-"""! 
+'''! 
 # -------------------------------------------
 #
 #       `ps_product`
@@ -106,20 +106,20 @@ from src.tools import SF, SN
 #   55      `state`                     int(11) unsigned
 #   56      `product_type`              enum('standard','pack','virtual','combinations','')
 #   57      `product_as_service`        tinyint(1)
-"""
+'''
 
 
 
 
 
 class ProductFields:
-    """! Класс, описывающий поля товара в формате API PRESTASHOP 
+    '''! Класс, описывающий поля товара в формате API PRESTASHOP 
     @details Поля могут быть членами разных таблиц или добавленных мной для удобства обработки.
     Названия полей (геттеров) соответствуют названиям полей в таблицах. Вначале идут поля из таблицы `ps_product`,
     а потом `ps_product_lang`. В таблицах с суффиксом `_lang` содержатся переводы на различные языки.
     @note Важно проверять ID языков. Они могут различаться в разных магазинах у клиентов
     'associations: dict = None ## <- Специальное поле, которое используется в словаре API PRESATSHOP для добавления всяких дополнительных полей
-    """
+    '''
     
     presta_fields_list: List = [ 
     'active',
@@ -203,16 +203,16 @@ class ProductFields:
     'wholesale_price',
     'width',
     ]
-    """! Список ключей словаря API Prestashop """
+    '''! Список ключей словаря API Prestashop '''
 
     dict_presta_fields: Dict =  {key: None for key in presta_fields_list}
-    """! Словарь полей апи престашоп. 
-    При инициализации заполняется дефолтными данныни из `product_fields_default_values.json`"""
+    '''! Словарь полей апи престашоп. 
+    При инициализации заполняется дефолтными данныни из `product_fields_default_values.json`'''
     
     dict_assist_fields: Dict = {}
-    """! Словарь служебных полей. Сюда добавляются поля для внутренего использования в коде
+    '''! Словарь служебных полей. Сюда добавляются поля для внутренего использования в коде
     и не имеющие отношения к словарю товара `dict_presta_fields`.
-    Например, url картинок: dict_assist_fields.update('default_image_url', 'images_urls') """
+    Например, url картинок: dict_assist_fields.update('default_image_url', 'images_urls') '''
     
     dict_assist_fields.update( {'default_image_url':'', 
                                 'images_urls':''})
@@ -220,14 +220,14 @@ class ProductFields:
 
 
     def __init__(self, *args, **kwargs):
-        """! Класс работы с полями товара. Поля берутся состраницы HTML или другого источника
+        '''! Класс работы с полями товара. Поля берутся состраницы HTML или другого источника
         и форматируются в стандарте  API Prestashop Dictonary. 
-        Поля можно в принципе форматировать как угодно """
+        Поля можно в принципе форматировать как угодно '''
 
         self._payload( *args, **kwargs)
 
     def _payload(self,  *args, **kwargs):
-        """! Загрузка дефолтных значений полей """
+        '''! Загрузка дефолтных значений полей '''
         
         _default_values = j_loads (Path (gs.dir_src, 'product', 'product_fields_default_values.json'))
         
@@ -240,7 +240,7 @@ class ProductFields:
 #   1   ID товара
     @property
     def associations(self):
-        """! <sub>*[getter]*</sub> Возвращает словарь ключей ассоциаций.
+        '''! <sub>*[getter]*</sub> Возвращает словарь ключей ассоциаций.
         @details
         Конструкция `associations`:
         
@@ -304,14 +304,14 @@ class ProductFields:
         }
         }
             }```
-        """
+        '''
         
         return self.dict_presta_fields['associations']  or ''
     
     @associations.setter
     #@logs_and_errors_decorator (default_return =  False)
     def associations(self, value:dict = {'association_name':'value'}) -> dict:
-        """!  <sub>*[setter]*</sub>  Словарь ассоциаций. Список ассоциаций:
+        '''!  <sub>*[setter]*</sub>  Словарь ассоциаций. Список ассоциаций:
         
         `
         product_bundle, 
@@ -329,7 +329,7 @@ class ProductFields:
         ```python
         associations(self, value:dict = {'categories':[3,4],})
         ```
-        """
+        '''
 
         self.dict_presta_fields['associations']: dict =   {
                                                         "categories": [
@@ -343,16 +343,16 @@ class ProductFields:
 
     @property
     def id_product(self) -> int :
-        """! <sub>*[property]*</sub>  `ps_product.id: int(10) unsigned`
+        '''! <sub>*[property]*</sub>  `ps_product.id: int(10) unsigned`
         @note для нового тoвара `ID` назначется в `prestashop`
-        """
+        '''
         return self.dict_presta_fields['id_product'] or ''
     
     
     @id_product.setter
     #@logs_and_errors_decorator (default_return =  False)
     def id_product(self, value: int = None):
-        """!  <sub>*[setter]*</sub>  `ID` товара. *для нового тoвара id назначется из `prestashop`*
+        '''!  <sub>*[setter]*</sub>  `ID` товара. *для нового тoвара id назначется из `prestashop`*
         @details Запись нового товара в престашоп делается в два шага:
         -> в престасшоп заносятся парамеры, которые не связаны с ID, например, название товара, артикул и т.п. 
         <- От престашоп возвращается словарь, в котором установлено ID. 
@@ -360,12 +360,12 @@ class ProductFields:
         @param id_product `int`  :  Требуется при операциях над существующим товаром. `ps_product.id` .  
         Для нового товара ID вернется из системы при занесении товара в базу данных.
         @returns bool `True` if success, else `False`
-        """
+        '''
         try:
             self.dict_presta_fields['id_product'] = value
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'ID' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'ID' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 
@@ -373,24 +373,24 @@ class ProductFields:
     
     @property
     def id_supplier(self):
-        """!  <sub>*[property]*</sub>  `ps_product.id_supplier: int(10) unsigned`
+        '''!  <sub>*[property]*</sub>  `ps_product.id_supplier: int(10) unsigned`
         @~russian @details: привязываю товар к id поставщика
-        """
+        '''
         return self.dict_presta_fields['id_supplier'] or ''
     
     
     @id_supplier.setter
     #@logs_and_errors_decorator (default_return =  False)
     def id_supplier(self, value: int = None):
-        """!  <sub>*[setter]*</sub> """
+        '''!  <sub>*[setter]*</sub> '''
         
         try:
             self.dict_presta_fields['id_supplier'] = value
             return True
 
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: `ps_product.id_supplier` данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: `ps_product.id_supplier` данными {value}
+            Ошибка: {ex} ''')
             return False
 
 
@@ -398,13 +398,13 @@ class ProductFields:
     
     @property
     def id_manufacturer(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.id_manufacturer: int(10) unsigned`
+        '''!  <sub>*[property]*</sub> `ps_product.id_manufacturer: int(10) unsigned`
         field
         @~russian @details: means BRAND. 
             Бренд может быть передан как по имени так и по ID.
             Таблица брендов:
 
-            """
+            '''
 
         return self.dict_presta_fields['id_manufacturer'] or ''
     
@@ -412,17 +412,17 @@ class ProductFields:
     @id_manufacturer.setter
     #@logs_and_errors_decorator (default_return =  False)
     def id_manufacturer(self, value: int = None):
-        """!  <sub>*[setter]*</sub>  Бренд может быть передан как по имени так и по ID 
+        '''!  <sub>*[setter]*</sub>  Бренд может быть передан как по имени так и по ID 
 
          `ps_product.id_manufacturer`
         field type: int(10) unsigned
         @~russian @details: привязываю товар к бренду
-        """
+        '''
         try:
             self.dict_presta_fields['id_manufacturer'] = value
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'Brand' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'Brand' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 
@@ -431,31 +431,31 @@ class ProductFields:
     
     @property
     def id_category_default(self) -> int:
-        """!  <sub>*[property]*</sub>  `ps_product.id_category_default: int(10) unsigned`
+        '''!  <sub>*[property]*</sub>  `ps_product.id_category_default: int(10) unsigned`
         @~russian @details: привязываю товар к главной категории для этого товара
-        """
+        '''
         return self.dict_presta_fields['id_category_default'] or ''
     
     
     @id_category_default.setter
     #@logs_and_errors_decorator (default_return =  False)
     def id_category_default(self, value: int):
-        """!  <sub>*[setter]*</sub> Сюда передается та категория, которая будет однознчно - родительская `ps_product.id_category_default: int(10) unsigned`"""
+        '''!  <sub>*[setter]*</sub> Сюда передается та категория, которая будет однознчно - родительская `ps_product.id_category_default: int(10) unsigned`'''
         try:
             self.dict_presta_fields['id_category_default'] = value
             
         except ProductFieldException as ex:
-            """! @todo - требуется валидатор"""
-            logger.critical(f"""Ошибка заполнения поля: 'id_category_default' данными {value}
-            Ошибка:""", ex)
+            '''! @todo - требуется валидатор'''
+            logger.critical(f'''Ошибка заполнения поля: 'id_category_default' данными {value}
+            Ошибка: {ex} ''')
             return False        
         
 
 # дополнительные, которые записываются в ключе associations['categories']  
     @property
     def additional_categories(self) -> Union [dict, False]:
-        """!  <sub>*[property]*</sub> 
-        возвращает словарь категорий товара восстановленный из файла сценария таблица `ps_category_product`"""
+        '''!  <sub>*[property]*</sub> 
+        возвращает словарь категорий товара восстановленный из файла сценария таблица `ps_category_product`'''
 
         return self.dict_presta_fields['associations']['categories'] or ''
 
@@ -463,10 +463,10 @@ class ProductFields:
     @additional_categories.setter
     #@logs_and_errors_decorator (default_return =  False)
     def additional_categories(self, value: Union[int,list[int]]):
-        """!  <sub>*[setter]*</sub>  @~russian Дополнительные к основной категории.
+        '''!  <sub>*[setter]*</sub>  @~russian Дополнительные к основной категории.
         При задании доп ключей прдеыдущие значения заменяются новыми из `additional_categories`.
         Для добавления новых к уже существующим используй  функцию additional_categories_append()
-        """
+        '''
         
         value = value if isinstance(value, list) else [value]
         
@@ -479,17 +479,17 @@ class ProductFields:
                 self.dict_presta_fields['associations']['categories'].update({'id':v})
             
             except ProductFieldException as ex:
-                logger.error(f"""Ошибка заполнения поля: 'additional_categories' данными {v}
-                Ошибка:""", ex)  
+                logger.error(f'''Ошибка заполнения поля: 'additional_categories' данными {v}
+                Ошибка: {ex} ''')  
                 return False
    
 # #   5   Магазин по умолчанию
     
     @property
     def id_shop_default(self) -> int:
-        """!  <sub>*[property]*</sub>  `ps_product.id_shop_default: int(10) unsigned`
+        '''!  <sub>*[property]*</sub>  `ps_product.id_shop_default: int(10) unsigned`
         field DB type: int(10) unsigned
-        @~russian @details: ID магазина по умолчанию """
+        @~russian @details: ID магазина по умолчанию '''
 
         return self.dict_presta_fields['id_shop_default']  or ''
     
@@ -497,21 +497,21 @@ class ProductFields:
     @id_shop_default.setter
     #@logs_and_errors_decorator (default_return =  False)
     def id_shop_default(self, value: int = None):
-        """!  <sub>*[setter]*</sub>   `ps_product.id_shop_default: int(10) unsigned`
-            `ID` магазина заказчика """
+        '''!  <sub>*[setter]*</sub>   `ps_product.id_shop_default: int(10) unsigned`
+            `ID` магазина заказчика '''
         try:
             self.dict_presta_fields['id_shop_default'] = value
 
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'id_shop_default' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'id_shop_default' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #   6   НДС (Израиль - обычно 13)
     
     @property
     def id_tax(self) -> int:
-        """!  <sub>*[property]*</sub> tax_rule `int`  :  `ID` НДС  `ps_product.id_tax: int(10) unsigned`"""
+        '''!  <sub>*[property]*</sub> tax_rule `int`  :  `ID` НДС  `ps_product.id_tax: int(10) unsigned`'''
 
         return self.dict_presta_fields['id_tax']  or ''
 
@@ -519,48 +519,48 @@ class ProductFields:
     @id_tax.setter
     #@logs_and_errors_decorator (default_return =  False)    
     def id_tax(self, value: int ):
-        """!   <sub>*[setter]*</sub>  `ID` ндс. מע''מ = 13 """
+        '''!   <sub>*[setter]*</sub>  `ID` ндс. מע''מ = 13 '''
         try:
             self.dict_presta_fields['id_tax'] = int(value)
 
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'Tax rule ID' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'Tax rule ID' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #   7   Распродажа - Mivtza
     
     @property
     def on_sale(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.on_sale: tinyint(1)  unsigned`"""
+        '''!  <sub>*[property]*</sub> `ps_product.on_sale: tinyint(1)  unsigned`'''
 
         return self.dict_presta_fields['on_sale']   or ''
 
     @on_sale.setter
     #@logs_and_errors_decorator (default_return =  False)    
     def on_sale(self, value = 0 ):
-        """!  <sub>*[setter]*</sub> `1` - распродажа
+        '''!  <sub>*[setter]*</sub> `1` - распродажа
 
         @param value (int, optional): Defaults to 0.
 
         @returns
             bool: _@~russian @details_
-        """
+        '''
         try:
             self.dict_presta_fields['on_sale'] = value
 
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'On sale (0/1)' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'On sale (0/1)' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #   8 online_only: только через онлайн
     
     @property
     def online_only(self) -> int:
-        """!   <sub>*[property]*</sub>   `ps_product.online_only: tinyint(1) unsigned`
+        '''!   <sub>*[property]*</sub>   `ps_product.online_only: tinyint(1) unsigned`
         field DB type: tinyint(1) unsigned
-        @~russian @details: товар только онлайн """
+        @~russian @details: товар только онлайн '''
 
         return self.dict_presta_fields['online_only']  or ''
     
@@ -568,140 +568,140 @@ class ProductFields:
     @online_only.setter
     #@logs_and_errors_decorator (default_return =  False)
     def online_only(self, value = 0) -> bool:
-        """!   <sub>*[setter]*</sub> """
+        '''!   <sub>*[setter]*</sub> '''
         try:
             self.dict_presta_fields['online_only'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'online_only' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'online_only' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #   9   ean13
     
     @property
     def ean13(self) -> Union[str, None]:
-        """!  <sub>*[property]*</sub>   `ps_product.ean13  varchar(13)`
+        '''!  <sub>*[property]*</sub>   `ps_product.ean13  varchar(13)`
         field DB type: 
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['ean13']  or ''
 
     
     @ean13.setter
     #@logs_and_errors_decorator (default_return =  False)
     def ean13(self, value:str = '') -> bool:
-        """!   <sub>*[setter]*</sub>   `ean13`
+        '''!   <sub>*[setter]*</sub>   `ean13`
         field DB type:  varchar(13)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         try:
             self.dict_presta_fields['ean13'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'ean13' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'ean13' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #   10
     
     @property
     def isbn(self) -> Union[str, None]:
-        """!   <sub>*[property]*</sub>   `isbn`
+        '''!   <sub>*[property]*</sub>   `isbn`
         field DB type: varchar(32)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['isbn']  or ''
     
     
     @isbn.setter
     #@logs_and_errors_decorator (default_return =  False)
     def isbn(self, value:str = '') -> bool:
-        """!   <sub>*[setter]*</sub>   `isbn`
+        '''!   <sub>*[setter]*</sub>   `isbn`
         field DB type: varchar(32)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         try:
             self.dict_presta_fields['isbn'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'isbn' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'isbn' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #   11
     
     @property
     def upc(self):
-        """!  <sub>*[property]*</sub>   `upc`
+        '''!  <sub>*[property]*</sub>   `upc`
         field DB type: varchar(12)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['upc']  or ''
     
     
     @upc.setter
     #@logs_and_errors_decorator (default_return =  False)
     def upc(self, value:str = '') -> Union[str, None]:
-        """!   <sub>*[setter]*</sub>   `ps_product.upc`
+        '''!   <sub>*[setter]*</sub>   `ps_product.upc`
         field DB type: varchar(12)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         try:
             self.dict_presta_fields['upc'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'isbn' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'isbn' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #   12  mpn
     
     @property
     def mpn(self) -> str:
-        """!  <sub>*[property]*</sub>   `ps_product.mpn`
+        '''!  <sub>*[property]*</sub>   `ps_product.mpn`
         field DB type: varchar(40)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['mpn']  or ''
 
     
     @mpn.setter
     #@logs_and_errors_decorator (default_return =  False)
     def mpn(self, value:str = '') -> bool:
-        """!   <sub>*[setter]*</sub>  """
+        '''!   <sub>*[setter]*</sub>  '''
         try:
             self.dict_presta_fields['mpn'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
                          Ошибка заполнения поля: `ps_product.mpn` данными {value}
                          -----------------
-                            Ошибка:""", ex)
+                            Ошибка: {ex} ''')
             return False
 
 #   13   ecotax
     
     @property
     def ecotax(self):
-        """!  <sub>*[property]*</sub>   `ps_product.ecotax`
+        '''!  <sub>*[property]*</sub>   `ps_product.ecotax`
         field DB type:  decimal(17,6)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['ecotax']  or ''
 
     
     @ecotax.setter
     #@logs_and_errors_decorator (default_return =  False)
     def ecotax(self, value:str = '') -> bool:
-        """!   <sub>*[setter]*</sub>  """
+        '''!   <sub>*[setter]*</sub>  '''
         try:
             self.dict_presta_fields['ecotax'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'ecotax' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'ecotax' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 # 14
-    """! quantity не заполнять - апи ее не хочет  """
+    '''! quantity не заполнять - апи ее не хочет  '''
     # @property
     # def quantity(self) -> int:
-    #     """!  <sub>*[property]*</sub>   `ps_product.quantity`
+    #     '''!  <sub>*[property]*</sub>   `ps_product.quantity`
     #     field DB type: int(10)
-    #     @~russian @details: __prod_desc__"""
+    #     @~russian @details: __prod_desc__'''
 
     #     return self.dict_presta_fields['quantity']
 
@@ -709,95 +709,95 @@ class ProductFields:
     # @quantity.setter
     # #@logs_and_errors_decorator (default_return =  False)
     # def quantity(self, value: int = 0) -> bool:
-    #     """!  <sub>*[setter]*</sub>   `ps_product.quantity` """
+    #     '''!  <sub>*[setter]*</sub>   `ps_product.quantity` '''
     #     try:
     #         self.dict_presta_fields['quantity'] = value
     #         return True
     #     except ProductFieldException as ex:
-    #         logger.error(f"""Ошибка заполнения поля: 'quantity' данными {value}
-    #         Ошибка:""", ex)
+    #         logger.error(f'''Ошибка заполнения поля: 'quantity' данными {value}
+    #         Ошибка: {ex} ''')
     #         return False
 
 # 15
     
     @property
     def minimal_quantity(self) -> int:
-        """!  <sub>*[property]*</sub>  `ps_product.minimal_quantity`
+        '''!  <sub>*[property]*</sub>  `ps_product.minimal_quantity`
         field DB type: int(10)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['minimal_quantity']  or ''
 
     
     @minimal_quantity.setter
     #@logs_and_errors_decorator (default_return =  False)
     def minimal_quantity(self, value: int = 0) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['minimal_quantity'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'minimal_quantity' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'minimal_quantity' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #   16
     
     @property
     def low_stock_threshold(self) -> int:
-        """!  <sub>*[property]*</sub>  `ps_product.low_stock_threshold`
+        '''!  <sub>*[property]*</sub>  `ps_product.low_stock_threshold`
         field DB type: int(10)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['low_stock_threshold']  or ''
 
     
     @low_stock_threshold.setter
     #@logs_and_errors_decorator (default_return =  False)
     def low_stock_threshold(self, value: int = 0) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['low_stock_threshold'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'low_stock_threshold' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 #   17
     
     @property
     def low_stock_alert(self) -> int:
-        """!  <sub>*[property]*</sub>  `ps_product.low_stock_alert`
+        '''!  <sub>*[property]*</sub>  `ps_product.low_stock_alert`
         field DB type: tinyint(1)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['low_stock_alert']  or ''
 
     
     @low_stock_alert.setter
     #@logs_and_errors_decorator (default_return =  False)
     def low_stock_alert(self, value: int = 0) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['low_stock_alert'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'low_stock_alert' данными {value}
-            Ошибка:""", ex)
+            Ошибка:{ex}''')
             return False
 #   18
     
     @property
     def price(self) -> float:
-        """!  <sub>*[property]*</sub>  `ps_product.price`
+        '''!  <sub>*[property]*</sub>  `ps_product.price`
         field DB type: decimal(20,6)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['price']  or ''
     
     
     @price.setter
     #@logs_and_errors_decorator (default_return =  False)
     def price(self, value: Union[str,int,float]) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             if not value:
                 return False
@@ -806,330 +806,330 @@ class ProductFields:
         except ProductFieldException as ex:
             logger.error(f'''
             Ошибка заполнения поля: 'price' данными {value}
-            Ошибка:''', ex)
+            Ошибка:{ex}''')
             return False
 #   19
     
     @property
     def wholesale_price(self) -> float:
-        """!  <sub>*[property]*</sub>  `ps_product.wholesale_price`
+        '''!  <sub>*[property]*</sub>  `ps_product.wholesale_price`
         field DB type: decimal(20,6)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['wholesale_price']  or ''
 
     
     @wholesale_price.setter
     #@logs_and_errors_decorator (default_return =  False)
     def wholesale_price(self, value:str = '') -> float:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             #self.dict_presta_fields['wholesale_price'] = str (SN.normalize_price (value) )
             self.dict_presta_fields['wholesale_price'] = ""
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'wholesale_price' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 #   20
     
     @property
     def unity(self) -> str:
-        """!  <sub>*[property]*</sub>  `ps_product.unity`
+        '''!  <sub>*[property]*</sub>  `ps_product.unity`
         field DB type: varchar(255)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['unity']  or ''
     
     @unity.setter
     #@logs_and_errors_decorator (default_return =  False)
     def unity(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['unity'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'unity' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 #   21
     
     @property
     def unit_price_ratio(self) -> float:
-        """!  <sub>*[property]*</sub>  `ps_product.unit_price_ratio`
+        '''!  <sub>*[property]*</sub>  `ps_product.unit_price_ratio`
         field DB type: decimal(20,6)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['unit_price_ratio']   or ''
 
     
     @unit_price_ratio.setter
     #@logs_and_errors_decorator(default_return =  False)
     def unit_price_ratio(self, value: float = 0) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['unit_price_ratio'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: `unit_price_ratio` данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 #   22
     
     @property
     def additional_shipping_cost(self) -> float:
-        """!  <sub>*[property]*</sub> `ps_product.additional_shipping_cost`
+        '''!  <sub>*[property]*</sub> `ps_product.additional_shipping_cost`
         field DB type: decimal(20,6)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['additional_shipping_cost']   or ''
 
     
     @additional_shipping_cost.setter
     #@logs_and_errors_decorator (default_return =  False)
     def additional_shipping_cost(self, value: int = 1) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['additional_shipping_cost'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'additional_shipping_cost' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 #   23
     
     @property
     #@logs_and_errors_decorator (default_return =  False)
     def reference(self) -> str:
-        """!  <sub>*[property]*</sub> `ps_product.reference`
+        '''!  <sub>*[property]*</sub> `ps_product.reference`
         field DB type: `varchar(64)`
         @~russian @details: __prod_desc__
-        """
+        '''
         return self.dict_presta_fields['reference']   or ''
 
     
     @reference.setter
     #@logs_and_errors_decorator (default_return =  False)
     def reference(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['reference'] = str(value)
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'reference' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
         
     
     @property
     def supplier_reference(self):
-        """!  <sub>*[property]*</sub>  `ps_product.supplier_reference`
+        '''!  <sub>*[property]*</sub>  `ps_product.supplier_reference`
         field DB type: `varchar(64)`
         @~russian @details: __prod_desc__
-        """
+        '''
         return self.dict_presta_fields['supplier_reference']   or ''
 #   24
     
     @supplier_reference.setter
     #@logs_and_errors_decorator (default_return =  False)
     def supplier_reference(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['supplier_reference'] = str(value)
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'supplier_reference' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 #   25
     
     @property
     def location(self) -> str:
-        """!  <sub>*[property]*</sub> `ps_product.location`
+        '''!  <sub>*[property]*</sub> `ps_product.location`
         field DB type: varchar(255)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['location']   or ''
 
     
     @location.setter
     #@logs_and_errors_decorator (default_return =  False)
     def location(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['location'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'location' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 #   26
     
     @property
     def width(self) -> float:
-        """!  <sub>*[property]*</sub> `ps_product.width`
+        '''!  <sub>*[property]*</sub> `ps_product.width`
         field DB type: decimal(20,6)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['width']  or ''
 
     
     @width.setter
     #@logs_and_errors_decorator (default_return =  False)
     def width(self, value: float = None) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['width'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'width' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 #   27
     
     @property
     def height(self) -> float:
-        """!  <sub>*[property]*</sub> `ps_product.height`
+        '''!  <sub>*[property]*</sub> `ps_product.height`
         field DB type: decimal(20,6)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['height']  or ''
 
     
     @height.setter
     #@logs_and_errors_decorator (default_return =  False)
     def height(self, value: float = None) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['height'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'height' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 #   28
     
     @property
     def depth(self) -> float:
-        """!  <sub>*[property]*</sub> `[28] ps_product.depth  decimal(20,6)`
+        '''!  <sub>*[property]*</sub> `[28] ps_product.depth  decimal(20,6)`
         field DB type:
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['depth']  or ''
 
     
     @depth.setter
     #@logs_and_errors_decorator (default_return =  False)
     def depth(self, value: float = None) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['depth'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'depth' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 #   29
     
     @property
     def weight(self) -> float:
-        """!  <sub>*[property]*</sub> `ps_product.weight`
+        '''!  <sub>*[property]*</sub> `ps_product.weight`
         field DB type: decimal(20,6)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['weight']  or ''
 
     
     @weight.setter
     #@logs_and_errors_decorator (default_return =  False)
     def weight(self, value: float = None) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['weight'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'weight' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
     #  30
     
     @property
     def out_of_stock(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.out_of_stock`
+        '''!  <sub>*[property]*</sub> `ps_product.out_of_stock`
         field DB type: int(10)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['out_of_stock']  or ''
 
     
     @out_of_stock.setter
     #@logs_and_errors_decorator (default_return =  False)
     def out_of_stock(self, value: int = None) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['out_of_stock'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'out_of_stock' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
   #  31
     
     @property
     def additional_delivery_times(self) -> int:
-        """!!  <sub>*[property]*</sub> `ps_product.additional_delivery_times tinyint(1)`
-        @~russian @details: __prod_desc__"""
+        '''!!  <sub>*[property]*</sub> `ps_product.additional_delivery_times tinyint(1)`
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['additional_delivery_times']    or ''
 
     
     @additional_delivery_times.setter
     #@logs_and_errors_decorator (default_return =  False)
     def additional_delivery_times(self, value: int = 0) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['additional_delivery_times'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'additional_delivery_times' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
   #  32
     
     @property
     def quantity_discount(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.quantity_discount`
+        '''!  <sub>*[property]*</sub> `ps_product.quantity_discount`
         field DB type: tinyint(1)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['quantity_discount']  or ''
 
     
     @quantity_discount.setter
     #@logs_and_errors_decorator (default_return =  False)
     def quantity_discount(self, value: int = 0) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['quantity_discount'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'quantity_discount' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
   #  33
     
     @property
     def customizable(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.customizable`
+        '''!  <sub>*[property]*</sub> `ps_product.customizable`
         field DB type: tinyint(2)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['customizable']   or ''
 
     
@@ -1140,18 +1140,18 @@ class ProductFields:
             self.dict_presta_fields['customizable'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'customizable' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
   #  34
     
     @property
     def uploadable_files(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.uploadable_files`
+        '''!  <sub>*[property]*</sub> `ps_product.uploadable_files`
         field DB type: tinyint(4)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['uploadable_files']  or ''
 
@@ -1159,22 +1159,22 @@ class ProductFields:
     @uploadable_files.setter
     #@logs_and_errors_decorator (default_return =  False)
     def uploadable_files(self, value: int = 0) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['uploadable_files'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'uploadable_files' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 #  35
     
     @property
     def text_fields(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.text_fields`
+        '''!  <sub>*[property]*</sub> `ps_product.text_fields`
         field DB type: tinyint(4)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['text_fields']   or ''
 
@@ -1182,23 +1182,23 @@ class ProductFields:
     @text_fields.setter
     #@logs_and_errors_decorator (default_return =  False)
     def text_fields(self, value: int = 0) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['text_fields'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'text_fields' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 #  36
     
     @property
     def active(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.active`
+        '''!  <sub>*[property]*</sub> `ps_product.active`
         field DB type: tinyint(1)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['active']  or ''
 
@@ -1206,14 +1206,14 @@ class ProductFields:
     @active.setter
     #@logs_and_errors_decorator (default_return =  False)
     def active(self, value: int = 1) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['active'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'active' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
    
         
@@ -1223,7 +1223,7 @@ class ProductFields:
         
     @property
     def redirect_type(self) -> str:
-        """!  <sub>*[property]*</sub> `[37] ps_product.redirect_type enum('404','301-product','302-product','301-category','302-category')`
+        '''!  <sub>*[property]*</sub> `[37] ps_product.redirect_type enum('404','301-product','302-product','301-category','302-category')`
         
     Редиректы HTTP 301 (Moved Permanently) и 302 (Found, временное перенаправление) различаются в том, как они обрабатываются браузерами и поисковыми системами:
 
@@ -1238,7 +1238,7 @@ class ProductFields:
     Браузеры и поисковые системы могут повторять запросы к оригинальному URL, так как это считается временным перенаправлением.
     Этот тип редиректа подходит, когда ресурс временно недоступен на оригинальном местоположении, и клиент должен использовать новый адрес, но при этом оригинальное местоположение может быть использовано в будущем.
     Выбор между 301 и 302 зависит от того, насколько постоянно изменение местоположения ресурса. Если изменение постоянное, то рекомендуется использовать 301. Если изменение временное, то следует использовать 302.
-    """
+    '''
         return self.dict_presta_fields['redirect_type']   or ''
 
 
@@ -1253,7 +1253,7 @@ class ProductFields:
     @redirect_type.setter
     #@logs_and_errors_decorator (default_return =  False)
     def redirect_type(self, value: Union[EnumRedirect,str]) -> bool:
-        """!  <sub>*[setter]*</sub>   Редирект. 
+        '''!  <sub>*[setter]*</sub>   Редирект. 
         Редиректы представляют собой механизм перенаправления пользователя или браузера с одного URL-адреса на другой. Они часто используются в веб-разработке для переноса посетителя с одной страницы на другую. Различные HTTP-статусы и типы редиректов сообщают браузеру или клиенту, как следует интерпретировать запрос и что делать дальше. В вашем коде вы используете строки для представления различных типов редиректов.
 
         ERROR_404 (404 Not Found):
@@ -1295,23 +1295,23 @@ class ProductFields:
                     pass
 
         ```
-        """
+        '''
         try:
             self.dict_presta_fields['redirect_type'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'redirect_type' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
  #  38
     
     @property
     def id_type_redirected(self) -> int:
-        """!  <sub>*[property]*</sub> `[38] ps_product.id_type_redirected  tinyint(10)`
+        '''!  <sub>*[property]*</sub> `[38] ps_product.id_type_redirected  tinyint(10)`
         field DB type:
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['id_type_redirected']  or ''
     
@@ -1319,23 +1319,23 @@ class ProductFields:
     @id_type_redirected.setter
     #@logs_and_errors_decorator (default_return =  False)
     def id_type_redirected(self, value: int = 0) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['id_type_redirected'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'id_type_redirected' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
  #  39
     
     @property
     def available_for_order(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.available_for_order`
+        '''!  <sub>*[property]*</sub> `ps_product.available_for_order`
         field DB type: tinyint(10)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['available_for_order']   or ''
 
@@ -1343,23 +1343,23 @@ class ProductFields:
     @available_for_order.setter
     #@logs_and_errors_decorator (default_return =  False)
     def available_for_order(self, value: int = 0) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['available_for_order'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'available_for_order' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
  #  40
     
     @property
     def available_date(self) -> Date:
-        """!  <sub>*[property]*</sub> `ps_product.available_date`
+        '''!  <sub>*[property]*</sub> `ps_product.available_date`
         field DB type: date
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['available_date']   or ''
 
@@ -1367,23 +1367,23 @@ class ProductFields:
     @available_date.setter
     #@logs_and_errors_decorator (default_return =  False)
     def available_date(self, value: Date = Date.today) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['available_date'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'available_date' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
  #  41
     
     @property
     def show_condition(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.show_condition`
+        '''!  <sub>*[property]*</sub> `ps_product.show_condition`
         field DB type: tinyint(1)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['show_condition']  or ''
 
@@ -1391,22 +1391,22 @@ class ProductFields:
     @show_condition.setter
     #@logs_and_errors_decorator (default_return =  False)
     def show_condition(self, value: int = 1) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['show_condition'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'show_condition' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
  #  42
 
     @property
     def condition(self) -> str:
-        """!  <sub>*[property]*</sub> `[42] ps_product.condition  enum('new','used','refurbished')`
-        @~russian @details: __prod_desc__"""
+        '''!  <sub>*[property]*</sub> `[42] ps_product.condition  enum('new','used','refurbished')`
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['condition']    or ''
         
@@ -1418,23 +1418,23 @@ class ProductFields:
     @condition.setter
     #@logs_and_errors_decorator (default_return =  False)
     def condition(self, value: Union[EnumCondition, str] = EnumCondition.NEW) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['condition'] = str(value)
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'condition' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
  #  43
     
     @property
     def show_price(self) -> int:
-        """!  <sub>*[property]*</sub> `[43] ps_product.show_price tinyint(1)`
+        '''!  <sub>*[property]*</sub> `[43] ps_product.show_price tinyint(1)`
         field DB type: 
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['show_price']   or ''
     
@@ -1442,45 +1442,45 @@ class ProductFields:
     @show_price.setter
     #@logs_and_errors_decorator (default_return =  False)
     def show_price(self, value: int = 1) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['show_price'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'show_price' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 #  44
     
     @property
     def indexed(self) -> int:
-        """!  <sub>*[property]*</sub> `[44] ps_product.indexed  tinyint(1)`
-        @~russian @details: __prod_desc__"""
+        '''!  <sub>*[property]*</sub> `[44] ps_product.indexed  tinyint(1)`
+        @~russian @details: __prod_desc__'''
         return self.dict_presta_fields['indexed']   or ''
     
     
     @indexed.setter
     #@logs_and_errors_decorator (default_return =  False)
     def indexed(self, value: int = 1) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['indexed'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'indexed' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 #  45
     
     @property
     def visibility(self) -> str:
-        """!  <sub>*[property]*</sub> `ps_product.visibility`
+        '''!  <sub>*[property]*</sub> `ps_product.visibility`
         field DB type: enum('both','catalog','search','none')
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['visibility']   or ''
 
@@ -1494,14 +1494,14 @@ class ProductFields:
     @visibility.setter
     #@logs_and_errors_decorator (default_return =  False)
     def visibility(self, value: EnumVisibity = EnumVisibity.BOTH) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['visibility'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'visibility' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 
@@ -1510,9 +1510,9 @@ class ProductFields:
     
     @property
     def cache_is_pack(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.cache_is_pack`
+        '''!  <sub>*[property]*</sub> `ps_product.cache_is_pack`
         field DB type: tinyint(1)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['cache_is_pack']    or ''
     
@@ -1520,23 +1520,23 @@ class ProductFields:
     @cache_is_pack.setter
     #@logs_and_errors_decorator (default_return =  False)
     def cache_is_pack(self, value: int = 1) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['cache_is_pack'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'cache_is_pack' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 #  47
     
     @property
     def cache_has_attachments(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.cache_has_attachments`
+        '''!  <sub>*[property]*</sub> `ps_product.cache_has_attachments`
         field DB type: tinyint(1)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['cache_has_attachments']   or ''
     
@@ -1544,23 +1544,23 @@ class ProductFields:
     @cache_has_attachments.setter
     #@logs_and_errors_decorator (default_return =  False)
     def cache_has_attachments(self, value: int = 1) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['cache_has_attachments'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'cache_has_attachments' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 #  48
     
     @property
     def is_virtual(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.is_virtual`
+        '''!  <sub>*[property]*</sub> `ps_product.is_virtual`
         field DB type: tinyint(1)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['is_virtual']    or ''
 
@@ -1568,23 +1568,23 @@ class ProductFields:
     @is_virtual.setter
     #@logs_and_errors_decorator (default_return =  False)
     def is_virtual(self, value: int = 1) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['is_virtual'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'is_virtual' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 #  49
     
     @property
     def cache_default_attribute(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.cache_default_attribute`
+        '''!  <sub>*[property]*</sub> `ps_product.cache_default_attribute`
         field DB type: int(10)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['cache_default_attribute']   or ''
 
@@ -1592,23 +1592,23 @@ class ProductFields:
     @cache_default_attribute.setter
     #@logs_and_errors_decorator (default_return =  False)
     def cache_default_attribute(self, value: int = 1) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['cache_default_attribute'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'cache_default_attribute' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 #  50
     
     @property
     def date_add(self) -> Date:
-        """!  <sub>*[property]*</sub> `ps_product.date_add`
+        '''!  <sub>*[property]*</sub> `ps_product.date_add`
         field DB type: datetime
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['date_add']   or ''
     
@@ -1616,23 +1616,23 @@ class ProductFields:
     @date_add.setter
     #@logs_and_errors_decorator (default_return =  False)
     def date_add(self, value: Date = Date.today()) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['date_add'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'date_add' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 #  51
     
     @property
     def date_upd(self) -> Date:
-        """!  <sub>*[property]*</sub> `ps_product.date_upd`
+        '''!  <sub>*[property]*</sub> `ps_product.date_upd`
         field DB type: datetime
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['date_upd']   or ''
     
@@ -1640,14 +1640,14 @@ class ProductFields:
     @date_upd.setter
     #@logs_and_errors_decorator (default_return =  False)
     def date_upd(self, value: Date = Date.today()) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['date_upd'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'date_upd' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 
@@ -1655,9 +1655,9 @@ class ProductFields:
     
     @property
     def advanced_stock_management(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.advanced_stock_management`
+        '''!  <sub>*[property]*</sub> `ps_product.advanced_stock_management`
         field DB type: tinyint(1)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['advanced_stock_management']  or ''
     
@@ -1665,23 +1665,23 @@ class ProductFields:
     @advanced_stock_management.setter
     #@logs_and_errors_decorator (default_return =  False)
     def advanced_stock_management(self, value: int = 0) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['advanced_stock_management'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'advanced_stock_management' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 #  53
     
     @property
     def pack_stock_type(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.pack_stock_type`
+        '''!  <sub>*[property]*</sub> `ps_product.pack_stock_type`
         field DB type: int(11)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['pack_stock_type']  or ''
     
@@ -1689,14 +1689,14 @@ class ProductFields:
     @pack_stock_type.setter
     #@logs_and_errors_decorator (default_return =  False)
     def pack_stock_type(self, value: int = 0) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['pack_stock_type'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'pack_stock_type' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 
@@ -1704,9 +1704,9 @@ class ProductFields:
     
     @property
     def state(self) -> int:
-        """!  <sub>*[property]*</sub> `ps_product.state`
+        '''!  <sub>*[property]*</sub> `ps_product.state`
         field DB type: int(11)
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['state']   or ''
     
@@ -1714,14 +1714,14 @@ class ProductFields:
     @state.setter
     #@logs_and_errors_decorator (default_return =  False)
     def state(self, value: int = 0) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['state'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'state' данными {value}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 
@@ -1729,9 +1729,9 @@ class ProductFields:
     
     @property
     def product_type(self) -> str:
-        """!  <sub>*[property]*</sub> `ps_product.product_type`
+        '''!  <sub>*[property]*</sub> `ps_product.product_type`
         field DB type: enum('standard', 'pack', 'virtual', 'combinations', '')
-        @~russian @details: __prod_desc__"""
+        @~russian @details: __prod_desc__'''
 
         return self.dict_presta_fields['product_type']    or ''
 
@@ -1745,14 +1745,14 @@ class ProductFields:
     @product_type.setter
     #@logs_and_errors_decorator (default_return =  False)
     def product_type(self, product_type: EnumProductType = EnumProductType.STANDARD) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['product_type'] = product_type
             return True
         except ProductFieldException as ex:
-            logger.error(f"""
+            logger.error(f'''
             Ошибка заполнения поля: 'product_type' данными {product_type}
-            Ошибка:""", ex)
+            Ошибка: {ex} ''')
             return False
 
 
@@ -1822,56 +1822,56 @@ class ProductFields:
 
     @property
     def id_shop(self):
-        """!  <sub>*[property]*</sub> `ps_product_lang.id_shop: int(10)`
-        Я могу переопределить переводы и прочее в зависимости от магазина"""
+        '''!  <sub>*[property]*</sub> `ps_product_lang.id_shop: int(10)`
+        Я могу переопределить переводы и прочее в зависимости от магазина'''
         return self.dict_presta_fields['id_shop']   or ''
 
     
     @id_shop.setter
     #@logs_and_errors_decorator (default_return =  False)
     def id_shop(self, value: int = None) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['id_shop'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'id_shop' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'id_shop' данными {value}
+            Ошибка: {ex} ''')
             return False
         
 # 3 id_lang 
-    # """! @note  Здесь я выставляю язык перевода """
+    # '''! @note  Здесь я выставляю язык перевода '''
     # @property
     # def id_lang(self):
-    #     """!  <sub>*[property]*</sub> `[3] ps_product_lang.id_lang int(10)`
-    #     description: Я выставляю язык перевода"""
+    #     '''!  <sub>*[property]*</sub> `[3] ps_product_lang.id_lang int(10)`
+    #     description: Я выставляю язык перевода'''
     #     return self.dict_presta_fields['id_lang']
 
     
     # @id_lang.setter
     # #@logs_and_errors_decorator (default_return =  False)
     # def id_lang(self, value: int = None) -> bool:
-    #     """!  <sub>*[setter]*</sub>   """
+    #     '''!  <sub>*[setter]*</sub>   '''
     #     try:
     #         self.dict_presta_fields['id_lang'] = value
     #         return True
     #     except ProductFieldException as ex:
-    #         logger.error(f"""Ошибка заполнения поля: 'id_lang' данными {value}
-    #         Ошибка:""", ex)
+    #         logger.error(f'''Ошибка заполнения поля: 'id_lang' данными {value}
+    #         Ошибка: {ex} ''')
     #         return False
 #   4
     
     @property
     def description(self) -> str:
-        """!  <sub>*[property]*</sub> `[4] ps_product_lang.description text`
-        description: Описание """
+        '''!  <sub>*[property]*</sub> `[4] ps_product_lang.description text`
+        description: Описание '''
         return self.dict_presta_fields['description']  or ''
 
     
     @description.setter
     #@logs_and_errors_decorator (default_return =  False)
     def description(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['description']: dict = {
                 "language":[
@@ -1881,22 +1881,22 @@ class ProductFields:
             ]}
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'description' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'description' данными {value}
+            Ошибка: {ex} ''')
             return False
 #   5
     
     @property
     def description_short(self) -> str:
-        """!  <sub>*[property]*</sub> `[5] ps_product_lang.description_short text`
-        description: __prod_desc__"""
+        '''!  <sub>*[property]*</sub> `[5] ps_product_lang.description_short text`
+        description: __prod_desc__'''
 
         return self.dict_presta_fields['description_short']   or ''
     
     @description_short.setter
     #@logs_and_errors_decorator (default_return =  False)
     def description_short(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['description_short']: dict = {
                 "language":[
@@ -1906,23 +1906,23 @@ class ProductFields:
             ]}
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'description_short' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'description_short' данными {value}
+            Ошибка: {ex} ''')
             return False
 #   6
     
     @property
     def link_rewrite(self) -> str:
-        """!  <sub>*[property]*</sub> `ps_product_lang.link_rewrite`
+        '''!  <sub>*[property]*</sub> `ps_product_lang.link_rewrite`
         field DB type: varchar(128)
-        description: __prod_desc__"""
+        description: __prod_desc__'''
         return self.dict_presta_fields['link_rewrite']   or ''
 
     
     @link_rewrite.setter
     #@logs_and_errors_decorator (default_return =  False)
     def link_rewrite(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             #self.dict_presta_fields['link_rewrite = link_rewrite
             self.dict_presta_fields['link_rewrite']: dict = {
@@ -1933,23 +1933,23 @@ class ProductFields:
             ]}
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'link_rewrite' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'link_rewrite' данными {value}
+            Ошибка: {ex} ''')
             return False
 #   7
     
     @property
     def meta_description(self) -> str:
-        """!  <sub>*[property]*</sub> `[7] ps_product_lang.meta_description varchar(512)` 
+        '''!  <sub>*[property]*</sub> `[7] ps_product_lang.meta_description varchar(512)` 
         field DB type: 
-        description: __prod_desc__"""
+        description: __prod_desc__'''
         return self.dict_presta_fields['meta_description']   or ''
     
     
     @meta_description.setter
     #@logs_and_errors_decorator (default_return =  False)
     def meta_description(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['meta_description']: dict = {
                 "language":[
@@ -1959,23 +1959,23 @@ class ProductFields:
             ]}
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'meta_description' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'meta_description' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #   8
     
     @property
     def meta_keywords(self):
-        """!  <sub>*[property]*</sub> `[8] ps_product_lang.meta_keywords varchar(255)`
+        '''!  <sub>*[property]*</sub> `[8] ps_product_lang.meta_keywords varchar(255)`
         field DB type: 
-        description: __prod_desc__"""
+        description: __prod_desc__'''
         return self.dict_presta_fields['meta_keywords']   or ''
     
     @meta_keywords.setter
     #@logs_and_errors_decorator (default_return =  False)
     def meta_keywords(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['meta_keywords']: dict = {
                 "language":[
@@ -1985,23 +1985,23 @@ class ProductFields:
             ]}
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'meta_keywords' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'meta_keywords' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #   9
     
     @property
     def meta_title(self) -> str:
-        """!  <sub>*[property]*</sub> `[9] s_product_lang.meta_title varchar(128)`
-        description: __prod_desc__"""
+        '''!  <sub>*[property]*</sub> `[9] s_product_lang.meta_title varchar(128)`
+        description: __prod_desc__'''
         return self.dict_presta_fields['meta_title']  or ''
     
     
     @meta_title.setter
     #@logs_and_errors_decorator (default_return =  False)
     def meta_title(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['meta_title']: dict = {
                 "language":[
@@ -2011,23 +2011,23 @@ class ProductFields:
             ]}
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'meta_title' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'meta_title' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #   10
     
     @property
     def name(self):
-        """!  <sub>*[property]*</sub> `[10] ps_product_lang.name  varchar(128)`
-        description: __prod_desc__"""
+        '''!  <sub>*[property]*</sub> `[10] ps_product_lang.name  varchar(128)`
+        description: __prod_desc__'''
         return self.dict_presta_fields['name']  or ''
     
     
     @name.setter
     #@logs_and_errors_decorator (default_return =  False)
     def name(self, value: str) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['name']: dict = {
                 "language":[
@@ -2037,23 +2037,23 @@ class ProductFields:
             ]}
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'name' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'name' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #   11
     
     @property
     def available_now(self) -> str:
-        """!  <sub>*[property]*</sub>  `[11] ps_product_lang.available_now varchar(255)`
-        description: __prod_desc__"""
+        '''!  <sub>*[property]*</sub>  `[11] ps_product_lang.available_now varchar(255)`
+        description: __prod_desc__'''
         return self.dict_presta_fields['available_now']  or ''
     
     
     @available_now.setter
     #@logs_and_errors_decorator (default_return =  False)
     def available_now(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['available_now']: dict =   {                
                 "language":[
@@ -2062,23 +2062,23 @@ class ProductFields:
                 {'attrs':{'id':'3'}, 'value':value},]}
                 
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'available_now' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'available_now' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #   12
     
     @property
     def available_later(self) -> str:
-        """!  <sub>*[property]*</sub>  field DB available_later: `[12] ps_product_lang.available_later varchar(255)`
+        '''!  <sub>*[property]*</sub>  field DB available_later: `[12] ps_product_lang.available_later varchar(255)`
         field DB type: varchar(255)
-        description: __prod_desc__"""
+        description: __prod_desc__'''
         return self.dict_presta_fields['available_later']  or ''
     
     @available_later.setter
     #@logs_and_errors_decorator (default_return =  False)
     def available_later(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['available_later']: dict =   {"language":[
                 {'attrs':{'id':'1'}, 'value':value},
@@ -2086,8 +2086,8 @@ class ProductFields:
                 {'attrs':{'id':'3'}, 'value':value},]}
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'available_later' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'available_later' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 
@@ -2095,14 +2095,14 @@ class ProductFields:
     
     @property
     def delivery_in_stock(self):
-        """!  <sub>*[property]*</sub>   `[13] ps_product_lang.delivery_in_stock varchar(255)`
-        @details:  (Доставка при наличии товара): Текст, который будет отображаться, когда товар есть в наличии."""
+        '''!  <sub>*[property]*</sub>   `[13] ps_product_lang.delivery_in_stock varchar(255)`
+        @details:  (Доставка при наличии товара): Текст, который будет отображаться, когда товар есть в наличии.'''
         return self.dict_presta_fields['delivery_in_stock']  or ''
     
     @delivery_in_stock.setter
     #@logs_and_errors_decorator (default_return =  False)
     def delivery_in_stock(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>  Функция строит список словарей для поля `ps_product_lang.delivery_in_stock`
+        '''!  <sub>*[setter]*</sub>  Функция строит список словарей для поля `ps_product_lang.delivery_in_stock`
         ```python
         {
             "language":[
@@ -2112,7 +2112,7 @@ class ProductFields:
             ]
         }
             ```
-        """
+        '''
         
 
         self.dict_presta_fields['delivery_in_stock']: dict =   {"language":[
@@ -2128,8 +2128,8 @@ class ProductFields:
         #     ]}
         #     return True
         # except ProductFieldException as ex:
-        #     logger.error(f"""Ошибка заполнения поля: 'delivery_in_stock' данными {value}
-        #     Ошибка:""", ex)
+        #     logger.error(f'''Ошибка заполнения поля: 'delivery_in_stock' данными {value}
+        #     Ошибка: {ex} ''')
         #     return False
 
 
@@ -2137,8 +2137,8 @@ class ProductFields:
     
     @property
     def delivery_out_stock(self) -> str:
-        """!  <sub>*[property]*</sub>   `[14] ps_product_lang.delivery_out_stock varchar(256)` 
-        description: __prod_desc__"""
+        '''!  <sub>*[property]*</sub>   `[14] ps_product_lang.delivery_out_stock varchar(256)` 
+        description: __prod_desc__'''
         return self.dict_presta_fields['delivery_out_stock']
     
     @delivery_out_stock.setter
@@ -2153,15 +2153,15 @@ class ProductFields:
 
     @property
     def delivery_additional_message(self) -> str:
-        """!  <sub>*[property]*</sub>   `[15] ps_product_lang.delivery_out_stock`
+        '''!  <sub>*[property]*</sub>   `[15] ps_product_lang.delivery_out_stock`
         field DB type: 
-        description: __prod_desc__"""
+        description: __prod_desc__'''
         return self.dict_presta_fields['delivery_additional_message'] or ''
     
     @delivery_additional_message.setter
     #@logs_and_errors_decorator (default_return =  False)
     def delivery_additional_message(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub> Заметки по доставке. Например: война, хз когда доставим  
+        '''!  <sub>*[setter]*</sub> Заметки по доставке. Например: война, хз когда доставим  
         Мультиязычное поле. Формирует словарь:
         ```python
             {
@@ -2171,7 +2171,7 @@ class ProductFields:
             {'attrs':{'id':'3'}, 'value':delivery_additional_message},
             ]}
         ```
-        """
+        '''
         self.dict_presta_fields['delivery_additional_message']: dict  =   {"language":[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
@@ -2182,14 +2182,14 @@ class ProductFields:
     
     @property
     def affiliate_short_link(self) -> dict:
-        """!  <sub>*[property]*</sub>   `[15] ps_product_lang.affiliate_short_link  varchar(255)`
-        description: __prod_desc__"""
+        '''!  <sub>*[property]*</sub>   `[15] ps_product_lang.affiliate_short_link  varchar(255)`
+        description: __prod_desc__'''
         return self.dict_presta_fields['affiliate_short_link']  or ''
     
     @affiliate_short_link.setter
     #@logs_and_errors_decorator (default_return =  False)
     def affiliate_short_link(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub> Короткие линки не партнерские преогаммы. Мультиязычное поле.
+        '''!  <sub>*[setter]*</sub> Короткие линки не партнерские преогаммы. Мультиязычное поле.
         Формирует словарь:
         ```python
          {
@@ -2199,7 +2199,7 @@ class ProductFields:
             {'attrs':{'id':'3'}, 'value':affiliate_short_link},
             ]}
             ```
-        """
+        '''
         try:
             self.dict_presta_fields['affiliate_short_link']: dict =   {"language":[
                 {'attrs':{'id':'1'}, 'value':value},
@@ -2215,21 +2215,21 @@ class ProductFields:
             # ]}
             
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'affiliate_short_link' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'affiliate_short_link' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #   17
     
     @property
     def affiliate_text(self) -> str:
-        """!  <sub>*[property]*</sub>   `[17] ps_product_lang.affiliate_text varchar(256)`"""
+        '''!  <sub>*[property]*</sub>   `[17] ps_product_lang.affiliate_text varchar(256)`'''
         return self.dict_presta_fields['affiliate_text'] or ''
     
     @affiliate_text.setter
     #@logs_and_errors_decorator (default_return =  False)
     def affiliate_text(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             #self.dict_presta_fields['affiliate_text = affiliate_text
             self.dict_presta_fields['affiliate_text']: dict =   {"language":[
@@ -2238,8 +2238,8 @@ class ProductFields:
                 {'attrs':{'id':'3'}, 'value':value},]}
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'affiliate_text' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'affiliate_text' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 
@@ -2247,22 +2247,22 @@ class ProductFields:
     
     @property
     def affiliate_summary(self) -> str:
-        """!  <sub>*[property]*</sub>  `[18] ps_product_lang.affiliate_summary varchar(256)`"""
+        '''!  <sub>*[property]*</sub>  `[18] ps_product_lang.affiliate_summary varchar(256)`'''
         return self.dict_presta_fields['affiliate_summary']  or ''
     
     
     @affiliate_summary.setter
     #@logs_and_errors_decorator (default_return =  False)
     def affiliate_summary(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['affiliate_summary']: dict =   {"language":[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'affiliate_summary' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'affiliate_summary' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 
@@ -2271,22 +2271,22 @@ class ProductFields:
     
     @property
     def affiliate_summary_2(self) -> str:
-        """!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`"""
+        '''!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`'''
         return self.dict_presta_fields['affiliate_summary_2'] or ''
 
     
     @affiliate_summary_2.setter
     #@logs_and_errors_decorator (default_return =  False)
     def affiliate_summary_2(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['affiliate_summary_2']: dict =   {"language":[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'affiliate_summary_2' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'affiliate_summary_2' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #   20
@@ -2294,22 +2294,22 @@ class ProductFields:
     
     @property
     def affiliate_image_small(self) -> str:
-        """!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`"""
+        '''!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`'''
         return self.dict_presta_fields['affiliate_image_small'] or ''
 
     
     @affiliate_image_small.setter
     #@logs_and_errors_decorator (default_return =  False)
     def affiliate_image_small(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['affiliate_image_small']: dict =   {"language":[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'affiliate_summary_2' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'affiliate_summary_2' данными {value}
+            Ошибка: {ex} ''')
             return False
 
  #   21
@@ -2317,14 +2317,14 @@ class ProductFields:
     
     @property
     def affiliate_image_medium(self) -> str:
-        """!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`"""
+        '''!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`'''
         return self.dict_presta_fields['affiliate_image_medium'] or ''
 
     
     @affiliate_image_medium.setter
     #@logs_and_errors_decorator (default_return =  False)
     def affiliate_image_medium(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['affiliate_image_medium']: dict =   {"language":[
                 {'attrs':{'id':'1'}, 'value':value},
@@ -2332,8 +2332,8 @@ class ProductFields:
                 {'attrs':{'id':'3'}, 'value':value},]}
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'affiliate_summary_2' данными {affiliate_image_medium}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'affiliate_summary_2' данными {affiliate_image_medium}
+            Ошибка: {ex} ''')
             return False
 
     
@@ -2342,22 +2342,22 @@ class ProductFields:
     
     @property
     def affiliate_image_large(self) -> str:
-        """!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`"""
+        '''!  <sub>*[property]*</sub>  `ps_product_lang.affiliate_summary_2`'''
         return self.dict_presta_fields['affiliate_image_medium']  or ''
 
     
     @affiliate_image_large.setter
     #@logs_and_errors_decorator (default_return =  False)
     def affiliate_image_large(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['affiliate_image_medium']: dict =   {"language":[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'affiliate_summary_2' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'affiliate_summary_2' данными {value}
+            Ошибка: {ex} ''')
             return False
 
     
@@ -2365,14 +2365,14 @@ class ProductFields:
     
     @property
     def ingridients(self) -> str:
-        """!  <sub>*[property]*</sub>  `ps_product_lang.ingridients`"""
+        '''!  <sub>*[property]*</sub>  `ps_product_lang.ingridients`'''
         return self.dict_presta_fields['ingridients'] or ''
 
     
     @ingridients.setter
     #@logs_and_errors_decorator (default_return =  False)
     def ingridients(self, value: str = None) -> bool:
-        """!  <sub>*[setter]*</sub>  Ингридиенты. Текстовое поле - можно хранить фрагменты кода 
+        '''!  <sub>*[setter]*</sub>  Ингридиенты. Текстовое поле - можно хранить фрагменты HTML кода 
         формирует список словарей:
         ```python
         {
@@ -2383,74 +2383,74 @@ class ProductFields:
         ]}
         ```
         значение `ingridients` может быть блоком HTML
-        """
+        '''
         try:
             self.dict_presta_fields['ingridients']: dict =   {"language":[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
         except ProductFieldException as ex:
-            logger.error(f'Ошибка заполнения `ingridients` данными {value} Ошибка:', ex)
+            logger.error(f'Ошибка заполнения `ingridients` данными {value} Ошибка: {ex}')
             return False
 
     
     @property
     def how_to_use(self) -> str:
-        """!  <sub>*[property]*</sub> `ps_product_lang.how_to_use` """
+        '''!  <sub>*[property]*</sub> `ps_product_lang.how_to_use` '''
         return self.dict_presta_fields['how_to_use'] or ''
 
     
     @how_to_use.setter
     #@logs_and_errors_decorator (default_return =  False)
     def how_to_use(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>  `ps_product_lang.how_to_use` """
+        '''!  <sub>*[setter]*</sub>  `ps_product_lang.how_to_use` '''
         try:
             self.dict_presta_fields['how_to_use']: dict =   {"language":[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'how_to_use' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'how_to_use' данными {value}
+            Ошибка: {ex} ''')
             return False
 
     
     @property
     def id_default_image(self) -> str:
-        """!  <sub>*[property]*</sub>  field DB affiliate_summary_2: `_???????.id_default_image`"""
+        '''!  <sub>*[property]*</sub>  field DB affiliate_summary_2: `_???????.id_default_image`'''
         return self.dict_presta_fields['id_default_image']  or ''
     
     
     @id_default_image.setter
     #@logs_and_errors_decorator (default_return =  False)
     def id_default_image(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['id_default_image'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'id_default_image' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'id_default_image' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 
     
     @property
     def position_in_category(self) -> str:
-        """!  <sub>*[property]*</sub>   field DB affiliate_summary_2: `_?????????.position_in_category`"""
+        '''!  <sub>*[property]*</sub>   field DB affiliate_summary_2: `_?????????.position_in_category`'''
         return self.dict_presta_fields['position_in_category']  or ''
 
     
     @position_in_category.setter
     #@logs_and_errors_decorator (default_return =  False)
     def position_in_category(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['position_in_category'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'position_in_category' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'position_in_category' данными {value}
+            Ошибка: {ex} ''')
             return False
                                                                                                     
             
@@ -2469,39 +2469,39 @@ class ProductFields:
             
     @property
     def default_image_url(self) -> str:
-        """!  <sub>*[property]*</sub>   `_???????.id_default_image` """
-        return self.dict_assist_fields['default_image_url']    
+        '''!  <sub>*[property]*</sub>   `_???????.id_default_image` '''
+        return self.dict_assist_fields['default_image_url'] or ''    
 
     @default_image_url.setter
     #@logs_and_errors_decorator (default_return =  False)
     def default_image_url(self, value = '' ) -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_assist_fields['default_image_url'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'id_default_image' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'id_default_image' данными {value}
+            Ошибка: {ex} ''')
             return False   
 
     @property
     def images_urls(self):
-        """!  <sub>*[property]*</sub>   __prod_name__
+        '''!  <sub>*[property]*</sub>   __prod_name__
         field DB type: __prod_type__
-        description: __prod_desc__"""
+        description: __prod_desc__'''
         return self.dict_assist_fields['images_urls']  or ''
     
     
     @images_urls.setter
     #@logs_and_errors_decorator (default_return =  False)
     def images_urls(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_assist_fields['images_urls'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'Image URLs (x,y,z...)' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'Images URLs (x,y,z...)' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 
@@ -2520,20 +2520,20 @@ class ProductFields:
     
     @property
     def id_default_combination(self) -> str:
-        """!  <sub>*[property]*</sub>  field DB affiliate_summary_2: `_?????????.id_default_combination`"""
+        '''!  <sub>*[property]*</sub>  field DB affiliate_summary_2: `_?????????.id_default_combination`'''
         return self.dict_presta_fields['id_default_combination'] or ''
     
     
     @id_default_combination.setter
     #@logs_and_errors_decorator (default_return =  False)
     def id_default_combination(self, value:str = '') -> bool:
-        """!  <sub>*[setter]*</sub>   """
+        '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['id_default_combination'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'id_default_combination' данными {value}
-            Ошибка:""", ex)
+            logger.error(f'''Ошибка заполнения поля: 'id_default_combination' данными {value}
+            Ошибка: {ex} ''')
             return False
 
 #  ---------

@@ -166,7 +166,7 @@ def set_product_fields(s:Supplier,f:ProductFields) -> ProductFields:
     f.supplier_reference = ASIN
     f.price = set_price (s, format = 'str')
     f.name = _ (l ['name'] )[0]
-    f.images_urls = _ (l ['Image URLs (x,y,z...)'] )[0]
+    f.images_urls = _ (l ['Images URLs (x,y,z...)'] )[0]
     try:    
         #f.description_short = _ (l ['description_short'] )[0]
         f.description_short = _ (l ['description_short'] )[0]

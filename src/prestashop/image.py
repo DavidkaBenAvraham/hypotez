@@ -1,3 +1,4 @@
+"""! Обработка изображений. """
 import requests
 import os
 from PIL import Image
@@ -34,17 +35,18 @@ def save_image_from_url_to_temp(url: str, filename: str, save_path: str) -> Unio
             save_path = str(Path(save_path, filename))
             with open(save_path, 'wb') as f:
                 f.write(response.content)
-            logger.info("Изображение успешно сохранено как", save_path)
+            logger.info(f'Изображение успешно сохранено как {save_path}' )
             return save_path
         else:
-            logger.error("Не удалось загрузить изображение. Код состояния:", response.status_code)
+            logger.error(f'Не удалось загрузить изображение. Код состояния: {response.status_code}')
             return False
     except Exception as ex:
         logger.error("Произошла ошибка:", ex)
         return False
 
 def save_image_from_url_to_temp_as_png(url: str, filename: str, save_path: str = gs.dir_temp) -> Union[str, False]:
-    """! функция save_image_from_url_to_temp_as_png загружает изображение по заданному URL, сохраняет его во временный файл и конвертирует его в формат PNG. """
+    """! функция save_image_from_url_to_temp_as_png загружает изображение по заданному URL, 
+    сохраняет его во временный файл и конвертирует его в формат PNG. """
     temp_filename = str(Path(save_path, filename))
     if save_image_from_url_to_temp(url, filename, save_path):
         saved_file_path = write_temp_file_from_url_as_png(url, temp_filename)

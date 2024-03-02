@@ -69,7 +69,7 @@ def logs_and_errors_decorator(default_return: bool = False):
         try:
             # код
         except Exception as eх:
-            logger.error('text', ex)
+            logger.error('text {ex}')
             #####################################
             #   ЗДЕСЬ СРАБАТЫВАЕТ ДЕКОРАТОР.    #
             #####################################

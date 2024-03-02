@@ -598,10 +598,10 @@ class Driver(WebDriver):
                 return True
             else: raise DriverException (f'Ошибка перехода с URL {self.previous_url} на URL {self.current_url} ')
         except DriverException as ex:
-            logger.error('Ошибка драйвера', ex)
+            logger.error('Ошибка драйвера {ex}')
             return False
         except Exception as ex:
-            logger.error(f'Error navigating to URL {url}:', ex)
+            logger.error(f'Error navigating to URL {url}: {ex}')
             return False
 
     def unhide_dom_element(self, element) -> bool:
@@ -716,10 +716,10 @@ class Driver(WebDriver):
                 return True
             else: raise DriverException (f'Ошибка перехода с URL {self.previous_url} на URL {self.current_url} ')
         except DriverException as ex:
-            logger.error('Ошибка драйвера', ex)
+            logger.error('Ошибка драйвера {ex}')
             return False
         except Exception as ex:
-            logger.error(f'Error navigating to URL {url}:', ex)
+            logger.error(f'Error navigating to URL {url}: {ex}')
             return False
 
     async def unhide_dom_element(self, element) -> bool:

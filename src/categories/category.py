@@ -83,7 +83,7 @@ class Category (PrestaCategory):
     #         return _product_categories_templates
 
     #     except Exception as ex :
-    #         logger.error('', ex)
+    #         logger.error(' {ex}')
     #         return False
 
 

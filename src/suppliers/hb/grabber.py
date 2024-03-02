@@ -138,12 +138,17 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.date_upd = field_date_upd()
 
 	################################################################################
-	_images_urls: list = d.execute_locator(l["Image URLs (x,y,z...)"])
-	if len(_images_urls) > 0:
-		f.dict_assist_fields['product_image_default_url'] = _images_urls[0].replace("-100x100", "")
-	if len(_images_urls) > 1:
-		f.dict_assist_fields['product_images_additional_urls'] = [url.replace("-100x100", "") for url in _images_urls[1::]]
-		
+	
+	f.dict_assist_fields['product_image_default_url']: str = d.execute_locator(l["default_image_url"])
+	
+	_images_urls: Union[List, str] = d.execute_locator(l["Images URLs (x,y,z...)"])
+	if _images_urls and len(_images_urls) > 0:
+		_images_urls: List = [_images_urls] if isinstance(_images_urls, str) else _images_urls
+		f.dict_assist_fields['product_images_additional_urls'] = [url.replace("-100x100", "") for url in _images_urls]
+		f.dict_assist_fields['product_images_additional_urls'] = \
+			set(f.dict_assist_fields['product_images_additional_urls'])	- \
+			set(f.dict_assist_fields['product_image_default_url'])
+				
 	################################################################################
 
 	#f.delivery_in_stock = field_delivery_in_stock()	 # [v]	 ##<- доставка
@@ -676,7 +681,7 @@ def field_images_urls():
 	@brief Вначале я загружу дефолтную картинку
 	@details
 	"""
-	return d.execute_locator(l["Image URLs (x,y,z...)"])
+	return d.execute_locator(l["Images URLs (x,y,z...)"])
 	pass
 	
 

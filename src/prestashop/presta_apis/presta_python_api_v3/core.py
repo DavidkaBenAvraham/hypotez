@@ -17,20 +17,21 @@ from xml.parsers.expat import ExpatError
 
 from requests import Session
 from requests.models import PreparedRequest
-
+from typing import Union, Dict, List
 from packaging import version
 
-from .exceptions import PrestaShopError,PrestaShopAuthenticationError
-from .utils import dict2xml
+from .exceptions import PrestaShopError, PrestaShopAuthenticationError
+from .utils import dict2xml # Есть еще одна версия в файле из модуля PrestaAPIV1 (dict2xml.py)
+from .xml2dict import xml2dict
+
 from .utils import base64_to_tmpfile
-from typing import Union
+
+
 
 
 class Format(Enum):
     """Data types return (JSON,XML)
-
-    Args:
-        Enum (int): 1 => JSON, 2 => XML
+    @param Enum (int): 1 => JSON, 2 => XML
     """
     JSON = 1
     XML = 2
@@ -111,7 +112,7 @@ class Prestashop():
     API_KEY = ''
     API_DOMAIN = ''
     client: Session = Session()
-    debug = False
+    debug = True
     lang = None
     #data_format = Format.JSON
     data_format = 'JSON'
@@ -122,9 +123,10 @@ class Prestashop():
     def __init__(self,
                  API_DOMAIN:str, 
                  API_KEY:str, 
-                 data_format = Format.JSON, 
-                 default_lang:str = None,
-                 debug:bool = False) -> None:
+                 #data_format = Format.JSON, 
+                 data_format = 'JSON', 
+                 default_lang:int = 1,
+                 debug:bool = True) -> None:
         """! Prestashop class
 
         Args:
@@ -256,7 +258,7 @@ class Prestashop():
               data: dict = None,      ## <- словарь сущности  
               headers: dict = {},  ## <- дополнительные заголовки
               search_filter = None,    ## <- фильтр f.e. `filer[reference] = [reference]` | `{'filer[reference]':'reference'}`
-              display = None,   ## <- размер выводимых данных
+              display = None,   ## <- размер кадра выводимых данных ('full' | 'schema' | ...)
               sort = None,
               limit = None, 
               io_format = 'JSON'  ):
@@ -333,10 +335,10 @@ class Prestashop():
             params.update ({'display' : display})
                 
         if sort:
-            params.update({'sort' : sort})
+            params.update ({'sort' : sort})
 
         if limit:
-            params.update({'limit' : limit})
+            params.update ({'limit' : limit})
 
         
         """! @todo проверить поведение   `resource_ids` """                                          
@@ -354,7 +356,7 @@ class Prestashop():
             _API_DOMAIN = f'{self.API_DOMAIN}{resource}'
 
 
-        url = self._prepare(_API_DOMAIN, params)
+        url = self._prepare (_API_DOMAIN, params)
         pass
 
 
@@ -468,8 +470,6 @@ class Prestashop():
                         sort = sort, 
                         limit = limit)
 
-  
-
     def unlink(self, resource:str, resource_ids:Union[list,tuple,str] ) -> bool:
         """remove one or multiple records
             @param resource (str): resource to search ( taxes,customers,products ...)
@@ -516,7 +516,7 @@ class Prestashop():
                             method='POST', 
                             display='full')
 
-    def create_binary(self, resource:str, resource_id:int, file_local_path:str, _type:str = 'image', file_name=None):
+    def create_binary(self, resource:str, resource_id:int, file_local_path:str, _type:str = 'image', file_name=None, params: Dict = {}) -> Union[dict, False]:
         """! create binary record
             @param resource (str): resource to add file ( 'images/products/22' ...).
             @param files (str):  a path of file ('image.png', 'image.jpg') or binary.
@@ -524,13 +524,13 @@ class Prestashop():
             @param file_name (str, optinal): name of file in case of base64. Default to None
         """
 
-        params = {}
-
-        if self.lang:
-            params.update({'language' : self.lang})
+        #params.update({'display' : '[id]'})
         
-        if self.data_format == Format.JSON:
-            params.update({'io_format' : 'JSON' , 'output_format' : 'JSON'})
+        # if self.lang:
+        #     params.update({'language' : self.lang})
+        
+        # if self.data_format == Format.JSON:
+        #     params.update({'io_format' : 'JSON' , 'output_format' : 'JSON'})
     
 
         _API_DOMAIN = fr'{self.API_DOMAIN}images/{resource}/{resource_id}'
@@ -554,10 +554,10 @@ class Prestashop():
         )
         """! Мне надо получить `ID` загруженной картинки """
         if response.status_code == 200:
-            return True
+            return xml2dict(response.text)['prestashop']['image']
         return False
 
-    def get_image_product(self, resource_id:int, image_id:int):
+    def get_image_product(self, resource_id:int, image_id:int, params: Dict = {}):
         """! get product image from prestashop
         
             @param resource_id (int): the id of product
@@ -568,20 +568,23 @@ class Prestashop():
         Raise:
             PrestaShopError: 'This image id does not exist'
         """
-        params = {}
+        
 
         if self.lang:
-            params.update({'language' : self.lang})
+            params.update ( {'language' : self.lang} )
 
         if self.data_format == Format.JSON:
-            params.update({'io_format' : 'JSON' , 'output_format' : 'JSON'})
+            params.update ( {'io_format' : 'JSON' , 'output_format' : 'JSON'} ) 
 
-        _API_DOMAIN = f'{self.API_DOMAIN}images/products/{resource_id}/{image_id}'
-        _API_DOMAIN = self._prepare(_API_DOMAIN,params)
+        _API_DOMAIN = f'{self.API_DOMAIN}images/products/{resource_id}'   # /api/images/products/{ID}
+        if image_id:
+            _API_DOMAIN += f'/{image_id}'
+        
+        _API_DOMAIN = self._prepare (_API_DOMAIN, params)
         
         response = self.client.request(
             method='GET',
-            API_DOMAIN = _API_DOMAIN,
+            url = _API_DOMAIN,
             headers={'Content-Type': 'application/json'}
         )
 

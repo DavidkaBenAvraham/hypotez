@@ -85,6 +85,7 @@ class PrestaProduct():
         #dic_product_type_PrestaAPIV2 = PrestaAPIV2.get(f'products/{id_product}')
         #productsearch_filter: dict = {} if not filter else filter
 
+        
         if  product_reference:
             self.params.update( {'filter[reference]': product_reference}  )
             """! Я могу прислать параметр `product_reference` """ 
@@ -134,7 +135,7 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def add(self, product_dict: dict, data_format = 'JSON', PrestaAPIV: Union[str('V1'),str('V2'),str('V3')] = 'V1') -> dict:
+    def add(self, product_dict: dict, data_format = 'JSON', PrestaAPIV: Union[str('V1'),str('V2'),str('V3')] = 'V1') -> Union[dict, False]:
         """ Добавление нового товара в БД PRESTASHOP через API
         -----------------
        @param
@@ -249,9 +250,13 @@ class PrestaProduct():
             id_image `int`  :  id_image from src.prestashop db if success else False
 
         """
-        PrestaAPIV3.create_binary('products', product_id, local_file_path)
+        return PrestaAPIV3.create_binary('products', product_id, local_file_path)
 
-
+    def get_product_images(self, product_id):
+        """! """
+        img = PrestaAPIV3.get_image_product(product_id)
+        return img
+        pass
     
     #@logs_and_errors_decorator(default_return =  False)
     def delete(self, id_product: Union[int,str], PrestaAPIV: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> dict:

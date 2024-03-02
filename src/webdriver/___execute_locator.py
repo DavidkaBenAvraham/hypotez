@@ -669,7 +669,7 @@ def get_attribute_by_locator(driver: Driver, locator: dict) -> str:
             ret =[ webelements.get_attribute ( locator['attribute'] ) ]
             #attributes = webelements.get_attribute(locator['attribute']) 
         except Exception as ex:
-            logger.error(f'ошибка ', ex)
+            logger.error(f'ошибка  {ex}')
             ret = False 
 
    
@@ -815,7 +815,7 @@ def reread_locators(s, entity: str ) -> Union[dict, False]:
         s.locators [ entity ] = j_loads (locators_file) 
         return s.locators [ entity ]
     except Exception as ex:
-        logger.error(f'ошибка ', ex)
+        logger.error(f'ошибка  {ex}')
         return False
             
 

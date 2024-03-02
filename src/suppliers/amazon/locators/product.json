@@ -1107,7 +1107,7 @@
     "action": "screenshot()",
     "logic for action[AND|OR|XOR|VALUE|null]": null
   },
-  "Image URLs (x,y,z...)": {
+  "Images URLs (x,y,z...)": {
     "attribute": "src",
 
     "by": "XPATH",
@@ -1117,7 +1117,7 @@
     "action": null,
     "logic for action[AND|OR|XOR|VALUE|null]": null
   },
-  "Image alt texts (x,y,z...)": {
+  "Images alt texts (x,y,z...)": {
     "attribute": null,
 
     "by": null,

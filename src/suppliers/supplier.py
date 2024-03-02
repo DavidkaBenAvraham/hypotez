@@ -245,8 +245,11 @@ class Supplier():
         @details Вызыаваю функцию `login()` из модуля поставщика и получаю от нее флаг завершения авторизации: 
         `True` в случае успеха, иначе `False`
         """
-        
-        return self.related_modules.login(self)
+        try:
+            return self.related_modules.login(self)
+        except Exception as ex:
+            logger.error(f'Not logged in {ex}')
+            return False
 
 
     def run_supplier(self, scenario_files: Union [list[str], str] = None) -> bool:

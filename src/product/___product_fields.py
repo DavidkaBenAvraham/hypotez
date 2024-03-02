@@ -693,7 +693,7 @@ class ProductFields():
         except ProductFieldException as ex:
             logger.error(f'''
             Ошибка заполнения поля: 'price' данными {price}
-            Ошибка: {ex.with_traceback(ex.__traceback__)}''', ex)
+            Ошибка: {ex.with_traceback(ex.__traceback__)}'' {ex}')
             return False
 #   19
     
@@ -2155,17 +2155,17 @@ class ProductFields():
         """ field: __prod_name__
         field DB type: __prod_type__
         description: __prod_desc__"""
-        return self.fields.get('Image URLs (x,y,z...)')
+        return self.fields.get('Images URLs (x,y,z...)')
     
     
     @images_urls.setter
     #@logs_and_errors_decorator (default_return =  False)
     def images_urls(self, images_urls: str = '') -> bool:
         try:
-            self.fields['Image URLs (x,y,z...)'] = images_urls
+            self.fields['Images URLs (x,y,z...)'] = images_urls
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'Image URLs (x,y,z...)' данными {images_urls}
+            logger.error(f"""Ошибка заполнения поля: 'Images URLs (x,y,z...)' данными {images_urls}
             Ошибка: {ex.with_traceback(ex.__traceback__)}""", ex)
             return False
 

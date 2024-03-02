@@ -24,7 +24,7 @@
 
 # Imports
 from ast import Str
-from math import prod
+from math import log, prod
 import os, sys
 import requests
 from pathlib import Path
@@ -167,80 +167,108 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> Union[list, di
         """! Перехожу по url товара и вытаскиваю данные со страницы """
         if not d.get_url(url):
             logger.error(f'Ошибка перехода на страницу товара по адресу: {url}' )
-            continue
-            
-        try:
-            # 4.
-            product_fields = s.related_modules.grab_product_page(s)
-            """! Собираю со страницы товара значения элементов и привожу их к полям ProductFields 
-            Внимание! В словаре `product_fields` находится служебный словарь `dict_assist_fields`.
-            Его надо вычленить в отдельный словарь
-            """
+            continue ## <- Ошибка перехода на страницу. Пропускаю
 
-            dict_presta_fields: Dict = {key: value for key, value in product_fields.dict_presta_fields.items() if value is not None and value != ''}
-            """! очищаю словарь от пустых значений """
+        # 4.
+        product_fields = s.related_modules.grab_product_page(s)
+        """! Собираю со страницы товара значения элементов и привожу их к полям ProductFields 
+        Внимание! В словаре `product_fields` находится служебный словарь `dict_assist_fields`.
+        Его надо вычленить в отдельный словарь
+        """
+        if not product_fields: continue   ## <- Ошибка сбора данных со страницы. 
+
+           
+        dict_presta_fields: Dict = {key: value for key, value in product_fields.dict_presta_fields.items() if value is not None and value != ''}
+        """! очищаю словарь от пустых значений """
             
-            """! dict: Словарь полей товара для престасшоп """
-            dict_assist_fields: Dict = product_fields.dict_assist_fields
-            """! dict: Словарь дополнительных полей для меня (images urls etc.)"""
+        """! dict: Словарь полей товара для престасшоп """
+        dict_assist_fields: Dict = product_fields.dict_assist_fields
+        """! dict: Словарь дополнительных полей для меня (images urls etc.)"""
                         
-            if 'quantity' in dict_presta_fields: del dict_presta_fields['quantity']
-            """! `quantity` нельзя задавать при добавлении нового товара """
+        if 'quantity' in dict_presta_fields: del dict_presta_fields['quantity']
+        """! `quantity` нельзя задавать при добавлении нового товара """
             
-            p = Product()
-            """! Для каждого товара я заново переопрделяю класс `Product`, 
-            иначе может попасть мусор (данные прошлого товара) """ 
-            pass
 
-            # 5.
-            """! @todo Это неправильно - создавать фильтр здесь. 
-            Это ответственность модуля коммуникации с престашоп (PrestaAPIV)"""
             
-            display: Dict = {'display':'full'}
-            
-            # 5.1 строю фильтр API запроса
-            reference = dict_presta_fields["reference"]
-            #search_filter_str: Str =  f'filter[reference] = [{reference}]'
-            search_filter_dict: Dict = { 'filter[reference]': '['+ reference + ']',  }
-            """! Для `V3` Я могу передать фильтр, как строку `filter[id] = [5]` и как словарь `{'filter[id]':'[5]'}	"""
-            search_filter_dict.update(display)            
-            """! str: фильтр как словарь """
-            
-            ret = p.get( search_filter = search_filter_dict, PrestaAPIV = 'V3' )
-            """!  Проверка наличия товара в базе данных.
-            если товара еще нет в бд - вернется пустое значение.
-            Если товар уже существует - редактирую поля если они изменились (цена, описание итп), иначе заношу новый товар в бд"""
+        p = Product()
+        """! Для каждого товара я заново переопрделяю класс `Product`, 
+        иначе может попасть мусор (данные прошлого товара) """ 
+        pass
 
-            # 6.
-            if ret is False or not ret or len(ret) == 0:  ## <- вернулся пустой responce от сервера. Значит товара с таким reference нет в бд престашоп
-                res = p.add(dict_presta_fields, 'JSON', 'V3') 
+        # 5.
+        
+        # 5.1 строю фильтр API запроса
+        reference = dict_presta_fields["reference"]
+        search_filter: Dict = { 'filter[reference]': '['+ reference + ']',  }
+        """! Для `V3` Я могу передать фильтр, как строку `filter[id] = [5]` и как словарь `{'filter[id]':'[5]'}`	
+        По умолчанию я использую словарь """
+        display: Dict = {'display':'full'}
+        search_filter.update(display)            
+        
+        # 5.2 Получаю ответ от престашоп. 
+        check_prod_presence = p.get( search_filter = search_filter, PrestaAPIV = 'V3' )
+        """!  Проверка наличия товара в базе данных.
+        если товара еще нет в бд - вернется пустое значение.
+        Если товар уже существует - редактирую поля если они изменились (цена, описание итп)"""
+        
+        # 6. 
+        if check_prod_presence is False or not check_prod_presence or len(check_prod_presence) == 0:  ## <- вернулся пустой responce от сервера. Значит товара с таким reference нет в бд престашоп
+            try: ## <- add new product
+                added_prod_dict = p.add(dict_presta_fields, 'JSON', 'V3')['products'][0] 
                 """! Добавляю товар в бд. В ответ получаю словарь с параметрами добавленного товара """
-                product_id = res['products'][0]['id']
-                product_reference = res['products'][0]['reference']
+                # 6.1
+                product_id = added_prod_dict['id']
+                product_reference = added_prod_dict['reference']
                 """! Мне нужен id товара и reference """
                 logger.info (pprint(product_id))
-
-                # 6.1 сохрняю картинки на диск.
-                """! @todo Реализовать проверку изменения картинок. Для этого я должен где-то хранить полный URL загруженных картинок """
-                url = dict_assist_fields['product_image_default_url']
-                url_parts = url.rsplit('.', 1)
+            except Exception as ex:
+                logger.error (f'ошибка добавления нового товара {ex}')
+                return False
+            
+            i: int = 0 ## <- счетчик картинок
+            def save_img(product_id:int,  image_url:str, i:int):
+                """! Функция сохранения картинок товара
+                @param product_id `int` - id  только что добавленного товара
+                @param image_url `str` - url картинки
+                @param i `int` - счетчик картинок
+                """
+                
+                url_parts = image_url.rsplit('.', 1)
                 url_without_extension = url_parts[0]
                 extension = url_parts[1] if len(url_parts) > 1 else ''
-                
-                i: int = 0
                 filename = str(product_reference)+f'_{i}.{extension}'
-                saved_file_path = save_image_from_url_to_temp_as_png(url, filename)
-                if saved_file_path: 
-                    p.upload_image(product_id, saved_file_path)
-                pass
-                """! Новый товар """
-            else:
-                pass
-                """! @todo Товар в бд. Реализовать редактирование """
+                saved_file_path = save_image_from_url_to_temp_as_png(image_url, filename)
                 
-        except Exception as ex:
-            logger.error(f'ошибка {ex}')
-            return False
+                return p.upload_image(product_id, saved_file_path)
+
+            
+
+            """! @todo Реализовать проверку изменения картинок. 
+            Для этого я должен где-то хранить полный URL загруженных картинок """            
+            # 6.2 сохрняю картинки на диск, а потом поднимаю в базу престашоп
+            
+
+            # 6.2.1 сохраняю дефолтную картинку
+            saved_img_dict: dict = save_img(product_id, dict_assist_fields['product_image_default_url'][0], i)
+            """! Если картинка загрузилась - вернется словарь 
+            `{'product_id':'int', 'image_id':'int', 'cover':'int', 'position':'int', 'legend':'{dict}'}` """
+            
+            # 6.2.2 добавляю к товару id дефолтной картинки
+            added_prod_dict['id_default_image'] = saved_img_dict['id']
+            pass
+            
+            # 6.2.3 Сохраняю остальные картинки
+            for url in dict_assist_fields['product_images_additional_urls']:
+                i+=1
+                save_img(product_id, url, i)
+            pass
+            
+            
+        # 7. Товар уже есть в бд престашоп    
+        else:
+            pass
+            """! @todo Товар в бд. Реализовать редактирование """
+                
                 
     return True
 

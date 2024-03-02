@@ -220,7 +220,7 @@ class ProjectSettings():
         dir_binaries = Path(dir_root,  settings ['program_paths']['bin']).absolute()
         dir_temp = Path(dir_root, settings ['program_paths']['tmp']).absolute()
     except Exception as ex:
-        logger.error(f'ошибка ', ex)
+        logger.error(f'ошибка  {ex}')
         exit()
 
     logger.set_log_file(str( Path (dir_log, f"{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}.txt" ) ) )
@@ -364,7 +364,7 @@ class ProjectSettings():
         
         
         if not self.settings:
-            logger.critical(f'ошибка чтения файла global_settings.json', ex)
+            logger.critical(f'ошибка чтения файла global_settings.json {ex}')
             return False
         try:
             
@@ -388,7 +388,7 @@ class ProjectSettings():
             """! Включаю / отлючаю лог декораторы и пищалку. При работе с jupyter ne получается испоьзовать асинхронность """    
 
         except DefaultSettingsException as ex:
-            logger.critical ('Ошибка в получении дaнных из `global_settings.json', ex)
+            logger.critical ('Ошибка в получении дaнных из `global_settings.json {ex}')
             return False
 
 
@@ -407,7 +407,7 @@ class ProjectSettings():
             self.threads = self.settings.get ('threads', False)
             
         except DefaultSettingsException as ex:
-            logger.error(f'ошибка установки дефолтного вебдрайвера', ex)
+            logger.error(f'ошибка установки дефолтного вебдрайвера {ex}')
             return False
                 
 
@@ -433,7 +433,7 @@ class ProjectSettings():
                     self.default_aliexpress_api_credentials = entry_dict
                 
         except Exception as ex:
-            logger.error(f'Не удалось вытащить ключ API Aliepress из KeePass. Ошибка ', ex)
+            logger.error(f'Не удалось вытащить ключ API Aliepress из KeePass. Ошибка  {ex}')
             return False
             
         # ----------------------- OPENAI ----------------------------
@@ -459,7 +459,7 @@ class ProjectSettings():
                         self.default_openai_api_credentials = entry_dict      
                 
         except Exception as ex:
-            logger.error(f'Ошибка openai из KeePass', ex)
+            logger.error(f'Ошибка openai из KeePass {ex}')
             return False
         
        
@@ -481,7 +481,7 @@ class ProjectSettings():
                         self.default_prestashop_api_credentials = entry_dict   
                         
         except Exception as ex:
-            logger.error(f'ошибка установки значений престашоп ', ex)
+            logger.error(f'ошибка установки значений престашоп  {ex}')
             return False
             
         # ------------------------- DB -------------------------------
@@ -505,7 +505,7 @@ class ProjectSettings():
                     self.default_prestashop_db_credentials = entry_dict
                     
         except Exception as ex:
-            logger.error(f'ошибка установки значений престашоп DB', ex)
+            logger.error(f'ошибка установки значений престашоп DB {ex}')
             return False                    
                     
          # ------------------------- FTP -------------------------------
@@ -527,7 +527,7 @@ class ProjectSettings():
                     self.default_ftp_credentials = entry_dict
                     
         except Exception as ex:
-            logger.error(f'ошибка установки значений FTP', ex)
+            logger.error(f'ошибка установки значений FTP {ex}')
             return False                     
                 
                 
@@ -550,7 +550,7 @@ class ProjectSettings():
                     self.default_smtp_credentials = entry_dict
                     
         except Exception as ex:
-            logger.error(f'ошибка установки значений SMTP', ex)
+            logger.error(f'ошибка установки значений SMTP {ex}')
             return False            
 
                 
@@ -590,7 +590,7 @@ class ProjectSettings():
             """! Возвращаю объект `KeePass` """
             return PyKeePass (str (Path (self.dir_root, 'src', 'settings', 'db.kdbx') ), password = password)
         except Exception as ex:
-            logger.error(f'ошибка ', ex)
+            logger.error(f'ошибка  {ex}')
             return False
                 
             
@@ -746,7 +746,7 @@ class ProjectSettings():
             """! """
             return self.settings['ftp'][client] if client else self.settings['ftp']
         except Exception as ex:
-            logger.error(f'ошибка в коннекторах ftp ', ex)
+            logger.error(f'ошибка в коннекторах ftp  {ex}')
             return False
                 
         
@@ -814,7 +814,7 @@ class ProjectSettings():
                 'receiver': self.settings['smtp'][client]['receiver'],
             }
             except Exception as ex:
-                logger.error(f'ошибка smtp ', ex)
+                logger.error(f'ошибка smtp  {ex}')
                 return False
                 
 

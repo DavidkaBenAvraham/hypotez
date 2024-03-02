@@ -890,7 +890,7 @@ class ProductFields:
         except ProductFieldException as ex:
             logger.error(f'''
             Ошибка заполнения поля: 'price' данными {value}
-            Ошибка:''', ex)
+            Ошибка:'' {ex}')
             return False
 #   19
     
@@ -2499,7 +2499,7 @@ class ProductFields:
             ]}
             return True
         except ProductFieldException as ex:
-            logger.error(f'Ошибка заполнения `ingridients` данными {value} Ошибка:', ex)
+            logger.error(f'Ошибка заполнения `ingridients` данными {value} Ошибка: {ex}')
             return False
 
     
@@ -2582,7 +2582,7 @@ class ProductFields:
             self.fields_dict['images_urls'] = value
             return True
         except ProductFieldException as ex:
-            logger.error(f"""Ошибка заполнения поля: 'Image URLs (x,y,z...)' данными {value}
+            logger.error(f"""Ошибка заполнения поля: 'Images URLs (x,y,z...)' данными {value}
             Ошибка:""", ex)
             return False
 

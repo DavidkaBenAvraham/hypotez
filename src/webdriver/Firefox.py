@@ -247,11 +247,11 @@ class Firefox(FF):
                     так бывает при обновлениях самого Firefox
                     ну, или он не установлен в ос.
             ----------------------------------
-                        ''', ex)
+                        {ex}''')
             return False
 
         except Exception as ex:
-            logger.critical(' Упал webdriver Firefox. Общая ошибка: ', ex)
+            logger.critical(f' Упал webdriver Firefox. Общая ошибка:  {ex}')
             return False
          # END selenium 4
          

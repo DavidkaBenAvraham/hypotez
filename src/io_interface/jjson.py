@@ -49,7 +49,7 @@ def j_loads(jjson: Union[Path, dict, str], ordered: bool = False) -> Union[dict,
                 data = json.loads(f.read(), object_pairs_hook=OrderedDict if ordered else None)
             return data
         except Exception as ex:
-            logger.error(f'Failed to read JSON file: {jjson}. Error: ', ex)
+            logger.error(f'Failed to read JSON file: {jjson}. Error:  {ex}')
             return False
     else:
         logger.error(f'Не нашелся файл: {jjson}. ')
@@ -103,5 +103,5 @@ def j_dumps(data: dict, path: Path) -> bool:
             По умолчанию, если ensure_ascii=True, все символы будут кодированы в Unicode escape-последовательности в формате \\uXXXX."""
         return True
     except Exception as ex:
-        logger.error(f'Failed to dump file {path}. Error: ', ex)
+        logger.error(f'Failed to dump file {path}. Error:  {ex}')
         return False

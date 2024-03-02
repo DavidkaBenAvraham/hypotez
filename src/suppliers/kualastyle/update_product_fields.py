@@ -64,7 +64,7 @@ def set_product_fields(s:Supplier,f:ProductFields) -> Union[ProductFields, False
 
 
     f.name = SF.remove_line_breaks(name)
-    f.images_urls = _(l['Image URLs (x,y,z...)'])[0]
+    f.images_urls = _(l['Images URLs (x,y,z...)'])[0]
     #f.description_short = _(l['description_short'])[0]
     #f.description = _(l['description'])
         

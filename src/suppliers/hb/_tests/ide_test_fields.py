@@ -153,7 +153,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.date_upd = field_date_upd()
 
 	################################################################################
-	_images_urls: list = d.execute_locator(l["Image URLs (x,y,z...)"])
+	_images_urls: list = d.execute_locator(l["Images URLs (x,y,z...)"])
 	if len(_images_urls) > 0:
 		f.dict_assist_fields['default_image_url'] = _images_urls[0]
 	if len(_images_urls) > 1:
@@ -716,7 +716,7 @@ def field_images_urls():
 	@brief Вначале я загружу дефолтную картинку
 	@details
 	"""
-	return d.execute_locator(l["Image URLs (x,y,z...)"])
+	return d.execute_locator(l["Images URLs (x,y,z...)"])
 	pass
 	
 

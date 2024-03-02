@@ -749,7 +749,7 @@ class Driver(WebDriver):
                 # self.carousel('-')
                 return False
         except Exception as ex:
-            logger.error(f'ошибка ', ex)
+            logger.error(f'ошибка  {ex}')
             return False
         pass
 
@@ -853,14 +853,14 @@ class Driver(WebDriver):
             return True
             
         except DriverException as ex:
-            logger.error('Ошибка драйвера', ex)
+            logger.error(f'Ошибка драйвера {ex}')
             return False
 
         except InvalidArgumentException as ex:
-            logger.error(f'Проверь URI {url}', ex)
+            logger.error(f'Проверь URI {url} {ex}')
             return False
         except Exception as ex:
-            logger.error(f'Error URL {url}:', ex)
+            logger.error(f'Error URL {url}: {ex}')
         return False
         
 

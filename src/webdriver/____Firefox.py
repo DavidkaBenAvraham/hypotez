@@ -210,10 +210,10 @@ class Firefox(FF):
                 так бывает при обновлениях самого Firefox
                 ну, или он не установлен в ос.
         ----------------------------------
-                         ''', ex)
+                         '' {ex}')
             return False
         except Exception as ex:
-            logger.error(' Упал webdriver Firefox ', ex)
+            logger.error(' Упал webdriver Firefox  {ex}')
             return False
          # END selenium 4
          
