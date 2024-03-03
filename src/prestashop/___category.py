@@ -106,7 +106,7 @@ class PrestaCategory():
         
 
     #@logs_and_errors_decorator(default_return =  False)
-    def get_list_parent_categories_from_prestashop(id_category: int, dept: int = 0) -> list:
+    def get_list_parent_categories(id_category: int, dept: int = 0) -> list:
         """! @~russian Вытаскивет из базы данных Prestashop родительские категории от заданной 
         @details функция через API получает список категорий
 
@@ -129,7 +129,7 @@ class PrestaCategory():
 
             #x=0
             #while True:
-            #     Category.get_list_parent_categories_from_prestashop(id_category)
+            #     Category.get_list_parent_categories(id_category)
             #     if x>3: return False
             #     x+=1
 

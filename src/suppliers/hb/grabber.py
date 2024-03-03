@@ -19,6 +19,7 @@ from selenium.webdriver.remote.webelement import WebElement
 from src.settings import gs
 from src.suppliers import Supplier
 from src.product import Product, ProductFields
+from src.categories import Category
 from src.io_interface import j_loads, j_dumps
 from src.helpers import logger, ExecuteLocatorException
 from src.webdriver import Driver
@@ -28,6 +29,7 @@ from src.tools import SF, SN
 
 s: Supplier = None
 p: Product = Product()
+c: Category = Category()
 l: Dict = {}
 d: Driver = None
 f: ProductFields = ProductFields()
@@ -131,7 +133,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.cache_default_attribute = field_cache_default_attribute()
 	#f.cache_has_attachments = field_cache_has_attachments()
 	#f.cache_is_pack = field_cache_is_pack()
-	#f.category_ids_append = field_category_ids_append() ##<- добавочные категории. Если надо дополнить уже внесенные
+	#f.category_ids_append = field_additional_categories_append() ##<- добавочные категории. Если надо дополнить уже внесенные
 	f.condition = field_condition()
 	#f.customizable = field_customizable()
 	#f.date_add = field_date_add()
@@ -161,7 +163,15 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	# f.ecotax = field_ecotax()
 	# f.height = field_height()
 	f.how_to_use = field_how_to_use()
+	
+	
+	################################################################################
+	#additional_categories_list: List = Category.get_list_parent_categories(s.current_scenario['presta_categories']['default_category'])
 	f.id_category_default = field_id_category_default()
+	additional_categories_list: List = c.get_list_parent_categories(f.id_category_default)
+	f.associations.update({'categories':additional_categories_list,})
+	################################################################################
+	
 	#f.id_default_combination = field_id_default_combination()
 	#f.id_default_image = field_id_default_image()
 	#f.id_lang = s.scenario_language
@@ -408,24 +418,28 @@ def field_available_now():
 
 
 
-#@logs_and_errors_decorator(default_return=False)
-def field_category_ids():
-	"""! @~russian 
-	@brief
-	@details
-	"""
-	return f.category_ids
-	pass
+# #@logs_and_errors_decorator(default_return=False)
+# def field_additional_categories():
+# 	"""! @~russian 
+# 	@brief
+# 	@details
+# 	"""
+# 	additional_categories_list: List = Category.get_list_parent_categories(s.current_scenario['presta_categories']['default_category'])
+		
+# 	#associations(self, value:dict = {'categories':[3,4],})
+# 	f.associations.update({'categories':additional_categories_list,})
+# 	return f.category_ids
+# 	pass
 	
 
-#@logs_and_errors_decorator(default_return=False)
-def field_category_ids_append():
-	"""! @~russian 
-	@brief
-	@details
-	"""
-	#return f.category_ids_append
-	pass
+# #@logs_and_errors_decorator(default_return=False)
+# def field_additional_categories_append():
+# 	"""! @~russian 
+# 	@brief
+# 	@details
+# 	"""
+# 	#return f.category_ids_append
+# 	pass
 	
                 
 

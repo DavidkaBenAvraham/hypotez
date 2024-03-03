@@ -5,4 +5,4 @@ from src.categories import Category
 
 
 c = Category()
-c.get_list_parent_categories_from_prestashop(11209)
+c.get_list_parent_categories(11209)

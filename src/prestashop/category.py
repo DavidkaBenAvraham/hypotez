@@ -25,7 +25,7 @@
 
 from attr import attr, attrs
 from pathlib import Path
-from typing import Union
+from typing import Union, List, Dict
 import requests
 # ----------------------------------
 
@@ -167,7 +167,7 @@ class PrestaCategory:
         
 
     #@logs_and_errors_decorator(default_return =  False)
-    def get_list_parent_categories_from_prestashop(id_category: int, dept: int = 0) -> list:
+    def get_list_parent_categories(self, id_category: int, parent_categories_list:List = []) -> list:
         """! @~russian Вытаскивет из базы данных Prestashop родительские категории от заданной 
         @details функция через API получает список категорий
 
@@ -178,41 +178,14 @@ class PrestaCategory:
 
         # 1. Получение списка категорий
         """! @todo Разобраться с логикой работы функции"""
-        try:    
-            category = PrestaAPIV1.get('categories', id_category)
-        except Exception as ex:
-            
-            logger.error(f""" Тут иногда не отвечает .... {ex}""")
-            return False
-
-            #if 'HTTP response is empty' in e:
-            #    return False
-
-            #x=0
-            #while True:
-            #     Category.get_list_parent_categories_from_prestashop(id_category)
-            #     if x>3: return False
-            #     x+=1
-
-        parent_categories = []
+        category_dict = PrestaAPIV3.get('categories', id_category)
+        _parent_category = int(category_dict['category']['id_parent'])
         
-        step = 1
-        while 'id_parent' in category['category']:
-            #parent_category_id = int(category['category']['id_parent']['value'])
-            parent_category_id = int(category['category']['id_parent'])
-            if parent_category_id < 2:
-                break
-            parent_category = PrestaAPIV1.get('categories', parent_category_id)
-            parent_categories.append(parent_category['category']['id'])
-
-            if dept > 0 and step > dept:
-                """если задана глубина поиска """
-                return parent_categories
-            else:
-                step += 1
-
-            category = parent_category
-
-        return parent_categories
+        if _parent_category < 2:
+            return parent_categories_list
+        
+        parent_categories_list.append(_parent_category)
+        self.get_list_parent_categories(_parent_category, parent_categories_list)
+        
 
     
