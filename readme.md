@@ -11,16 +11,17 @@ cd hypotez
 
 3. Clone this repository into project directory
 ```bash
-$ git clone https://github.com/DavidkaBenAvraham/hypotez
+git clone https://github.com/DavidkaBenAvraham/hypotez
 ```
 
 4. Create new virtual environment
-```
+```bash
 py -m venv venv
 ```
 
 5. Activate new virtual environment
 bash
+
 ```bash
 $ . venv/bin/activate
     """!
