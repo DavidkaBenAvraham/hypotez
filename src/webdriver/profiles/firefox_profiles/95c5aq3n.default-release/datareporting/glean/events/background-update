@@ -1,2 +1,1 @@
-{"timestamp":1456,"category":"nimbus_events","name":"enroll_failed","extra":{"reason":"feature-conflict","experiment":"relay-integration-into-firefox-118-release-for-all-fxa-and-autofill-users"}}
-{"timestamp":1492,"category":"nimbus_events","name":"validation_failed","extra":{"experiment":"next-generation-accessibility-engine-powering-screen-readers","feature":"accessibilityCache","reason":"invalid-feature"}}
+{"timestamp":1203,"category":"nimbus_events","name":"enroll_failed","extra":{"experiment":"relay-integration-into-firefox-release-for-all-fxa-users","reason":"feature-conflict"}}

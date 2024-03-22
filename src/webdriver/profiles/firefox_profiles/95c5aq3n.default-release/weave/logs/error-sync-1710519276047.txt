@@ -1,0 +1,204 @@
+1710519274218	FirefoxAccounts	TRACE	initializing new storage manager
+1710519274218	FirefoxAccounts	TRACE	starting fetch of json user data
+1710519274219	FirefoxAccounts	TRACE	finished fetch of json user data - took: 1
+1710519274220	FirefoxAccounts	DEBUG	reading secure storage with existing: []
+1710519274220	FirefoxAccounts	TRACE	starting fetch of user data from the login manager
+1710519274235	FirefoxAccounts	DEBUG	secure read fetched items: ["scopedKeys"]
+1710519274235	FirefoxAccounts	TRACE	initializing of new storage manager done
+1710519274261	Services.Common.RESTRequest	DEBUG	GET request to https://api.accounts.firefox.com/v1/account/attached_clients
+1710519274531	FirefoxAccounts	DEBUG	FxAccountsProfileClient: Initialized
+1710519274532	FirefoxAccounts	DEBUG	FxAccountsProfileClient: Requested profile
+1710519274532	FirefoxAccounts	DEBUG	getOAuthToken enter
+1710519274532	FirefoxAccounts	TRACE	getCachedToken returning cached token
+1710519274532	FirefoxAccounts	DEBUG	getOAuthToken returning a cached token
+1710519274533	Services.Common.RESTRequest	DEBUG	GET request to https://profile.accounts.firefox.com/v1/profile
+1710519274567	Sync.Status	INFO	Resetting Status.
+1710519274567	Sync.Status	DEBUG	Status.service: undefined => success.status_ok
+1710519274567	Sync.SyncScheduler	TRACE	Setting SyncScheduler policy values to defaults.
+1710519274567	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1710519274568	Sync.Service	INFO	Loading Weave 1.125.0
+1710519274568	Sync.Engine.Clients	DEBUG	Engine constructed
+1710519274568	Sync.Engine.Clients	DEBUG	Resetting clients last sync time
+1710519274569	Sync.Engine.Addons	DEBUG	Engine constructed
+1710519274580	Sync.Engine.Addons	DEBUG	SyncEngine initialized: addons
+1710519274590	Sync.Engine.Passwords	DEBUG	Engine constructed
+1710519274592	Sync.Engine.Passwords	DEBUG	SyncEngine initialized: passwords
+1710519274594	Sync.Engine.Prefs	DEBUG	Engine constructed
+1710519274595	Sync.Engine.Prefs	DEBUG	SyncEngine initialized: prefs
+1710519274596	Sync.Engine.Bookmarks	DEBUG	Engine constructed
+1710519274597	Sync.Engine.Bookmarks	DEBUG	SyncEngine initialized: bookmarks
+1710519274598	Sync.Engine.Forms	DEBUG	Engine constructed
+1710519274599	Sync.Engine.Forms	DEBUG	SyncEngine initialized: forms
+1710519274599	Sync.Engine.History	DEBUG	Engine constructed
+1710519274600	Sync.Engine.History	DEBUG	SyncEngine initialized: history
+1710519274601	Sync.Engine.Tabs	DEBUG	Engine constructed
+1710519274601	Sync.Engine.Tabs	DEBUG	SyncEngine initialized: tabs
+1710519274602	Sync.Engine.Tabs	INFO	Got a bridged engine!
+1710519274603	Sync.Engine.CreditCards	DEBUG	Engine constructed
+1710519274603	Sync.Engine.CreditCards	DEBUG	SyncEngine initialized: creditcards
+1710519274604	Sync.Engine.Extension-Storage	DEBUG	Engine constructed
+1710519274605	Sync.Engine.Extension-Storage	DEBUG	SyncEngine initialized: extension-storage
+1710519274605	Sync.Service	INFO	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0
+1710519274606	Sync.AddonsReconciler	INFO	Registering as Add-on Manager listener.
+1710519274606	Sync.AddonsReconciler	DEBUG	Adding change listener.
+1710519274606	Sync.Engine.History.Tracker	INFO	Adding Places observer.
+1710519274611	Sync.Service	DEBUG	User-Agent: Firefox/123.0.1 (Windows NT 10.0; Win64; x64) FxSync/1.125.0.20240304104836.desktop
+1710519274611	Sync.Service	INFO	Starting sync at 2024-03-15 18:14:34 in browser session juEfMGXOdKDo
+1710519274611	Sync.Service	DEBUG	In sync: should login.
+1710519274611	Sync.Service	INFO	User logged in successfully - verifying login.
+1710519274611	Sync.SyncAuthManager	DEBUG	unlockAndVerifyAuthState already has (or can fetch) sync keys
+1710519274611	Sync.Status	DEBUG	Status.login: success.login => success.status_ok
+1710519274611	Sync.Status	DEBUG	Status.service: success.status_ok => error.login.failed
+1710519274611	Sync.Service	DEBUG	Fetching unlocked auth state returned success.status_ok
+1710519274611	Sync.SyncAuthManager	INFO	Getting sync key
+1710519274611	Sync.SyncAuthManager	INFO	Getting a sync token from: https://token.services.mozilla.com/1.0/sync/1.5
+1710519274611	Sync.SyncAuthManager	DEBUG	Getting a token using OAuth
+1710519274611	FirefoxAccounts	DEBUG	getOAuthToken enter
+1710519274612	FirefoxAccounts	TRACE	getCachedToken returning cached token
+1710519274612	FirefoxAccounts	DEBUG	getOAuthToken returning a cached token
+1710519274612	Services.Common.TokenServerClient	DEBUG	Beginning OAuth token exchange: https://token.services.mozilla.com/1.0/sync/1.5
+1710519274612	Services.Common.RESTRequest	DEBUG	GET request to https://token.services.mozilla.com/1.0/sync/1.5
+1710519274624	FirefoxAccounts	DEBUG	FxAccountsWebChannel registered: account_updates with origin https://accounts.firefox.com
+1710519274644	FirefoxAccounts	INFO	fetching updated device list
+1710519274653	Services.Common.RESTRequest	DEBUG	GET request to https://api.accounts.firefox.com/v1/account/devices?filterIdleDevicesTimestamp=1708704874645
+1710519274759	Services.Common.RESTRequest	DEBUG	GET https://api.accounts.firefox.com/v1/account/attached_clients 200
+1710519274759	Hawk	DEBUG	(Response) /account/attached_clients: code: 200 - Status text: 
+1710519274759	Hawk	DEBUG	Clock offset vs https://api.accounts.firefox.com/v1: -759
+1710519274899	Services.Common.RESTRequest	DEBUG	GET https://api.accounts.firefox.com/v1/account/devices?filterIdleDevicesTimestamp=1708704874645 200
+1710519274899	Hawk	DEBUG	(Response) /account/devices?filterIdleDevicesTimestamp=1708704874645: code: 200 - Status text: 
+1710519274899	Hawk	DEBUG	Clock offset vs https://api.accounts.firefox.com/v1: -899
+1710519274899	FirefoxAccounts	INFO	Got new device list: 781edf49a2b95db76c13835906a82fce, 9bb9fd80517691d7d671971037efde08, d07d3a6fbc2f810da185ec5eb9d0e4f7
+1710519274899	FirefoxAccounts	DEBUG	FxAccountsPush loading service
+1710519274899	FirefoxAccounts	DEBUG	FxAccountsPush initialized
+1710519274900	FirefoxAccounts	WARN	Our push endpoint needs resubscription
+1710519274900	FirefoxAccounts	TRACE	FxAccountsPushService unsubscribe
+1710519274908	Services.Common.RESTRequest	DEBUG	GET https://profile.accounts.firefox.com/v1/profile 401
+1710519274908	FirefoxAccounts	INFO	Fetching the profile returned a 401 - revoking our token and retrying
+1710519274908	Services.Common.RESTRequest	DEBUG	POST request to https://api.accounts.firefox.com/v1/oauth/destroy
+1710519274909	Services.Common.RESTRequest	DEBUG	POST Length: 900
+1710519274909	FirefoxAccounts	DEBUG	_updateAccountData with items: ["oauthTokens"]
+1710519274909	FirefoxAccounts	DEBUG	writing plain storage: ["email","sessionToken","uid","verified","device","encryptedSendTabKeys","oauthTokens","profileCache"]
+1710519274909	FirefoxAccounts	TRACE	starting write of json user data: ["email","sessionToken","uid","verified","device","encryptedSendTabKeys","oauthTokens","profileCache"]
+1710519274909	FirefoxAccounts	DEBUG	getOAuthToken enter
+1710519274910	Services.Common.RESTRequest	DEBUG	POST request to https://api.accounts.firefox.com/v1/oauth/token
+1710519274910	Services.Common.RESTRequest	DEBUG	POST Length: 81
+1710519274910	FirefoxAccounts	TRACE	finished write of json user data - took: 1
+1710519274911	FirefoxAccounts	DEBUG	writing secure storage: ["scopedKeys"]
+1710519274911	FirefoxAccounts	TRACE	starting write of user data to the login manager
+1710519274916	FirefoxAccounts	TRACE	finished write of user data to the login manager
+1710519274924	Services.Common.RESTRequest	DEBUG	GET https://token.services.mozilla.com/1.0/sync/1.5 401
+1710519274924	Services.Common.TokenServerClient	DEBUG	Got token response: 401
+1710519274924	Services.Common.TokenServerClient	INFO	Server-reported error: {"location":"body","name":"","description":"Unauthorized"}
+1710519274925	Services.Common.RESTRequest	DEBUG	POST request to https://api.accounts.firefox.com/v1/oauth/destroy
+1710519274925	Services.Common.RESTRequest	DEBUG	POST Length: 969
+1710519274925	FirefoxAccounts	DEBUG	_updateAccountData with items: ["oauthTokens"]
+1710519274925	FirefoxAccounts	DEBUG	writing plain storage: ["email","sessionToken","uid","verified","device","encryptedSendTabKeys","oauthTokens","profileCache"]
+1710519274925	FirefoxAccounts	TRACE	starting write of json user data: ["email","sessionToken","uid","verified","device","encryptedSendTabKeys","oauthTokens","profileCache"]
+1710519274925	Sync.SyncAuthManager	WARN	Token server returned 401, retrying token fetch with fresh credentials
+1710519274925	Sync.SyncAuthManager	INFO	Getting a sync token from: https://token.services.mozilla.com/1.0/sync/1.5
+1710519274925	Sync.SyncAuthManager	DEBUG	Getting a token using OAuth
+1710519274925	FirefoxAccounts	DEBUG	getOAuthToken enter
+1710519274928	Services.Common.RESTRequest	DEBUG	POST request to https://api.accounts.firefox.com/v1/oauth/token
+1710519274928	Services.Common.RESTRequest	DEBUG	POST Length: 127
+1710519274929	FirefoxAccounts	TRACE	finished write of json user data - took: 3
+1710519274929	FirefoxAccounts	DEBUG	writing secure storage: ["scopedKeys"]
+1710519274929	FirefoxAccounts	TRACE	starting write of user data to the login manager
+1710519274933	FirefoxAccounts	TRACE	finished write of user data to the login manager
+1710519275132	Services.Common.RESTRequest	DEBUG	POST https://api.accounts.firefox.com/v1/oauth/destroy 200
+1710519275132	Hawk	DEBUG	(Response) /oauth/destroy: code: 200 - Status text: 
+1710519275132	Hawk	DEBUG	Clock offset vs https://api.accounts.firefox.com/v1: -132
+1710519275159	Services.Common.RESTRequest	DEBUG	POST https://api.accounts.firefox.com/v1/oauth/destroy 200
+1710519275159	Hawk	DEBUG	(Response) /oauth/destroy: code: 200 - Status text: 
+1710519275159	Hawk	DEBUG	Clock offset vs https://api.accounts.firefox.com/v1: -159
+1710519275280	Services.Common.RESTRequest	DEBUG	POST https://api.accounts.firefox.com/v1/oauth/token 200
+1710519275280	Hawk	DEBUG	(Response) /oauth/token: code: 200 - Status text: 
+1710519275280	Hawk	DEBUG	Clock offset vs https://api.accounts.firefox.com/v1: -280
+1710519275280	FirefoxAccounts	DEBUG	_updateAccountData with items: ["oauthTokens"]
+1710519275280	FirefoxAccounts	DEBUG	writing plain storage: ["email","sessionToken","uid","verified","device","encryptedSendTabKeys","oauthTokens","profileCache"]
+1710519275280	FirefoxAccounts	TRACE	starting write of json user data: ["email","sessionToken","uid","verified","device","encryptedSendTabKeys","oauthTokens","profileCache"]
+1710519275280	Services.Common.RESTRequest	DEBUG	GET request to https://profile.accounts.firefox.com/v1/profile
+1710519275281	FirefoxAccounts	TRACE	finished write of json user data - took: 1
+1710519275281	FirefoxAccounts	DEBUG	writing secure storage: ["scopedKeys"]
+1710519275281	FirefoxAccounts	TRACE	starting write of user data to the login manager
+1710519275285	FirefoxAccounts	TRACE	finished write of user data to the login manager
+1710519275305	Services.Common.RESTRequest	DEBUG	POST https://api.accounts.firefox.com/v1/oauth/token 200
+1710519275305	Hawk	DEBUG	(Response) /oauth/token: code: 200 - Status text: 
+1710519275305	Hawk	DEBUG	Clock offset vs https://api.accounts.firefox.com/v1: -305
+1710519275305	FirefoxAccounts	DEBUG	_updateAccountData with items: ["oauthTokens"]
+1710519275305	FirefoxAccounts	DEBUG	writing plain storage: ["email","sessionToken","uid","verified","device","encryptedSendTabKeys","oauthTokens","profileCache"]
+1710519275305	FirefoxAccounts	TRACE	starting write of json user data: ["email","sessionToken","uid","verified","device","encryptedSendTabKeys","oauthTokens","profileCache"]
+1710519275306	Services.Common.TokenServerClient	DEBUG	Beginning OAuth token exchange: https://token.services.mozilla.com/1.0/sync/1.5
+1710519275306	Services.Common.RESTRequest	DEBUG	GET request to https://token.services.mozilla.com/1.0/sync/1.5
+1710519275309	FirefoxAccounts	TRACE	finished write of json user data - took: 3
+1710519275309	FirefoxAccounts	DEBUG	writing secure storage: ["scopedKeys"]
+1710519275309	FirefoxAccounts	TRACE	starting write of user data to the login manager
+1710519275313	FirefoxAccounts	TRACE	finished write of user data to the login manager
+1710519275348	FirefoxAccounts	DEBUG	FxAccountsPushService unsubscribed
+1710519275348	FirefoxAccounts	TRACE	FxAccountsPush registerPushEndpoint
+1710519275500	Services.Common.RESTRequest	DEBUG	GET https://profile.accounts.firefox.com/v1/profile 304
+1710519275519	Services.Common.RESTRequest	DEBUG	GET https://token.services.mozilla.com/1.0/sync/1.5 200
+1710519275519	Services.Common.TokenServerClient	DEBUG	Got token response: 200
+1710519275519	Services.Common.TokenServerClient	DEBUG	Successful token response
+1710519275519	Sync.BulkKeyBundle	INFO	BulkKeyBundle being created for undefined
+1710519275519	Sync.Status	DEBUG	Status.login: success.status_ok => success.login
+1710519275519	Sync.Status	DEBUG	Status.service: error.login.failed => success.status_ok
+1710519275519	Sync.SyncAuthManager	DEBUG	_findCluster returning https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/153437806/
+1710519275519	Sync.SyncAuthManager	DEBUG	Cluster value = https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/153437806/
+1710519275519	Sync.SyncAuthManager	DEBUG	Setting cluster to https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/153437806/
+1710519275519	Sync.Service	DEBUG	Caching URLs under storage user base: https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/153437806/
+1710519275520	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1710519275520	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1710519275521	FirefoxAccounts	INFO	Already fetching device list, return existing promise
+1710519275583	FirefoxAccounts	DEBUG	FxAccountsPush got subscription
+1710519275583	FirefoxAccounts	INFO	registering with available commands: ["https://identity.mozilla.com/cmd/open-uri"]
+1710519275583	FirefoxAccounts	DEBUG	updating existing device details
+1710519275584	Services.Common.RESTRequest	DEBUG	POST request to https://api.accounts.firefox.com/v1/account/device
+1710519275584	Services.Common.RESTRequest	DEBUG	POST Length: 877
+1710519275875	Services.Common.RESTRequest	DEBUG	POST https://api.accounts.firefox.com/v1/account/device 200
+1710519275875	Hawk	DEBUG	(Response) /account/device: code: 200 - Status text: 
+1710519275875	Hawk	DEBUG	Clock offset vs https://api.accounts.firefox.com/v1: -875
+1710519275875	FirefoxAccounts	DEBUG	_updateAccountData with items: ["device"]
+1710519275875	FirefoxAccounts	DEBUG	writing plain storage: ["email","sessionToken","uid","verified","device","encryptedSendTabKeys","oauthTokens","profileCache"]
+1710519275875	FirefoxAccounts	TRACE	starting write of json user data: ["email","sessionToken","uid","verified","device","encryptedSendTabKeys","oauthTokens","profileCache"]
+1710519275875	FirefoxAccounts	INFO	Polling device commands.
+1710519275876	Services.Common.RESTRequest	DEBUG	GET request to https://api.accounts.firefox.com/v1/account/device/commands?index=0
+1710519275876	FirefoxAccounts	TRACE	finished write of json user data - took: 1
+1710519275876	FirefoxAccounts	DEBUG	writing secure storage: ["scopedKeys"]
+1710519275876	FirefoxAccounts	TRACE	starting write of user data to the login manager
+1710519275888	FirefoxAccounts	TRACE	finished write of user data to the login manager
+1710519276040	Services.Common.RESTRequest	DEBUG	GET https://api.accounts.firefox.com/v1/account/device/commands?index=0 failed: 2147500036 - NS_ERROR_ABORT
+1710519276040	Hawk	WARN	hawk request error: [Exception... "NS_ERROR_ABORT"  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "JS frame :: resource://services-common/rest.sys.mjs :: onStopRequest :: line 478"  data: no] Stack trace: onStopRequest()@resource://services-common/rest.sys.mjs:478
+1710519276041	Services.Common.RESTResponse	DEBUG	Caught exception fetching HTTP status code: [Exception... "Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIHttpChannel.responseStatus]"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: resource://services-common/rest.sys.mjs :: get status :: line 615"  data: no] Stack trace: get status()@resource://services-common/rest.sys.mjs:615
+request()@resource://services-common/hawkclient.sys.mjs:230
+1710519276041	Services.Common.RESTResponse	DEBUG	Caught exception fetching HTTP status text: [Exception... "Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIHttpChannel.responseStatusText]"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: resource://services-common/rest.sys.mjs :: get statusText :: line 630"  data: no] Stack trace: get statusText()@resource://services-common/rest.sys.mjs:630
+request()@resource://services-common/hawkclient.sys.mjs:238
+1710519276041	Hawk	DEBUG	(Response) /account/device/commands?index=0: code: null - Status text: null
+1710519276041	Services.Common.RESTResponse	DEBUG	Caught exception processing response headers: [Exception... "Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIHttpChannel.visitResponseHeaders]"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: resource://services-common/rest.sys.mjs :: get headers :: line 662"  data: no] Stack trace: get headers()@resource://services-common/rest.sys.mjs:662
+_maybeNotifyBackoff()@resource://services-common/hawkclient.sys.mjs:307
+request()@resource://services-common/hawkclient.sys.mjs:246
+1710519276041	Services.Common.RESTResponse	DEBUG	Caught exception processing response headers: [Exception... "Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIHttpChannel.visitResponseHeaders]"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: resource://services-common/rest.sys.mjs :: get headers :: line 662"  data: no] Stack trace: get headers()@resource://services-common/rest.sys.mjs:662
+_maybeNotifyBackoff()@resource://services-common/hawkclient.sys.mjs:307
+request()@resource://services-common/hawkclient.sys.mjs:247
+1710519276042	Services.Common.RESTResponse	DEBUG	Caught exception fetching HTTP status text: [Exception... "Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIHttpChannel.responseStatusText]"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: resource://services-common/rest.sys.mjs :: get statusText :: line 630"  data: no] Stack trace: get statusText()@resource://services-common/rest.sys.mjs:630
+_constructError()@resource://services-common/hawkclient.sys.mjs:113
+request()@resource://services-common/hawkclient.sys.mjs:252
+1710519276042	Services.Common.RESTResponse	DEBUG	Caught exception fetching HTTP status code: [Exception... "Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIHttpChannel.responseStatus]"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: resource://services-common/rest.sys.mjs :: get status :: line 615"  data: no] Stack trace: get status()@resource://services-common/rest.sys.mjs:615
+_constructError()@resource://services-common/hawkclient.sys.mjs:114
+request()@resource://services-common/hawkclient.sys.mjs:252
+1710519276042	Services.Common.RESTResponse	DEBUG	Caught exception fetching HTTP status code: [Exception... "Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIHttpChannel.responseStatus]"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: resource://services-common/rest.sys.mjs :: get status :: line 615"  data: no] Stack trace: get status()@resource://services-common/rest.sys.mjs:615
+_constructError()@resource://services-common/hawkclient.sys.mjs:115
+request()@resource://services-common/hawkclient.sys.mjs:252
+1710519276042	Services.Common.RESTResponse	DEBUG	Caught exception processing response headers: [Exception... "Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIHttpChannel.visitResponseHeaders]"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: resource://services-common/rest.sys.mjs :: get headers :: line 662"  data: no] Stack trace: get headers()@resource://services-common/rest.sys.mjs:662
+_constructError()@resource://services-common/hawkclient.sys.mjs:121
+request()@resource://services-common/hawkclient.sys.mjs:252
+1710519276042	FirefoxAccounts	ERROR	error GETing /account/device/commands?index=0: {"error":{},"errorString":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.sys.mjs :: onStopRequest :: line 478\"  data: no]","message":null,"code":null,"errno":null}
+1710519276044	Sync.Resource	WARN	GET request to https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/153437806/info/collections failed: [Exception... "Abort"  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "<unknown>"  data: no] No traceback available
+1710519276044	Sync.Service	DEBUG	verifyLogin failed: [Exception... "Abort"  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "<unknown>"  data: no] No traceback available
+1710519276045	Sync.Status	DEBUG	Status.login: success.login => error.login.reason.network
+1710519276045	Sync.Status	DEBUG	Status.service: success.status_ok => error.login.failed
+1710519276045	Sync.ErrorHandler	ERROR	Sync encountered a login error
+1710519276045	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1710519276046	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1710519276046	Sync.Service	DEBUG	Exception calling WrappedLock: Error: Login failed: error.login.reason.network(resource://services-sync/service.sys.mjs:1041:15) JS Stack trace: onNotify@service.sys.mjs:1041:15
+1710519276046	Sync.Service	DEBUG	Not syncing: login returned false.
+1710519276047	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent

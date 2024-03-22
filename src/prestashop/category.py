@@ -181,7 +181,7 @@ class PrestaCategory:
         category_dict = PrestaAPIV3.get('categories', id_category)
         _parent_category = int(category_dict['category']['id_parent'])
         
-        if _parent_category < 2:
+        if _parent_category <= 2:
             return parent_categories_list
         
         parent_categories_list.append(_parent_category)

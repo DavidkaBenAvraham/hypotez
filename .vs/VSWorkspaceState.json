@@ -3,14 +3,15 @@
     "",
     "\\src",
     "\\src\\categories",
+    "\\src\\openai",
+    "\\src\\openai\\llmsearch",
+    "\\src\\openai\\projects",
+    "\\src\\openai\\projects\\emil",
+    "\\src\\openai\\projects\\emil\\webpages",
     "\\src\\prestashop",
-    "\\src\\prestashop\\presta_apis",
     "\\src\\product",
-    "\\src\\scenarios",
-    "\\src\\suppliers",
-    "\\src\\suppliers\\hb",
-    "\\src\\suppliers\\hb\\locators"
+    "\\src\\webdriver"
   ],
-  "SelectedNode": "\\src\\suppliers\\hb\\grabber.py",
+  "SelectedNode": "\\src\\prestashop\\category.py",
   "PreviewInSolutionExplorer": false
 }

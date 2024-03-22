@@ -130,6 +130,9 @@ class ProductFields:
     'affiliate_summary',
     'affiliate_summary_2',
     'affiliate_text',
+    'affiliate_image_lagre',
+    'affiliate_image_medium',
+    'affiliate_image_small',
     'associations',
     'available_date',
     'available_for_order',
@@ -245,62 +248,62 @@ class ProductFields:
         Конструкция `associations`:
         
         ```python
-        "associations":
+        'associations':
         {
-         "categories": {
-            "category": [
-              { "id": "1" },
-              { "id": "2" },
-              { "id": "3" }
+         'categories': {
+            'category': [
+              { 'id': '1' },
+              { 'id': '2' },
+              { 'id': '3' }
             ]
         },
         
-        "images": {
-            "image": [ { "id": "1" }  ]
+        'images': {
+            'image': [ { 'id': '1' }  ]
         },
       
-        "combinations": {
-            "combination": { "id": "" }
+        'combinations': {
+            'combination': { 'id': '' }
         },
         
-        "product_option_values": {
-            "product_option_value": { "id": ""}
+        'product_option_values': {
+            'product_option_value': { 'id': ''}
             },
             
-        "product_features": {
-            "product_feature": {
-                "id": "",
-                "id_feature_value": ""
+        'product_features': {
+            'product_feature': {
+                'id': '',
+                'id_feature_value': ''
             }
         },
         
-        "tags": {
-            "tag": { "id": "" }
+        'tags': {
+            'tag': { 'id': '' }
         },
         
-        "stock_availables": {
-            "stock_available": [
-                { "id": "1", "id_product_attribute": "1" },
-                { "id": "2", "id_product_attribute": "2" },
-                { "id": "3", "id_product_attribute": "3" }
+        'stock_availables': {
+            'stock_available': [
+                { 'id': '1', 'id_product_attribute': '1' },
+                { 'id': '2', 'id_product_attribute': '2' },
+                { 'id': '3', 'id_product_attribute': '3' }
             ]
         },
       
-        "attachments": {
-            "attachment": {
-                "id": ""
+        'attachments': {
+            'attachment': {
+                'id': ''
             }
         },
-        "accessories": {
-        "product": {
-            "id": ""
+        'accessories': {
+        'product': {
+            'id': ''
         }
         },
-        "product_bundle": {
-        "product": {
-            "id": "",
-            "id_product_attribute": "",
-            "quantity": ""
+        'product_bundle': {
+        'product': {
+            'id': '',
+            'id_product_attribute': '',
+            'quantity': ''
         }
         }
             }```
@@ -332,9 +335,9 @@ class ProductFields:
         '''
 
         self.dict_presta_fields['associations']: dict =   {
-                                                        "categories": [
+                                                        'categories': [
                                                         {
-                                                            "id": 2
+                                                            'id': 2
                                                         }
                                                         ]
                                                     }
@@ -824,7 +827,7 @@ class ProductFields:
         '''!  <sub>*[setter]*</sub>   '''
         try:
             #self.dict_presta_fields['wholesale_price'] = str (SN.normalize_price (value) )
-            self.dict_presta_fields['wholesale_price'] = ""
+            self.dict_presta_fields['wholesale_price'] = ''
             return True
         except ProductFieldException as ex:
             logger.error(f'''
@@ -1874,7 +1877,7 @@ class ProductFields:
         '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['description']: dict = {
-                "language":[
+                'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},
@@ -1899,7 +1902,7 @@ class ProductFields:
         '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['description_short']: dict = {
-                "language":[
+                'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},
@@ -1926,7 +1929,7 @@ class ProductFields:
         try:
             #self.dict_presta_fields['link_rewrite = link_rewrite
             self.dict_presta_fields['link_rewrite']: dict = {
-                "language":[
+                'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},
@@ -1952,7 +1955,7 @@ class ProductFields:
         '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['meta_description']: dict = {
-                "language":[
+                'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},
@@ -1978,7 +1981,7 @@ class ProductFields:
         '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['meta_keywords']: dict = {
-                "language":[
+                'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},
@@ -2004,7 +2007,7 @@ class ProductFields:
         '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['meta_title']: dict = {
-                "language":[
+                'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},
@@ -2030,7 +2033,7 @@ class ProductFields:
         '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['name']: dict = {
-                "language":[
+                'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},
@@ -2056,7 +2059,7 @@ class ProductFields:
         '''!  <sub>*[setter]*</sub>   '''
         try:
             self.dict_presta_fields['available_now']: dict =   {                
-                "language":[
+                'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
@@ -2080,7 +2083,7 @@ class ProductFields:
     def available_later(self, value:str = '') -> bool:
         '''!  <sub>*[setter]*</sub>   '''
         try:
-            self.dict_presta_fields['available_later']: dict =   {"language":[
+            self.dict_presta_fields['available_later']: dict =   {'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
@@ -2105,7 +2108,7 @@ class ProductFields:
         '''!  <sub>*[setter]*</sub>  Функция строит список словарей для поля `ps_product_lang.delivery_in_stock`
         ```python
         {
-            "language":[
+            'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},
@@ -2115,13 +2118,13 @@ class ProductFields:
         '''
         
 
-        self.dict_presta_fields['delivery_in_stock']: dict =   {"language":[
+        self.dict_presta_fields['delivery_in_stock']: dict =   {'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
         # try:
         #     self.dict_presta_fields['delivery_in_stock']: dict = {
-        #         "language":[
+        #         'language':[
         #         {'attrs':{'id':'1'}, 'value':value},
         #         {'attrs':{'id':'2'}, 'value':value},
         #         {'attrs':{'id':'3'}, 'value':value},
@@ -2144,7 +2147,7 @@ class ProductFields:
     @delivery_out_stock.setter
     #@logs_and_errors_decorator (default_return =  False)
     def delivery_out_stock(self, value:str = '') -> bool:
-        self.dict_presta_fields['delivery_out_stock']: dict =   {"language":[
+        self.dict_presta_fields['delivery_out_stock']: dict =   {'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
@@ -2165,14 +2168,14 @@ class ProductFields:
         Мультиязычное поле. Формирует словарь:
         ```python
             {
-            "language":[
+            'language':[
             {'attrs':{'id':'1'}, 'value':delivery_additional_message},
             {'attrs':{'id':'2'}, 'value':delivery_additional_message},
             {'attrs':{'id':'3'}, 'value':delivery_additional_message},
             ]}
         ```
         '''
-        self.dict_presta_fields['delivery_additional_message']: dict  =   {"language":[
+        self.dict_presta_fields['delivery_additional_message']: dict  =   {'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
@@ -2193,7 +2196,7 @@ class ProductFields:
         Формирует словарь:
         ```python
          {
-            "language":[
+            'language':[
             {'attrs':{'id':'1'}, 'value':affiliate_short_link},
             {'attrs':{'id':'2'}, 'value':affiliate_short_link},
             {'attrs':{'id':'3'}, 'value':affiliate_short_link},
@@ -2201,14 +2204,14 @@ class ProductFields:
             ```
         '''
         try:
-            self.dict_presta_fields['affiliate_short_link']: dict =   {"language":[
+            self.dict_presta_fields['affiliate_short_link']: dict =   {'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
 
             
             # self.dict_presta_fields['affiliate_short_link']: dict = {
-            #     "language":[
+            #     'language':[
             #     {'#text': affiliate_short_link, '@id':'1'},
             #     {'#text': affiliate_short_link, '@id':'2'},
             #     {'#text': affiliate_short_link, '@id':'3'},
@@ -2232,7 +2235,7 @@ class ProductFields:
         '''!  <sub>*[setter]*</sub>   '''
         try:
             #self.dict_presta_fields['affiliate_text = affiliate_text
-            self.dict_presta_fields['affiliate_text']: dict =   {"language":[
+            self.dict_presta_fields['affiliate_text']: dict =   {'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
@@ -2256,7 +2259,7 @@ class ProductFields:
     def affiliate_summary(self, value:str = '') -> bool:
         '''!  <sub>*[setter]*</sub>   '''
         try:
-            self.dict_presta_fields['affiliate_summary']: dict =   {"language":[
+            self.dict_presta_fields['affiliate_summary']: dict =   {'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
@@ -2280,7 +2283,7 @@ class ProductFields:
     def affiliate_summary_2(self, value:str = '') -> bool:
         '''!  <sub>*[setter]*</sub>   '''
         try:
-            self.dict_presta_fields['affiliate_summary_2']: dict =   {"language":[
+            self.dict_presta_fields['affiliate_summary_2']: dict =   {'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
@@ -2303,7 +2306,7 @@ class ProductFields:
     def affiliate_image_small(self, value:str = '') -> bool:
         '''!  <sub>*[setter]*</sub>   '''
         try:
-            self.dict_presta_fields['affiliate_image_small']: dict =   {"language":[
+            self.dict_presta_fields['affiliate_image_small']: dict =   {'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
@@ -2326,7 +2329,7 @@ class ProductFields:
     def affiliate_image_medium(self, value:str = '') -> bool:
         '''!  <sub>*[setter]*</sub>   '''
         try:
-            self.dict_presta_fields['affiliate_image_medium']: dict =   {"language":[
+            self.dict_presta_fields['affiliate_image_medium']: dict =   {'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
@@ -2351,7 +2354,7 @@ class ProductFields:
     def affiliate_image_large(self, value:str = '') -> bool:
         '''!  <sub>*[setter]*</sub>   '''
         try:
-            self.dict_presta_fields['affiliate_image_medium']: dict =   {"language":[
+            self.dict_presta_fields['affiliate_image_medium']: dict =   {'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
@@ -2376,7 +2379,7 @@ class ProductFields:
         формирует список словарей:
         ```python
         {
-        "language":[
+        'language':[
             {'attrs':{'id':'1'}, 'value':ingridients},
             {'attrs':{'id':'2'}, 'value':ingridients},
             {'attrs':{'id':'3'}, 'value':ingridients},
@@ -2385,7 +2388,7 @@ class ProductFields:
         значение `ingridients` может быть блоком HTML
         '''
         try:
-            self.dict_presta_fields['ingridients']: dict =   {"language":[
+            self.dict_presta_fields['ingridients']: dict =   {'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}
@@ -2405,7 +2408,7 @@ class ProductFields:
     def how_to_use(self, value:str = '') -> bool:
         '''!  <sub>*[setter]*</sub>  `ps_product_lang.how_to_use` '''
         try:
-            self.dict_presta_fields['how_to_use']: dict =   {"language":[
+            self.dict_presta_fields['how_to_use']: dict =   {'language':[
                 {'attrs':{'id':'1'}, 'value':value},
                 {'attrs':{'id':'2'}, 'value':value},
                 {'attrs':{'id':'3'}, 'value':value},]}

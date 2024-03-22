@@ -173,7 +173,7 @@ cython_debug/
 .ipynb_checkpoints/
 
 #User profiles for Mozilla, Chrome etc
-webdriver/profiles/FirefoxProfile/
+webdriver/profiles/
 
 *.sqlite*
 

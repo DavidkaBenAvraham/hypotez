@@ -1,0 +1,1 @@
+# https://nuancesprog.ru/p/15535/

@@ -1,0 +1,10 @@
+{"timestamp":5049,"category":"nimbus_events","name":"enrollment","extra":{"experiment_type":"rollout","branch":"control","experiment":"add-an-image-to-pdf-with-alt-text-rollout"}}
+{"timestamp":5081,"category":"nimbus_events","name":"enrollment","extra":{"experiment":"backgroundupdate-enable-unelevated-installations-rollout-3-release","experiment_type":"rollout","branch":"enabled"}}
+{"timestamp":5098,"category":"nimbus_events","name":"enrollment","extra":{"branch":"enable-csv-import","experiment":"csv-import-release-rollout","experiment_type":"rollout"}}
+{"timestamp":5128,"category":"nimbus_events","name":"enrollment","extra":{"branch":"rollout","experiment_type":"rollout","experiment":"ech-roll-out"}}
+{"timestamp":5138,"category":"nimbus_events","name":"enrollment","extra":{"experiment_type":"rollout","branch":"control","experiment":"extensions-migration-in-import-wizard-116-rollout"}}
+{"timestamp":5218,"category":"nimbus_events","name":"enrollment","extra":{"experiment_type":"rollout","branch":"treatment-a","experiment":"mozillaaccounts-toolbar-button-default-visibility-existing-user"}}
+{"timestamp":5925,"category":"nimbus_events","name":"enrollment","extra":{"experiment_type":"rollout","branch":"enable-relay-integration","experiment":"relay-integration-into-firefox-118-release-for-all-fxa-and-autofill-users"}}
+{"timestamp":5941,"category":"nimbus_events","name":"enroll_failed","extra":{"reason":"feature-conflict","experiment":"relay-integration-into-firefox-release-for-all-fxa-users"}}
+{"timestamp":6021,"category":"nimbus_events","name":"enrollment","extra":{"experiment":"upgrade-spotlight-rollout","branch":"treatment","experiment_type":"rollout"}}
+{"timestamp":30219,"category":"nimbus_events","name":"enroll_failed","extra":{"reason":"feature-conflict","experiment":"relay-integration-into-firefox-release-for-all-fxa-users"}}

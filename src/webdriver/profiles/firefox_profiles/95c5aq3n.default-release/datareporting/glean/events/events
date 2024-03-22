@@ -1,4 +1,4 @@
 {"timestamp":0,"category":"fog.validation","name":"validate_early_event"}
-{"timestamp":284,"category":"webcompatreporting","name":"reason_dropdown","extra":{"setting":"disabled"}}
-{"timestamp":1456,"category":"nimbus_events","name":"enroll_failed","extra":{"reason":"feature-conflict","experiment":"relay-integration-into-firefox-118-release-for-all-fxa-and-autofill-users"}}
-{"timestamp":1492,"category":"nimbus_events","name":"validation_failed","extra":{"experiment":"next-generation-accessibility-engine-powering-screen-readers","feature":"accessibilityCache","reason":"invalid-feature"}}
+{"timestamp":358,"category":"webcompatreporting","name":"reason_dropdown","extra":{"setting":"required"}}
+{"timestamp":1203,"category":"nimbus_events","name":"enroll_failed","extra":{"experiment":"relay-integration-into-firefox-release-for-all-fxa-users","reason":"feature-conflict"}}
+{"timestamp":1325,"category":"nimbus_events","name":"is_ready"}

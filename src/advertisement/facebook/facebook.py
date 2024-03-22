@@ -5,20 +5,16 @@
 
 import os, sys
 from pathlib import Path
-from typing import Union
-
-dir_root : Path = Path (os.getcwd()[:os.getcwd().rfind('hypotez')+7])
-sys.path.append (str (dir_root) )  # Добавляю корневую директорию в sys.path
-dir_src = Path (dir_root, 'src') 
-sys.path.append (str (dir_root) ) # Добавляю рабочую директорию в sys.path 
+from typing import Union, Dict, List
 
 # ----------------------------------
 from src.settings import gs
 from src.io_interface import j_loads, j_dumps
-from src.helpers import logger,  logs_and_errors_decorator, jprint, pprint
+from src.helpers import logger,  logs_and_errors_decorator, DefaultSettingsException, jprint, pprint
 from src.webdriver import Driver
-from src.scenarios import executor
+
 # ----------------------------------
+
 
 class Facebook():
 	"""! @~russian Класс общается с фейбуком через вебдрайвер 
