@@ -3,7 +3,7 @@
   "mode": "debug",
   "@note debug": [ "debug", "prod" ],
   "languages": [ "en", "he", "ru" ],
-  "scenario_language": [ "en" ],
+  "scenario_language": [ "en" ], 
   "threads": false,
   "@note threads": "многопоточность программы",
   "async_run": true,
@@ -25,16 +25,27 @@
   },
 
   "default_webdriver": "firefox",
-  "list_prestashop_api_domains": [ "emil-design.com", "sergey.mymaster.co.il", "dev.e-cat.co.il" ],
+  "list_prestashop_api_domains": [ "emil-design.com", "sergey.mymaster.co.il", "e-cat.co.il" ],
 
   "keepass": {
-    "keepass_aliexpress_api_title": "katia",
-    "keepass_prestashop_api_title": "emil-design.com",
-    "keepass_openai_api_title": "hypotez",
-    "keepass_prestashop_db_title": "emil-design.com",
-    "keepass_ftp_title": "emil-design.com",
-    "keepass_smtp_title": "davidka",
-    "keepass_prestashop_API_DOMAIN": "emil-design.com"
+    "emil-design.com": {
+      "keepass_aliexpress_api_title": "katia",
+      "keepass_prestashop_api_title": "emil-design.com",
+      "keepass_openai_api_title": "hypotez",
+      "keepass_prestashop_db_title": "emil-design.com",
+      "keepass_ftp_title": "emil-design.com",
+      "keepass_smtp_title": "davidka",
+      "keepass_prestashop_api_domain": "emil-design.com"
+    },
+    "e-cat.co.il": {
+      "keepass_aliexpress_api_title": "katia",
+      "keepass_prestashop_api_title": "e-cat.co.il",
+      "keepass_openai_api_title": "hypotez",
+      "keepass_prestashop_db_title": "e-cat.co.il",
+      "keepass_ftp_title": "e-cat.co.il",
+      "keepass_smtp_title": "davidka",
+      "keepass_prestashop_api_domain": "e-cat.co.il"
+    }
   },
 
 

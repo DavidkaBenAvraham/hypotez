@@ -148,6 +148,7 @@ class PrestaProduct():
         """
         data: dict = { 'product': product_dict }
         
+        while gs.
         if PrestaAPIV == 'V3':
             try:
                 

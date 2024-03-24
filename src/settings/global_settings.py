@@ -15,17 +15,7 @@
 
 @image html diagrams-gs.png
 
-@section libs imports:
-  - gs 
-  - os 
-  - sys 
-  - datetime 
-  - pathlib 
-  - getpass 
-  - pykeepass 
-  - attr 
-  - src.io_interface 
-  - src.helpers 
+
 
  @~russian 
 @note Для однозначной интерпретации слешей в разных ос я все пути объявляю как объекты `Path`
@@ -249,10 +239,10 @@ class ProjectSettings():
 
 
     # Default PrestaShop API credentials
-    default_prestashop_api_credentials: dict = {}
+    default_prestashop_api_credentials: List[dict] = []
 
     # Default PrestaShop database credentials
-    default_prestashop_db_credentials: dict = {}
+    default_prestashop_db_credentials: List[dict] = []
 
     # Default FTP credentials
     default_ftp_credentials: dict = {}
@@ -369,16 +359,23 @@ class ProjectSettings():
         try:
             
             """! key names for keypass """
+            keepass_aliexpress_api_title: List = []
+            keepass_prestashop_api_title: List = []
+            keepass_prestashop_db_title: List = []
+            keepass_openai_api_title: List = []
+            keepass_ftp_title: List = []
+            keepass_smtp_title: List = []
             kp_settings = self.settings ['keepass']
-            keepass_aliexpress_api_title: str = kp_settings ['keepass_aliexpress_api_title']
-            keepass_prestashop_api_title: str = kp_settings ['keepass_prestashop_api_title']
-            keepass_prestashop_db_title: str = kp_settings ['keepass_prestashop_db_title']
-            keepass_openai_api_title: str =  kp_settings ['keepass_openai_api_title']
-            keepass_ftp_title: str =  kp_settings ['keepass_ftp_title']
-            keepass_smtp_title: str =  kp_settings ['keepass_smtp_title']
+            for kp in kp_settings:
+                keepass_aliexpress_api_title.append (kp_settings [kp]['keepass_aliexpress_api_title'])
+                keepass_prestashop_api_title.append (kp_settings [kp]['keepass_prestashop_api_title'])
+                keepass_prestashop_db_title.append (kp_settings [kp]['keepass_prestashop_db_title'])
+                keepass_openai_api_title.append ( kp_settings [kp]['keepass_openai_api_title'])
+                keepass_ftp_title.append ( kp_settings [kp]['keepass_ftp_title'])
+                keepass_smtp_title.append ( kp_settings [kp]['keepass_smtp_title'])
             
             """! async """
-            self.async_run: bool = self.settings ['async_run']
+            self.async_run: bool = self.settings ['async_run'] #@# <- Запуск программы в асинхронном режиме
             
             self.supplier_prefix: list = self.settings ['supplier_prefix']
             """! получаю список поставщиков для выполнения сценариев """
@@ -394,10 +391,20 @@ class ProjectSettings():
 
 
         # Подключение к базе данных Keepass
-        kp: PyKeePass = self.open_kp()
-        while not kp:
-            """! попытки открыть базу данных keepass """
-            kp = self.open_kp()
+        kp: PyKeePass = None
+        attempts = 0
+
+        while not kp and attempts < 3:
+            try:
+                kp = self.open_kp()
+            except Exception as ex:
+                print(f"Error opening KeePass database (attempt {attempts + 1}): {ex}")
+            finally:
+                attempts += 1
+
+        if not kp:
+            raise RuntimeError("Failed to open KeePass database after 3 attempts.")
+            return False
 
 
         # ------------------------------- default_webdriver, scenario_language, threads ----------------
@@ -411,23 +418,29 @@ class ProjectSettings():
             return False
                 
 
-        # ----------------------- ALIEXPRESS ------------------------
-        try:
-            entries = kp.find_groups (path= ['suppliers', 'aliexpress', 'api'] ).entries
-        except KeepassException as ex:   
-            logger.critical (f'Ошибка извлечения ключа Aliexpress ')    
-            return False
+        # ----------------------- ALIEXPRESS API ------------------------
+        # try:
+        #     entries = kp.find_groups (path= ['suppliers', 'aliexpress', 'api'] ).entries
+        # except KeepassException as ex:   
+        #     logger.critical (f'Ошибка извлечения ключа Aliexpress ')    
+        #     return False
         try:    
-            for entry in entries:
-                entry_dict = {
+            for entry in kp.find_groups (path= ['suppliers', 'aliexpress', 'api'] ).entries:
+                # entry_dict = {
+                #  'API_KEY': entry.custom_properties ['api_key'],
+                #  'secret': entry.custom_properties ['secret'],
+                #  'tracking_id': entry.custom_properties ['tracking_id'],
+                #  'email': entry.custom_properties ['email'],
+                #  'USERNAME' : entry.username,
+                #  }
+                
+                self.list_api_aliexpress_credentials.append({
                  'API_KEY': entry.custom_properties ['api_key'],
                  'secret': entry.custom_properties ['secret'],
                  'tracking_id': entry.custom_properties ['tracking_id'],
                  'email': entry.custom_properties ['email'],
                  'USERNAME' : entry.username,
-                 }
-                
-                self.list_api_aliexpress_credentials.append(entry_dict)
+                 })
                 
                 if entry.title == keepass_aliexpress_api_title: 
                     self.default_aliexpress_api_credentials = entry_dict
@@ -446,17 +459,21 @@ class ProjectSettings():
         try:
             entry_dict: dict = {}
             for entry in entries:
-                entry_dict = {
+                # entry_dict = {
+                #  'API_KEY': entry.custom_properties ['api_key'],
+                #  'USERNAME': entry.username,
+                 
+                #  }
+                
+                self.list_openai_credentials.append({
                  'API_KEY': entry.custom_properties ['api_key'],
                  'USERNAME': entry.username,
                  
-                 }
+                 })
                 
-                self.list_openai_credentials.append(entry_dict)
-                
-                """!  У меня только один API OpenAI ключ"""
-                if entry.title == keepass_openai_api_title: 
-                        self.default_openai_api_credentials = entry_dict      
+                # """!  У меня только один API OpenAI ключ"""
+                # if entry.title == keepass_openai_api_title: 
+                #         self.default_openai_api_credentials = entry_dict      
                 
         except Exception as ex:
             logger.error(f'Ошибка openai из KeePass {ex}')
@@ -464,21 +481,23 @@ class ProjectSettings():
         
        
         
-        # ------------------------- PRESTASHOP API ----------------------
+        # ------------------------- PRESTASHOP APIs ----------------------
         try:
             """! """
-            entries = kp.find_groups(path=['prestashop','api']).entries
+            # ps_apis = kp.find_groups(path=['prestashop','api']).entries
 
-            for entry in entries:
-                entry_dict = {
-                        'API_KEY' : entry.custom_properties['api_key'],
-                        'API_DOMAIN': entry.custom_properties['api_domain'],
-                        'USERNAME': entry.username,
-                        }
-                self.list_prestashop_api_credentials.append(entry_dict)
+            # for entry in ps:
+            for entry in kp.find_groups(path=['prestashop','api']).entries:
+                self.list_prestashop_api_credentials.append(
+                {
+                    'API_KEY' : entry.custom_properties['api_key'],
+                    'API_DOMAIN': entry.custom_properties['api_domain'],
+                    'USERNAME': entry.username,
+                } 
+                )
                 
-                if entry.title == keepass_prestashop_api_title: 
-                        self.default_prestashop_api_credentials = entry_dict   
+                # if entry.title == keepass_prestashop_api_title: 
+                #     self.default_prestashop_api_credentials = entry_dict   
                         
         except Exception as ex:
             logger.error(f'ошибка установки значений престашоп  {ex}')
@@ -490,19 +509,19 @@ class ProjectSettings():
             """! """
             entries = kp.find_groups(path=['prestashop','db']).entries
             
-            for entry in entries:
-                entry_dict = {
+            #for entry in entries:
+            for entry in kp.find_groups(path=['prestashop','db']).entries:
+                self.list_prestashop_db_credentials.append({
                         'server' : entry.custom_properties['server'],
                         'port' : entry.custom_properties['port'],
                         'db_name' : entry.custom_properties['db_name'],
                         'USERNAME' : entry.username,
                         'password' : entry.password,
                         
-                        }
-                self.list_prestashop_db_credentials.append(entry_dict)
+                        })
                 
-                if entry.title == keepass_prestashop_db_title:
-                    self.default_prestashop_db_credentials = entry_dict
+                # if entry.title == keepass_prestashop_db_title:
+                #     self.default_prestashop_db_credentials = entry_dict
                     
         except Exception as ex:
             logger.error(f'ошибка установки значений престашоп DB {ex}')
@@ -512,19 +531,25 @@ class ProjectSettings():
         
         try:
             """! """
-            entries = kp.find_groups(path=['ftp']).entries
+            #entries = kp.find_groups(path=['ftp']).entries
             
-            for entry in entries:
-                entry_dict = {
+            for entry in kp.find_groups(path=['prestashop','ftp']).entries:
+                # entry_dict = {
+                #         'server' : entry.url,
+                #         'port' : entry.custom_properties['port'],
+                #         'USERNAME' : entry.username,
+                #         'password' : entry.password,
+                        
+                #         }
+                self.list_ftp_credentials.append({
                         'server' : entry.url,
                         'port' : entry.custom_properties['port'],
                         'USERNAME' : entry.username,
                         'password' : entry.password,
                         
-                        }
-                self.list_ftp_credentials.append(entry_dict)
-                if entry.title == keepass_ftp_title:
-                    self.default_ftp_credentials = entry_dict
+                        })
+                # if entry.title == keepass_ftp_title:
+                #     self.default_ftp_credentials = entry_dict
                     
         except Exception as ex:
             logger.error(f'ошибка установки значений FTP {ex}')
@@ -534,17 +559,23 @@ class ProjectSettings():
         # --------------------------- SMTP ---------------------------
         try:
             """! """
-            entries = kp.find_groups(path=['smtp']).entries
+            #entries = kp.find_groups(path=['smtp']).entries
             
-            for entry in entries:
-                entry_dict = {
+            for entry in kp.find_groups(path=['smtp']).entries:
+                # entry_dict = {
+                # 'server': entry.custom_properties['server'],
+                # 'USERNAME' : entry.username,
+                # 'password' : entry.password,
+                # 'receiver': entry.custom_properties['receiver'],
+                
+                # }
+                self.list_smtp_credentials.append({
                 'server': entry.custom_properties['server'],
                 'USERNAME' : entry.username,
                 'password' : entry.password,
                 'receiver': entry.custom_properties['receiver'],
                 
-                }
-                self.list_smtp_credentials.append(entry_dict)
+                })
                 
                 if entry.title == keepass_smtp_title:
                     self.default_smtp_credentials = entry_dict
@@ -662,7 +693,7 @@ class ProjectSettings():
             if client in credentials['username']:
                 return credentials
 
-        logger.warning ('`username = [{client}]` ALIEXPRESS не найден')
+        logger.warning (f'`username = [{client}]` ALIEXPRESS не найден')
         return False
         
     # ------------------------------------------------------------- GET API PRESTASHOP -------------------------------------
@@ -685,7 +716,7 @@ class ProjectSettings():
             if client in credentials['username']: 
                 return credentials
 
-        logger.warning ('`username = [{client}]` PRESTASHOP не найден')
+        logger.warning (f'`username = [{client}]` PRESTASHOP не найден')
         return False
         pass
 
@@ -821,21 +852,21 @@ class ProjectSettings():
         
 
     # ------------------------------------------------------------- suppliers_dict() -------------------------------------
-    @property
-    def suppliers_dict(self) -> dict:
-        """! @~russian *[getter]* Словарь поставщиков из `suppliers/suppliers_dict.json` """
-        """! @~english
-        @brief Dictionary of suppliers from `suppliers/suppliers_dict.json`
-        """
+    # @property
+    # def suppliers_dict(self) -> dict:
+    #     """! @~russian *[getter]* Словарь поставщиков из `suppliers/suppliers_dict.json` """
+    #     """! @~english
+    #     @brief Dictionary of suppliers from `suppliers/suppliers_dict.json`
+    #     """
 
-        return self._suppliers_dict
+    #     return self._suppliers_dict
     
-    @suppliers_dict.setter
-    def suppliers_dict(self):
-        """! *[setter]* """
-        self._suppliers_dict = j_loads (Path (self.dir_root, 'suppliers', 'suppliers_dict.json'))
+    # @suppliers_dict.setter
+    # def suppliers_dict(self):
+    #     """! *[setter]* """
+    #     self._suppliers_dict = j_loads (Path (self.dir_root, 'suppliers', 'suppliers_dict.json'))
 
-    # ... (остальные методы)
+    # # ... (остальные методы)
 
 
 

@@ -77,7 +77,8 @@ class PrestaCategory:
         )
         category_data = response.json()['categories'][0]
         return category_data['id'] if category_data else None
-
+    
+    #@logs_and_errors_decorator(default_return =  False)
     def add_category_prestashop(self, category_name, parent_category_name=None, parent_category_id=2):
         """
         Метод для добавления новой категории в PrestaShop.
@@ -102,7 +103,8 @@ class PrestaCategory:
             headers={'Authorization': 'Bearer ' + self.API_KEY}
         )
         print(response.json())
-
+        
+    #@logs_and_errors_decorator(default_return =  False)
     def delete_category_prestashop(self, category_id):
         """
         Метод для удаления категории из PrestaShop по ее ID.
@@ -114,7 +116,8 @@ class PrestaCategory:
             headers={'Authorization': 'Bearer ' + self.API_KEY}
         )
         print(response.json())
-
+        
+    #@logs_and_errors_decorator(default_return =  False)
     def update_category_prestashop(self, category_id, new_name):
         """
         Метод для обновления имени категории в PrestaShop по ее ID.
@@ -130,44 +133,9 @@ class PrestaCategory:
         )
         print(response.json())
 
-    # def get_list_parent_categories_prestashop(self, category_id, category_name=None):
-    #     """
-    #     Метод для получения списка родительских категорий от заданной категории в PrestaShop.
-
-    #     @param category_id: ID категории, от которой нужно получить родительские категории
-    #     @param category_name: Имя категории, от которой нужно получить родительские категории (по умолчанию None)
-    #     @returns  Список родительских категорий
-    #     """
-    #     if category_name:
-    #         category_id = self._get_category_id_by_name(category_name)
-
-    #     response = requests.get(
-    #         self.API_DOMAIN + f'/categories/{category_id}',
-    #         params={'display': 'full'},
-    #         headers={'Authorization': 'Bearer ' + self.API_KEY}
-    #     )
-    #     response_json = response.json()
-    #     category_data = response.json()['category']
-        
-    #     parents = []
-    #     while category_data['id_parent'] != '0':
-    #         parent_id = category_data['id_parent']
-    #         response = requests.get(
-    #             self.API_DOMAIN + f'categories/{parent_id}',
-    #             params={'display': 'full'},
-    #             headers={'Authorization': 'Bearer ' + self.API_KEY}
-    #         )
-    #         category_data = response.json()['category']
-    #         parents.append(category_data['name'])
-
-    #     return parents
-
-
-   
-        
 
     #@logs_and_errors_decorator(default_return =  False)
-    def get_list_parent_categories(self, id_category: int, parent_categories_list:List = []) -> list:
+    def get_list_parent_categories(self, id_category: int, parent_categories_list:List[int] = []) -> list:
         """! @~russian Вытаскивет из базы данных Prestashop родительские категории от заданной 
         @details функция через API получает список категорий
 
@@ -176,16 +144,30 @@ class PrestaCategory:
         @returns `list`  Список родительских категорий
         """
 
-        # 1. Получение списка категорий
-        """! @todo Разобраться с логикой работы функции"""
+        # 1. Получение списка категорий.
+        
         category_dict = PrestaAPIV3.get('categories', id_category)
-        _parent_category = int(category_dict['category']['id_parent'])
-        
-        if _parent_category <= 2:
+        """! возвращает словарь
+        ```python
+        {'category': 
+                {'id': 11259, 
+                'id_parent': '11248', 
+                'level_depth': '5', 
+                'nb_products_recursive': -1, 
+                'active': '1', 
+                'id_shop_default': '1', 
+                'is_root_category': '0', 
+                'position': '0', 
+                'date_add': '2023-07-25 11:58:08', ...}
+        }```"""
+        _parent_category: int = int (category_dict['category']['id_parent'])
+        parent_categories_list.append (_parent_category)
+    
+        if _parent_category <= 2: ## <- `2` корневая директория
             return parent_categories_list
-        
-        parent_categories_list.append(_parent_category)
-        self.get_list_parent_categories(_parent_category, parent_categories_list)
+            pass
+        else:
+            return self.get_list_parent_categories(_parent_category, parent_categories_list)
         
 
     

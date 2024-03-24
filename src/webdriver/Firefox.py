@@ -248,10 +248,12 @@ class Firefox(FF):
                     ну, или он не установлен в ос.
             ----------------------------------
                         {ex}''')
+            """! @todo Сделать перезупск драйвера"""
             return False
 
         except Exception as ex:
             logger.critical(f' Упал webdriver Firefox. Общая ошибка:  {ex}')
+            """! @todo Сделать перезупск программы"""
             return False
          # END selenium 4
          

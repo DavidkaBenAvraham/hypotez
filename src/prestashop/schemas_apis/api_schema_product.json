@@ -390,9 +390,9 @@
     },
     "associations": {
       "categories": {
-        "category": {
-          "id": ""
-        }
+        "category": [
+          { "id": "" }
+        ]
       },
       "images": {
         "image": {

@@ -28,11 +28,11 @@ from src.tools import SF, SN
 # Функция grabber() собирает поля товара. Для каждого поля есть своя функия заполнитель
 
 s: Supplier = None
-p: Product = Product()
-c: Category = Category()
+p: Product = None #Product()
+c: Category = None #Category()
 l: Dict = {}
 d: Driver = None
-f: ProductFields = ProductFields()
+f: ProductFields = None #ProductFields()
 
 
 #@logs_and_errors_decorator
@@ -50,10 +50,13 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	s = supplier
 
 	global p 
-	#p = Product ()
+	p = Product()
+
+	global c
+	c = Category()
 
 	global f
-	#f = ProductFields ()
+	f = ProductFields()
 
 	global d
 	d = s.driver
@@ -168,8 +171,9 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	################################################################################
 	#additional_categories_list: List = Category.get_list_parent_categories(s.current_scenario['presta_categories']['default_category'])
 	f.id_category_default = field_id_category_default()
-	additional_categories_list: List = c.get_list_parent_categories(f.id_category_default)
-	f.associations.update({'categories':additional_categories_list,})
+	#additional_categories_list: List = c.get_list_parent_categories(f.id_category_default)
+	#f.associations.update ( {'categories': [additional_categories(additional_categories_list),] } )
+	f.associations.update ( field_additional_categories(f.id_category_default) )
 	################################################################################
 	
 	#f.id_default_combination = field_id_default_combination()
@@ -228,7 +232,7 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	#f.weight = field_weight()
 	#f.wholesale_price = field_wholesale_price()
 	#f.width = field_width()    
-	pass
+	...
 	return f
     
 
@@ -418,18 +422,16 @@ def field_available_now():
 
 
 
-# #@logs_and_errors_decorator(default_return=False)
-# def field_additional_categories():
-# 	"""! @~russian 
-# 	@brief
-# 	@details
-# 	"""
-# 	additional_categories_list: List = Category.get_list_parent_categories(s.current_scenario['presta_categories']['default_category'])
-		
-# 	#associations(self, value:dict = {'categories':[3,4],})
-# 	f.associations.update({'categories':additional_categories_list,})
-# 	return f.category_ids
-# 	pass
+#@logs_and_errors_decorator(default_return=False)
+def field_additional_categories(id_category_parent):
+	"""! @~russian Дополнительные категории, восстановленные от целевой к  корнeвой (`2`)
+	@brief
+	@details
+	"""
+	#additional_categories_list = c.get_list_parent_categories(id_category_parent)
+	return {'categories': [{'id': cat_id} for cat_id in c.get_list_parent_categories(id_category_parent)] }
+	
+	pass
 	
 
 # #@logs_and_errors_decorator(default_return=False)

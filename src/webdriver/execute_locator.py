@@ -807,9 +807,9 @@ def click(driver, locator) -> bool:
     # Get the WebElement
     webelement = get_webelements_from_page (driver, locator)
 
-    if not webelement and not locator['mandatory']:   # <- не найден НЕобязательный элемент
+    if not webelement and not locator['mandatory']:   ## <- не найден НЕобязательный элемент
         return False
-    elif not webelement and locator['mandatory']:  # <- не найден Обязательный элемент
+    elif not webelement and locator['mandatory']:  ## <- не найден ОБЯЗАТЕЛЬНЫЙ элемент
         logger.error(f"Could not find element to click. Locator: {locator}")
         return False
     

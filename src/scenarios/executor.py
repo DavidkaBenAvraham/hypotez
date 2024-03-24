@@ -175,7 +175,9 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> Union[list, di
         Внимание! В словаре `product_fields` находится служебный словарь `dict_assist_fields`.
         Его надо вычленить в отдельный словарь
         """
-        if not product_fields: continue   ## <- Ошибка сбора данных со страницы. 
+        if not product_fields:
+            logger.error(f'не удалось собрать значение полей товара по адресу {url}')
+            continue   ## <- Ошибка сбора данных со страницы. 
 
            
         dict_presta_fields: Dict = {key: value for key, value in product_fields.dict_presta_fields.items() if value is not None and value != ''}

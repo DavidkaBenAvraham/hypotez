@@ -1,17 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\categories",
-    "\\src\\openai",
-    "\\src\\openai\\llmsearch",
-    "\\src\\openai\\projects",
-    "\\src\\openai\\projects\\emil",
-    "\\src\\openai\\projects\\emil\\webpages",
+    "\\docs\\materials\\prestashop",
+    "\\src\\gui",
+    "\\src\\gui\\tk",
     "\\src\\prestashop",
-    "\\src\\product",
-    "\\src\\webdriver"
+    "\\src\\prestashop\\tables_structure",
+    "\\src\\prestashop\\tables_structure\\help \u043F\u043E \u043C\u043E\u0434\u0443\u043B\u044F\u043C",
+    "\\src\\prestashop\\tables_structure\\help \u043F\u043E \u043C\u043E\u0434\u0443\u043B\u044F\u043C\\controlles",
+    "\\src\\prestashop\\tables_structure\\help \u043F\u043E \u043C\u043E\u0434\u0443\u043B\u044F\u043C\\controlles\\admin"
   ],
-  "SelectedNode": "\\src\\prestashop\\category.py",
+  "SelectedNode": "\\src",
   "PreviewInSolutionExplorer": false
 }
