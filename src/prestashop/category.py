@@ -1,14 +1,13 @@
-"""!  Kласс категории товара в `Prestashop`
-Класс предоставляет методы для добавления, удаления, обновления категорий, 
-а также получения списка родительских категорий от заданной.
+"""! Class of product category in `Prestashop`
+The class provides methods for adding, deleting, updating categories, 
+as well as obtaining a list of parent categories from a given one.
 
-
- @details `PrestaCategory` слой между категориями клиента (Prestashop, в моем случае) и поставщика
+@details `PrestaCategory` layer between client categories (Prestashop, in my case) and suppliers
  
- @note Клиенты могут быть каждый со своим уникальным деревом категорий, которые только ему и понятны. 
- Привязка товара к категории описана в сценариях поставщиков
+@note Clients can each have their own unique category tree, which is only understandable to them. 
+Product binding to category is described in supplier scenarios
 
- @image html categories_tree.png 
+@image html categories_tree.png 
 """
 
 # -*- coding: utf-8 -*-
@@ -18,9 +17,8 @@ from attr import attr, attrs
 from pathlib import Path
 from typing import Union, List, Dict
 import requests
+
 # ----------------------------------
-
-
 from src.settings import gs
 from src.helpers import  logger, logs_and_errors_decorator
 from src.io_interface import j_loads as j_loads
@@ -42,13 +40,14 @@ class PrestaCategory:
         prestacategory.update_category_prestashop(4, 'Updated Category Name')
         print(prestacategory.get_list_parent_categories_prestashop(5))
         ```    
-        """
+    """
+
     DOMAIN = next((domain for domain in gs.list_prestashop_api_credentials if domain.get('HAVE_FULL_CATEGORIES_TREE') == True), None)
-    
     API_DOMAIN:str = DOMAIN ['API_DOMAIN']
     API_KEY: str = DOMAIN ['API_KEY']
     PrestaAPIV: object = PrestaAPIV(API_DOMAIN, API_KEY)
-    
+
+    #@logs_and_errors_decorator(default_return =  False)
     def __init__(self, *args, **kwards):
         """! Инициализация объекта PrestaCategory с учетными данными для PrestaShop API.
 
@@ -56,8 +55,7 @@ class PrestaCategory:
         @param API_KEY: Ключ API PrestaShop
         """
 
-            
-
+    #@logs_and_errors_decorator(default_return =  False)
     def _get_category_id_by_name(self, category_name ,PrestaAPIV):
         """
         Вспомогательный метод для получения ID категории по ее имени.

@@ -2,17 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\helpers",
     "\\src\\prestashop",
-    "\\src\\prestashop\\presta_apis",
-    "\\src\\prestashop\\presta_apis\\presta_python_api_v3",
-    "\\src\\product",
     "\\src\\scenarios",
+    "\\src\\settings",
     "\\src\\suppliers",
     "\\src\\suppliers\\hb",
-    "\\src\\suppliers\\hb\\scenarios",
-    "\\src\\webdriver"
+    "\\src\\suppliers\\hb\\scenarios"
   ],
-  "SelectedNode": "\\src\\scenarios\\executor.py",
+  "SelectedNode": "\\src\\prestashop\\product.py",
   "PreviewInSolutionExplorer": false
 }
