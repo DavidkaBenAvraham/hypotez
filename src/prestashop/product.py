@@ -27,7 +27,7 @@ from typing import Union
 from src.settings import gs
 from src.helpers import  logger, logs_and_errors_decorator, jprint, pprint
 from src.io_interface import j_loads, j_dumps
-from .presta_apis import  PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
+from .presta_apis import  PrestaAPIV
 # --------------------------------
 
 
@@ -46,17 +46,18 @@ class PrestaProduct():
     get(id_product): Возвращает информацию о товаре по ID
     """
 
-
+    PrestaAPIV: object = None
 
     #@logs_and_errors_decorator(default_return =  False)
-    def __init__(self,*args,**kwards):
+    def __init__(self, api_credentials, *args,**kwards):
         
         self.params: dict = {'display':'full', 
                         'sort':None, 
                         'limit':None, 
                         'language':None, 
                         'io_format' : 'JSON' , 
-                        'output_format' : 'JSON'}        
+                        'output_format' : 'JSON'} 
+        self.PrestaAPIV = PrestaAPIV(api_credentials['API_DOMAIN'], api_credentials ['API_KEY'])
         pass
 
 
@@ -64,11 +65,10 @@ class PrestaProduct():
     
     
     #@logs_and_errors_decorator(default_return =  False)
-    def get(self, 
+    def get(self, api_credentials,
             product_id: int = None, 
             product_reference:str = None, 
-            search_filter: Union[str, dict] = None, 
-            PrestaAPIV: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> dict:
+            search_filter: Union[str, dict] = None, ) -> dict:
         """! Тестовая функция, по сути повтор check, но работает непосредстевенно
         @details Я могу задать параметр поиска по `product_id`, `product_reference` 
         или получить готовый фильтр поиска. f.e.`{'filter[id]': product_id}` )
@@ -85,7 +85,7 @@ class PrestaProduct():
         #dic_product_type_PrestaAPIV2 = PrestaAPIV2.get(f'products/{id_product}')
         #productsearch_filter: dict = {} if not filter else filter
 
-        
+        # build filters
         if  product_reference:
             self.params.update( {'filter[reference]': product_reference}  )
             """! Я могу прислать параметр `product_reference` """ 
@@ -98,25 +98,17 @@ class PrestaProduct():
             """! Я могу прислать готовый фильтр """
      
 
-
-        if PrestaAPIV == 'V1':
-            """! в версии PrestaAPIV возврщается Словарь товара если товар уже существует в базе Prestashop."""
-            response = PrestaAPIV1.get('products', product_id, search_filter = search_filter)
-        elif PrestaAPIV == 'V2':
-            response = PrestaAPIV2.get('products', params = self.params)            
-        elif  PrestaAPIV == 'V3':            
-            response = PrestaAPIV3.get('products', search_filter = self.params) 
             
             # if product_reference:
             #     search_filter = f"[reference] = [{product_reference}]"
             # if product_id:
             #     search_filter = f"[id] = [{product_id}]"
             # if search_filter:  
-                #response = PrestaAPIV3.get('products', search_filter = search_filter, display = 'full')
+                #response = PrestaAPIV.get('products', search_filter = search_filter, display = 'full')
             #else:
-                #response = PrestaAPIV3.get('products') # <- вываливаю  все товары из бд.
+                #response = PrestaAPIV.get('products') # <- вываливаю  все товары из бд.
 
-        return response
+        #return response
     
 
     
@@ -135,7 +127,7 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def add(self, product_dict: dict, data_format = 'JSON', PrestaAPIV: Union[str('V1'),str('V2'),str('V3')] = 'V1') -> Union[dict, False]:
+    def add(self,  product_dict: dict, data_format = 'JSON') -> Union[dict, False]:
         """ Добавление нового товара в БД PRESTASHOP через API
         -----------------
        @param
@@ -146,43 +138,45 @@ class PrestaProduct():
        @returns
         product:dict - Заполненный словарь добавленного товара в случае успеха, иначе сообщение об ошибке
         """
-        data: dict = { 'product': product_dict }
+            
         
-        while gs.
-        if PrestaAPIV == 'V3':
-            try:
-                
-                response = PrestaAPIV3.add('products', data)
-                return response
-            except Exception as ex:
-                print('-------------------------V3 ERROR --------------------------------------')
-                logger.error(ex)
-                print('---------------------------------------------------------------')
-                return False
-        elif PrestaAPIV == 'V2':
-            try:
-                response = PrestaAPIV2.add('products', data, data_format)['product']
-                return response
-            except Exception as ex:
-                print('--------------------------V2 ERROR -------------------------------------')
-                logger.error(ex)
-                print('---------------------------------------------------------------')
-                return False
-        else:
-            try:
-                response = PrestaAPIV1.add('products', data)['product']
-                return response
+        data: dict = { 'product': product_dict }
+        try:
+            return self.PrestaAPIV.add('products', data)
 
-            except Exception as ex:
-                print('------------------------- V1 ERROR --------------------------------------')
-                logger.error(ex)
-                print('---------------------------------------------------------------')
-                return False
+        # if PrestaAPIV == 'V3':
+        #     try:
+                
+        #         response = PrestaAPIV.add('products', data)
+        #         return response
+        #     except Exception as ex:
+        #         print('-------------------------V3 ERROR --------------------------------------')
+        #         logger.error(ex)
+        #         print('---------------------------------------------------------------')
+        #         return False
+        # elif PrestaAPIV == 'V2':
+        #     try:
+        #         response = PrestaAPIV2.add('products', data, data_format)['product']
+        #         return response
+        #     except Exception as ex:
+        #         print('--------------------------V2 ERROR -------------------------------------')
+        #         logger.error(ex)
+        #         print('---------------------------------------------------------------')
+        #         return False
+        # else:
+        #     try:
+        #         response = PrestaAPIV1.add('products', data)['product']
+        #         return response
+        
+        
+        except Exception as ex:
+            logger.error(ex)
+            return False
 
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def update(self, id_product: int, product_dict: dict, PrestaAPIV: Union[str('V1'),str('V2'),str('V3')] = 'V3')-> dict:
+    def update(self,  id_product: int, product_dict: dict, )-> dict:
         """ Изменение данных о существующем товаре
         @param id_product - 
         @param product:dict - Заполненный словарь товара / поля класса Product
@@ -190,13 +184,10 @@ class PrestaProduct():
         @returns product - изменненый товар в случае успеха иначе сообщение об ошибке от prestashop
         
         """
+        
+        
         resourse = f'products/{id_product}'
-        if PrestaAPIV == 'V3':
-            return   PrestaAPIV3.write(resourse, product_dict)
-        elif PrestaAPIV == 'V2':
-            return   PrestaAPIV2.add(resourse, product_dict)['product']
-        else:
-            return   PrestaAPIV1.add(resourse, product_dict)
+        return   self.PrestaAPIV.add(resourse, product_dict)
 
         if isinstance(response, list) and len(response) > 0:
             return response[0]
@@ -222,7 +213,7 @@ class PrestaProduct():
     #    pass
 
     #@logs_and_errors_decorator(default_return =  False)
-    def get_product_schema(self, PrestaAPIV: Union[str('V1'),str('V2'),str('V3')] = 'V1') -> Union[dict, False]:
+    def get_product_schema(self) -> Union[dict, False]:
         """JSON схема товара
 
         @returns
@@ -231,7 +222,7 @@ class PrestaProduct():
         params = { 'display': 'full'},  ## <- или 'basic' в зависимости от того, какую информацию я хочу получить
         
         params = 'products'
-        response = PrestaAPIV1.get('products',1658)
+        response = self.PrestaAPIV.get('products',1658)
         if response.status != 200:
             logger.error(f'Ошибка при выполнении запроса: {response}')
             return False
@@ -241,7 +232,7 @@ class PrestaProduct():
 
     
     #@logs_and_errors_decorator(default_return =  False)
-    def upload_image(self, product_id: int, local_file_path: str) -> Union[int, False]:
+    def upload_image(self,  product_id: int, local_file_path: str) -> Union[int, False]:
         """
         Загружаю картинку, получаю или id_image или False
         @param
@@ -251,20 +242,20 @@ class PrestaProduct():
             id_image `int`  :  id_image from src.prestashop db if success else False
 
         """
-        return PrestaAPIV3.create_binary('products', product_id, local_file_path)
+        return self.PrestaAPIV.create_binary('products', product_id, local_file_path)
 
     def get_product_images(self, product_id):
         """! """
-        img = PrestaAPIV3.get_image_product(product_id)
+        img = PrestaAPIV.get_image_product(product_id)
         return img
         pass
     
     #@logs_and_errors_decorator(default_return =  False)
-    def delete(self, id_product: Union[int,str], PrestaAPIV: Union[str('V1'),str('V2'),str('V3')] = 'V3') -> dict:
+    def delete(self, id_product: Union[int,str], ) -> dict:
         """ Удаляю товер из бд """
 
         #return PrestaProd.delete_product(f'products/{id_product}')
-        return  PrestaAPIV1.delete(f'products/{id_product}')
+        return  self.PrestaAPIV.delete(f'products/{id_product}')
 
         if isinstance(response, list) and len(response) > 0:
             return response[0]

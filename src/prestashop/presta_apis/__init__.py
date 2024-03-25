@@ -6,6 +6,7 @@
 #! /usr/share/projects/hypotez/venv/scripts python
 
 from src.settings import gs
+from typing import Union
 
 """! Все подключения происходят внутри кода, т.к. я подключаюсь к нескольким базам """
 
@@ -16,6 +17,15 @@ from src.settings import gs
 from .presta_python_api_v1 import PrestaAPIV1 
 from .presta_python_api_v2 import PrestaAPIV2
 from .presta_python_api_v3 import PrestaAPIV3, PrestaAPIV3Format
+
+PrestaAPIV: Union[PrestaAPIV1,PrestaAPIV2,PrestaAPIV3] = None
+
+if 'PrestaAPIV3' in gs.default_PrestaAPIV_module:
+  PrestaAPIV = PrestaAPIV3
+elif 'PrestaAPIV2' in gs.default_PrestaAPIV_module:
+  PrestaAPIV = PrestaAPIV2
+elif 'PrestaAPIV1' in gs.default_PrestaAPIV_module:
+  PrestaAPIV = PrestaAPIV1
 
 # PrestaAPIV1 = PrestaAPIV1 (API_DOMAIN, API_KEY)
 # PrestaAPIV2 = PrestaAPIV2 (API_DOMAIN, API_KEY)

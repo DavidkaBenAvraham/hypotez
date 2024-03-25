@@ -27,10 +27,11 @@
 import sys
 import os
 
-from src.settings import gs
+#from src.settings import gs
 from .product import PrestaProduct
 from .supplier import PrestaSupplier
 from .category import PrestaCategory
 from .language import PrestaLanguage
 from .shop import PrestaShop
 from .image import save_image_from_url_to_temp_as_png
+from .presta_apis import  PrestaAPIV

@@ -54,6 +54,7 @@ sys.path.append(str(dir_src))
 # Imports 
 from src.helpers import logger, logger_decorators, logs_and_errors_decorator, Beeper, \
                         KeepassException, DefaultSettingsException, jprint, pprint
+
 from src.io_interface import j_loads
 #from src.helpers.beeper import Beeper
 # -----------------------------------
@@ -200,6 +201,7 @@ class ProjectSettings():
     dir_root = dir_root
     dir_src = dir_src
     settings: dict = j_loads (Path (dir_src, 'settings', 'global_settings.json') )
+    default_PrestaAPIV_module = settings ['default_prestaapi']
     
     # -------------------------- PATH ---------------------------
     try:
@@ -493,9 +495,10 @@ class ProjectSettings():
                     'API_KEY' : entry.custom_properties['api_key'],
                     'API_DOMAIN': entry.custom_properties['api_domain'],
                     'USERNAME': entry.username,
+                    'HAVE_FULL_CATEGORIES_TREE': bool(entry.custom_properties['have_full_categoris_tree']),
                 } 
                 )
-                
+                ...
                 # if entry.title == keepass_prestashop_api_title: 
                 #     self.default_prestashop_api_credentials = entry_dict   
                         

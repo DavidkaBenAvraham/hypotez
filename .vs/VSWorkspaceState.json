@@ -1,15 +1,18 @@
 {
   "ExpandedNodes": [
     "",
-    "\\docs\\materials\\prestashop",
-    "\\src\\gui",
-    "\\src\\gui\\tk",
+    "\\src",
+    "\\src\\helpers",
     "\\src\\prestashop",
-    "\\src\\prestashop\\tables_structure",
-    "\\src\\prestashop\\tables_structure\\help \u043F\u043E \u043C\u043E\u0434\u0443\u043B\u044F\u043C",
-    "\\src\\prestashop\\tables_structure\\help \u043F\u043E \u043C\u043E\u0434\u0443\u043B\u044F\u043C\\controlles",
-    "\\src\\prestashop\\tables_structure\\help \u043F\u043E \u043C\u043E\u0434\u0443\u043B\u044F\u043C\\controlles\\admin"
+    "\\src\\prestashop\\presta_apis",
+    "\\src\\prestashop\\presta_apis\\presta_python_api_v3",
+    "\\src\\product",
+    "\\src\\scenarios",
+    "\\src\\suppliers",
+    "\\src\\suppliers\\hb",
+    "\\src\\suppliers\\hb\\scenarios",
+    "\\src\\webdriver"
   ],
-  "SelectedNode": "\\src",
+  "SelectedNode": "\\src\\scenarios\\executor.py",
   "PreviewInSolutionExplorer": false
 }

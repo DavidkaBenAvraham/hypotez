@@ -37,6 +37,7 @@ from src.helpers import logger,  logs_and_errors_decorator, DriverException, jpr
 from src.io_interface import j_loads, j_dumps
 from src.product import Product, ProductFields
 from src.prestashop import save_image_from_url_to_temp_as_png
+from src.prestashop import PrestaAPIV
 # -------------------------------
 
 ################################################################################################################
@@ -191,32 +192,45 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> Union[list, di
         """! `quantity` нельзя задавать при добавлении нового товара """
             
 
-            
-        p = Product()
-        """! Для каждого товара я заново переопрделяю класс `Product`, 
-        иначе может попасть мусор (данные прошлого товара) """ 
-        pass
-
         # 5.
+        execute_prestashop_insert(dict_presta_fields)
         
-        # 5.1 строю фильтр API запроса
-        reference = dict_presta_fields["reference"]
-        search_filter: Dict = { 'filter[reference]': '['+ reference + ']',  }
-        """! Для `V3` Я могу передать фильтр, как строку `filter[id] = [5]` и как словарь `{'filter[id]':'[5]'}`	
-        По умолчанию я использую словарь """
-        display: Dict = {'display':'full'}
-        search_filter.update(display)            
+           
         
+
+#@logs_and_errors_decorator(default_return=False)
+def execute_prestashop_insert(dict_presta_fields:Dict) -> bool:
+    """! @~russian   Добавляю или проверяю наличия товара. Делаю последовательное содинение с Пресашоп АПИ
+    @brief Это оч плохое решение. Но это не костыь, а проверка работоспособности
+    @details
+    @todo - Сделать здесь многопотчонсть (или асинхронность)
+    """
+
+       
+    """! Для каждого товара я заново переопрделяю класс `Product`, 
+    иначе может попасть мусор (данные прошлого товара) """ 
+    pass
+    # 5.1 строю фильтр API запроса
+    reference = dict_presta_fields["reference"]
+    search_filter: Dict = { 'filter[reference]': '['+ reference + ']',  }
+    """! Для `V3` Я могу передать фильтр, как строку `filter[id] = [5]` и как словарь `{'filter[id]':'[5]'}`	
+    По умолчанию я использую словарь """
+    display: Dict = {'display':'full'}
+    search_filter.update(display) 
+    
+    for api_credentials in gs.list_prestashop_api_credentials:
+        """! Подключаюсь к каждому клиенту по очереди  """
+        p = Product(api_credentials)    
         # 5.2 Получаю ответ от престашоп. 
-        check_prod_presence = p.get( search_filter = search_filter, PrestaAPIV = 'V3' )
+        check_prod_presence = p.get( search_filter, api_credentials)
         """!  Проверка наличия товара в базе данных.
         если товара еще нет в бд - вернется пустое значение.
         Если товар уже существует - редактирую поля если они изменились (цена, описание итп)"""
-        
-        # 6. 
+        pass
+                 
         if check_prod_presence is False or not check_prod_presence or len(check_prod_presence) == 0:  ## <- вернулся пустой responce от сервера. Значит товара с таким reference нет в бд престашоп
             try: ## <- add new product
-                added_prod_dict = p.add(dict_presta_fields, 'JSON', 'V3')['products'][0] 
+                added_prod_dict = p.add(dict_presta_fields, 'JSON')['products'][0] 
                 """! Добавляю товар в бд. В ответ получаю словарь с параметрами добавленного товара """
                 # 6.1
                 product_id = added_prod_dict['id']
@@ -266,13 +280,17 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> Union[list, di
             pass
             
             
-        # 7. Товар уже есть в бд престашоп    
-        else:
-            pass
-            """! @todo Товар в бд. Реализовать редактирование """
+    # 7. Товар уже есть в бд престашоп    
+    else:
+        pass
+        """! @todo Товар в бд. Реализовать редактирование """
                 
-                
-    return True
+
+
+
+
+
+
 
 
 

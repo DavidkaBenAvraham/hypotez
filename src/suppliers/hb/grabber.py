@@ -24,11 +24,13 @@ from src.io_interface import j_loads, j_dumps
 from src.helpers import logger, ExecuteLocatorException
 from src.webdriver import Driver
 from src.tools import SF, SN
+from src.prestashop import PrestaAPIV
+
 
 # Функция grabber() собирает поля товара. Для каждого поля есть своя функия заполнитель
 
 s: Supplier = None
-p: Product = None #Product()
+#p: Product = None #Product()
 c: Category = None #Category()
 l: Dict = {}
 d: Driver = None
@@ -49,8 +51,8 @@ def grab_product_page(supplier: Supplier, async_run = True) -> ProductFields :
 	global s
 	s = supplier
 
-	global p 
-	p = Product()
+	# global p 
+	# p = Product()
 
 	global c
 	c = Category()
@@ -429,7 +431,7 @@ def field_additional_categories(id_category_parent):
 	@details
 	"""
 	#additional_categories_list = c.get_list_parent_categories(id_category_parent)
-	return {'categories': [{'id': cat_id} for cat_id in c.get_list_parent_categories(id_category_parent)] }
+	return {'categories': { 'category': [{'id': cat_id} for cat_id in c.get_list_parent_categories(id_category_parent)] } }
 	
 	pass
 	
@@ -548,7 +550,7 @@ def field_description():
 	"""! @~russian поле полного описания товара 
 	@details
 	"""
-	return d.execute_locator (l["description"] )[0].text
+	return d.execute_locator (l["description"] )[0].text or ''
 	pass
 
 #@logs_and_errors_decorator(default_return=False)
@@ -564,7 +566,7 @@ def field_ean13():
 	@brief
 	@details
 	"""
-	return d.execute_locator ( l ["ean13"] )
+	return d.execute_locator ( l ["ean13"] )  or ''
 	pass
 
 
@@ -586,7 +588,7 @@ def field_height():
 	@brief
 	@details
 	"""
-	return d.execute_locator ( l ["height"] )
+	return d.execute_locator ( l ["height"] )  or ''
 	pass
 	
 
@@ -596,7 +598,7 @@ def field_how_to_use():
 	@brief
 	@details
 	"""
-	return d.execute_locator ( l ["how_to_use"] ) [0].text
+	return d.execute_locator ( l ["how_to_use"] ) [0].text	 or ''
 	pass
 	
                 	
@@ -715,7 +717,7 @@ def field_indexed():
 def field_ingridients():
 	"""! @~russian Состав. Забираю с сайта HTML с картинками ингридиентов """
 	
-	return d.execute_locator ( l["ingridients"] )[0].text
+	return d.execute_locator ( l["ingridients"] )[0].text or ''
 	pass
 	
 
@@ -726,7 +728,7 @@ def field_meta_description():
 	@brief
 	@details
 	"""
-	d.execute_locator ( l['meta_description'] )
+	d.execute_locator ( l['meta_description'] ) or ''
 	pass
 	
 
@@ -736,7 +738,7 @@ def field_meta_keywords():
 	@brief
 	@details
 	"""
-	return d.execute_locator ( l['meta_keywords'] )
+	return d.execute_locator ( l['meta_keywords'] ) or ''
 	pass
 	
         
@@ -747,7 +749,7 @@ def field_meta_title():
 	@brief
 	@details
 	"""
-	return d.execute_locator ( l['meta_title'] )
+	return d.execute_locator ( l['meta_title'] ) or ''
 	pass
 	
 

@@ -19,6 +19,6 @@ from src.categories import Category
 from src.tools import SF, SN
 
 from src.io_interface import j_loads, j_dumps
-from src.prestashop import PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
+from src.prestashop import PrestaAPIV
 
 

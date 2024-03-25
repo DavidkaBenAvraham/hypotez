@@ -35,7 +35,8 @@
       "keepass_prestashop_db_title": "emil-design.com",
       "keepass_ftp_title": "emil-design.com",
       "keepass_smtp_title": "davidka",
-      "keepass_prestashop_api_domain": "emil-design.com"
+      "keepass_prestashop_api_domain": "emil-design.com",
+        "site_have_full_categories_tree": false
     },
     "e-cat.co.il": {
       "keepass_aliexpress_api_title": "katia",
@@ -44,11 +45,12 @@
       "keepass_prestashop_db_title": "e-cat.co.il",
       "keepass_ftp_title": "e-cat.co.il",
       "keepass_smtp_title": "davidka",
-      "keepass_prestashop_api_domain": "e-cat.co.il"
+      "keepass_prestashop_api_domain": "e-cat.co.il",
+      "site_have_full_categories_tree": true
     }
   },
 
-
+  "default_prestaapi": "PrestaAPIV3",
 
 
   "supplier_prefix": [

@@ -48,8 +48,8 @@ class Product(PrestaProduct):
     """
     """ Я могу передать локаторы товара из сценария или изменить их на лету """
     #c = Category()    
-    def __init__(self, *args, **kwards):
-        super().__init__(*args, **kwards)
+    def __init__(self, api_credentials, *args, **kwards):
+        super().__init__(api_credentials, *args, **kwards)
         pass
 
     # #@logs_and_errors_decorator(default_return =  False)

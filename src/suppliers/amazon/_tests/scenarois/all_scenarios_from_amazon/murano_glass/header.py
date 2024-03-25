@@ -16,7 +16,7 @@ from src.categories import Category
 from src.tools import SF, SN
 from src.helpers import  logger, logs_and_errors_decorator, jprint, pprint
 from src.io_interface import j_loads, j_dumps
-from src.prestashop import PrestaAPIV1, PrestaAPIV2, PrestaAPIV3, upload_image
+from src.prestashop import PrestaAPIV, upload_image
 # ----------------
 
 def start_supplier(supplier_prefix: str = 'amazon' ):

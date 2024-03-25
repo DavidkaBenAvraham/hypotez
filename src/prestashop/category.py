@@ -33,13 +33,13 @@ import requests
 from src.settings import gs
 from src.helpers import  logger, logs_and_errors_decorator
 from src.io_interface import j_loads as j_loads
-from .presta_apis import  PrestaAPIV1, PrestaAPIV2, PrestaAPIV3
+from .presta_apis import  PrestaAPIV
 # --------------------------------
 
 
-# Загрузка учетных данных для PrestaShop API из настроек
-API_DOMAIN = gs.default_prestashop_api_credentials['API_DOMAIN']
-API_KEY = gs.default_prestashop_api_credentials['API_KEY']
+# # Загрузка учетных данных для PrestaShop API из настроек
+# API_DOMAIN = gs.default_prestashop_api_credentials['API_DOMAIN']
+# API_KEY = gs.default_prestashop_api_credentials['API_KEY']
 
 class PrestaCategory:
     """!    
@@ -52,8 +52,11 @@ class PrestaCategory:
         print(prestacategory.get_list_parent_categories_prestashop(5))
         ```    
         """
-    API_DOMAIN = API_DOMAIN
-    API_KEY = API_KEY
+    DOMAIN = next((domain for domain in gs.list_prestashop_api_credentials if domain.get('HAVE_FULL_CATEGORIES_TREE') == True), None)
+    
+    API_DOMAIN:str = DOMAIN ['API_DOMAIN']
+    API_KEY: str = DOMAIN ['API_KEY']
+    PrestaAPIV: object = PrestaAPIV(API_DOMAIN, API_KEY)
     
     def __init__(self, *args, **kwards):
         """! Инициализация объекта PrestaCategory с учетными данными для PrestaShop API.
@@ -62,8 +65,9 @@ class PrestaCategory:
         @param API_KEY: Ключ API PrestaShop
         """
 
+            
 
-    def _get_category_id_by_name(self, category_name):
+    def _get_category_id_by_name(self, category_name ,PrestaAPIV):
         """
         Вспомогательный метод для получения ID категории по ее имени.
 
@@ -79,7 +83,7 @@ class PrestaCategory:
         return category_data['id'] if category_data else None
     
     #@logs_and_errors_decorator(default_return =  False)
-    def add_category_prestashop(self, category_name, parent_category_name=None, parent_category_id=2):
+    def add_category_prestashop(self, category_name, PrestaAPIV, parent_category_name=None, parent_category_id=2):
         """
         Метод для добавления новой категории в PrestaShop.
 
@@ -105,7 +109,7 @@ class PrestaCategory:
         print(response.json())
         
     #@logs_and_errors_decorator(default_return =  False)
-    def delete_category_prestashop(self, category_id):
+    def delete_category_prestashop(self, category_id, PrestaAPIV):
         """
         Метод для удаления категории из PrestaShop по ее ID.
 
@@ -118,7 +122,7 @@ class PrestaCategory:
         print(response.json())
         
     #@logs_and_errors_decorator(default_return =  False)
-    def update_category_prestashop(self, category_id, new_name):
+    def update_category_prestashop(self, category_id,  new_name):
         """
         Метод для обновления имени категории в PrestaShop по ее ID.
 
@@ -135,7 +139,7 @@ class PrestaCategory:
 
 
     #@logs_and_errors_decorator(default_return =  False)
-    def get_list_parent_categories(self, id_category: int, parent_categories_list:List[int] = []) -> list:
+    def get_list_parent_categories(self, id_category: int,  parent_categories_list:List[int] = []) -> list:
         """! @~russian Вытаскивет из базы данных Prestashop родительские категории от заданной 
         @details функция через API получает список категорий
 
@@ -146,7 +150,7 @@ class PrestaCategory:
 
         # 1. Получение списка категорий.
         
-        category_dict = PrestaAPIV3.get('categories', id_category)
+        category_dict = self.PrestaAPIV.get('categories', id_category)
         """! возвращает словарь
         ```python
         {'category': 
