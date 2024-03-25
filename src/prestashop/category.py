@@ -8,16 +8,7 @@
  @note Клиенты могут быть каждый со своим уникальным деревом категорий, которые только ему и понятны. 
  Привязка товара к категории описана в сценариях поставщиков
 
- @section libs imports:
-  - attr 
-  - pathlib 
-  - typing 
-  - src.gs 
-  - src.helpers 
-  - src.gs 
-  - src.prestashop.prestashop 
-  - .images_exec 
-
+ @image html categories_tree.png 
 """
 
 # -*- coding: utf-8 -*-

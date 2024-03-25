@@ -193,13 +193,13 @@ def run_scenario(s, scenario: dict, scenario_name: str = None) -> Union[list, di
             
 
         # 5.
-        execute_prestashop_insert(dict_presta_fields)
+        execute_prestashop_insert(dict_presta_fields, dict_assist_fields)
         
            
         
 
 #@logs_and_errors_decorator(default_return=False)
-def execute_prestashop_insert(dict_presta_fields:Dict) -> bool:
+def execute_prestashop_insert(dict_presta_fields:Dict, dict_assist_fields:Dict) -> bool:
     """! @~russian   Добавляю или проверяю наличия товара. Делаю последовательное содинение с Пресашоп АПИ
     @brief Это оч плохое решение. Но это не костыь, а проверка работоспособности
     @details
@@ -236,19 +236,21 @@ def execute_prestashop_insert(dict_presta_fields:Dict) -> bool:
                 product_id = added_prod_dict['id']
                 product_reference = added_prod_dict['reference']
                 """! Мне нужен id товара и reference """
-                logger.info (pprint(product_id))
+                if not save_img(product_id, dict_assist_fields):
+                    logger.error(f'''Images for produt reference {product_reference} not saved! ''')
+                logger.info (f''' pprint(product_id) ''')
             except Exception as ex:
                 logger.error (f'ошибка добавления нового товара {ex}')
                 return False
             
+            
+            
             i: int = 0 ## <- счетчик картинок
-            def save_img(product_id:int,  image_url:str, i:int):
+            def save_img(product_id:int , dict_assist_fields: Dict) -> Union[object, bool]:
                 """! Функция сохранения картинок товара
                 @param product_id `int` - id  только что добавленного товара
-                @param image_url `str` - url картинки
-                @param i `int` - счетчик картинок
                 """
-                
+                ...
                 url_parts = image_url.rsplit('.', 1)
                 url_without_extension = url_parts[0]
                 extension = url_parts[1] if len(url_parts) > 1 else ''

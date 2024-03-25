@@ -380,14 +380,15 @@ class ProjectSettings():
             self.async_run: bool = self.settings ['async_run'] #@# <- Запуск программы в асинхронном режиме
             
             self.supplier_prefix: list = self.settings ['supplier_prefix']
-            """! получаю список поставщиков для выполнения сценариев """
+            """! I get a list of suppliers for running scripts """
             
             self.logger_onoff_decorator = self.settings ['beeper_and_log_decorator']['onoff_log_decorator']
             Beeper.silent: bool = self.settings ['beeper_and_log_decorator']['silent']
-            """! Включаю / отлючаю лог декораторы и пищалку. При работе с jupyter ne получается испоьзовать асинхронность """    
+            """! I enable/disable log decorators and tweeter. When working with jupyter ne it turns out to use asynchrony """    
 
         except DefaultSettingsException as ex:
-            logger.critical ('Ошибка в получении дaнных из `global_settings.json {ex}')
+            logger.critical (f'''Error in getting data from `global_settings.json 
+            {ex}''')
             return False
 
 
@@ -416,7 +417,8 @@ class ProjectSettings():
             self.threads = self.settings.get ('threads', False)
             
         except DefaultSettingsException as ex:
-            logger.error(f'ошибка установки дефолтного вебдрайвера {ex}')
+            logger.error(f''' ошибка в установке default_webdriver, scenario_language, threads 
+            {ex}''')
             return False
                 
 
@@ -448,7 +450,8 @@ class ProjectSettings():
                     self.default_aliexpress_api_credentials = entry_dict
                 
         except Exception as ex:
-            logger.error(f'Не удалось вытащить ключ API Aliepress из KeePass. Ошибка  {ex}')
+            logger.error(f'''Failed to extract Aliepress API key from KeePass. Error:  
+            {ex}''')
             return False
             
         # ----------------------- OPENAI ----------------------------
@@ -456,7 +459,8 @@ class ProjectSettings():
             """! """
             entries = kp.find_groups (path= ['openai']).entries
         except KeepassException as ex:   
-            logger.critical (f'Ошибка извлечения ключа OpenAI ')
+            logger.critical (f'''OpenAI key retrieval Error: 
+            {ex}''')
             return False
         try:
             entry_dict: dict = {}
@@ -703,8 +707,8 @@ class ProjectSettings():
 
     #@logs_and_errors_decorator (default_return =  False)
     def get_credentials_api_pestashop(self, client: str ) ->  Union[dict, False]:
-        """! @~russian функция возвращает параметры подлючения к `prestashop` через API 
-        @param client `str`  :  клиент на другом конце провода
+        """! Function returns connection parameters for `PrestaShop` via API 
+        @param client `str`  :  client at the other end of the wire
         @returns dict  
         <code>
         {
@@ -713,7 +717,8 @@ class ProjectSettings():
             'USERNAME': value,
         }
         </code>
-        """       
+        """  
+  
         
         for credentials in self.list_prestashop_api_credentials:
             if client in credentials['username']: 

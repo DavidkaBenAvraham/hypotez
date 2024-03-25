@@ -427,10 +427,16 @@ def field_available_now():
 #@logs_and_errors_decorator(default_return=False)
 def field_additional_categories(id_category_parent):
 	"""! @~russian Дополнительные категории, восстановленные от целевой к  корнeвой (`2`)
-	@brief
-	@details
+	Я их вытаскиваю из объекта `Category` через метод `get_list_parent_categories(id_category_parent)`
+	Строю и возвращаю словарь:
+	```python
+	{
+		"categories":{
+			"category":[{'id':`cat_id`}, ...]
+		}
+	}
+	```
 	"""
-	#additional_categories_list = c.get_list_parent_categories(id_category_parent)
 	return {'categories': { 'category': [{'id': cat_id} for cat_id in c.get_list_parent_categories(id_category_parent)] } }
 	
 	pass
