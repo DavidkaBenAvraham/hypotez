@@ -1,10 +1,11 @@
 {
   "google_drive": {
-    "storage": "J:\\My Drive\\hypo69\\llm",
-    "data_by_supplier_storage": "J:\\My Drive\\hypo69\\llm\\data_by_supplier",
-    "train_data": "J:\\My Drive\\hypo69\\llm\\train_data",
-    "random_urls": "J:\\My Drive\\hypo69\\llm\\random_urls",
-    "unzipped_storage": "J:\\My Drive\\hypo69\\llm\\unzipeped_storage"
+    "storage": "H:\\Мой диск\\hypo69\\llm",
+    "data_by_supplier_storage": "H:\\Мой диск\\hypo69hypo69\\llm\\data_by_supplier",
+    "train_data": "H:\\Мой диск\\hypo69\\llm\\train_data",
+    "train_data_all_in_one": "H:\\Мой диск\\hypo69\\llm\\train_data_all_in_one",
+    "random_urls": "H:\\Мой диск\\hypo69\\llm\\random_urls",
+    "unzipped_storage": "H:\\Мой диск\\hypo69\\llm\\unzipeped_storage"
   },
   "local_storage": {
     "storage": "E:\\hypo69\\llm",
